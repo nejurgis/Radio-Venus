@@ -21,33 +21,25 @@ export async function loadDatabase() {
 }
 
 export function match(venusSign, genre, element) {
-  // 1. Exact match: same Venus sign + genre
-  let results = db.filter(
-    m => m.venus.sign === venusSign && m.genres.includes(genre)
-  );
+  // All fallbacks stay within the selected genre — never mix genres.
+  const pool = db.filter(m => m.genres.includes(genre));
+
+  // 1. Exact: same Venus sign + genre
+  let results = pool.filter(m => m.venus.sign === venusSign);
   if (results.length > 0) return shuffle(results);
 
-  // 2. Fallback: same Venus sign, any genre
-  results = db.filter(m => m.venus.sign === venusSign);
-  if (results.length > 0) return shuffle(results);
-
-  // 3. Fallback: opposite sign + genre
+  // 2. Opposite sign (astrological polarity)
   const opposite = OPPOSITE_SIGNS[venusSign];
-  results = db.filter(
-    m => m.venus.sign === opposite && m.genres.includes(genre)
-  );
+  results = pool.filter(m => m.venus.sign === opposite);
   if (results.length > 0) return shuffle(results);
 
-  // 4. Fallback: same element + genre
+  // 3. Same element (fire/earth/air/water siblings)
   const elementSigns = SAME_ELEMENT[element] || [];
-  results = db.filter(
-    m => elementSigns.includes(m.venus.sign) && m.genres.includes(genre)
-  );
+  results = pool.filter(m => elementSigns.includes(m.venus.sign));
   if (results.length > 0) return shuffle(results);
 
-  // 5. Last resort: any artist with this genre
-  results = db.filter(m => m.genres.includes(genre));
-  return shuffle(results);
+  // 4. Last resort: all artists in this genre regardless of sign
+  return shuffle(pool);
 }
 
 function shuffle(arr) {
