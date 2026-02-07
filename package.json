@@ -1,0 +1,19 @@
+{
+  "name": "radio-venus",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:db": "node scripts/build-db.mjs",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "astronomy-engine": "^2.1.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0",
+    "ytsr": "^3.8.0"
+  }
+}
