@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { createRequire } from 'node:module';
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import https from 'node:https';
@@ -191,32 +191,71 @@ function parseDuration(str) {
 // ── Merge + build ───────────────────────────────────────────────────────────
 
 async function main() {
-  // Load seed data
+  const outDir = join(ROOT, 'public', 'data');
+  mkdirSync(outDir, { recursive: true });
+  const outPath = join(outDir, 'musicians.json');
+
+  // ── 1. Load existing database as cache (preserves YouTube IDs) ──────────
+  const cache = new Map();
+  if (existsSync(outPath)) {
+    const existing = JSON.parse(readFileSync(outPath, 'utf-8'));
+    for (const m of existing) {
+      cache.set(m.name.toLowerCase(), m);
+    }
+    console.log(`Loaded ${cache.size} cached artists from existing database.`);
+  } else {
+    console.log('No existing database found, starting fresh.');
+  }
+
+  // ── 2. Load seed data (highest priority) ────────────────────────────────
   const seedPath = join(__dirname, 'seed-musicians.json');
   const seed = JSON.parse(readFileSync(seedPath, 'utf-8'));
   console.log(`Loaded ${seed.length} seed artists.`);
 
-  // Build seed map (seed takes priority)
+  // Build merge map: seed > cache > wikidata
   const byName = new Map();
-  for (const s of seed) {
-    byName.set(s.name.toLowerCase(), s);
+
+  // Cache first (lowest priority of the two local sources)
+  for (const [key, m] of cache) {
+    byName.set(key, m);
   }
 
-  // Query Wikidata
+  // Seed overwrites cache (highest priority)
+  for (const s of seed) {
+    const key = s.name.toLowerCase();
+    const cached = byName.get(key);
+    // Preserve YouTube ID from cache if seed doesn't have one
+    if (cached && cached.youtubeVideoId && !s.youtubeVideoId) {
+      s.youtubeVideoId = cached.youtubeVideoId;
+    }
+    byName.set(key, s);
+  }
+
+  // ── 3. Query Wikidata for new artists ───────────────────────────────────
   const wikidataArtists = await queryWikidata();
 
-  // Merge: Wikidata artists that aren't already in seed
+  // Merge: Wikidata artists that aren't already known
+  let newFromWikidata = 0;
   for (const w of wikidataArtists) {
     const key = w.name.toLowerCase();
     if (!byName.has(key)) {
+      // Check cache for a previously resolved YouTube ID
+      const cached = cache.get(key);
+      if (cached && cached.youtubeVideoId) {
+        w.youtubeVideoId = cached.youtubeVideoId;
+      }
       byName.set(key, w);
+      newFromWikidata++;
     }
   }
+  console.log(`  ${newFromWikidata} new artists from Wikidata (${wikidataArtists.length - newFromWikidata} already known).`);
 
-  // Calculate Venus + fetch YouTube in batches of 5
+  // ── 4. Process: Venus calc + YouTube lookup (only if needed) ────────────
   const musicians = [];
   const entries = [...byName.values()];
-  console.log(`\nProcessing ${entries.length} total artists in batches...`);
+  let skippedCached = 0;
+  let searchedYt = 0;
+  console.log(`\nProcessing ${entries.length} total artists...`);
 
   const BATCH_SIZE = 5;
   for (let i = 0; i < entries.length; i += BATCH_SIZE) {
@@ -224,11 +263,22 @@ async function main() {
     const results = await Promise.all(batch.map(async (entry) => {
       try {
         const venus = calculateVenus(entry.birthDate);
+
+        // Use existing video ID: from seed, cache, or entry itself
         let videoId = entry.youtubeVideoId || null;
+        // Also check if this artist was already in the built cache with a video
+        if (!videoId) {
+          const cached = cache.get(entry.name.toLowerCase());
+          if (cached && cached.youtubeVideoId) {
+            videoId = cached.youtubeVideoId;
+            skippedCached++;
+          }
+        }
 
         if (!videoId) {
           const genreLabel = entry.genres[0] || 'electronic';
           videoId = await searchYouTube(entry.name, genreLabel);
+          if (videoId) searchedYt++;
         }
 
         if (!videoId) return null;
@@ -254,13 +304,13 @@ async function main() {
     console.log(`  [${Math.min(i + BATCH_SIZE, entries.length)}/${entries.length}]`);
   }
 
+  console.log(`\n  ${skippedCached} artists reused cached YouTube IDs.`);
+  console.log(`  ${searchedYt} new YouTube searches performed.`);
+
   // Sort by name
   musicians.sort((a, b) => a.name.localeCompare(b.name));
 
   // Write output
-  const outDir = join(ROOT, 'public', 'data');
-  mkdirSync(outDir, { recursive: true });
-  const outPath = join(outDir, 'musicians.json');
   writeFileSync(outPath, JSON.stringify(musicians, null, 2));
 
   console.log(`\nWrote ${musicians.length} musicians to ${outPath}`);
