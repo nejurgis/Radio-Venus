@@ -1,7 +1,7 @@
 import { calculateVenus, makeBirthDate } from './venus.js';
 import { GENRE_CATEGORIES, SUBGENRES } from './genres.js';
 import { loadDatabase, getDatabase, match, getSubgenreCounts } from './matcher.js';
-import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula, onNebulaHover } from './viz.js';
+import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula, onNebulaHover, onNebulaClick } from './viz.js';
 import { loadYouTubeAPI, initPlayer, loadVideo, togglePlay, isPlaying } from './player.js';
 import {
   initScreens, showScreen, showLoading, setElementTheme,
@@ -37,6 +37,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     initNebula('nebula-container');
     renderNebula(getDatabase());
     onNebulaHover(info => highlightGenres(info ? info.genres : null));
+    onNebulaClick(info => {
+      if (!venus || !info.genres.length) return;
+      const genreId = info.genres[0];
+      const label = GENRE_CATEGORIES.find(c => c.id === genreId)?.label || genreId;
+      startRadio(genreId, label).then(() => {
+        const idx = tracks.findIndex(t => t.name === info.name);
+        if (idx >= 0) playTrack(idx);
+      });
+    });
   }
 });
 

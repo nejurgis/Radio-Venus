@@ -41,6 +41,7 @@ let mouseY = -1;
 let zoomSign = null;       // null = full ring, sign index = zoomed
 let containerEl = null;
 let hoverCallback = null;  // called with { name, genres } or null
+let clickCallback = null;  // called with { name, genres } when dot clicked in zoom
 
 // Generate a minimal crosshair cursor (24×24, thin white lines with dark shadow)
 const crosshairCursor = (() => {
@@ -99,6 +100,12 @@ export function initNebula(containerId) {
     mouseX = mouseY = -1;
     hoveredDot = null;
     document.body.style.cursor = '';
+  });
+  document.addEventListener('click', (e) => {
+    if (!hoveredDot || !clickCallback || zoomSign == null) return;
+    // Only fire if click wasn't on an interactive element
+    if (e.target.closest('button, a, input, select, textarea')) return;
+    clickCallback({ name: hoveredDot.name, genres: hoveredDot.genres });
   });
 }
 
@@ -166,6 +173,10 @@ export function clearPreviewVenus() {
 
 export function onNebulaHover(callback) {
   hoverCallback = callback;
+}
+
+export function onNebulaClick(callback) {
+  clickCallback = callback;
 }
 
 // ── Zoom control ──────────────────────────────────────────────────────────────
