@@ -1593,6 +1593,25 @@
     "youtubeVideoId": "SMjN7sv7WP4"
   },
   {
+    "name": "Children of Alice",
+    "birthDate": "2013-01-01",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 20.4,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "idm",
+      "ambient"
+    ],
+    "subgenres": [
+      "experimental",
+      "ambient"
+    ],
+    "youtubeVideoId": "uLsZVyDcypE"
+  },
+  {
     "name": "Christ.",
     "birthDate": "1712-10-30",
     "venus": {
@@ -1756,6 +1775,27 @@
       "idm"
     ],
     "youtubeVideoId": "VMZMdwfvo6Y"
+  },
+  {
+    "name": "Colin Potter",
+    "birthDate": "1980-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 12,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "idm",
+      "ambient",
+      "industrial"
+    ],
+    "subgenres": [
+      "experimental",
+      "drone",
+      "industrial"
+    ],
+    "youtubeVideoId": "UthPKOmCEig"
   },
   {
     "name": "Conrado del Campo",
@@ -2056,6 +2096,25 @@
       "classical"
     ],
     "youtubeVideoId": "UMI57cPaSD4"
+  },
+  {
+    "name": "Digit",
+    "birthDate": "1984-01-01",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 0.5,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "electro",
+      "experimental"
+    ],
+    "youtubeVideoId": "yx_BOSV3Nes"
   },
   {
     "name": "Dimitri Terzakis",
@@ -2647,6 +2706,24 @@
     "youtubeVideoId": "lfheMGIiET8"
   },
   {
+    "name": "Eugen Thomass",
+    "birthDate": "1927-12-24",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 17.7,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "classical",
+      "triphop"
+    ],
+    "subgenres": [
+      "downtempo"
+    ],
+    "youtubeVideoId": "yAGTjRgDyB8"
+  },
+  {
     "name": "Fad Gadget",
     "birthDate": "1956-09-08",
     "venus": {
@@ -2817,6 +2894,26 @@
       "trip-hop"
     ],
     "youtubeVideoId": "0ScYz9sNaQk"
+  },
+  {
+    "name": "Forward Strategy Group",
+    "birthDate": "2008-01-01",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 2.1,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "techno",
+      "industrial"
+    ],
+    "subgenres": [
+      "techno",
+      "industrial",
+      "drone"
+    ],
+    "youtubeVideoId": "PVA64LhNICw"
   },
   {
     "name": "Four Tet",
@@ -4933,6 +5030,25 @@
     "youtubeVideoId": "NbGsHUOoEnc"
   },
   {
+    "name": "Jo Johnson",
+    "birthDate": "1980-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 12,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "ambient"
+    ],
+    "subgenres": [
+      "ambient",
+      "minimal",
+      "new-age"
+    ],
+    "youtubeVideoId": "-fKeis-WFnQ"
+  },
+  {
     "name": "Joachim Nicolas Eggert",
     "birthDate": "1779-02-22",
     "venus": {
@@ -5542,6 +5658,26 @@
       "classical"
     ],
     "youtubeVideoId": "jFkGHus4-bM"
+  },
+  {
+    "name": "Kane Ikin",
+    "birthDate": "1986-01-01",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 6.4,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "experimental",
+      "drone"
+    ],
+    "youtubeVideoId": "Tnh1ZvCyQqc"
   },
   {
     "name": "Karel Weis",
@@ -6184,6 +6320,25 @@
       "industrial"
     ],
     "youtubeVideoId": "yhaXBZl7zu8"
+  },
+  {
+    "name": "Love Cult",
+    "birthDate": "2012-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 14.4,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "industrial"
+    ],
+    "subgenres": [
+      "drone",
+      "industrial"
+    ],
+    "youtubeVideoId": "0mz14673i5A"
   },
   {
     "name": "LTJ Bukem",
@@ -7509,6 +7664,25 @@
     "youtubeVideoId": "fTANmkG8sWM"
   },
   {
+    "name": "Pantha Du Prince",
+    "birthDate": "1975-01-01",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 24,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "techno"
+    ],
+    "subgenres": [
+      "minimal",
+      "house",
+      "techno"
+    ],
+    "youtubeVideoId": "xnvpg80_BeY"
+  },
+  {
     "name": "Paul Abraham",
     "birthDate": "1892-11-02",
     "venus": {
@@ -8529,6 +8703,24 @@
     "youtubeVideoId": "1tAfNCh_-1M"
   },
   {
+    "name": "Secreto Metro",
+    "birthDate": "1986-01-01",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 6.4,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "darkwave"
+    ],
+    "subgenres": [
+      "coldwave",
+      "synth-pop"
+    ],
+    "youtubeVideoId": "i3G2vYje3-k"
+  },
+  {
     "name": "Section 25",
     "birthDate": "1977-06-15",
     "venus": {
@@ -8790,6 +8982,24 @@
     "youtubeVideoId": "uxYCNdZfdUk"
   },
   {
+    "name": "Sluagh Ghairm",
+    "birthDate": "1983-01-01",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 24.7,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "industrial"
+    ],
+    "subgenres": [
+      "industrial",
+      "noise"
+    ],
+    "youtubeVideoId": "FKXXj0wSbu0"
+  },
+  {
     "name": "Soft Cell",
     "birthDate": "1980-06-15",
     "venus": {
@@ -8939,6 +9149,25 @@
       "minimalist"
     ],
     "youtubeVideoId": "g0WVh1D0N50"
+  },
+  {
+    "name": "Stringtronics",
+    "birthDate": "1972-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 11.4,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "electro",
+      "experimental"
+    ],
+    "youtubeVideoId": "hE_VN7Z9KwY"
   },
   {
     "name": "Sunn O)))",

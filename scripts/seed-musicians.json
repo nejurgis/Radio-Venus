@@ -2985,5 +2985,151 @@
       "synth-pop",
       "experimental"
     ]
+  },
+  {
+    "name": "Pantha Du Prince",
+    "birthDate": "1975-01-01",
+    "genres": [
+      "techno"
+    ],
+    "subgenres": [
+      "minimal",
+      "house",
+      "techno"
+    ]
+  },
+  {
+    "name": "Eugen Thomass",
+    "birthDate": "1927-12-24",
+    "genres": [
+      "classical",
+      "triphop"
+    ],
+    "subgenres": [
+      "downtempo"
+    ],
+    "youtubeVideoId": "yAGTjRgDyB8"
+  },
+  {
+    "name": "Colin Potter",
+    "birthDate": "1980-01-01",
+    "genres": [
+      "idm",
+      "ambient",
+      "industrial"
+    ],
+    "subgenres": [
+      "experimental",
+      "drone",
+      "industrial"
+    ]
+  },
+  {
+    "name": "Stringtronics",
+    "birthDate": "1972-01-01",
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "electro",
+      "experimental"
+    ]
+  },
+  {
+    "name": "Kane Ikin",
+    "birthDate": "1986-01-01",
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "experimental",
+      "drone"
+    ]
+  },
+  {
+    "name": "Jo Johnson",
+    "birthDate": "1980-01-01",
+    "genres": [
+      "ambient"
+    ],
+    "subgenres": [
+      "ambient",
+      "minimal",
+      "new-age"
+    ]
+  },
+  {
+    "name": "Forward Strategy Group",
+    "birthDate": "2008-01-01",
+    "genres": [
+      "techno",
+      "industrial"
+    ],
+    "subgenres": [
+      "techno",
+      "industrial",
+      "drone"
+    ]
+  },
+  {
+    "name": "Sluagh Ghairm",
+    "birthDate": "1983-01-01",
+    "genres": [
+      "industrial"
+    ],
+    "subgenres": [
+      "industrial",
+      "noise"
+    ]
+  },
+  {
+    "name": "Children of Alice",
+    "birthDate": "2013-01-01",
+    "genres": [
+      "idm",
+      "ambient"
+    ],
+    "subgenres": [
+      "experimental",
+      "ambient"
+    ]
+  },
+  {
+    "name": "Love Cult",
+    "birthDate": "2012-01-01",
+    "genres": [
+      "ambient",
+      "industrial"
+    ],
+    "subgenres": [
+      "drone",
+      "industrial"
+    ]
+  },
+  {
+    "name": "Digit",
+    "birthDate": "1984-01-01",
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "electro",
+      "experimental"
+    ]
+  },
+  {
+    "name": "Secreto Metro",
+    "birthDate": "1986-01-01",
+    "genres": [
+      "darkwave"
+    ],
+    "subgenres": [
+      "coldwave",
+      "synth-pop"
+    ]
   }
 ]
