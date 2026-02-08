@@ -43,6 +43,14 @@ let containerEl = null;
 let hoverCallback = null;  // called with { name, genres } or null
 let clickCallback = null;  // called with { name, genres } when dot clicked in zoom
 
+// Zoom animation state
+let zoomProgress = 0;      // 0 = full ring, 1 = fully zoomed
+let zoomAnimating = false;
+let zoomAnimStart = 0;
+let zoomAnimDuration = 2000;
+let zoomRotStart = 0;      // rotation snapshot when animation starts
+let zoomResolve = null;    // promise resolver
+
 // Generate a minimal crosshair cursor (24×24, thin white lines with dark shadow)
 const crosshairCursor = (() => {
   const s = 24, c = s / 2;
@@ -181,15 +189,39 @@ export function onNebulaClick(callback) {
 
 // ── Zoom control ──────────────────────────────────────────────────────────────
 
-export function zoomToSign(signIndex) {
+export function zoomToSign(signIndex, { duration = 2000, animate = true } = {}) {
   zoomSign = signIndex;
   hoveredDot = null;
   if (containerEl) containerEl.classList.add('is-zoomed');
+
+  if (animate) {
+    zoomRotStart = rotation;
+    zoomAnimStart = performance.now();
+    zoomAnimDuration = duration;
+    zoomAnimating = true;
+    zoomProgress = 0;
+    return new Promise(r => { zoomResolve = r; });
+  } else {
+    zoomProgress = 1;
+    zoomAnimating = false;
+    return Promise.resolve();
+  }
 }
 
-export function zoomOut() {
+export function zoomOut({ duration = 1800, animate = true } = {}) {
+  if (animate && zoomSign != null) {
+    // Reverse animation: progress goes from 1 → 0
+    zoomAnimStart = performance.now();
+    zoomAnimDuration = duration;
+    zoomAnimating = 'out';
+    zoomProgress = 1;
+    return new Promise(r => { zoomResolve = r; });
+  }
   zoomSign = null;
+  zoomProgress = 0;
+  zoomAnimating = false;
   if (containerEl) containerEl.classList.remove('is-zoomed');
+  return Promise.resolve();
 }
 
 export function showNebula(visible) {
@@ -214,26 +246,64 @@ function tick() {
 
   ctx.clearRect(0, 0, w, h);
 
-  // Rotation: free-spin when full ring, locked when zoomed
+  // ── Zoom animation update ────────────────────────────────────────────────
+  if (zoomAnimating === true) {
+    // Zoom in
+    const elapsed = performance.now() - zoomAnimStart;
+    const raw = Math.min(1, elapsed / zoomAnimDuration);
+    zoomProgress = 1 - Math.pow(1 - raw, 3); // ease-out cubic
+    if (raw >= 1) {
+      zoomProgress = 1;
+      zoomAnimating = false;
+      if (zoomResolve) { zoomResolve(); zoomResolve = null; }
+    }
+  } else if (zoomAnimating === 'out') {
+    // Zoom out (reverse)
+    const elapsed = performance.now() - zoomAnimStart;
+    const raw = Math.min(1, elapsed / zoomAnimDuration);
+    zoomProgress = Math.pow(1 - raw, 3); // ease-in cubic (slow start, fast finish)
+    if (raw >= 1) {
+      zoomProgress = 0;
+      zoomAnimating = false;
+      zoomSign = null;
+      rotation = zoomRotStart; // resume free-spin from where we locked
+      if (containerEl) containerEl.classList.remove('is-zoomed');
+      if (zoomResolve) { zoomResolve(); zoomResolve = null; }
+    }
+  }
+
+  // Rotation: free-spin when full ring, interpolated when animating, locked when zoomed
   let rot;
   if (zoomSign != null) {
-    // Lock rotation so target sign's center sits at the top (screen angle -90°)
-    rot = zoomSign * 30 + 15;
+    const targetRot = zoomSign * 30 + 15;
+    if (zoomAnimating || zoomProgress < 1) {
+      // Smoothly rotate from free-spin angle to locked angle (shortest path)
+      let delta = targetRot - zoomRotStart;
+      if (delta > 180) delta -= 360;
+      if (delta < -180) delta += 360;
+      rot = zoomRotStart + delta * zoomProgress;
+    } else {
+      rot = targetRot;
+    }
   } else {
     rotation += (360 / 240) / 60; // ~60fps → 360° in 240s
     if (rotation >= 360) rotation -= 360;
     rot = rotation;
   }
 
-  // ── Zoom transform ──────────────────────────────────────────────────────
+  // ── Zoom transform (interpolated) ──────────────────────────────────────
   const isZoomed = zoomSign != null;
   if (isZoomed) {
-    const scale = (h * 0.7) / bandWidth;
+    const targetScale = (h * 0.7) / bandWidth;
+    const s = 1 + (targetScale - 1) * zoomProgress;
+    const focusX = cx;
+    const focusY = cy - midR;
+    const tx = (w / 2 - focusX) * zoomProgress;
+    const ty = (h / 2 - focusY) * zoomProgress;
     ctx.save();
-    // Center the top of the ring (where the target sign is) on screen
-    ctx.translate(w / 2, h / 2);
-    ctx.scale(scale, scale);
-    ctx.translate(-cx, -(cy - midR));
+    ctx.translate(focusX + tx, focusY + ty);
+    ctx.scale(s, s);
+    ctx.translate(-focusX, -focusY);
   }
 
   // ── Whole-sign sector outlines (12 annular wedges) ──────────────────────

@@ -183,16 +183,24 @@ async function getMusicBrainzBirthDate(artistName) {
     const data = await fetchJSON(url);
     if (!data.artists || data.artists.length === 0) return null;
 
-    // Prefer a Person with a life-span begin date; fall back to Group/other
+    // Prefer a Person with a life-span begin date; fall back to Group
     const match =
       data.artists.find(a => a.type === 'Person' && a['life-span']?.begin) ||
-      data.artists.find(a => a['life-span']?.begin);
+      data.artists.find(a => a.type === 'Group' && a['life-span']?.begin);
 
     if (match && match['life-span'].begin) {
       const b = match['life-span'].begin;
-      if (b.length === 10) return b;          // YYYY-MM-DD
-      if (b.length === 7) return `${b}-15`;   // YYYY-MM → mid-month
-      if (b.length === 4) return `${b}-06-15`; // YYYY → mid-year (averages Venus cycle)
+      let dateStr;
+      if (b.length === 10) dateStr = b;           // YYYY-MM-DD
+      else if (b.length === 7) dateStr = `${b}-15`;  // YYYY-MM → mid-month
+      else if (b.length === 4) dateStr = `${b}-06-15`; // YYYY → mid-year
+      else return null;
+
+      // Sanity check year
+      const year = parseInt(dateStr.split('-')[0]);
+      if (year < 1600 || year > new Date().getFullYear()) return null;
+
+      return dateStr;
     }
   } catch { return null; }
   return null;
@@ -200,6 +208,25 @@ async function getMusicBrainzBirthDate(artistName) {
 
 async function getWikidataBirthDate(artistName) {
   const searchUrl = `https://www.wikidata.org/w/api.php?action=wbsearchentities&search=${encodeURIComponent(artistName)}&language=en&type=item&limit=5&format=json`;
+
+  // Wikidata IDs for musical occupations and entity types
+  const MUSIC_OCCUPATIONS = [
+    'Q639669',   // musician
+    'Q177220',   // singer
+    'Q36834',    // composer
+    'Q183945',   // record producer
+    'Q855091',   // guitarist
+    'Q386854',   // disc jockey
+    'Q488205',   // singer-songwriter
+    'Q158852',   // conductor
+    'Q753110',   // songwriter
+    'Q584301',   // electronic musician
+  ];
+  const MUSIC_INSTANCES = [
+    'Q5',        // human (accept any human, occupation check narrows it)
+    'Q215380',   // musical group
+    'Q5741069',  // musical ensemble
+  ];
 
   try {
     const searchData = await fetchJSON(searchUrl);
@@ -211,13 +238,33 @@ async function getWikidataBirthDate(artistName) {
       const entity = entityData.entities?.[result.id];
       if (!entity?.claims) continue;
 
+      // Validate entity is a musician/band, not a random person/object
+      const occupations = (entity.claims.P106 || []).map(c => c.mainsnak?.datavalue?.value?.id).filter(Boolean);
+      const instances = (entity.claims.P31 || []).map(c => c.mainsnak?.datavalue?.value?.id).filter(Boolean);
+
+      const isMusician = occupations.some(id => MUSIC_OCCUPATIONS.includes(id));
+      const isMusicalGroup = instances.some(id => ['Q215380', 'Q5741069'].includes(id));
+      const isHuman = instances.includes('Q5');
+
+      // Must be either a musician (human with music occupation) or a musical group
+      if (!isMusicalGroup && !(isHuman && isMusician)) continue;
+
       // P569 = birth date (person), P571 = inception date (band/group)
       const dateClaim = entity.claims.P569?.[0] || entity.claims.P571?.[0];
       const dateValue = dateClaim?.mainsnak?.datavalue?.value?.time;
       if (!dateValue) continue;
 
-      const match = dateValue.match(/(\d{4}-\d{2}-\d{2})/);
-      if (match) return match[1];
+      const dateMatch = dateValue.match(/([+-]?\d{4}-\d{2}-\d{2})/);
+      if (!dateMatch) continue;
+
+      const dateStr = dateMatch[1].replace(/^\+/, '');
+      const year = parseInt(dateStr.split('-')[0]);
+
+      // Sanity check: reject dates before 1600 (covers classical composers)
+      // or in the future
+      if (year < 1600 || year > new Date().getFullYear()) continue;
+
+      return dateStr;
     }
 
     return null;

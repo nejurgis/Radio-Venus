@@ -4,7 +4,7 @@ import { loadDatabase, getDatabase, match, getSubgenreCounts } from './matcher.j
 import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula, onNebulaHover, onNebulaClick } from './viz.js';
 import { loadYouTubeAPI, initPlayer, loadVideo, togglePlay, isPlaying } from './player.js';
 import {
-  initScreens, showScreen, showLoading, setElementTheme,
+  initScreens, showScreen, setElementTheme,
   renderReveal, renderGenreGrid, renderRadioHeader,
   renderTrackList, updateNowPlaying, updatePlayButton, showEmptyState,
   markTrackFailed,
@@ -146,24 +146,23 @@ function validateDate(d, m, y) {
 // ── Flow ────────────────────────────────────────────────────────────────────
 
 async function onDateSubmit(d, m, y) {
-  showLoading(true);
-
-  // Dramatic pause for the vibe
-  await sleep(1500);
-
   const birthDate = makeBirthDate(d, m, y);
   venus = calculateVenus(birthDate);
 
   setElementTheme(venus.element);
   setUserVenus(venus.longitude, venus.element);
   renderReveal(venus);
-  showLoading(false);
-  showNebula(false); // hide nebula on reveal screen
-  showScreen('reveal');
 
   // Venus sign index for zoom
   const signIndex = ['Aries','Taurus','Gemini','Cancer','Leo','Virgo',
     'Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'].indexOf(venus.sign);
+
+  // Fade out portal content, then zoom into the user's Venus sign
+  const portalScreen = document.getElementById('screen-portal');
+  portalScreen.classList.add('is-fading');
+  await zoomToSign(signIndex, { duration: 2500 });
+  portalScreen.classList.remove('is-fading');
+  showScreen('reveal');
 
   // Set up genre screen
   const genreLabel = id => GENRE_CATEGORIES.find(c => c.id === id)?.label || id;
@@ -182,15 +181,20 @@ async function onDateSubmit(d, m, y) {
 
   document.getElementById('btn-choose-genre').addEventListener('click', () => {
     showNebula(true);
-    zoomToSign(signIndex);
     showScreen('genre');
   });
 
-  // Genre screen back → portal (date input)
-  document.getElementById('btn-back-genre').addEventListener('click', () => {
-    zoomOut();
-    showNebula(true);
+  // Reveal screen back → portal (date input)
+  document.getElementById('btn-back-reveal').addEventListener('click', async () => {
     showScreen('portal');
+    showNebula(true);
+    await zoomOut({ duration: 1800 });
+  });
+
+  // Genre screen back → reveal
+  document.getElementById('btn-back-genre').addEventListener('click', () => {
+    showNebula(true);
+    showScreen('reveal');
   });
 }
 
@@ -283,8 +287,3 @@ document.addEventListener('keydown', e => {
   if (e.key === ' ') { e.preventDefault(); togglePlay(); }
 });
 
-// ── Util ────────────────────────────────────────────────────────────────────
-
-function sleep(ms) {
-  return new Promise(r => setTimeout(r, ms));
-}

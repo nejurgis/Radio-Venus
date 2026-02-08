@@ -1833,7 +1833,7 @@
   },
   {
     "name": "Datach'i",
-    "birthDate": "1977-00-00",
+    "birthDate": "1977-06-15",
     "genres": [
       "dnb",
       "idm"
@@ -1972,20 +1972,6 @@
     ]
   },
   {
-    "name": "Christ.",
-    "birthDate": "1712-10-30",
-    "genres": [
-      "idm",
-      "ambient",
-      "triphop"
-    ],
-    "youtubeVideoId": "QpXnWaZfPBo",
-    "subgenres": [
-      "glitch",
-      "idm"
-    ]
-  },
-  {
     "name": "Chuck Person",
     "birthDate": "1982-07-25",
     "genres": [
@@ -2080,7 +2066,7 @@
   },
   {
     "name": "Klein",
-    "birthDate": "1945-00-00",
+    "birthDate": "1945-06-15",
     "genres": [
       "idm",
       "ambient",
@@ -2251,7 +2237,7 @@
   },
   {
     "name": "Bochum Welt",
-    "birthDate": "1975-00-00",
+    "birthDate": "1975-06-15",
     "genres": [
       "idm",
       "industrial",
@@ -2263,6 +2249,498 @@
       "idm",
       "acid",
       "electro"
+    ]
+  },
+  {
+    "name": "Dave Gahan",
+    "birthDate": "1962-05-09",
+    "genres": [
+      "idm",
+      "darkwave",
+      "industrial"
+    ]
+  },
+  {
+    "name": "Martin L. Gore",
+    "birthDate": "1961-07-23",
+    "genres": [
+      "idm",
+      "darkwave"
+    ]
+  },
+  {
+    "name": "Camouflage",
+    "birthDate": "1984-06-15",
+    "genres": [
+      "darkwave",
+      "idm"
+    ]
+  },
+  {
+    "name": "New Order",
+    "birthDate": "1980-06-15",
+    "genres": [
+      "darkwave",
+      "idm",
+      "industrial"
+    ]
+  },
+  {
+    "name": "Erasure",
+    "birthDate": "1985-06-15",
+    "genres": [
+      "darkwave",
+      "idm"
+    ]
+  },
+  {
+    "name": "Soft Cell",
+    "birthDate": "1980-06-15",
+    "genres": [
+      "darkwave",
+      "idm"
+    ]
+  },
+  {
+    "name": "Pet Shop Boys",
+    "birthDate": "1981-08-19",
+    "genres": [
+      "darkwave",
+      "idm"
+    ]
+  },
+  {
+    "name": "Duran Duran",
+    "birthDate": "1978-06-15",
+    "genres": [
+      "darkwave",
+      "idm",
+      "industrial"
+    ]
+  },
+  {
+    "name": "Orchestral Manoeuvres in the Dark",
+    "birthDate": "1978-06-15",
+    "genres": [
+      "darkwave",
+      "idm",
+      "industrial"
+    ]
+  },
+  {
+    "name": "Dan Terminus",
+    "birthDate": "1964-06-22",
+    "genres": [
+      "darkwave",
+      "idm"
+    ]
+  },
+  {
+    "name": "Mega Drive",
+    "birthDate": "1998-06-19",
+    "genres": [
+      "darkwave",
+      "idm",
+      "techno"
+    ]
+  },
+  {
+    "name": "Waveshaper",
+    "birthDate": "1984-09-26",
+    "genres": [
+      "darkwave",
+      "idm"
+    ]
+  },
+  {
+    "name": "Dynatron",
+    "birthDate": "1980-12-26",
+    "genres": [
+      "darkwave",
+      "idm"
+    ]
+  },
+  {
+    "name": "Hollywood Burns",
+    "birthDate": "1985-10-31",
+    "genres": [
+      "darkwave",
+      "idm"
+    ]
+  },
+  {
+    "name": "Magic Sword",
+    "birthDate": "1988-12-09",
+    "genres": [
+      "darkwave",
+      "idm"
+    ]
+  },
+  {
+    "name": "Tubeway Army",
+    "birthDate": "1976-06-15",
+    "genres": [
+      "darkwave",
+      "idm"
+    ]
+  },
+  {
+    "name": "John Foxx",
+    "birthDate": "1947-09-29",
+    "genres": [
+      "darkwave",
+      "idm",
+      "ambient"
+    ]
+  },
+  {
+    "name": "The Human League",
+    "birthDate": "1977-06-15",
+    "genres": [
+      "darkwave",
+      "idm"
+    ]
+  },
+  {
+    "name": "Ultravox",
+    "birthDate": "1973-06-15",
+    "genres": [
+      "darkwave",
+      "idm"
+    ]
+  },
+  {
+    "name": "Heaven 17",
+    "birthDate": "1980-06-15",
+    "genres": [
+      "darkwave",
+      "idm"
+    ]
+  },
+  {
+    "name": "Visage",
+    "birthDate": "1978-06-15",
+    "genres": [
+      "darkwave",
+      "idm"
+    ]
+  },
+  {
+    "name": "Blancmange",
+    "birthDate": "1979-06-15",
+    "genres": [
+      "darkwave",
+      "idm"
+    ]
+  },
+  {
+    "name": "Clock DVA",
+    "birthDate": "1978-06-15",
+    "genres": [
+      "industrial",
+      "darkwave",
+      "idm"
+    ]
+  },
+  {
+    "name": "Richard H. Kirk",
+    "birthDate": "1956-03-21",
+    "genres": [
+      "idm",
+      "techno",
+      "ambient",
+      "industrial"
+    ]
+  },
+  {
+    "name": "Severed Heads",
+    "birthDate": "1979-06-15",
+    "genres": [
+      "industrial",
+      "idm",
+      "darkwave"
+    ]
+  },
+  {
+    "name": "Fad Gadget",
+    "birthDate": "1956-09-08",
+    "genres": [
+      "darkwave",
+      "idm",
+      "industrial"
+    ]
+  },
+  {
+    "name": "Nitzer Ebb",
+    "birthDate": "1982-06-15",
+    "genres": [
+      "industrial",
+      "darkwave",
+      "idm",
+      "techno"
+    ]
+  },
+  {
+    "name": "Chrome",
+    "birthDate": "1970-06-04",
+    "genres": [
+      "darkwave",
+      "industrial",
+      "idm"
+    ]
+  },
+  {
+    "name": "Miss Kittin & The Hacker",
+    "birthDate": "1973-07-16",
+    "genres": [
+      "techno",
+      "idm"
+    ]
+  },
+  {
+    "name": "Anthony Rother",
+    "birthDate": "1972-04-29",
+    "genres": [
+      "techno",
+      "idm",
+      "darkwave",
+      "classical",
+      "ambient"
+    ]
+  },
+  {
+    "name": "Miss Kittin",
+    "birthDate": "1973-07-16",
+    "genres": [
+      "techno",
+      "idm",
+      "darkwave"
+    ]
+  },
+  {
+    "name": "Dopplereffekt",
+    "birthDate": "1995-06-15",
+    "genres": [
+      "techno",
+      "idm"
+    ]
+  },
+  {
+    "name": "Terence Fixmer",
+    "birthDate": "1972-10-02",
+    "genres": [
+      "techno",
+      "industrial",
+      "darkwave",
+      "idm"
+    ]
+  },
+  {
+    "name": "David Carretta",
+    "birthDate": "1953-01-01",
+    "genres": [
+      "techno",
+      "idm"
+    ]
+  },
+  {
+    "name": "Oxia",
+    "birthDate": "1971-06-15",
+    "genres": [
+      "techno",
+      "darkwave",
+      "classical",
+      "idm"
+    ]
+  },
+  {
+    "name": "Gesaffelstein",
+    "birthDate": "1985-06-13",
+    "genres": [
+      "techno",
+      "idm",
+      "darkwave",
+      "industrial"
+    ]
+  },
+  {
+    "name": "Schwefelgelb",
+    "birthDate": "2004-06-15",
+    "genres": [
+      "idm",
+      "industrial",
+      "darkwave",
+      "techno"
+    ]
+  },
+  {
+    "name": "Model 500",
+    "birthDate": "1962-09-12",
+    "genres": [
+      "techno",
+      "idm"
+    ]
+  },
+  {
+    "name": "Grimes & i_o",
+    "birthDate": "1990-05-16",
+    "genres": [
+      "idm",
+      "darkwave",
+      "dnb"
+    ]
+  },
+  {
+    "name": "FKA twigs",
+    "birthDate": "1988-01-16",
+    "genres": [
+      "idm",
+      "triphop",
+      "techno"
+    ]
+  },
+  {
+    "name": "Björk",
+    "birthDate": "1965-11-21",
+    "genres": [
+      "idm",
+      "triphop",
+      "ambient"
+    ]
+  },
+  {
+    "name": "Blood Diamonds",
+    "birthDate": "1990-08-15",
+    "genres": [
+      "idm",
+      "darkwave"
+    ]
+  },
+  {
+    "name": "Sky Ferreira",
+    "birthDate": "1992-07-08",
+    "genres": [
+      "idm",
+      "darkwave",
+      "techno",
+      "industrial"
+    ]
+  },
+  {
+    "name": "Eartheater",
+    "birthDate": "1989-03-16",
+    "genres": [
+      "idm",
+      "ambient"
+    ]
+  },
+  {
+    "name": "yeule",
+    "birthDate": "1997-12-16",
+    "genres": [
+      "idm",
+      "ambient",
+      "darkwave"
+    ]
+  },
+  {
+    "name": "Alice Glass",
+    "birthDate": "1988-08-23",
+    "genres": [
+      "idm",
+      "techno",
+      "darkwave",
+      "industrial"
+    ]
+  },
+  {
+    "name": "Charli xcx",
+    "birthDate": "1992-08-02",
+    "genres": [
+      "idm",
+      "darkwave",
+      "techno"
+    ]
+  },
+  {
+    "name": "Frank Tovey",
+    "birthDate": "1956-09-08",
+    "genres": [
+      "darkwave",
+      "idm"
+    ]
+  },
+  {
+    "name": "The Normal",
+    "birthDate": "1951-02-14",
+    "genres": [
+      "idm",
+      "darkwave",
+      "industrial"
+    ]
+  },
+  {
+    "name": "Silicon Teens",
+    "birthDate": "1979-01-01",
+    "genres": [
+      "darkwave",
+      "idm",
+      "techno"
+    ]
+  },
+  {
+    "name": "Love and Rockets",
+    "birthDate": "1985-06-15",
+    "genres": [
+      "darkwave",
+      "industrial"
+    ]
+  },
+  {
+    "name": "Electronic",
+    "birthDate": "1988-06-15",
+    "genres": [
+      "idm",
+      "darkwave"
+    ]
+  },
+  {
+    "name": "Joy Division",
+    "birthDate": "1976-06-15",
+    "genres": [
+      "darkwave",
+      "industrial"
+    ]
+  },
+  {
+    "name": "Monaco",
+    "birthDate": "1995-06-15",
+    "genres": [
+      "darkwave",
+      "idm"
+    ]
+  },
+  {
+    "name": "A Certain Ratio",
+    "birthDate": "1977-06-15",
+    "genres": [
+      "darkwave"
+    ]
+  },
+  {
+    "name": "The Cure",
+    "birthDate": "1976-06-15",
+    "genres": [
+      "darkwave",
+      "industrial"
+    ]
+  },
+  {
+    "name": "Section 25",
+    "birthDate": "1977-06-15",
+    "genres": [
+      "darkwave",
+      "idm"
     ]
   }
 ]

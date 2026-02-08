@@ -16,10 +16,11 @@ Genre pick  ──►  Subgenre filter  ──►  Venus similarity sort  ──
                                                                   YouTube Player
 ```
 
-1. **Portal** — User enters their birth date (DD/MM/YYYY). A zodiac nebula ring shows the distribution of all ~470 artists as element-colored dots at their ecliptic longitudes, with whole-sign sector outlines. Hover over any dot to see the artist name and Venus position in a center readout. As you type, a preview dot glows at your Venus position.
-2. **Reveal** — Venus sign is calculated client-side and displayed with its glyph, degree, decan, and element
-3. **Genre** — User picks from 8 genre categories, each showing clickable subgenre chips underneath. The nebula zooms into the user's sign sector as a background, showing just the 30° wedge of their Venus sign.
-4. **Radio** — Matched artists play via the YouTube IFrame API, sorted by Venus proximity (0-100%). Each track shows the artist's Venus sign (element-colored) and degree.
+1. **Portal** — User enters their birth date (DD/MM/YYYY). A zodiac nebula ring shows the distribution of all artists as glassy element-colored dots at their ecliptic longitudes, with crisp Rudnick-style sector outlines. Hover over any dot to see the artist name, sign, and Venus degree underneath. As you type, a preview dot glows at your Venus position. A "You" label marks the user's dot.
+2. **Zoom transition** — On submit, the nebula smoothly zooms into the user's Venus sign over 2.5s with ease-out cubic easing. Rotation interpolates from free-spin to the locked sign position. The portal content fades away as the camera pushes in.
+3. **Reveal** — Venus sign is displayed with its glyph, degree, decan, and element. Back button triggers a reverse zoom-out animation (1.8s) returning to the full ring.
+4. **Genre** — User picks from 8 genre categories with Rudnick-palette color overlays that pop on hover. Subgenre chips shown underneath. The nebula remains zoomed as a background, showing just the 30° wedge of their Venus sign.
+5. **Radio** — Matched artists play via the YouTube IFrame API, sorted by Venus proximity (0-100%). The track list stretches to the bottom of the viewport with a fade-out gradient at the edge. Each track shows the artist's Venus sign (element-colored) and degree.
 
 ### Venus calculation
 
@@ -88,10 +89,10 @@ Radio-Venus/
   scripts/
     build-db.mjs                    # Wikidata + Venus calc + YouTube lookup → musicians.json
     smart-match.mjs                 # Last.fm similarity graph → discover new artists
-    seed-musicians.json             # 174 hand-curated artists with verified video IDs + subgenres
+    seed-musicians.json             # 230 artists (174 hand-curated + 56 discovered) with verified video IDs
     manual-overrides.json           # Birth dates for artists invisible to all databases
   public/
-    data/musicians.json             # Generated database (~470 artists)
+    data/musicians.json             # Generated database (536 artists)
     favicon.svg                     # Venus glyph
   .github/workflows/
     deploy.yml                      # Auto-deploy to GitHub Pages on push to master
@@ -110,6 +111,7 @@ Radio-Venus/
 **Discovery** (Node.js, `scripts/smart-match.mjs`):
 - Takes a seed artist name, scrapes Last.fm's "similar artists" page
 - Cross-references Wikidata/MusicBrainz/Wikipedia for birth dates (4-tier fallback)
+- **Entity disambiguation**: Wikidata lookups validate that matched entities are actually musicians (P106 occupation check: musician, singer, composer, producer, DJ, electronic musician) or musical groups (P31 instance-of check). Rejects non-musical entities, year < 1600, and future dates. MusicBrainz prefers `Person` type over `Group` and applies the same year sanity check.
 - Gets genre tags from Last.fm, maps through `categorizeGenres()`
 - Appends discovered artists to `seed-musicians.json`
 - Supports BFS depth (e.g., `--depth 2` follows similarity chains)
@@ -125,20 +127,20 @@ Radio-Venus/
 
 ## Database
 
-**~470 musicians** across all 12 Venus signs and 8 genres.
+**536 musicians** across all 12 Venus signs and 8 genres.
 
 | Genre | Artists |
 |-------|---------|
-| Classical / Orchestral | ~336 |
-| Ambient / Drone | ~75 |
-| IDM / Experimental | ~75 |
-| Techno / House | ~56 |
-| Industrial / Noise | ~23 |
-| Trip-Hop / Downtempo | ~23 |
-| Synthwave / Darkwave | ~14 |
-| Drum & Bass / Jungle | ~12 |
+| Classical / Orchestral | 345 |
+| IDM / Experimental | 128 |
+| Ambient / Drone | 81 |
+| Techno / House | 74 |
+| Synthwave / Darkwave | 63 |
+| Industrial / Noise | 42 |
+| Trip-Hop / Downtempo | 25 |
+| Drum & Bass / Jungle | 13 |
 
-The seed file contains **174 hand-curated artists** with verified embeddable YouTube video IDs and hand-assigned subgenres. Wikidata supplements this with additional musicians (primarily classical composers). The build script auto-derives subgenres for all artists using `categorizeSubgenres()`, so all ~470 artists participate in subgenre filtering. The build processes artists in parallel batches of 5.
+The seed file contains **230 artists** (174 original hand-curated + 56 discovered via smart-match) with verified embeddable YouTube video IDs and hand-assigned subgenres. Wikidata supplements this with additional musicians (primarily classical composers). The build script auto-derives subgenres for all artists using `categorizeSubgenres()`, so all 536 artists participate in subgenre filtering. The build processes artists in parallel batches of 5.
 
 ### Data model
 
@@ -221,7 +223,7 @@ Of the ~60 subgenres defined, **20 have 7+ artists** and are clickable in the UI
 | downtempo | 8 | triphop |
 | drone | 7 | ambient |
 
-The remaining ~40 subgenres have 1-6 artists each and appear as dimmed (non-clickable) chips. The 174 seed artists have hand-curated subgenres; Wikidata artists have subgenres auto-derived from their genre categories via `categorizeSubgenres()`.
+The remaining ~40 subgenres have 1-6 artists each and appear as dimmed (non-clickable) chips. The 230 seed artists have hand-curated subgenres; Wikidata artists have subgenres auto-derived from their genre categories via `categorizeSubgenres()`.
 
 ### Tag mapping
 
@@ -264,45 +266,50 @@ The `build:db` step regenerates `public/data/musicians.json` (checked into the r
 
 ## Design
 
-Dark atmospheric UI inspired by [cosine.club](https://cosine.club):
+Dark atmospheric UI inspired by [David Rudnick](https://davidrudnick.org) and [cosine.club](https://cosine.club):
 
-- **Background**: `#0a0a0c`
-- **Typography**: Monospace (`SF Mono`, `Fira Code`, `JetBrains Mono`)
+- **Background**: `#0a0a0c`, surface: `#242424`
+- **Typography**: IBM Plex Mono, Apple Garamond/EB Garamond (serif), Akzidenz-Grotesk/Archivo (sans)
 - **Element accent colors**: fire = `#c0392b`, earth = `#27ae60`, air = `#d4ac0d`, water = `#2980b9`
-- The accent color shifts based on the user's Venus element, theming the entire radio screen
+- **Rudnick zodiac palette**: Each genre button has a per-genre color (deep teal, coral, bright gold, etc.) that stays hidden at rest (black background) and pops as a vivid overlay on hover with a matching glow box-shadow
+- **Loading ring**: Rudnick ring SVG with `currentColor` fill, cycling through 12 zodiac palette colors via CSS keyframes (18s cycle)
 
-Screens transition with opacity fades. A loading overlay with a spinning Venus glyph (&#9792;) plays during the calculation "dramatic pause."
+Screens transition with opacity fades. The zoom animation replaces the loading overlay — submitting a birth date triggers a smooth 2.5s camera push into the zodiac ring.
 
 ### Zodiac Nebula
 
-A Canvas-based visualization (`src/viz.js`) draws all ~470 artists as a ring of element-colored dots at their ecliptic longitudes. Key features:
+A Canvas-based visualization (`src/viz.js`) draws all 536 artists as a ring of element-colored dots at their ecliptic longitudes. Key features:
 
 - **Whole-sign sector outlines** — 12 annular wedges with white outlines, signs progress counter-clockwise (astrological convention)
 - **Element colors** — fire (red), earth (green), air (yellow), water (blue)
-- **3D bead dots** — Radial gradients with offset highlight (top-left light source) give dots a dimensional, skeuomorphic look. Scaled 1.5x to compensate for soft gradient edges.
+- **Glassy "sharkot ball" dots** — 6-stop radial gradient with specular highlight offset top-left, bright glare falloff, body color, darkened rim, and hard edge cutoff. Gives dots a gem-like, graphic quality. Scaled 1.5x to compensate for gradient edges.
 - **Deterministic jitter** — Artist positions are hashed from their name, so the nebula is stable across renders (no `Math.random()`)
 - **Additive blending** — `globalCompositeOperation: 'lighter'` makes overlapping dots glow where signs are dense
 - **Slow rotation** — 360° in 240 seconds
-- **Hover readout** — Document-level mousemove hit-testing finds the nearest dot, expands it to 7px white, and shows the artist name + Venus sign/degree. Works on both portal (full ring) and genre (zoomed) screens. Interactive elements (inputs, buttons) take priority over hover detection. Custom 24px crosshair cursor generated as a canvas data URL.
+- **Under-dot labels** — In zoomed mode, each dot shows the artist name underneath in element color. On hover, the label goes bold white with a second line showing zodiac sign + degree (e.g., "Gemini 14.2°")
+- **"You" label** — The user's pulsing Venus dot has a "You" label beneath it in both full-ring and zoomed modes
+- **Hover detection** — Document-level mousemove hit-testing finds the nearest dot, expands it to 7px white. Interactive elements (inputs, buttons) take priority. Custom 24px crosshair cursor generated as a canvas data URL. Hovering a dot on the genre screen highlights the matching genre button with Rudnick palette colors.
+- **Click-to-play** — Clicking a dot on the genre screen navigates to that artist's radio stream
 - **Preview dot** — As the user types their birth date, a soft breathing glow appears at the corresponding Venus position on the ring, giving immediate visual feedback before submitting
-- **User Venus dot** — Pulsing dot with radial gradient glow at the user's exact ecliptic longitude
 - **HiDPI** — Scaled by `devicePixelRatio` for crisp Retina rendering
 
-**Zoom mode:** When navigating to the genre screen, `zoomToSign(signIndex)` locks rotation and applies a canvas scale/translate transform so only the user's 30° sign sector fills the background. The scale factor is `viewport height × 0.7 / band width`, making the artist dots large and visible behind the genre grid. The radial vignette fades out during zoom.
+**Animated zoom:** `zoomToSign()` returns a Promise and smoothly interpolates scale, translation, and rotation over a configurable duration (default 2.5s). The transform uses a focus-point interpolation — scaling around the target sign's position on the ring while simultaneously panning it toward screen center. Rotation takes the shortest angular path from the current free-spin angle to the locked position. `zoomOut()` plays the reverse animation (1.8s, ease-in cubic). The `zoomProgress` variable (0-1) drives all interpolations.
 
-The nebula container lives at body level (outside screens) so it persists across screen transitions. Visibility is toggled per screen: visible on portal (full ring) and genre (zoomed), hidden on reveal and radio.
+The nebula container lives at body level (outside screens) so it persists across screen transitions. Visibility is toggled per screen: visible on portal (full ring), reveal (zoomed), and genre (zoomed), hidden on radio.
 
 ### Genre screen
 
 The genre grid is a 2-column layout (480px max-width) where each cell contains:
-- A `.genre-btn` button (the main genre selector)
+- A `.genre-btn` button — black at rest (`--bg-surface`), Rudnick palette color pop on hover/highlight via `--genre-color-pop` custom properties (0.6-0.75 opacity, white text, glow box-shadow)
 - A `.subgenre-chips` row of small tags beneath it
 
-Subgenre chips at 0.7rem monospace, no background. **Active chips** (7+ artists) use the element accent color and show an underline on hover. **Inactive chips** (<7 artists) are dimmed to 40% opacity as informational tags. Hover tooltips show the exact artist count. The genre and reveal screens have a subtle radial accent glow matching the user's element color.
+**Active chips** (7+ artists) get solid accent fill with inverted text. **Inactive chips** (<7 artists) are dimmed as informational tags. Hover tooltips show the exact artist count. Hovering a nebula dot on the genre screen highlights the corresponding genre button with `.is-highlighted` class (same Rudnick color pop). Clicking a nebula dot navigates directly to that artist's radio stream.
 
 ### Track list
 
-Each track displays: artist name (left, truncated with ellipsis if long), Venus similarity percentage in accent color, and Venus sign with degree (right, e.g. "Gemini 13°"). Sign names are colored by their element (fire=red, earth=green, air=yellow, water=blue). The active track is highlighted in the accent color. Failed/restricted tracks are struck through at 25% opacity.
+The track list stretches to the bottom of the viewport (`flex: 1` in the radio layout flex column). A `.track-list-wrap::after` pseudo-element creates a 3.5rem gradient fade at the bottom (transparent → background color), making the list appear to dissolve endlessly into the page.
+
+Each track displays: artist name (left, truncated with ellipsis if long), Venus similarity percentage in accent color, and Venus sign with degree (right, e.g. "Gemini 13°"). Sign names are colored by their element. The active track has a left-border accent marker. Failed/restricted tracks are struck through at 25% opacity.
 
 ## Key dependencies
 

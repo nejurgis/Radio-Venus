@@ -8,9 +8,9 @@
 
 :root {
   --bg: #0a0a0c;
-  --bg-surface: #111115;
+  --bg-surface: #242424;
   --text: #c8c8d0;
-  --text-dim: #666670;
+  --text-dim: #c5c5c5;
   --text-bright: #e8e8f0;
   --border: #1e1e28;
   --accent: #888;
@@ -21,8 +21,12 @@
   --air: #d4ac0d;
   --water: #2980b9;
 
-  --font-mono: 'SF Mono', 'Fira Code', 'Cascadia Code', 'JetBrains Mono', monospace;
-  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  /* --font-mono: 'SF Mono', 'Fira Code', 'Cascadia Code', 'JetBrains Mono', monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; */
+
+  --font-mono: 'IBM Plex Mono', 'Menlo', monospace;
+  --font-serif: 'Apple Garamond', 'EB Garamond', serif;
+  --font-sans: 'Akzidenz-Grotesk', 'Archivo', Helvetica, Arial, sans-serif;
 
   --transition: 0.2s ease;
 }
@@ -189,7 +193,7 @@ html, body {
   font-size: 0.85rem;
   letter-spacing: 0.12em;
   padding: 0.75rem 2.5rem;
-  background: transparent;
+  background: black;
   color: var(--text);
   border: 1px solid var(--border);
   cursor: pointer;
@@ -206,6 +210,12 @@ html, body {
 .btn-primary:disabled {
   opacity: 0.3;
   cursor: default;
+}
+
+/* Portal fade-out during zoom animation */
+.screen.is-fading .screen-inner {
+  opacity: 0;
+  transition: opacity 0.8s ease;
 }
 
 /* ── Screen 2: Reveal ────────────────────────────────────────────────────── */
@@ -356,12 +366,12 @@ html, body {
 }
 
 .subgenre-chip {
-  font-family: var(--font-mono);
   font-size: 0.65rem;
   letter-spacing: 0.04em;
   padding: 0.2rem 0.4rem;
   color: var(--text-dim);
-  opacity: 0.5;
+  background-color: black;
+  opacity: 0.65;
   text-transform: lowercase;
   white-space: nowrap;
   cursor: default;
