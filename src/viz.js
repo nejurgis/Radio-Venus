@@ -239,8 +239,8 @@ function tick() {
   // ── Whole-sign sector outlines (12 annular wedges) ──────────────────────
   // Thin, crisp strokes inspired by Rudnick's ring aesthetic
   ctx.save();
-  ctx.strokeStyle = isZoomed ? 'rgba(255, 255, 255, 0.05)' : 'rgba(255, 255, 255, 0.1)';
-  ctx.lineWidth = isZoomed ? 0.15 : 0.4;
+  ctx.strokeStyle = isZoomed ? 'rgba(255, 255, 255, 0.3)' : 'rgba(255, 255, 255, 0.3)';
+  ctx.lineWidth = isZoomed ? 0.2 : 0.2;
   for (let i = 0; i < 12; i++) {
     const a0 = (-(i * 30) - 90 + rot) * Math.PI / 180;
     ctx.beginPath();
@@ -249,8 +249,8 @@ function tick() {
     ctx.stroke();
   }
   // Inner and outer ring circles — continuous thin strokes
-  ctx.lineWidth = isZoomed ? 0.1 : 0.3;
-  ctx.strokeStyle = isZoomed ? 'rgba(255, 255, 255, 0.04)' : 'rgba(255, 255, 255, 0.07)';
+  ctx.lineWidth = isZoomed ? 0.2 : 0.5;
+  ctx.strokeStyle = isZoomed ? 'rgba(255, 255, 255, 0.1)' : 'rgba(255, 255, 255, 0.3)';
   ctx.beginPath();
   ctx.arc(cx, cy, outerR, 0, Math.PI * 2);
   ctx.stroke();
@@ -301,33 +301,50 @@ function tick() {
     const dg = isHovered ? 255 : dot.g;
     const db = isHovered ? 255 : dot.b;
 
-    // Radial gradient with highlight offset for 3D bead effect
+    // Glassy "sharkot ball" gradient — hard graphic edge
     const grad = ctx.createRadialGradient(
-      x - drawSize * 0.2, y - drawSize * 0.2, 0,  // highlight (top-left)
-      x, y, drawSize                                 // outer edge
+      x - drawSize * 0.35, y - drawSize * 0.35, drawSize * 0.05,
+      x, y, drawSize
     );
+    const lr = Math.min(255, dr + 100);
+    const lg = Math.min(255, dg + 100);
+    const lb = Math.min(255, db + 100);
     grad.addColorStop(0, `rgba(255, 255, 255, ${drawAlpha})`);
-    grad.addColorStop(0.4, `rgba(${dr}, ${dg}, ${db}, ${drawAlpha * 0.8})`);
-    grad.addColorStop(1, `rgba(${dr}, ${dg}, ${db}, 0)`);
+    grad.addColorStop(0.2, `rgba(${lr}, ${lg}, ${lb}, ${drawAlpha * 0.95})`);
+    grad.addColorStop(0.5, `rgba(${dr}, ${dg}, ${db}, ${drawAlpha * 0.9})`);
+    grad.addColorStop(0.8, `rgba(${Math.round(dr * 0.5)}, ${Math.round(dg * 0.5)}, ${Math.round(db * 0.5)}, ${drawAlpha * 0.85})`);
+    grad.addColorStop(0.95, `rgba(${Math.round(dr * 0.3)}, ${Math.round(dg * 0.3)}, ${Math.round(db * 0.3)}, ${drawAlpha * 0.7})`);
+    grad.addColorStop(1, `rgba(${Math.round(dr * 0.1)}, ${Math.round(dg * 0.1)}, ${Math.round(db * 0.1)}, 0)`);
 
+    ctx.fillStyle = grad;
     ctx.beginPath();
     ctx.arc(x, y, drawSize, 0, Math.PI * 2);
-    ctx.fillStyle = grad;
     ctx.fill();
 
-    // Label under the dot (zoomed mode only)
+    // Label under the dot (zoomed mode only): name + sign + degree
     if (isZoomed) {
       ctx.save();
       ctx.globalCompositeOperation = 'source-over';
-      ctx.font = '1.5px monospace';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'top';
-      ctx.fillStyle = isHovered
-        ? 'rgba(255, 255, 255, 0.9)'
-        : `rgba(${dot.r}, ${dot.g}, ${dot.b}, ${dot.alpha * 0.7})`;
-      ctx.fillText(dot.name, x, y + drawSize + 1);
+      const degInSign = Math.round((dot.deg % 30) * 10) / 10;
+      if (isHovered) {
+        ctx.font = '2.2px monospace';
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'top';
+        ctx.fillText(dot.name, x, y + drawSize + 0.8);
+        ctx.font = '1.8px monospace';
+        ctx.fillStyle = `rgba(${dot.r}, ${dot.g}, ${dot.b}, 1)`;
+        ctx.fillText(`${dot.sign} ${degInSign}°`, x, y + drawSize + 2.8);
+      } else {
+        ctx.font = '1.3px monospace';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'top';
+        ctx.fillStyle = `rgba(${dot.r}, ${dot.g}, ${dot.b}, ${dot.alpha * 1})`;
+        ctx.fillText(dot.name, x, y + drawSize + 0.95);
+      }
       ctx.restore();
     }
+
   }
 
   const prevHovered = hoveredDot;
@@ -343,30 +360,6 @@ function tick() {
   }
 
   ctx.restore();
-
-  // ── Center readout (hovered artist name + sign) ───────────────────────
-  if (hoveredDot) {
-    // Draw readout outside the zoom transform so text stays screen-sized
-    ctx.save();
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-
-    const textX = w / 2;
-    const textY = isZoomed ? h * 0.1 : cy;
-
-    ctx.font = 'bold 13px monospace';
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
-    ctx.shadowColor = 'rgba(0, 0, 0, 0.8)';
-    ctx.shadowBlur = 4;
-    ctx.fillText(hoveredDot.name, textX, textY - 7);
-
-    ctx.font = '10px monospace';
-    ctx.fillStyle = `rgba(${hoveredDot.r}, ${hoveredDot.g}, ${hoveredDot.b}, 0.8)`;
-    const degInSign = Math.round((hoveredDot.deg % 30) * 10) / 10;
-    ctx.fillText(`${hoveredDot.sign} ${degInSign}°`, textX, textY + 8);
-
-    ctx.restore();
-  }
 
   // ── Preview dot (soft glow while typing birth date) ────────────────────
   if (previewDot && !userDot) {
@@ -414,6 +407,24 @@ function tick() {
     ctx.arc(x, y, coreR * pulse, 0, Math.PI * 2);
     ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
     ctx.fill();
+    ctx.restore();
+
+    // "You" label under the user dot
+    ctx.save();
+    ctx.globalCompositeOperation = 'source-over';
+    if (isZoomed) {
+      ctx.font = '1.8px monospace';
+      ctx.fillStyle = `rgba(${userDot.r}, ${userDot.g}, ${userDot.b}, 0.8)`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+      ctx.fillText('You', x, y + glowR * pulse + 1);
+    } else {
+      ctx.font = '9px monospace';
+      ctx.fillStyle = `rgba(${userDot.r}, ${userDot.g}, ${userDot.b}, 0.7)`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+      ctx.fillText('You', x, y + glowR * pulse + 3);
+    }
     ctx.restore();
   }
 
