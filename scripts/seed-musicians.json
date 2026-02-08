@@ -1,140 +1,1535 @@
 [
-  { "name": "Aphex Twin", "birthDate": "1971-08-18", "genres": ["idm", "ambient", "techno"], "youtubeVideoId": "Xw5AiRVqfqk" },
-  { "name": "Autechre", "birthDate": "1971-05-17", "genres": ["idm", "ambient"], "youtubeVideoId": "sZ7Mu8YJbSU" },
-  { "name": "Boards of Canada", "birthDate": "1970-06-01", "genres": ["idm", "ambient"], "youtubeVideoId": "A2zKARkpDW4" },
-  { "name": "Burial", "birthDate": "1979-12-11", "genres": ["dnb", "ambient"], "youtubeVideoId": "E2qLD9c3Gq4" },
-  { "name": "Brian Eno", "birthDate": "1948-05-15", "genres": ["ambient"], "youtubeVideoId": "vNwYtllyt3Q" },
-  { "name": "Kraftwerk", "birthDate": "1946-08-19", "genres": ["techno", "darkwave"], "youtubeVideoId": "D_8Pma1vHmw" },
-  { "name": "Tangerine Dream", "birthDate": "1944-01-29", "genres": ["ambient", "darkwave"], "youtubeVideoId": "Bk-k8RcLCUc" },
-  { "name": "Klaus Schulze", "birthDate": "1947-08-04", "genres": ["ambient"], "youtubeVideoId": "QeEzDAoInps" },
-  { "name": "Massive Attack", "birthDate": "1968-01-21", "genres": ["triphop"], "youtubeVideoId": "u7K72X4eo_s" },
-  { "name": "Portishead", "birthDate": "1971-04-06", "genres": ["triphop"], "youtubeVideoId": "yF-GvT8Clnk" },
-  { "name": "Tricky", "birthDate": "1968-01-27", "genres": ["triphop"], "youtubeVideoId": "E3R_3h6zQEs" },
-  { "name": "Throbbing Gristle", "birthDate": "1950-02-22", "genres": ["industrial"], "youtubeVideoId": "Y8klW9trVTQ" },
-  { "name": "Cabaret Voltaire", "birthDate": "1953-10-21", "genres": ["industrial", "darkwave"], "youtubeVideoId": "EkMRw-3UXi4" },
-  { "name": "Skinny Puppy", "birthDate": "1959-12-08", "genres": ["industrial"], "youtubeVideoId": "cod8bRiQjj4" },
-  { "name": "Front 242", "birthDate": "1961-08-23", "genres": ["industrial", "darkwave"], "youtubeVideoId": "m1cRGVaJF7Y" },
-  { "name": "Depeche Mode", "birthDate": "1961-05-09", "genres": ["darkwave"], "youtubeVideoId": "aGSKrC7dGcY" },
-  { "name": "Gary Numan", "birthDate": "1958-03-08", "genres": ["darkwave"], "youtubeVideoId": "Ldyx3KHOFXw" },
-  { "name": "John Carpenter", "birthDate": "1948-01-16", "genres": ["darkwave", "ambient"], "youtubeVideoId": "iQ4GKLU31L0" },
-  { "name": "Perturbator", "birthDate": "1990-11-15", "genres": ["darkwave"], "youtubeVideoId": "oTN6cGmH4jM" },
-  { "name": "Carpenter Brut", "birthDate": "1985-03-01", "genres": ["darkwave"], "youtubeVideoId": "DY1s9SmrQRE" },
-  { "name": "Jeff Mills", "birthDate": "1963-06-18", "genres": ["techno"], "youtubeVideoId": "vw-Pu8HZuBk" },
-  { "name": "Richie Hawtin", "birthDate": "1970-06-04", "genres": ["techno"], "youtubeVideoId": "F5BTo4y7QGY" },
-  { "name": "Carl Craig", "birthDate": "1969-05-22", "genres": ["techno"], "youtubeVideoId": "B5JGJEHRwjY" },
-  { "name": "Derrick May", "birthDate": "1963-04-06", "genres": ["techno"], "youtubeVideoId": "GEFHF5VdI00" },
-  { "name": "Underground Resistance", "birthDate": "1964-03-01", "genres": ["techno"], "youtubeVideoId": "w_x7DFmgX-0" },
-  { "name": "Drexciya", "birthDate": "1969-09-22", "genres": ["techno", "idm"], "youtubeVideoId": "6Yrm1a4jfAc" },
-  { "name": "Goldie", "birthDate": "1965-09-19", "genres": ["dnb"], "youtubeVideoId": "Usqwy2-E4SE" },
-  { "name": "Roni Size", "birthDate": "1969-10-29", "genres": ["dnb"], "youtubeVideoId": "cwI0gbGEU4U" },
-  { "name": "LTJ Bukem", "birthDate": "1967-01-18", "genres": ["dnb", "ambient"], "youtubeVideoId": "S2VGKGQN8MQ" },
-  { "name": "Squarepusher", "birthDate": "1975-01-17", "genres": ["dnb", "idm"], "youtubeVideoId": "fCbRNUGxlYs" },
-  { "name": "Venetian Snares", "birthDate": "1975-01-13", "genres": ["dnb", "idm"], "youtubeVideoId": "FbJ63spk48s" },
-  { "name": "Oneohtrix Point Never", "birthDate": "1982-07-17", "genres": ["idm", "ambient"], "youtubeVideoId": "4z6u_S_VIno" },
-  { "name": "Tim Hecker", "birthDate": "1974-04-08", "genres": ["ambient"], "youtubeVideoId": "6E4zYGzxgnU" },
-  { "name": "Fennesz", "birthDate": "1962-12-25", "genres": ["ambient", "idm"], "youtubeVideoId": "9_DjJFpqWRc" },
-  { "name": "Nils Frahm", "birthDate": "1982-09-20", "genres": ["classical", "ambient"], "youtubeVideoId": "xLNeZogTsNc" },
-  { "name": "Jon Hopkins", "birthDate": "1979-08-15", "genres": ["ambient", "techno"], "youtubeVideoId": "Q04ILDXe3QE" },
-  { "name": "Four Tet", "birthDate": "1978-08-30", "genres": ["techno", "idm"], "youtubeVideoId": "vGeJVHwOZSk" },
-  { "name": "Actress", "birthDate": "1979-01-01", "genres": ["techno", "ambient"], "youtubeVideoId": "h3l8bNhJKfU" },
-  { "name": "Andy Stott", "birthDate": "1981-03-12", "genres": ["techno", "industrial"], "youtubeVideoId": "e-0rWeP8vMs" },
-  { "name": "Merzbow", "birthDate": "1956-12-19", "genres": ["industrial"], "youtubeVideoId": "AguPH0XBxdw" },
-  { "name": "Sunn O)))", "birthDate": "1972-01-05", "genres": ["ambient", "industrial"], "youtubeVideoId": "HkIpFqcIYnQ" },
-  { "name": "Lustmord", "birthDate": "1957-12-01", "genres": ["ambient", "industrial"], "youtubeVideoId": "gB7IQxE_03s" },
-  { "name": "The Hacker", "birthDate": "1973-03-15", "genres": ["techno", "darkwave"], "youtubeVideoId": "lAkXQmJSR6E" },
-  { "name": "DJ Spooky", "birthDate": "1970-09-11", "genres": ["triphop", "idm"], "youtubeVideoId": "M1Nc6EGfBM4" },
-  { "name": "Amon Tobin", "birthDate": "1972-02-07", "genres": ["dnb", "idm", "triphop"], "youtubeVideoId": "hDBW1TvABRI" },
-  { "name": "Flying Lotus", "birthDate": "1983-10-07", "genres": ["idm", "triphop"], "youtubeVideoId": "0ScYz9sNaQk" },
-  { "name": "Bonobo", "birthDate": "1976-03-30", "genres": ["triphop", "techno"], "youtubeVideoId": "cTjF2_-bneM" },
-  { "name": "Plastikman", "birthDate": "1970-06-04", "genres": ["techno"], "youtubeVideoId": "MIKlBccKnHQ" },
-  { "name": "Helena Hauff", "birthDate": "1989-03-01", "genres": ["techno", "industrial"], "youtubeVideoId": "3MPLloIeAXQ" },
-  { "name": "Daniel Avery", "birthDate": "1985-04-13", "genres": ["techno", "ambient"], "youtubeVideoId": "dvmtfMGxwPc" },
-  { "name": "Grimes", "birthDate": "1988-03-17", "genres": ["darkwave", "idm"], "youtubeVideoId": "1FH-q0I1fJY" },
-  { "name": "Arca", "birthDate": "1989-04-20", "genres": ["idm", "industrial"], "youtubeVideoId": "CxBfMHsdByQ" },
-  { "name": "Moderat", "birthDate": "1977-07-06", "genres": ["techno", "idm"], "youtubeVideoId": "3NPxqXMZq7o" },
-  { "name": "SOPHIE", "birthDate": "1986-09-17", "genres": ["idm", "industrial"], "youtubeVideoId": "es9-P1SOtHU" },
-  { "name": "Nicolas Jaar", "birthDate": "1990-01-03", "genres": ["techno", "ambient"], "youtubeVideoId": "dDSMLLbR2Bo" },
-  { "name": "Holly Herndon", "birthDate": "1980-07-26", "genres": ["idm", "ambient"], "youtubeVideoId": "nHujh3yA3BE" },
-  { "name": "Ben Frost", "birthDate": "1980-11-19", "genres": ["ambient", "industrial"], "youtubeVideoId": "1_3jivZn5K4" },
-  { "name": "Sevdaliza", "birthDate": "1987-04-12", "genres": ["triphop", "idm"], "youtubeVideoId": "4WKQB_sOlv4" },
-
-  { "name": "Monolake", "birthDate": "1969-05-10", "genres": ["techno", "idm"] },
-  { "name": "Pole", "birthDate": "1967-03-18", "genres": ["techno", "idm"] },
-  { "name": "Jan Jelinek", "birthDate": "1969-07-29", "genres": ["idm", "ambient"] },
-  { "name": "Ryoji Ikeda", "birthDate": "1966-04-15", "genres": ["idm", "industrial"] },
-  { "name": "Oval", "birthDate": "1964-08-01", "genres": ["idm", "ambient"] },
-  { "name": "Murcof", "birthDate": "1970-07-16", "genres": ["idm", "classical"] },
-  { "name": "Vladislav Delay", "birthDate": "1976-10-23", "genres": ["techno", "idm"] },
-  { "name": "Pan Sonic", "birthDate": "1963-06-23", "genres": ["industrial", "techno"] },
-  { "name": "Mouse on Mars", "birthDate": "1969-09-02", "genres": ["idm"] },
-  { "name": "Porter Ricks", "birthDate": "1966-01-01", "genres": ["techno", "ambient"] },
-  { "name": "Echospace", "birthDate": "1969-07-28", "genres": ["techno", "ambient"] },
-  { "name": "Demdike Stare", "birthDate": "1979-01-01", "genres": ["ambient", "industrial"] },
-  { "name": "Raime", "birthDate": "1980-01-01", "genres": ["industrial", "ambient"] },
-  { "name": "The Field", "birthDate": "1976-10-06", "genres": ["techno", "ambient"] },
-  { "name": "Huerco S.", "birthDate": "1991-01-01", "genres": ["techno", "ambient"] },
-  { "name": "Shinichi Atobe", "birthDate": "1970-01-01", "genres": ["techno"] },
-  { "name": "Harold Budd", "birthDate": "1936-05-24", "genres": ["ambient", "classical"] },
-  { "name": "Hiroshi Yoshimura", "birthDate": "1940-10-22", "genres": ["ambient", "classical"] },
-  { "name": "Midori Takada", "birthDate": "1951-12-21", "genres": ["ambient", "classical"] },
-  { "name": "Susumu Yokota", "birthDate": "1961-04-22", "genres": ["ambient", "techno"] },
-  { "name": "Ulrich Schnauss", "birthDate": "1977-11-20", "genres": ["idm", "ambient"] },
-  { "name": "Tycho", "birthDate": "1977-02-07", "genres": ["idm", "ambient"] },
-  { "name": "The Future Sound of London", "birthDate": "1967-01-14", "genres": ["idm", "techno"] },
-  { "name": "Orbital", "birthDate": "1968-02-28", "genres": ["techno"] },
-  { "name": "Underworld", "birthDate": "1957-01-13", "genres": ["techno"] },
-  { "name": "Plaid", "birthDate": "1969-01-01", "genres": ["idm"] },
-  { "name": "The Black Dog", "birthDate": "1969-01-01", "genres": ["idm", "techno"] },
-  { "name": "LFO", "birthDate": "1971-06-12", "genres": ["techno", "idm"] },
-  { "name": "Nightmares on Wax", "birthDate": "1970-01-15", "genres": ["triphop"] },
-  { "name": "DJ Shadow", "birthDate": "1972-06-29", "genres": ["triphop"] },
-  { "name": "UNKLE", "birthDate": "1974-02-21", "genres": ["triphop", "darkwave"] },
-  { "name": "Photek", "birthDate": "1971-12-28", "genres": ["dnb", "idm"] },
-
-  { "name": "William Basinski", "birthDate": "1958-06-25", "genres": ["ambient"], "youtubeVideoId": "mjnAE5go9dI" },
-  { "name": "Stars of the Lid", "birthDate": "1969-09-17", "genres": ["ambient", "classical"] },
-  { "name": "Gas", "birthDate": "1961-02-12", "genres": ["ambient", "techno"] },
-  { "name": "Biosphere", "birthDate": "1962-05-30", "genres": ["ambient"] },
-  { "name": "The Orb", "birthDate": "1959-11-05", "genres": ["ambient", "techno"] },
-  { "name": "Global Communication", "birthDate": "1971-05-13", "genres": ["ambient"] },
-  { "name": "Carbon Based Lifeforms", "birthDate": "1976-05-27", "genres": ["ambient"], "youtubeVideoId": "-9pgIVcB3rk" },
-  { "name": "Terry Riley", "birthDate": "1935-06-24", "genres": ["classical"] },
-  { "name": "Rhythm & Sound", "birthDate": "1963-06-18", "genres": ["techno"] },
-  { "name": "Basic Channel", "birthDate": "1961-02-12", "genres": ["techno"], "youtubeVideoId": "Gi4vzEoJXHU" },
-  { "name": "Deepchord", "birthDate": "1967-07-28", "genres": ["techno", "ambient"] },
-  { "name": "Loscil", "birthDate": "1974-05-13", "genres": ["ambient"], "youtubeVideoId": "lv5WwSCXT2E" },
-  { "name": "Grouper", "birthDate": "1980-07-21", "genres": ["ambient"], "youtubeVideoId": "d8g2uw4K7Ks" },
-  { "name": "Floating Points", "birthDate": "1986-09-23", "genres": ["techno", "idm"] },
-  { "name": "Max Richter", "birthDate": "1966-03-22", "genres": ["classical"] },
-  { "name": "Ryuichi Sakamoto", "birthDate": "1952-01-17", "genres": ["classical", "ambient"] },
-  { "name": "Alva Noto", "birthDate": "1965-09-18", "genres": ["idm", "industrial"] },
-
-  { "name": "Johann Sebastian Bach", "birthDate": "1685-03-31", "genres": ["classical"], "youtubeVideoId": "ho9rZjlsyYY" },
-  { "name": "Wolfgang Amadeus Mozart", "birthDate": "1756-01-27", "genres": ["classical"], "youtubeVideoId": "Rb0UmrCXxVA" },
-  { "name": "Ludwig van Beethoven", "birthDate": "1770-12-17", "genres": ["classical"], "youtubeVideoId": "W-fFHeTX70Q" },
-  { "name": "Frédéric Chopin", "birthDate": "1810-03-01", "genres": ["classical"], "youtubeVideoId": "9E6b3swbnWg" },
-  { "name": "Claude Debussy", "birthDate": "1862-08-22", "genres": ["classical"], "youtubeVideoId": "CvFH_6DNRCY" },
-  { "name": "Igor Stravinsky", "birthDate": "1882-06-17", "genres": ["classical"], "youtubeVideoId": "FFPjFjUonX8" },
-  { "name": "Sergei Rachmaninoff", "birthDate": "1873-04-01", "genres": ["classical"], "youtubeVideoId": "rEGOihjqO9w" },
-  { "name": "Pyotr Ilyich Tchaikovsky", "birthDate": "1840-05-07", "genres": ["classical"], "youtubeVideoId": "4_PSjr47AUo" },
-  { "name": "Franz Schubert", "birthDate": "1797-01-31", "genres": ["classical"], "youtubeVideoId": "vGq3-Fi_zQY" },
-  { "name": "Johannes Brahms", "birthDate": "1833-05-07", "genres": ["classical"], "youtubeVideoId": "s4R6JBO1HWA" },
-  { "name": "Antonio Vivaldi", "birthDate": "1678-03-04", "genres": ["classical"], "youtubeVideoId": "GRxofEmo3HA" },
-  { "name": "Gustav Mahler", "birthDate": "1860-07-07", "genres": ["classical"], "youtubeVideoId": "ypClfhEwwCw" },
-  { "name": "Richard Wagner", "birthDate": "1813-05-22", "genres": ["classical"], "youtubeVideoId": "GGU1P6lBW6Q" },
-  { "name": "Dmitri Shostakovich", "birthDate": "1906-09-25", "genres": ["classical"], "youtubeVideoId": "PjFoQS4aAUY" },
-  { "name": "Maurice Ravel", "birthDate": "1875-03-07", "genres": ["classical"], "youtubeVideoId": "cJOW2caFNwE" },
-  { "name": "Erik Satie", "birthDate": "1866-05-17", "genres": ["classical", "ambient"], "youtubeVideoId": "S-Xm7s9eGxU" },
-  { "name": "Philip Glass", "birthDate": "1937-01-31", "genres": ["classical", "ambient"], "youtubeVideoId": "6Stu7h7Qcp8" },
-  { "name": "Steve Reich", "birthDate": "1936-10-03", "genres": ["classical"], "youtubeVideoId": "g0WVh1D0N50" },
-  { "name": "Arvo Pärt", "birthDate": "1935-09-11", "genres": ["classical", "ambient"], "youtubeVideoId": "TJJpOabDPMc" },
-  { "name": "Béla Bartók", "birthDate": "1881-03-25", "genres": ["classical"], "youtubeVideoId": "m2GFifEInSo" },
-  { "name": "Sergei Prokofiev", "birthDate": "1891-04-27", "genres": ["classical"], "youtubeVideoId": "bBsKgEj3gbo" },
-  { "name": "Franz Liszt", "birthDate": "1811-10-22", "genres": ["classical"], "youtubeVideoId": "0FbQZCsYXVg" },
-  { "name": "Robert Schumann", "birthDate": "1810-06-08", "genres": ["classical"], "youtubeVideoId": "ck1wDRMoCPM" },
-  { "name": "Antonín Dvořák", "birthDate": "1841-09-08", "genres": ["classical"], "youtubeVideoId": "jOofzffyDSA" },
-  { "name": "Giuseppe Verdi", "birthDate": "1813-10-10", "genres": ["classical"], "youtubeVideoId": "xoXGrIIBo0o" },
-  { "name": "Jean Sibelius", "birthDate": "1865-12-08", "genres": ["classical"], "youtubeVideoId": "F5zg_af9b8c" },
-  { "name": "Henryk Górecki", "birthDate": "1933-12-06", "genres": ["classical"], "youtubeVideoId": "87HJZBMjw5Y" },
-  { "name": "John Adams", "birthDate": "1947-02-15", "genres": ["classical"], "youtubeVideoId": "OeeLa_bvOK0" }
+  {
+    "name": "Aphex Twin",
+    "birthDate": "1971-08-18",
+    "genres": [
+      "idm",
+      "ambient",
+      "techno"
+    ],
+    "youtubeVideoId": "Xw5AiRVqfqk"
+  },
+  {
+    "name": "Autechre",
+    "birthDate": "1971-05-17",
+    "genres": [
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "sZ7Mu8YJbSU"
+  },
+  {
+    "name": "Boards of Canada",
+    "birthDate": "1970-06-01",
+    "genres": [
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "A2zKARkpDW4"
+  },
+  {
+    "name": "Burial",
+    "birthDate": "1979-12-11",
+    "genres": [
+      "dnb",
+      "ambient"
+    ],
+    "youtubeVideoId": "E2qLD9c3Gq4"
+  },
+  {
+    "name": "Brian Eno",
+    "birthDate": "1948-05-15",
+    "genres": [
+      "ambient"
+    ],
+    "youtubeVideoId": "vNwYtllyt3Q"
+  },
+  {
+    "name": "Kraftwerk",
+    "birthDate": "1946-08-19",
+    "genres": [
+      "techno",
+      "darkwave"
+    ],
+    "youtubeVideoId": "D_8Pma1vHmw"
+  },
+  {
+    "name": "Tangerine Dream",
+    "birthDate": "1944-01-29",
+    "genres": [
+      "ambient",
+      "darkwave"
+    ],
+    "youtubeVideoId": "Bk-k8RcLCUc"
+  },
+  {
+    "name": "Klaus Schulze",
+    "birthDate": "1947-08-04",
+    "genres": [
+      "ambient"
+    ],
+    "youtubeVideoId": "QeEzDAoInps"
+  },
+  {
+    "name": "Massive Attack",
+    "birthDate": "1968-01-21",
+    "genres": [
+      "triphop"
+    ],
+    "youtubeVideoId": "u7K72X4eo_s"
+  },
+  {
+    "name": "Portishead",
+    "birthDate": "1971-04-06",
+    "genres": [
+      "triphop"
+    ],
+    "youtubeVideoId": "yF-GvT8Clnk"
+  },
+  {
+    "name": "Tricky",
+    "birthDate": "1968-01-27",
+    "genres": [
+      "triphop"
+    ],
+    "youtubeVideoId": "E3R_3h6zQEs"
+  },
+  {
+    "name": "Throbbing Gristle",
+    "birthDate": "1950-02-22",
+    "genres": [
+      "industrial"
+    ],
+    "youtubeVideoId": "Y8klW9trVTQ"
+  },
+  {
+    "name": "Cabaret Voltaire",
+    "birthDate": "1953-10-21",
+    "genres": [
+      "industrial",
+      "darkwave"
+    ],
+    "youtubeVideoId": "EkMRw-3UXi4"
+  },
+  {
+    "name": "Skinny Puppy",
+    "birthDate": "1959-12-08",
+    "genres": [
+      "industrial"
+    ],
+    "youtubeVideoId": "cod8bRiQjj4"
+  },
+  {
+    "name": "Front 242",
+    "birthDate": "1961-08-23",
+    "genres": [
+      "industrial",
+      "darkwave"
+    ],
+    "youtubeVideoId": "m1cRGVaJF7Y"
+  },
+  {
+    "name": "Depeche Mode",
+    "birthDate": "1961-05-09",
+    "genres": [
+      "darkwave"
+    ],
+    "youtubeVideoId": "aGSKrC7dGcY"
+  },
+  {
+    "name": "Gary Numan",
+    "birthDate": "1958-03-08",
+    "genres": [
+      "darkwave"
+    ],
+    "youtubeVideoId": "Ldyx3KHOFXw"
+  },
+  {
+    "name": "John Carpenter",
+    "birthDate": "1948-01-16",
+    "genres": [
+      "darkwave",
+      "ambient"
+    ],
+    "youtubeVideoId": "iQ4GKLU31L0"
+  },
+  {
+    "name": "Perturbator",
+    "birthDate": "1990-11-15",
+    "genres": [
+      "darkwave"
+    ],
+    "youtubeVideoId": "oTN6cGmH4jM"
+  },
+  {
+    "name": "Carpenter Brut",
+    "birthDate": "1985-03-01",
+    "genres": [
+      "darkwave"
+    ],
+    "youtubeVideoId": "DY1s9SmrQRE"
+  },
+  {
+    "name": "Jeff Mills",
+    "birthDate": "1963-06-18",
+    "genres": [
+      "techno"
+    ],
+    "youtubeVideoId": "vw-Pu8HZuBk"
+  },
+  {
+    "name": "Richie Hawtin",
+    "birthDate": "1970-06-04",
+    "genres": [
+      "techno"
+    ],
+    "youtubeVideoId": "F5BTo4y7QGY"
+  },
+  {
+    "name": "Carl Craig",
+    "birthDate": "1969-05-22",
+    "genres": [
+      "techno"
+    ],
+    "youtubeVideoId": "B5JGJEHRwjY"
+  },
+  {
+    "name": "Derrick May",
+    "birthDate": "1963-04-06",
+    "genres": [
+      "techno"
+    ],
+    "youtubeVideoId": "GEFHF5VdI00"
+  },
+  {
+    "name": "Underground Resistance",
+    "birthDate": "1964-03-01",
+    "genres": [
+      "techno"
+    ],
+    "youtubeVideoId": "w_x7DFmgX-0"
+  },
+  {
+    "name": "Drexciya",
+    "birthDate": "1969-09-22",
+    "genres": [
+      "techno",
+      "idm"
+    ],
+    "youtubeVideoId": "6Yrm1a4jfAc"
+  },
+  {
+    "name": "Goldie",
+    "birthDate": "1965-09-19",
+    "genres": [
+      "dnb"
+    ],
+    "youtubeVideoId": "Usqwy2-E4SE"
+  },
+  {
+    "name": "Roni Size",
+    "birthDate": "1969-10-29",
+    "genres": [
+      "dnb"
+    ],
+    "youtubeVideoId": "cwI0gbGEU4U"
+  },
+  {
+    "name": "LTJ Bukem",
+    "birthDate": "1967-01-18",
+    "genres": [
+      "dnb",
+      "ambient"
+    ],
+    "youtubeVideoId": "S2VGKGQN8MQ"
+  },
+  {
+    "name": "Squarepusher",
+    "birthDate": "1975-01-17",
+    "genres": [
+      "dnb",
+      "idm"
+    ],
+    "youtubeVideoId": "fCbRNUGxlYs"
+  },
+  {
+    "name": "Venetian Snares",
+    "birthDate": "1975-01-13",
+    "genres": [
+      "dnb",
+      "idm"
+    ],
+    "youtubeVideoId": "FbJ63spk48s"
+  },
+  {
+    "name": "Oneohtrix Point Never",
+    "birthDate": "1982-07-17",
+    "genres": [
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "4z6u_S_VIno"
+  },
+  {
+    "name": "Tim Hecker",
+    "birthDate": "1974-04-08",
+    "genres": [
+      "ambient"
+    ],
+    "youtubeVideoId": "6E4zYGzxgnU"
+  },
+  {
+    "name": "Fennesz",
+    "birthDate": "1962-12-25",
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "9_DjJFpqWRc"
+  },
+  {
+    "name": "Nils Frahm",
+    "birthDate": "1982-09-20",
+    "genres": [
+      "classical",
+      "ambient"
+    ],
+    "youtubeVideoId": "xLNeZogTsNc"
+  },
+  {
+    "name": "Jon Hopkins",
+    "birthDate": "1979-08-15",
+    "genres": [
+      "ambient",
+      "techno"
+    ],
+    "youtubeVideoId": "Q04ILDXe3QE"
+  },
+  {
+    "name": "Four Tet",
+    "birthDate": "1978-08-30",
+    "genres": [
+      "techno",
+      "idm"
+    ],
+    "youtubeVideoId": "vGeJVHwOZSk"
+  },
+  {
+    "name": "Actress",
+    "birthDate": "1979-01-01",
+    "genres": [
+      "techno",
+      "ambient"
+    ],
+    "youtubeVideoId": "h3l8bNhJKfU"
+  },
+  {
+    "name": "Andy Stott",
+    "birthDate": "1981-03-12",
+    "genres": [
+      "techno",
+      "industrial"
+    ],
+    "youtubeVideoId": "e-0rWeP8vMs"
+  },
+  {
+    "name": "Merzbow",
+    "birthDate": "1956-12-19",
+    "genres": [
+      "industrial"
+    ],
+    "youtubeVideoId": "AguPH0XBxdw"
+  },
+  {
+    "name": "Sunn O)))",
+    "birthDate": "1972-01-05",
+    "genres": [
+      "ambient",
+      "industrial"
+    ],
+    "youtubeVideoId": "HkIpFqcIYnQ"
+  },
+  {
+    "name": "Lustmord",
+    "birthDate": "1957-12-01",
+    "genres": [
+      "ambient",
+      "industrial"
+    ],
+    "youtubeVideoId": "gB7IQxE_03s"
+  },
+  {
+    "name": "The Hacker",
+    "birthDate": "1973-03-15",
+    "genres": [
+      "techno",
+      "darkwave"
+    ],
+    "youtubeVideoId": "lAkXQmJSR6E"
+  },
+  {
+    "name": "DJ Spooky",
+    "birthDate": "1970-09-11",
+    "genres": [
+      "triphop",
+      "idm"
+    ],
+    "youtubeVideoId": "M1Nc6EGfBM4"
+  },
+  {
+    "name": "Amon Tobin",
+    "birthDate": "1972-02-07",
+    "genres": [
+      "dnb",
+      "idm",
+      "triphop"
+    ],
+    "youtubeVideoId": "hDBW1TvABRI"
+  },
+  {
+    "name": "Flying Lotus",
+    "birthDate": "1983-10-07",
+    "genres": [
+      "idm",
+      "triphop"
+    ],
+    "youtubeVideoId": "0ScYz9sNaQk"
+  },
+  {
+    "name": "Bonobo",
+    "birthDate": "1976-03-30",
+    "genres": [
+      "triphop",
+      "techno"
+    ],
+    "youtubeVideoId": "cTjF2_-bneM"
+  },
+  {
+    "name": "Plastikman",
+    "birthDate": "1970-06-04",
+    "genres": [
+      "techno"
+    ],
+    "youtubeVideoId": "MIKlBccKnHQ"
+  },
+  {
+    "name": "Helena Hauff",
+    "birthDate": "1989-03-01",
+    "genres": [
+      "techno",
+      "industrial"
+    ],
+    "youtubeVideoId": "3MPLloIeAXQ"
+  },
+  {
+    "name": "Daniel Avery",
+    "birthDate": "1985-04-13",
+    "genres": [
+      "techno",
+      "ambient"
+    ],
+    "youtubeVideoId": "dvmtfMGxwPc"
+  },
+  {
+    "name": "Grimes",
+    "birthDate": "1988-03-17",
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "1FH-q0I1fJY"
+  },
+  {
+    "name": "Arca",
+    "birthDate": "1989-04-20",
+    "genres": [
+      "idm",
+      "industrial"
+    ],
+    "youtubeVideoId": "CxBfMHsdByQ"
+  },
+  {
+    "name": "Moderat",
+    "birthDate": "1977-07-06",
+    "genres": [
+      "techno",
+      "idm"
+    ],
+    "youtubeVideoId": "3NPxqXMZq7o"
+  },
+  {
+    "name": "SOPHIE",
+    "birthDate": "1986-09-17",
+    "genres": [
+      "idm",
+      "industrial"
+    ],
+    "youtubeVideoId": "es9-P1SOtHU"
+  },
+  {
+    "name": "Nicolas Jaar",
+    "birthDate": "1990-01-03",
+    "genres": [
+      "techno",
+      "ambient"
+    ],
+    "youtubeVideoId": "dDSMLLbR2Bo"
+  },
+  {
+    "name": "Holly Herndon",
+    "birthDate": "1980-07-26",
+    "genres": [
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "nHujh3yA3BE"
+  },
+  {
+    "name": "Ben Frost",
+    "birthDate": "1980-11-19",
+    "genres": [
+      "ambient",
+      "industrial"
+    ],
+    "youtubeVideoId": "1_3jivZn5K4"
+  },
+  {
+    "name": "Sevdaliza",
+    "birthDate": "1987-04-12",
+    "genres": [
+      "triphop",
+      "idm"
+    ],
+    "youtubeVideoId": "4WKQB_sOlv4"
+  },
+  {
+    "name": "Monolake",
+    "birthDate": "1969-05-10",
+    "genres": [
+      "techno",
+      "idm"
+    ],
+    "youtubeVideoId": "Es1_vd8cQBs"
+  },
+  {
+    "name": "Pole",
+    "birthDate": "1967-03-18",
+    "genres": [
+      "techno",
+      "idm"
+    ],
+    "youtubeVideoId": "Iuk85FwtGVg"
+  },
+  {
+    "name": "Jan Jelinek",
+    "birthDate": "1969-07-29",
+    "genres": [
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "jSFbtIyAqRw"
+  },
+  {
+    "name": "Ryoji Ikeda",
+    "birthDate": "1966-04-15",
+    "genres": [
+      "idm",
+      "industrial"
+    ],
+    "youtubeVideoId": "uvSLLyePrRk"
+  },
+  {
+    "name": "Oval",
+    "birthDate": "1964-08-01",
+    "genres": [
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "vQ3UouDs3UE"
+  },
+  {
+    "name": "Murcof",
+    "birthDate": "1970-07-16",
+    "genres": [
+      "idm",
+      "classical"
+    ],
+    "youtubeVideoId": "GGGfLLkIoVc"
+  },
+  {
+    "name": "Vladislav Delay",
+    "birthDate": "1976-10-23",
+    "genres": [
+      "techno",
+      "idm"
+    ],
+    "youtubeVideoId": "2rOmE6zIrno"
+  },
+  {
+    "name": "Pan Sonic",
+    "birthDate": "1963-06-23",
+    "genres": [
+      "industrial",
+      "techno"
+    ],
+    "youtubeVideoId": "fTANmkG8sWM"
+  },
+  {
+    "name": "Mouse on Mars",
+    "birthDate": "1969-09-02",
+    "genres": [
+      "idm"
+    ],
+    "youtubeVideoId": "CL7qasY77wA"
+  },
+  {
+    "name": "Porter Ricks",
+    "birthDate": "1966-01-01",
+    "genres": [
+      "techno",
+      "ambient"
+    ],
+    "youtubeVideoId": "gmNoOBEfNqU"
+  },
+  {
+    "name": "Echospace",
+    "birthDate": "1969-07-28",
+    "genres": [
+      "techno",
+      "ambient"
+    ],
+    "youtubeVideoId": "pnubPGFQzPQ"
+  },
+  {
+    "name": "Demdike Stare",
+    "birthDate": "1979-01-01",
+    "genres": [
+      "ambient",
+      "industrial"
+    ],
+    "youtubeVideoId": "CNoxM9VByVo"
+  },
+  {
+    "name": "Raime",
+    "birthDate": "1980-01-01",
+    "genres": [
+      "industrial",
+      "ambient"
+    ],
+    "youtubeVideoId": "wUOJiQ6uhx4"
+  },
+  {
+    "name": "The Field",
+    "birthDate": "1976-10-06",
+    "genres": [
+      "techno",
+      "ambient"
+    ],
+    "youtubeVideoId": "GeJEKCZLbTE"
+  },
+  {
+    "name": "Huerco S.",
+    "birthDate": "1991-01-01",
+    "genres": [
+      "techno",
+      "ambient"
+    ],
+    "youtubeVideoId": "7Cc-0beyRXE"
+  },
+  {
+    "name": "Shinichi Atobe",
+    "birthDate": "1970-01-01",
+    "genres": [
+      "techno"
+    ],
+    "youtubeVideoId": "NmAFmW5_g78"
+  },
+  {
+    "name": "Harold Budd",
+    "birthDate": "1936-05-24",
+    "genres": [
+      "ambient",
+      "classical"
+    ],
+    "youtubeVideoId": "wD7l5wod1-M"
+  },
+  {
+    "name": "Hiroshi Yoshimura",
+    "birthDate": "1940-10-22",
+    "genres": [
+      "ambient",
+      "classical"
+    ],
+    "youtubeVideoId": "ZJSuKb8YAYI"
+  },
+  {
+    "name": "Midori Takada",
+    "birthDate": "1951-12-21",
+    "genres": [
+      "ambient",
+      "classical"
+    ],
+    "youtubeVideoId": "Bululwnj4ik"
+  },
+  {
+    "name": "Susumu Yokota",
+    "birthDate": "1961-04-22",
+    "genres": [
+      "ambient",
+      "techno"
+    ],
+    "youtubeVideoId": "Gym0RBc6P80"
+  },
+  {
+    "name": "Ulrich Schnauss",
+    "birthDate": "1977-11-20",
+    "genres": [
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "9WujHGP0ojY"
+  },
+  {
+    "name": "Tycho",
+    "birthDate": "1977-02-07",
+    "genres": [
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "BGXOYfZMR0w"
+  },
+  {
+    "name": "The Future Sound of London",
+    "birthDate": "1967-01-14",
+    "genres": [
+      "idm",
+      "techno"
+    ],
+    "youtubeVideoId": "TBloEUeOC40"
+  },
+  {
+    "name": "Orbital",
+    "birthDate": "1968-02-28",
+    "genres": [
+      "techno"
+    ],
+    "youtubeVideoId": "jXfZb8PxdW0"
+  },
+  {
+    "name": "Underworld",
+    "birthDate": "1957-01-13",
+    "genres": [
+      "techno"
+    ],
+    "youtubeVideoId": "rAOHJqJMYDA"
+  },
+  {
+    "name": "Plaid",
+    "birthDate": "1969-01-01",
+    "genres": [
+      "idm"
+    ],
+    "youtubeVideoId": "zmFdxSedhNU"
+  },
+  {
+    "name": "The Black Dog",
+    "birthDate": "1969-01-01",
+    "genres": [
+      "idm",
+      "techno"
+    ],
+    "youtubeVideoId": "nEhoiQGCVIE"
+  },
+  {
+    "name": "LFO",
+    "birthDate": "1971-06-12",
+    "genres": [
+      "techno",
+      "idm"
+    ],
+    "youtubeVideoId": "_E74W0eo3xM"
+  },
+  {
+    "name": "Nightmares on Wax",
+    "birthDate": "1970-01-15",
+    "genres": [
+      "triphop"
+    ],
+    "youtubeVideoId": "0-9t-jx3HJE"
+  },
+  {
+    "name": "DJ Shadow",
+    "birthDate": "1972-06-29",
+    "genres": [
+      "triphop"
+    ],
+    "youtubeVideoId": "Pcz7MBfgD8g"
+  },
+  {
+    "name": "UNKLE",
+    "birthDate": "1974-02-21",
+    "genres": [
+      "triphop",
+      "darkwave"
+    ],
+    "youtubeVideoId": "8BbZwXn-oV0"
+  },
+  {
+    "name": "Photek",
+    "birthDate": "1971-12-28",
+    "genres": [
+      "dnb",
+      "idm"
+    ],
+    "youtubeVideoId": "bo2mhNsp7pc"
+  },
+  {
+    "name": "William Basinski",
+    "birthDate": "1958-06-25",
+    "genres": [
+      "ambient"
+    ],
+    "youtubeVideoId": "mjnAE5go9dI"
+  },
+  {
+    "name": "Stars of the Lid",
+    "birthDate": "1969-09-17",
+    "genres": [
+      "ambient",
+      "classical"
+    ],
+    "youtubeVideoId": "c4E6RO4muLU"
+  },
+  {
+    "name": "Gas",
+    "birthDate": "1961-02-12",
+    "genres": [
+      "ambient",
+      "techno"
+    ],
+    "youtubeVideoId": "NB7lTEEji08"
+  },
+  {
+    "name": "Biosphere",
+    "birthDate": "1962-05-30",
+    "genres": [
+      "ambient"
+    ],
+    "youtubeVideoId": "K60wMYk-b_Q"
+  },
+  {
+    "name": "The Orb",
+    "birthDate": "1959-11-05",
+    "genres": [
+      "ambient",
+      "techno"
+    ],
+    "youtubeVideoId": "AaXT3raG5gY"
+  },
+  {
+    "name": "Global Communication",
+    "birthDate": "1971-05-13",
+    "genres": [
+      "ambient"
+    ],
+    "youtubeVideoId": "RxNPb71JEbs"
+  },
+  {
+    "name": "Carbon Based Lifeforms",
+    "birthDate": "1976-05-27",
+    "genres": [
+      "ambient"
+    ],
+    "youtubeVideoId": "-9pgIVcB3rk"
+  },
+  {
+    "name": "Terry Riley",
+    "birthDate": "1935-06-24",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "sqQ59i4PmGE"
+  },
+  {
+    "name": "Rhythm & Sound",
+    "birthDate": "1963-06-18",
+    "genres": [
+      "techno"
+    ],
+    "youtubeVideoId": "xH9bgpCHyJA"
+  },
+  {
+    "name": "Basic Channel",
+    "birthDate": "1961-02-12",
+    "genres": [
+      "techno"
+    ],
+    "youtubeVideoId": "Gi4vzEoJXHU"
+  },
+  {
+    "name": "Deepchord",
+    "birthDate": "1967-07-28",
+    "genres": [
+      "techno",
+      "ambient"
+    ],
+    "youtubeVideoId": "orbvFaEYhw8"
+  },
+  {
+    "name": "Loscil",
+    "birthDate": "1974-05-13",
+    "genres": [
+      "ambient"
+    ],
+    "youtubeVideoId": "lv5WwSCXT2E"
+  },
+  {
+    "name": "Grouper",
+    "birthDate": "1980-07-21",
+    "genres": [
+      "ambient"
+    ],
+    "youtubeVideoId": "d8g2uw4K7Ks"
+  },
+  {
+    "name": "Floating Points",
+    "birthDate": "1986-09-23",
+    "genres": [
+      "techno",
+      "idm"
+    ],
+    "youtubeVideoId": "ucdYt46DpX8"
+  },
+  {
+    "name": "Max Richter",
+    "birthDate": "1966-03-22",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "tC0cp-dF2Jo"
+  },
+  {
+    "name": "Ryuichi Sakamoto",
+    "birthDate": "1952-01-17",
+    "genres": [
+      "classical",
+      "ambient"
+    ],
+    "youtubeVideoId": "HAFLW-dQpyE"
+  },
+  {
+    "name": "Alva Noto",
+    "birthDate": "1965-09-18",
+    "genres": [
+      "idm",
+      "industrial"
+    ],
+    "youtubeVideoId": "OEBZuKxUrwE"
+  },
+  {
+    "name": "Johann Sebastian Bach",
+    "birthDate": "1685-03-31",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "ho9rZjlsyYY"
+  },
+  {
+    "name": "Wolfgang Amadeus Mozart",
+    "birthDate": "1756-01-27",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "Rb0UmrCXxVA"
+  },
+  {
+    "name": "Ludwig van Beethoven",
+    "birthDate": "1770-12-17",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "W-fFHeTX70Q"
+  },
+  {
+    "name": "Frédéric Chopin",
+    "birthDate": "1810-03-01",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "9E6b3swbnWg"
+  },
+  {
+    "name": "Claude Debussy",
+    "birthDate": "1862-08-22",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "CvFH_6DNRCY"
+  },
+  {
+    "name": "Igor Stravinsky",
+    "birthDate": "1882-06-17",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "FFPjFjUonX8"
+  },
+  {
+    "name": "Sergei Rachmaninoff",
+    "birthDate": "1873-04-01",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "rEGOihjqO9w"
+  },
+  {
+    "name": "Pyotr Ilyich Tchaikovsky",
+    "birthDate": "1840-05-07",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "4_PSjr47AUo"
+  },
+  {
+    "name": "Franz Schubert",
+    "birthDate": "1797-01-31",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "vGq3-Fi_zQY"
+  },
+  {
+    "name": "Johannes Brahms",
+    "birthDate": "1833-05-07",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "s4R6JBO1HWA"
+  },
+  {
+    "name": "Antonio Vivaldi",
+    "birthDate": "1678-03-04",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "GRxofEmo3HA"
+  },
+  {
+    "name": "Gustav Mahler",
+    "birthDate": "1860-07-07",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "ypClfhEwwCw"
+  },
+  {
+    "name": "Richard Wagner",
+    "birthDate": "1813-05-22",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "GGU1P6lBW6Q"
+  },
+  {
+    "name": "Dmitri Shostakovich",
+    "birthDate": "1906-09-25",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "PjFoQS4aAUY"
+  },
+  {
+    "name": "Maurice Ravel",
+    "birthDate": "1875-03-07",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "cJOW2caFNwE"
+  },
+  {
+    "name": "Erik Satie",
+    "birthDate": "1866-05-17",
+    "genres": [
+      "classical",
+      "ambient"
+    ],
+    "youtubeVideoId": "S-Xm7s9eGxU"
+  },
+  {
+    "name": "Philip Glass",
+    "birthDate": "1937-01-31",
+    "genres": [
+      "classical",
+      "ambient"
+    ],
+    "youtubeVideoId": "6Stu7h7Qcp8"
+  },
+  {
+    "name": "Steve Reich",
+    "birthDate": "1936-10-03",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "g0WVh1D0N50"
+  },
+  {
+    "name": "Arvo Pärt",
+    "birthDate": "1935-09-11",
+    "genres": [
+      "classical",
+      "ambient"
+    ],
+    "youtubeVideoId": "TJJpOabDPMc"
+  },
+  {
+    "name": "Béla Bartók",
+    "birthDate": "1881-03-25",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "m2GFifEInSo"
+  },
+  {
+    "name": "Sergei Prokofiev",
+    "birthDate": "1891-04-27",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "bBsKgEj3gbo"
+  },
+  {
+    "name": "Franz Liszt",
+    "birthDate": "1811-10-22",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "0FbQZCsYXVg"
+  },
+  {
+    "name": "Robert Schumann",
+    "birthDate": "1810-06-08",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "ck1wDRMoCPM"
+  },
+  {
+    "name": "Antonín Dvořák",
+    "birthDate": "1841-09-08",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "jOofzffyDSA"
+  },
+  {
+    "name": "Giuseppe Verdi",
+    "birthDate": "1813-10-10",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "xoXGrIIBo0o"
+  },
+  {
+    "name": "Jean Sibelius",
+    "birthDate": "1865-12-08",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "F5zg_af9b8c"
+  },
+  {
+    "name": "Henryk Górecki",
+    "birthDate": "1933-12-06",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "87HJZBMjw5Y"
+  },
+  {
+    "name": "John Adams",
+    "birthDate": "1947-02-15",
+    "genres": [
+      "classical"
+    ],
+    "youtubeVideoId": "OeeLa_bvOK0"
+  },
+  {
+    "name": "AFX",
+    "birthDate": "1971-08-18",
+    "genres": [
+      "idm",
+      "ambient",
+      "techno"
+    ],
+    "youtubeVideoId": "DIrQNF6pfsg"
+  },
+  {
+    "name": "Polygon Window",
+    "birthDate": "1971-08-18",
+    "genres": [
+      "idm",
+      "techno",
+      "ambient"
+    ],
+    "youtubeVideoId": "J37ZExo9xoA"
+  },
+  {
+    "name": "µ-Ziq",
+    "birthDate": "1971-09-26",
+    "genres": [
+      "idm",
+      "ambient",
+      "dnb",
+      "techno"
+    ],
+    "youtubeVideoId": "XHtbU-lHb-s"
+  },
+  {
+    "name": "The Tuss",
+    "birthDate": "1971-08-18",
+    "genres": [
+      "idm",
+      "techno"
+    ],
+    "youtubeVideoId": "xrJIXAwA_HM"
+  },
+  {
+    "name": "Caustic Window",
+    "birthDate": "1971-08-18",
+    "genres": [
+      "idm",
+      "techno",
+      "ambient",
+      "triphop"
+    ],
+    "youtubeVideoId": "NeBuzmwOvhE"
+  },
+  {
+    "name": "Bradley Strider",
+    "birthDate": "1971-08-18",
+    "genres": [
+      "idm",
+      "techno",
+      "ambient"
+    ],
+    "youtubeVideoId": "Pa1OfT0hfCc"
+  },
+  {
+    "name": "GAK",
+    "birthDate": "1971-08-18",
+    "genres": [
+      "idm",
+      "techno"
+    ],
+    "youtubeVideoId": "oy74-ms2fVA"
+  },
+  {
+    "name": "Kid Spatula",
+    "birthDate": "1971-09-26",
+    "genres": [
+      "idm",
+      "dnb"
+    ],
+    "youtubeVideoId": "J_hbfEHuaHM"
+  },
+  {
+    "name": "Datach'i",
+    "birthDate": "1977-00-00",
+    "genres": [
+      "dnb",
+      "idm"
+    ],
+    "youtubeVideoId": "a3zrY2i4SOQ"
+  },
+  {
+    "name": "Luke Vibert",
+    "birthDate": "1973-01-26",
+    "genres": [
+      "idm",
+      "techno",
+      "triphop",
+      "dnb"
+    ],
+    "youtubeVideoId": "d_G1LV1uKyA"
+  },
+  {
+    "name": "Power-Pill",
+    "birthDate": "1971-08-18",
+    "genres": [
+      "idm",
+      "techno"
+    ],
+    "youtubeVideoId": "pGWfy5kbAyA"
+  },
+  {
+    "name": "user18081971",
+    "birthDate": "1971-08-18",
+    "genres": [
+      "idm",
+      "techno"
+    ],
+    "youtubeVideoId": "NW8iLr6bAjI"
+  },
+  {
+    "name": "James Ferraro",
+    "birthDate": "1986-11-07",
+    "genres": [
+      "idm",
+      "ambient",
+      "industrial"
+    ],
+    "youtubeVideoId": "A5HiKYCiwCc"
+  },
+  {
+    "name": "Laurel Halo",
+    "birthDate": "1985-06-03",
+    "genres": [
+      "idm",
+      "techno",
+      "ambient"
+    ],
+    "youtubeVideoId": "8TeMNkNEPeM"
+  },
+  {
+    "name": "James K",
+    "birthDate": "1875-02-22",
+    "genres": [
+      "idm",
+      "ambient",
+      "triphop"
+    ],
+    "youtubeVideoId": "FhpIE3uCn2E"
+  },
+  {
+    "name": "Steve Hauschildt",
+    "birthDate": "1984-01-01",
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "_V76ZoLKvxg"
+  },
+  {
+    "name": "Casino Versus Japan",
+    "birthDate": "1973-05-05",
+    "genres": [
+      "idm",
+      "ambient",
+      "triphop"
+    ],
+    "youtubeVideoId": "cAoWP84Slfk"
+  },
+  {
+    "name": "Slag Boom Van Loon",
+    "birthDate": "1971-09-26",
+    "genres": [
+      "idm",
+      "ambient",
+      "triphop"
+    ],
+    "youtubeVideoId": "uxYCNdZfdUk"
+  },
+  {
+    "name": "Christ.",
+    "birthDate": "1712-10-30",
+    "genres": [
+      "idm",
+      "ambient",
+      "triphop"
+    ],
+    "youtubeVideoId": "QpXnWaZfPBo"
+  },
+  {
+    "name": "Chuck Person",
+    "birthDate": "1982-07-25",
+    "genres": [
+      "idm"
+    ],
+    "youtubeVideoId": "JfXOem1EERg"
+  },
+  {
+    "name": "Hype Williams",
+    "birthDate": "1970-07-00",
+    "genres": [
+      "idm",
+      "industrial",
+      "techno"
+    ],
+    "youtubeVideoId": "BYTPiHTfKbA"
+  },
+  {
+    "name": "Elysia Crampton",
+    "birthDate": "1985-12-09",
+    "genres": [
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "VTfutwyASMw"
+  },
+  {
+    "name": "Dean Blunt",
+    "birthDate": "1984-02-08",
+    "genres": [
+      "idm",
+      "triphop",
+      "industrial"
+    ],
+    "youtubeVideoId": "OuK_eqGCPC0"
+  },
+  {
+    "name": "Astrid Sonne",
+    "birthDate": "1994-01-01",
+    "genres": [
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "56M7d1oAZlo"
+  },
+  {
+    "name": "Julia Holter",
+    "birthDate": "1984-12-18",
+    "genres": [
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "3HGOxuMecP0"
+  },
+  {
+    "name": "Tujiko Noriko",
+    "birthDate": "1976-01-01",
+    "genres": [
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "tVg7mPo-Qvs"
+  },
+  {
+    "name": "Klein",
+    "birthDate": "1945-00-00",
+    "genres": [
+      "idm",
+      "ambient",
+      "industrial"
+    ],
+    "youtubeVideoId": "NXZXZypxQnw"
+  },
+  {
+    "name": "Lee Gamble",
+    "birthDate": "1953-01-01",
+    "genres": [
+      "idm",
+      "ambient",
+      "techno",
+      "industrial"
+    ],
+    "youtubeVideoId": "gu4OjIomJ74"
+  },
+  {
+    "name": "Lucrecia Dalt",
+    "birthDate": "1980-01-01",
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "y67jUZ8MsiA"
+  },
+  {
+    "name": "Nick León",
+    "birthDate": "1988-05-06",
+    "genres": [
+      "idm",
+      "techno",
+      "triphop"
+    ],
+    "youtubeVideoId": "zco53xoZ8aA"
+  },
+  {
+    "name": "Carrier",
+    "birthDate": "1849-01-16",
+    "genres": [
+      "idm",
+      "techno"
+    ],
+    "youtubeVideoId": "CeSvYv1pbFw"
+  },
+  {
+    "name": "ML Buch",
+    "birthDate": "1987-01-01",
+    "genres": [
+      "idm"
+    ],
+    "youtubeVideoId": "dAVPDFIZXdI"
+  },
+  {
+    "name": "Mark McGuire",
+    "birthDate": "1986-12-31",
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "WH3A_Ig6G7g"
+  },
+  {
+    "name": "Benoît Pioulard",
+    "birthDate": "1984-08-04",
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "CmrFHDBnTTA"
+  },
+  {
+    "name": "Arovane",
+    "birthDate": "1965-01-01",
+    "genres": [
+      "idm",
+      "ambient",
+      "triphop"
+    ],
+    "youtubeVideoId": "GubFhTwmJQQ"
+  },
+  {
+    "name": "Funki Porcini",
+    "birthDate": "1960-04-15",
+    "genres": [
+      "triphop",
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "Ao7SWH03q3c"
+  },
+  {
+    "name": "Boom Bip",
+    "birthDate": "1974-06-22",
+    "genres": [
+      "idm",
+      "ambient",
+      "triphop"
+    ],
+    "youtubeVideoId": "gkVEf080b-0"
+  },
+  {
+    "name": "Lusine ICL",
+    "birthDate": "2000-01-01",
+    "genres": [
+      "idm",
+      "ambient",
+      "techno",
+      "darkwave",
+      "classical",
+      "triphop"
+    ],
+    "youtubeVideoId": "Rtl3vMF9-Ck"
+  },
+  {
+    "name": "Bochum Welt",
+    "birthDate": "1975-00-00",
+    "genres": [
+      "idm",
+      "industrial",
+      "darkwave",
+      "ambient"
+    ],
+    "youtubeVideoId": "yBEqqYKF8ck"
+  }
 ]

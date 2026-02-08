@@ -241,7 +241,7 @@ async function getMusicBrainzBirthDate(artistName) {
       const b = match['life-span'].begin;
       if (b.length === 10) return b;          // YYYY-MM-DD
       if (b.length === 7) return `${b}-15`;   // YYYY-MM → mid-month
-      if (b.length === 4) return `${b}-01-01`; // YYYY → Jan 1
+      if (b.length === 4) return `${b}-06-15`; // YYYY → mid-year (averages Venus cycle)
     }
   } catch { return null; }
   return null;
