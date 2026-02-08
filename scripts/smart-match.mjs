@@ -188,9 +188,27 @@ async function getLastfmTags(artistName) {
   }
 }
 
-// ── Birth date discovery (Wikidata + Wikipedia fallback) ────────────────────
+// ── Manual overrides (for artists invisible to all databases) ────────────────
+
+const OVERRIDES_PATH = join(__dirname, 'manual-overrides.json');
+
+function loadOverrides() {
+  if (!existsSync(OVERRIDES_PATH)) return {};
+  try { return JSON.parse(readFileSync(OVERRIDES_PATH, 'utf-8')); }
+  catch { return {}; }
+}
+
+// ── Birth date discovery (4-tier) ───────────────────────────────────────────
 
 async function getBirthDate(artistName) {
+  // Strategy 0: Manual overrides (highest priority)
+  const overrides = loadOverrides();
+  const override = overrides[artistName] || overrides[artistName.toLowerCase()];
+  if (override?.birthDate) {
+    console.log(`    Found in manual-overrides.json`);
+    return override.birthDate;
+  }
+
   // Strategy 1: Wikidata (structured, fast)
   let date = await getWikidataBirthDate(artistName);
   if (date) return date;
@@ -368,13 +386,19 @@ async function main() {
           continue;
         }
 
-        // Get tags from Last.fm for genre categorization
-        const tags = await getLastfmTags(name);
-        await delay(300);
-
-        const genres = categorizeGenres(tags);
+        // Get genres: override > Last.fm tags
+        const overrides = loadOverrides();
+        const ov = overrides[name] || overrides[name.toLowerCase()];
+        let genres;
+        if (ov?.genres?.length) {
+          genres = ov.genres;
+        } else {
+          const tags = await getLastfmTags(name);
+          await delay(300);
+          genres = categorizeGenres(tags);
+        }
         if (genres.length === 0) {
-          console.log(`  - ${name} (${birthDate}): no matching genres [${tags.slice(0, 3).join(', ')}]`);
+          console.log(`  - ${name} (${birthDate}): no matching genres`);
           continue;
         }
 
