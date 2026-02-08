@@ -2840,5 +2840,150 @@
       "idm",
       "electro"
     ]
+  },
+  {
+    "name": "Alvin Curran",
+    "birthDate": "1938-12-13",
+    "genres": [
+      "classical",
+      "idm"
+    ],
+    "subgenres": [
+      "minimalist",
+      "experimental"
+    ]
+  },
+  {
+    "name": "Lino Capra Vaccina",
+    "birthDate": "1953-01-01",
+    "genres": [
+      "ambient",
+      "classical"
+    ],
+    "subgenres": [
+      "minimalist",
+      "ambient"
+    ]
+  },
+  {
+    "name": "R. Stevie Moore",
+    "birthDate": "1952-01-18",
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ]
+  },
+  {
+    "name": "Richard Skelton",
+    "birthDate": "1978-01-01",
+    "genres": [
+      "ambient"
+    ],
+    "subgenres": [
+      "drone",
+      "ambient"
+    ]
+  },
+  {
+    "name": "Chevel",
+    "birthDate": "1989-01-01",
+    "genres": [
+      "techno",
+      "idm"
+    ],
+    "subgenres": [
+      "minimal",
+      "techno",
+      "idm"
+    ]
+  },
+  {
+    "name": "Odd Nosdam",
+    "birthDate": "1976-01-01",
+    "genres": [
+      "idm",
+      "triphop"
+    ],
+    "subgenres": [
+      "glitch",
+      "experimental"
+    ]
+  },
+  {
+    "name": "Steve Everitt",
+    "birthDate": "1980-01-01",
+    "genres": [
+      "ambient",
+      "darkwave"
+    ],
+    "subgenres": [
+      "ambient",
+      "synthwave"
+    ]
+  },
+  {
+    "name": "Klimek",
+    "birthDate": "1973-01-01",
+    "genres": [
+      "ambient"
+    ],
+    "subgenres": [
+      "drone",
+      "ambient"
+    ]
+  },
+  {
+    "name": "Fis",
+    "birthDate": "2012-01-01",
+    "genres": [
+      "dnb",
+      "idm",
+      "industrial"
+    ],
+    "subgenres": [
+      "breakcore",
+      "experimental",
+      "noise"
+    ]
+  },
+  {
+    "name": "Howlround",
+    "birthDate": "1980-01-01",
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "experimental"
+    ]
+  },
+  {
+    "name": "Detritus",
+    "birthDate": "1978-01-01",
+    "genres": [
+      "dnb",
+      "industrial",
+      "idm"
+    ],
+    "subgenres": [
+      "breakcore",
+      "industrial",
+      "idm"
+    ]
+  },
+  {
+    "name": "Vit Fana",
+    "birthDate": "2014-01-01",
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "synth-pop",
+      "experimental"
+    ]
   }
 ]
