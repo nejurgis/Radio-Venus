@@ -2742,5 +2742,103 @@
       "darkwave",
       "idm"
     ]
+  },
+  {
+    "name": "Zoviet France",
+    "birthDate": "1980-01-01",
+    "genres": [
+      "industrial",
+      "ambient"
+    ],
+    "subgenres": [
+      "industrial",
+      "drone",
+      "ambient"
+    ]
+  },
+  {
+    "name": "Annie Hogan",
+    "birthDate": "1961-01-01",
+    "genres": [
+      "darkwave",
+      "classical"
+    ],
+    "subgenres": [
+      "synth-pop",
+      "darkwave"
+    ]
+  },
+  {
+    "name": "Stéphane Picq",
+    "birthDate": "1965-08-16",
+    "genres": [
+      "triphop",
+      "ambient"
+    ],
+    "subgenres": [
+      "downtempo",
+      "ambient"
+    ]
+  },
+  {
+    "name": "Francis Monkman",
+    "birthDate": "1949-06-09",
+    "genres": [
+      "classical",
+      "darkwave"
+    ],
+    "subgenres": [
+      "classical",
+      "synth-pop"
+    ]
+  },
+  {
+    "name": "Malcolm Ironton",
+    "birthDate": "1946-06-15",
+    "genres": [
+      "darkwave",
+      "classical"
+    ],
+    "subgenres": [
+      "synthwave"
+    ]
+  },
+  {
+    "name": "Purelink",
+    "birthDate": "2020-01-01",
+    "genres": [
+      "ambient",
+      "techno",
+      "triphop"
+    ],
+    "subgenres": [
+      "ambient",
+      "dub-techno",
+      "downtempo"
+    ]
+  },
+  {
+    "name": "Lucinda Chua",
+    "birthDate": "1988-01-01",
+    "genres": [
+      "ambient",
+      "classical"
+    ],
+    "subgenres": [
+      "ambient",
+      "neo-classical"
+    ]
+  },
+  {
+    "name": "Datassette",
+    "birthDate": "2000-01-01",
+    "genres": [
+      "idm",
+      "techno"
+    ],
+    "subgenres": [
+      "idm",
+      "electro"
+    ]
   }
 ]
