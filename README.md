@@ -35,24 +35,32 @@ The matcher (`src/matcher.js`) returns the **entire genre pool sorted by Venus p
 
 ### Venus similarity scoring (decanic precision)
 
-Within each fallback tier, results are sorted by **Venus proximity** rather than shuffled randomly. The similarity is computed as angular distance on the 360° ecliptic circle:
+Results are sorted by **Venus proximity** with a two-tier scoring system that respects sign boundaries — any degree in the same sign always ranks higher than any degree in a different sign:
 
+**Same sign (50-100%):**
 ```
-similarity = 100% × (1 - angularDistance / 180°)
+similarity = 50 + 50 × (1 - |degreeOffset| / 30)
 ```
 
-| Distance | Example | Similarity |
+**Different sign (0-49%):**
+```
+similarity = 49 × (1 - angularDistance / 180°)
+```
+
+| Relationship | Example | Similarity |
 |----------|---------|-----------|
-| 0° (conjunction) | Same degree | 100% |
-| 30° (one sign apart) | Adjacent signs | 83% |
-| 60° (sextile) | Same element | 67% |
-| 90° (square) | Tension aspect | 50% |
-| 120° (trine) | Harmonic aspect | 33% |
-| 180° (opposition) | Opposite sign | 0% |
+| Same degree | User 7° Gemini, artist 7° Gemini | 100% |
+| Same sign, far | User 0° Gemini, artist 29° Gemini | 52% |
+| Adjacent sign, close | User 29° Taurus, artist 0° Gemini | 49% |
+| One sign apart | ~30° angular distance | 41% |
+| Same element (sextile) | ~60° angular distance | 33% |
+| Square | ~90° angular distance | 25% |
+| Trine | ~120° angular distance | 16% |
+| Opposition | 180° angular distance | 0% |
 
-Artist Venus longitudes are reconstructed from `sign + degree` stored in `musicians.json`. The similarity percentage is displayed next to each artist in the track list. Artists closest to the user's exact Venus position appear first.
+Artist Venus longitudes are reconstructed from `sign + degree` stored in `musicians.json`. The similarity percentage is displayed next to each artist in the track list alongside their Venus sign and degree.
 
-This means if a user has Venus at 7° Gemini (decan 1), they'll see Gemini artists near 7° at the top (97-100%), then Gemini artists at 20°+ (90%+), then same-element artists sorted by proximity, etc.
+This means if a user has Venus at 7° Gemini, they'll see all Gemini artists at the top (50-100%), with the closest degrees first, followed by all other signs ranked by ecliptic distance (0-49%).
 
 ### Embed error handling
 
