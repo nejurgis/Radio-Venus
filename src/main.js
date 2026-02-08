@@ -1,7 +1,7 @@
 import { calculateVenus, makeBirthDate } from './venus.js';
 import { GENRE_CATEGORIES, SUBGENRES } from './genres.js';
 import { loadDatabase, getDatabase, match, getSubgenreCounts } from './matcher.js';
-import { initNebula, renderNebula, setUserVenus } from './viz.js';
+import { initNebula, renderNebula, setUserVenus, zoomToSign, zoomOut, showNebula } from './viz.js';
 import { loadYouTubeAPI, initPlayer, loadVideo, togglePlay, isPlaying } from './player.js';
 import {
   initScreens, showScreen, showLoading, setElementTheme,
@@ -137,7 +137,12 @@ async function onDateSubmit(d, m, y) {
   setUserVenus(venus.longitude, venus.element);
   renderReveal(venus);
   showLoading(false);
+  showNebula(false); // hide nebula on reveal screen
   showScreen('reveal');
+
+  // Venus sign index for zoom
+  const signIndex = ['Aries','Taurus','Gemini','Cancer','Leo','Virgo',
+    'Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'].indexOf(venus.sign);
 
   // Set up genre screen
   const genreLabel = id => GENRE_CATEGORIES.find(c => c.id === id)?.label || id;
@@ -155,7 +160,16 @@ async function onDateSubmit(d, m, y) {
   );
 
   document.getElementById('btn-choose-genre').addEventListener('click', () => {
+    showNebula(true);
+    zoomToSign(signIndex);
     showScreen('genre');
+  });
+
+  // Genre screen back → portal (date input)
+  document.getElementById('btn-back-genre').addEventListener('click', () => {
+    zoomOut();
+    showNebula(true);
+    showScreen('portal');
   });
 }
 
@@ -167,6 +181,7 @@ async function startRadio(genreId, genreLabel, subgenreId = null) {
   currentTrackIndex = 0;
 
   renderRadioHeader(venus.sign, genreLabel, subgenreId);
+  showNebula(false);
   showScreen('radio');
 
   if (tracks.length === 0) {
@@ -234,6 +249,7 @@ document.addEventListener('click', e => {
     togglePlay();
   }
   if (e.target.id === 'btn-back' || e.target.closest('#btn-back')) {
+    showNebula(true);
     showScreen('genre');
   }
 });

@@ -16,10 +16,10 @@ Genre pick  ──►  Subgenre filter  ──►  Venus similarity sort  ──
                                                                   YouTube Player
 ```
 
-1. **Portal** — User enters their birth date (DD/MM/YYYY)
+1. **Portal** — User enters their birth date (DD/MM/YYYY). A zodiac nebula ring shows the distribution of all ~430 artists as element-colored dots at their ecliptic longitudes, with whole-sign sector outlines. Hover over any dot to see the artist name and Venus position in a center readout.
 2. **Reveal** — Venus sign is calculated client-side and displayed with its glyph, degree, decan, and element
-3. **Genre** — User picks from 8 genre categories, each showing clickable subgenre chips underneath
-4. **Radio** — Matched artists play via the YouTube IFrame API, sorted by Venus proximity (0-100%)
+3. **Genre** — User picks from 8 genre categories, each showing clickable subgenre chips underneath. The nebula zooms into the user's sign sector as a background, showing just the 30° wedge of their Venus sign.
+4. **Radio** — Matched artists play via the YouTube IFrame API, sorted by Venus proximity (0-100%). Each track shows the artist's Venus sign and degree.
 
 ### Venus calculation
 
@@ -27,14 +27,11 @@ Venus positions are computed using [astronomy-engine](https://github.com/cosinek
 
 ### Matching logic
 
-The matcher (`src/matcher.js`) uses a cascading fallback strategy to keep music playing. All tiers stay within the selected genre (or subgenre, if one was clicked):
-
-1. **Same Venus sign** — artists whose Venus sign matches the user's
-2. **Opposite sign** — astrological polarity (e.g., Aries ↔ Libra)
-3. **Same element** — fire/earth/air/water siblings (e.g., Aries/Leo/Sagittarius)
-4. **Genre only** — any artist in the selected genre regardless of sign
+The matcher (`src/matcher.js`) returns the **entire genre pool sorted by Venus proximity** when the user's longitude is available. Same-sign artists naturally rank highest, so there's no need for hard tier cutoffs — the similarity percentage tells the full story.
 
 **Subgenre filtering:** When the user clicks a subgenre chip (e.g., "dub-techno" under Techno / House), the pool narrows to artists tagged with that subgenre. If fewer than 3 artists match, it silently falls back to the full genre pool.
+
+**Without longitude** (edge case), a cascading fallback is used: same Venus sign → opposite sign → same element → all genre artists, with random shuffle.
 
 ### Venus similarity scoring (decanic precision)
 
@@ -78,6 +75,7 @@ Radio-Venus/
     player.js                       # YouTube IFrame Player wrapper
     genres.js                       # Genre taxonomy: GENRE_MAP, SUBGENRES, SUBGENRE_MAP (single source of truth)
     ui.js                           # Screen transitions, genre grid with subgenre chips, track list
+    viz.js                          # Zodiac Nebula canvas: artist ring, hover readout, sign zoom
     style.css                       # Dark atmospheric theme with element-colored accents
   scripts/
     build-db.mjs                    # Wikidata + Venus calc + YouTube lookup → musicians.json
@@ -87,6 +85,8 @@ Radio-Venus/
   public/
     data/musicians.json             # Generated database (gitignored, ~430 artists)
     favicon.svg                     # Venus glyph
+  .github/workflows/
+    deploy.yml                      # Auto-deploy to GitHub Pages on push to master
 ```
 
 **Build time** (Node.js, `scripts/build-db.mjs`):
@@ -106,12 +106,13 @@ Radio-Venus/
 - Supports BFS depth (e.g., `--depth 2` follows similarity chains)
 
 **Runtime** (browser):
-1. `main.js` loads `musicians.json` + YouTube IFrame API in parallel
-2. User enters birth date → `venus.js` computes sign, degree, decan, element, longitude
-3. `ui.js` renders genre grid with subgenre chips (counts from live data via `getSubgenreCounts()`)
-4. User clicks genre or subgenre → `matcher.js` filters pool, sorts by Venus similarity
+1. `main.js` loads `musicians.json` + YouTube IFrame API in parallel; `viz.js` initializes the zodiac nebula ring
+2. User enters birth date → `venus.js` computes sign, degree, decan, element, longitude → user Venus dot appears on the nebula
+3. User navigates to genre screen → nebula zooms into user's sign sector → `ui.js` renders genre grid with subgenre chips
+4. User clicks genre or subgenre → `matcher.js` returns full pool sorted by Venus similarity
 5. `player.js` loads YouTube embeds; failed tracks auto-skip
-6. Zero server calls beyond static files and YouTube embeds
+6. Navigation: genre ← back → portal; radio ← back → genre (nebula zoom/visibility toggles per screen)
+7. Zero server calls beyond static files and YouTube embeds
 
 ## Database
 
@@ -234,6 +235,10 @@ From the AcousticBrainz Discogs dataset (electronic recordings only):
 | downtempo + trip hop | 490 | triphop cluster |
 | house + techno | 446 | techno cluster |
 
+## Deployment
+
+Pushes to `master` trigger a GitHub Actions workflow (`.github/workflows/deploy.yml`) that builds the project and deploys `dist/` to the `gh-pages` branch via [JamesIves/github-pages-deploy-action](https://github.com/JamesIves/github-pages-deploy-action).
+
 ## Setup
 
 Requires **Node.js 18+** (uses Vite 6).
@@ -257,6 +262,23 @@ Dark atmospheric UI inspired by [cosine.club](https://cosine.club):
 
 Screens transition with opacity fades. A loading overlay with a spinning Venus glyph (&#9792;) plays during the calculation "dramatic pause."
 
+### Zodiac Nebula
+
+A Canvas-based visualization (`src/viz.js`) draws all ~430 artists as a ring of element-colored dots at their ecliptic longitudes. Key features:
+
+- **Whole-sign sector outlines** — 12 annular wedges with white outlines, signs progress counter-clockwise (astrological convention)
+- **Element colors** — fire (red), earth (green), air (yellow), water (blue)
+- **Deterministic jitter** — Artist positions are hashed from their name, so the nebula is stable across renders (no `Math.random()`)
+- **Additive blending** — `globalCompositeOperation: 'lighter'` makes overlapping dots glow where signs are dense
+- **Slow rotation** — 360° in 240 seconds
+- **Hover readout** — Mousemove hit-testing finds the nearest dot (8px threshold), expands it to 5px white, and shows the artist name + Venus sign/degree in the ring center. Custom 24px crosshair cursor generated as a canvas data URL.
+- **User Venus dot** — Pulsing dot with radial gradient glow at the user's exact ecliptic longitude
+- **HiDPI** — Scaled by `devicePixelRatio` for crisp Retina rendering
+
+**Zoom mode:** When navigating to the genre screen, `zoomToSign(signIndex)` locks rotation and applies a canvas scale/translate transform so only the user's 30° sign sector fills the background. The scale factor is `viewport height × 0.7 / band width`, making the artist dots large and visible behind the genre grid. The radial vignette fades out during zoom.
+
+The nebula container lives at body level (outside screens) so it persists across screen transitions. Visibility is toggled per screen: visible on portal (full ring) and genre (zoomed), hidden on reveal and radio.
+
 ### Genre screen
 
 The genre grid is a 2-column layout (480px max-width) where each cell contains:
@@ -267,7 +289,7 @@ Subgenre chips at 0.6rem monospace, no background. **Active chips** (7+ artists)
 
 ### Track list
 
-Each track displays: artist name (left, truncated with ellipsis if long), Venus similarity percentage in accent color, and Venus sign (right). The active track is highlighted in the accent color. Failed/restricted tracks are struck through at 25% opacity.
+Each track displays: artist name (left, truncated with ellipsis if long), Venus similarity percentage in accent color, and Venus sign with degree (right, e.g. "Gemini 13°"). The active track is highlighted in the accent color. Failed/restricted tracks are struck through at 25% opacity.
 
 ## Key dependencies
 

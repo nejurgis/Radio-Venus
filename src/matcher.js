@@ -73,22 +73,26 @@ export function match(venusSign, genre, element, { subgenre = null, userLongitud
     pool = db.filter(m => m.genres.includes(genre));
   }
 
-  // 1. Exact: same Venus sign
-  let results = pool.filter(m => m.venus.sign === venusSign);
-  if (results.length > 0) return sortBySimilarity(results, userLongitude);
+  // When we have a longitude, return the full pool sorted by Venus proximity —
+  // similarity scoring already ranks same-sign artists highest, so hard tier
+  // cutoffs would just hide artists unnecessarily.
+  if (userLongitude != null) {
+    return sortBySimilarity(pool, userLongitude);
+  }
 
-  // 2. Opposite sign (astrological polarity)
+  // Without longitude, fall back to sign-based tiers with random shuffle.
+  let results = pool.filter(m => m.venus.sign === venusSign);
+  if (results.length > 0) return shuffle(results);
+
   const opposite = OPPOSITE_SIGNS[venusSign];
   results = pool.filter(m => m.venus.sign === opposite);
-  if (results.length > 0) return sortBySimilarity(results, userLongitude);
+  if (results.length > 0) return shuffle(results);
 
-  // 3. Same element (fire/earth/air/water siblings)
   const elementSigns = SAME_ELEMENT[element] || [];
   results = pool.filter(m => elementSigns.includes(m.venus.sign));
-  if (results.length > 0) return sortBySimilarity(results, userLongitude);
+  if (results.length > 0) return shuffle(results);
 
-  // 4. Last resort: all artists in this genre
-  return sortBySimilarity(pool, userLongitude);
+  return shuffle(pool);
 }
 
 function shuffle(arr) {

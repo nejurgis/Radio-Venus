@@ -34,18 +34,58 @@ let animId = null;
 let rotation = 0;
 let userDot = null;
 let dots = [];
+let hoveredDot = null;
+let mouseX = -1;
+let mouseY = -1;
+let zoomSign = null;       // null = full ring, sign index = zoomed
+let containerEl = null;
+
+// Generate a minimal crosshair cursor (24×24, thin white lines with dark shadow)
+const crosshairCursor = (() => {
+  const s = 24, c = s / 2;
+  const cur = document.createElement('canvas');
+  cur.width = cur.height = s;
+  const cx = cur.getContext('2d');
+  // Shadow for visibility on bright dots
+  cx.strokeStyle = 'rgba(0,0,0,0.5)';
+  cx.lineWidth = 3;
+  cx.beginPath();
+  cx.moveTo(c, 4); cx.lineTo(c, s - 4);
+  cx.moveTo(4, c); cx.lineTo(s - 4, c);
+  cx.stroke();
+  // Crisp white cross
+  cx.strokeStyle = 'rgba(255,255,255,0.9)';
+  cx.lineWidth = 1;
+  cx.beginPath();
+  cx.moveTo(c, 4); cx.lineTo(c, s - 4);
+  cx.moveTo(4, c); cx.lineTo(s - 4, c);
+  cx.stroke();
+  return `url(${cur.toDataURL()}) ${c} ${c}, crosshair`;
+})();
 
 export function initNebula(containerId) {
-  const container = document.getElementById(containerId);
-  if (!container) return;
+  containerEl = document.getElementById(containerId);
+  if (!containerEl) return;
 
   canvas = document.createElement('canvas');
   canvas.className = 'nebula-canvas';
-  container.appendChild(canvas);
+  containerEl.appendChild(canvas);
   ctx = canvas.getContext('2d');
 
   resize();
   window.addEventListener('resize', resize);
+
+  // Hover hit-testing
+  canvas.addEventListener('mousemove', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    mouseX = e.clientX - rect.left;
+    mouseY = e.clientY - rect.top;
+  });
+  canvas.addEventListener('mouseleave', () => {
+    mouseX = mouseY = -1;
+    hoveredDot = null;
+    canvas.style.cursor = '';
+  });
 }
 
 function resize() {
@@ -99,6 +139,25 @@ export function clearUserVenus() {
   userDot = null;
 }
 
+// ── Zoom control ──────────────────────────────────────────────────────────────
+
+export function zoomToSign(signIndex) {
+  zoomSign = signIndex;
+  hoveredDot = null;
+  if (containerEl) containerEl.classList.add('is-zoomed');
+}
+
+export function zoomOut() {
+  zoomSign = null;
+  if (containerEl) containerEl.classList.remove('is-zoomed');
+}
+
+export function showNebula(visible) {
+  if (containerEl) containerEl.classList.toggle('is-hidden', !visible);
+}
+
+// ── Render loop ───────────────────────────────────────────────────────────────
+
 function tick() {
   animId = requestAnimationFrame(tick);
   if (!ctx || !canvas) return;
@@ -111,71 +170,146 @@ function tick() {
   const innerR = minDim * 0.28;
   const outerR = minDim * 0.44;
   const bandWidth = outerR - innerR;
+  const midR = (innerR + outerR) / 2;
 
   ctx.clearRect(0, 0, w, h);
 
-  // Slow rotation: 360° in 240s
-  rotation += (360 / 240) / 60; // ~60fps
-  if (rotation >= 360) rotation -= 360;
+  // Rotation: free-spin when full ring, locked when zoomed
+  let rot;
+  if (zoomSign != null) {
+    // Lock rotation so target sign's center sits at the top (screen angle -90°)
+    rot = zoomSign * 30 + 15;
+  } else {
+    rotation += (360 / 240) / 60; // ~60fps → 360° in 240s
+    if (rotation >= 360) rotation -= 360;
+    rot = rotation;
+  }
 
-  // ── Zodiac grid lines (12 sign boundaries) ─────────────────────────────
+  // ── Zoom transform ──────────────────────────────────────────────────────
+  const isZoomed = zoomSign != null;
+  if (isZoomed) {
+    const scale = (h * 0.7) / bandWidth;
+    ctx.save();
+    // Center the top of the ring (where the target sign is) on screen
+    ctx.translate(w / 2, h / 2);
+    ctx.scale(scale, scale);
+    ctx.translate(-cx, -(cy - midR));
+  }
+
+  // ── Whole-sign sector outlines (12 annular wedges) ──────────────────────
   ctx.save();
-  ctx.strokeStyle = 'rgba(255, 255, 255, 0.04)';
-  ctx.lineWidth = 0.5;
+  ctx.strokeStyle = isZoomed ? 'rgba(255, 255, 255, 0.06)' : 'rgba(255, 255, 255, 0.08)';
+  ctx.lineWidth = isZoomed ? 0.3 : 0.8;
   for (let i = 0; i < 12; i++) {
-    const angle = ((i * 30) - 90 + rotation) * Math.PI / 180;
+    // Negate so signs progress counter-clockwise (astrological convention)
+    const a0 = (-(i * 30) - 90 + rot) * Math.PI / 180;
+    const a1 = (-((i + 1) * 30) - 90 + rot) * Math.PI / 180;
     ctx.beginPath();
-    ctx.moveTo(cx + innerR * Math.cos(angle), cy + innerR * Math.sin(angle));
-    ctx.lineTo(cx + outerR * Math.cos(angle), cy + outerR * Math.sin(angle));
+    ctx.arc(cx, cy, outerR, a0, a1, true);
+    ctx.lineTo(cx + innerR * Math.cos(a1), cy + innerR * Math.sin(a1));
+    ctx.arc(cx, cy, innerR, a1, a0);
+    ctx.closePath();
     ctx.stroke();
   }
   ctx.restore();
 
   // ── Artist dots ─────────────────────────────────────────────────────────
-  // Use additive blending for the glow-overlap effect
   ctx.save();
   ctx.globalCompositeOperation = 'lighter';
 
+  // Hit-test only when not zoomed (portal screen hover)
+  let closestDot = null;
+  let closestDist = 8;
+
   for (const dot of dots) {
-    const angle = ((dot.deg + dot.jA) - 90 + rotation) * Math.PI / 180;
+    const angle = (-(dot.deg + dot.jA) - 90 + rot) * Math.PI / 180;
     const r = innerR + dot.jR * bandWidth;
     const x = cx + r * Math.cos(angle);
     const y = cy + r * Math.sin(angle);
 
+    // Hit-test (only in full-ring mode)
+    if (!isZoomed && mouseX >= 0) {
+      dot.sx = x;
+      dot.sy = y;
+      const dx = x - mouseX;
+      const dy = y - mouseY;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < closestDist) {
+        closestDist = dist;
+        closestDot = dot;
+      }
+    }
+
+    const isHovered = !isZoomed && hoveredDot === dot;
+    const drawSize = isHovered ? 5 : dot.size;
+    const drawAlpha = isHovered ? 1 : dot.alpha;
+    const drawR = isHovered ? 255 : dot.r;
+    const drawG = isHovered ? 255 : dot.g;
+    const drawB = isHovered ? 255 : dot.b;
+
     ctx.beginPath();
-    ctx.arc(x, y, dot.size, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(${dot.r}, ${dot.g}, ${dot.b}, ${dot.alpha})`;
+    ctx.arc(x, y, drawSize, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(${drawR}, ${drawG}, ${drawB}, ${drawAlpha})`;
     ctx.fill();
+  }
+
+  if (!isZoomed) {
+    hoveredDot = closestDot;
+    if (canvas) canvas.style.cursor = hoveredDot ? crosshairCursor : '';
   }
 
   ctx.restore();
 
+  // ── Center readout (hovered artist name + sign — full ring mode only) ──
+  if (!isZoomed && hoveredDot) {
+    ctx.save();
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+
+    ctx.font = 'bold 13px monospace';
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+    ctx.shadowColor = 'rgba(0, 0, 0, 0.8)';
+    ctx.shadowBlur = 4;
+    ctx.fillText(hoveredDot.name, cx, cy - 7);
+
+    ctx.font = '10px monospace';
+    ctx.fillStyle = `rgba(${hoveredDot.r}, ${hoveredDot.g}, ${hoveredDot.b}, 0.8)`;
+    const degInSign = Math.round((hoveredDot.deg % 30) * 10) / 10;
+    ctx.fillText(`${hoveredDot.sign} ${degInSign}°`, cx, cy + 8);
+
+    ctx.restore();
+  }
+
   // ── User's Venus dot (pulsing) ──────────────────────────────────────────
   if (userDot) {
     const t = (performance.now() - userDot.birth) / 1000;
-    const pulse = 1 + 0.3 * Math.sin(t * 2); // gentle pulse
-    const angle = ((userDot.deg) - 90 + rotation) * Math.PI / 180;
-    const midR = innerR + bandWidth * 0.5;
+    const pulse = 1 + 0.3 * Math.sin(t * 2);
+    const angle = (-(userDot.deg) - 90 + rot) * Math.PI / 180;
     const x = cx + midR * Math.cos(angle);
     const y = cy + midR * Math.sin(angle);
 
-    // Glow halo
     ctx.save();
     ctx.globalCompositeOperation = 'lighter';
-    const grad = ctx.createRadialGradient(x, y, 0, x, y, 12 * pulse);
+    const glowR = isZoomed ? 6 : 12;
+    const coreR = isZoomed ? 1.5 : 3;
+    const grad = ctx.createRadialGradient(x, y, 0, x, y, glowR * pulse);
     grad.addColorStop(0, `rgba(${userDot.r}, ${userDot.g}, ${userDot.b}, 0.8)`);
     grad.addColorStop(0.5, `rgba(${userDot.r}, ${userDot.g}, ${userDot.b}, 0.2)`);
     grad.addColorStop(1, `rgba(${userDot.r}, ${userDot.g}, ${userDot.b}, 0)`);
     ctx.beginPath();
-    ctx.arc(x, y, 12 * pulse, 0, Math.PI * 2);
+    ctx.arc(x, y, glowR * pulse, 0, Math.PI * 2);
     ctx.fillStyle = grad;
     ctx.fill();
 
-    // Bright core
     ctx.beginPath();
-    ctx.arc(x, y, 3 * pulse, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(255, 255, 255, 0.9)`;
+    ctx.arc(x, y, coreR * pulse, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
     ctx.fill();
+    ctx.restore();
+  }
+
+  // Restore zoom transform
+  if (isZoomed) {
     ctx.restore();
   }
 }
@@ -188,4 +322,8 @@ export function destroyNebula() {
   ctx = null;
   dots = [];
   userDot = null;
+  hoveredDot = null;
+  mouseX = mouseY = -1;
+  zoomSign = null;
+  containerEl = null;
 }

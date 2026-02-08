@@ -97,7 +97,8 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
     item.dataset.index = i;
     const simHtml = track.similarity != null
       ? `<span class="track-similarity">${track.similarity}%</span>` : '';
-    item.innerHTML = `<span class="track-name">${track.name}${failed ? ' <span class="track-restricted">restricted</span>' : ''}</span><span class="track-meta">${simHtml}<span class="track-item-sign">${track.venus.sign}</span></span>`;
+    const deg = track.venus.degree != null ? ` ${Math.round(track.venus.degree * 10) / 10}°` : '';
+    item.innerHTML = `<span class="track-name">${track.name}${failed ? ' <span class="track-restricted">restricted</span>' : ''}</span><span class="track-meta">${simHtml}<span class="track-item-sign">${track.venus.sign}${deg}</span></span>`;
     if (!failed) item.addEventListener('click', () => onSelect(i));
     list.appendChild(item);
   });
