@@ -588,17 +588,32 @@ html, body {
 }
 
 .loading-spinner {
-  animation: spin 4s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.loading-glyph {
-  font-size: 3rem;
+.loading-ring {
+  width: 4rem;
+  height: 4rem;
   color: var(--accent);
+  animation: ring-color 18s linear infinite;
 }
 
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* Rudnick zodiac palette — cycles through 12 sign colors */
+@keyframes ring-color {
+  0%, 100% { color: rgba(173, 143, 53, 0.9); }   /* Aries — ochre gold */
+  8.33%    { color: rgba(55, 109, 89, 0.9); }     /* Taurus — forest green */
+  16.66%   { color: rgba(213, 165, 48, 0.9); }    /* Gemini — bright gold */
+  25%      { color: rgba(11, 83, 119, 0.9); }     /* Cancer — deep teal */
+  33.33%   { color: rgba(227, 106, 95, 0.9); }    /* Leo — coral */
+  41.66%   { color: rgba(158, 138, 41, 0.9); }    /* Virgo — olive gold */
+  50%      { color: rgba(232, 141, 142, 0.9); }   /* Libra — pink */
+  58.33%   { color: rgba(21, 1, 90, 0.9); }       /* Scorpio — deep violet */
+  66.66%   { color: rgba(196, 117, 78, 0.9); }    /* Sagittarius — terracotta */
+  75%      { color: rgba(61, 43, 145, 0.9); }     /* Capricorn — indigo */
+  83.33%   { color: rgba(162, 195, 70, 0.9); }    /* Aquarius — lime */
+  91.66%   { color: rgba(168, 100, 160, 0.9); }   /* Pisces — mauve */
 }
 
 .loading-text {
