@@ -1,6 +1,7 @@
 import { calculateVenus, makeBirthDate } from './venus.js';
 import { GENRE_CATEGORIES, SUBGENRES } from './genres.js';
-import { loadDatabase, match, getSubgenreCounts } from './matcher.js';
+import { loadDatabase, getDatabase, match, getSubgenreCounts } from './matcher.js';
+import { initNebula, renderNebula, setUserVenus } from './viz.js';
 import { loadYouTubeAPI, initPlayer, loadVideo, togglePlay, isPlaying } from './player.js';
 import {
   initScreens, showScreen, showLoading, setElementTheme,
@@ -31,6 +32,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   if (dbResult.status === 'rejected') {
     console.error('Failed to load musician database:', dbResult.reason);
+  } else {
+    initNebula('nebula-container');
+    renderNebula(getDatabase());
   }
 });
 
@@ -130,6 +134,7 @@ async function onDateSubmit(d, m, y) {
   venus = calculateVenus(birthDate);
 
   setElementTheme(venus.element);
+  setUserVenus(venus.longitude, venus.element);
   renderReveal(venus);
   showLoading(false);
   showScreen('reveal');

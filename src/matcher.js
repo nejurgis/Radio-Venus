@@ -25,6 +25,10 @@ export async function loadDatabase() {
   return db;
 }
 
+export function getDatabase() {
+  return db;
+}
+
 // ── Venus similarity ────────────────────────────────────────────────────────
 
 function reconstructLongitude(m) {
