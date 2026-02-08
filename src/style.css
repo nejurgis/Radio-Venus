@@ -212,7 +212,7 @@ html, body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
-  max-width: 400px;
+  max-width: 480px;
   margin: 0 auto;
 }
 
@@ -235,8 +235,51 @@ html, body {
   background: #15151a;
 }
 
-.genre-btn:last-child:nth-child(odd) {
+.genre-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.genre-cell .genre-btn {
+  width: 100%;
+}
+
+.genre-cell:last-child:nth-child(odd) {
   grid-column: 1 / -1;
+}
+
+/* ── Subgenre chips ─────────────────────────────────────────────────────── */
+
+.subgenre-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  padding: 0.4rem 0.25rem 0;
+  justify-content: center;
+}
+
+.subgenre-chip {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.4rem;
+  color: var(--text-dim);
+  opacity: 0.4;
+  text-transform: lowercase;
+  white-space: nowrap;
+  cursor: default;
+  transition: all 0.2s;
+}
+
+.subgenre-chip.is-active {
+  opacity: 1;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.subgenre-chip.is-active:hover {
+  color: var(--text-bright);
+  border-bottom: 1px solid var(--accent);
 }
 
 /* ── Screen 4: Radio ─────────────────────────────────────────────────────── */
@@ -384,6 +427,34 @@ html, body {
   font-style: italic;
 }
 
+.track-name {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+
+.track-similarity {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--accent);
+  opacity: 0.7;
+  letter-spacing: 0.02em;
+}
+
+.track-item.active .track-similarity {
+  opacity: 1;
+}
+
 .track-item-sign {
   opacity: 0.5;
 }
@@ -482,5 +553,15 @@ body.element-water  { --accent: var(--water); }
 
   .date-field--year {
     width: 4.5rem;
+  }
+
+  .subgenre-chips {
+    gap: 0.2rem;
+    padding-top: 0.3rem;
+  }
+
+  .subgenre-chip {
+    font-size: 0.55rem;
+    padding: 0.15rem 0.3rem;
   }
 }

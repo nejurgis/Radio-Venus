@@ -35,22 +35,54 @@ export function renderReveal(venus) {
     `${venus.degree}° · decan ${venus.decan} · ${venus.element}`;
 }
 
-export function renderGenreGrid(categories, onSelect) {
+export function renderGenreGrid(categories, subgenreMap, subgenreCounts, onGenreSelect, onSubgenreSelect) {
   const grid = document.getElementById('genre-grid');
   grid.innerHTML = '';
   for (const cat of categories) {
+    const cell = document.createElement('div');
+    cell.className = 'genre-cell';
+
     const btn = document.createElement('button');
     btn.className = 'genre-btn';
     btn.textContent = cat.label;
     btn.dataset.genre = cat.id;
-    btn.addEventListener('click', () => onSelect(cat.id));
-    grid.appendChild(btn);
+    btn.addEventListener('click', () => onGenreSelect(cat.id));
+    cell.appendChild(btn);
+
+    const subs = subgenreMap[cat.id] || [];
+    const counts = subgenreCounts[cat.id] || {};
+    const hasSubs = subs.some(s => (counts[s] || 0) > 0);
+    if (hasSubs) {
+      const chipRow = document.createElement('div');
+      chipRow.className = 'subgenre-chips';
+      for (const sub of subs) {
+        const count = counts[sub] || 0;
+        if (count === 0) continue;
+        const chip = document.createElement('span');
+        const isClickable = count >= 7;
+        chip.className = 'subgenre-chip' + (isClickable ? ' is-active' : '');
+        chip.textContent = sub;
+        chip.title = `${count} artist${count !== 1 ? 's' : ''}`;
+        if (isClickable) {
+          chip.addEventListener('click', (e) => {
+            e.stopPropagation();
+            onSubgenreSelect(cat.id, sub);
+          });
+        }
+        chipRow.appendChild(chip);
+      }
+      cell.appendChild(chipRow);
+    }
+
+    grid.appendChild(cell);
   }
 }
 
-export function renderRadioHeader(signName, genreLabel) {
+export function renderRadioHeader(signName, genreLabel, subgenreLabel = null) {
   document.getElementById('radio-sign').textContent = `♀ ${signName}`;
-  document.getElementById('radio-genre').textContent = genreLabel;
+  document.getElementById('radio-genre').textContent = subgenreLabel
+    ? `${genreLabel} · ${subgenreLabel}`
+    : genreLabel;
 }
 
 export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new Set()) {
@@ -63,7 +95,9 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
       + (i === currentIndex ? ' active' : '')
       + (failed ? ' is-failed' : '');
     item.dataset.index = i;
-    item.innerHTML = `<span>${track.name}${failed ? ' <span class="track-restricted">restricted</span>' : ''}</span><span class="track-item-sign">${track.venus.sign}</span>`;
+    const simHtml = track.similarity != null
+      ? `<span class="track-similarity">${track.similarity}%</span>` : '';
+    item.innerHTML = `<span class="track-name">${track.name}${failed ? ' <span class="track-restricted">restricted</span>' : ''}</span><span class="track-meta">${simHtml}<span class="track-item-sign">${track.venus.sign}</span></span>`;
     if (!failed) item.addEventListener('click', () => onSelect(i));
     list.appendChild(item);
   });

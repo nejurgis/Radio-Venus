@@ -1,6 +1,6 @@
 import { calculateVenus, makeBirthDate } from './venus.js';
-import { GENRE_CATEGORIES } from './genres.js';
-import { loadDatabase, match } from './matcher.js';
+import { GENRE_CATEGORIES, SUBGENRES } from './genres.js';
+import { loadDatabase, match, getSubgenreCounts } from './matcher.js';
 import { loadYouTubeAPI, initPlayer, loadVideo, togglePlay, isPlaying } from './player.js';
 import {
   initScreens, showScreen, showLoading, setElementTheme,
@@ -136,18 +136,32 @@ async function onDateSubmit(d, m, y) {
 
   // Set up genre screen
   const genreLabel = id => GENRE_CATEGORIES.find(c => c.id === id)?.label || id;
-  renderGenreGrid(GENRE_CATEGORIES, genreId => onGenreSelect(genreId, genreLabel(genreId)));
+  const subgenreCounts = {};
+  for (const cat of GENRE_CATEGORIES) {
+    subgenreCounts[cat.id] = getSubgenreCounts(cat.id);
+  }
+
+  renderGenreGrid(
+    GENRE_CATEGORIES,
+    SUBGENRES,
+    subgenreCounts,
+    genreId => startRadio(genreId, genreLabel(genreId)),
+    (genreId, subgenreId) => startRadio(genreId, genreLabel(genreId), subgenreId),
+  );
 
   document.getElementById('btn-choose-genre').addEventListener('click', () => {
     showScreen('genre');
   });
 }
 
-async function onGenreSelect(genreId, genreLabel) {
-  tracks = match(venus.sign, genreId, venus.element);
+async function startRadio(genreId, genreLabel, subgenreId = null) {
+  tracks = match(venus.sign, genreId, venus.element, {
+    subgenre: subgenreId,
+    userLongitude: venus.longitude,
+  });
   currentTrackIndex = 0;
 
-  renderRadioHeader(venus.sign, genreLabel);
+  renderRadioHeader(venus.sign, genreLabel, subgenreId);
   showScreen('radio');
 
   if (tracks.length === 0) {
@@ -168,7 +182,6 @@ async function onGenreSelect(genreId, genreLabel) {
           markTrackFailed(currentTrackIndex);
           console.warn(`[Radio Venus] ${track.name}: ${code === 150 || code === 101 ? 'embed restricted' : code === 100 ? 'removed' : 'error ' + code}`);
         }
-        // Auto-skip to next playable track
         skipToNextPlayable();
       },
       onStateChange: () => updatePlayButton(isPlaying()),

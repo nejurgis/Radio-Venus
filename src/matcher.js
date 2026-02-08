@@ -1,5 +1,10 @@
 let db = [];
 
+const SIGNS = [
+  'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo',
+  'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces',
+];
+
 const OPPOSITE_SIGNS = {
   Aries: 'Libra', Taurus: 'Scorpio', Gemini: 'Sagittarius',
   Cancer: 'Capricorn', Leo: 'Aquarius', Virgo: 'Pisces',
@@ -20,26 +25,66 @@ export async function loadDatabase() {
   return db;
 }
 
-export function match(venusSign, genre, element) {
-  // All fallbacks stay within the selected genre — never mix genres.
-  const pool = db.filter(m => m.genres.includes(genre));
+// ── Venus similarity ────────────────────────────────────────────────────────
 
-  // 1. Exact: same Venus sign + genre
+function reconstructLongitude(m) {
+  return SIGNS.indexOf(m.venus.sign) * 30 + m.venus.degree;
+}
+
+function venusSimilarity(userLon, artistLon) {
+  const diff = Math.abs(userLon - artistLon);
+  const angular = diff > 180 ? 360 - diff : diff;
+  return Math.round(100 * (1 - angular / 180));
+}
+
+function sortBySimilarity(arr, userLon) {
+  if (userLon == null) return shuffle(arr);
+  return arr
+    .map(m => ({ ...m, similarity: venusSimilarity(userLon, reconstructLongitude(m)) }))
+    .sort((a, b) => b.similarity - a.similarity || a.name.localeCompare(b.name));
+}
+
+// ── Subgenre counts ─────────────────────────────────────────────────────────
+
+export function getSubgenreCounts(genre) {
+  const pool = db.filter(m => m.genres.includes(genre));
+  const counts = {};
+  for (const m of pool) {
+    for (const sub of (m.subgenres || [])) {
+      counts[sub] = (counts[sub] || 0) + 1;
+    }
+  }
+  return counts;
+}
+
+// ── Match ───────────────────────────────────────────────────────────────────
+
+export function match(venusSign, genre, element, { subgenre = null, userLongitude = null } = {}) {
+  // Filter by genre, optionally narrow by subgenre
+  let pool;
+  if (subgenre) {
+    const subPool = db.filter(m => m.genres.includes(genre) && m.subgenres.includes(subgenre));
+    pool = subPool.length >= 3 ? subPool : db.filter(m => m.genres.includes(genre));
+  } else {
+    pool = db.filter(m => m.genres.includes(genre));
+  }
+
+  // 1. Exact: same Venus sign
   let results = pool.filter(m => m.venus.sign === venusSign);
-  if (results.length > 0) return shuffle(results);
+  if (results.length > 0) return sortBySimilarity(results, userLongitude);
 
   // 2. Opposite sign (astrological polarity)
   const opposite = OPPOSITE_SIGNS[venusSign];
   results = pool.filter(m => m.venus.sign === opposite);
-  if (results.length > 0) return shuffle(results);
+  if (results.length > 0) return sortBySimilarity(results, userLongitude);
 
   // 3. Same element (fire/earth/air/water siblings)
   const elementSigns = SAME_ELEMENT[element] || [];
   results = pool.filter(m => elementSigns.includes(m.venus.sign));
-  if (results.length > 0) return shuffle(results);
+  if (results.length > 0) return sortBySimilarity(results, userLongitude);
 
-  // 4. Last resort: all artists in this genre regardless of sign
-  return shuffle(pool);
+  // 4. Last resort: all artists in this genre
+  return sortBySimilarity(pool, userLongitude);
 }
 
 function shuffle(arr) {
