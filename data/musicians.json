@@ -1,5 +1,22 @@
 [
   {
+    "name": "A Certain Ratio",
+    "birthDate": "1977-06-15",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 8.5,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "darkwave"
+    ],
+    "subgenres": [
+      "darkwave"
+    ],
+    "youtubeVideoId": "EWxFJuE6nkI"
+  },
+  {
     "name": "Actress",
     "birthDate": "1979-01-01",
     "venus": {
@@ -174,6 +191,29 @@
       "classical"
     ],
     "youtubeVideoId": "-LYTxf9YsM0"
+  },
+  {
+    "name": "Alice Glass",
+    "birthDate": "1988-08-23",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 14.8,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "idm",
+      "techno",
+      "darkwave",
+      "industrial"
+    ],
+    "subgenres": [
+      "idm",
+      "techno",
+      "darkwave",
+      "industrial"
+    ],
+    "youtubeVideoId": "RkXkcqNtWn8"
   },
   {
     "name": "Alva Noto",
@@ -355,6 +395,31 @@
       "classical"
     ],
     "youtubeVideoId": "FgEyZtQ9Gpg"
+  },
+  {
+    "name": "Anthony Rother",
+    "birthDate": "1972-04-29",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 22.9,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "techno",
+      "idm",
+      "darkwave",
+      "classical",
+      "ambient"
+    ],
+    "subgenres": [
+      "techno",
+      "idm",
+      "darkwave",
+      "classical",
+      "ambient"
+    ],
+    "youtubeVideoId": "hZOIMtTJiso"
   },
   {
     "name": "Anton Rubinstein",
@@ -715,6 +780,24 @@
     "youtubeVideoId": "LGgoLtI29Eo"
   },
   {
+    "name": "Bedřich Smetana",
+    "birthDate": "1824-03-02",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 4.4,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera",
+      "classical"
+    ],
+    "youtubeVideoId": "ovBC4AGR2Vg"
+  },
+  {
     "name": "Béla Bartók",
     "birthDate": "1881-03-25",
     "venus": {
@@ -858,6 +941,64 @@
     "youtubeVideoId": "K60wMYk-b_Q"
   },
   {
+    "name": "Björk",
+    "birthDate": "1965-11-21",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 16,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "idm",
+      "triphop",
+      "ambient"
+    ],
+    "subgenres": [
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "9JE6rUwfckI"
+  },
+  {
+    "name": "Blancmange",
+    "birthDate": "1979-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 4.5,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "Cvb8m8Trh8c"
+  },
+  {
+    "name": "Blood Diamonds",
+    "birthDate": "1990-08-15",
+    "venus": {
+      "sign": "Leo",
+      "degree": 1.9,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "idm",
+      "darkwave"
+    ],
+    "subgenres": [
+      "idm",
+      "darkwave"
+    ],
+    "youtubeVideoId": "EqMqb6A7deU"
+  },
+  {
     "name": "Boards of Canada",
     "birthDate": "1970-06-01",
     "venus": {
@@ -879,11 +1020,11 @@
   },
   {
     "name": "Bochum Welt",
-    "birthDate": "1975-00-00",
+    "birthDate": "1975-06-15",
     "venus": {
-      "sign": "Sagittarius",
-      "degree": 13.8,
-      "decan": 2,
+      "sign": "Leo",
+      "degree": 9.1,
+      "decan": 1,
       "element": "fire"
     },
     "genres": [
@@ -1068,6 +1209,25 @@
       "classical"
     ],
     "youtubeVideoId": "EFxvx9T_5xU"
+  },
+  {
+    "name": "Camouflage",
+    "birthDate": "1984-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 24.4,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "avpKLQ27Z3g"
   },
   {
     "name": "Carbon Based Lifeforms",
@@ -1354,6 +1514,27 @@
     "youtubeVideoId": "pFdef4LRXr0"
   },
   {
+    "name": "Charli xcx",
+    "birthDate": "1992-08-02",
+    "venus": {
+      "sign": "Leo",
+      "degree": 24.1,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "idm",
+      "darkwave",
+      "techno"
+    ],
+    "subgenres": [
+      "idm",
+      "darkwave",
+      "techno"
+    ],
+    "youtubeVideoId": "39RxXGcf9-E"
+  },
+  {
     "name": "Christ.",
     "birthDate": "1712-10-30",
     "venus": {
@@ -1389,6 +1570,27 @@
       "classical"
     ],
     "youtubeVideoId": "fY0clnGk3WQ"
+  },
+  {
+    "name": "Chrome",
+    "birthDate": "1970-06-04",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 15.5,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "darkwave",
+      "industrial",
+      "idm"
+    ],
+    "subgenres": [
+      "darkwave",
+      "industrial",
+      "idm"
+    ],
+    "youtubeVideoId": "p3-MhHkIIyA"
   },
   {
     "name": "Chuck Person",
@@ -1477,6 +1679,27 @@
     "youtubeVideoId": "Ab1tezVzzY0"
   },
   {
+    "name": "Clock DVA",
+    "birthDate": "1978-06-15",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 29.1,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "industrial",
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "industrial",
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "VMZMdwfvo6Y"
+  },
+  {
     "name": "Conrado del Campo",
     "birthDate": "1878-10-28",
     "venus": {
@@ -1492,6 +1715,25 @@
       "classical"
     ],
     "youtubeVideoId": "Oi-tw1IK93Y"
+  },
+  {
+    "name": "Dan Terminus",
+    "birthDate": "1964-06-22",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 27,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "nBhgTt7xNh0"
   },
   {
     "name": "Daniel Avery",
@@ -1531,11 +1773,11 @@
   },
   {
     "name": "Datach'i",
-    "birthDate": "1977-00-00",
+    "birthDate": "1977-06-15",
     "venus": {
-      "sign": "Capricorn",
-      "degree": 19.3,
-      "decan": 2,
+      "sign": "Taurus",
+      "degree": 8.5,
+      "decan": 1,
       "element": "earth"
     },
     "genres": [
@@ -1547,6 +1789,46 @@
       "glitch"
     ],
     "youtubeVideoId": "a3zrY2i4SOQ"
+  },
+  {
+    "name": "Dave Gahan",
+    "birthDate": "1962-05-09",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 13.5,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "idm",
+      "darkwave",
+      "industrial"
+    ],
+    "subgenres": [
+      "idm",
+      "darkwave",
+      "industrial"
+    ],
+    "youtubeVideoId": "pSozvePvdek"
+  },
+  {
+    "name": "David Carretta",
+    "birthDate": "1953-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 25.5,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "techno",
+      "idm"
+    ],
+    "subgenres": [
+      "techno",
+      "idm"
+    ],
+    "youtubeVideoId": "efuSgHmVoRc"
   },
   {
     "name": "David Daniels",
@@ -1769,6 +2051,25 @@
     "youtubeVideoId": "PjFoQS4aAUY"
   },
   {
+    "name": "Dopplereffekt",
+    "birthDate": "1995-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 5.9,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "techno",
+      "idm"
+    ],
+    "subgenres": [
+      "techno",
+      "idm"
+    ],
+    "youtubeVideoId": "Dsu2ztVbPBQ"
+  },
+  {
     "name": "Dorothea Röschmann",
     "birthDate": "1967-06-17",
     "venus": {
@@ -1805,6 +2106,46 @@
     "youtubeVideoId": "6Yrm1a4jfAc"
   },
   {
+    "name": "Duran Duran",
+    "birthDate": "1978-06-15",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 29.1,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "darkwave",
+      "idm",
+      "industrial"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm",
+      "industrial"
+    ],
+    "youtubeVideoId": "BpWrSTBP5rg"
+  },
+  {
+    "name": "Dynatron",
+    "birthDate": "1980-12-26",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 10.3,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "lcd4y6yYe1s"
+  },
+  {
     "name": "E. T. A. Hoffmann",
     "birthDate": "1776-01-24",
     "venus": {
@@ -1820,6 +2161,25 @@
       "classical"
     ],
     "youtubeVideoId": "V77ztPIidbE"
+  },
+  {
+    "name": "Eartheater",
+    "birthDate": "1989-03-16",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 20.9,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "idm",
+      "ambient"
+    ],
+    "subgenres": [
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "cic-uQv4tIA"
   },
   {
     "name": "Echospace",
@@ -1926,6 +2286,25 @@
     "youtubeVideoId": "obeHJLurUpQ"
   },
   {
+    "name": "Electronic",
+    "birthDate": "1988-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 20.6,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "idm",
+      "darkwave"
+    ],
+    "subgenres": [
+      "idm",
+      "darkwave"
+    ],
+    "youtubeVideoId": "LE5HcLE-Zo8"
+  },
+  {
     "name": "Élisabeth Jacquet de La Guerre",
     "birthDate": "1665-03-01",
     "venus": {
@@ -2011,6 +2390,25 @@
       "classical"
     ],
     "youtubeVideoId": "am1p961nSzc"
+  },
+  {
+    "name": "Erasure",
+    "birthDate": "1985-06-15",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 8.6,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "3MAXG35YPsQ"
   },
   {
     "name": "Erik Satie",
@@ -2151,6 +2549,27 @@
     "youtubeVideoId": "lfheMGIiET8"
   },
   {
+    "name": "Fad Gadget",
+    "birthDate": "1956-09-08",
+    "venus": {
+      "sign": "Leo",
+      "degree": 0.1,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "darkwave",
+      "idm",
+      "industrial"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm",
+      "industrial"
+    ],
+    "youtubeVideoId": "ypINKMapdE0"
+  },
+  {
     "name": "Felix Mendelssohn",
     "birthDate": "1809-02-03",
     "venus": {
@@ -2219,6 +2638,26 @@
       "classical"
     ],
     "youtubeVideoId": "Hqosv56IotA"
+  },
+  {
+    "name": "FKA twigs",
+    "birthDate": "1988-01-16",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 1,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "idm",
+      "triphop",
+      "techno"
+    ],
+    "subgenres": [
+      "idm",
+      "techno"
+    ],
+    "youtubeVideoId": "E3RG4LGmSMY"
   },
   {
     "name": "Floating Points",
@@ -2415,6 +2854,25 @@
       "classical"
     ],
     "youtubeVideoId": "fzqVh-4duc8"
+  },
+  {
+    "name": "Frank Tovey",
+    "birthDate": "1956-09-08",
+    "venus": {
+      "sign": "Leo",
+      "degree": 0.1,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "WHpGFSIABw4"
   },
   {
     "name": "Franz Liszt",
@@ -2856,6 +3314,23 @@
     "youtubeVideoId": "KY7sinuIwmk"
   },
   {
+    "name": "Georg Friedrich Haas",
+    "birthDate": "1953-08-16",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 14.2,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "H-h_F50-SA4"
+  },
+  {
     "name": "Georg Jarno",
     "birthDate": "1868-06-03",
     "venus": {
@@ -3044,6 +3519,29 @@
     "youtubeVideoId": "4ovOM0VOofE"
   },
   {
+    "name": "Gesaffelstein",
+    "birthDate": "1985-06-13",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 6.7,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "techno",
+      "idm",
+      "darkwave",
+      "industrial"
+    ],
+    "subgenres": [
+      "techno",
+      "idm",
+      "darkwave",
+      "industrial"
+    ],
+    "youtubeVideoId": "VW8ahnRlkLU"
+  },
+  {
     "name": "Giacomo Meyerbeer",
     "birthDate": "1791-09-05",
     "venus": {
@@ -3201,6 +3699,26 @@
       "darkwave"
     ],
     "youtubeVideoId": "1FH-q0I1fJY"
+  },
+  {
+    "name": "Grimes & i_o",
+    "birthDate": "1990-05-16",
+    "venus": {
+      "sign": "Aries",
+      "degree": 14,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "idm",
+      "darkwave",
+      "dnb"
+    ],
+    "subgenres": [
+      "idm",
+      "darkwave"
+    ],
+    "youtubeVideoId": "aUFbN492-R0"
   },
   {
     "name": "Grouper",
@@ -3479,6 +3997,25 @@
     "youtubeVideoId": "wD7l5wod1-M"
   },
   {
+    "name": "Heaven 17",
+    "birthDate": "1980-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 24.2,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "ld7j0i0jNtg"
+  },
+  {
     "name": "Hector Berlioz",
     "birthDate": "1803-12-11",
     "venus": {
@@ -3670,6 +4207,24 @@
     "youtubeVideoId": "w79kfRzao1g"
   },
   {
+    "name": "Hermann Levi",
+    "birthDate": "1839-11-07",
+    "venus": {
+      "sign": "Libra",
+      "degree": 6.6,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera",
+      "classical"
+    ],
+    "youtubeVideoId": "juXlPo_zc2g"
+  },
+  {
     "name": "Hermann Schroeder",
     "birthDate": "1904-03-26",
     "venus": {
@@ -3757,6 +4312,25 @@
       "idm"
     ],
     "youtubeVideoId": "nHujh3yA3BE"
+  },
+  {
+    "name": "Hollywood Burns",
+    "birthDate": "1985-10-31",
+    "venus": {
+      "sign": "Libra",
+      "degree": 18.6,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "YxL4cK6G_8U"
   },
   {
     "name": "Huerco S.",
@@ -3916,6 +4490,23 @@
       "classical"
     ],
     "youtubeVideoId": "utHXbTEQLm8"
+  },
+  {
+    "name": "Isaac Albéniz",
+    "birthDate": "1860-05-29",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 21.9,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "mKSOJjhonO4"
   },
   {
     "name": "Isabel Bayrakdarian",
@@ -4461,6 +5052,27 @@
     "youtubeVideoId": "iQ4GKLU31L0"
   },
   {
+    "name": "John Foxx",
+    "birthDate": "1947-09-29",
+    "venus": {
+      "sign": "Libra",
+      "degree": 12.5,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave",
+      "idm",
+      "ambient"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "KyGYK_v9rw4"
+  },
+  {
     "name": "Jon Hopkins",
     "birthDate": "1979-08-15",
     "venus": {
@@ -4631,6 +5243,25 @@
       "classical"
     ],
     "youtubeVideoId": "p-BLASZtz88"
+  },
+  {
+    "name": "Joy Division",
+    "birthDate": "1976-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 23.8,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave",
+      "industrial"
+    ],
+    "subgenres": [
+      "darkwave",
+      "industrial"
+    ],
+    "youtubeVideoId": "1EdUjlawLJM"
   },
   {
     "name": "Jules Massenet",
@@ -4933,11 +5564,11 @@
   },
   {
     "name": "Klein",
-    "birthDate": "1945-00-00",
+    "birthDate": "1945-06-15",
     "venus": {
-      "sign": "Capricorn",
-      "degree": 17.2,
-      "decan": 2,
+      "sign": "Taurus",
+      "degree": 8.7,
+      "decan": 1,
       "element": "earth"
     },
     "genres": [
@@ -4967,6 +5598,23 @@
       "classical"
     ],
     "youtubeVideoId": "GdU4ayO9rOk"
+  },
+  {
+    "name": "Kornélia Hollósy",
+    "birthDate": "1827-04-13",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 9.8,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "1xk67p3FfiE"
   },
   {
     "name": "Kraftwerk",
@@ -5308,6 +5956,25 @@
     "youtubeVideoId": "Z9MY3BTyeQE"
   },
   {
+    "name": "Love and Rockets",
+    "birthDate": "1985-06-15",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 8.6,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "darkwave",
+      "industrial"
+    ],
+    "subgenres": [
+      "darkwave",
+      "industrial"
+    ],
+    "youtubeVideoId": "yhaXBZl7zu8"
+  },
+  {
     "name": "LTJ Bukem",
     "birthDate": "1967-01-18",
     "venus": {
@@ -5396,6 +6063,23 @@
       "romantic"
     ],
     "youtubeVideoId": "W-fFHeTX70Q"
+  },
+  {
+    "name": "Luigi Cherubini",
+    "birthDate": "1760-09-08",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 22.7,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "3CmERSr11rI"
   },
   {
     "name": "Luigi Dallapiccola",
@@ -5514,6 +6198,25 @@
     "youtubeVideoId": "1HMXHDN_mzo"
   },
   {
+    "name": "Magic Sword",
+    "birthDate": "1988-12-09",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 19.7,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "q0RVXs3gXnY"
+  },
+  {
     "name": "Manfred Stahnke",
     "birthDate": "1951-10-30",
     "venus": {
@@ -5617,6 +6320,25 @@
       "drone"
     ],
     "youtubeVideoId": "WH3A_Ig6G7g"
+  },
+  {
+    "name": "Martin L. Gore",
+    "birthDate": "1961-07-23",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 17.6,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "idm",
+      "darkwave"
+    ],
+    "subgenres": [
+      "idm",
+      "darkwave"
+    ],
+    "youtubeVideoId": "SYoPniPEf3o"
   },
   {
     "name": "Massive Attack",
@@ -5738,6 +6460,27 @@
       "neo-classical"
     ],
     "youtubeVideoId": "tC0cp-dF2Jo"
+  },
+  {
+    "name": "Mega Drive",
+    "birthDate": "1998-06-19",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 24.1,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "darkwave",
+      "idm",
+      "techno"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm",
+      "techno"
+    ],
+    "youtubeVideoId": "jzHQ6vfnxxo"
   },
   {
     "name": "Merzbow",
@@ -5879,6 +6622,46 @@
     "youtubeVideoId": "DiO-yKm_D9E"
   },
   {
+    "name": "Miss Kittin",
+    "birthDate": "1973-07-16",
+    "venus": {
+      "sign": "Leo",
+      "degree": 19.6,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "techno",
+      "idm",
+      "darkwave"
+    ],
+    "subgenres": [
+      "techno",
+      "idm",
+      "darkwave"
+    ],
+    "youtubeVideoId": "_LGI5qAwKP8"
+  },
+  {
+    "name": "Miss Kittin & The Hacker",
+    "birthDate": "1973-07-16",
+    "venus": {
+      "sign": "Leo",
+      "degree": 19.6,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "techno",
+      "idm"
+    ],
+    "subgenres": [
+      "techno",
+      "idm"
+    ],
+    "youtubeVideoId": "_LGI5qAwKP8"
+  },
+  {
     "name": "ML Buch",
     "birthDate": "1987-01-01",
     "venus": {
@@ -5895,6 +6678,25 @@
       "ambient"
     ],
     "youtubeVideoId": "dAVPDFIZXdI"
+  },
+  {
+    "name": "Model 500",
+    "birthDate": "1962-09-12",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 5,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "techno",
+      "idm"
+    ],
+    "subgenres": [
+      "techno",
+      "idm"
+    ],
+    "youtubeVideoId": "lP53ypyiqyM"
   },
   {
     "name": "Moderat",
@@ -5932,6 +6734,25 @@
       "classical"
     ],
     "youtubeVideoId": "To4OQWlfNCo"
+  },
+  {
+    "name": "Monaco",
+    "birthDate": "1995-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 5.9,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "-Ok_xIC3xm8"
   },
   {
     "name": "Monolake",
@@ -6024,6 +6845,27 @@
       "modern-classical"
     ],
     "youtubeVideoId": "GGGfLLkIoVc"
+  },
+  {
+    "name": "New Order",
+    "birthDate": "1980-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 24.2,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave",
+      "idm",
+      "industrial"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm",
+      "industrial"
+    ],
+    "youtubeVideoId": "c1GxjzHm5us"
   },
   {
     "name": "Nick León",
@@ -6120,6 +6962,29 @@
     "youtubeVideoId": "xLNeZogTsNc"
   },
   {
+    "name": "Nitzer Ebb",
+    "birthDate": "1982-06-15",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 18.2,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "industrial",
+      "darkwave",
+      "idm",
+      "techno"
+    ],
+    "subgenres": [
+      "industrial",
+      "darkwave",
+      "idm",
+      "techno"
+    ],
+    "youtubeVideoId": "AGHMS_zh0zM"
+  },
+  {
     "name": "Olga Borodina",
     "birthDate": "1963-07-29",
     "venus": {
@@ -6189,6 +7054,27 @@
       "acid"
     ],
     "youtubeVideoId": "jXfZb8PxdW0"
+  },
+  {
+    "name": "Orchestral Manoeuvres in the Dark",
+    "birthDate": "1978-06-15",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 29.1,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "darkwave",
+      "idm",
+      "industrial"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm",
+      "industrial"
+    ],
+    "youtubeVideoId": "fVnsiFHfeAM"
   },
   {
     "name": "Oscar Feltsman",
@@ -6311,6 +7197,29 @@
       "experimental"
     ],
     "youtubeVideoId": "vQ3UouDs3UE"
+  },
+  {
+    "name": "Oxia",
+    "birthDate": "1971-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 3.9,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "techno",
+      "darkwave",
+      "classical",
+      "idm"
+    ],
+    "subgenres": [
+      "techno",
+      "darkwave",
+      "classical",
+      "idm"
+    ],
+    "youtubeVideoId": "FO566BKY2Jc"
   },
   {
     "name": "Pan Sonic",
@@ -6451,6 +7360,25 @@
       "synthwave"
     ],
     "youtubeVideoId": "oTN6cGmH4jM"
+  },
+  {
+    "name": "Pet Shop Boys",
+    "birthDate": "1981-08-19",
+    "venus": {
+      "sign": "Libra",
+      "degree": 1.1,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "ENArDA1x0hE"
   },
   {
     "name": "Peter Anders",
@@ -6899,6 +7827,29 @@
     "youtubeVideoId": "SHWe0cO0kAU"
   },
   {
+    "name": "Richard H. Kirk",
+    "birthDate": "1956-03-21",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 15.3,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "idm",
+      "techno",
+      "ambient",
+      "industrial"
+    ],
+    "subgenres": [
+      "idm",
+      "techno",
+      "ambient",
+      "industrial"
+    ],
+    "youtubeVideoId": "N7aZihQJmcU"
+  },
+  {
     "name": "Richard Kleinmichel",
     "birthDate": "1846-12-31",
     "venus": {
@@ -7215,6 +8166,65 @@
     "youtubeVideoId": "Yrdyhx-nA_g"
   },
   {
+    "name": "Schwefelgelb",
+    "birthDate": "2004-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 13.7,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "idm",
+      "industrial",
+      "darkwave",
+      "techno"
+    ],
+    "subgenres": [
+      "idm",
+      "industrial",
+      "darkwave",
+      "techno"
+    ],
+    "youtubeVideoId": "Ek5MjpcmBoI"
+  },
+  {
+    "name": "Sebastián Durón",
+    "birthDate": "1660-01-01",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 19.7,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "1tAfNCh_-1M"
+  },
+  {
+    "name": "Section 25",
+    "birthDate": "1977-06-15",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 8.5,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "Snt_MgkNhUc"
+  },
+  {
     "name": "Selma Kurz",
     "birthDate": "1874-10-15",
     "venus": {
@@ -7302,6 +8312,27 @@
     "youtubeVideoId": "4WKQB_sOlv4"
   },
   {
+    "name": "Severed Heads",
+    "birthDate": "1979-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 4.5,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "industrial",
+      "idm",
+      "darkwave"
+    ],
+    "subgenres": [
+      "industrial",
+      "idm",
+      "darkwave"
+    ],
+    "youtubeVideoId": "YsVm6xidkSo"
+  },
+  {
     "name": "Shinichi Atobe",
     "birthDate": "1970-01-01",
     "venus": {
@@ -7354,6 +8385,27 @@
     "youtubeVideoId": "wXh5JprKqiU"
   },
   {
+    "name": "Silicon Teens",
+    "birthDate": "1979-01-01",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 24.8,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "darkwave",
+      "idm",
+      "techno"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm",
+      "techno"
+    ],
+    "youtubeVideoId": "bfIpG9C9F_4"
+  },
+  {
     "name": "Skinny Puppy",
     "birthDate": "1959-12-08",
     "venus": {
@@ -7370,6 +8422,29 @@
       "ebm"
     ],
     "youtubeVideoId": "cod8bRiQjj4"
+  },
+  {
+    "name": "Sky Ferreira",
+    "birthDate": "1992-07-08",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 23.4,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "idm",
+      "darkwave",
+      "techno",
+      "industrial"
+    ],
+    "subgenres": [
+      "idm",
+      "darkwave",
+      "techno",
+      "industrial"
+    ],
+    "youtubeVideoId": "fVA4Slj0SXs"
   },
   {
     "name": "Slag Boom Van Loon",
@@ -7390,6 +8465,25 @@
       "downtempo"
     ],
     "youtubeVideoId": "uxYCNdZfdUk"
+  },
+  {
+    "name": "Soft Cell",
+    "birthDate": "1980-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 24.2,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "QTnJSl6a_48"
   },
   {
     "name": "SOPHIE",
@@ -7545,6 +8639,29 @@
     "youtubeVideoId": "Bk-k8RcLCUc"
   },
   {
+    "name": "Terence Fixmer",
+    "birthDate": "1972-10-02",
+    "venus": {
+      "sign": "Leo",
+      "degree": 26.7,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "techno",
+      "industrial",
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "techno",
+      "industrial",
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "nBYQYBnifrQ"
+  },
+  {
     "name": "Terry Riley",
     "birthDate": "1935-06-24",
     "venus": {
@@ -7580,6 +8697,25 @@
       "idm"
     ],
     "youtubeVideoId": "nEhoiQGCVIE"
+  },
+  {
+    "name": "The Cure",
+    "birthDate": "1976-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 23.8,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave",
+      "industrial"
+    ],
+    "subgenres": [
+      "darkwave",
+      "industrial"
+    ],
+    "youtubeVideoId": "zzQT8f69ujU"
   },
   {
     "name": "The Field",
@@ -7639,6 +8775,46 @@
       "darkwave"
     ],
     "youtubeVideoId": "lAkXQmJSR6E"
+  },
+  {
+    "name": "The Human League",
+    "birthDate": "1977-06-15",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 8.5,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "utbbZDNKncg"
+  },
+  {
+    "name": "The Normal",
+    "birthDate": "1951-02-14",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 17,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "idm",
+      "darkwave",
+      "industrial"
+    ],
+    "subgenres": [
+      "idm",
+      "darkwave",
+      "industrial"
+    ],
+    "youtubeVideoId": "bAB8bgLWOWI"
   },
   {
     "name": "The Orb",
@@ -7753,6 +8929,25 @@
     "youtubeVideoId": "E3R_3h6zQEs"
   },
   {
+    "name": "Tubeway Army",
+    "birthDate": "1976-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 23.8,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "3kdefBY9-PU"
+  },
+  {
     "name": "Tujiko Noriko",
     "birthDate": "1976-01-01",
     "venus": {
@@ -7810,6 +9005,25 @@
       "ambient"
     ],
     "youtubeVideoId": "9WujHGP0ojY"
+  },
+  {
+    "name": "Ultravox",
+    "birthDate": "1973-06-15",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 11.9,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "9RdrgRma0mw"
   },
   {
     "name": "Underground Resistance",
@@ -8008,6 +9222,25 @@
     "youtubeVideoId": "zTmyka4CiGA"
   },
   {
+    "name": "Visage",
+    "birthDate": "1978-06-15",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 29.1,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "tbMAY2Mx1bE"
+  },
+  {
     "name": "Vittorio Gnecchi",
     "birthDate": "1876-07-17",
     "venus": {
@@ -8110,6 +9343,25 @@
       "classical"
     ],
     "youtubeVideoId": "CCm9q2Sjx18"
+  },
+  {
+    "name": "Waveshaper",
+    "birthDate": "1984-09-26",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 1,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "BwCQ7cDxNH8"
   },
   {
     "name": "Werner Enders",
@@ -8316,6 +9568,27 @@
       "classical"
     ],
     "youtubeVideoId": "m5HEXdf_lMQ"
+  },
+  {
+    "name": "yeule",
+    "birthDate": "1997-12-16",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 1.9,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "idm",
+      "ambient",
+      "darkwave"
+    ],
+    "subgenres": [
+      "idm",
+      "ambient",
+      "darkwave"
+    ],
+    "youtubeVideoId": "dKjYY7nHEtc"
   },
   {
     "name": "York Höller",
