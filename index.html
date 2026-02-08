@@ -5,14 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Radio Venus</title>
   <link rel="icon" href="/Radio-Venus/favicon.svg" type="image/svg+xml" />
-  <script type="module" crossorigin src="/Radio-Venus/assets/index-D7IYTG0u.js"></script>
-  <link rel="stylesheet" crossorigin href="/Radio-Venus/assets/index-BHFrbGzs.css">
+  <script type="module" crossorigin src="/Radio-Venus/assets/index-CeVJ_2Ve.js"></script>
+  <link rel="stylesheet" crossorigin href="/Radio-Venus/assets/index-DgfaRdhV.css">
 </head>
 <body>
 
+  <!-- Nebula background (shared across screens) -->
+  <div id="nebula-container" class="nebula-container"></div>
+
   <!-- Screen 1: Portal -->
   <section id="screen-portal" class="screen active">
-    <div id="nebula-container" class="nebula-container"></div>
     <div class="screen-inner">
       <h1 class="title">Radio Venus</h1>
       <p class="subtitle">discover music through your Venus sign</p>
@@ -42,6 +44,7 @@
 
   <!-- Screen 3: Genre -->
   <section id="screen-genre" class="screen">
+    <button id="btn-back-genre" class="btn-back-top" aria-label="Back">&larr;</button>
     <div class="screen-inner">
       <h2 class="genre-heading">Pick your frequency</h2>
       <div id="genre-grid" class="genre-grid"></div>
