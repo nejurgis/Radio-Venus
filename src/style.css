@@ -36,8 +36,17 @@ html, body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-sans);
+  font-size: clamp(14px, 3.97vw, 18px);
   -webkit-font-smoothing: antialiased;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  html, body { font-size: 2vw; }
+}
+
+@media (min-width: 1024px) {
+  html, body { font-size: 1.11111111vw; }
 }
 
 /* ── Screens ─────────────────────────────────────────────────────────────── */
@@ -123,7 +132,7 @@ html, body {
 
 .subtitle {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 66.66%;
   color: var(--text-dim);
   letter-spacing: 0.15em;
   margin-bottom: 3rem;
@@ -253,7 +262,7 @@ html, body {
 
 .venus-detail {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 66.66%;
   color: var(--text-dim);
   margin-bottom: 2.5rem;
   letter-spacing: 0.08em;
@@ -291,7 +300,7 @@ html, body {
 
 .genre-heading {
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: 66.66%;
   font-weight: 300;
   letter-spacing: 0.15em;
   color: var(--text-dim);
@@ -366,7 +375,7 @@ html, body {
 }
 
 .subgenre-chip {
-  font-size: 0.65rem;
+  font-size: 66.66%;
   letter-spacing: 0.04em;
   padding: 0.2rem 0.4rem;
   color: var(--text-dim);
@@ -447,7 +456,7 @@ html, body {
 
 .radio-genre-label {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 66.66%;
   color: var(--text-dim);
   letter-spacing: 0.06em;
 }
@@ -532,7 +541,7 @@ html, body {
 
 .track-item {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 1.05rem;
   padding: 0.6rem 0.5rem;
   color: var(--text-dim);
   border-bottom: 1px solid var(--border);
@@ -566,7 +575,7 @@ html, body {
 }
 
 .track-restricted {
-  font-size: 0.6rem;
+  font-size: 66.66%;
   opacity: 0.6;
   font-style: italic;
 }
@@ -589,7 +598,7 @@ html, body {
 
 .track-similarity {
   font-family: var(--font-mono);
-  font-size: 0.6rem;
+  font-size: 66.66%;
   color: var(--accent);
   opacity: 0.7;
   letter-spacing: 0.02em;
@@ -717,7 +726,6 @@ body.element-water  { --accent: var(--water); }
   }
 
   .subgenre-chip {
-    font-size: 0.65rem;
     padding: 0.2rem 0.4rem;
   }
 }
