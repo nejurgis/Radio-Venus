@@ -101,7 +101,8 @@ async function queryWikidata() {
     const genres = categorizeGenres(rawGenres);
     if (genres.length === 0) continue;
 
-    artists.push({ name, birthDate, genres });
+    const subgenres = categorizeSubgenres(rawGenres);
+    artists.push({ name, birthDate, genres, subgenres });
   }
 
   console.log(`  Found ${artists.length} artists from Wikidata.`);
@@ -226,12 +227,18 @@ async function main() {
 
         if (!videoId) return null;
 
+        // Derive subgenres from genres if empty (e.g. cached Wikidata artists)
+        let subgenres = entry.subgenres || [];
+        if (subgenres.length === 0 && entry.genres.length > 0) {
+          subgenres = categorizeSubgenres(entry.genres);
+        }
+
         return {
           name: entry.name,
           birthDate: entry.birthDate,
           venus,
           genres: entry.genres,
-          subgenres: entry.subgenres || [],
+          subgenres,
           youtubeVideoId: videoId,
         };
       } catch {
