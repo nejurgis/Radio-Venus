@@ -51,7 +51,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "lYNr-0l9qOQ"
   },
   {
@@ -66,8 +68,27 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "YqxOaZSEz1k"
+  },
+  {
+    "name": "Albert Szirmai",
+    "birthDate": "1880-07-02",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 7.7,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "hf9MlMCK5FE"
   },
   {
     "name": "Alberto Mazzucato",
@@ -81,7 +102,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "IQWOQYxPliY"
   },
   {
@@ -96,7 +119,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "3-yuGOnHsR8"
   },
   {
@@ -111,7 +136,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "G4enSHZyefg"
   },
   {
@@ -126,7 +153,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "_UGUPah6lH4"
   },
   {
@@ -141,7 +170,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "-LYTxf9YsM0"
   },
   {
@@ -197,7 +228,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "vpnnOxsiITM"
   },
   {
@@ -212,7 +245,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "xYz5CiEy5bY"
   },
   {
@@ -236,6 +271,24 @@
     "youtubeVideoId": "e-0rWeP8vMs"
   },
   {
+    "name": "Angelo Frondoni",
+    "birthDate": "1809-02-26",
+    "venus": {
+      "sign": "Aries",
+      "degree": 23,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera",
+      "classical"
+    ],
+    "youtubeVideoId": "3VDGIxwIgOo"
+  },
+  {
     "name": "Anja Silja",
     "birthDate": "1935-04-17",
     "venus": {
@@ -247,7 +300,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "mpE0mE3WGKc"
   },
   {
@@ -262,7 +317,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "r3-z_KKsYhA"
   },
   {
@@ -277,7 +334,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "twIrOCdOlfo"
   },
   {
@@ -292,7 +351,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "FgEyZtQ9Gpg"
   },
   {
@@ -307,7 +368,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "DJfxSyRAPJE"
   },
   {
@@ -322,7 +385,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "m33hnPg_86c"
   },
   {
@@ -412,7 +477,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "0gOhKQU6Ff8"
   },
   {
@@ -427,7 +494,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "TtZjTEFf1v0"
   },
   {
@@ -442,7 +511,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "pnAyMl-JXYw"
   },
   {
@@ -457,7 +528,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "8acCBusTdJk"
   },
   {
@@ -531,7 +604,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "7dUQbG2oHGo"
   },
   {
@@ -546,7 +621,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "ik8LQFO3O7A"
   },
   {
@@ -561,7 +638,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "k1cS-oVqAow"
   },
   {
@@ -595,7 +674,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "ZLjU5a1CgRs"
   },
   {
@@ -628,7 +709,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "LGgoLtI29Eo"
   },
   {
@@ -681,7 +764,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "mVUIJT3UaO4"
   },
   {
@@ -715,7 +800,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "fqWu1evzLhI"
   },
   {
@@ -730,7 +817,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "G343Ol3gMow"
   },
   {
@@ -745,7 +834,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "pxroAPVx8zU"
   },
   {
@@ -809,6 +900,23 @@
     "youtubeVideoId": "yBEqqYKF8ck"
   },
   {
+    "name": "Bohuslav Sedláček",
+    "birthDate": "1928-08-13",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 2.3,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "classical"
+    ],
+    "youtubeVideoId": "wNYvKHzbi7Y"
+  },
+  {
     "name": "Bonobo",
     "birthDate": "1976-03-30",
     "venus": {
@@ -848,6 +956,23 @@
       "experimental"
     ],
     "youtubeVideoId": "gkVEf080b-0"
+  },
+  {
+    "name": "Boris Mokrousov",
+    "birthDate": "1909-02-27",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 23,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "wanhztPV1fk"
   },
   {
     "name": "Bradley Strider",
@@ -939,7 +1064,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "EFxvx9T_5xU"
   },
   {
@@ -972,7 +1099,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "DLMXazTWhhE"
   },
   {
@@ -987,7 +1116,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "mL3uhO-LhGo"
   },
   {
@@ -1020,7 +1151,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "7XAPmRyiFYc"
   },
   {
@@ -1035,7 +1168,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "Ro-OFUUMgxE"
   },
   {
@@ -1050,7 +1185,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "OQaA3eUf5oY"
   },
   {
@@ -1065,8 +1202,27 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "GXFSK0ogeg4"
+  },
+  {
+    "name": "Carl Zeller",
+    "birthDate": "1842-06-19",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 24.9,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "fxQXfxqaZIY"
   },
   {
     "name": "Carpenter Brut",
@@ -1137,7 +1293,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "e_rvQkM0_lU"
   },
   {
@@ -1173,7 +1331,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "2O9OfxS0r08"
   },
   {
@@ -1188,7 +1348,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "pFdef4LRXr0"
   },
   {
@@ -1223,7 +1385,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "fY0clnGk3WQ"
   },
   {
@@ -1256,7 +1420,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "F8mKo00aOsw"
   },
   {
@@ -1288,7 +1454,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "O6Ourmzuxf4"
   },
   {
@@ -1303,7 +1471,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "Ab1tezVzzY0"
   },
   {
@@ -1318,7 +1488,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "Oi-tw1IK93Y"
   },
   {
@@ -1352,7 +1524,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "fOlR2jZ94mg"
   },
   {
@@ -1386,7 +1560,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "DKax5-GHC1Y"
   },
   {
@@ -1496,7 +1672,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "UMI57cPaSD4"
   },
   {
@@ -1511,7 +1689,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "8UGmwt02aro"
   },
   {
@@ -1553,6 +1733,24 @@
     "youtubeVideoId": "M1Nc6EGfBM4"
   },
   {
+    "name": "Dmitri Kabalevsky",
+    "birthDate": "1904-12-30",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 20.5,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera",
+      "classical"
+    ],
+    "youtubeVideoId": "mk8mcoGPPkw"
+  },
+  {
     "name": "Dmitri Shostakovich",
     "birthDate": "1906-09-25",
     "venus": {
@@ -1582,7 +1780,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "0x3TVitaaxc"
   },
   {
@@ -1616,7 +1816,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "V77ztPIidbE"
   },
   {
@@ -1650,7 +1852,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "JLDbBqHCslw"
   },
   {
@@ -1665,8 +1869,27 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "sHtBcyKE5sI"
+  },
+  {
+    "name": "Eduard Künneke",
+    "birthDate": "1885-01-27",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 13.7,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "8vO--YzfAdQ"
   },
   {
     "name": "Eduard Lassen",
@@ -1680,7 +1903,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "1eEipig3yBs"
   },
   {
@@ -1695,7 +1920,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "obeHJLurUpQ"
   },
   {
@@ -1710,7 +1937,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "iMxekT2jiXE"
   },
   {
@@ -1725,7 +1954,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "mPpQndLh55c"
   },
   {
@@ -1740,7 +1971,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "-nYX1L3SeRU"
   },
   {
@@ -1774,7 +2007,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "am1p961nSzc"
   },
   {
@@ -1808,7 +2043,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "KJ1js2VIR_k"
   },
   {
@@ -1823,7 +2060,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "qolApRbgV_w"
   },
   {
@@ -1838,7 +2077,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "id3pp-VkAqY"
   },
   {
@@ -1853,7 +2094,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "n8WiuALCJa0"
   },
   {
@@ -1868,7 +2111,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "ig5QYpd-UBw"
   },
   {
@@ -1883,7 +2128,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "vmEtg2u0RME"
   },
   {
@@ -1898,7 +2145,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "lfheMGIiET8"
   },
   {
@@ -1913,7 +2162,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "TIVwwUGjgkE"
   },
   {
@@ -1928,7 +2179,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "AFAPuSJgh7o"
   },
   {
@@ -1962,7 +2215,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "Hqosv56IotA"
   },
   {
@@ -2037,7 +2292,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "Ft7F0-P3UDg"
   },
   {
@@ -2052,7 +2309,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "RnU_COrlJww"
   },
   {
@@ -2067,7 +2326,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "v7I6nfgg2d8"
   },
   {
@@ -2082,7 +2343,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "kTMth7e-oQc"
   },
   {
@@ -2097,7 +2360,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "gcGj4j7ZIQg"
   },
   {
@@ -2112,7 +2377,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "Tf1IZdTx-4g"
   },
   {
@@ -2127,7 +2394,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "OEiSGRFpvWs"
   },
   {
@@ -2142,7 +2411,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "fzqVh-4duc8"
   },
   {
@@ -2174,7 +2445,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "oUIer9VwH0g"
   },
   {
@@ -2189,7 +2462,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "XxKWG1K29v0"
   },
   {
@@ -2211,6 +2486,24 @@
     "youtubeVideoId": "vGq3-Fi_zQY"
   },
   {
+    "name": "Franz Vincenz Tuček",
+    "birthDate": "1773-02-02",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 13.5,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera",
+      "classical"
+    ],
+    "youtubeVideoId": "ikbxYDA3DnM"
+  },
+  {
     "name": "Fred Raymond",
     "birthDate": "1900-04-20",
     "venus": {
@@ -2222,7 +2515,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "MX2zQELQEH8"
   },
   {
@@ -2254,7 +2549,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "r5_7muP1acA"
   },
   {
@@ -2269,7 +2566,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "UhVkpD9Ojxg"
   },
   {
@@ -2284,7 +2583,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "2IGRhLX5WUg"
   },
   {
@@ -2299,7 +2600,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "NEA_hV0hfPA"
   },
   {
@@ -2314,7 +2617,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "xO7RgSMeG3A"
   },
   {
@@ -2329,7 +2634,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "8A1lT9k-fEk"
   },
   {
@@ -2344,7 +2651,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "Ijdf6Fc5L10"
   },
   {
@@ -2359,7 +2668,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "X1qysxLA9OQ"
   },
   {
@@ -2414,7 +2725,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "mpgyTl8yqbw"
   },
   {
@@ -2429,7 +2742,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "SvneU5HsYpc"
   },
   {
@@ -2490,6 +2805,23 @@
     "youtubeVideoId": "NB7lTEEji08"
   },
   {
+    "name": "Gaston Serpette",
+    "birthDate": "1846-11-04",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 1.5,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "classical"
+    ],
+    "youtubeVideoId": "Vbn5Ih2UpuI"
+  },
+  {
     "name": "Gennady Gladkov",
     "birthDate": "1935-02-18",
     "venus": {
@@ -2501,7 +2833,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "4bTB1EXwsKk"
   },
   {
@@ -2516,8 +2850,27 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "KY7sinuIwmk"
+  },
+  {
+    "name": "Georg Jarno",
+    "birthDate": "1868-06-03",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 24.9,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "Q-cR7b21ISg"
   },
   {
     "name": "Georg Wilhelm Rauchenecker",
@@ -2531,7 +2884,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "8JfkqGaN3FI"
   },
   {
@@ -2546,7 +2901,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "8EMt9orau6Y"
   },
   {
@@ -2561,8 +2918,28 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "cuU5sbXYAJ0"
+  },
+  {
+    "name": "George Frideric Handel",
+    "birthDate": "1685-03-05",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 16.1,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera",
+      "classical"
+    ],
+    "youtubeVideoId": "grHZkLaFOY8"
   },
   {
     "name": "George Gershwin",
@@ -2576,7 +2953,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "Ug9o1mlOz7c"
   },
   {
@@ -2591,7 +2970,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "4YML_IC5XoA"
   },
   {
@@ -2606,7 +2987,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "cvny0Mssa04"
   },
   {
@@ -2621,7 +3004,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "LC0lJh5_qss"
   },
   {
@@ -2636,7 +3021,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "CAnEniPP0Co"
   },
   {
@@ -2651,7 +3038,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "4ovOM0VOofE"
   },
   {
@@ -2666,7 +3055,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "9S39JrUcY_c"
   },
   {
@@ -2681,7 +3072,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "0WWbRVbU3Lo"
   },
   {
@@ -2696,7 +3089,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "OloXRhesab0"
   },
   {
@@ -2711,7 +3106,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "zmX5tSwdxkA"
   },
   {
@@ -2744,7 +3141,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "9_7A2aex7ik"
   },
   {
@@ -2833,7 +3232,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "ANdPoigJ_qw"
   },
   {
@@ -2854,6 +3255,24 @@
     "youtubeVideoId": "ypClfhEwwCw"
   },
   {
+    "name": "Gustav Roob",
+    "birthDate": "1879-01-29",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 22.3,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera",
+      "classical"
+    ],
+    "youtubeVideoId": "Jmk5frp6-3Q"
+  },
+  {
     "name": "Gustave Kerker",
     "birthDate": "1857-02-28",
     "venus": {
@@ -2865,7 +3284,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "XwihWsfIM3s"
   },
   {
@@ -2880,7 +3301,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "RCNzwdLwA8g"
   },
   {
@@ -2895,7 +3318,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "PlvDbgVFbWo"
   },
   {
@@ -2910,8 +3335,27 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "Oh2b3BYFxFs"
+  },
+  {
+    "name": "Hans Jelmoli",
+    "birthDate": "1877-01-17",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 0.6,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "t-3pxiUedls"
   },
   {
     "name": "Hans Knappertsbusch",
@@ -2925,7 +3369,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "zsBsKwv2yPM"
   },
   {
@@ -2940,7 +3386,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "IhhpDyeSbZY"
   },
   {
@@ -2955,7 +3403,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "4UjC6ebYAA8"
   },
   {
@@ -2970,7 +3420,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "c_mDoy05nmE"
   },
   {
@@ -2985,7 +3437,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "jwKp6hlLg5U"
   },
   {
@@ -3000,7 +3454,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "4_PbPcOLY5Y"
   },
   {
@@ -3034,8 +3490,27 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "7TcMRSuDZoM"
+  },
+  {
+    "name": "Heinrich Berté",
+    "birthDate": "1857-05-08",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 20.8,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "o7_z1Owijrs"
   },
   {
     "name": "Heinrich Biber",
@@ -3049,7 +3524,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "bh6N3Wi_m5w"
   },
   {
@@ -3064,7 +3541,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "6klSd79aX_w"
   },
   {
@@ -3079,7 +3558,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "OUGCE7JY0zY"
   },
   {
@@ -3114,7 +3595,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "Srju4OnOnzA"
   },
   {
@@ -3129,7 +3612,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "PptQJv4wxdg"
   },
   {
@@ -3162,7 +3647,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "SC5vSOkWPr4"
   },
   {
@@ -3177,7 +3664,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "w79kfRzao1g"
   },
   {
@@ -3192,7 +3681,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "Oc5HKECNzbs"
   },
   {
@@ -3207,7 +3698,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "1zeWGAEZ7YU"
   },
   {
@@ -3222,7 +3715,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "vTv1VROkPTw"
   },
   {
@@ -3314,7 +3809,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "JQ0YZTUGCKI"
   },
   {
@@ -3329,7 +3826,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "lIqlmkRjTh4"
   },
   {
@@ -3362,7 +3861,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "bxi1fDymXUQ"
   },
   {
@@ -3377,7 +3878,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "isWfAG3xKe8"
   },
   {
@@ -3392,7 +3895,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "CL2daiPM-ss"
   },
   {
@@ -3407,7 +3912,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "utHXbTEQLm8"
   },
   {
@@ -3422,7 +3929,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "talhegnvvko"
   },
   {
@@ -3437,7 +3946,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "vCDRcgKzABM"
   },
   {
@@ -3452,7 +3963,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "_GVwHMNwez4"
   },
   {
@@ -3467,7 +3980,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "g7czptgEvvU"
   },
   {
@@ -3522,7 +4037,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "_trcQMrq2C0"
   },
   {
@@ -3546,6 +4063,24 @@
     "youtubeVideoId": "jSFbtIyAqRw"
   },
   {
+    "name": "Ján Móry",
+    "birthDate": "1892-07-10",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 17.5,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera",
+      "classical"
+    ],
+    "youtubeVideoId": "l6kqu2mk-Kw"
+  },
+  {
     "name": "Jean Françaix",
     "birthDate": "1912-05-23",
     "venus": {
@@ -3557,7 +4092,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "fNAHRPWKDEA"
   },
   {
@@ -3578,6 +4115,24 @@
     "youtubeVideoId": "F5zg_af9b8c"
   },
   {
+    "name": "Jean-Baptiste Lully",
+    "birthDate": "1632-11-28",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 24.3,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera",
+      "classical"
+    ],
+    "youtubeVideoId": "cB2qGfyzJRU"
+  },
+  {
     "name": "Jeff Mills",
     "birthDate": "1963-06-18",
     "venus": {
@@ -3596,6 +4151,23 @@
     "youtubeVideoId": "vw-Pu8HZuBk"
   },
   {
+    "name": "Jiři Strniště",
+    "birthDate": "1914-04-24",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 21.3,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "classical"
+    ],
+    "youtubeVideoId": "NbGsHUOoEnc"
+  },
+  {
     "name": "Joachim Nicolas Eggert",
     "birthDate": "1779-02-22",
     "venus": {
@@ -3607,7 +4179,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "nar1fbIUcqI"
   },
   {
@@ -3622,7 +4196,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "8Te0SgWQ9OE"
   },
   {
@@ -3637,7 +4213,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "DSJzz0s0HsA"
   },
   {
@@ -3652,7 +4230,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "NQOscC51POo"
   },
   {
@@ -3667,7 +4247,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "6JQm5aSjX6g"
   },
   {
@@ -3682,7 +4264,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "_Z6-tEipBX0"
   },
   {
@@ -3697,7 +4281,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "o9xVxZcYOis"
   },
   {
@@ -3712,7 +4298,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "oLocUyAEz_k"
   },
   {
@@ -3727,7 +4315,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "pO-P2E180pY"
   },
   {
@@ -3742,7 +4332,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "qH9nBvCzozc"
   },
   {
@@ -3757,7 +4349,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "l7o2_WuR2-o"
   },
   {
@@ -3789,7 +4383,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "PZJ8rjCF3I0"
   },
   {
@@ -3804,7 +4400,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "EXHO9u3IUzo"
   },
   {
@@ -3893,7 +4491,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "nvkVakdV4z8"
   },
   {
@@ -3908,8 +4508,27 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "PZQ5GnCTKx8"
+  },
+  {
+    "name": "Josef Bayer",
+    "birthDate": "1852-03-06",
+    "venus": {
+      "sign": "Aries",
+      "degree": 22.9,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "XF4G4U1zLek"
   },
   {
     "name": "Josef Greindl",
@@ -3923,7 +4542,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "Sdmjz_WBr1w"
   },
   {
@@ -3938,7 +4559,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "FpsibYXqKw4"
   },
   {
@@ -3953,7 +4576,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "1fk0XW9eQFU"
   },
   {
@@ -3968,7 +4593,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "kWKL9Obg9uI"
   },
   {
@@ -3983,7 +4610,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "MKG_6BqnhpI"
   },
   {
@@ -3998,8 +4627,28 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "p-BLASZtz88"
+  },
+  {
+    "name": "Jules Massenet",
+    "birthDate": "1842-05-12",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 8.6,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera",
+      "classical"
+    ],
+    "youtubeVideoId": "xMLrY4fhwNU"
   },
   {
     "name": "Julia Holter",
@@ -4021,6 +4670,41 @@
     "youtubeVideoId": "3HGOxuMecP0"
   },
   {
+    "name": "Júlia Vajda",
+    "birthDate": "1957-02-16",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 13.3,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "pOKtvqW9zt0"
+  },
+  {
+    "name": "Julius Kalaš",
+    "birthDate": "1902-08-18",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 28.5,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera",
+      "classical"
+    ],
+    "youtubeVideoId": "DByv9KRsxr0"
+  },
+  {
     "name": "Julius Rietz",
     "birthDate": "1812-12-28",
     "venus": {
@@ -4032,7 +4716,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "PQpb4ItrEmE"
   },
   {
@@ -4047,8 +4733,28 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "jFkGHus4-bM"
+  },
+  {
+    "name": "Karel Weis",
+    "birthDate": "1862-02-12",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 14.2,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera",
+      "classical"
+    ],
+    "youtubeVideoId": "lV0ZsPFQEAM"
   },
   {
     "name": "Karl Adolf Lorenz",
@@ -4062,7 +4768,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "SUvi1Ck0EAw"
   },
   {
@@ -4077,8 +4785,27 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "1HShStN3ZvU"
+  },
+  {
+    "name": "Karl Michael Ziehrer",
+    "birthDate": "1843-05-02",
+    "venus": {
+      "sign": "Aries",
+      "degree": 2.7,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "d-2WSPl10Tk"
   },
   {
     "name": "Karlheinz Stockhausen",
@@ -4093,7 +4820,10 @@
       "classical",
       "idm"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical",
+      "idm"
+    ],
     "youtubeVideoId": "4bHnGorNTT0"
   },
   {
@@ -4127,7 +4857,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "EfdxqxiCt4A"
   },
   {
@@ -4142,7 +4874,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "gsYQnqNdg2o"
   },
   {
@@ -4157,7 +4891,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "G6lU3vJw1gk"
   },
   {
@@ -4172,7 +4908,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "TnkVgKzKPt8"
   },
   {
@@ -4225,7 +4963,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "GdU4ayO9rOk"
   },
   {
@@ -4260,7 +5000,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "1DYFFKfDK1k"
   },
   {
@@ -4275,7 +5017,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "WqsDn6W6ha0"
   },
   {
@@ -4290,7 +5034,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "icY-uYhQch0"
   },
   {
@@ -4305,7 +5051,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "SIzCR0qmux8"
   },
   {
@@ -4363,7 +5111,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "nosp8FYPD4M"
   },
   {
@@ -4378,7 +5128,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "4fddGrDV2gw"
   },
   {
@@ -4393,7 +5145,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "pLeKMwWT6mI"
   },
   {
@@ -4408,7 +5162,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "Gt2zubHcER4"
   },
   {
@@ -4423,7 +5179,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "pAL6sGxOWEs"
   },
   {
@@ -4438,7 +5196,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "xxiOWST6a30"
   },
   {
@@ -4473,7 +5233,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "Tgvj2pbnfKo"
   },
   {
@@ -4488,7 +5250,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "xGX7c8tNid4"
   },
   {
@@ -4521,7 +5285,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "Km0jc7H0j-A"
   },
   {
@@ -4536,7 +5302,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "Z9MY3BTyeQE"
   },
   {
@@ -4570,7 +5338,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "vh2Bbma8mlw"
   },
   {
@@ -4591,6 +5361,23 @@
       "idm"
     ],
     "youtubeVideoId": "y67jUZ8MsiA"
+  },
+  {
+    "name": "Ludvík Podéšť",
+    "birthDate": "1921-12-19",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 14.7,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "classical"
+    ],
+    "youtubeVideoId": "TGx8sp27jJE"
   },
   {
     "name": "Ludwig van Beethoven",
@@ -4622,8 +5409,27 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "0Lxv_7nGU-Q"
+  },
+  {
+    "name": "Luis Mariano",
+    "birthDate": "1914-08-13",
+    "venus": {
+      "sign": "Libra",
+      "degree": 3.1,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "Bq0l50E6wkA"
   },
   {
     "name": "Luke Vibert",
@@ -4702,7 +5508,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "1HMXHDN_mzo"
   },
   {
@@ -4717,7 +5525,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "SAZXTRrEXgM"
   },
   {
@@ -4732,7 +5542,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "u0RogpXMHDA"
   },
   {
@@ -4747,7 +5559,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "yxAU_8oflTQ"
   },
   {
@@ -4762,8 +5576,28 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "s-TwMfgaDC8"
+  },
+  {
+    "name": "Marianna Laba",
+    "birthDate": "1968-09-07",
+    "venus": {
+      "sign": "Libra",
+      "degree": 6.4,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "baroque",
+      "classical"
+    ],
+    "youtubeVideoId": "B8hhMZP1XRE"
   },
   {
     "name": "Mark McGuire",
@@ -4814,7 +5648,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "daspXiHKuCE"
   },
   {
@@ -4829,7 +5665,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "czYHUbQfzKg"
   },
   {
@@ -4861,8 +5699,27 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "bfZMmgIvc8g"
+  },
+  {
+    "name": "Max Maretzek",
+    "birthDate": "1821-06-28",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 16.3,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "s9agfLVCx4M"
   },
   {
     "name": "Max Richter",
@@ -4912,7 +5769,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "Tc_iqRdGCBo"
   },
   {
@@ -4927,7 +5786,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "PPkSvmzpfH8"
   },
   {
@@ -4950,6 +5811,23 @@
     "youtubeVideoId": "Bululwnj4ik"
   },
   {
+    "name": "Mihai Timofti",
+    "birthDate": "1948-09-19",
+    "venus": {
+      "sign": "Leo",
+      "degree": 11.3,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "K52HeexvV6A"
+  },
+  {
     "name": "Mikis Theodorakis",
     "birthDate": "1925-07-29",
     "venus": {
@@ -4961,7 +5839,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "iueg1fR_LDQ"
   },
   {
@@ -4976,8 +5856,27 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "n3B74Gfn3d4"
+  },
+  {
+    "name": "Miloslav Machek",
+    "birthDate": "1923-11-09",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 1.6,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "classical"
+    ],
+    "youtubeVideoId": "DiO-yKm_D9E"
   },
   {
     "name": "ML Buch",
@@ -5029,7 +5928,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "To4OQWlfNCo"
   },
   {
@@ -5064,7 +5965,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "Y1fiOJDXA-E"
   },
   {
@@ -5079,7 +5982,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "frJYYXQ0xCc"
   },
   {
@@ -5190,7 +6095,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "NRK8A9JJpPI"
   },
   {
@@ -5224,7 +6131,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "FoXCPMvYhH4"
   },
   {
@@ -5239,7 +6148,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "vuk_FalBsvw"
   },
   {
@@ -5291,8 +6202,45 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "xYQ4n3t_DA8"
+  },
+  {
+    "name": "Oscar Straus",
+    "birthDate": "1870-03-06",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 29,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "BL57IKFx52k"
+  },
+  {
+    "name": "Oskar Nedbal",
+    "birthDate": "1874-03-26",
+    "venus": {
+      "sign": "Aries",
+      "degree": 13.4,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera",
+      "classical"
+    ],
+    "youtubeVideoId": "-tHzNLe8T9g"
   },
   {
     "name": "Otto Ackermann",
@@ -5306,7 +6254,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "ivmPuK19PX0"
   },
   {
@@ -5321,7 +6271,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "MDKJgiJn2TU"
   },
   {
@@ -5336,7 +6288,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "MflDTJSOYcI"
   },
   {
@@ -5379,6 +6333,23 @@
     "youtubeVideoId": "fTANmkG8sWM"
   },
   {
+    "name": "Paul Abraham",
+    "birthDate": "1892-11-02",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 29,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "7QTCNuaVz8E"
+  },
+  {
     "name": "Paul Burkhard",
     "birthDate": "1911-12-21",
     "venus": {
@@ -5390,7 +6361,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "GGKccXd4PbA"
   },
   {
@@ -5405,7 +6378,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "-HFiO1B_qoc"
   },
   {
@@ -5420,7 +6395,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "wNK_lDodCs4"
   },
   {
@@ -5435,7 +6412,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "oR0i6z7jc1U"
   },
   {
@@ -5450,7 +6429,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "gFQ1WQ6W_v4"
   },
   {
@@ -5483,7 +6464,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "DMq-e8BVwJU"
   },
   {
@@ -5498,7 +6481,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "yp45BsayXQU"
   },
   {
@@ -5513,7 +6498,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "t3PS8WL7E2c"
   },
   {
@@ -5528,7 +6515,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "k9vDOnQaPz4"
   },
   {
@@ -5568,6 +6557,23 @@
       "idm"
     ],
     "youtubeVideoId": "bo2mhNsp7pc"
+  },
+  {
+    "name": "Plácido Domingo",
+    "birthDate": "1941-01-21",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 9.5,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "c2_uxZrx-B0"
   },
   {
     "name": "Plaid",
@@ -5645,6 +6651,23 @@
       "ambient"
     ],
     "youtubeVideoId": "J37ZExo9xoA"
+  },
+  {
+    "name": "Pongrác Kacsóh",
+    "birthDate": "1873-12-15",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 6.9,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "DmO2AYRlSkw"
   },
   {
     "name": "Porter Ricks",
@@ -5731,8 +6754,27 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "uS4VSIwE79g"
+  },
+  {
+    "name": "Q191917",
+    "birthDate": "1870-04-30",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 23.9,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "iBD6fC55aC8"
   },
   {
     "name": "Rafael Kubelík",
@@ -5746,7 +6788,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "fJc2HSnf6nA"
   },
   {
@@ -5780,7 +6824,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "Li22zCd8m2A"
   },
   {
@@ -5795,7 +6841,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "gQpQgjZRk1U"
   },
   {
@@ -5810,7 +6858,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "np7kU383Vqo"
   },
   {
@@ -5843,7 +6893,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "SHWe0cO0kAU"
   },
   {
@@ -5858,7 +6910,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "yCzcTHZa4K8"
   },
   {
@@ -5873,7 +6927,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "P-aVjTohud0"
   },
   {
@@ -5888,7 +6944,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "TtDHGQqsZDE"
   },
   {
@@ -5903,7 +6961,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "pSZREZpM22Y"
   },
   {
@@ -5955,7 +7015,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "xkyJgChXnRs"
   },
   {
@@ -5987,7 +7049,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "n6jqaB6dSlQ"
   },
   {
@@ -6002,7 +7066,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "yAi3kMGCpgQ"
   },
   {
@@ -6035,7 +7101,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "ggI_KzPrq0Q"
   },
   {
@@ -6050,7 +7118,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "lcNDSQTemGw"
   },
   {
@@ -6065,7 +7135,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "r9GVRBHryyU"
   },
   {
@@ -6120,7 +7192,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "MKG_6BqnhpI"
   },
   {
@@ -6135,7 +7209,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "Yrdyhx-nA_g"
   },
   {
@@ -6150,8 +7226,27 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "qpsZ-fbsCJM"
+  },
+  {
+    "name": "Serafim Tulikov",
+    "birthDate": "1914-07-07",
+    "venus": {
+      "sign": "Leo",
+      "degree": 20.5,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "wcP_B5LnJOI"
   },
   {
     "name": "Sergei Prokofiev",
@@ -6236,7 +7331,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "wXh5JprKqiU"
   },
   {
@@ -6251,7 +7348,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "wXh5JprKqiU"
   },
   {
@@ -6630,7 +7729,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "oKnfR83QyKM"
   },
   {
@@ -6777,7 +7878,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "hSUqZWP5IQc"
   },
   {
@@ -6799,6 +7902,40 @@
       "acid"
     ],
     "youtubeVideoId": "NW8iLr6bAjI"
+  },
+  {
+    "name": "Vadym Shvydkyi",
+    "birthDate": "1975-09-29",
+    "venus": {
+      "sign": "Leo",
+      "degree": 27.8,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "YBC3c__NXdc"
+  },
+  {
+    "name": "Vano Muradeli",
+    "birthDate": "1908-04-06",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 0.7,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "B_6JROiEymY"
   },
   {
     "name": "Venetian Snares",
@@ -6831,8 +7968,27 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "Km3cEQhAGxo"
+  },
+  {
+    "name": "Victor Jacobi",
+    "birthDate": "1883-10-22",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 7,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "dXJgMfsNy1E"
   },
   {
     "name": "Viktor Ullmann",
@@ -6846,7 +8002,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "zTmyka4CiGA"
   },
   {
@@ -6861,7 +8019,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "RwAVBvsJ-7A"
   },
   {
@@ -6895,7 +8055,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "0p5vNxJZVMg"
   },
   {
@@ -6910,8 +8072,27 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "Tn5oPX9qbKU"
+  },
+  {
+    "name": "Walter Kollo",
+    "birthDate": "1878-01-28",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 10.4,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "iU4FhcJ-xJ8"
   },
   {
     "name": "Waltraud Meier",
@@ -6925,7 +8106,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "CCm9q2Sjx18"
   },
   {
@@ -6940,7 +8123,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "pm5trrWB_3U"
   },
   {
@@ -6955,7 +8140,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "QkrZJ_TSln4"
   },
   {
@@ -6970,7 +8157,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "pyFzjqXksdE"
   },
   {
@@ -6985,7 +8174,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "laUUELwB6r0"
   },
   {
@@ -7000,7 +8191,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "HPLA-eCDjOM"
   },
   {
@@ -7034,7 +8227,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "6goVIIua3eI"
   },
   {
@@ -7066,7 +8261,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "5bReJtTkhPU"
   },
   {
@@ -7081,7 +8278,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "Qu-lado4QRg"
   },
   {
@@ -7096,7 +8295,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "uxbi3VO5T_s"
   },
   {
@@ -7111,7 +8312,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "m5HEXdf_lMQ"
   },
   {
@@ -7126,8 +8329,27 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "gT3hrbz6biE"
+  },
+  {
+    "name": "Yuriy Vedeneev",
+    "birthDate": "1945-02-03",
+    "venus": {
+      "sign": "Aries",
+      "degree": 1.2,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "LaapMqTI5bM"
   },
   {
     "name": "Zdeněk Fibich",
@@ -7141,7 +8363,9 @@
     "genres": [
       "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "classical"
+    ],
     "youtubeVideoId": "a0AhxPtKvmk"
   },
   {
