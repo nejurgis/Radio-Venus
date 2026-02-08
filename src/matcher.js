@@ -36,16 +36,14 @@ function reconstructLongitude(m) {
 }
 
 function venusSimilarity(userLon, artistLon) {
-  const sameSign = Math.floor(userLon / 30) === Math.floor(artistLon / 30);
-  if (sameSign) {
-    // Same sign: 50-100% — closer degrees within the sign rank higher
-    const degDiff = Math.abs((userLon % 30) - (artistLon % 30));
-    return Math.round(50 + 50 * (1 - degDiff / 30));
-  }
-  // Different sign: 0-49% — angular distance on the ecliptic
+  // Shortest arc on the 360° circle
   const diff = Math.abs(userLon - artistLon);
-  const angular = diff > 180 ? 360 - diff : diff;
-  return Math.round(49 * (1 - angular / 180));
+  const angularDistance = diff > 180 ? 360 - diff : diff;
+  // 0° = 100%, 180° (opposition) = 0%
+  const base = 100 * (1 - angularDistance / 180);
+  // 5% dropoff for different sign (different modality + element)
+  const sameSign = Math.floor(userLon / 30) === Math.floor(artistLon / 30);
+  return Math.round(sameSign ? base : Math.max(0, base - 5));
 }
 
 function sortBySimilarity(arr, userLon) {
