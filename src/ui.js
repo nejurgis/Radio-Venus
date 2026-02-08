@@ -78,6 +78,14 @@ export function renderGenreGrid(categories, subgenreMap, subgenreCounts, onGenre
   }
 }
 
+export function highlightGenres(genreIds) {
+  const grid = document.getElementById('genre-grid');
+  if (!grid) return;
+  grid.querySelectorAll('.genre-btn').forEach(btn => {
+    btn.classList.toggle('is-highlighted', genreIds != null && genreIds.includes(btn.dataset.genre));
+  });
+}
+
 export function renderRadioHeader(signName, genreLabel, subgenreLabel = null) {
   document.getElementById('radio-sign').textContent = `♀ ${signName}`;
   document.getElementById('radio-genre').textContent = subgenreLabel

@@ -40,6 +40,7 @@ let mouseX = -1;
 let mouseY = -1;
 let zoomSign = null;       // null = full ring, sign index = zoomed
 let containerEl = null;
+let hoverCallback = null;  // called with { name, genres } or null
 
 // Generate a minimal crosshair cursor (24×24, thin white lines with dark shadow)
 const crosshairCursor = (() => {
@@ -137,6 +138,7 @@ export function renderNebula(musicians) {
       alpha: 0.4 + jS * 0.3, // 0.4 - 0.7
       name: m.name,
       sign: m.venus.sign,
+      genres: m.genres || [],
     });
   }
 
@@ -160,6 +162,10 @@ export function setPreviewVenus(longitude, element) {
 
 export function clearPreviewVenus() {
   previewDot = null;
+}
+
+export function onNebulaHover(callback) {
+  hoverCallback = callback;
 }
 
 // ── Zoom control ──────────────────────────────────────────────────────────────
@@ -293,11 +299,16 @@ function tick() {
     ctx.fill();
   }
 
+  const prevHovered = hoveredDot;
   hoveredDot = closestDot;
   if (hoveredDot) {
     document.body.style.cursor = crosshairCursor;
   } else if (document.body.style.cursor) {
     document.body.style.cursor = '';
+  }
+  // Notify listener when hovered dot changes
+  if (hoverCallback && hoveredDot !== prevHovered) {
+    hoverCallback(hoveredDot ? { name: hoveredDot.name, genres: hoveredDot.genres } : null);
   }
 
   ctx.restore();

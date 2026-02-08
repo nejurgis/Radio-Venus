@@ -315,6 +315,12 @@ html, body {
   background: #15151a;
 }
 
+.genre-btn.is-highlighted {
+  border-color: var(--accent);
+  color: var(--text-bright);
+  background: #15151a;
+}
+
 .genre-cell {
   display: flex;
   flex-direction: column;

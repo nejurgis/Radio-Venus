@@ -1,13 +1,14 @@
 import { calculateVenus, makeBirthDate } from './venus.js';
 import { GENRE_CATEGORIES, SUBGENRES } from './genres.js';
 import { loadDatabase, getDatabase, match, getSubgenreCounts } from './matcher.js';
-import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula } from './viz.js';
+import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula, onNebulaHover } from './viz.js';
 import { loadYouTubeAPI, initPlayer, loadVideo, togglePlay, isPlaying } from './player.js';
 import {
   initScreens, showScreen, showLoading, setElementTheme,
   renderReveal, renderGenreGrid, renderRadioHeader,
   renderTrackList, updateNowPlaying, updatePlayButton, showEmptyState,
   markTrackFailed,
+  highlightGenres,
 } from './ui.js';
 
 // ── State ───────────────────────────────────────────────────────────────────
@@ -35,6 +36,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   } else {
     initNebula('nebula-container');
     renderNebula(getDatabase());
+    onNebulaHover(info => highlightGenres(info ? info.genres : null));
   }
 });
 
