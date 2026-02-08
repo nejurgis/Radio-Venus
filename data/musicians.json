@@ -236,6 +236,25 @@
     "youtubeVideoId": "OEBZuKxUrwE"
   },
   {
+    "name": "Alvin Curran",
+    "birthDate": "1938-12-13",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 19.7,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "classical",
+      "idm"
+    ],
+    "subgenres": [
+      "minimalist",
+      "experimental"
+    ],
+    "youtubeVideoId": "B5zqUw6HrxE"
+  },
+  {
     "name": "Amon Tobin",
     "birthDate": "1972-02-07",
     "venus": {
@@ -1554,6 +1573,26 @@
     "youtubeVideoId": "39RxXGcf9-E"
   },
   {
+    "name": "Chevel",
+    "birthDate": "1989-01-01",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 18.4,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "techno",
+      "idm"
+    ],
+    "subgenres": [
+      "minimal",
+      "techno",
+      "idm"
+    ],
+    "youtubeVideoId": "SMjN7sv7WP4"
+  },
+  {
     "name": "Christ.",
     "birthDate": "1712-10-30",
     "venus": {
@@ -1979,6 +2018,27 @@
       "techno"
     ],
     "youtubeVideoId": "GEFHF5VdI00"
+  },
+  {
+    "name": "Detritus",
+    "birthDate": "1978-01-01",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 5.8,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "dnb",
+      "industrial",
+      "idm"
+    ],
+    "subgenres": [
+      "breakcore",
+      "industrial",
+      "idm"
+    ],
+    "youtubeVideoId": "BhrjXCylhNk"
   },
   {
     "name": "Didrik Solli-Tangen",
@@ -2676,6 +2736,27 @@
       "classical"
     ],
     "youtubeVideoId": "Hqosv56IotA"
+  },
+  {
+    "name": "Fis",
+    "birthDate": "2012-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 14.4,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "dnb",
+      "idm",
+      "industrial"
+    ],
+    "subgenres": [
+      "breakcore",
+      "experimental",
+      "noise"
+    ],
+    "youtubeVideoId": "u31thuMehjM"
   },
   {
     "name": "FKA twigs",
@@ -4390,6 +4471,25 @@
     "youtubeVideoId": "YxL4cK6G_8U"
   },
   {
+    "name": "Howlround",
+    "birthDate": "1980-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 12,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "experimental"
+    ],
+    "youtubeVideoId": "CvzmVaXJizc"
+  },
+  {
     "name": "Huerco S.",
     "birthDate": "1991-01-01",
     "venus": {
@@ -4598,6 +4698,23 @@
       "classical"
     ],
     "youtubeVideoId": "vCDRcgKzABM"
+  },
+  {
+    "name": "Itxaro Mentxaka",
+    "birthDate": "1964-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 10.8,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "qDh0fVc7_gY"
   },
   {
     "name": "Ivan Rebroff",
@@ -5640,6 +5757,24 @@
     "youtubeVideoId": "NXZXZypxQnw"
   },
   {
+    "name": "Klimek",
+    "birthDate": "1973-01-01",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 17.1,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient"
+    ],
+    "subgenres": [
+      "drone",
+      "ambient"
+    ],
+    "youtubeVideoId": "ODuS2y05uPU"
+  },
+  {
     "name": "Korla Awgust Kocor",
     "birthDate": "1822-12-03",
     "venus": {
@@ -5942,6 +6077,25 @@
       "classical"
     ],
     "youtubeVideoId": "Tgvj2pbnfKo"
+  },
+  {
+    "name": "Lino Capra Vaccina",
+    "birthDate": "1953-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 25.5,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "classical"
+    ],
+    "subgenres": [
+      "minimalist",
+      "ambient"
+    ],
+    "youtubeVideoId": "1cIIfH7TayI"
   },
   {
     "name": "Lorin Maazel",
@@ -7079,6 +7233,25 @@
     "youtubeVideoId": "AGHMS_zh0zM"
   },
   {
+    "name": "Odd Nosdam",
+    "birthDate": "1976-01-01",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 30,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "idm",
+      "triphop"
+    ],
+    "subgenres": [
+      "glitch",
+      "experimental"
+    ],
+    "youtubeVideoId": "IM27cRY_31s"
+  },
+  {
     "name": "Olga Borodina",
     "birthDate": "1963-07-29",
     "venus": {
@@ -7820,6 +7993,23 @@
     "youtubeVideoId": "iBD6fC55aC8"
   },
   {
+    "name": "R. Stevie Moore",
+    "birthDate": "1952-01-18",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 18.9,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "youtubeVideoId": "1Cjd_jQoVkc"
+  },
+  {
     "name": "Rafael Kubelík",
     "birthDate": "1914-06-29",
     "venus": {
@@ -7997,6 +8187,24 @@
       "classical"
     ],
     "youtubeVideoId": "P-aVjTohud0"
+  },
+  {
+    "name": "Richard Skelton",
+    "birthDate": "1978-01-01",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 5.8,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient"
+    ],
+    "subgenres": [
+      "drone",
+      "ambient"
+    ],
+    "youtubeVideoId": "KZsWUUKW1hA"
   },
   {
     "name": "Richard Strauss",
@@ -8676,6 +8884,25 @@
       "ambient"
     ],
     "youtubeVideoId": "TWn1C1POc6M"
+  },
+  {
+    "name": "Steve Everitt",
+    "birthDate": "1980-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 12,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "darkwave"
+    ],
+    "subgenres": [
+      "ambient",
+      "synthwave"
+    ],
+    "youtubeVideoId": "PXOtpbOF3rM"
   },
   {
     "name": "Steve Hauschildt",
@@ -9373,6 +9600,25 @@
       "idm"
     ],
     "youtubeVideoId": "tbMAY2Mx1bE"
+  },
+  {
+    "name": "Vit Fana",
+    "birthDate": "2014-01-01",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 26.7,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "synth-pop",
+      "experimental"
+    ],
+    "youtubeVideoId": "cw3-K_QAqPo"
   },
   {
     "name": "Vittorio Gnecchi",
