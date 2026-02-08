@@ -237,20 +237,26 @@ function tick() {
   }
 
   // ── Whole-sign sector outlines (12 annular wedges) ──────────────────────
+  // Thin, crisp strokes inspired by Rudnick's ring aesthetic
   ctx.save();
-  ctx.strokeStyle = isZoomed ? 'rgba(255, 255, 255, 0.06)' : 'rgba(255, 255, 255, 0.08)';
-  ctx.lineWidth = isZoomed ? 0.3 : 0.8;
+  ctx.strokeStyle = isZoomed ? 'rgba(255, 255, 255, 0.05)' : 'rgba(255, 255, 255, 0.1)';
+  ctx.lineWidth = isZoomed ? 0.15 : 0.4;
   for (let i = 0; i < 12; i++) {
-    // Negate so signs progress counter-clockwise (astrological convention)
     const a0 = (-(i * 30) - 90 + rot) * Math.PI / 180;
-    const a1 = (-((i + 1) * 30) - 90 + rot) * Math.PI / 180;
     ctx.beginPath();
-    ctx.arc(cx, cy, outerR, a0, a1, true);
-    ctx.lineTo(cx + innerR * Math.cos(a1), cy + innerR * Math.sin(a1));
-    ctx.arc(cx, cy, innerR, a1, a0);
-    ctx.closePath();
+    ctx.moveTo(cx + outerR * Math.cos(a0), cy + outerR * Math.sin(a0));
+    ctx.lineTo(cx + innerR * Math.cos(a0), cy + innerR * Math.sin(a0));
     ctx.stroke();
   }
+  // Inner and outer ring circles — continuous thin strokes
+  ctx.lineWidth = isZoomed ? 0.1 : 0.3;
+  ctx.strokeStyle = isZoomed ? 'rgba(255, 255, 255, 0.04)' : 'rgba(255, 255, 255, 0.07)';
+  ctx.beginPath();
+  ctx.arc(cx, cy, outerR, 0, Math.PI * 2);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(cx, cy, innerR, 0, Math.PI * 2);
+  ctx.stroke();
   ctx.restore();
 
   // ── Artist dots ─────────────────────────────────────────────────────────

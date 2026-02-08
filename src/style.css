@@ -302,9 +302,9 @@ html, body {
   font-size: 0.8rem;
   letter-spacing: 0.06em;
   padding: 1rem;
-  background: var(--bg-surface);
+  background: var(--genre-color, var(--bg-surface));
   color: var(--text);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   cursor: pointer;
   width: 100%;
   text-transform: lowercase;
@@ -312,17 +312,27 @@ html, body {
 }
 
 .genre-btn:hover {
-  background: var(--accent);
-  color: var(--bg);
-  border-color: var(--accent);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  background: var(--genre-color-bright, var(--accent));
+  color: var(--text-bright);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 20px var(--genre-color, rgba(255, 255, 255, 0.1));
 }
 
 .genre-btn.is-highlighted {
-  background: var(--accent);
-  color: var(--bg);
-  border-color: var(--accent);
+  background: var(--genre-color-bright, var(--accent));
+  color: var(--text-bright);
+  border-color: rgba(255, 255, 255, 0.12);
 }
+
+/* Rudnick zodiac palette per genre */
+[data-genre="ambient"]    { --genre-color: rgba(11, 83, 119, 0.18);  --genre-color-bright: rgba(11, 83, 119, 0.45); }
+[data-genre="techno"]     { --genre-color: rgba(227, 106, 95, 0.15); --genre-color-bright: rgba(227, 106, 95, 0.4); }
+[data-genre="idm"]        { --genre-color: rgba(213, 165, 48, 0.14); --genre-color-bright: rgba(213, 165, 48, 0.38); }
+[data-genre="industrial"] { --genre-color: rgba(21, 1, 90, 0.22);    --genre-color-bright: rgba(21, 1, 90, 0.5); }
+[data-genre="darkwave"]   { --genre-color: rgba(168, 100, 160, 0.16); --genre-color-bright: rgba(168, 100, 160, 0.4); }
+[data-genre="triphop"]    { --genre-color: rgba(158, 138, 41, 0.16); --genre-color-bright: rgba(158, 138, 41, 0.4); }
+[data-genre="dnb"]        { --genre-color: rgba(196, 117, 78, 0.16); --genre-color-bright: rgba(196, 117, 78, 0.4); }
+[data-genre="classical"]  { --genre-color: rgba(61, 43, 145, 0.2);   --genre-color-bright: rgba(61, 43, 145, 0.45); }
 
 .genre-cell {
   display: flex;
