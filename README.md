@@ -16,10 +16,10 @@ Genre pick  ──►  Subgenre filter  ──►  Venus similarity sort  ──
                                                                   YouTube Player
 ```
 
-1. **Portal** — User enters their birth date (DD/MM/YYYY). A zodiac nebula ring shows the distribution of all ~430 artists as element-colored dots at their ecliptic longitudes, with whole-sign sector outlines. Hover over any dot to see the artist name and Venus position in a center readout.
+1. **Portal** — User enters their birth date (DD/MM/YYYY). A zodiac nebula ring shows the distribution of all ~470 artists as element-colored dots at their ecliptic longitudes, with whole-sign sector outlines. Hover over any dot to see the artist name and Venus position in a center readout. As you type, a preview dot glows at your Venus position.
 2. **Reveal** — Venus sign is calculated client-side and displayed with its glyph, degree, decan, and element
 3. **Genre** — User picks from 8 genre categories, each showing clickable subgenre chips underneath. The nebula zooms into the user's sign sector as a background, showing just the 30° wedge of their Venus sign.
-4. **Radio** — Matched artists play via the YouTube IFrame API, sorted by Venus proximity (0-100%). Each track shows the artist's Venus sign and degree.
+4. **Radio** — Matched artists play via the YouTube IFrame API, sorted by Venus proximity (0-100%). Each track shows the artist's Venus sign (element-colored) and degree.
 
 ### Venus calculation
 
@@ -91,7 +91,7 @@ Radio-Venus/
     seed-musicians.json             # 174 hand-curated artists with verified video IDs + subgenres
     manual-overrides.json           # Birth dates for artists invisible to all databases
   public/
-    data/musicians.json             # Generated database (gitignored, ~430 artists)
+    data/musicians.json             # Generated database (~470 artists)
     favicon.svg                     # Venus glyph
   .github/workflows/
     deploy.yml                      # Auto-deploy to GitHub Pages on push to master
@@ -100,11 +100,12 @@ Radio-Venus/
 **Build time** (Node.js, `scripts/build-db.mjs`):
 1. Loads seed data (174 artists with subgenres + YouTube IDs)
 2. Queries Wikidata SPARQL for musicians with birth dates
-3. Maps raw genre tags through `categorizeGenres()` from `src/genres.js`
+3. Maps raw genre tags through `categorizeGenres()` and `categorizeSubgenres()` from `src/genres.js`
 4. Calculates Venus positions (sign, degree, decan, element) using astronomy-engine
-5. Merges seed + Wikidata (seed takes priority), preserves cached YouTube IDs
-6. Searches YouTube for any artists still missing video IDs
-7. Outputs `public/data/musicians.json`
+5. Derives subgenres from genre categories for any artist with empty subgenres
+6. Merges seed + Wikidata (seed takes priority), preserves cached YouTube IDs
+7. Searches YouTube for any artists still missing video IDs
+8. Outputs `public/data/musicians.json`
 
 **Discovery** (Node.js, `scripts/smart-match.mjs`):
 - Takes a seed artist name, scrapes Last.fm's "similar artists" page
@@ -124,20 +125,20 @@ Radio-Venus/
 
 ## Database
 
-**~430 musicians** across all 12 Venus signs and 8 genres.
+**~470 musicians** across all 12 Venus signs and 8 genres.
 
 | Genre | Artists |
 |-------|---------|
-| Classical / Orchestral | ~300 |
-| Ambient / Drone | ~25 |
-| IDM / Experimental | ~22 |
-| Techno / House | ~19 |
-| Synthwave / Darkwave | ~11 |
-| Industrial / Noise | ~11 |
-| Trip-Hop / Downtempo | ~8 |
-| Drum & Bass / Jungle | ~7 |
+| Classical / Orchestral | ~336 |
+| Ambient / Drone | ~75 |
+| IDM / Experimental | ~75 |
+| Techno / House | ~56 |
+| Industrial / Noise | ~23 |
+| Trip-Hop / Downtempo | ~23 |
+| Synthwave / Darkwave | ~14 |
+| Drum & Bass / Jungle | ~12 |
 
-The seed file contains **174 hand-curated artists** with verified embeddable YouTube video IDs and hand-assigned subgenres. Wikidata supplements this with additional musicians (primarily classical composers, who have `subgenres: []`). The build script processes them in parallel batches of 5.
+The seed file contains **174 hand-curated artists** with verified embeddable YouTube video IDs and hand-assigned subgenres. Wikidata supplements this with additional musicians (primarily classical composers). The build script auto-derives subgenres for all artists using `categorizeSubgenres()`, so all ~470 artists participate in subgenre filtering. The build processes artists in parallel batches of 5.
 
 ### Data model
 
@@ -198,13 +199,15 @@ The [MetaBrainz genre-matching project](https://github.com/metabrainz/genre-matc
 
 ### Subgenre coverage
 
-Of the ~60 subgenres defined, **15 have 7+ artists** in the seed data and are clickable in the UI:
+Of the ~60 subgenres defined, **20 have 7+ artists** and are clickable in the UI:
 
 | Subgenre | Artists | Parent genre |
 |----------|---------|-------------|
+| classical | 277 | classical |
 | ambient | 57 | ambient |
 | experimental | 48 | idm |
-| idm | 45 | idm |
+| idm | 46 | idm |
+| opera | 37 | classical |
 | techno | 28 | techno |
 | modern-classical | 14 | classical |
 | trip-hop | 13 | triphop |
@@ -214,11 +217,11 @@ Of the ~60 subgenres defined, **15 have 7+ artists** in the seed data and are cl
 | acid | 12 | techno |
 | glitch | 12 | idm |
 | minimal | 10 | techno |
-| downtempo | 8 | triphop |
 | minimalist | 8 | classical |
+| downtempo | 8 | triphop |
 | drone | 7 | ambient |
 
-The remaining ~45 subgenres have 1-6 artists each and appear as dimmed (non-clickable) chips. Only the 174 seed artists have hand-curated subgenres; the ~257 Wikidata artists have empty subgenre arrays. Improving subgenre coverage for Wikidata artists is a future improvement (see AcousticBrainz section below).
+The remaining ~40 subgenres have 1-6 artists each and appear as dimmed (non-clickable) chips. The 174 seed artists have hand-curated subgenres; Wikidata artists have subgenres auto-derived from their genre categories via `categorizeSubgenres()`.
 
 ### Tag mapping
 
@@ -257,7 +260,7 @@ npm run build:db    # Generate musicians.json (queries Wikidata + YouTube)
 npm run dev         # Start dev server at localhost:5173
 ```
 
-The `build:db` step is required before first run — it generates `public/data/musicians.json` which is gitignored. If Wikidata is unavailable, the build falls back to seed data only.
+The `build:db` step regenerates `public/data/musicians.json` (checked into the repo, so the app works without rebuilding). If Wikidata is unavailable, the build falls back to seed data only.
 
 ## Design
 
@@ -272,14 +275,16 @@ Screens transition with opacity fades. A loading overlay with a spinning Venus g
 
 ### Zodiac Nebula
 
-A Canvas-based visualization (`src/viz.js`) draws all ~430 artists as a ring of element-colored dots at their ecliptic longitudes. Key features:
+A Canvas-based visualization (`src/viz.js`) draws all ~470 artists as a ring of element-colored dots at their ecliptic longitudes. Key features:
 
 - **Whole-sign sector outlines** — 12 annular wedges with white outlines, signs progress counter-clockwise (astrological convention)
 - **Element colors** — fire (red), earth (green), air (yellow), water (blue)
+- **3D bead dots** — Radial gradients with offset highlight (top-left light source) give dots a dimensional, skeuomorphic look. Scaled 1.5x to compensate for soft gradient edges.
 - **Deterministic jitter** — Artist positions are hashed from their name, so the nebula is stable across renders (no `Math.random()`)
 - **Additive blending** — `globalCompositeOperation: 'lighter'` makes overlapping dots glow where signs are dense
 - **Slow rotation** — 360° in 240 seconds
-- **Hover readout** — Mousemove hit-testing finds the nearest dot (8px threshold), expands it to 5px white, and shows the artist name + Venus sign/degree in the ring center. Custom 24px crosshair cursor generated as a canvas data URL.
+- **Hover readout** — Document-level mousemove hit-testing finds the nearest dot, expands it to 7px white, and shows the artist name + Venus sign/degree. Works on both portal (full ring) and genre (zoomed) screens. Interactive elements (inputs, buttons) take priority over hover detection. Custom 24px crosshair cursor generated as a canvas data URL.
+- **Preview dot** — As the user types their birth date, a soft breathing glow appears at the corresponding Venus position on the ring, giving immediate visual feedback before submitting
 - **User Venus dot** — Pulsing dot with radial gradient glow at the user's exact ecliptic longitude
 - **HiDPI** — Scaled by `devicePixelRatio` for crisp Retina rendering
 
@@ -293,11 +298,11 @@ The genre grid is a 2-column layout (480px max-width) where each cell contains:
 - A `.genre-btn` button (the main genre selector)
 - A `.subgenre-chips` row of small tags beneath it
 
-Subgenre chips at 0.6rem monospace, no background. **Active chips** (7+ artists) use the element accent color and show an underline on hover. **Inactive chips** (<7 artists) are dimmed to 40% opacity as informational tags. Hover tooltips show the exact artist count.
+Subgenre chips at 0.7rem monospace, no background. **Active chips** (7+ artists) use the element accent color and show an underline on hover. **Inactive chips** (<7 artists) are dimmed to 40% opacity as informational tags. Hover tooltips show the exact artist count. The genre and reveal screens have a subtle radial accent glow matching the user's element color.
 
 ### Track list
 
-Each track displays: artist name (left, truncated with ellipsis if long), Venus similarity percentage in accent color, and Venus sign with degree (right, e.g. "Gemini 13°"). The active track is highlighted in the accent color. Failed/restricted tracks are struck through at 25% opacity.
+Each track displays: artist name (left, truncated with ellipsis if long), Venus similarity percentage in accent color, and Venus sign with degree (right, e.g. "Gemini 13°"). Sign names are colored by their element (fire=red, earth=green, air=yellow, water=blue). The active track is highlighted in the accent color. Failed/restricted tracks are struck through at 25% opacity.
 
 ## Key dependencies
 
@@ -318,7 +323,7 @@ Each track displays: artist name (left, truncated with ellipsis if long), Venus 
 
 ## Known limitations
 
-- **Subgenre coverage is partial** — Only the 174 seed artists have hand-curated subgenres. The ~257 Wikidata artists have empty `subgenres` arrays and won't appear in subgenre-filtered results. This means subgenre filtering mainly works for electronic artists (well-curated) and is sparse for classical.
+- **Subgenre precision varies** — Seed artists (174) have hand-curated subgenres. Wikidata artists have subgenres auto-derived from their genre categories, which gives broad but less precise assignments (e.g., a classical composer gets `classical` and `opera` subgenres based on Wikidata labels, but not fine-grained tags like `romantic` or `impressionist` unless those labels were present).
 - **Embed restrictions** — Some YouTube videos block embedded playback (Error 150/101). The app handles this with auto-skip and visual feedback, but some sign+genre combinations may have fewer playable tracks.
 - **Birth time not considered** — Venus sign is calculated at noon UTC. For birth dates where Venus changes signs that day, the result may differ from a full natal chart with exact birth time. The similarity score could show ~100% for an artist whose actual Venus is in the adjacent sign.
 - **Electronic genre coverage is thin vs. classical** — Wikidata has far more classical composers with birth dates than electronic musicians. The seed file compensates but could always use more entries.
@@ -361,7 +366,7 @@ The genre research drew on three datasets. Here's an honest accounting of what a
 - Gap analysis against our `GENRE_MAP` identified ~30 unmapped MusicBrainz/Last.fm tags
 
 **Not used (available for future work):**
-- **Recording-level cross-referencing** — The dataset maps MusicBrainz Recording IDs (MBIDs) to Discogs genre annotations. We could look up our artists' recordings and auto-assign subgenres instead of hand-curating them. This would be especially valuable for the ~300 Wikidata artists that currently have no subgenres.
+- **Recording-level cross-referencing** — The dataset maps MusicBrainz Recording IDs (MBIDs) to Discogs genre annotations. We could look up our artists' recordings and assign more precise subgenres than the current genre-category-based derivation (e.g., distinguishing a `baroque` composer from a `romantic` one based on actual recordings rather than broad Wikidata labels).
 - **Audio features** — AcousticBrainz provides pre-computed audio descriptors (danceability, mood, energy, timbre) for each recording. These could power a "sonic vibe" matching layer — e.g., if a user's Venus sign has no exact genre match, fall back to sonically similar artists rather than just same-element artists.
 - **Multi-label ground truth** — The dataset has multiple genre annotations per recording. This could improve our `categorizeGenres()` by weighting tags by how often they co-occur in real recordings, rather than treating all tag→category mappings equally.
 
@@ -434,4 +439,4 @@ The YouTube IFrame API is currently the only audio backend. It's free, has massi
 - **Confidence scoring for genre assignments** — Currently all genre tags are treated equally. Adding a confidence score (based on how many sources agree on a tag) would allow the matcher to prefer high-confidence assignments.
 - **Preserve raw tags** — Store the original MusicBrainz/Last.fm/Wikidata tags alongside the normalized genres, so future re-categorization doesn't require re-fetching from APIs.
 - **Venus element/modality-based discovery** — The matcher already falls back through sign → opposite sign → same element. Could add modality (cardinal/fixed/mutable) as another axis, or weight matches by astrological aspect (trine, sextile, square).
-- **Subgenre coverage for Wikidata artists** — The 257 Wikidata artists have empty `subgenres` arrays. The build script could use `categorizeSubgenres()` on the raw Wikidata genre labels to auto-populate these, or AcousticBrainz recording-level lookups could provide more precise assignments.
+- **Finer subgenre assignment for Wikidata artists** — Currently Wikidata artists get subgenres derived from their broad genre categories (e.g., `classical` → `classical`). AcousticBrainz recording-level lookups could provide more precise assignments (e.g., distinguishing `romantic` from `baroque` based on actual recordings).
