@@ -15,6 +15,7 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import https from 'node:https';
+import { categorizeGenres } from '../src/genres.js';
 
 const require = createRequire(import.meta.url);
 const Astronomy = require('astronomy-engine');
@@ -48,57 +49,7 @@ function calculateVenus(dateStr) {
   return SIGNS[signIndex];
 }
 
-// ── Genre categorization (same as build-db.mjs) ────────────────────────────
-
-const GENRE_MAP = {
-  'electronic music': ['idm'], 'electronic': ['idm'],
-  'techno': ['techno'], 'house music': ['techno'], 'house': ['techno'],
-  'minimal techno': ['techno'], 'acid house': ['techno'], 'acid techno': ['techno'],
-  'detroit techno': ['techno'], 'deep house': ['techno'], 'tech house': ['techno'],
-  'dub techno': ['techno', 'ambient'], 'microhouse': ['techno'],
-  'ambient music': ['ambient'], 'ambient': ['ambient'], 'dark ambient': ['ambient'],
-  'drone music': ['ambient'], 'drone': ['ambient'], 'space music': ['ambient'],
-  'idm': ['idm'], 'intelligent dance music': ['idm'],
-  'experimental music': ['idm'], 'experimental': ['idm'],
-  'experimental electronic': ['idm'], 'glitch': ['idm'],
-  'electroacoustic': ['idm'], 'musique concrète': ['idm'],
-  'industrial music': ['industrial'], 'industrial': ['industrial'],
-  'noise music': ['industrial'], 'noise': ['industrial'],
-  'power electronics': ['industrial'], 'death industrial': ['industrial'],
-  'ebm': ['industrial', 'darkwave'], 'electronic body music': ['industrial', 'darkwave'],
-  'synthwave': ['darkwave'], 'darkwave': ['darkwave'], 'coldwave': ['darkwave'],
-  'post-punk': ['darkwave'], 'synthpop': ['darkwave'], 'synth-pop': ['darkwave'],
-  'new wave': ['darkwave'], 'minimal wave': ['darkwave'], 'gothic rock': ['darkwave'],
-  'trip hop': ['triphop'], 'trip-hop': ['triphop'], 'downtempo': ['triphop'],
-  'chillout': ['triphop'], 'dub': ['triphop'],
-  'drum and bass': ['dnb'], 'drum & bass': ['dnb'], 'jungle': ['dnb'],
-  'breakcore': ['dnb'], 'breakbeat': ['dnb'], 'dubstep': ['dnb'],
-  'grime': ['dnb'], 'footwork': ['dnb'],
-  'classical music': ['classical'], 'classical': ['classical'],
-  'orchestral': ['classical'], 'opera': ['classical'], 'symphony': ['classical'],
-  'chamber music': ['classical'], 'baroque music': ['classical'], 'baroque': ['classical'],
-  'romantic music': ['classical'], 'impressionist music': ['classical'],
-  'minimalism': ['classical'], 'minimalist music': ['classical'],
-  'contemporary classical': ['classical'], 'neoclassical': ['classical'],
-  'piano music': ['classical'], 'choral music': ['classical'], 'art music': ['classical'],
-};
-
-function categorizeGenres(rawGenres) {
-  const categories = new Set();
-  for (const raw of rawGenres) {
-    const n = raw.toLowerCase().trim();
-    if (GENRE_MAP[n]) {
-      GENRE_MAP[n].forEach(c => categories.add(c));
-    } else {
-      for (const [key, cats] of Object.entries(GENRE_MAP)) {
-        if (n.includes(key) || key.includes(n)) {
-          cats.forEach(c => categories.add(c));
-        }
-      }
-    }
-  }
-  return [...categories];
-}
+// Genre categorization imported from src/genres.js (single source of truth)
 
 // ── HTTP helpers ────────────────────────────────────────────────────────────
 

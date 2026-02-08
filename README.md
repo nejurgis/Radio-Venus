@@ -86,7 +86,59 @@ Radio-Venus/
 | Trip-Hop / Downtempo | 8 |
 | Drum & Bass / Jungle | 7 |
 
-The seed file contains ~86 hand-curated artists with verified embeddable YouTube video IDs. Wikidata supplements this with additional musicians (primarily classical composers). The build script processes them in parallel batches of 5.
+The seed file contains 174 hand-curated artists with verified embeddable YouTube video IDs. Wikidata supplements this with additional musicians (primarily classical composers). The build script processes them in parallel batches of 5.
+
+## Genre taxonomy
+
+Radio Venus uses a two-level genre system: **8 top-level categories** for UI filtering, and **~60 Discogs-derived subgenres** for richer metadata.
+
+### Research methodology
+
+The genre taxonomy was built by cross-referencing three sources:
+
+1. **MusicBrainz** — 2,000 official curated genres with user-voted popularity counts. Queried via the [MusicBrainz API](https://musicbrainz.org/doc/MusicBrainz_API) (`inc=genres+tags`) for all seed artists to identify unmapped tags.
+
+2. **Discogs** — 15 top-level genres and ~300 styles (81 electronic). Analyzed via the [AcousticBrainz Genre Dataset](https://mtg.github.io/acousticbrainz-genre-dataset/) (Zenodo), which contains Discogs genre annotations for 905K recordings across 118K release groups. Co-occurrence analysis of electronic subgenres confirmed the 8-category clustering.
+
+3. **UPF ISMIR 2022** — Alonso-Jimenez, Serra & Bogdanov, "[Music Representation Learning Based on Editorial Metadata From Discogs](https://repositori.upf.edu/handle/10230/54473)". Trained contrastive models on the top-400 Discogs styles across 3.3M tracks. Their finding that artist-level associations produce the strongest genre representations (87.7 ROC-AUC) validates our artist-level genre tagging approach.
+
+The [MetaBrainz genre-matching project](https://github.com/metabrainz/genre-matching) provided cross-taxonomy mappings between Discogs, Last.fm, and MusicBrainz, confirming high compatibility between the systems.
+
+### Top-level categories
+
+| ID | Label | Subgenres |
+|----|-------|-----------|
+| `ambient` | Ambient / Drone | ambient, dark-ambient, drone, berlin-school, new-age, space-ambient |
+| `techno` | Techno / House | techno, house, deep-house, minimal, dub-techno, tech-house, acid, electro, trance |
+| `idm` | IDM / Experimental | idm, experimental, abstract, glitch, leftfield, electronica, folktronica |
+| `industrial` | Industrial / Noise | industrial, noise, ebm, power-electronics, rhythmic-noise, harsh-noise |
+| `darkwave` | Synthwave / Darkwave | darkwave, synth-pop, new-wave, coldwave, synthwave, darksynth, krautrock |
+| `triphop` | Trip-Hop / Downtempo | trip-hop, downtempo, dub, future-jazz, chillout, broken-beat, nu-jazz |
+| `dnb` | Drum & Bass / Jungle | drum-n-bass, jungle, breakbeat, breakcore, dubstep, grime, uk-garage, future-garage, footwork |
+| `classical` | Classical / Orchestral | classical, baroque, romantic, contemporary, neo-classical, impressionist, modern-classical, opera, minimalist |
+
+### Tag mapping
+
+Raw tags from MusicBrainz, Last.fm, and Wikidata are normalized via `GENRE_MAP` (~130 entries) in `src/genres.js`. This is the single source of truth — both `build-db.mjs` and `smart-match.mjs` import from it. The map handles:
+
+- **Exact matches**: `"dub techno"` → `['techno', 'ambient']`
+- **Spelling variants**: `"synth-pop"` / `"synthpop"` → `['darkwave']`
+- **Cross-taxonomy terms**: `"drum and bass"` / `"drum & bass"` / `"drum n bass"` → `['dnb']`
+- **Substring fallbacks**: unknown tags are matched against existing keys via substring inclusion
+
+### Key findings from co-occurrence analysis
+
+From the AcousticBrainz Discogs dataset (electronic recordings only):
+
+| Co-occurring subgenres | Count | Validates |
+|------------------------|-------|-----------|
+| electro + synth-pop | 1,192 | darkwave cluster |
+| ambient + experimental | 1,124 | ambient/idm overlap |
+| ambient + downtempo | 1,038 | ambient/triphop bridge |
+| ebm + industrial | 568 | industrial cluster |
+| ambient + idm | 533 | idm/ambient affinity |
+| downtempo + trip hop | 490 | triphop cluster |
+| house + techno | 446 | techno cluster |
 
 ## Setup
 
@@ -143,6 +195,7 @@ To add more artists, edit `scripts/seed-musicians.json`:
   "name": "Artist Name",
   "birthDate": "YYYY-MM-DD",
   "genres": ["techno", "ambient"],
+  "subgenres": ["dub-techno", "ambient"],
   "youtubeVideoId": "dQw4w9WgXcQ"
 }
 ```
@@ -150,5 +203,7 @@ To add more artists, edit `scripts/seed-musicians.json`:
 **Tip**: Use YouTube "Topic" channel videos (auto-generated, static artwork) — they're almost always embeddable. Search for `"Artist Name" - Topic` on YouTube.
 
 Genre IDs: `ambient`, `techno`, `idm`, `industrial`, `darkwave`, `triphop`, `dnb`, `classical`
+
+Subgenre IDs: see the taxonomy table above, or check `SUBGENRES` in `src/genres.js`.
 
 Then rebuild: `npm run build:db`

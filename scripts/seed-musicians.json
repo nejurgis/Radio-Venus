@@ -7,7 +7,12 @@
       "ambient",
       "techno"
     ],
-    "youtubeVideoId": "Xw5AiRVqfqk"
+    "youtubeVideoId": "Xw5AiRVqfqk",
+    "subgenres": [
+      "idm",
+      "acid",
+      "ambient"
+    ]
   },
   {
     "name": "Autechre",
@@ -16,7 +21,11 @@
       "idm",
       "ambient"
     ],
-    "youtubeVideoId": "sZ7Mu8YJbSU"
+    "youtubeVideoId": "sZ7Mu8YJbSU",
+    "subgenres": [
+      "idm",
+      "experimental"
+    ]
   },
   {
     "name": "Boards of Canada",
@@ -25,7 +34,12 @@
       "idm",
       "ambient"
     ],
-    "youtubeVideoId": "A2zKARkpDW4"
+    "youtubeVideoId": "A2zKARkpDW4",
+    "subgenres": [
+      "idm",
+      "ambient",
+      "downtempo"
+    ]
   },
   {
     "name": "Burial",
@@ -34,7 +48,12 @@
       "dnb",
       "ambient"
     ],
-    "youtubeVideoId": "E2qLD9c3Gq4"
+    "youtubeVideoId": "E2qLD9c3Gq4",
+    "subgenres": [
+      "future-garage",
+      "dubstep",
+      "ambient"
+    ]
   },
   {
     "name": "Brian Eno",
@@ -42,7 +61,11 @@
     "genres": [
       "ambient"
     ],
-    "youtubeVideoId": "vNwYtllyt3Q"
+    "youtubeVideoId": "vNwYtllyt3Q",
+    "subgenres": [
+      "ambient",
+      "experimental"
+    ]
   },
   {
     "name": "Kraftwerk",
@@ -51,7 +74,12 @@
       "techno",
       "darkwave"
     ],
-    "youtubeVideoId": "D_8Pma1vHmw"
+    "youtubeVideoId": "D_8Pma1vHmw",
+    "subgenres": [
+      "synth-pop",
+      "electro",
+      "krautrock"
+    ]
   },
   {
     "name": "Tangerine Dream",
@@ -60,7 +88,12 @@
       "ambient",
       "darkwave"
     ],
-    "youtubeVideoId": "Bk-k8RcLCUc"
+    "youtubeVideoId": "Bk-k8RcLCUc",
+    "subgenres": [
+      "berlin-school",
+      "ambient",
+      "krautrock"
+    ]
   },
   {
     "name": "Klaus Schulze",
@@ -68,7 +101,11 @@
     "genres": [
       "ambient"
     ],
-    "youtubeVideoId": "QeEzDAoInps"
+    "youtubeVideoId": "QeEzDAoInps",
+    "subgenres": [
+      "berlin-school",
+      "ambient"
+    ]
   },
   {
     "name": "Massive Attack",
@@ -76,7 +113,11 @@
     "genres": [
       "triphop"
     ],
-    "youtubeVideoId": "u7K72X4eo_s"
+    "youtubeVideoId": "u7K72X4eo_s",
+    "subgenres": [
+      "trip-hop",
+      "dub"
+    ]
   },
   {
     "name": "Portishead",
@@ -84,7 +125,11 @@
     "genres": [
       "triphop"
     ],
-    "youtubeVideoId": "yF-GvT8Clnk"
+    "youtubeVideoId": "yF-GvT8Clnk",
+    "subgenres": [
+      "trip-hop",
+      "experimental"
+    ]
   },
   {
     "name": "Tricky",
@@ -92,7 +137,11 @@
     "genres": [
       "triphop"
     ],
-    "youtubeVideoId": "E3R_3h6zQEs"
+    "youtubeVideoId": "E3R_3h6zQEs",
+    "subgenres": [
+      "trip-hop",
+      "experimental"
+    ]
   },
   {
     "name": "Throbbing Gristle",
@@ -100,7 +149,12 @@
     "genres": [
       "industrial"
     ],
-    "youtubeVideoId": "Y8klW9trVTQ"
+    "youtubeVideoId": "Y8klW9trVTQ",
+    "subgenres": [
+      "industrial",
+      "noise",
+      "experimental"
+    ]
   },
   {
     "name": "Cabaret Voltaire",
@@ -109,7 +163,12 @@
       "industrial",
       "darkwave"
     ],
-    "youtubeVideoId": "EkMRw-3UXi4"
+    "youtubeVideoId": "EkMRw-3UXi4",
+    "subgenres": [
+      "industrial",
+      "synth-pop",
+      "ebm"
+    ]
   },
   {
     "name": "Skinny Puppy",
@@ -117,7 +176,11 @@
     "genres": [
       "industrial"
     ],
-    "youtubeVideoId": "cod8bRiQjj4"
+    "youtubeVideoId": "cod8bRiQjj4",
+    "subgenres": [
+      "industrial",
+      "ebm"
+    ]
   },
   {
     "name": "Front 242",
@@ -126,7 +189,11 @@
       "industrial",
       "darkwave"
     ],
-    "youtubeVideoId": "m1cRGVaJF7Y"
+    "youtubeVideoId": "m1cRGVaJF7Y",
+    "subgenres": [
+      "ebm",
+      "industrial"
+    ]
   },
   {
     "name": "Depeche Mode",
@@ -134,7 +201,12 @@
     "genres": [
       "darkwave"
     ],
-    "youtubeVideoId": "aGSKrC7dGcY"
+    "youtubeVideoId": "aGSKrC7dGcY",
+    "subgenres": [
+      "synth-pop",
+      "new-wave",
+      "darkwave"
+    ]
   },
   {
     "name": "Gary Numan",
@@ -142,7 +214,12 @@
     "genres": [
       "darkwave"
     ],
-    "youtubeVideoId": "Ldyx3KHOFXw"
+    "youtubeVideoId": "Ldyx3KHOFXw",
+    "subgenres": [
+      "synth-pop",
+      "new-wave",
+      "industrial"
+    ]
   },
   {
     "name": "John Carpenter",
@@ -151,7 +228,12 @@
       "darkwave",
       "ambient"
     ],
-    "youtubeVideoId": "iQ4GKLU31L0"
+    "youtubeVideoId": "iQ4GKLU31L0",
+    "subgenres": [
+      "synthwave",
+      "darksynth",
+      "ambient"
+    ]
   },
   {
     "name": "Perturbator",
@@ -159,7 +241,11 @@
     "genres": [
       "darkwave"
     ],
-    "youtubeVideoId": "oTN6cGmH4jM"
+    "youtubeVideoId": "oTN6cGmH4jM",
+    "subgenres": [
+      "darksynth",
+      "synthwave"
+    ]
   },
   {
     "name": "Carpenter Brut",
@@ -167,7 +253,11 @@
     "genres": [
       "darkwave"
     ],
-    "youtubeVideoId": "DY1s9SmrQRE"
+    "youtubeVideoId": "DY1s9SmrQRE",
+    "subgenres": [
+      "darksynth",
+      "synthwave"
+    ]
   },
   {
     "name": "Jeff Mills",
@@ -175,7 +265,11 @@
     "genres": [
       "techno"
     ],
-    "youtubeVideoId": "vw-Pu8HZuBk"
+    "youtubeVideoId": "vw-Pu8HZuBk",
+    "subgenres": [
+      "techno",
+      "minimal"
+    ]
   },
   {
     "name": "Richie Hawtin",
@@ -183,7 +277,12 @@
     "genres": [
       "techno"
     ],
-    "youtubeVideoId": "F5BTo4y7QGY"
+    "youtubeVideoId": "F5BTo4y7QGY",
+    "subgenres": [
+      "minimal",
+      "techno",
+      "acid"
+    ]
   },
   {
     "name": "Carl Craig",
@@ -191,7 +290,11 @@
     "genres": [
       "techno"
     ],
-    "youtubeVideoId": "B5JGJEHRwjY"
+    "youtubeVideoId": "B5JGJEHRwjY",
+    "subgenres": [
+      "techno",
+      "deep-house"
+    ]
   },
   {
     "name": "Derrick May",
@@ -199,7 +302,10 @@
     "genres": [
       "techno"
     ],
-    "youtubeVideoId": "GEFHF5VdI00"
+    "youtubeVideoId": "GEFHF5VdI00",
+    "subgenres": [
+      "techno"
+    ]
   },
   {
     "name": "Underground Resistance",
@@ -207,7 +313,11 @@
     "genres": [
       "techno"
     ],
-    "youtubeVideoId": "w_x7DFmgX-0"
+    "youtubeVideoId": "w_x7DFmgX-0",
+    "subgenres": [
+      "techno",
+      "electro"
+    ]
   },
   {
     "name": "Drexciya",
@@ -216,7 +326,11 @@
       "techno",
       "idm"
     ],
-    "youtubeVideoId": "6Yrm1a4jfAc"
+    "youtubeVideoId": "6Yrm1a4jfAc",
+    "subgenres": [
+      "electro",
+      "techno"
+    ]
   },
   {
     "name": "Goldie",
@@ -224,7 +338,11 @@
     "genres": [
       "dnb"
     ],
-    "youtubeVideoId": "Usqwy2-E4SE"
+    "youtubeVideoId": "Usqwy2-E4SE",
+    "subgenres": [
+      "drum-n-bass",
+      "jungle"
+    ]
   },
   {
     "name": "Roni Size",
@@ -232,7 +350,11 @@
     "genres": [
       "dnb"
     ],
-    "youtubeVideoId": "cwI0gbGEU4U"
+    "youtubeVideoId": "cwI0gbGEU4U",
+    "subgenres": [
+      "drum-n-bass",
+      "jungle"
+    ]
   },
   {
     "name": "LTJ Bukem",
@@ -241,7 +363,11 @@
       "dnb",
       "ambient"
     ],
-    "youtubeVideoId": "S2VGKGQN8MQ"
+    "youtubeVideoId": "S2VGKGQN8MQ",
+    "subgenres": [
+      "drum-n-bass",
+      "ambient"
+    ]
   },
   {
     "name": "Squarepusher",
@@ -250,7 +376,12 @@
       "dnb",
       "idm"
     ],
-    "youtubeVideoId": "fCbRNUGxlYs"
+    "youtubeVideoId": "fCbRNUGxlYs",
+    "subgenres": [
+      "drum-n-bass",
+      "idm",
+      "breakbeat"
+    ]
   },
   {
     "name": "Venetian Snares",
@@ -259,7 +390,11 @@
       "dnb",
       "idm"
     ],
-    "youtubeVideoId": "FbJ63spk48s"
+    "youtubeVideoId": "FbJ63spk48s",
+    "subgenres": [
+      "breakcore",
+      "idm"
+    ]
   },
   {
     "name": "Oneohtrix Point Never",
@@ -268,7 +403,11 @@
       "idm",
       "ambient"
     ],
-    "youtubeVideoId": "4z6u_S_VIno"
+    "youtubeVideoId": "4z6u_S_VIno",
+    "subgenres": [
+      "experimental",
+      "ambient"
+    ]
   },
   {
     "name": "Tim Hecker",
@@ -276,7 +415,12 @@
     "genres": [
       "ambient"
     ],
-    "youtubeVideoId": "6E4zYGzxgnU"
+    "youtubeVideoId": "6E4zYGzxgnU",
+    "subgenres": [
+      "ambient",
+      "drone",
+      "experimental"
+    ]
   },
   {
     "name": "Fennesz",
@@ -285,7 +429,11 @@
       "ambient",
       "idm"
     ],
-    "youtubeVideoId": "9_DjJFpqWRc"
+    "youtubeVideoId": "9_DjJFpqWRc",
+    "subgenres": [
+      "glitch",
+      "ambient"
+    ]
   },
   {
     "name": "Nils Frahm",
@@ -294,7 +442,11 @@
       "classical",
       "ambient"
     ],
-    "youtubeVideoId": "xLNeZogTsNc"
+    "youtubeVideoId": "xLNeZogTsNc",
+    "subgenres": [
+      "modern-classical",
+      "ambient"
+    ]
   },
   {
     "name": "Jon Hopkins",
@@ -303,7 +455,11 @@
       "ambient",
       "techno"
     ],
-    "youtubeVideoId": "Q04ILDXe3QE"
+    "youtubeVideoId": "Q04ILDXe3QE",
+    "subgenres": [
+      "techno",
+      "ambient"
+    ]
   },
   {
     "name": "Four Tet",
@@ -312,7 +468,12 @@
       "techno",
       "idm"
     ],
-    "youtubeVideoId": "vGeJVHwOZSk"
+    "youtubeVideoId": "vGeJVHwOZSk",
+    "subgenres": [
+      "electronica",
+      "folktronica",
+      "techno"
+    ]
   },
   {
     "name": "Actress",
@@ -321,7 +482,12 @@
       "techno",
       "ambient"
     ],
-    "youtubeVideoId": "h3l8bNhJKfU"
+    "youtubeVideoId": "h3l8bNhJKfU",
+    "subgenres": [
+      "experimental",
+      "techno",
+      "ambient"
+    ]
   },
   {
     "name": "Andy Stott",
@@ -330,7 +496,12 @@
       "techno",
       "industrial"
     ],
-    "youtubeVideoId": "e-0rWeP8vMs"
+    "youtubeVideoId": "e-0rWeP8vMs",
+    "subgenres": [
+      "techno",
+      "industrial",
+      "dub-techno"
+    ]
   },
   {
     "name": "Merzbow",
@@ -338,7 +509,11 @@
     "genres": [
       "industrial"
     ],
-    "youtubeVideoId": "AguPH0XBxdw"
+    "youtubeVideoId": "AguPH0XBxdw",
+    "subgenres": [
+      "noise",
+      "harsh-noise"
+    ]
   },
   {
     "name": "Sunn O)))",
@@ -347,7 +522,11 @@
       "ambient",
       "industrial"
     ],
-    "youtubeVideoId": "HkIpFqcIYnQ"
+    "youtubeVideoId": "HkIpFqcIYnQ",
+    "subgenres": [
+      "drone",
+      "ambient"
+    ]
   },
   {
     "name": "Lustmord",
@@ -356,7 +535,11 @@
       "ambient",
       "industrial"
     ],
-    "youtubeVideoId": "gB7IQxE_03s"
+    "youtubeVideoId": "gB7IQxE_03s",
+    "subgenres": [
+      "dark-ambient",
+      "industrial"
+    ]
   },
   {
     "name": "The Hacker",
@@ -365,7 +548,12 @@
       "techno",
       "darkwave"
     ],
-    "youtubeVideoId": "lAkXQmJSR6E"
+    "youtubeVideoId": "lAkXQmJSR6E",
+    "subgenres": [
+      "electro",
+      "techno",
+      "darkwave"
+    ]
   },
   {
     "name": "DJ Spooky",
@@ -374,7 +562,12 @@
       "triphop",
       "idm"
     ],
-    "youtubeVideoId": "M1Nc6EGfBM4"
+    "youtubeVideoId": "M1Nc6EGfBM4",
+    "subgenres": [
+      "trip-hop",
+      "experimental",
+      "idm"
+    ]
   },
   {
     "name": "Amon Tobin",
@@ -384,7 +577,12 @@
       "idm",
       "triphop"
     ],
-    "youtubeVideoId": "hDBW1TvABRI"
+    "youtubeVideoId": "hDBW1TvABRI",
+    "subgenres": [
+      "drum-n-bass",
+      "trip-hop",
+      "idm"
+    ]
   },
   {
     "name": "Flying Lotus",
@@ -393,7 +591,12 @@
       "idm",
       "triphop"
     ],
-    "youtubeVideoId": "0ScYz9sNaQk"
+    "youtubeVideoId": "0ScYz9sNaQk",
+    "subgenres": [
+      "experimental",
+      "idm",
+      "trip-hop"
+    ]
   },
   {
     "name": "Bonobo",
@@ -402,7 +605,12 @@
       "triphop",
       "techno"
     ],
-    "youtubeVideoId": "cTjF2_-bneM"
+    "youtubeVideoId": "cTjF2_-bneM",
+    "subgenres": [
+      "downtempo",
+      "trip-hop",
+      "nu-jazz"
+    ]
   },
   {
     "name": "Plastikman",
@@ -410,7 +618,12 @@
     "genres": [
       "techno"
     ],
-    "youtubeVideoId": "MIKlBccKnHQ"
+    "youtubeVideoId": "MIKlBccKnHQ",
+    "subgenres": [
+      "minimal",
+      "acid",
+      "techno"
+    ]
   },
   {
     "name": "Helena Hauff",
@@ -419,7 +632,12 @@
       "techno",
       "industrial"
     ],
-    "youtubeVideoId": "3MPLloIeAXQ"
+    "youtubeVideoId": "3MPLloIeAXQ",
+    "subgenres": [
+      "electro",
+      "techno",
+      "industrial"
+    ]
   },
   {
     "name": "Daniel Avery",
@@ -428,7 +646,11 @@
       "techno",
       "ambient"
     ],
-    "youtubeVideoId": "dvmtfMGxwPc"
+    "youtubeVideoId": "dvmtfMGxwPc",
+    "subgenres": [
+      "techno",
+      "ambient"
+    ]
   },
   {
     "name": "Grimes",
@@ -437,7 +659,12 @@
       "darkwave",
       "idm"
     ],
-    "youtubeVideoId": "1FH-q0I1fJY"
+    "youtubeVideoId": "1FH-q0I1fJY",
+    "subgenres": [
+      "synth-pop",
+      "experimental",
+      "darkwave"
+    ]
   },
   {
     "name": "Arca",
@@ -446,7 +673,12 @@
       "idm",
       "industrial"
     ],
-    "youtubeVideoId": "CxBfMHsdByQ"
+    "youtubeVideoId": "CxBfMHsdByQ",
+    "subgenres": [
+      "experimental",
+      "idm",
+      "industrial"
+    ]
   },
   {
     "name": "Moderat",
@@ -455,7 +687,12 @@
       "techno",
       "idm"
     ],
-    "youtubeVideoId": "3NPxqXMZq7o"
+    "youtubeVideoId": "3NPxqXMZq7o",
+    "subgenres": [
+      "techno",
+      "idm",
+      "electronica"
+    ]
   },
   {
     "name": "SOPHIE",
@@ -464,7 +701,11 @@
       "idm",
       "industrial"
     ],
-    "youtubeVideoId": "es9-P1SOtHU"
+    "youtubeVideoId": "es9-P1SOtHU",
+    "subgenres": [
+      "experimental",
+      "idm"
+    ]
   },
   {
     "name": "Nicolas Jaar",
@@ -473,7 +714,12 @@
       "techno",
       "ambient"
     ],
-    "youtubeVideoId": "dDSMLLbR2Bo"
+    "youtubeVideoId": "dDSMLLbR2Bo",
+    "subgenres": [
+      "techno",
+      "ambient",
+      "experimental"
+    ]
   },
   {
     "name": "Holly Herndon",
@@ -482,7 +728,11 @@
       "idm",
       "ambient"
     ],
-    "youtubeVideoId": "nHujh3yA3BE"
+    "youtubeVideoId": "nHujh3yA3BE",
+    "subgenres": [
+      "experimental",
+      "idm"
+    ]
   },
   {
     "name": "Ben Frost",
@@ -491,7 +741,12 @@
       "ambient",
       "industrial"
     ],
-    "youtubeVideoId": "1_3jivZn5K4"
+    "youtubeVideoId": "1_3jivZn5K4",
+    "subgenres": [
+      "ambient",
+      "industrial",
+      "experimental"
+    ]
   },
   {
     "name": "Sevdaliza",
@@ -500,7 +755,11 @@
       "triphop",
       "idm"
     ],
-    "youtubeVideoId": "4WKQB_sOlv4"
+    "youtubeVideoId": "4WKQB_sOlv4",
+    "subgenres": [
+      "trip-hop",
+      "experimental"
+    ]
   },
   {
     "name": "Monolake",
@@ -509,7 +768,12 @@
       "techno",
       "idm"
     ],
-    "youtubeVideoId": "Es1_vd8cQBs"
+    "youtubeVideoId": "Es1_vd8cQBs",
+    "subgenres": [
+      "dub-techno",
+      "minimal",
+      "techno"
+    ]
   },
   {
     "name": "Pole",
@@ -518,7 +782,12 @@
       "techno",
       "idm"
     ],
-    "youtubeVideoId": "Iuk85FwtGVg"
+    "youtubeVideoId": "Iuk85FwtGVg",
+    "subgenres": [
+      "dub-techno",
+      "minimal",
+      "glitch"
+    ]
   },
   {
     "name": "Jan Jelinek",
@@ -527,7 +796,12 @@
       "idm",
       "ambient"
     ],
-    "youtubeVideoId": "jSFbtIyAqRw"
+    "youtubeVideoId": "jSFbtIyAqRw",
+    "subgenres": [
+      "glitch",
+      "minimal",
+      "dub-techno"
+    ]
   },
   {
     "name": "Ryoji Ikeda",
@@ -536,7 +810,12 @@
       "idm",
       "industrial"
     ],
-    "youtubeVideoId": "uvSLLyePrRk"
+    "youtubeVideoId": "uvSLLyePrRk",
+    "subgenres": [
+      "experimental",
+      "glitch",
+      "minimal"
+    ]
   },
   {
     "name": "Oval",
@@ -545,7 +824,11 @@
       "idm",
       "ambient"
     ],
-    "youtubeVideoId": "vQ3UouDs3UE"
+    "youtubeVideoId": "vQ3UouDs3UE",
+    "subgenres": [
+      "glitch",
+      "experimental"
+    ]
   },
   {
     "name": "Murcof",
@@ -554,7 +837,11 @@
       "idm",
       "classical"
     ],
-    "youtubeVideoId": "GGGfLLkIoVc"
+    "youtubeVideoId": "GGGfLLkIoVc",
+    "subgenres": [
+      "experimental",
+      "modern-classical"
+    ]
   },
   {
     "name": "Vladislav Delay",
@@ -563,7 +850,11 @@
       "techno",
       "idm"
     ],
-    "youtubeVideoId": "2rOmE6zIrno"
+    "youtubeVideoId": "2rOmE6zIrno",
+    "subgenres": [
+      "dub-techno",
+      "experimental"
+    ]
   },
   {
     "name": "Pan Sonic",
@@ -572,7 +863,12 @@
       "industrial",
       "techno"
     ],
-    "youtubeVideoId": "fTANmkG8sWM"
+    "youtubeVideoId": "fTANmkG8sWM",
+    "subgenres": [
+      "noise",
+      "industrial",
+      "minimal"
+    ]
   },
   {
     "name": "Mouse on Mars",
@@ -580,7 +876,12 @@
     "genres": [
       "idm"
     ],
-    "youtubeVideoId": "CL7qasY77wA"
+    "youtubeVideoId": "CL7qasY77wA",
+    "subgenres": [
+      "idm",
+      "experimental",
+      "glitch"
+    ]
   },
   {
     "name": "Porter Ricks",
@@ -589,7 +890,11 @@
       "techno",
       "ambient"
     ],
-    "youtubeVideoId": "gmNoOBEfNqU"
+    "youtubeVideoId": "gmNoOBEfNqU",
+    "subgenres": [
+      "dub-techno",
+      "ambient"
+    ]
   },
   {
     "name": "Echospace",
@@ -598,7 +903,11 @@
       "techno",
       "ambient"
     ],
-    "youtubeVideoId": "pnubPGFQzPQ"
+    "youtubeVideoId": "pnubPGFQzPQ",
+    "subgenres": [
+      "dub-techno",
+      "ambient"
+    ]
   },
   {
     "name": "Demdike Stare",
@@ -607,7 +916,12 @@
       "ambient",
       "industrial"
     ],
-    "youtubeVideoId": "CNoxM9VByVo"
+    "youtubeVideoId": "CNoxM9VByVo",
+    "subgenres": [
+      "dark-ambient",
+      "industrial",
+      "experimental"
+    ]
   },
   {
     "name": "Raime",
@@ -616,7 +930,11 @@
       "industrial",
       "ambient"
     ],
-    "youtubeVideoId": "wUOJiQ6uhx4"
+    "youtubeVideoId": "wUOJiQ6uhx4",
+    "subgenres": [
+      "industrial",
+      "dark-ambient"
+    ]
   },
   {
     "name": "The Field",
@@ -625,7 +943,11 @@
       "techno",
       "ambient"
     ],
-    "youtubeVideoId": "GeJEKCZLbTE"
+    "youtubeVideoId": "GeJEKCZLbTE",
+    "subgenres": [
+      "techno",
+      "ambient"
+    ]
   },
   {
     "name": "Huerco S.",
@@ -634,7 +956,11 @@
       "techno",
       "ambient"
     ],
-    "youtubeVideoId": "7Cc-0beyRXE"
+    "youtubeVideoId": "7Cc-0beyRXE",
+    "subgenres": [
+      "ambient",
+      "dub-techno"
+    ]
   },
   {
     "name": "Shinichi Atobe",
@@ -642,7 +968,11 @@
     "genres": [
       "techno"
     ],
-    "youtubeVideoId": "NmAFmW5_g78"
+    "youtubeVideoId": "NmAFmW5_g78",
+    "subgenres": [
+      "dub-techno",
+      "deep-house"
+    ]
   },
   {
     "name": "Harold Budd",
@@ -651,7 +981,11 @@
       "ambient",
       "classical"
     ],
-    "youtubeVideoId": "wD7l5wod1-M"
+    "youtubeVideoId": "wD7l5wod1-M",
+    "subgenres": [
+      "ambient",
+      "modern-classical"
+    ]
   },
   {
     "name": "Hiroshi Yoshimura",
@@ -660,7 +994,11 @@
       "ambient",
       "classical"
     ],
-    "youtubeVideoId": "ZJSuKb8YAYI"
+    "youtubeVideoId": "ZJSuKb8YAYI",
+    "subgenres": [
+      "ambient",
+      "new-age"
+    ]
   },
   {
     "name": "Midori Takada",
@@ -669,7 +1007,11 @@
       "ambient",
       "classical"
     ],
-    "youtubeVideoId": "Bululwnj4ik"
+    "youtubeVideoId": "Bululwnj4ik",
+    "subgenres": [
+      "ambient",
+      "minimalist"
+    ]
   },
   {
     "name": "Susumu Yokota",
@@ -678,7 +1020,12 @@
       "ambient",
       "techno"
     ],
-    "youtubeVideoId": "Gym0RBc6P80"
+    "youtubeVideoId": "Gym0RBc6P80",
+    "subgenres": [
+      "ambient",
+      "house",
+      "experimental"
+    ]
   },
   {
     "name": "Ulrich Schnauss",
@@ -687,7 +1034,11 @@
       "idm",
       "ambient"
     ],
-    "youtubeVideoId": "9WujHGP0ojY"
+    "youtubeVideoId": "9WujHGP0ojY",
+    "subgenres": [
+      "idm",
+      "ambient"
+    ]
   },
   {
     "name": "Tycho",
@@ -696,7 +1047,12 @@
       "idm",
       "ambient"
     ],
-    "youtubeVideoId": "BGXOYfZMR0w"
+    "youtubeVideoId": "BGXOYfZMR0w",
+    "subgenres": [
+      "downtempo",
+      "ambient",
+      "idm"
+    ]
   },
   {
     "name": "The Future Sound of London",
@@ -705,7 +1061,12 @@
       "idm",
       "techno"
     ],
-    "youtubeVideoId": "TBloEUeOC40"
+    "youtubeVideoId": "TBloEUeOC40",
+    "subgenres": [
+      "ambient",
+      "idm",
+      "techno"
+    ]
   },
   {
     "name": "Orbital",
@@ -713,7 +1074,11 @@
     "genres": [
       "techno"
     ],
-    "youtubeVideoId": "jXfZb8PxdW0"
+    "youtubeVideoId": "jXfZb8PxdW0",
+    "subgenres": [
+      "techno",
+      "acid"
+    ]
   },
   {
     "name": "Underworld",
@@ -721,7 +1086,11 @@
     "genres": [
       "techno"
     ],
-    "youtubeVideoId": "rAOHJqJMYDA"
+    "youtubeVideoId": "rAOHJqJMYDA",
+    "subgenres": [
+      "techno",
+      "progressive-house"
+    ]
   },
   {
     "name": "Plaid",
@@ -729,7 +1098,11 @@
     "genres": [
       "idm"
     ],
-    "youtubeVideoId": "zmFdxSedhNU"
+    "youtubeVideoId": "zmFdxSedhNU",
+    "subgenres": [
+      "idm",
+      "experimental"
+    ]
   },
   {
     "name": "The Black Dog",
@@ -738,7 +1111,11 @@
       "idm",
       "techno"
     ],
-    "youtubeVideoId": "nEhoiQGCVIE"
+    "youtubeVideoId": "nEhoiQGCVIE",
+    "subgenres": [
+      "techno",
+      "idm"
+    ]
   },
   {
     "name": "LFO",
@@ -747,7 +1124,12 @@
       "techno",
       "idm"
     ],
-    "youtubeVideoId": "_E74W0eo3xM"
+    "youtubeVideoId": "_E74W0eo3xM",
+    "subgenres": [
+      "techno",
+      "idm",
+      "acid"
+    ]
   },
   {
     "name": "Nightmares on Wax",
@@ -755,7 +1137,11 @@
     "genres": [
       "triphop"
     ],
-    "youtubeVideoId": "0-9t-jx3HJE"
+    "youtubeVideoId": "0-9t-jx3HJE",
+    "subgenres": [
+      "downtempo",
+      "trip-hop"
+    ]
   },
   {
     "name": "DJ Shadow",
@@ -763,7 +1149,11 @@
     "genres": [
       "triphop"
     ],
-    "youtubeVideoId": "Pcz7MBfgD8g"
+    "youtubeVideoId": "Pcz7MBfgD8g",
+    "subgenres": [
+      "trip-hop",
+      "downtempo"
+    ]
   },
   {
     "name": "UNKLE",
@@ -772,7 +1162,11 @@
       "triphop",
       "darkwave"
     ],
-    "youtubeVideoId": "8BbZwXn-oV0"
+    "youtubeVideoId": "8BbZwXn-oV0",
+    "subgenres": [
+      "trip-hop",
+      "darkwave"
+    ]
   },
   {
     "name": "Photek",
@@ -781,7 +1175,11 @@
       "dnb",
       "idm"
     ],
-    "youtubeVideoId": "bo2mhNsp7pc"
+    "youtubeVideoId": "bo2mhNsp7pc",
+    "subgenres": [
+      "drum-n-bass",
+      "idm"
+    ]
   },
   {
     "name": "William Basinski",
@@ -789,7 +1187,12 @@
     "genres": [
       "ambient"
     ],
-    "youtubeVideoId": "mjnAE5go9dI"
+    "youtubeVideoId": "mjnAE5go9dI",
+    "subgenres": [
+      "ambient",
+      "drone",
+      "experimental"
+    ]
   },
   {
     "name": "Stars of the Lid",
@@ -798,7 +1201,11 @@
       "ambient",
       "classical"
     ],
-    "youtubeVideoId": "c4E6RO4muLU"
+    "youtubeVideoId": "c4E6RO4muLU",
+    "subgenres": [
+      "ambient",
+      "drone"
+    ]
   },
   {
     "name": "Gas",
@@ -807,7 +1214,11 @@
       "ambient",
       "techno"
     ],
-    "youtubeVideoId": "NB7lTEEji08"
+    "youtubeVideoId": "NB7lTEEji08",
+    "subgenres": [
+      "ambient",
+      "dub-techno"
+    ]
   },
   {
     "name": "Biosphere",
@@ -815,7 +1226,11 @@
     "genres": [
       "ambient"
     ],
-    "youtubeVideoId": "K60wMYk-b_Q"
+    "youtubeVideoId": "K60wMYk-b_Q",
+    "subgenres": [
+      "ambient",
+      "idm"
+    ]
   },
   {
     "name": "The Orb",
@@ -824,7 +1239,12 @@
       "ambient",
       "techno"
     ],
-    "youtubeVideoId": "AaXT3raG5gY"
+    "youtubeVideoId": "AaXT3raG5gY",
+    "subgenres": [
+      "ambient",
+      "house",
+      "dub"
+    ]
   },
   {
     "name": "Global Communication",
@@ -832,7 +1252,11 @@
     "genres": [
       "ambient"
     ],
-    "youtubeVideoId": "RxNPb71JEbs"
+    "youtubeVideoId": "RxNPb71JEbs",
+    "subgenres": [
+      "ambient",
+      "trance"
+    ]
   },
   {
     "name": "Carbon Based Lifeforms",
@@ -840,7 +1264,11 @@
     "genres": [
       "ambient"
     ],
-    "youtubeVideoId": "-9pgIVcB3rk"
+    "youtubeVideoId": "-9pgIVcB3rk",
+    "subgenres": [
+      "ambient",
+      "downtempo"
+    ]
   },
   {
     "name": "Terry Riley",
@@ -848,7 +1276,11 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "sqQ59i4PmGE"
+    "youtubeVideoId": "sqQ59i4PmGE",
+    "subgenres": [
+      "minimalist",
+      "experimental"
+    ]
   },
   {
     "name": "Rhythm & Sound",
@@ -856,7 +1288,11 @@
     "genres": [
       "techno"
     ],
-    "youtubeVideoId": "xH9bgpCHyJA"
+    "youtubeVideoId": "xH9bgpCHyJA",
+    "subgenres": [
+      "dub-techno",
+      "dub"
+    ]
   },
   {
     "name": "Basic Channel",
@@ -864,7 +1300,11 @@
     "genres": [
       "techno"
     ],
-    "youtubeVideoId": "Gi4vzEoJXHU"
+    "youtubeVideoId": "Gi4vzEoJXHU",
+    "subgenres": [
+      "dub-techno",
+      "minimal"
+    ]
   },
   {
     "name": "Deepchord",
@@ -873,7 +1313,11 @@
       "techno",
       "ambient"
     ],
-    "youtubeVideoId": "orbvFaEYhw8"
+    "youtubeVideoId": "orbvFaEYhw8",
+    "subgenres": [
+      "dub-techno",
+      "ambient"
+    ]
   },
   {
     "name": "Loscil",
@@ -881,7 +1325,11 @@
     "genres": [
       "ambient"
     ],
-    "youtubeVideoId": "lv5WwSCXT2E"
+    "youtubeVideoId": "lv5WwSCXT2E",
+    "subgenres": [
+      "ambient",
+      "drone"
+    ]
   },
   {
     "name": "Grouper",
@@ -889,7 +1337,11 @@
     "genres": [
       "ambient"
     ],
-    "youtubeVideoId": "d8g2uw4K7Ks"
+    "youtubeVideoId": "d8g2uw4K7Ks",
+    "subgenres": [
+      "ambient",
+      "drone"
+    ]
   },
   {
     "name": "Floating Points",
@@ -898,7 +1350,12 @@
       "techno",
       "idm"
     ],
-    "youtubeVideoId": "ucdYt46DpX8"
+    "youtubeVideoId": "ucdYt46DpX8",
+    "subgenres": [
+      "house",
+      "techno",
+      "experimental"
+    ]
   },
   {
     "name": "Max Richter",
@@ -906,7 +1363,11 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "tC0cp-dF2Jo"
+    "youtubeVideoId": "tC0cp-dF2Jo",
+    "subgenres": [
+      "modern-classical",
+      "neo-classical"
+    ]
   },
   {
     "name": "Ryuichi Sakamoto",
@@ -915,7 +1376,12 @@
       "classical",
       "ambient"
     ],
-    "youtubeVideoId": "HAFLW-dQpyE"
+    "youtubeVideoId": "HAFLW-dQpyE",
+    "subgenres": [
+      "modern-classical",
+      "ambient",
+      "experimental"
+    ]
   },
   {
     "name": "Alva Noto",
@@ -924,7 +1390,12 @@
       "idm",
       "industrial"
     ],
-    "youtubeVideoId": "OEBZuKxUrwE"
+    "youtubeVideoId": "OEBZuKxUrwE",
+    "subgenres": [
+      "glitch",
+      "minimal",
+      "experimental"
+    ]
   },
   {
     "name": "Johann Sebastian Bach",
@@ -932,7 +1403,10 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "ho9rZjlsyYY"
+    "youtubeVideoId": "ho9rZjlsyYY",
+    "subgenres": [
+      "baroque"
+    ]
   },
   {
     "name": "Wolfgang Amadeus Mozart",
@@ -940,7 +1414,10 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "Rb0UmrCXxVA"
+    "youtubeVideoId": "Rb0UmrCXxVA",
+    "subgenres": [
+      "classical"
+    ]
   },
   {
     "name": "Ludwig van Beethoven",
@@ -948,7 +1425,11 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "W-fFHeTX70Q"
+    "youtubeVideoId": "W-fFHeTX70Q",
+    "subgenres": [
+      "classical",
+      "romantic"
+    ]
   },
   {
     "name": "Frédéric Chopin",
@@ -956,7 +1437,10 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "9E6b3swbnWg"
+    "youtubeVideoId": "9E6b3swbnWg",
+    "subgenres": [
+      "romantic"
+    ]
   },
   {
     "name": "Claude Debussy",
@@ -964,7 +1448,10 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "CvFH_6DNRCY"
+    "youtubeVideoId": "CvFH_6DNRCY",
+    "subgenres": [
+      "impressionist"
+    ]
   },
   {
     "name": "Igor Stravinsky",
@@ -972,7 +1459,11 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "FFPjFjUonX8"
+    "youtubeVideoId": "FFPjFjUonX8",
+    "subgenres": [
+      "modern-classical",
+      "contemporary"
+    ]
   },
   {
     "name": "Sergei Rachmaninoff",
@@ -980,7 +1471,10 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "rEGOihjqO9w"
+    "youtubeVideoId": "rEGOihjqO9w",
+    "subgenres": [
+      "romantic"
+    ]
   },
   {
     "name": "Pyotr Ilyich Tchaikovsky",
@@ -988,7 +1482,10 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "4_PSjr47AUo"
+    "youtubeVideoId": "4_PSjr47AUo",
+    "subgenres": [
+      "romantic"
+    ]
   },
   {
     "name": "Franz Schubert",
@@ -996,7 +1493,11 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "vGq3-Fi_zQY"
+    "youtubeVideoId": "vGq3-Fi_zQY",
+    "subgenres": [
+      "romantic",
+      "classical"
+    ]
   },
   {
     "name": "Johannes Brahms",
@@ -1004,7 +1505,10 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "s4R6JBO1HWA"
+    "youtubeVideoId": "s4R6JBO1HWA",
+    "subgenres": [
+      "romantic"
+    ]
   },
   {
     "name": "Antonio Vivaldi",
@@ -1012,7 +1516,10 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "GRxofEmo3HA"
+    "youtubeVideoId": "GRxofEmo3HA",
+    "subgenres": [
+      "baroque"
+    ]
   },
   {
     "name": "Gustav Mahler",
@@ -1020,7 +1527,10 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "ypClfhEwwCw"
+    "youtubeVideoId": "ypClfhEwwCw",
+    "subgenres": [
+      "romantic"
+    ]
   },
   {
     "name": "Richard Wagner",
@@ -1028,7 +1538,11 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "GGU1P6lBW6Q"
+    "youtubeVideoId": "GGU1P6lBW6Q",
+    "subgenres": [
+      "romantic",
+      "opera"
+    ]
   },
   {
     "name": "Dmitri Shostakovich",
@@ -1036,7 +1550,11 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "PjFoQS4aAUY"
+    "youtubeVideoId": "PjFoQS4aAUY",
+    "subgenres": [
+      "modern-classical",
+      "contemporary"
+    ]
   },
   {
     "name": "Maurice Ravel",
@@ -1044,7 +1562,10 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "cJOW2caFNwE"
+    "youtubeVideoId": "cJOW2caFNwE",
+    "subgenres": [
+      "impressionist"
+    ]
   },
   {
     "name": "Erik Satie",
@@ -1053,7 +1574,11 @@
       "classical",
       "ambient"
     ],
-    "youtubeVideoId": "S-Xm7s9eGxU"
+    "youtubeVideoId": "S-Xm7s9eGxU",
+    "subgenres": [
+      "impressionist",
+      "minimalist"
+    ]
   },
   {
     "name": "Philip Glass",
@@ -1062,7 +1587,11 @@
       "classical",
       "ambient"
     ],
-    "youtubeVideoId": "6Stu7h7Qcp8"
+    "youtubeVideoId": "6Stu7h7Qcp8",
+    "subgenres": [
+      "minimalist",
+      "modern-classical"
+    ]
   },
   {
     "name": "Steve Reich",
@@ -1070,7 +1599,10 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "g0WVh1D0N50"
+    "youtubeVideoId": "g0WVh1D0N50",
+    "subgenres": [
+      "minimalist"
+    ]
   },
   {
     "name": "Arvo Pärt",
@@ -1079,7 +1611,11 @@
       "classical",
       "ambient"
     ],
-    "youtubeVideoId": "TJJpOabDPMc"
+    "youtubeVideoId": "TJJpOabDPMc",
+    "subgenres": [
+      "minimalist",
+      "modern-classical"
+    ]
   },
   {
     "name": "Béla Bartók",
@@ -1087,7 +1623,11 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "m2GFifEInSo"
+    "youtubeVideoId": "m2GFifEInSo",
+    "subgenres": [
+      "modern-classical",
+      "contemporary"
+    ]
   },
   {
     "name": "Sergei Prokofiev",
@@ -1095,7 +1635,10 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "bBsKgEj3gbo"
+    "youtubeVideoId": "bBsKgEj3gbo",
+    "subgenres": [
+      "modern-classical"
+    ]
   },
   {
     "name": "Franz Liszt",
@@ -1103,7 +1646,10 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "0FbQZCsYXVg"
+    "youtubeVideoId": "0FbQZCsYXVg",
+    "subgenres": [
+      "romantic"
+    ]
   },
   {
     "name": "Robert Schumann",
@@ -1111,7 +1657,10 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "ck1wDRMoCPM"
+    "youtubeVideoId": "ck1wDRMoCPM",
+    "subgenres": [
+      "romantic"
+    ]
   },
   {
     "name": "Antonín Dvořák",
@@ -1119,7 +1668,10 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "jOofzffyDSA"
+    "youtubeVideoId": "jOofzffyDSA",
+    "subgenres": [
+      "romantic"
+    ]
   },
   {
     "name": "Giuseppe Verdi",
@@ -1127,7 +1679,11 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "xoXGrIIBo0o"
+    "youtubeVideoId": "xoXGrIIBo0o",
+    "subgenres": [
+      "romantic",
+      "opera"
+    ]
   },
   {
     "name": "Jean Sibelius",
@@ -1135,7 +1691,10 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "F5zg_af9b8c"
+    "youtubeVideoId": "F5zg_af9b8c",
+    "subgenres": [
+      "romantic"
+    ]
   },
   {
     "name": "Henryk Górecki",
@@ -1143,7 +1702,11 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "87HJZBMjw5Y"
+    "youtubeVideoId": "87HJZBMjw5Y",
+    "subgenres": [
+      "modern-classical",
+      "minimalist"
+    ]
   },
   {
     "name": "John Adams",
@@ -1151,7 +1714,11 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "OeeLa_bvOK0"
+    "youtubeVideoId": "OeeLa_bvOK0",
+    "subgenres": [
+      "minimalist",
+      "modern-classical"
+    ]
   },
   {
     "name": "AFX",
@@ -1161,7 +1728,11 @@
       "ambient",
       "techno"
     ],
-    "youtubeVideoId": "DIrQNF6pfsg"
+    "youtubeVideoId": "DIrQNF6pfsg",
+    "subgenres": [
+      "acid",
+      "idm"
+    ]
   },
   {
     "name": "Polygon Window",
@@ -1171,7 +1742,11 @@
       "techno",
       "ambient"
     ],
-    "youtubeVideoId": "J37ZExo9xoA"
+    "youtubeVideoId": "J37ZExo9xoA",
+    "subgenres": [
+      "idm",
+      "ambient"
+    ]
   },
   {
     "name": "µ-Ziq",
@@ -1182,7 +1757,11 @@
       "dnb",
       "techno"
     ],
-    "youtubeVideoId": "XHtbU-lHb-s"
+    "youtubeVideoId": "XHtbU-lHb-s",
+    "subgenres": [
+      "idm",
+      "breakbeat"
+    ]
   },
   {
     "name": "The Tuss",
@@ -1191,7 +1770,11 @@
       "idm",
       "techno"
     ],
-    "youtubeVideoId": "xrJIXAwA_HM"
+    "youtubeVideoId": "xrJIXAwA_HM",
+    "subgenres": [
+      "acid",
+      "idm"
+    ]
   },
   {
     "name": "Caustic Window",
@@ -1202,7 +1785,11 @@
       "ambient",
       "triphop"
     ],
-    "youtubeVideoId": "NeBuzmwOvhE"
+    "youtubeVideoId": "NeBuzmwOvhE",
+    "subgenres": [
+      "acid",
+      "techno"
+    ]
   },
   {
     "name": "Bradley Strider",
@@ -1212,7 +1799,11 @@
       "techno",
       "ambient"
     ],
-    "youtubeVideoId": "Pa1OfT0hfCc"
+    "youtubeVideoId": "Pa1OfT0hfCc",
+    "subgenres": [
+      "techno",
+      "idm"
+    ]
   },
   {
     "name": "GAK",
@@ -1221,7 +1812,11 @@
       "idm",
       "techno"
     ],
-    "youtubeVideoId": "oy74-ms2fVA"
+    "youtubeVideoId": "oy74-ms2fVA",
+    "subgenres": [
+      "ambient",
+      "idm"
+    ]
   },
   {
     "name": "Kid Spatula",
@@ -1230,7 +1825,11 @@
       "idm",
       "dnb"
     ],
-    "youtubeVideoId": "J_hbfEHuaHM"
+    "youtubeVideoId": "J_hbfEHuaHM",
+    "subgenres": [
+      "idm",
+      "breakbeat"
+    ]
   },
   {
     "name": "Datach'i",
@@ -1239,7 +1838,11 @@
       "dnb",
       "idm"
     ],
-    "youtubeVideoId": "a3zrY2i4SOQ"
+    "youtubeVideoId": "a3zrY2i4SOQ",
+    "subgenres": [
+      "idm",
+      "glitch"
+    ]
   },
   {
     "name": "Luke Vibert",
@@ -1250,7 +1853,12 @@
       "triphop",
       "dnb"
     ],
-    "youtubeVideoId": "d_G1LV1uKyA"
+    "youtubeVideoId": "d_G1LV1uKyA",
+    "subgenres": [
+      "acid",
+      "idm",
+      "breakbeat"
+    ]
   },
   {
     "name": "Power-Pill",
@@ -1259,7 +1867,11 @@
       "idm",
       "techno"
     ],
-    "youtubeVideoId": "pGWfy5kbAyA"
+    "youtubeVideoId": "pGWfy5kbAyA",
+    "subgenres": [
+      "acid",
+      "techno"
+    ]
   },
   {
     "name": "user18081971",
@@ -1268,7 +1880,12 @@
       "idm",
       "techno"
     ],
-    "youtubeVideoId": "NW8iLr6bAjI"
+    "youtubeVideoId": "NW8iLr6bAjI",
+    "subgenres": [
+      "idm",
+      "ambient",
+      "acid"
+    ]
   },
   {
     "name": "James Ferraro",
@@ -1278,7 +1895,11 @@
       "ambient",
       "industrial"
     ],
-    "youtubeVideoId": "A5HiKYCiwCc"
+    "youtubeVideoId": "A5HiKYCiwCc",
+    "subgenres": [
+      "experimental",
+      "idm"
+    ]
   },
   {
     "name": "Laurel Halo",
@@ -1288,7 +1909,12 @@
       "techno",
       "ambient"
     ],
-    "youtubeVideoId": "8TeMNkNEPeM"
+    "youtubeVideoId": "8TeMNkNEPeM",
+    "subgenres": [
+      "experimental",
+      "techno",
+      "ambient"
+    ]
   },
   {
     "name": "James K",
@@ -1298,7 +1924,11 @@
       "ambient",
       "triphop"
     ],
-    "youtubeVideoId": "FhpIE3uCn2E"
+    "youtubeVideoId": "FhpIE3uCn2E",
+    "subgenres": [
+      "experimental",
+      "ambient"
+    ]
   },
   {
     "name": "Steve Hauschildt",
@@ -1307,7 +1937,11 @@
       "ambient",
       "idm"
     ],
-    "youtubeVideoId": "_V76ZoLKvxg"
+    "youtubeVideoId": "_V76ZoLKvxg",
+    "subgenres": [
+      "ambient",
+      "experimental"
+    ]
   },
   {
     "name": "Casino Versus Japan",
@@ -1317,7 +1951,11 @@
       "ambient",
       "triphop"
     ],
-    "youtubeVideoId": "cAoWP84Slfk"
+    "youtubeVideoId": "cAoWP84Slfk",
+    "subgenres": [
+      "idm",
+      "ambient"
+    ]
   },
   {
     "name": "Slag Boom Van Loon",
@@ -1327,7 +1965,11 @@
       "ambient",
       "triphop"
     ],
-    "youtubeVideoId": "uxYCNdZfdUk"
+    "youtubeVideoId": "uxYCNdZfdUk",
+    "subgenres": [
+      "idm",
+      "downtempo"
+    ]
   },
   {
     "name": "Christ.",
@@ -1337,7 +1979,11 @@
       "ambient",
       "triphop"
     ],
-    "youtubeVideoId": "QpXnWaZfPBo"
+    "youtubeVideoId": "QpXnWaZfPBo",
+    "subgenres": [
+      "glitch",
+      "idm"
+    ]
   },
   {
     "name": "Chuck Person",
@@ -1345,7 +1991,11 @@
     "genres": [
       "idm"
     ],
-    "youtubeVideoId": "JfXOem1EERg"
+    "youtubeVideoId": "JfXOem1EERg",
+    "subgenres": [
+      "experimental",
+      "ambient"
+    ]
   },
   {
     "name": "Hype Williams",
@@ -1355,7 +2005,11 @@
       "industrial",
       "techno"
     ],
-    "youtubeVideoId": "BYTPiHTfKbA"
+    "youtubeVideoId": "BYTPiHTfKbA",
+    "subgenres": [
+      "experimental",
+      "noise"
+    ]
   },
   {
     "name": "Elysia Crampton",
@@ -1364,7 +2018,11 @@
       "idm",
       "ambient"
     ],
-    "youtubeVideoId": "VTfutwyASMw"
+    "youtubeVideoId": "VTfutwyASMw",
+    "subgenres": [
+      "experimental",
+      "idm"
+    ]
   },
   {
     "name": "Dean Blunt",
@@ -1374,7 +2032,11 @@
       "triphop",
       "industrial"
     ],
-    "youtubeVideoId": "OuK_eqGCPC0"
+    "youtubeVideoId": "OuK_eqGCPC0",
+    "subgenres": [
+      "experimental",
+      "noise"
+    ]
   },
   {
     "name": "Astrid Sonne",
@@ -1383,7 +2045,11 @@
       "idm",
       "ambient"
     ],
-    "youtubeVideoId": "56M7d1oAZlo"
+    "youtubeVideoId": "56M7d1oAZlo",
+    "subgenres": [
+      "experimental",
+      "modern-classical"
+    ]
   },
   {
     "name": "Julia Holter",
@@ -1392,7 +2058,11 @@
       "idm",
       "ambient"
     ],
-    "youtubeVideoId": "3HGOxuMecP0"
+    "youtubeVideoId": "3HGOxuMecP0",
+    "subgenres": [
+      "experimental",
+      "ambient"
+    ]
   },
   {
     "name": "Tujiko Noriko",
@@ -1401,7 +2071,12 @@
       "idm",
       "ambient"
     ],
-    "youtubeVideoId": "tVg7mPo-Qvs"
+    "youtubeVideoId": "tVg7mPo-Qvs",
+    "subgenres": [
+      "experimental",
+      "glitch",
+      "ambient"
+    ]
   },
   {
     "name": "Klein",
@@ -1411,7 +2086,11 @@
       "ambient",
       "industrial"
     ],
-    "youtubeVideoId": "NXZXZypxQnw"
+    "youtubeVideoId": "NXZXZypxQnw",
+    "subgenres": [
+      "experimental",
+      "idm"
+    ]
   },
   {
     "name": "Lee Gamble",
@@ -1422,7 +2101,12 @@
       "techno",
       "industrial"
     ],
-    "youtubeVideoId": "gu4OjIomJ74"
+    "youtubeVideoId": "gu4OjIomJ74",
+    "subgenres": [
+      "experimental",
+      "idm",
+      "ambient"
+    ]
   },
   {
     "name": "Lucrecia Dalt",
@@ -1431,7 +2115,11 @@
       "ambient",
       "idm"
     ],
-    "youtubeVideoId": "y67jUZ8MsiA"
+    "youtubeVideoId": "y67jUZ8MsiA",
+    "subgenres": [
+      "experimental",
+      "idm"
+    ]
   },
   {
     "name": "Nick León",
@@ -1441,7 +2129,11 @@
       "techno",
       "triphop"
     ],
-    "youtubeVideoId": "zco53xoZ8aA"
+    "youtubeVideoId": "zco53xoZ8aA",
+    "subgenres": [
+      "experimental",
+      "idm"
+    ]
   },
   {
     "name": "Carrier",
@@ -1450,7 +2142,11 @@
       "idm",
       "techno"
     ],
-    "youtubeVideoId": "CeSvYv1pbFw"
+    "youtubeVideoId": "CeSvYv1pbFw",
+    "subgenres": [
+      "ambient",
+      "experimental"
+    ]
   },
   {
     "name": "ML Buch",
@@ -1458,7 +2154,11 @@
     "genres": [
       "idm"
     ],
-    "youtubeVideoId": "dAVPDFIZXdI"
+    "youtubeVideoId": "dAVPDFIZXdI",
+    "subgenres": [
+      "experimental",
+      "ambient"
+    ]
   },
   {
     "name": "Mark McGuire",
@@ -1467,7 +2167,11 @@
       "ambient",
       "idm"
     ],
-    "youtubeVideoId": "WH3A_Ig6G7g"
+    "youtubeVideoId": "WH3A_Ig6G7g",
+    "subgenres": [
+      "ambient",
+      "drone"
+    ]
   },
   {
     "name": "Benoît Pioulard",
@@ -1476,7 +2180,11 @@
       "ambient",
       "idm"
     ],
-    "youtubeVideoId": "CmrFHDBnTTA"
+    "youtubeVideoId": "CmrFHDBnTTA",
+    "subgenres": [
+      "ambient",
+      "folktronica"
+    ]
   },
   {
     "name": "Arovane",
@@ -1486,7 +2194,12 @@
       "ambient",
       "triphop"
     ],
-    "youtubeVideoId": "GubFhTwmJQQ"
+    "youtubeVideoId": "GubFhTwmJQQ",
+    "subgenres": [
+      "idm",
+      "ambient",
+      "glitch"
+    ]
   },
   {
     "name": "Funki Porcini",
@@ -1496,7 +2209,12 @@
       "idm",
       "ambient"
     ],
-    "youtubeVideoId": "Ao7SWH03q3c"
+    "youtubeVideoId": "Ao7SWH03q3c",
+    "subgenres": [
+      "trip-hop",
+      "idm",
+      "downtempo"
+    ]
   },
   {
     "name": "Boom Bip",
@@ -1506,7 +2224,12 @@
       "ambient",
       "triphop"
     ],
-    "youtubeVideoId": "gkVEf080b-0"
+    "youtubeVideoId": "gkVEf080b-0",
+    "subgenres": [
+      "idm",
+      "trip-hop",
+      "experimental"
+    ]
   },
   {
     "name": "Lusine ICL",
@@ -1519,7 +2242,12 @@
       "classical",
       "triphop"
     ],
-    "youtubeVideoId": "Rtl3vMF9-Ck"
+    "youtubeVideoId": "Rtl3vMF9-Ck",
+    "subgenres": [
+      "idm",
+      "ambient",
+      "glitch"
+    ]
   },
   {
     "name": "Bochum Welt",
@@ -1530,6 +2258,11 @@
       "darkwave",
       "ambient"
     ],
-    "youtubeVideoId": "yBEqqYKF8ck"
+    "youtubeVideoId": "yBEqqYKF8ck",
+    "subgenres": [
+      "idm",
+      "acid",
+      "electro"
+    ]
   }
 ]
