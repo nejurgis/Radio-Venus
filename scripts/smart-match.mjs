@@ -258,14 +258,14 @@ async function getWikidataBirthDate(artistName) {
       const entityUrl = `https://www.wikidata.org/w/api.php?action=wbgetentities&ids=${result.id}&props=claims&format=json`;
       const entityData = await fetchJSON(entityUrl);
       const entity = entityData.entities?.[result.id];
+      if (!entity?.claims) continue;
 
-      if (!entity?.claims?.P569) continue;
+      // P569 = birth date (person), P571 = inception date (band/group)
+      const dateClaim = entity.claims.P569?.[0] || entity.claims.P571?.[0];
+      const dateValue = dateClaim?.mainsnak?.datavalue?.value?.time;
+      if (!dateValue) continue;
 
-      const birthClaim = entity.claims.P569[0];
-      const birthDate = birthClaim?.mainsnak?.datavalue?.value?.time;
-      if (!birthDate) continue;
-
-      const match = birthDate.match(/(\d{4}-\d{2}-\d{2})/);
+      const match = dateValue.match(/(\d{4}-\d{2}-\d{2})/);
       if (match) return match[1];
     }
 
