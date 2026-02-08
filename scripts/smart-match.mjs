@@ -118,7 +118,10 @@ function fetchText(url) {
 function fetchJSON(url) {
   return new Promise((resolve, reject) => {
     https.get(url, {
-      headers: { 'User-Agent': 'RadioVenus/1.0', 'Accept': 'application/json' },
+      headers: {
+        'User-Agent': 'RadioVenus/1.0 (https://github.com/nejurgis/Radio-Venus)',
+        'Accept': 'application/json',
+      },
     }, res => {
       if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
         return fetchJSON(res.headers.location).then(resolve, reject);
@@ -185,17 +188,54 @@ async function getLastfmTags(artistName) {
   }
 }
 
-// ── Wikidata: Get birth date ────────────────────────────────────────────────
+// ── Birth date discovery (Wikidata + Wikipedia fallback) ────────────────────
+
+async function getBirthDate(artistName) {
+  // Strategy 1: Wikidata (structured, fast)
+  let date = await getWikidataBirthDate(artistName);
+  if (date) return date;
+
+  // Strategy 2: MusicBrainz (best for underground/electronic artists)
+  console.log(`    Wikidata miss, trying MusicBrainz...`);
+  date = await getMusicBrainzBirthDate(artistName);
+  if (date) return date;
+
+  // Strategy 3: Wikipedia infobox deep scrape (final fallback)
+  console.log(`    MusicBrainz miss, trying Wikipedia...`);
+  date = await getWikipediaBirthDate(artistName);
+  if (date) return date;
+
+  return null;
+}
+
+async function getMusicBrainzBirthDate(artistName) {
+  const url = `https://musicbrainz.org/ws/2/artist/?query=artist:${encodeURIComponent(artistName)}&fmt=json`;
+  try {
+    const data = await fetchJSON(url);
+    if (!data.artists || data.artists.length === 0) return null;
+
+    // Prefer a Person with a life-span begin date; fall back to Group/other
+    const match =
+      data.artists.find(a => a.type === 'Person' && a['life-span']?.begin) ||
+      data.artists.find(a => a['life-span']?.begin);
+
+    if (match && match['life-span'].begin) {
+      const b = match['life-span'].begin;
+      if (b.length === 10) return b;          // YYYY-MM-DD
+      if (b.length === 7) return `${b}-15`;   // YYYY-MM → mid-month
+      if (b.length === 4) return `${b}-01-01`; // YYYY → Jan 1
+    }
+  } catch { return null; }
+  return null;
+}
 
 async function getWikidataBirthDate(artistName) {
-  // Search for the entity first
   const searchUrl = `https://www.wikidata.org/w/api.php?action=wbsearchentities&search=${encodeURIComponent(artistName)}&language=en&type=item&limit=5&format=json`;
 
   try {
     const searchData = await fetchJSON(searchUrl);
     if (!searchData.search || searchData.search.length === 0) return null;
 
-    // Try each result to find one with a birth date (P569)
     for (const result of searchData.search) {
       const entityUrl = `https://www.wikidata.org/w/api.php?action=wbgetentities&ids=${result.id}&props=claims&format=json`;
       const entityData = await fetchJSON(entityUrl);
@@ -207,7 +247,6 @@ async function getWikidataBirthDate(artistName) {
       const birthDate = birthClaim?.mainsnak?.datavalue?.value?.time;
       if (!birthDate) continue;
 
-      // Format: "+1970-06-01T00:00:00Z" → "1970-06-01"
       const match = birthDate.match(/(\d{4}-\d{2}-\d{2})/);
       if (match) return match[1];
     }
@@ -216,6 +255,60 @@ async function getWikidataBirthDate(artistName) {
   } catch {
     return null;
   }
+}
+
+async function getWikipediaBirthDate(artistName) {
+  // Try artist name directly, then with "(musician)" disambiguation
+  const queries = [artistName, `${artistName} (musician)`, `${artistName} (band)`];
+
+  for (const title of queries) {
+    const url = `https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&rvsection=0&titles=${encodeURIComponent(title)}&format=json&redirects=1`;
+
+    try {
+      const data = await fetchJSON(url);
+      const pages = data.query.pages;
+      const pageId = Object.keys(pages)[0];
+      if (pageId === '-1') continue;
+
+      const content = pages[pageId].revisions?.[0]?.['*'];
+      if (!content) continue;
+
+      // 1. {{Birth date and age|1991|3|4}} or {{Birth date|1991|3|4}}
+      const templateMatch = content.match(/\{\{[Bb]irth date(?:\s+and\s+age)?\|(\d{4})\|(\d{1,2})\|(\d{1,2})/);
+      if (templateMatch) {
+        const [, y, m, d] = templateMatch;
+        return `${y}-${m.padStart(2, '0')}-${d.padStart(2, '0')}`;
+      }
+
+      // 2. {{birth-date|March 4, 1991}} or {{birth date|mf=yes|March 4, 1991}}
+      const birthDateTextMatch = content.match(/\{\{[Bb]irth[- ]date\|(?:[^|]*\|)*([A-Z][a-z]+ \d{1,2},?\s*\d{4})/);
+      if (birthDateTextMatch) {
+        const parsed = new Date(birthDateTextMatch[1]);
+        if (!isNaN(parsed)) return parsed.toISOString().slice(0, 10);
+      }
+
+      // 3. birth_date = March 4, 1991  or  birth_date = {{birth date|...}}
+      const infoboxMatch = content.match(/birth_date\s*=\s*(?:\{\{[^}]*\}\}\s*)?([A-Z][a-z]+ \d{1,2},?\s*\d{4})/);
+      if (infoboxMatch) {
+        const parsed = new Date(infoboxMatch[1]);
+        if (!isNaN(parsed)) return parsed.toISOString().slice(0, 10);
+      }
+
+      // 4. born.*Month Day, Year pattern in opening paragraph
+      const bornMatch = content.match(/born[^)]*?([A-Z][a-z]+ \d{1,2},?\s*\d{4})/);
+      if (bornMatch) {
+        const parsed = new Date(bornMatch[1]);
+        if (!isNaN(parsed)) return parsed.toISOString().slice(0, 10);
+      }
+
+      // 5. born.*YYYY-MM-DD or birth_date.*YYYY-MM-DD
+      const isoMatch = content.match(/(?:born|birth_date)[^}]*?(\d{4}-\d{2}-\d{2})/);
+      if (isoMatch) return isoMatch[1];
+
+    } catch { continue; }
+  }
+
+  return null;
 }
 
 // ── Main ────────────────────────────────────────────────────────────────────
@@ -266,12 +359,12 @@ async function main() {
           continue;
         }
 
-        // Get birth date from Wikidata
-        const birthDate = await getWikidataBirthDate(name);
-        await delay(300); // Be polite to Wikidata
+        // Get birth date (Wikidata -> Wikipedia fallback)
+        const birthDate = await getBirthDate(name);
+        await delay(300);
 
         if (!birthDate) {
-          console.log(`  - ${name}: no birth date found, skipping`);
+          console.log(`  - ${name}: no birth date found on Wikidata or Wikipedia`);
           continue;
         }
 
