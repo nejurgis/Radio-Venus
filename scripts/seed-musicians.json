@@ -2519,11 +2519,12 @@
   },
   {
     "name": "Dopplereffekt",
-    "birthDate": "1995-06-15",
+    "birthDate": "1963-09-12",
     "genres": [
       "techno",
       "idm"
-    ]
+    ],
+    "youtubeId": "15X4xqFoL90"
   },
   {
     "name": "Terence Fixmer",
@@ -3131,5 +3132,106 @@
       "coldwave",
       "synth-pop"
     ]
+  },
+  {
+    "name": "Mort Garson",
+    "birthDate": "1924-07-20",
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "experimental"
+    ],
+    "youtubeId": "l0vrsO3_HpU"
+  },
+  {
+    "name": "Tonstartssbandht",
+    "birthDate": "2007-08-24",
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "youtubeId": "5vv2se_K_J0"
+  },
+  {
+    "name": "10cc",
+    "birthDate": "1972-07-01",
+    "genres": [
+      "darkwave"
+    ],
+    "subgenres": [
+      "synth-pop"
+    ],
+    "youtubeId": "STugQ0X1NoI"
+  },
+  {
+    "name": "Fleetwood Mac",
+    "birthDate": "1967-07-01",
+    "genres": [
+      "darkwave"
+    ],
+    "subgenres": [
+      "synth-pop"
+    ],
+    "youtubeId": "fXeKi6ZkbOw"
+  },
+  {
+    "name": "Neil Scrivin",
+    "birthDate": "2011-01-01",
+    "genres": [
+      "ambient",
+      "darkwave"
+    ],
+    "subgenres": [
+      "ambient",
+      "synthwave"
+    ],
+    "youtubeId": "VPjsh5hHXfM"
+  },
+  {
+    "name": "Miles Tilmann",
+    "birthDate": "2000-01-01",
+    "genres": [
+      "idm",
+      "ambient"
+    ],
+    "subgenres": [
+      "idm",
+      "ambient",
+      "glitch"
+    ],
+    "youtubeId": "wcaObFbTbBI"
+  },
+  {
+    "name": "Mulm",
+    "birthDate": "2011-01-01",
+    "genres": [
+      "ambient",
+      "triphop"
+    ],
+    "subgenres": [
+      "dark-ambient",
+      "ambient",
+      "drone"
+    ],
+    "youtubeId": "gkVmd7oO_Vs"
+  },
+  {
+    "name": "Off The Sky",
+    "birthDate": "1977-01-01",
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "glitch",
+      "experimental"
+    ],
+    "youtubeId": "PE4bfeHOHok"
   }
 ]

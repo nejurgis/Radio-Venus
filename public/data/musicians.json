@@ -1,5 +1,22 @@
 [
   {
+    "name": "10cc",
+    "birthDate": "1972-07-01",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 19.4,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave"
+    ],
+    "subgenres": [
+      "synth-pop"
+    ],
+    "youtubeVideoId": "ikP-a49YbwU"
+  },
+  {
     "name": "A Certain Ratio",
     "birthDate": "1977-06-15",
     "venus": {
@@ -492,6 +509,23 @@
       "classical"
     ],
     "youtubeVideoId": "m33hnPg_86c"
+  },
+  {
+    "name": "Antoni Lliteres",
+    "birthDate": "1673-06-18",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 15.7,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "LB1t2A0mr1c"
   },
   {
     "name": "Antonín Dvořák",
@@ -2209,12 +2243,12 @@
   },
   {
     "name": "Dopplereffekt",
-    "birthDate": "1995-06-15",
+    "birthDate": "1963-09-12",
     "venus": {
-      "sign": "Gemini",
-      "degree": 5.9,
-      "decan": 1,
-      "element": "air"
+      "sign": "Virgo",
+      "degree": 22.7,
+      "decan": 3,
+      "element": "earth"
     },
     "genres": [
       "techno",
@@ -2532,6 +2566,23 @@
     "youtubeVideoId": "VTfutwyASMw"
   },
   {
+    "name": "Emilio Serrano y Ruiz",
+    "birthDate": "1850-03-13",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 25.2,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "9uX9GPmlgxQ"
+  },
+  {
     "name": "Engelbert Humperdinck",
     "birthDate": "1854-09-01",
     "venus": {
@@ -2745,6 +2796,57 @@
     "youtubeVideoId": "ypINKMapdE0"
   },
   {
+    "name": "Federico Chueca",
+    "birthDate": "1846-05-05",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 28.7,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "prY0AnKHyhY"
+  },
+  {
+    "name": "Federico Moreno Torroba",
+    "birthDate": "1891-03-03",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 26.8,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "wqf7gBo_pYQ"
+  },
+  {
+    "name": "Felip Pedrell",
+    "birthDate": "1841-02-19",
+    "venus": {
+      "sign": "Aries",
+      "degree": 16.6,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "be4ERgrxyCc"
+  },
+  {
     "name": "Felix Mendelssohn",
     "birthDate": "1809-02-03",
     "venus": {
@@ -2854,6 +2956,23 @@
       "techno"
     ],
     "youtubeVideoId": "E3RG4LGmSMY"
+  },
+  {
+    "name": "Fleetwood Mac",
+    "birthDate": "1967-07-01",
+    "venus": {
+      "sign": "Leo",
+      "degree": 23.9,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "darkwave"
+    ],
+    "subgenres": [
+      "synth-pop"
+    ],
+    "youtubeVideoId": "kVE4aOUX2iM"
   },
   {
     "name": "Floating Points",
@@ -3177,6 +3296,23 @@
       "classical"
     ],
     "youtubeVideoId": "vGq3-Fi_zQY"
+  },
+  {
+    "name": "Franz Strauss",
+    "birthDate": "1822-02-26",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 25.3,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "classical"
+    ],
+    "youtubeVideoId": "BL57IKFx52k"
   },
   {
     "name": "Franz Vincenz Tuček",
@@ -6957,6 +7093,23 @@
     "youtubeVideoId": "Bululwnj4ik"
   },
   {
+    "name": "Miguel Marqués",
+    "birthDate": "1843-05-20",
+    "venus": {
+      "sign": "Aries",
+      "degree": 23.9,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "GGxXXe2D51A"
+  },
+  {
     "name": "Mihai Timofti",
     "birthDate": "1948-09-19",
     "venus": {
@@ -6989,6 +7142,26 @@
       "classical"
     ],
     "youtubeVideoId": "iueg1fR_LDQ"
+  },
+  {
+    "name": "Miles Tilmann",
+    "birthDate": "2000-01-01",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 1.6,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "idm",
+      "ambient"
+    ],
+    "subgenres": [
+      "idm",
+      "ambient",
+      "glitch"
+    ],
+    "youtubeVideoId": "KZ9-Lap8dx4"
   },
   {
     "name": "Milka Ternina",
@@ -7212,6 +7385,25 @@
     "youtubeVideoId": "frJYYXQ0xCc"
   },
   {
+    "name": "Mort Garson",
+    "birthDate": "1924-07-20",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 1.2,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "experimental"
+    ],
+    "youtubeVideoId": "dRXLYnwKL8c"
+  },
+  {
     "name": "Mouse on Mars",
     "birthDate": "1969-09-02",
     "venus": {
@@ -7231,6 +7423,26 @@
     "youtubeVideoId": "CL7qasY77wA"
   },
   {
+    "name": "Mulm",
+    "birthDate": "2011-01-01",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 24,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "triphop"
+    ],
+    "subgenres": [
+      "dark-ambient",
+      "ambient",
+      "drone"
+    ],
+    "youtubeVideoId": "4Y6n2YfYu9w"
+  },
+  {
     "name": "Murcof",
     "birthDate": "1970-07-16",
     "venus": {
@@ -7248,6 +7460,25 @@
       "modern-classical"
     ],
     "youtubeVideoId": "GGGfLLkIoVc"
+  },
+  {
+    "name": "Neil Scrivin",
+    "birthDate": "2011-01-01",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 24,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "darkwave"
+    ],
+    "subgenres": [
+      "ambient",
+      "synthwave"
+    ],
+    "youtubeVideoId": "NqlwiXw7zdY"
   },
   {
     "name": "New Order",
@@ -7405,6 +7636,26 @@
       "experimental"
     ],
     "youtubeVideoId": "IM27cRY_31s"
+  },
+  {
+    "name": "Off The Sky",
+    "birthDate": "1977-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 26.6,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "glitch",
+      "experimental"
+    ],
+    "youtubeVideoId": "GFEKjWegB48"
   },
   {
     "name": "Olga Borodina",
@@ -8450,6 +8701,23 @@
       "acid"
     ],
     "youtubeVideoId": "F5BTo4y7QGY"
+  },
+  {
+    "name": "Rita Montaner",
+    "birthDate": "1900-05-22",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 13.8,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera"
+    ],
+    "youtubeVideoId": "g02ty--ygis"
   },
   {
     "name": "Robert Fuchs",
@@ -9499,6 +9767,23 @@
       "classical"
     ],
     "youtubeVideoId": "oKnfR83QyKM"
+  },
+  {
+    "name": "Tonstartssbandht",
+    "birthDate": "2007-08-24",
+    "venus": {
+      "sign": "Leo",
+      "degree": 21.1,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "youtubeVideoId": "nod00ZZVZ0M"
   },
   {
     "name": "Tricky",
