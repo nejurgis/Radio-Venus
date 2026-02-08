@@ -7,7 +7,7 @@ import https from 'node:https';
 
 const require = createRequire(import.meta.url);
 const Astronomy = require('astronomy-engine');
-const ytsr = require('ytsr');
+const ytSearch = require('yt-search');
 
 function httpGet(url) {
   return new Promise((resolve, reject) => {
@@ -161,31 +161,27 @@ async function queryWikidata() {
   return artists;
 }
 
-// ── YouTube search ──────────────────────────────────────────────────────────
+// ── YouTube search (yt-search) ──────────────────────────────────────────────
 
 async function searchYouTube(artistName, genre) {
-  try {
-    // Prefer "Topic" / audio versions — almost always embeddable
-    const query = `${artistName} ${genre} audio`;
-    const results = await ytsr(query, { limit: 10 });
-    const video = results.items.find(item => {
-      if (item.type !== 'video') return false;
-      const dur = parseDuration(item.duration);
-      // Filter out shorts (<1min) and long mixes (>10min)
-      return dur > 60 && dur < 600;
-    });
-    return video?.id || null;
-  } catch {
-    return null;
-  }
-}
+  const queries = [
+    `${artistName} ${genre} official audio`,
+    `${artistName} topic`,
+    `${artistName} full album`,
+  ];
 
-function parseDuration(str) {
-  if (!str) return 0;
-  const parts = str.split(':').map(Number);
-  if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
-  if (parts.length === 2) return parts[0] * 60 + parts[1];
-  return parts[0] || 0;
+  for (const q of queries) {
+    try {
+      const result = await ytSearch(q);
+      const video = result.videos.slice(0, 5).find(item => {
+        const dur = item.seconds;
+        // 4 min to 3 hours
+        return dur > 240 && dur < 10800;
+      });
+      if (video) return video.videoId;
+    } catch { continue; }
+  }
+  return null;
 }
 
 // ── Merge + build ───────────────────────────────────────────────────────────
