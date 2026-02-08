@@ -308,6 +308,20 @@ function tick() {
     ctx.arc(x, y, drawSize, 0, Math.PI * 2);
     ctx.fillStyle = grad;
     ctx.fill();
+
+    // Label under the dot (zoomed mode only)
+    if (isZoomed) {
+      ctx.save();
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.font = '1.5px monospace';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+      ctx.fillStyle = isHovered
+        ? 'rgba(255, 255, 255, 0.9)'
+        : `rgba(${dot.r}, ${dot.g}, ${dot.b}, ${dot.alpha * 0.7})`;
+      ctx.fillText(dot.name, x, y + drawSize + 1);
+      ctx.restore();
+    }
   }
 
   const prevHovered = hoveredDot;
