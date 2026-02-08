@@ -1,7 +1,7 @@
 import { calculateVenus, makeBirthDate } from './venus.js';
 import { GENRE_CATEGORIES, SUBGENRES } from './genres.js';
 import { loadDatabase, getDatabase, match, getSubgenreCounts } from './matcher.js';
-import { initNebula, renderNebula, setUserVenus, zoomToSign, zoomOut, showNebula } from './viz.js';
+import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula } from './viz.js';
 import { loadYouTubeAPI, initPlayer, loadVideo, togglePlay, isPlaying } from './player.js';
 import {
   initScreens, showScreen, showLoading, setElementTheme,
@@ -88,6 +88,7 @@ function setupDateInput() {
 
     if (!dayEl.value || !monthEl.value || yearEl.value.length < 4) {
       btnEnter.disabled = true;
+      clearPreviewVenus();
       return;
     }
 
@@ -95,10 +96,19 @@ function setupDateInput() {
     if (error) {
       errorEl.textContent = error;
       btnEnter.disabled = true;
+      clearPreviewVenus();
       return;
     }
 
     btnEnter.disabled = false;
+
+    // Live preview: show soft glow at Venus position as user types
+    try {
+      const preview = calculateVenus(makeBirthDate(d, m, y));
+      setPreviewVenus(preview.longitude, preview.element);
+    } catch {
+      clearPreviewVenus();
+    }
   }
 
   btnEnter.addEventListener('click', handleEnter);

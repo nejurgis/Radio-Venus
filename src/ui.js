@@ -85,6 +85,13 @@ export function renderRadioHeader(signName, genreLabel, subgenreLabel = null) {
     : genreLabel;
 }
 
+const SIGN_ELEMENTS = {
+  Aries: 'fire', Leo: 'fire', Sagittarius: 'fire',
+  Taurus: 'earth', Virgo: 'earth', Capricorn: 'earth',
+  Gemini: 'air', Libra: 'air', Aquarius: 'air',
+  Cancer: 'water', Scorpio: 'water', Pisces: 'water',
+};
+
 export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new Set()) {
   const list = document.getElementById('track-list');
   list.innerHTML = '';
@@ -98,7 +105,8 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
     const simHtml = track.similarity != null
       ? `<span class="track-similarity">${track.similarity}%</span>` : '';
     const deg = track.venus.degree != null ? ` ${Math.round(track.venus.degree * 10) / 10}°` : '';
-    item.innerHTML = `<span class="track-name">${track.name}${failed ? ' <span class="track-restricted">restricted</span>' : ''}</span><span class="track-meta">${simHtml}<span class="track-item-sign">${track.venus.sign}${deg}</span></span>`;
+    const el = SIGN_ELEMENTS[track.venus.sign] || 'air';
+    item.innerHTML = `<span class="track-name">${track.name}${failed ? ' <span class="track-restricted">restricted</span>' : ''}</span><span class="track-meta">${simHtml}<span class="track-item-sign" style="color:var(--${el})">${track.venus.sign}${deg}</span></span>`;
     if (!failed) item.addEventListener('click', () => onSelect(i));
     list.appendChild(item);
   });

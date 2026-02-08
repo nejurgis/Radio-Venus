@@ -33,6 +33,7 @@ let ctx = null;
 let animId = null;
 let rotation = 0;
 let userDot = null;
+let previewDot = null;  // soft glow while typing birth date
 let dots = [];
 let hoveredDot = null;
 let mouseX = -1;
@@ -75,16 +76,28 @@ export function initNebula(containerId) {
   resize();
   window.addEventListener('resize', resize);
 
-  // Hover hit-testing
-  canvas.addEventListener('mousemove', (e) => {
+  // Global mousemove for hover — no pointer-events needed on canvas,
+  // so inputs/buttons on top always stay clickable.
+  document.addEventListener('mousemove', (e) => {
+    if (!canvas) return;
+    // Skip hover when mouse is over interactive elements (inputs, buttons, links)
+    const tag = e.target.tagName;
+    const isInteractive = tag === 'INPUT' || tag === 'BUTTON' || tag === 'A'
+      || tag === 'SELECT' || tag === 'TEXTAREA'
+      || e.target.closest('button, a, input, select, textarea');
+    if (isInteractive) {
+      mouseX = mouseY = -1;
+      if (hoveredDot) { hoveredDot = null; document.body.style.cursor = ''; }
+      return;
+    }
     const rect = canvas.getBoundingClientRect();
     mouseX = e.clientX - rect.left;
     mouseY = e.clientY - rect.top;
   });
-  canvas.addEventListener('mouseleave', () => {
+  document.addEventListener('mouseleave', () => {
     mouseX = mouseY = -1;
     hoveredDot = null;
-    canvas.style.cursor = '';
+    document.body.style.cursor = '';
   });
 }
 
@@ -133,10 +146,20 @@ export function renderNebula(musicians) {
 export function setUserVenus(longitude, element) {
   const [r, g, b] = ELEMENT_COLORS[element] || ELEMENT_COLORS.air;
   userDot = { deg: longitude, r, g, b, birth: performance.now() };
+  previewDot = null; // preview is replaced by the real dot
 }
 
 export function clearUserVenus() {
   userDot = null;
+}
+
+export function setPreviewVenus(longitude, element) {
+  const [r, g, b] = ELEMENT_COLORS[element] || ELEMENT_COLORS.air;
+  previewDot = { deg: longitude, r, g, b };
+}
+
+export function clearPreviewVenus() {
+  previewDot = null;
 }
 
 // ── Zoom control ──────────────────────────────────────────────────────────────
@@ -217,9 +240,17 @@ function tick() {
   ctx.save();
   ctx.globalCompositeOperation = 'lighter';
 
-  // Hit-test only when not zoomed (portal screen hover)
+  // Hit-test in both full-ring and zoomed modes
   let closestDot = null;
-  let closestDist = 8;
+  let closestDist = isZoomed ? 4 : 8; // tighter threshold when zoomed (canvas space)
+
+  // Convert mouse to canvas space when zoomed
+  let hitX = mouseX, hitY = mouseY;
+  if (isZoomed && mouseX >= 0) {
+    const scale = (h * 0.7) / bandWidth;
+    hitX = (mouseX - w / 2) / scale + cx;
+    hitY = (mouseY - h / 2) / scale + (cy - midR);
+  }
 
   for (const dot of dots) {
     const angle = (-(dot.deg + dot.jA) - 90 + rot) * Math.PI / 180;
@@ -227,12 +258,10 @@ function tick() {
     const x = cx + r * Math.cos(angle);
     const y = cy + r * Math.sin(angle);
 
-    // Hit-test (only in full-ring mode)
-    if (!isZoomed && mouseX >= 0) {
-      dot.sx = x;
-      dot.sy = y;
-      const dx = x - mouseX;
-      const dy = y - mouseY;
+    // Hit-test
+    if (hitX >= 0) {
+      const dx = x - hitX;
+      const dy = y - hitY;
       const dist = Math.sqrt(dx * dx + dy * dy);
       if (dist < closestDist) {
         closestDist = dist;
@@ -240,43 +269,81 @@ function tick() {
       }
     }
 
-    const isHovered = !isZoomed && hoveredDot === dot;
-    const drawSize = isHovered ? 5 : dot.size;
+    const isHovered = hoveredDot === dot;
+    // Scale up 1.5× since soft gradient edges look smaller than flat fills
+    const baseSize = dot.size * 1.5;
+    const drawSize = isHovered ? 7 : baseSize;
     const drawAlpha = isHovered ? 1 : dot.alpha;
-    const drawR = isHovered ? 255 : dot.r;
-    const drawG = isHovered ? 255 : dot.g;
-    const drawB = isHovered ? 255 : dot.b;
+    const dr = isHovered ? 255 : dot.r;
+    const dg = isHovered ? 255 : dot.g;
+    const db = isHovered ? 255 : dot.b;
+
+    // Radial gradient with highlight offset for 3D bead effect
+    const grad = ctx.createRadialGradient(
+      x - drawSize * 0.2, y - drawSize * 0.2, 0,  // highlight (top-left)
+      x, y, drawSize                                 // outer edge
+    );
+    grad.addColorStop(0, `rgba(255, 255, 255, ${drawAlpha})`);
+    grad.addColorStop(0.4, `rgba(${dr}, ${dg}, ${db}, ${drawAlpha * 0.8})`);
+    grad.addColorStop(1, `rgba(${dr}, ${dg}, ${db}, 0)`);
 
     ctx.beginPath();
     ctx.arc(x, y, drawSize, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(${drawR}, ${drawG}, ${drawB}, ${drawAlpha})`;
+    ctx.fillStyle = grad;
     ctx.fill();
   }
 
-  if (!isZoomed) {
-    hoveredDot = closestDot;
-    if (canvas) canvas.style.cursor = hoveredDot ? crosshairCursor : '';
+  hoveredDot = closestDot;
+  if (hoveredDot) {
+    document.body.style.cursor = crosshairCursor;
+  } else if (document.body.style.cursor) {
+    document.body.style.cursor = '';
   }
 
   ctx.restore();
 
-  // ── Center readout (hovered artist name + sign — full ring mode only) ──
-  if (!isZoomed && hoveredDot) {
+  // ── Center readout (hovered artist name + sign) ───────────────────────
+  if (hoveredDot) {
+    // Draw readout outside the zoom transform so text stays screen-sized
     ctx.save();
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
+
+    const textX = w / 2;
+    const textY = isZoomed ? h * 0.1 : cy;
 
     ctx.font = 'bold 13px monospace';
     ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
     ctx.shadowColor = 'rgba(0, 0, 0, 0.8)';
     ctx.shadowBlur = 4;
-    ctx.fillText(hoveredDot.name, cx, cy - 7);
+    ctx.fillText(hoveredDot.name, textX, textY - 7);
 
     ctx.font = '10px monospace';
     ctx.fillStyle = `rgba(${hoveredDot.r}, ${hoveredDot.g}, ${hoveredDot.b}, 0.8)`;
     const degInSign = Math.round((hoveredDot.deg % 30) * 10) / 10;
-    ctx.fillText(`${hoveredDot.sign} ${degInSign}°`, cx, cy + 8);
+    ctx.fillText(`${hoveredDot.sign} ${degInSign}°`, textX, textY + 8);
 
+    ctx.restore();
+  }
+
+  // ── Preview dot (soft glow while typing birth date) ────────────────────
+  if (previewDot && !userDot) {
+    const angle = (-(previewDot.deg) - 90 + rot) * Math.PI / 180;
+    const x = cx + midR * Math.cos(angle);
+    const y = cy + midR * Math.sin(angle);
+
+    ctx.save();
+    ctx.globalCompositeOperation = 'lighter';
+    // Gentle breathing (slower + subtler than user dot)
+    const breath = 0.3 + 0.15 * Math.sin(performance.now() / 600);
+    const glowR = isZoomed ? 8 : 16;
+    const grad = ctx.createRadialGradient(x, y, 0, x, y, glowR);
+    grad.addColorStop(0, `rgba(${previewDot.r}, ${previewDot.g}, ${previewDot.b}, ${breath})`);
+    grad.addColorStop(1, `rgba(${previewDot.r}, ${previewDot.g}, ${previewDot.b}, 0)`);
+    ctx.beginPath();
+    ctx.arc(x, y, glowR, 0, Math.PI * 2);
+    ctx.fillStyle = grad;
+    ctx.fill();
     ctx.restore();
   }
 
@@ -322,6 +389,7 @@ export function destroyNebula() {
   ctx = null;
   dots = [];
   userDot = null;
+  previewDot = null;
   hoveredDot = null;
   mouseX = mouseY = -1;
   zoomSign = null;
