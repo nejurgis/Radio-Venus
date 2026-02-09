@@ -1,7 +1,7 @@
 import { calculateVenus, makeBirthDate } from './venus.js';
 import { GENRE_CATEGORIES, SUBGENRES } from './genres.js';
 import { loadDatabase, getDatabase, match, getSubgenreCounts } from './matcher.js';
-import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, onNebulaHover, onNebulaClick } from './viz.js';
+import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, onNebulaHover, onNebulaClick } from './viz.js';
 import { loadYouTubeAPI, initPlayer, loadVideo, togglePlay, isPlaying, getDuration, getCurrentTime, seekTo } from './player.js';
 import {
   initScreens, showScreen, setElementTheme,
@@ -214,6 +214,7 @@ async function startRadio(genreId, genreLabel, subgenreId = null) {
   showNebula(true);
   dimNebula(false);
   deepDimNebula(true);
+  setZoomDrift(true);
   showScreen('radio');
 
   if (tracks.length === 0) {
@@ -305,6 +306,7 @@ document.addEventListener('click', e => {
     togglePlay();
   }
   if (e.target.id === 'btn-back' || e.target.closest('#btn-back')) {
+    setZoomDrift(false);
     deepDimNebula(false);
     showNebula(true);
     dimNebula(true);

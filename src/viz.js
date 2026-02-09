@@ -62,6 +62,7 @@ let ctx = null;
 let animId = null;
 let rotation = 0;
 let zoomDrift = 0;
+let zoomDriftEnabled = false;
 let userDot = null;
 let previewDot = null;  // soft glow while typing birth date
 let dots = [];
@@ -267,6 +268,10 @@ export function deepDimNebula(deep) {
   if (containerEl) containerEl.classList.toggle('is-deep-dimmed', deep);
 }
 
+export function setZoomDrift(enabled) {
+  zoomDriftEnabled = enabled;
+}
+
 // ── Render loop ───────────────────────────────────────────────────────────────
 
 function tick() {
@@ -334,7 +339,7 @@ function tick() {
       if (delta < -180) delta += 360;
       rot = zoomRotStart + delta * zoomProgress;
     } else {
-      zoomDrift += (360 / 600) / 60; // very slow: ~10min per full rotation
+      if (zoomDriftEnabled) zoomDrift += (360 / 600) / 60;
       rot = targetRot + zoomDrift;
     }
   } else {
