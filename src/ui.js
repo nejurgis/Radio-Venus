@@ -131,8 +131,9 @@ export function markTrackFailed(index) {
   }
 }
 
-export function updateNowPlaying(name) {
+export function updateNowPlaying(name, title) {
   document.getElementById('np-artist').textContent = name || '';
+  document.getElementById('np-title').textContent = title || '';
 }
 
 export function updatePlayButton(isPlaying) {

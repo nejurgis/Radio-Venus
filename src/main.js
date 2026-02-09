@@ -2,7 +2,7 @@ import { calculateVenus, makeBirthDate } from './venus.js';
 import { GENRE_CATEGORIES, SUBGENRES } from './genres.js';
 import { loadDatabase, getDatabase, match, getSubgenreCounts } from './matcher.js';
 import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, onNebulaHover, onNebulaClick } from './viz.js';
-import { loadYouTubeAPI, initPlayer, loadVideo, togglePlay, isPlaying, getDuration, getCurrentTime, seekTo } from './player.js';
+import { loadYouTubeAPI, initPlayer, loadVideo, togglePlay, isPlaying, getDuration, getCurrentTime, seekTo, getVideoTitle } from './player.js';
 import {
   initScreens, showScreen, setElementTheme,
   renderReveal, renderGenreGrid, renderRadioHeader,
@@ -235,6 +235,9 @@ async function startRadio(genreId, genreLabel, subgenreId = null) {
         updatePlayButton(isPlaying());
         if (state === window.YT.PlayerState.PLAYING) {
           hideBuffering();
+          const title = getVideoTitle();
+          const track = tracks[currentTrackIndex];
+          if (track) updateNowPlaying(track.name, title);
           clearInterval(progressInterval);
           progressInterval = setInterval(() => {
             updateProgress(getCurrentTime(), getDuration());

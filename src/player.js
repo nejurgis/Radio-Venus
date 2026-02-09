@@ -106,3 +106,9 @@ export function seekTo(seconds) {
   if (!player || !isReady) return;
   player.seekTo(seconds, true);
 }
+
+export function getVideoTitle() {
+  if (!player || !isReady) return '';
+  const data = player.getVideoData();
+  return data?.title || '';
+}

@@ -136,6 +136,7 @@ html, body {
   color: var(--text-bright);
   margin-bottom: 0.5rem;
   text-transform: lowercase;
+  letter-spacing: -0.1em;
 }
 
 .subtitle {
@@ -261,8 +262,8 @@ html, body {
 .venus-sign {
   font-family: var(--font-mono);
   font-size: clamp(1.5rem, 4vw, 2.2rem);
-  font-weight: 300;
-  letter-spacing: 0.1em;
+  font-weight: 400;
+  letter-spacing: -0.1em;
   color: var(--text-bright);
   margin-bottom: 0.5rem;
   text-transform: lowercase;
@@ -494,6 +495,18 @@ html, body {
   font-size: 0.9rem;
   color: var(--text-bright);
   letter-spacing: 0.04em;
+}
+
+.np-title {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  letter-spacing: 0.02em;
+  margin-top: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .np-buffering {
