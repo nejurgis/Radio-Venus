@@ -125,7 +125,7 @@ export function initNebula(containerId) {
     const tag = e.target.tagName;
     const isInteractive = tag === 'INPUT' || tag === 'BUTTON' || tag === 'A'
       || tag === 'SELECT' || tag === 'TEXTAREA'
-      || e.target.closest('button, a, input, select, textarea');
+      || e.target.closest('button, a, input, select, textarea, .screen-inner');
     if (isInteractive) {
       mouseX = mouseY = -1;
       if (hoveredDot) { hoveredDot = null; document.body.style.cursor = ''; }
