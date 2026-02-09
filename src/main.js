@@ -27,6 +27,7 @@ const failedIds = new Set();
 document.addEventListener('DOMContentLoaded', async () => {
   initScreens();
   setupDateInput();
+  history.replaceState({ screen: 'portal' }, '');
 
   // Preload data + YT API in parallel
   const [dbResult] = await Promise.allSettled([
@@ -166,6 +167,7 @@ async function onDateSubmit(d, m, y) {
   await zoomToSign(signIndex, { duration: 2500 });
   portalScreen.classList.remove('is-fading');
   showScreen('reveal');
+  history.pushState({ screen: 'reveal' }, '');
 
   // Set up genre screen
   const genreLabel = id => GENRE_CATEGORIES.find(c => c.id === id)?.label || id;
@@ -186,21 +188,12 @@ async function onDateSubmit(d, m, y) {
     showNebula(true);
     dimNebula(true);
     showScreen('genre');
+    history.pushState({ screen: 'genre' }, '');
   });
 
-  // Reveal screen back → portal (date input)
-  document.getElementById('btn-back-reveal').addEventListener('click', async () => {
-    showScreen('portal');
-    showNebula(true);
-    await zoomOut({ duration: 1800 });
-  });
-
-  // Genre screen back → reveal
-  document.getElementById('btn-back-genre').addEventListener('click', () => {
-    showNebula(true);
-    dimNebula(false);
-    showScreen('reveal');
-  });
+  // Back buttons use history so browser back/forward works
+  document.getElementById('btn-back-reveal').addEventListener('click', () => history.back());
+  document.getElementById('btn-back-genre').addEventListener('click', () => history.back());
 }
 
 async function startRadio(genreId, genreLabel, subgenreId = null) {
@@ -216,6 +209,7 @@ async function startRadio(genreId, genreLabel, subgenreId = null) {
   deepDimNebula(true);
   setZoomDrift(true);
   showScreen('radio');
+  history.pushState({ screen: 'radio' }, '');
 
   if (tracks.length === 0) {
     showEmptyState(true);
@@ -306,11 +300,7 @@ document.addEventListener('click', e => {
     togglePlay();
   }
   if (e.target.id === 'btn-back' || e.target.closest('#btn-back')) {
-    setZoomDrift(false);
-    deepDimNebula(false);
-    showNebula(true);
-    dimNebula(true);
-    showScreen('genre');
+    history.back();
   }
 });
 
@@ -321,6 +311,41 @@ document.getElementById('seeker').addEventListener('input', e => {
     const targetPct = e.target.value / 10;
     showBuffering(targetPct);
     seekTo(duration * e.target.value / 1000);
+  }
+});
+
+// ── History navigation ────────────────────────────────────────────────────
+
+window.addEventListener('popstate', (e) => {
+  const screen = e.state?.screen;
+  if (!screen) return;
+
+  // Always clean up radio state
+  setZoomDrift(screen === 'radio');
+  deepDimNebula(screen === 'radio');
+
+  switch (screen) {
+    case 'portal':
+      showScreen('portal');
+      showNebula(true);
+      dimNebula(false);
+      zoomOut({ duration: 1800 });
+      break;
+    case 'reveal':
+      showNebula(true);
+      dimNebula(false);
+      showScreen('reveal');
+      break;
+    case 'genre':
+      showNebula(true);
+      dimNebula(true);
+      showScreen('genre');
+      break;
+    case 'radio':
+      showNebula(true);
+      dimNebula(false);
+      showScreen('radio');
+      break;
   }
 });
 
