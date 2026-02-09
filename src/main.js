@@ -211,7 +211,6 @@ async function startRadio(genreId, genreLabel, subgenreId = null) {
   currentTrackIndex = 0;
 
   renderRadioHeader(venus.sign, genreLabel, subgenreId);
-  zoomOut({ animate: false });
   showNebula(true);
   dimNebula(false);
   deepDimNebula(true);
@@ -307,9 +306,6 @@ document.addEventListener('click', e => {
   }
   if (e.target.id === 'btn-back' || e.target.closest('#btn-back')) {
     deepDimNebula(false);
-    const signIndex = ['Aries','Taurus','Gemini','Cancer','Leo','Virgo',
-      'Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'].indexOf(venus.sign);
-    zoomToSign(signIndex, { animate: false });
     showNebula(true);
     dimNebula(true);
     showScreen('genre');

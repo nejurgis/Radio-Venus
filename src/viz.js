@@ -61,6 +61,7 @@ let canvas = null;
 let ctx = null;
 let animId = null;
 let rotation = 0;
+let zoomDrift = 0;
 let userDot = null;
 let previewDot = null;  // soft glow while typing birth date
 let dots = [];
@@ -220,6 +221,7 @@ export function onNebulaClick(callback) {
 
 export function zoomToSign(signIndex, { duration = 2000, animate = true } = {}) {
   zoomSign = signIndex;
+  zoomDrift = 0;
   hoveredDot = null;
   if (containerEl) containerEl.classList.add('is-zoomed');
 
@@ -332,7 +334,8 @@ function tick() {
       if (delta < -180) delta += 360;
       rot = zoomRotStart + delta * zoomProgress;
     } else {
-      rot = targetRot;
+      zoomDrift += (360 / 600) / 60; // very slow: ~10min per full rotation
+      rot = targetRot + zoomDrift;
     }
   } else {
     rotation += (360 / 240) / 60; // ~60fps → 360° in 240s
