@@ -246,6 +246,9 @@ function playTrack(index) {
   updateNowPlaying(track.name);
   renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds);
   updatePlayButton(true);
+
+  const activeItem = document.querySelector('#track-list .track-item.active');
+  if (activeItem) activeItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
 function skipToNextPlayable() {

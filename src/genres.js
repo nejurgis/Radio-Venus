@@ -6,6 +6,8 @@ export const GENRE_CATEGORIES = [
   { id: 'darkwave',   label: 'Synthwave / Darkwave' },
   { id: 'triphop',    label: 'Trip-Hop / Downtempo' },
   { id: 'dnb',        label: 'Drum & Bass / Jungle' },
+  { id: 'artpop',     label: 'Art Pop / Avant-Garde' },
+  { id: 'jazz',       label: 'Jazz / Spiritual' },
   { id: 'classical',  label: 'Classical / Orchestral' },
 ];
 
@@ -21,6 +23,8 @@ export const SUBGENRES = {
   industrial: ['industrial', 'noise', 'ebm', 'power-electronics', 'rhythmic-noise', 'harsh-noise'],
   darkwave:   ['darkwave', 'synth-pop', 'new-wave', 'coldwave', 'synthwave', 'darksynth', 'krautrock'],
   dnb:        ['drum-n-bass', 'jungle', 'breakbeat', 'breakcore', 'dubstep', 'grime', 'uk-garage', 'future-garage', 'footwork'],
+  artpop:     ['art-pop', 'avant-garde-pop', 'baroque-pop', 'chamber-pop', 'experimental-pop', 'art-rock', 'glam'],
+  jazz:       ['spiritual-jazz', 'dark-jazz', 'doom-jazz', 'free-jazz', 'modal-jazz', 'jazz-fusion', 'soul-jazz', 'cosmic-jazz', 'ambient-jazz'],
   classical:  ['classical', 'baroque', 'romantic', 'contemporary', 'neo-classical', 'impressionist', 'modern-classical', 'opera', 'minimalist'],
 };
 
@@ -146,6 +150,36 @@ const GENRE_MAP = {
   'drill and bass': ['dnb', 'idm'],
   'acid breaks': ['dnb', 'techno'],
 
+  // ── Art Pop / Avant-Garde ──
+  'art pop': ['artpop'],
+  'art-pop': ['artpop'],
+  'avant-garde pop': ['artpop'],
+  'baroque pop': ['artpop'],
+  'chamber pop': ['artpop'],
+  'experimental pop': ['artpop'],
+  'art rock': ['artpop'],
+  'glam rock': ['artpop'],
+  'dream pop': ['artpop'],
+  'ethereal wave': ['artpop', 'darkwave'],
+  'shoegaze': ['artpop'],
+  'avant-garde': ['artpop'],
+
+  // ── Jazz / Spiritual ──
+  'jazz': ['jazz'],
+  'spiritual jazz': ['jazz'],
+  'free jazz': ['jazz'],
+  'dark jazz': ['jazz'],
+  'doom jazz': ['jazz'],
+  'modal jazz': ['jazz'],
+  'jazz fusion': ['jazz'],
+  'fusion': ['jazz'],
+  'soul jazz': ['jazz'],
+  'soul-jazz': ['jazz'],
+  'cosmic jazz': ['jazz'],
+  'afrofuturism': ['jazz'],
+  'avant-garde jazz': ['jazz'],
+  'third stream': ['jazz'],
+
   // ── Classical / Orchestral ──
   'classical music': ['classical'],
   'classical': ['classical'],
@@ -258,6 +292,26 @@ const SUBGENRE_MAP = {
   'footwork': 'footwork', 'juke': 'footwork',
   'drill and bass': 'breakbeat',
   'acid breaks': 'breakbeat',
+
+  // artpop
+  'art pop': 'art-pop', 'art-pop': 'art-pop',
+  'baroque pop': 'baroque-pop', 'chamber pop': 'chamber-pop',
+  'experimental pop': 'experimental-pop', 'avant-garde pop': 'avant-garde-pop',
+  'art rock': 'art-rock', 'glam rock': 'glam',
+  'dream pop': 'art-pop', 'shoegaze': 'art-pop',
+  'ethereal wave': 'art-pop',
+  'avant-garde': 'avant-garde-pop',
+
+  // jazz
+  'jazz': 'spiritual-jazz',
+  'spiritual jazz': 'spiritual-jazz',
+  'free jazz': 'free-jazz', 'avant-garde jazz': 'free-jazz',
+  'dark jazz': 'dark-jazz', 'doom jazz': 'doom-jazz',
+  'modal jazz': 'modal-jazz',
+  'jazz fusion': 'jazz-fusion', 'fusion': 'jazz-fusion',
+  'soul jazz': 'soul-jazz', 'soul-jazz': 'soul-jazz',
+  'cosmic jazz': 'cosmic-jazz', 'afrofuturism': 'cosmic-jazz',
+  'third stream': 'free-jazz',
 
   // classical
   'classical': 'classical', 'classical music': 'classical',

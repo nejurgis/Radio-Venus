@@ -111,8 +111,8 @@ export function initNebula(containerId) {
   });
   document.addEventListener('click', (e) => {
     if (!hoveredDot || !clickCallback || zoomSign == null) return;
-    // Only fire if click wasn't on an interactive element
-    if (e.target.closest('button, a, input, select, textarea')) return;
+    // Only fire if click wasn't on any UI content (track items, genre grid, etc.)
+    if (e.target.closest('button, a, input, select, textarea, .screen-inner')) return;
     clickCallback({ name: hoveredDot.name, genres: hoveredDot.genres });
   });
 }

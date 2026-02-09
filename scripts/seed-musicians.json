@@ -753,12 +753,14 @@
     "birthDate": "1987-04-12",
     "genres": [
       "triphop",
-      "idm"
+      "idm",
+      "artpop"
     ],
     "youtubeVideoId": "4WKQB_sOlv4",
     "subgenres": [
       "trip-hop",
-      "experimental"
+      "experimental",
+      "art-pop"
     ]
   },
   {
@@ -911,7 +913,7 @@
   },
   {
     "name": "Demdike Stare",
-    "birthDate": "1979-01-01",
+    "birthDate": "2009-10-13",
     "genres": [
       "ambient",
       "industrial"
@@ -2042,12 +2044,15 @@
     "birthDate": "1984-12-18",
     "genres": [
       "idm",
-      "ambient"
+      "ambient",
+      "artpop"
     ],
     "youtubeVideoId": "3HGOxuMecP0",
     "subgenres": [
       "experimental",
-      "ambient"
+      "ambient",
+      "baroque-pop",
+      "art-pop"
     ]
   },
   {
@@ -2632,7 +2637,12 @@
     "birthDate": "1989-03-16",
     "genres": [
       "idm",
-      "ambient"
+      "ambient",
+      "artpop"
+    ],
+    "subgenres": [
+      "art-pop",
+      "experimental-pop"
     ]
   },
   {
@@ -2832,7 +2842,7 @@
   },
   {
     "name": "Datassette",
-    "birthDate": "2000-01-01",
+    "birthDate": "2008-05-19",
     "genres": [
       "idm",
       "techno"
@@ -2856,7 +2866,7 @@
   },
   {
     "name": "Lino Capra Vaccina",
-    "birthDate": "1953-01-01",
+    "birthDate": "1978-06-01",
     "genres": [
       "ambient",
       "classical"
@@ -2889,7 +2899,7 @@
   },
   {
     "name": "Chevel",
-    "birthDate": "1989-01-01",
+    "birthDate": "2010-06-15",
     "genres": [
       "techno",
       "idm"
@@ -2937,7 +2947,7 @@
   },
   {
     "name": "Fis",
-    "birthDate": "2012-01-01",
+    "birthDate": "2012-06-25",
     "genres": [
       "dnb",
       "idm",
@@ -2977,7 +2987,7 @@
   },
   {
     "name": "Vit Fana",
-    "birthDate": "2014-01-01",
+    "birthDate": "2014-04-14",
     "genres": [
       "darkwave",
       "idm"
@@ -3013,7 +3023,7 @@
   },
   {
     "name": "Colin Potter",
-    "birthDate": "1980-01-01",
+    "birthDate": "1980-06-01",
     "genres": [
       "idm",
       "ambient",
@@ -3027,7 +3037,7 @@
   },
   {
     "name": "Stringtronics",
-    "birthDate": "1972-01-01",
+    "birthDate": "1972-06-01",
     "genres": [
       "darkwave",
       "idm"
@@ -3039,7 +3049,7 @@
   },
   {
     "name": "Kane Ikin",
-    "birthDate": "1986-01-01",
+    "birthDate": "2012-09-18",
     "genres": [
       "ambient",
       "idm"
@@ -3052,7 +3062,7 @@
   },
   {
     "name": "Jo Johnson",
-    "birthDate": "1980-01-01",
+    "birthDate": "2014-06-02",
     "genres": [
       "ambient"
     ],
@@ -3064,7 +3074,7 @@
   },
   {
     "name": "Forward Strategy Group",
-    "birthDate": "2008-01-01",
+    "birthDate": "2010-04-26",
     "genres": [
       "techno",
       "industrial"
@@ -3077,7 +3087,7 @@
   },
   {
     "name": "Sluagh Ghairm",
-    "birthDate": "1983-01-01",
+    "birthDate": "1983-06-01",
     "genres": [
       "industrial"
     ],
@@ -3088,7 +3098,7 @@
   },
   {
     "name": "Children of Alice",
-    "birthDate": "2013-01-01",
+    "birthDate": "2017-02-24",
     "genres": [
       "idm",
       "ambient"
@@ -3181,7 +3191,7 @@
   },
   {
     "name": "Neil Scrivin",
-    "birthDate": "2011-01-01",
+    "birthDate": "2011-09-01",
     "genres": [
       "ambient",
       "darkwave"
@@ -3208,7 +3218,7 @@
   },
   {
     "name": "Mulm",
-    "birthDate": "2011-01-01",
+    "birthDate": "2012-02-14",
     "genres": [
       "ambient",
       "triphop"
@@ -3222,7 +3232,7 @@
   },
   {
     "name": "Off The Sky",
-    "birthDate": "1977-01-01",
+    "birthDate": "2006-10-01",
     "genres": [
       "ambient",
       "idm"
@@ -3233,5 +3243,446 @@
       "experimental"
     ],
     "youtubeId": "PE4bfeHOHok"
+  },
+  {
+    "name": "Christ.",
+    "birthDate": "2002-07-09",
+    "genres": [
+      "idm",
+      "triphop"
+    ],
+    "subgenres": [
+      "glitch",
+      "idm"
+    ],
+    "youtubeId": "QpXnWaZfPBo"
+  },
+  {
+    "name": "Kate Bush",
+    "birthDate": "1958-07-30",
+    "genres": [
+      "artpop"
+    ],
+    "subgenres": [
+      "art-pop",
+      "baroque-pop"
+    ],
+    "youtubeId": "wp43OdtAAkM"
+  },
+  {
+    "name": "Yves Tumor",
+    "birthDate": "2016-09-22",
+    "genres": [
+      "artpop"
+    ],
+    "subgenres": [
+      "experimental-pop",
+      "art-rock"
+    ],
+    "youtubeId": "G-9QCsH3OQM"
+  },
+  {
+    "name": "Sun Ra",
+    "birthDate": "1914-05-22",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "cosmic-jazz",
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "youtubeId": "owCPrIEliZc"
+  },
+  {
+    "name": "Alice Coltrane",
+    "birthDate": "1937-08-27",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz"
+    ],
+    "youtubeId": "NxPMKgY_8qk"
+  },
+  {
+    "name": "Bohren & der Club of Gore",
+    "birthDate": "1994-01-01",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "dark-jazz",
+      "doom-jazz"
+    ],
+    "youtubeId": "ORL36OsbtDc"
+  },
+  {
+    "name": "Nala Sinephro",
+    "birthDate": "2021-09-03",
+    "genres": [
+      "jazz",
+      "ambient"
+    ],
+    "subgenres": [
+      "ambient-jazz",
+      "spiritual-jazz"
+    ],
+    "youtubeId": "Qqi_EZ0DgrA"
+  },
+  {
+    "name": "Dorothy Ashby",
+    "birthDate": "1932-08-06",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "soul-jazz",
+      "spiritual-jazz"
+    ],
+    "youtubeId": "Ojuz4XlxKmM"
+  },
+  {
+    "name": "Tori Amos",
+    "birthDate": "1963-08-22",
+    "genres": [
+      "classical",
+      "industrial",
+      "darkwave",
+      "artpop"
+    ]
+  },
+  {
+    "name": "PJ Harvey",
+    "birthDate": "1969-10-09",
+    "genres": [
+      "industrial",
+      "darkwave",
+      "artpop"
+    ]
+  },
+  {
+    "name": "Fiona Apple",
+    "birthDate": "1977-09-13",
+    "genres": [
+      "classical",
+      "artpop"
+    ]
+  },
+  {
+    "name": "Joni Mitchell",
+    "birthDate": "1943-11-07",
+    "genres": [
+      "idm",
+      "jazz"
+    ]
+  },
+  {
+    "name": "Sinéad O'Connor",
+    "birthDate": "1966-12-08",
+    "genres": [
+      "industrial",
+      "darkwave",
+      "artpop",
+      "idm"
+    ]
+  },
+  {
+    "name": "Madonna",
+    "birthDate": "1958-08-16",
+    "genres": [
+      "idm",
+      "darkwave",
+      "artpop"
+    ]
+  },
+  {
+    "name": "St. Vincent",
+    "birthDate": "1982-09-28",
+    "genres": [
+      "artpop",
+      "industrial"
+    ]
+  },
+  {
+    "name": "Joanna Newsom",
+    "birthDate": "1982-01-18",
+    "genres": [
+      "idm"
+    ]
+  },
+  {
+    "name": "The Sugarcubes",
+    "birthDate": "1986-00-00",
+    "genres": [
+      "industrial",
+      "darkwave",
+      "artpop",
+      "idm"
+    ]
+  },
+  {
+    "name": "Bar Italia",
+    "birthDate": "2019-00-00",
+    "genres": [
+      "darkwave",
+      "idm",
+      "artpop"
+    ]
+  },
+  {
+    "name": "Mount Kimbie",
+    "birthDate": "2008-06-15",
+    "genres": [
+      "dnb",
+      "ambient",
+      "idm",
+      "techno",
+      "darkwave",
+      "classical",
+      "triphop"
+    ]
+  },
+  {
+    "name": "George Clanton",
+    "birthDate": "1988-01-12",
+    "genres": [
+      "darkwave",
+      "idm",
+      "artpop",
+      "triphop"
+    ]
+  },
+  {
+    "name": "Vegyn",
+    "birthDate": "1993-01-01",
+    "genres": [
+      "idm",
+      "ambient",
+      "triphop"
+    ]
+  },
+  {
+    "name": "Jenny Hval",
+    "birthDate": "1980-07-11",
+    "genres": [
+      "idm",
+      "artpop",
+      "ambient",
+      "darkwave"
+    ]
+  },
+  {
+    "name": "Mabe Fratti",
+    "birthDate": "1992-00-00",
+    "genres": [
+      "ambient",
+      "artpop",
+      "idm"
+    ]
+  },
+  {
+    "name": "Perfume Genius",
+    "birthDate": "1981-09-25",
+    "genres": [
+      "ambient",
+      "idm",
+      "artpop"
+    ]
+  },
+  {
+    "name": "SPELLLING",
+    "birthDate": "1991-05-18",
+    "genres": [
+      "artpop",
+      "idm",
+      "darkwave"
+    ]
+  },
+  {
+    "name": "Weyes Blood",
+    "birthDate": "1988-06-11",
+    "genres": [
+      "artpop",
+      "idm"
+    ]
+  },
+  {
+    "name": "Anna von Hausswolff",
+    "birthDate": "1986-09-06",
+    "genres": [
+      "darkwave",
+      "classical",
+      "ambient",
+      "artpop",
+      "idm"
+    ]
+  },
+  {
+    "name": "Sega Bodega",
+    "birthDate": "1992-02-16",
+    "genres": [
+      "idm",
+      "dnb"
+    ]
+  },
+  {
+    "name": "Shygirl",
+    "birthDate": "1993-05-04",
+    "genres": [
+      "idm",
+      "dnb",
+      "techno"
+    ]
+  },
+  {
+    "name": "Cecile Believe",
+    "birthDate": "1985-02-15",
+    "genres": [
+      "idm",
+      "darkwave",
+      "artpop",
+      "techno"
+    ]
+  },
+  {
+    "name": "Doon Kanda",
+    "birthDate": "1987-06-23",
+    "genres": [
+      "idm",
+      "ambient"
+    ]
+  },
+  {
+    "name": "Kelela",
+    "birthDate": "1983-06-04",
+    "genres": [
+      "idm",
+      "triphop",
+      "jazz",
+      "techno",
+      "dnb",
+      "ambient"
+    ]
+  },
+  {
+    "name": "Evita Manji",
+    "birthDate": "1987-11-25",
+    "genres": [
+      "idm",
+      "artpop"
+    ]
+  },
+  {
+    "name": "Ornette Coleman",
+    "birthDate": "1930-03-09",
+    "genres": [
+      "jazz",
+      "artpop",
+      "idm"
+    ]
+  },
+  {
+    "name": "Albert Ayler",
+    "birthDate": "1936-07-13",
+    "genres": [
+      "jazz",
+      "artpop",
+      "idm"
+    ]
+  },
+  {
+    "name": "Cecil Taylor",
+    "birthDate": "1929-03-25",
+    "genres": [
+      "jazz",
+      "artpop",
+      "classical"
+    ]
+  },
+  {
+    "name": "Don Cherry",
+    "birthDate": "1936-11-18",
+    "genres": [
+      "jazz",
+      "artpop"
+    ]
+  },
+  {
+    "name": "Eric Dolphy",
+    "birthDate": "1928-06-20",
+    "genres": [
+      "jazz",
+      "artpop"
+    ]
+  },
+  {
+    "name": "Anthony Braxton",
+    "birthDate": "1945-06-04",
+    "genres": [
+      "jazz",
+      "artpop",
+      "idm"
+    ]
+  },
+  {
+    "name": "Archie Shepp",
+    "birthDate": "1937-05-24",
+    "genres": [
+      "jazz",
+      "artpop"
+    ]
+  },
+  {
+    "name": "Pharoah Sanders",
+    "birthDate": "1940-10-13",
+    "genres": [
+      "jazz",
+      "artpop"
+    ]
+  },
+  {
+    "name": "John Coltrane",
+    "birthDate": "1926-09-23",
+    "genres": [
+      "jazz",
+      "artpop"
+    ]
+  },
+  {
+    "name": "Sonny Sharrock",
+    "birthDate": "1940-08-27",
+    "genres": [
+      "jazz",
+      "artpop",
+      "idm"
+    ]
+  },
+  {
+    "name": "The Kilimanjaro Darkjazz Ensemble",
+    "birthDate": "2000-01-01",
+    "genres": [
+      "jazz",
+      "idm",
+      "ambient",
+      "triphop"
+    ]
+  },
+  {
+    "name": "Lowering",
+    "birthDate": "1982-10-01",
+    "genres": [
+      "jazz",
+      "ambient"
+    ]
+  },
+  {
+    "name": "The Mount Fuji Doomjazz Corporation",
+    "birthDate": "1984-11-28",
+    "genres": [
+      "ambient",
+      "jazz",
+      "idm"
+    ]
   }
 ]

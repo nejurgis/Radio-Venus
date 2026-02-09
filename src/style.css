@@ -352,6 +352,8 @@ html, body {
 [data-genre="darkwave"]   { --genre-color-pop: rgba(168, 100, 160, 0.65); }
 [data-genre="triphop"]    { --genre-color-pop: rgba(158, 138, 41, 0.65); }
 [data-genre="dnb"]        { --genre-color-pop: rgba(196, 117, 78, 0.65); }
+[data-genre="artpop"]     { --genre-color-pop: rgba(232, 141, 142, 0.65); }
+[data-genre="jazz"]       { --genre-color-pop: rgba(55, 109, 89, 0.7); }
 [data-genre="classical"]  { --genre-color-pop: rgba(61, 43, 145, 0.7); }
 
 .genre-cell {
