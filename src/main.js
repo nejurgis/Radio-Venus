@@ -287,6 +287,17 @@ function skipToNextPlayable() {
   updateNowPlaying('No playable tracks found');
 }
 
+function shuffleTracks() {
+  if (tracks.length < 2) return;
+  const current = tracks[currentTrackIndex];
+  for (let i = tracks.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [tracks[i], tracks[j]] = [tracks[j], tracks[i]];
+  }
+  currentTrackIndex = tracks.indexOf(current);
+  renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds);
+}
+
 // ── Radio controls ──────────────────────────────────────────────────────────
 
 document.addEventListener('click', e => {
@@ -301,6 +312,9 @@ document.addEventListener('click', e => {
   }
   if (e.target.id === 'btn-back' || e.target.closest('#btn-back')) {
     history.back();
+  }
+  if (e.target.id === 'btn-shuffle' || e.target.closest('#btn-shuffle')) {
+    shuffleTracks();
   }
 });
 
