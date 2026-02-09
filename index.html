@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/Radio-Venus/assets/index-CCwkp0DX.js"></script>
-  <link rel="stylesheet" crossorigin href="/Radio-Venus/assets/index-DLZUPx1K.css">
+  <script type="module" crossorigin src="/Radio-Venus/assets/index-B3FK--xq.js"></script>
+  <link rel="stylesheet" crossorigin href="/Radio-Venus/assets/index-N2KcRZOV.css">
 </head>
 <body>
 
@@ -39,7 +39,6 @@
   <section id="screen-reveal" class="screen">
     <button id="btn-back-reveal" class="btn-back-top" aria-label="Back">&larr;</button>
     <div class="screen-inner">
-      <div id="reveal-glyph" class="venus-glyph"></div>
       <h2 id="reveal-sign" class="venus-sign"></h2>
       <p id="reveal-detail" class="venus-detail"></p>
       <button id="btn-choose-genre" class="btn-primary">Choose a genre</button>
@@ -70,10 +69,18 @@
       </div>
       <div id="now-playing" class="now-playing">
         <span id="np-artist" class="np-artist"></span>
+        <img src="/Radio-Venus/ring.svg" id="np-buffering" class="np-buffering" alt="" hidden>
+      </div>
+      <div class="progress-container">
+        <div id="progress-buffer" class="progress-buffer"></div>
+        <div id="progress-bar" class="progress-bar"></div>
+        <input type="range" id="seeker" min="0" max="1000" value="0" step="1">
       </div>
       <div class="radio-controls">
         <button id="btn-prev" class="btn-control" aria-label="Previous">&#9664;&#9664;</button>
+        <span id="current-time" class="time-display">0:00</span>
         <button id="btn-play" class="btn-control btn-play" aria-label="Play/Pause">&#9654;</button>
+        <span id="duration" class="time-display">0:00</span>
         <button id="btn-next" class="btn-control" aria-label="Next">&#9654;&#9654;</button>
       </div>
       <div class="track-list-wrap">
