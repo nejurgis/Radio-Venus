@@ -1,14 +1,16 @@
 import { calculateVenus, makeBirthDate } from './venus.js';
 import { GENRE_CATEGORIES, SUBGENRES } from './genres.js';
 import { loadDatabase, getDatabase, match, getSubgenreCounts } from './matcher.js';
-import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula, onNebulaHover, onNebulaClick } from './viz.js';
-import { loadYouTubeAPI, initPlayer, loadVideo, togglePlay, isPlaying } from './player.js';
+import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, onNebulaHover, onNebulaClick } from './viz.js';
+import { loadYouTubeAPI, initPlayer, loadVideo, togglePlay, isPlaying, getDuration, getCurrentTime, seekTo } from './player.js';
 import {
   initScreens, showScreen, setElementTheme,
   renderReveal, renderGenreGrid, renderRadioHeader,
   renderTrackList, updateNowPlaying, updatePlayButton, showEmptyState,
   markTrackFailed,
   highlightGenres,
+  updateProgress, resetProgress,
+  showBuffering, hideBuffering,
 } from './ui.js';
 
 // ── State ───────────────────────────────────────────────────────────────────
@@ -17,6 +19,7 @@ let venus = null;
 let tracks = [];
 let currentTrackIndex = 0;
 let playerReady = false;
+let progressInterval = null;
 const failedIds = new Set();
 
 // ── Init ────────────────────────────────────────────────────────────────────
@@ -181,6 +184,7 @@ async function onDateSubmit(d, m, y) {
 
   document.getElementById('btn-choose-genre').addEventListener('click', () => {
     showNebula(true);
+    dimNebula(true);
     showScreen('genre');
   });
 
@@ -194,6 +198,7 @@ async function onDateSubmit(d, m, y) {
   // Genre screen back → reveal
   document.getElementById('btn-back-genre').addEventListener('click', () => {
     showNebula(true);
+    dimNebula(false);
     showScreen('reveal');
   });
 }
@@ -206,7 +211,10 @@ async function startRadio(genreId, genreLabel, subgenreId = null) {
   currentTrackIndex = 0;
 
   renderRadioHeader(venus.sign, genreLabel, subgenreId);
-  showNebula(false);
+  zoomOut({ animate: false });
+  showNebula(true);
+  dimNebula(false);
+  deepDimNebula(true);
   showScreen('radio');
 
   if (tracks.length === 0) {
@@ -229,7 +237,24 @@ async function startRadio(genreId, genreLabel, subgenreId = null) {
         }
         skipToNextPlayable();
       },
-      onStateChange: () => updatePlayButton(isPlaying()),
+      onStateChange: (state) => {
+        updatePlayButton(isPlaying());
+        if (state === window.YT.PlayerState.PLAYING) {
+          hideBuffering();
+          clearInterval(progressInterval);
+          progressInterval = setInterval(() => {
+            updateProgress(getCurrentTime(), getDuration());
+          }, 500);
+        } else {
+          clearInterval(progressInterval);
+          progressInterval = null;
+          if (state === window.YT.PlayerState.BUFFERING) {
+            const dur = getDuration();
+            const cur = getCurrentTime();
+            if (dur > 0) showBuffering((cur / dur) * 100);
+          }
+        }
+      },
     });
     playerReady = true;
   }
@@ -241,6 +266,10 @@ function playTrack(index) {
   if (tracks.length === 0) return;
   currentTrackIndex = ((index % tracks.length) + tracks.length) % tracks.length;
   const track = tracks[currentTrackIndex];
+
+  clearInterval(progressInterval);
+  progressInterval = null;
+  resetProgress();
 
   loadVideo(track.youtubeVideoId);
   updateNowPlaying(track.name);
@@ -277,8 +306,23 @@ document.addEventListener('click', e => {
     togglePlay();
   }
   if (e.target.id === 'btn-back' || e.target.closest('#btn-back')) {
+    deepDimNebula(false);
+    const signIndex = ['Aries','Taurus','Gemini','Cancer','Leo','Virgo',
+      'Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'].indexOf(venus.sign);
+    zoomToSign(signIndex, { animate: false });
     showNebula(true);
+    dimNebula(true);
     showScreen('genre');
+  }
+});
+
+// Seeker
+document.getElementById('seeker').addEventListener('input', e => {
+  const duration = getDuration();
+  if (duration > 0) {
+    const targetPct = e.target.value / 10;
+    showBuffering(targetPct);
+    seekTo(duration * e.target.value / 1000);
   }
 });
 

@@ -29,7 +29,6 @@ export function setElementTheme(element) {
 }
 
 export function renderReveal(venus) {
-  document.getElementById('reveal-glyph').textContent = venus.glyph;
   document.getElementById('reveal-sign').textContent = `venus in ${venus.sign}`;
   document.getElementById('reveal-detail').textContent =
     `${venus.degree}° · decan ${venus.decan} · ${venus.element}`;
@@ -87,7 +86,7 @@ export function highlightGenres(genreIds) {
 }
 
 export function renderRadioHeader(signName, genreLabel, subgenreLabel = null) {
-  document.getElementById('radio-sign').textContent = `♀ ${signName}`;
+  document.getElementById('radio-sign').textContent = signName;
   document.getElementById('radio-genre').textContent = subgenreLabel
     ? `${genreLabel} · ${subgenreLabel}`
     : genreLabel;
@@ -140,6 +139,42 @@ export function updatePlayButton(isPlaying) {
   document.getElementById('btn-play').innerHTML = isPlaying ? '&#9646;&#9646;' : '&#9654;';
 }
 
+function formatTime(s) {
+  if (!s || !isFinite(s)) return '0:00';
+  const mins = Math.floor(s / 60);
+  const secs = Math.floor(s % 60);
+  return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+}
+
+export function updateProgress(current, duration) {
+  const pct = duration > 0 ? (current / duration) * 100 : 0;
+  document.getElementById('progress-bar').style.width = pct + '%';
+  document.getElementById('current-time').textContent = formatTime(current);
+  document.getElementById('duration').textContent = formatTime(duration);
+  document.getElementById('seeker').value = duration > 0 ? (current / duration) * 1000 : 0;
+}
+
+export function resetProgress() {
+  document.getElementById('progress-bar').style.width = '0%';
+  document.getElementById('progress-buffer').style.width = '0%';
+  document.getElementById('current-time').textContent = '0:00';
+  document.getElementById('duration').textContent = '0:00';
+  document.getElementById('seeker').value = 0;
+  hideBuffering();
+}
+
+export function showBuffering(targetPct) {
+  document.getElementById('progress-buffer').style.width = targetPct + '%';
+  document.querySelector('.progress-container').classList.add('is-buffering');
+  document.getElementById('np-buffering').hidden = false;
+}
+
+export function hideBuffering() {
+  document.querySelector('.progress-container').classList.remove('is-buffering');
+  document.getElementById('np-buffering').hidden = true;
+  document.getElementById('progress-buffer').style.width = '0%';
+}
+
 export function showEmptyState(show) {
   const el = document.getElementById('empty-state');
   const player = document.querySelector('.player-container');
@@ -147,9 +182,12 @@ export function showEmptyState(show) {
   const trackList = document.getElementById('track-list');
   const np = document.getElementById('now-playing');
 
+  const progress = document.querySelector('.progress-container');
+
   el.hidden = !show;
   player.style.display = show ? 'none' : '';
   controls.style.display = show ? 'none' : '';
   trackList.style.display = show ? 'none' : '';
   np.style.display = show ? 'none' : '';
+  progress.style.display = show ? 'none' : '';
 }

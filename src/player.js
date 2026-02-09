@@ -91,3 +91,18 @@ export function isPlaying() {
   if (!player || !isReady) return false;
   return player.getPlayerState() === window.YT.PlayerState.PLAYING;
 }
+
+export function getDuration() {
+  if (!player || !isReady) return 0;
+  return player.getDuration() || 0;
+}
+
+export function getCurrentTime() {
+  if (!player || !isReady) return 0;
+  return player.getCurrentTime() || 0;
+}
+
+export function seekTo(seconds) {
+  if (!player || !isReady) return;
+  player.seekTo(seconds, true);
+}

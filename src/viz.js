@@ -19,6 +19,35 @@ const ELEMENTS = {
   Cancer: 'water', Scorpio: 'water', Pisces: 'water',
 };
 
+// Tabler Icons zodiac signs (MIT, 24×24, stroke-based) — multi-path per sign
+// Each sign is an array of path strings, rendered with ctx.stroke(Path2D)
+const ZODIAC_PATHS = [
+  // Aries ♈
+  ["M12 5a5 5 0 1 0 -4 8", "M16 13a5 5 0 1 0 -4 -8", "M12 21l0 -16"],
+  // Taurus ♉
+  ["M6 3a6 6 0 0 0 12 0", "M6 15a6 6 0 1 0 12 0a6 6 0 1 0 -12 0"],
+  // Gemini ♊
+  ["M3 3a21 21 0 0 0 18 0", "M3 21a21 21 0 0 1 18 0", "M7 4.5l0 15", "M17 4.5l0 15"],
+  // Cancer ♋
+  ["M3 12a3 3 0 1 0 6 0a3 3 0 1 0 -6 0", "M15 12a3 3 0 1 0 6 0a3 3 0 1 0 -6 0", "M3 12a10 6.5 0 0 1 14 -6.5", "M21 12a10 6.5 0 0 1 -14 6.5"],
+  // Leo ♌
+  ["M13 17a4 4 0 1 0 8 0", "M3 16a3 3 0 1 0 6 0a3 3 0 1 0 -6 0", "M7 7a4 4 0 1 0 8 0a4 4 0 1 0 -8 0", "M7 7c0 3 2 5 2 9", "M15 7c0 4 -2 6 -2 10"],
+  // Virgo ♍
+  ["M3 4a2 2 0 0 1 2 2v9", "M5 6a2 2 0 0 1 4 0v9", "M9 6a2 2 0 0 1 4 0v10a7 5 0 0 0 7 5", "M12 21a7 5 0 0 0 7 -5v-2a3 3 0 0 0 -6 0"],
+  // Libra ♎
+  ["M5 20l14 0", "M5 17h5v-.3a7 7 0 1 1 4 0v.3h5"],
+  // Scorpio ♏
+  ["M3 4a2 2 0 0 1 2 2v9", "M5 6a2 2 0 0 1 4 0v9", "M9 6a2 2 0 0 1 4 0v10a3 3 0 0 0 3 3h5", "M18 22l3 -3m-3 3l3 3"],
+  // Sagittarius ♐
+  ["M4 20l16 -16", "M13 4h7v7", "M6.5 12.5l5 5"],
+  // Capricorn ♑
+  ["M4 4a3 3 0 0 1 3 3v9", "M7 7a3 3 0 0 1 6 0v11a3 3 0 0 1 -3 3", "M16 17a3 3 0 1 0 0.001 0z"],
+  // Aquarius ♒
+  ["M3 10l3 -3l3 3l3 -3l3 3l3 -3l3 3", "M3 17l3 -3l3 3l3 -3l3 3l3 -3l3 3"],
+  // Pisces ♓
+  ["M5 3a21 21 0 0 1 0 18", "M19 3a21 21 0 0 0 0 18", "M5 12l14 0"],
+];
+
 // Deterministic hash from artist name → stable jitter value (0-1)
 function nameHash(name, seed = 0) {
   let h = seed;
@@ -228,6 +257,14 @@ export function showNebula(visible) {
   if (containerEl) containerEl.classList.toggle('is-hidden', !visible);
 }
 
+export function dimNebula(dim) {
+  if (containerEl) containerEl.classList.toggle('is-dimmed', dim);
+}
+
+export function deepDimNebula(deep) {
+  if (containerEl) containerEl.classList.toggle('is-deep-dimmed', deep);
+}
+
 // ── Render loop ───────────────────────────────────────────────────────────────
 
 function tick() {
@@ -242,9 +279,21 @@ function tick() {
   const innerR = minDim * 0.28;
   const outerR = minDim * 0.44;
   const bandWidth = outerR - innerR;
-  const midR = (innerR + outerR) / 2;
+  const glyphR = innerR + bandWidth * 0.70;  // separator: glyph band is outer 30%
+  const dotBand = glyphR - innerR;            // dot band width
+  const midR = (innerR + glyphR) / 2;         // center of dot band
+  const glyphMidR = (glyphR + outerR) / 2;    // center of glyph band
+  const fullMidR = (innerR + outerR) / 2;     // center of full ring
 
   ctx.clearRect(0, 0, w, h);
+
+  // Subtle deep blue center glow
+  const centerGlow = ctx.createRadialGradient(cx, cy, 0, cx, cy, innerR * 0.9);
+  centerGlow.addColorStop(0, 'rgba(30, 50, 80, 0.25)');
+  centerGlow.addColorStop(0.6, 'rgba(15, 25, 50, 0.1)');
+  centerGlow.addColorStop(1, 'rgba(0, 0, 0, 0)');
+  ctx.fillStyle = centerGlow;
+  ctx.fillRect(0, 0, w, h);
 
   // ── Zoom animation update ────────────────────────────────────────────────
   if (zoomAnimating === true) {
@@ -294,10 +343,10 @@ function tick() {
   // ── Zoom transform (interpolated) ──────────────────────────────────────
   const isZoomed = zoomSign != null;
   if (isZoomed) {
-    const targetScale = (h * 0.7) / bandWidth;
+    const targetScale = (h * 0.85) / bandWidth;
     const s = 1 + (targetScale - 1) * zoomProgress;
     const focusX = cx;
-    const focusY = cy - midR;
+    const focusY = cy - fullMidR;
     const tx = (w / 2 - focusX) * zoomProgress;
     const ty = (h / 2 - focusY) * zoomProgress;
     ctx.save();
@@ -306,27 +355,163 @@ function tick() {
     ctx.translate(-focusX, -focusY);
   }
 
-  // ── Whole-sign sector outlines (12 annular wedges) ──────────────────────
-  // Thin, crisp strokes inspired by Rudnick's ring aesthetic
+  // ── Whole-sign sector outlines ──────────────────────────────────────────
   ctx.save();
-  ctx.strokeStyle = isZoomed ? 'rgba(255, 255, 255, 0.3)' : 'rgba(255, 255, 255, 0.3)';
-  ctx.lineWidth = isZoomed ? 0.2 : 0.2;
-  for (let i = 0; i < 12; i++) {
-    const a0 = (-(i * 30) - 90 + rot) * Math.PI / 180;
-    ctx.beginPath();
-    ctx.moveTo(cx + outerR * Math.cos(a0), cy + outerR * Math.sin(a0));
-    ctx.lineTo(cx + innerR * Math.cos(a0), cy + innerR * Math.sin(a0));
-    ctx.stroke();
-  }
-  // Inner and outer ring circles — continuous thin strokes
-  ctx.lineWidth = isZoomed ? 0.2 : 0.5;
-  ctx.strokeStyle = isZoomed ? 'rgba(255, 255, 255, 0.1)' : 'rgba(255, 255, 255, 0.3)';
+
+  // Teal metallic palette — horizontal sweep gradients
+  const tealRing = ctx.createLinearGradient(cx - outerR, cy, cx + outerR, cy);
+  tealRing.addColorStop(0,    '#2a4a4a');
+  tealRing.addColorStop(0.15, '#5a9090');
+  tealRing.addColorStop(0.3,  '#a0d4d4');
+  tealRing.addColorStop(0.45, '#c8ece8');
+  tealRing.addColorStop(0.55, '#80b0b0');
+  tealRing.addColorStop(0.7,  '#c8ece8');
+  tealRing.addColorStop(0.85, '#5a9090');
+  tealRing.addColorStop(1,    '#2a4a4a');
+
+  const thinRing = ctx.createLinearGradient(cx - outerR, cy, cx + outerR, cy);
+  thinRing.addColorStop(0,    '#3a5858');
+  thinRing.addColorStop(0.25, '#7ab0a8');
+  thinRing.addColorStop(0.5,  '#4a7070');
+  thinRing.addColorStop(0.75, '#7ab0a8');
+  thinRing.addColorStop(1,    '#3a5858');
+
+  // ── Thick outer ring (filled band with 3D tube effect) ────────────────
+  const outerBandW = minDim * 0.018; // thick teal band
+  ctx.beginPath();
+  ctx.arc(cx, cy, outerR + outerBandW / 2, 0, Math.PI * 2);
+  ctx.arc(cx, cy, outerR - outerBandW / 2, 0, Math.PI * 2);
+  // Radial gradient for tube depth on outer ring
+  const tubeGrad = ctx.createRadialGradient(cx, cy, outerR - outerBandW / 2, cx, cy, outerR + outerBandW / 2);
+  tubeGrad.addColorStop(0,    '#1a3838');
+  tubeGrad.addColorStop(0.2,  '#3a6868');
+  tubeGrad.addColorStop(0.4,  '#8ac0c0');
+  tubeGrad.addColorStop(0.55, '#c8ece8');
+  tubeGrad.addColorStop(0.7,  '#8ac0c0');
+  tubeGrad.addColorStop(0.9,  '#3a6868');
+  tubeGrad.addColorStop(1,    '#1a3838');
+  ctx.fillStyle = tubeGrad;
+  ctx.fill('evenodd');
+
+  // Highlight sweep on outer ring
   ctx.beginPath();
   ctx.arc(cx, cy, outerR, 0, Math.PI * 2);
+  ctx.strokeStyle = tealRing;
+  ctx.lineWidth = outerBandW * 0.9;
+  ctx.globalAlpha = 0.3;
   ctx.stroke();
+  ctx.globalAlpha = 1;
+
+  // Dark fuzzy outer edge — fades ring into the void
+  const fadeW = outerBandW * 2.5;
+  const outerFade = ctx.createRadialGradient(cx, cy, outerR + outerBandW / 2, cx, cy, outerR + outerBandW / 2 + fadeW);
+  outerFade.addColorStop(0, 'rgba(0,0,0,0.7)');
+  outerFade.addColorStop(0.4, 'rgba(0,0,0,0.3)');
+  outerFade.addColorStop(1, 'rgba(0,0,0,0)');
+  ctx.beginPath();
+  ctx.arc(cx, cy, outerR + outerBandW / 2 + fadeW, 0, Math.PI * 2);
+  ctx.arc(cx, cy, outerR + outerBandW / 2, 0, Math.PI * 2);
+  ctx.fillStyle = outerFade;
+  ctx.fill('evenodd');
+
+  // ── Inner structural rings (thinner, subtle) ──────────────────────────
+  // Glyph separator ring
+  ctx.beginPath();
+  ctx.arc(cx, cy, glyphR, 0, Math.PI * 2);
+  ctx.strokeStyle = thinRing;
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+
+  // Inner ring
   ctx.beginPath();
   ctx.arc(cx, cy, innerR, 0, Math.PI * 2);
+  ctx.strokeStyle = thinRing;
+  ctx.lineWidth = 2;
   ctx.stroke();
+
+  // ── Spokes — 12 primary (thicker) + 24 secondary (fine) ──────────────
+  const metalGrad = ctx.createLinearGradient(0, -2, 0, 2);
+  metalGrad.addColorStop(0.0, '#0a1a1a');
+  metalGrad.addColorStop(0.35, '#5a9898');
+  metalGrad.addColorStop(0.5, '#a0d4cc');
+  metalGrad.addColorStop(0.65, '#5a9898');
+  metalGrad.addColorStop(1.0, '#0a1a1a');
+
+  // Primary spokes (every 30°, tapered trapezoids)
+  for (let i = 0; i < 12; i++) {
+    const angle = (-(i * 30) - 90 + rot) * Math.PI / 180;
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.rotate(angle);
+    ctx.beginPath();
+    ctx.moveTo(innerR, -1.5);
+    ctx.lineTo(outerR, -0.3);
+    ctx.lineTo(outerR, 0.3);
+    ctx.lineTo(innerR, 1.5);
+    ctx.closePath();
+    ctx.fillStyle = metalGrad;
+    ctx.fill();
+    ctx.restore();
+  }
+
+  // ── Zodiac sign icons + degree ticks ────────────────────────────────────
+  const glyphBandW = outerR - glyphR;
+
+  // Degree tick marks (30 per sign, along inner edge of glyph band)
+  const tickInner = glyphR;
+  const tickLen = glyphBandW * 0.15;
+  const tickLenMajor = glyphBandW * 0.25; // every 5°
+  ctx.strokeStyle = 'rgba(100,160,155,0.35)';
+  for (let sign = 0; sign < 12; sign++) {
+    for (let deg = 0; deg < 30; deg++) {
+      const angle = (-(sign * 30 + deg) - 90 + rot) * Math.PI / 180;
+      const isMajor = deg % 5 === 0;
+      const len = isMajor ? tickLenMajor : tickLen;
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.rotate(angle);
+      ctx.beginPath();
+      ctx.moveTo(tickInner, 0);
+      ctx.lineTo(tickInner + len, 0);
+      ctx.lineWidth = isMajor ? 0.8 : 0.4;
+      ctx.stroke();
+      ctx.restore();
+    }
+  }
+
+  // Zodiac sign icons (Tabler, stroke-based, teal metallic)
+  const iconScale = glyphBandW * 0.6 / 24;
+  // Nudge outward slightly — visual center between separator and thick outer ring's inner edge
+  const iconR = glyphR + glyphBandW * 0.55;
+  const iconGrad = ctx.createLinearGradient(0, 0, 0, 24);
+  iconGrad.addColorStop(0.0, '#2a4a4a');
+  iconGrad.addColorStop(0.25, '#80c0b8');
+  iconGrad.addColorStop(0.5, '#c8ece8');
+  iconGrad.addColorStop(0.75, '#80c0b8');
+  iconGrad.addColorStop(1.0, '#2a4a4a');
+
+  for (let i = 0; i < 12; i++) {
+    const centerAngle = (-(i * 30 + 15) - 90 + rot) * Math.PI / 180;
+    const ix = cx + iconR * Math.cos(centerAngle);
+    const iy = cy + iconR * Math.sin(centerAngle);
+
+    ctx.save();
+    ctx.translate(ix, iy);
+    ctx.rotate(centerAngle + Math.PI / 2);
+    ctx.scale(iconScale, iconScale);
+    ctx.translate(-12, -12);
+
+    ctx.strokeStyle = iconGrad;
+    ctx.lineWidth = 2;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+
+    for (const d of ZODIAC_PATHS[i]) {
+      ctx.stroke(new Path2D(d));
+    }
+    ctx.restore();
+  }
+
   ctx.restore();
 
   // ── Artist dots ─────────────────────────────────────────────────────────
@@ -340,14 +525,14 @@ function tick() {
   // Convert mouse to canvas space when zoomed
   let hitX = mouseX, hitY = mouseY;
   if (isZoomed && mouseX >= 0) {
-    const scale = (h * 0.7) / bandWidth;
+    const scale = (h * 0.85) / bandWidth;
     hitX = (mouseX - w / 2) / scale + cx;
-    hitY = (mouseY - h / 2) / scale + (cy - midR);
+    hitY = (mouseY - h / 2) / scale + (cy - fullMidR);
   }
 
   for (const dot of dots) {
     const angle = (-(dot.deg + dot.jA) - 90 + rot) * Math.PI / 180;
-    const r = innerR + dot.jR * bandWidth;
+    const r = innerR + dot.jR * dotBand;
     const x = cx + r * Math.cos(angle);
     const y = cy + r * Math.sin(angle);
 
