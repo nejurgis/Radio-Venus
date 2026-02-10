@@ -619,6 +619,14 @@ html, body {
   padding: 0.8rem 1.4rem;
 }
 
+.btn-play-spinner {
+  width: 1.1rem;
+  height: 1.1rem;
+  display: block;
+  color: var(--text-dim);
+  animation: spin 1s linear infinite;
+}
+
 .btn-shuffle {
   font-size: 0.75rem;
   padding: 0.5rem 0.7rem;

@@ -136,8 +136,13 @@ export function updateNowPlaying(name, title) {
   document.getElementById('np-title').textContent = title || '';
 }
 
-export function updatePlayButton(isPlaying) {
-  document.getElementById('btn-play').innerHTML = isPlaying ? '&#9646;&#9646;' : '&#9654;';
+export function updatePlayButton(state) {
+  const btn = document.getElementById('btn-play');
+  if (state === 'buffering') {
+    btn.innerHTML = '<img src="/ring.svg" class="btn-play-spinner" alt="">';
+  } else {
+    btn.innerHTML = state ? '&#9646;&#9646;' : '&#9654;';
+  }
 }
 
 function formatTime(s) {

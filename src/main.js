@@ -247,7 +247,11 @@ async function startRadio(genreId, genreLabel, subgenreId = null) {
         }
       },
       onStateChange: (state) => {
-        updatePlayButton(isPlaying());
+        if (state === window.YT.PlayerState.BUFFERING) {
+          updatePlayButton('buffering');
+        } else {
+          updatePlayButton(isPlaying());
+        }
         if (state === window.YT.PlayerState.PLAYING) {
           hideBuffering();
           const title = getVideoTitle();
@@ -291,7 +295,7 @@ function playTrack(index) {
   loadVideo(getVideoIds(track)[0]);
   updateNowPlaying(track.name);
   renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds);
-  updatePlayButton(true);
+  updatePlayButton('buffering');
 
   const activeItem = document.querySelector('#track-list .track-item.active');
   if (activeItem) activeItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
