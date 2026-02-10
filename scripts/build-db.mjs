@@ -168,9 +168,12 @@ async function main() {
   for (const s of seed) {
     const key = s.name.toLowerCase();
     const cached = byName.get(key);
-    // Preserve YouTube ID from cache if seed doesn't have one
+    // Preserve YouTube ID + backups from cache if seed doesn't have them
     if (cached && cached.youtubeVideoId && !s.youtubeVideoId) {
       s.youtubeVideoId = cached.youtubeVideoId;
+    }
+    if (cached && cached.backupVideoIds?.length && !s.backupVideoIds?.length) {
+      s.backupVideoIds = cached.backupVideoIds;
     }
     byName.set(key, s);
   }
@@ -240,6 +243,7 @@ async function main() {
           genres: entry.genres,
           subgenres,
           youtubeVideoId: videoId,
+          backupVideoIds: entry.backupVideoIds || [],
         };
       } catch {
         return null;

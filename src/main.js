@@ -20,7 +20,8 @@ let tracks = [];
 let currentTrackIndex = 0;
 let playerReady = false;
 let progressInterval = null;
-const failedIds = new Set();
+const failedIds = new Set();       // video IDs that failed
+const trackVideoIndex = new Map(); // trackIndex → which video ID we're trying
 
 // ── Init ────────────────────────────────────────────────────────────────────
 
@@ -202,6 +203,8 @@ async function startRadio(genreId, genreLabel, subgenreId = null) {
     userLongitude: venus.longitude,
   });
   currentTrackIndex = 0;
+  failedIds.clear();
+  trackVideoIndex.clear();
 
   renderRadioHeader(venus.sign, genreLabel, subgenreId);
   showNebula(true);
@@ -224,12 +227,24 @@ async function startRadio(genreId, genreLabel, subgenreId = null) {
       onEnd: () => playTrack(currentTrackIndex + 1),
       onError: (code) => {
         const track = tracks[currentTrackIndex];
-        if (track) {
-          failedIds.add(track.youtubeVideoId);
+        if (!track) { skipToNextPlayable(); return; }
+
+        const allIds = getVideoIds(track);
+        const idx = (trackVideoIndex.get(currentTrackIndex) || 0) + 1;
+        const reason = code === 150 || code === 101 ? 'embed restricted' : code === 100 ? 'removed' : 'error ' + code;
+
+        if (idx < allIds.length) {
+          // Hot-swap to backup
+          console.warn(`[Radio Venus] ${track.name}: ${reason}, trying backup ${idx}/${allIds.length - 1}`);
+          trackVideoIndex.set(currentTrackIndex, idx);
+          loadVideo(allIds[idx]);
+        } else {
+          // All IDs exhausted
+          failedIds.add(currentTrackIndex);
           markTrackFailed(currentTrackIndex);
-          console.warn(`[Radio Venus] ${track.name}: ${code === 150 || code === 101 ? 'embed restricted' : code === 100 ? 'removed' : 'error ' + code}`);
+          console.warn(`[Radio Venus] ${track.name}: ${reason} (no more backups)`);
+          skipToNextPlayable();
         }
-        skipToNextPlayable();
       },
       onStateChange: (state) => {
         updatePlayButton(isPlaying());
@@ -259,6 +274,10 @@ async function startRadio(genreId, genreLabel, subgenreId = null) {
   playTrack(0);
 }
 
+function getVideoIds(track) {
+  return [track.youtubeVideoId, ...(track.backupVideoIds || [])];
+}
+
 function playTrack(index) {
   if (tracks.length === 0) return;
   currentTrackIndex = ((index % tracks.length) + tracks.length) % tracks.length;
@@ -267,8 +286,9 @@ function playTrack(index) {
   clearInterval(progressInterval);
   progressInterval = null;
   resetProgress();
+  trackVideoIndex.set(currentTrackIndex, 0);
 
-  loadVideo(track.youtubeVideoId);
+  loadVideo(getVideoIds(track)[0]);
   updateNowPlaying(track.name);
   renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds);
   updatePlayButton(true);
@@ -278,25 +298,29 @@ function playTrack(index) {
 }
 
 function skipToNextPlayable() {
-  // Try each track forward, stop if we've looped all the way around
   for (let i = 1; i <= tracks.length; i++) {
     const nextIndex = (currentTrackIndex + i) % tracks.length;
-    if (!failedIds.has(tracks[nextIndex].youtubeVideoId)) {
+    if (!failedIds.has(nextIndex)) {
       playTrack(nextIndex);
       return;
     }
   }
-  // All tracks failed
   updateNowPlaying('No playable tracks found');
 }
 
 function shuffleTracks() {
   if (tracks.length < 2) return;
   const current = tracks[currentTrackIndex];
+  // Remember which tracks were failed by identity
+  const failedTracks = new Set([...failedIds].map(i => tracks[i]));
   for (let i = tracks.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [tracks[i], tracks[j]] = [tracks[j], tracks[i]];
   }
+  // Remap failed indices + current index
+  failedIds.clear();
+  trackVideoIndex.clear();
+  tracks.forEach((t, i) => { if (failedTracks.has(t)) failedIds.add(i); });
   currentTrackIndex = tracks.indexOf(current);
   renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds);
 }

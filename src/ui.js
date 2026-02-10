@@ -103,7 +103,7 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
   const list = document.getElementById('track-list');
   list.innerHTML = '';
   tracks.forEach((track, i) => {
-    const failed = failedIds.has(track.youtubeVideoId);
+    const failed = failedIds.has(i);
     const item = document.createElement('div');
     item.className = 'track-item'
       + (i === currentIndex ? ' active' : '')
