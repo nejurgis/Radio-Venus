@@ -151,21 +151,21 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.2rem;
 }
 
 .date-fields {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.1rem;
 }
 
 .date-field {
-  width: 3.5rem;
-  padding: 0.75rem 0;
+  width: 5rem;
+  padding: 0.25rem 0;
   background: transparent;
   border: 1px solid var(--border);
-  border-bottom: 2px solid var(--text-dim);
+  border-bottom: 1px solid var(--text-dim);
   border-top: none;
   border-left: none;
   border-right: none;
@@ -192,7 +192,7 @@ html, body {
 
 .date-sep {
   font-family: var(--font-mono);
-  font-size: 1.2rem;
+  font-size: 0.5rem;
   color: var(--text-dim);
 }
 
@@ -380,7 +380,7 @@ html, body {
     width: 100%;
     text-transform: lowercase;
     background-color: #000;
-    background-image: linear-gradient(to top, rgba(255, 200, 255, 0.65) -2.9%, transparent 61.8%), radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.001) 8%, transparent 90%);
+    background-image: linear-gradient(to top, rgba(255, 200, 255, 1.0) -2.9%, rgba(0,125,255,1) 100%), radial-gradient(circle at 20% 20%, rgba(255, 257, 255, 0.01) 100%, transparent 101%);
     -webkit-mask-image: radial-gradient(ellipse at center, black 30%, rgba(0, 0, 0, 0.6) 60%, transparent 90%);
     mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, rgba(0, 0, 0, 0.9) 41%, transparent 63.5%);
     background-blend-mode: screen;
