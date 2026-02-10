@@ -224,13 +224,18 @@ export function renderNebula(musicians) {
     const jA = nameHash(m.name, 2);  // angular wobble
     const jS = nameHash(m.name, 3);  // size variation
 
+    // Size by genre count: more genres = larger, more prominent dot
+    const nGenres = (m.genres || []).length;
+    const genreSize = nGenres <= 1 ? 1.2 : nGenres === 2 ? 2.0 : nGenres === 3 ? 2.8 : 3.5;
+    const genreAlpha = nGenres <= 1 ? 0.35 : nGenres === 2 ? 0.5 : nGenres === 3 ? 0.65 : 0.8;
+
     dots.push({
       deg,
       jR,
       jA: (jA - 0.5) * 1.5, // ±0.75° angular wobble
       r, g, b,
-      size: 1.2 + jS * 2,   // 1.2 - 3.2px
-      alpha: 0.4 + jS * 0.3, // 0.4 - 0.7
+      size: genreSize + jS * 0.6,   // jitter ±0.6px within tier
+      alpha: genreAlpha + jS * 0.1,  // slight alpha jitter
       name: m.name,
       sign: m.venus.sign,
       genres: m.genres || [],
