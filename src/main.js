@@ -24,6 +24,9 @@ const failedIds = new Set();       // video IDs that failed
 const trackVideoIndex = new Map(); // trackIndex → which video ID we're trying
 let hasPlayed = false;             // whether current video reached PLAYING
 let silentFailTimer = null;        // detect videos that never start
+let loadingInterval = null;        // loading progress animation
+let loadStartTime = 0;
+const SILENT_FAIL_MS = 15000;
 
 // ── Init ────────────────────────────────────────────────────────────────────
 
@@ -229,6 +232,7 @@ async function startRadio(genreId, genreLabel, subgenreId = null) {
       onEnd: () => playTrack(currentTrackIndex + 1),
       onError: (code) => {
         clearTimeout(silentFailTimer);
+        stopLoadingProgress();
         const reason = code === 150 || code === 101 ? 'embed restricted' : code === 100 ? 'removed' : 'error ' + code;
         tryBackupOrFail(reason);
       },
@@ -243,6 +247,7 @@ async function startRadio(genreId, genreLabel, subgenreId = null) {
         if (state === window.YT.PlayerState.PLAYING) {
           hasPlayed = true;
           clearTimeout(silentFailTimer);
+          stopLoadingProgress();
           hideBuffering();
           const title = getVideoTitle();
           const track = tracks[currentTrackIndex];
@@ -254,10 +259,7 @@ async function startRadio(genreId, genreLabel, subgenreId = null) {
         } else {
           clearInterval(progressInterval);
           progressInterval = null;
-          if (!hasPlayed) {
-            // Initial load — full-width shimmer on progress bar
-            showBuffering(100);
-          } else if (state === window.YT.PlayerState.BUFFERING) {
+          if (hasPlayed && state === window.YT.PlayerState.BUFFERING) {
             const dur = getDuration();
             const cur = getCurrentTime();
             if (dur > 0) showBuffering((cur / dur) * 100);
@@ -287,6 +289,7 @@ function tryBackupOrFail(reason) {
     trackVideoIndex.set(currentTrackIndex, idx);
     loadVideo(allIds[idx]);
     startSilentFailTimer();
+    startLoadingProgress();
   } else {
     failedIds.add(currentTrackIndex);
     markTrackFailed(currentTrackIndex);
@@ -300,9 +303,24 @@ function startSilentFailTimer() {
   hasPlayed = false;
   silentFailTimer = setTimeout(() => {
     if (!hasPlayed) {
-      tryBackupOrFail('silent fail (no playback after 15s)');
+      tryBackupOrFail(`silent fail (no playback after ${SILENT_FAIL_MS / 1000}s)`);
     }
-  }, 15000);
+  }, SILENT_FAIL_MS);
+}
+
+function startLoadingProgress() {
+  loadStartTime = Date.now();
+  clearInterval(loadingInterval);
+  showBuffering(0);
+  loadingInterval = setInterval(() => {
+    const pct = Math.min((Date.now() - loadStartTime) / SILENT_FAIL_MS * 100, 100);
+    showBuffering(pct);
+  }, 100);
+}
+
+function stopLoadingProgress() {
+  clearInterval(loadingInterval);
+  loadingInterval = null;
 }
 
 function playTrack(index) {
@@ -317,7 +335,7 @@ function playTrack(index) {
 
   loadVideo(getVideoIds(track)[0]);
   startSilentFailTimer();
-  showBuffering(100);
+  startLoadingProgress();
   updateNowPlaying(track.name);
   renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds);
   updatePlayButton('buffering');
