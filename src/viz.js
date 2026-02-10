@@ -271,13 +271,17 @@ export function renderNebula(musicians) {
     if (!m.venus || !m.venus.sign) continue;
 
     const signIndex = SIGNS.indexOf(m.venus.sign);
-    const deg = signIndex * 30 + (m.venus.degree || 15);
     const element = ELEMENTS[m.venus.sign] || 'air';
     const [r, g, b] = ELEMENT_COLORS[element];
 
     const jR = nameHash(m.name, 1);
     const jA = nameHash(m.name, 2);
     const jS = nameHash(m.name, 3);
+
+    // Angular jitter ±3°, clamped to stay within the sign's 30° sector
+    const degInSign = m.venus.degree || 15;
+    const jittered = degInSign + (jA - 0.5) * 6;
+    const clampedDeg = signIndex * 30 + Math.max(0.5, Math.min(29.5, jittered));
 
     const nGenres = (m.genres || []).length;
     const genreSize = nGenres <= 1 ? 1.2 : nGenres === 2 ? 1.5 : nGenres === 3 ? 1.8 : 2.1;
@@ -291,10 +295,10 @@ export function renderNebula(musicians) {
     const logicalDrawSize = sprite.width / SPRITE_SCALE;
 
     dots.push({
-      signIndex, // STORE SIGN INDEX FOR BOUNDARY CLAMPING
-      deg,
+      signIndex,
+      deg: clampedDeg,
       jR,
-      jA: (jA - 0.5) * 1.5,
+      jA: 0, // jitter already baked into clampedDeg
       r, g, b,
       size: finalSize,
       alpha: finalAlpha,
