@@ -233,10 +233,13 @@ async function startRadio(genreId, genreLabel, subgenreId = null) {
         tryBackupOrFail(reason);
       },
       onStateChange: (state) => {
-        if (state === window.YT.PlayerState.BUFFERING) {
+        if (state === window.YT.PlayerState.PLAYING) {
+          updatePlayButton(true);
+        } else if (state === window.YT.PlayerState.BUFFERING || !hasPlayed) {
+          // Keep spinner for BUFFERING and any intermediate state before first play
           updatePlayButton('buffering');
         } else {
-          updatePlayButton(isPlaying());
+          updatePlayButton(false);
         }
         if (state === window.YT.PlayerState.PLAYING) {
           hasPlayed = true;
@@ -295,9 +298,9 @@ function startSilentFailTimer() {
   hasPlayed = false;
   silentFailTimer = setTimeout(() => {
     if (!hasPlayed) {
-      tryBackupOrFail('silent fail (no playback after 8s)');
+      tryBackupOrFail('silent fail (no playback after 15s)');
     }
-  }, 8000);
+  }, 15000);
 }
 
 function playTrack(index) {
