@@ -546,8 +546,8 @@ html, body {
   display: block;
   font-family: var(--font-mono);
   font-size: 0.9rem;
-  color: var(--text-dim);
-  letter-spacing: 0.02em;
+  color: var(--text-bright);
+  letter-spacing: 0.04em;
   margin-top: 0.25rem;
   white-space: nowrap;
   overflow: hidden;
