@@ -47,7 +47,7 @@ const ZODIAC_PATHS_RAW = [
   ["M5 3a21 21 0 0 1 0 18", "M19 3a21 21 0 0 0 0 18", "M5 12l14 0"],
 ];
 
-// Cache Path2D objects once so we don't parse strings every frame
+// PERFORMANCE: Cache Path2D objects once so we don't parse strings every frame
 const ZODIAC_PATHS = ZODIAC_PATHS_RAW.map(signPaths => 
   signPaths.map(d => new Path2D(d))
 );
@@ -91,11 +91,13 @@ let zoomAnimDuration = 2000;
 let zoomRotStart = 0;      // rotation snapshot when animation starts
 let zoomResolve = null;    // promise resolver
 
-// Sprite cache for artist dots
-const spriteCache = new Map();
+// ── OPTIMIZED SPRITE GENERATOR (High-Res + Soft Glow Filter) ──────────────
 
-// Helper to get or create a cached canvas for a specific dot style
+const spriteCache = new Map();
+const SPRITE_SCALE = 2; // Supersampling for Retina/High-DPI smoothness
+
 function getDotSprite(r, g, b, size, alpha) {
+  // Round params for cache hits
   const kSize = Math.round(size * 10) / 10; 
   const kAlpha = Math.round(alpha * 10) / 10;
   const key = `${r},${g},${b},${kSize},${kAlpha}`;
@@ -103,43 +105,48 @@ function getDotSprite(r, g, b, size, alpha) {
   if (spriteCache.has(key)) return spriteCache.get(key);
 
   const sCanvas = document.createElement('canvas');
-  // 1.5 multiplier matches the drawSize logic in original render
-  const drawSize = kSize * 1.5; 
-  const padding = 2;
-  const dim = Math.ceil(drawSize * 2 + padding * 2);
+  const drawRadius = kSize * 1.5; 
+  const padding = 2; 
+  
+  // Canvas dimensions: Multiplied by SPRITE_SCALE for high resolution
+  const dim = Math.ceil((drawRadius * 2 + padding * 2) * SPRITE_SCALE);
   const c = dim / 2;
   
   sCanvas.width = dim;
   sCanvas.height = dim;
   const sCtx = sCanvas.getContext('2d');
   
+  sCtx.scale(SPRITE_SCALE, SPRITE_SCALE);
+  sCtx.filter = 'blur(0.5px) saturate(1.2)';
+
   const grad = sCtx.createRadialGradient(
-    c - drawSize * 0.35, c - drawSize * 0.35, drawSize * 0.05,
-    c, c, drawSize
+    (c / SPRITE_SCALE) - drawRadius * 0.35, 
+    (c / SPRITE_SCALE) - drawRadius * 0.35, 
+    drawRadius * 0.05, 
+    c / SPRITE_SCALE, 
+    c / SPRITE_SCALE, 
+    drawRadius
   );
   
   const dr = r, dg = g, db = b;
   const lr = Math.min(255, dr + 100);
   const lg = Math.min(255, dg + 100);
   const lb = Math.min(255, db + 100);
-  
+
   grad.addColorStop(0, `rgba(255, 255, 255, ${kAlpha})`);
   grad.addColorStop(0.2, `rgba(${lr}, ${lg}, ${lb}, ${kAlpha * 0.95})`);
   grad.addColorStop(0.5, `rgba(${dr}, ${dg}, ${db}, ${kAlpha * 0.9})`);
-  grad.addColorStop(0.8, `rgba(${Math.round(dr * 0.5)}, ${Math.round(dg * 0.5)}, ${Math.round(db * 0.5)}, ${kAlpha * 0.85})`);
-  grad.addColorStop(0.95, `rgba(${Math.round(dr * 0.3)}, ${Math.round(dg * 0.3)}, ${Math.round(db * 0.3)}, ${kAlpha * 0.7})`);
   grad.addColorStop(1, `rgba(${Math.round(dr * 0.1)}, ${Math.round(dg * 0.1)}, ${Math.round(db * 0.1)}, 0)`);
   
   sCtx.fillStyle = grad;
   sCtx.beginPath();
-  sCtx.arc(c, c, drawSize, 0, Math.PI * 2);
+  sCtx.arc(c / SPRITE_SCALE, c / SPRITE_SCALE, drawRadius, 0, Math.PI * 2);
   sCtx.fill();
   
   spriteCache.set(key, sCanvas);
   return sCanvas;
 }
 
-// Generate a minimal crosshair cursor (24×24)
 const crosshairCursor = (() => {
   const s = 24, c = s / 2;
   const cur = document.createElement('canvas');
@@ -167,7 +174,7 @@ export function initNebula(containerId) {
   canvas = document.createElement('canvas');
   canvas.className = 'nebula-canvas';
   containerEl.appendChild(canvas);
-  ctx = canvas.getContext('2d', { alpha: false }); 
+  ctx = canvas.getContext('2d', { alpha: true }); 
 
   resize();
   window.addEventListener('resize', resize);
@@ -275,10 +282,12 @@ export function renderNebula(musicians) {
     const finalSize = genreSize + jS * 0.6;
     const finalAlpha = genreAlpha + jS * 0.1;
 
-    // Pre-generate sprite
+    // Pre-generate high-res sprite
     const sprite = getDotSprite(r, g, b, finalSize, finalAlpha);
+    const logicalDrawSize = sprite.width / SPRITE_SCALE;
 
     dots.push({
+      signIndex, // STORE SIGN INDEX FOR BOUNDARY CLAMPING
       deg,
       jR,
       jA: (jA - 0.5) * 1.5,
@@ -289,7 +298,8 @@ export function renderNebula(musicians) {
       sign: m.venus.sign,
       genres: m.genres || [],
       sprite: sprite, 
-      spriteHalf: sprite.width / 2
+      spriteDrawSize: logicalDrawSize,
+      spriteOffset: logicalDrawSize / 2
     });
   }
 
@@ -525,7 +535,6 @@ function tick() {
   for (let i = 0; i < 12; i++) {
     const angle = (-(i * 30) - 90 + rot) * Math.PI / 180;
     
-    // Correctly using save/restore to preserve hierarchy
     ctx.save();
     ctx.translate(cx, cy);
     ctx.rotate(angle);
@@ -547,7 +556,6 @@ function tick() {
   ctx.strokeStyle = 'rgba(100,160,155,0.35)';
   
   for (let sign = 0; sign < 12; sign++) {
-    // Icons
     const centerAngle = (-(sign * 30 + 15) - 90 + rot) * Math.PI / 180;
     const ix = cx + iconR * Math.cos(centerAngle);
     const iy = cy + iconR * Math.sin(centerAngle);
@@ -567,22 +575,18 @@ function tick() {
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
 
-    // Use pre-compiled Path2D
     const paths = ZODIAC_PATHS[sign];
     for (let k = 0; k < paths.length; k++) {
       ctx.stroke(paths[k]);
     }
     ctx.restore();
 
-    // Ticks (drawing lines relative to center)
     for (let deg = 0; deg < 30; deg+=1) {
        const angle = (-(sign * 30 + deg) - 90 + rot) * Math.PI / 180;
        const isMajor = deg % 5 === 0;
        const len = isMajor ? glyphBandW * 0.25 : glyphBandW * 0.15;
-       
        const cA = Math.cos(angle);
        const sA = Math.sin(angle);
-       
        ctx.beginPath();
        ctx.moveTo(cx + tickInner * cA, cy + tickInner * sA);
        ctx.lineTo(cx + (tickInner + len) * cA, cy + (tickInner + len) * sA);
@@ -591,14 +595,13 @@ function tick() {
     }
   }
   
-  ctx.restore(); // End ring drawing (inner save)
+  ctx.restore(); // End ring drawing
 
   // ── Artist dots ──────────────────────────────────
   ctx.save();
   ctx.globalCompositeOperation = 'lighter';
 
   let closestDot = null;
-  // SQRT Optimization: Compare squared distances
   let closestDistSq = isZoomed ? 16 : 64; 
 
   let hitX = mouseX, hitY = mouseY;
@@ -608,17 +611,46 @@ function tick() {
     const focusY = cy - fullMidR;
     const tx = (w / 2 - focusX) * zoomProgress;
     const ty = (h / 2 - focusY) * zoomProgress;
-    // inverse transform
     hitX = (mouseX - (focusX + tx)) / scale + focusX;
     hitY = (mouseY - (focusY + ty)) / scale + focusY;
   }
 
   for (let i = 0; i < dots.length; i++) {
     const dot = dots[i];
-    const angle = (-(dot.deg + dot.jA) - 90 + rot) * Math.PI / 180;
-    const r = innerR + dot.jR * dotBand;
+
+    // ── BOUNDARY CLAMPING LOGIC ─────────────────────────────
+    // 1. Radial Clamp: Keep dot between Inner Ring and Glyph Ring
+    // Add margin (dot size + 1px)
+    const margin = dot.size + 1;
+    const minR = innerR + margin;
+    const maxR = glyphR - margin;
+    let r = innerR + dot.jR * dotBand;
+    // Force r to stay within safe zone
+    r = Math.max(minR, Math.min(maxR, r));
+
+    // 2. Angular Clamp: Keep dot within its 30-degree sector
+    // Convert dot size to degrees at this radius (Arc Length formula: s = r*theta -> theta = s/r)
+    // We add a safety buffer of ~1.5 degrees so it doesn't touch the spoke
+    const degPadding = (margin / r) * (180 / Math.PI); 
+    
+    const signStart = dot.signIndex * 30;
+    const signEnd = (dot.signIndex + 1) * 30;
+    
+    // Apply jitter to original degree
+    let rawDeg = dot.deg + dot.jA;
+    
+    // Clamp degree between (Start + Padding) and (End - Padding)
+    // We must handle the 0/360 wrap-around carefully if sign is Pisces, but 
+    // since dot.deg is stored as 0-360 linear, standard min/max works fine.
+    const constrainedDeg = Math.max(signStart + degPadding, Math.min(signEnd - degPadding, rawDeg));
+    
+    // Convert to render angle
+    const angle = (-(constrainedDeg) - 90 + rot) * Math.PI / 180;
+    
+    // Calculate final X/Y
     const x = cx + r * Math.cos(angle);
     const y = cy + r * Math.sin(angle);
+    // ────────────────────────────────────────────────────────
 
     // Hit Test
     if (hitX >= 0) {
@@ -633,11 +665,9 @@ function tick() {
 
     const isHovered = hoveredDot === dot;
     
-    // Use Sprite
     if (dot.sprite) {
         if (isHovered) {
              const drawSize = 7;
-             // Draw dynamic glow for hovered
              const grad = ctx.createRadialGradient(x - drawSize*0.35, y - drawSize*0.35, drawSize*0.05, x, y, drawSize);
              grad.addColorStop(0, `rgba(255,255,255,1)`);
              grad.addColorStop(0.5, `rgba(${dot.r},${dot.g},${dot.b},0.9)`);
@@ -647,13 +677,18 @@ function tick() {
              ctx.arc(x, y, drawSize, 0, Math.PI*2);
              ctx.fill();
         } else {
-             // Draw cached sprite
-             ctx.drawImage(dot.sprite, x - dot.spriteHalf, y - dot.spriteHalf);
+             ctx.drawImage(
+               dot.sprite, 
+               x - dot.spriteOffset, 
+               y - dot.spriteOffset, 
+               dot.spriteDrawSize, 
+               dot.spriteDrawSize
+             );
         }
     }
   }
   
-  // Render Labels (Second pass to ensure on top, only if zoomed)
+  // Render Labels
   if (isZoomed) {
       ctx.save();
       ctx.globalCompositeOperation = 'source-over';
@@ -661,12 +696,22 @@ function tick() {
       for (let i = 0; i < dots.length; i++) {
         const dot = dots[i];
         if (dot === hoveredDot) continue; 
-        
-        // Simple alpha check culling
         if (dot.alpha <= 0.3) continue;
 
-        const angle = (-(dot.deg + dot.jA) - 90 + rot) * Math.PI / 180;
-        const r = innerR + dot.jR * dotBand;
+        // Re-calculate position (copy-paste math from above or refactor, 
+        // for perf we repeat the calc to avoid storing state)
+        const margin = dot.size + 1;
+        const minR = innerR + margin;
+        const maxR = glyphR - margin;
+        let r = innerR + dot.jR * dotBand;
+        r = Math.max(minR, Math.min(maxR, r));
+
+        const degPadding = (margin / r) * (180 / Math.PI); 
+        const signStart = dot.signIndex * 30;
+        const signEnd = (dot.signIndex + 1) * 30;
+        let rawDeg = dot.deg + dot.jA;
+        const constrainedDeg = Math.max(signStart + degPadding, Math.min(signEnd - degPadding, rawDeg));
+        const angle = (-(constrainedDeg) - 90 + rot) * Math.PI / 180;
         const x = cx + r * Math.cos(angle);
         const y = cy + r * Math.sin(angle);
         
@@ -677,13 +722,18 @@ function tick() {
         ctx.fillText(dot.name, x, y + dot.size*1.5 + 0.95);
       }
       
-      // Draw Hovered Label on top
+      // Draw Hovered Label
       if (closestDot) {
         const dot = closestDot;
-        const angle = (-(dot.deg + dot.jA) - 90 + rot) * Math.PI / 180;
-        const r = innerR + dot.jR * dotBand;
+        // Calc pos
+        const margin = dot.size + 1;
+        let r = Math.max(innerR + margin, Math.min(glyphR - margin, innerR + dot.jR * dotBand));
+        const degPadding = (margin / r) * (180 / Math.PI); 
+        let constrainedDeg = Math.max(dot.signIndex*30 + degPadding, Math.min((dot.signIndex+1)*30 - degPadding, dot.deg + dot.jA));
+        const angle = (-(constrainedDeg) - 90 + rot) * Math.PI / 180;
         const x = cx + r * Math.cos(angle);
         const y = cy + r * Math.sin(angle);
+        
         const degInSign = Math.round((dot.deg % 30) * 10) / 10;
         
         ctx.font = '2.2px monospace';
