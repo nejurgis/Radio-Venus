@@ -396,6 +396,13 @@ function updateNowPlayingButton(show) {
     const label = title ? `${artist} — ${title}` : artist || activeGenreLabel;
     document.getElementById('btn-np-label').textContent = label;
     document.getElementById('btn-np-label-dup').textContent = label;
+    // Force marquee animation restart (fixes rare stall)
+    const marquee = btn.querySelector('.btn-np-marquee');
+    if (marquee) {
+      marquee.style.animation = 'none';
+      marquee.offsetHeight; // reflow
+      marquee.style.animation = '';
+    }
     btn.hidden = false;
   } else {
     btn.hidden = true;

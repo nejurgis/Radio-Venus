@@ -545,7 +545,7 @@ html, body {
 .np-title {
   display: block;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   color: var(--text-dim);
   letter-spacing: 0.02em;
   margin-top: 0.25rem;

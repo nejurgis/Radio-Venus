@@ -226,7 +226,7 @@ export function renderNebula(musicians) {
 
     // Size by genre count: more genres = larger, more prominent dot
     const nGenres = (m.genres || []).length;
-    const genreSize = nGenres <= 1 ? 1.2 : nGenres === 2 ? 2.0 : nGenres === 3 ? 2.8 : 3.5;
+    const genreSize = nGenres <= 1 ? 1.2 : nGenres === 2 ? 1.7 : nGenres === 3 ? 2.2 : 2.6;
     const genreAlpha = nGenres <= 1 ? 0.35 : nGenres === 2 ? 0.5 : nGenres === 3 ? 0.65 : 0.8;
 
     dots.push({
