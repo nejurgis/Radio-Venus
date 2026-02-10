@@ -371,9 +371,12 @@ html, body {
   font-size: 0.8rem;
   letter-spacing: 0.06em;
   padding: 1rem;
-  background: var(--bg-surface);
+  background: transparent;
+  /* background: var(--bg-surface); */
   color: var(--text);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  /* border: 1px solid rgba(255, 255, 255, 0.06); */
+  border-radius: 10px;
+  box-shadow:  25px 50px 0 #00000080 inset, -25px -25px 50px 0 rgba(1, 1, 1, 0.031) inset;
   cursor: pointer;
   width: 100%;
   text-transform: lowercase;
