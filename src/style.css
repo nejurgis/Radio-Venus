@@ -513,15 +513,6 @@ html, body {
   text-overflow: ellipsis;
 }
 
-.np-buffering {
-  width: 0.9rem;
-  height: 0.9rem;
-  margin-left: 0.5rem;
-  vertical-align: middle;
-  color: var(--text-dim);
-  animation: spin 1s linear infinite;
-}
-
 @keyframes spin {
   to { transform: rotate(360deg); }
 }

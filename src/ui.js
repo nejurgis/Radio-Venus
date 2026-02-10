@@ -172,12 +172,10 @@ export function resetProgress() {
 export function showBuffering(targetPct) {
   document.getElementById('progress-buffer').style.width = targetPct + '%';
   document.querySelector('.progress-container').classList.add('is-buffering');
-  document.getElementById('np-buffering').hidden = false;
 }
 
 export function hideBuffering() {
   document.querySelector('.progress-container').classList.remove('is-buffering');
-  document.getElementById('np-buffering').hidden = true;
   document.getElementById('progress-buffer').style.width = '0%';
 }
 

@@ -236,7 +236,6 @@ async function startRadio(genreId, genreLabel, subgenreId = null) {
         if (state === window.YT.PlayerState.PLAYING) {
           updatePlayButton(true);
         } else if (state === window.YT.PlayerState.BUFFERING || !hasPlayed) {
-          // Keep spinner for BUFFERING and any intermediate state before first play
           updatePlayButton('buffering');
         } else {
           updatePlayButton(false);
@@ -255,7 +254,10 @@ async function startRadio(genreId, genreLabel, subgenreId = null) {
         } else {
           clearInterval(progressInterval);
           progressInterval = null;
-          if (state === window.YT.PlayerState.BUFFERING) {
+          if (!hasPlayed) {
+            // Initial load — full-width shimmer on progress bar
+            showBuffering(100);
+          } else if (state === window.YT.PlayerState.BUFFERING) {
             const dur = getDuration();
             const cur = getCurrentTime();
             if (dur > 0) showBuffering((cur / dur) * 100);
@@ -315,6 +317,7 @@ function playTrack(index) {
 
   loadVideo(getVideoIds(track)[0]);
   startSilentFailTimer();
+  showBuffering(100);
   updateNowPlaying(track.name);
   renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds);
   updatePlayButton('buffering');
