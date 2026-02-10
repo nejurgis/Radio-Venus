@@ -22,6 +22,8 @@ let playerReady = false;
 let progressInterval = null;
 const failedIds = new Set();       // video IDs that failed
 const trackVideoIndex = new Map(); // trackIndex → which video ID we're trying
+let hasPlayed = false;             // whether current video reached PLAYING
+let silentFailTimer = null;        // detect videos that never start
 
 // ── Init ────────────────────────────────────────────────────────────────────
 
@@ -226,25 +228,9 @@ async function startRadio(genreId, genreLabel, subgenreId = null) {
     await initPlayer('yt-player', {
       onEnd: () => playTrack(currentTrackIndex + 1),
       onError: (code) => {
-        const track = tracks[currentTrackIndex];
-        if (!track) { skipToNextPlayable(); return; }
-
-        const allIds = getVideoIds(track);
-        const idx = (trackVideoIndex.get(currentTrackIndex) || 0) + 1;
+        clearTimeout(silentFailTimer);
         const reason = code === 150 || code === 101 ? 'embed restricted' : code === 100 ? 'removed' : 'error ' + code;
-
-        if (idx < allIds.length) {
-          // Hot-swap to backup
-          console.warn(`[Radio Venus] ${track.name}: ${reason}, trying backup ${idx}/${allIds.length - 1}`);
-          trackVideoIndex.set(currentTrackIndex, idx);
-          loadVideo(allIds[idx]);
-        } else {
-          // All IDs exhausted
-          failedIds.add(currentTrackIndex);
-          markTrackFailed(currentTrackIndex);
-          console.warn(`[Radio Venus] ${track.name}: ${reason} (no more backups)`);
-          skipToNextPlayable();
-        }
+        tryBackupOrFail(reason);
       },
       onStateChange: (state) => {
         if (state === window.YT.PlayerState.BUFFERING) {
@@ -253,6 +239,8 @@ async function startRadio(genreId, genreLabel, subgenreId = null) {
           updatePlayButton(isPlaying());
         }
         if (state === window.YT.PlayerState.PLAYING) {
+          hasPlayed = true;
+          clearTimeout(silentFailTimer);
           hideBuffering();
           const title = getVideoTitle();
           const track = tracks[currentTrackIndex];
@@ -282,6 +270,36 @@ function getVideoIds(track) {
   return [track.youtubeVideoId, ...(track.backupVideoIds || [])];
 }
 
+function tryBackupOrFail(reason) {
+  const track = tracks[currentTrackIndex];
+  if (!track) { skipToNextPlayable(); return; }
+
+  const allIds = getVideoIds(track);
+  const idx = (trackVideoIndex.get(currentTrackIndex) || 0) + 1;
+
+  if (idx < allIds.length) {
+    console.warn(`[Radio Venus] ${track.name}: ${reason}, trying backup ${idx}/${allIds.length - 1}`);
+    trackVideoIndex.set(currentTrackIndex, idx);
+    loadVideo(allIds[idx]);
+    startSilentFailTimer();
+  } else {
+    failedIds.add(currentTrackIndex);
+    markTrackFailed(currentTrackIndex);
+    console.warn(`[Radio Venus] ${track.name}: ${reason} (no more backups)`);
+    skipToNextPlayable();
+  }
+}
+
+function startSilentFailTimer() {
+  clearTimeout(silentFailTimer);
+  hasPlayed = false;
+  silentFailTimer = setTimeout(() => {
+    if (!hasPlayed) {
+      tryBackupOrFail('silent fail (no playback after 8s)');
+    }
+  }, 8000);
+}
+
 function playTrack(index) {
   if (tracks.length === 0) return;
   currentTrackIndex = ((index % tracks.length) + tracks.length) % tracks.length;
@@ -293,6 +311,7 @@ function playTrack(index) {
   trackVideoIndex.set(currentTrackIndex, 0);
 
   loadVideo(getVideoIds(track)[0]);
+  startSilentFailTimer();
   updateNowPlaying(track.name);
   renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds);
   updatePlayButton('buffering');
