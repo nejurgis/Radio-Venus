@@ -53,7 +53,9 @@ async function findBackups(artist, primaryId, genre) {
 async function main() {
   const musicians = JSON.parse(readFileSync(DB_PATH, 'utf-8'));
   const needBackups = musicians.filter(m =>
-    m.youtubeVideoId && (!m.backupVideoIds || m.backupVideoIds.length < BACKUP_COUNT)
+    m.youtubeVideoId
+    && (!m.backupVideoIds || m.backupVideoIds.length < BACKUP_COUNT)
+    && !(m.genres.length === 1 && m.genres[0] === 'classical') // skip classical-only
   );
 
   console.log(`${musicians.length} total artists, ${needBackups.length} need backups.\n`);

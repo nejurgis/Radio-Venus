@@ -20,7 +20,7 @@ Genre pick  ──►  Subgenre filter  ──►  Venus similarity sort  ──
 2. **Zoom transition** — On submit, the nebula smoothly zooms into the user's Venus sign over 2.5s with ease-out cubic easing. Rotation interpolates from free-spin to the locked sign position. The portal content fades away as the camera pushes in.
 3. **Reveal** — Venus sign is displayed with its glyph, degree, decan, and element. Back button triggers a reverse zoom-out animation (1.8s) returning to the full ring.
 4. **Genre** — User picks from 8 genre categories with Rudnick-palette color overlays that pop on hover. Subgenre chips shown underneath. The nebula remains zoomed as a background, showing just the 30° wedge of their Venus sign.
-5. **Radio** — Matched artists play via the YouTube IFrame API, sorted by Venus proximity (0-100%). The track list stretches to the bottom of the viewport with a fade-out gradient at the edge. Each track shows the artist's Venus sign (element-colored) and degree.
+5. **Radio** — Matched artists play via a hidden YouTube iframe with custom controls (progress bar, seeker, time display, buffering spinner). The track list stretches to the bottom of the viewport with a fade-out gradient. Each track shows the artist's Venus sign (element-colored) and degree. A shuffle button randomizes the order. The zoomed nebula drifts slowly behind at 8% opacity.
 
 ### Venus calculation
 
@@ -63,12 +63,27 @@ Artist Venus longitudes are reconstructed from `sign + degree` stored in `musici
 
 This means if a user has Venus at 7° Gemini, they'll see all Gemini artists at the top (50-100%), with the closest degrees first, followed by all other signs ranked by ecliptic distance (0-49%).
 
+### Custom playback UI ("Ghost Player")
+
+The YouTube iframe runs hidden (`height: 1px; opacity: 0`) while a custom UI drives it:
+- **Progress bar** — accent-colored fill with invisible range input overlay for click/drag seeking
+- **Buffering indicator** — grey "reaching" bar with shimmer animation, inline SVG spinner replaces the play button during load
+- **Time display** — `m:ss` current time and duration flanking the play button
+- **Song titles** — actual YouTube video title shown below artist name via `player.getVideoData()`
+- **Shuffle** — Fisher-Yates randomize button, preserves current track and failed state
+
+The nebula background stays visible on the radio screen at 8% opacity with a slow drift rotation (360° in 600s), creating an ambient backdrop.
+
 ### Embed error handling
 
-YouTube videos frequently block embedded playback (Error 150/101). The player handles this gracefully:
+YouTube videos frequently block embedded playback (Error 150/101). The player handles this with a **multi-source fallback system**:
+- Each non-classical artist stores up to 2 backup video IDs (`backupVideoIds` array)
+- On error, the player **hot-swaps** to the next backup ID before marking the track as failed
 - Failed tracks are visually struck through and marked "restricted"
-- The player auto-skips to the next playable track
-- Failed video IDs are tracked per session to avoid retrying them
+- The player auto-skips to the next playable track after all IDs are exhausted
+- 347 of 293 non-classical artists have 2 backup video IDs
+
+The `scripts/find-backups.mjs` script searches YouTube for backup videos per artist using queries like `"Artist genre full track"`, `"Artist topic"`, and `"Artist live"`, filtering for 1-60 minute duration.
 
 ## Architecture
 
@@ -89,6 +104,7 @@ Radio-Venus/
   scripts/
     build-db.mjs                    # Wikidata + Venus calc + YouTube lookup → musicians.json
     smart-match.mjs                 # Last.fm similarity graph → discover new artists
+    find-backups.mjs                # Find 2 backup YouTube video IDs per artist
     seed-musicians.json             # 230 artists (174 hand-curated + 56 discovered) with verified video IDs
     manual-overrides.json           # Birth dates for artists invisible to all databases
   public/
@@ -106,7 +122,8 @@ Radio-Venus/
 5. Derives subgenres from genre categories for any artist with empty subgenres
 6. Merges seed + Wikidata (seed takes priority), preserves cached YouTube IDs
 7. Searches YouTube for any artists still missing video IDs
-8. Outputs `public/data/musicians.json`
+8. Preserves backup video IDs from previous builds
+9. Outputs `public/data/musicians.json`
 
 **Discovery** (Node.js, `scripts/smart-match.mjs`):
 - Takes a seed artist name, scrapes Last.fm's "similar artists" page
@@ -127,7 +144,7 @@ Radio-Venus/
 
 ## Database
 
-**536 musicians** across all 12 Venus signs and 8 genres.
+**666 musicians** across all 12 Venus signs and 8 genres.
 
 | Genre | Artists |
 |-------|---------|
@@ -140,7 +157,7 @@ Radio-Venus/
 | Trip-Hop / Downtempo | 25 |
 | Drum & Bass / Jungle | 13 |
 
-The seed file contains **230 artists** (174 original hand-curated + 56 discovered via smart-match) with verified embeddable YouTube video IDs and hand-assigned subgenres. Wikidata supplements this with additional musicians (primarily classical composers). The build script auto-derives subgenres for all artists using `categorizeSubgenres()`, so all 536 artists participate in subgenre filtering. The build processes artists in parallel batches of 5.
+The seed file contains **230 artists** (174 original hand-curated + 56 discovered via smart-match) with verified embeddable YouTube video IDs and hand-assigned subgenres. Wikidata supplements this with additional musicians (primarily classical composers). The build script auto-derives subgenres for all artists using `categorizeSubgenres()`, so all 666 artists participate in subgenre filtering. The build processes artists in parallel batches of 5.
 
 ### Data model
 
@@ -158,7 +175,8 @@ Each artist in `musicians.json` has this structure:
   },
   "genres": ["idm", "ambient", "techno"],
   "subgenres": ["idm", "acid", "ambient"],
-  "youtubeVideoId": "Xw5AiRVqfqk"
+  "youtubeVideoId": "Xw5AiRVqfqk",
+  "backupVideoIds": ["2fmo1Sjmc_g", "GrC_yuzO-Ss"]
 }
 ```
 
@@ -167,6 +185,7 @@ Each artist in `musicians.json` has this structure:
 - **`venus.element`** — fire/earth/air/water (derived from sign)
 - **`genres`** — top-level category IDs (used for filtering)
 - **`subgenres`** — Discogs-derived subgenre IDs (used for subgenre chip filtering)
+- **`backupVideoIds`** — up to 2 fallback YouTube video IDs for hot-swap on embed error
 
 The matcher reconstructs the full ecliptic longitude from `sign + degree` for similarity calculations. The browser-side `venus.js` also returns the raw `longitude` (0-360°) for the user's Venus.
 
@@ -278,7 +297,7 @@ Screens transition with opacity fades. The zoom animation replaces the loading o
 
 ### Zodiac Nebula
 
-A Canvas-based visualization (`src/viz.js`) draws all 536 artists as a ring of element-colored dots at their ecliptic longitudes. Key features:
+A Canvas-based visualization (`src/viz.js`) draws all 666 artists as a ring of element-colored dots at their ecliptic longitudes. Key features:
 
 - **Whole-sign sector outlines** — 12 annular wedges with white outlines, signs progress counter-clockwise (astrological convention)
 - **Element colors** — fire (red), earth (green), air (yellow), water (blue)
@@ -295,7 +314,7 @@ A Canvas-based visualization (`src/viz.js`) draws all 536 artists as a ring of e
 
 **Animated zoom:** `zoomToSign()` returns a Promise and smoothly interpolates scale, translation, and rotation over a configurable duration (default 2.5s). The transform uses a focus-point interpolation — scaling around the target sign's position on the ring while simultaneously panning it toward screen center. Rotation takes the shortest angular path from the current free-spin angle to the locked position. `zoomOut()` plays the reverse animation (1.8s, ease-in cubic). The `zoomProgress` variable (0-1) drives all interpolations.
 
-The nebula container lives at body level (outside screens) so it persists across screen transitions. Visibility is toggled per screen: visible on portal (full ring), reveal (zoomed), and genre (zoomed), hidden on radio.
+The nebula container lives at body level (outside screens) so it persists across screen transitions. Visibility is toggled per screen: visible on portal (full ring), reveal (zoomed, static), genre (zoomed, dimmed, static), and radio (zoomed, 8% opacity, slow drift rotation at 360°/600s).
 
 ### Genre screen
 
@@ -331,7 +350,7 @@ Each track displays: artist name (left, truncated with ellipsis if long), Venus 
 ## Known limitations
 
 - **Subgenre precision varies** — Seed artists (174) have hand-curated subgenres. Wikidata artists have subgenres auto-derived from their genre categories, which gives broad but less precise assignments (e.g., a classical composer gets `classical` and `opera` subgenres based on Wikidata labels, but not fine-grained tags like `romantic` or `impressionist` unless those labels were present).
-- **Embed restrictions** — Some YouTube videos block embedded playback (Error 150/101). The app handles this with auto-skip and visual feedback, but some sign+genre combinations may have fewer playable tracks.
+- **Embed restrictions** — Some YouTube videos block embedded playback (Error 150/101). The app hot-swaps to backup video IDs before skipping, but some tracks may still fail if all IDs are restricted.
 - **Birth time not considered** — Venus sign is calculated at noon UTC. For birth dates where Venus changes signs that day, the result may differ from a full natal chart with exact birth time. The similarity score could show ~100% for an artist whose actual Venus is in the adjacent sign.
 - **Electronic genre coverage is thin vs. classical** — Wikidata has far more classical composers with birth dates than electronic musicians. The seed file compensates but could always use more entries.
 - **Venus similarity precision** — Artist degrees in `musicians.json` are rounded to 1 decimal (0.1°), giving ~0.05% similarity precision. More than adequate for display purposes.
@@ -347,7 +366,8 @@ To add more artists, edit `scripts/seed-musicians.json`:
   "birthDate": "YYYY-MM-DD",
   "genres": ["techno", "ambient"],
   "subgenres": ["dub-techno", "ambient"],
-  "youtubeVideoId": "dQw4w9WgXcQ"
+  "youtubeVideoId": "dQw4w9WgXcQ",
+  "backupVideoIds": ["abc123", "def456"]
 }
 ```
 

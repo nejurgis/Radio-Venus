@@ -770,7 +770,7 @@ html, body {
   width: 4rem;
   height: 4rem;
   color: var(--accent);
-  animation: ring-color 18s linear infinite;
+  animation: spin 1.5s linear infinite, ring-color 18s linear infinite;
 }
 
 /* Rudnick zodiac palette — cycles through 12 sign colors */
