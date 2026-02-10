@@ -94,7 +94,7 @@ let zoomResolve = null;    // promise resolver
 // ── OPTIMIZED SPRITE GENERATOR (High-Res + Soft Glow Filter) ──────────────
 
 const spriteCache = new Map();
-const SPRITE_SCALE = 2; // Supersampling for Retina/High-DPI smoothness
+const SPRITE_SCALE = 4; // Supersampling for Retina/High-DPI smoothness
 
 function getDotSprite(r, g, b, size, alpha) {
   // Round params for cache hits
@@ -175,6 +175,10 @@ export function initNebula(containerId) {
   canvas.className = 'nebula-canvas';
   containerEl.appendChild(canvas);
   ctx = canvas.getContext('2d', { alpha: true }); 
+
+  
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = 'high'; // Critical for downscaling high-res sprites
 
   resize();
   window.addEventListener('resize', resize);
