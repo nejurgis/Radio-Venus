@@ -224,15 +224,20 @@ async function onDateSubmit(d, m, y) {
   enableDragRotate(true);
   history.pushState({ screen: 'reveal' }, '');
 
-  // Set up genre screen
+  // Set up genre screen (shuffled order each time)
   const genreLabel = id => GENRE_CATEGORIES.find(c => c.id === id)?.label || id;
+  const shuffledGenres = [...GENRE_CATEGORIES];
+  for (let i = shuffledGenres.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledGenres[i], shuffledGenres[j]] = [shuffledGenres[j], shuffledGenres[i]];
+  }
   const subgenreCounts = {};
   for (const cat of GENRE_CATEGORIES) {
     subgenreCounts[cat.id] = getSubgenreCounts(cat.id);
   }
 
   renderGenreGrid(
-    GENRE_CATEGORIES,
+    shuffledGenres,
     SUBGENRES,
     subgenreCounts,
     genreId => startRadio(genreId, genreLabel(genreId)),
