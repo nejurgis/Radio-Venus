@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/Radio-Venus/assets/index-CZ2--YjM.js"></script>
-  <link rel="stylesheet" crossorigin href="/Radio-Venus/assets/index-BvxwLzXf.css">
+  <script type="module" crossorigin src="/Radio-Venus/assets/index-D2KtybNt.js"></script>
+  <link rel="stylesheet" crossorigin href="/Radio-Venus/assets/index-buJGnRpP.css">
 </head>
 <body>
 
@@ -52,12 +52,6 @@
       <h2 class="genre-heading">Pick your frequency</h2>
       <div id="genre-grid" class="genre-grid"></div>
     </div>
-    <button id="btn-now-playing" class="btn-now-playing" hidden>
-      <span class="btn-np-marquee">
-        <span id="btn-np-label" class="btn-np-track"></span>
-        <span id="btn-np-label-dup" class="btn-np-track" aria-hidden="true"></span>
-      </span>
-    </button>
   </section>
 
   <!-- Screen 4: Radio -->
@@ -96,6 +90,14 @@
       <p id="empty-state" class="empty-state" hidden>No musicians found for this combination. Try another genre.</p>
     </div>
   </section>
+
+  <!-- Now-playing floating bar (visible on portal, reveal, genre screens) -->
+  <button id="btn-now-playing" class="btn-now-playing" hidden>
+    <span class="btn-np-marquee">
+      <span id="btn-np-label" class="btn-np-track"></span>
+      <span id="btn-np-label-dup" class="btn-np-track" aria-hidden="true"></span>
+    </span>
+  </button>
 
   <!-- Loading overlay -->
   <div id="loading-overlay" class="loading-overlay" hidden>
