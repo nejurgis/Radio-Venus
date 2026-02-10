@@ -70,6 +70,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         const title = getVideoTitle();
         const track = tracks[currentTrackIndex];
         if (track) updateNowPlaying(track.name, title);
+        // Refresh floating button (removes "loading..." prefix)
+        updateNowPlayingButton(!document.getElementById('screen-radio').classList.contains('active'));
         clearInterval(progressInterval);
         progressInterval = setInterval(() => {
           updateProgress(getCurrentTime(), getDuration());
@@ -396,7 +398,8 @@ function updateNowPlayingButton(show) {
     const track = tracks[currentTrackIndex];
     const artist = track ? track.name : '';
     const title = getVideoTitle();
-    const label = title ? `${artist} — ${title}` : artist || activeGenreLabel;
+    const prefix = !hasPlayed ? 'loading... ' : '';
+    const label = title ? `${prefix}${artist} — ${title}` : `${prefix}${artist}` || activeGenreLabel;
     document.getElementById('btn-np-label').textContent = label;
     document.getElementById('btn-np-label-dup').textContent = label;
     // Force marquee animation restart (fixes rare stall)

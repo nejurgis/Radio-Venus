@@ -315,7 +315,7 @@ html, body {
   border: none;
   color: var(--text-dim);
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   letter-spacing: 0.06em;
   padding: 0.25rem 0;
   cursor: pointer;
