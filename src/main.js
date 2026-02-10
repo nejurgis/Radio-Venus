@@ -387,7 +387,11 @@ function updateNowPlayingButton(show) {
   const btn = document.getElementById('btn-now-playing');
   if (!btn) return;
   if (show && tracks.length > 0 && activeGenreLabel) {
-    document.getElementById('btn-np-label').textContent = activeGenreLabel;
+    const track = tracks[currentTrackIndex];
+    const artist = track ? track.name : '';
+    const title = getVideoTitle();
+    const label = title ? `${artist} — ${title}` : artist || activeGenreLabel;
+    document.getElementById('btn-np-label').textContent = label;
     btn.hidden = false;
   } else {
     btn.hidden = true;
