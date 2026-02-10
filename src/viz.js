@@ -715,30 +715,46 @@ function tick() {
     ctx.restore();
   }
 
-  // ── User's Venus dot (pulsing) ──────────────────────────────────────────
+  // ── User's Venus dot (glassy ball + slow radiating glow) ────────────────
   if (userDot) {
     const t = (performance.now() - userDot.birth) / 1000;
-    const pulse = 1 + 0.3 * Math.sin(t * 2);
+    const pulse = 1 + 0.15 * Math.sin(t * 0.8); // slow, subtle pulse
     const angle = (-(userDot.deg) - 90 + rot) * Math.PI / 180;
     const x = cx + midR * Math.cos(angle);
     const y = cy + midR * Math.sin(angle);
 
+    const ballR = isZoomed ? 3.5 : 5.5;
+    const glowR = isZoomed ? 9 : 16;
+    const { r: ur, g: ug, b: ub } = userDot;
+
+    // Outer radiating glow
     ctx.save();
     ctx.globalCompositeOperation = 'lighter';
-    const glowR = isZoomed ? 6 : 12;
-    const coreR = isZoomed ? 1.5 : 3;
-    const grad = ctx.createRadialGradient(x, y, 0, x, y, glowR * pulse);
-    grad.addColorStop(0, `rgba(${userDot.r}, ${userDot.g}, ${userDot.b}, 0.8)`);
-    grad.addColorStop(0.5, `rgba(${userDot.r}, ${userDot.g}, ${userDot.b}, 0.2)`);
-    grad.addColorStop(1, `rgba(${userDot.r}, ${userDot.g}, ${userDot.b}, 0)`);
+    const glow = ctx.createRadialGradient(x, y, ballR, x, y, glowR * pulse);
+    glow.addColorStop(0, `rgba(${ur}, ${ug}, ${ub}, 0.35)`);
+    glow.addColorStop(0.5, `rgba(${ur}, ${ug}, ${ub}, 0.1)`);
+    glow.addColorStop(1, `rgba(${ur}, ${ug}, ${ub}, 0)`);
     ctx.beginPath();
     ctx.arc(x, y, glowR * pulse, 0, Math.PI * 2);
-    ctx.fillStyle = grad;
+    ctx.fillStyle = glow;
     ctx.fill();
 
+    // Glassy ball (same style as artist dots, offset highlight)
+    const lr = Math.min(255, ur + 100);
+    const lg = Math.min(255, ug + 100);
+    const lb = Math.min(255, ub + 100);
+    const ball = ctx.createRadialGradient(
+      x - ballR * 0.35, y - ballR * 0.35, ballR * 0.05,
+      x, y, ballR
+    );
+    ball.addColorStop(0, 'rgba(255, 255, 255, 1)');
+    ball.addColorStop(0.2, `rgba(${lr}, ${lg}, ${lb}, 0.95)`);
+    ball.addColorStop(0.5, `rgba(${ur}, ${ug}, ${ub}, 0.9)`);
+    ball.addColorStop(0.8, `rgba(${Math.round(ur * 0.5)}, ${Math.round(ug * 0.5)}, ${Math.round(ub * 0.5)}, 0.85)`);
+    ball.addColorStop(1, `rgba(${Math.round(ur * 0.2)}, ${Math.round(ug * 0.2)}, ${Math.round(ub * 0.2)}, 0)`);
     ctx.beginPath();
-    ctx.arc(x, y, coreR * pulse, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+    ctx.arc(x, y, ballR, 0, Math.PI * 2);
+    ctx.fillStyle = ball;
     ctx.fill();
     ctx.restore();
 
