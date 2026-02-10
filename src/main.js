@@ -215,8 +215,8 @@ async function onDateSubmit(d, m, y) {
   const portalScreen = document.getElementById('screen-portal');
   portalScreen.classList.add('is-fading');
   await zoomToSign(signIndex, { duration: 2500 });
-  portalScreen.classList.remove('is-fading');
   showScreen('reveal');
+  portalScreen.classList.remove('is-fading');
   history.pushState({ screen: 'reveal' }, '');
 
   // Set up genre screen

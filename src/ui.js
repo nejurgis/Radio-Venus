@@ -29,9 +29,11 @@ export function setElementTheme(element) {
 }
 
 export function renderReveal(venus) {
-  document.getElementById('reveal-sign').textContent = `venus in ${venus.sign}`;
-  document.getElementById('reveal-detail').textContent =
-    `${venus.degree}° · decan ${venus.decan} · ${venus.element}`;
+  document.getElementById('reveal-sign').textContent =
+    `venus in ${Math.round(venus.degree)}° ${venus.sign}`;
+  const detail = document.getElementById('reveal-detail');
+  detail.textContent = venus.element;
+  detail.style.color = `var(--${venus.element})`;
 }
 
 export function renderGenreGrid(categories, subgenreMap, subgenreCounts, onGenreSelect, onSubgenreSelect) {
