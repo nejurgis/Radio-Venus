@@ -226,7 +226,7 @@ export function renderNebula(musicians) {
 
     // Size by genre count: more genres = larger, more prominent dot
     const nGenres = (m.genres || []).length;
-    const genreSize = nGenres <= 1 ? 1.2 : nGenres === 2 ? 1.7 : nGenres === 3 ? 2.2 : 2.6;
+    const genreSize = nGenres <= 1 ? 1.2 : nGenres === 2 ? 1.5 : nGenres === 3 ? 1.8 : 2.1;
     const genreAlpha = nGenres <= 1 ? 0.35 : nGenres === 2 ? 0.5 : nGenres === 3 ? 0.65 : 0.8;
 
     dots.push({
@@ -727,19 +727,21 @@ function tick() {
     const glowR = isZoomed ? 9 : 16;
     const { r: ur, g: ug, b: ub } = userDot;
 
-    // Outer radiating glow
+    // Outer radiating glow (additive blend)
     ctx.save();
     ctx.globalCompositeOperation = 'lighter';
-    const glow = ctx.createRadialGradient(x, y, ballR, x, y, glowR * pulse);
-    glow.addColorStop(0, `rgba(${ur}, ${ug}, ${ub}, 0.35)`);
-    glow.addColorStop(0.5, `rgba(${ur}, ${ug}, ${ub}, 0.1)`);
+    const glow = ctx.createRadialGradient(x, y, 0, x, y, glowR * pulse);
+    glow.addColorStop(0, `rgba(${ur}, ${ug}, ${ub}, 0.4)`);
+    glow.addColorStop(0.3, `rgba(${ur}, ${ug}, ${ub}, 0.15)`);
     glow.addColorStop(1, `rgba(${ur}, ${ug}, ${ub}, 0)`);
     ctx.beginPath();
     ctx.arc(x, y, glowR * pulse, 0, Math.PI * 2);
     ctx.fillStyle = glow;
     ctx.fill();
+    ctx.restore();
 
-    // Glassy ball (same style as artist dots, offset highlight)
+    // Glassy ball (source-over for iOS compatibility)
+    ctx.save();
     const lr = Math.min(255, ur + 100);
     const lg = Math.min(255, ug + 100);
     const lb = Math.min(255, ub + 100);
