@@ -600,6 +600,25 @@ html, body {
   transition: width 0.15s linear;
 }
 
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff 15%, var(--accent) 45%, transparent 70%);
+  box-shadow: 0 0 6px var(--accent), 0 0 12px var(--accent);
+  animation: playhead-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes playhead-pulse {
+  0%, 100% { opacity: 0.8; box-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent); }
+  50%      { opacity: 1;   box-shadow: 0 0 8px var(--accent), 0 0 16px var(--accent); }
+}
+
 #seeker {
   position: absolute;
   inset: 0;
