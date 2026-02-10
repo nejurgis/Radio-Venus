@@ -42,6 +42,49 @@ document.addEventListener('DOMContentLoaded', async () => {
     loadYouTubeAPI(),
   ]);
 
+  // Init player early so it's ready when user picks a genre —
+  // mobile autoplay requires loadVideo() in the direct click gesture chain
+  initPlayer('yt-player', {
+    onEnd: () => playTrack(currentTrackIndex + 1),
+    onError: (code) => {
+      clearTimeout(silentFailTimer);
+      stopLoadingProgress();
+      const reason = code === 150 || code === 101 ? 'embed restricted' : code === 100 ? 'removed' : 'error ' + code;
+      tryBackupOrFail(reason);
+    },
+    onStateChange: (state) => {
+      if (state === window.YT.PlayerState.PLAYING) {
+        updatePlayButton(true);
+      } else if (state === window.YT.PlayerState.BUFFERING || !hasPlayed) {
+        updatePlayButton('buffering');
+      } else {
+        updatePlayButton(false);
+      }
+      if (state === window.YT.PlayerState.PLAYING) {
+        hasPlayed = true;
+        sessionHasPlayed = true;
+        clearTimeout(silentFailTimer);
+        stopLoadingProgress();
+        hideBuffering();
+        const title = getVideoTitle();
+        const track = tracks[currentTrackIndex];
+        if (track) updateNowPlaying(track.name, title);
+        clearInterval(progressInterval);
+        progressInterval = setInterval(() => {
+          updateProgress(getCurrentTime(), getDuration());
+        }, 500);
+      } else {
+        clearInterval(progressInterval);
+        progressInterval = null;
+        if (hasPlayed && state === window.YT.PlayerState.BUFFERING) {
+          const dur = getDuration();
+          const cur = getCurrentTime();
+          if (dur > 0) showBuffering((cur / dur) * 100);
+        }
+      }
+    },
+  }).then(() => { playerReady = true; });
+
   if (dbResult.status === 'rejected') {
     console.error('Failed to load musician database:', dbResult.reason);
   } else {
@@ -52,10 +95,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (!venus || !info.genres.length) return;
       const genreId = info.genres[0];
       const label = GENRE_CATEGORIES.find(c => c.id === genreId)?.label || genreId;
-      startRadio(genreId, label).then(() => {
-        const idx = tracks.findIndex(t => t.name === info.name);
-        if (idx >= 0) playTrack(idx);
-      });
+      startRadio(genreId, label);
+      const idx = tracks.findIndex(t => t.name === info.name);
+      if (idx >= 0) playTrack(idx);
     });
   }
 });
@@ -203,7 +245,7 @@ async function onDateSubmit(d, m, y) {
   document.getElementById('btn-back-genre').addEventListener('click', () => history.back());
 }
 
-async function startRadio(genreId, genreLabel, subgenreId = null) {
+function startRadio(genreId, genreLabel, subgenreId = null) {
   tracks = match(venus.sign, genreId, venus.element, {
     subgenre: subgenreId,
     userLongitude: venus.longitude,
@@ -226,52 +268,6 @@ async function startRadio(genreId, genreLabel, subgenreId = null) {
   }
 
   showEmptyState(false);
-
-  // Init player if not done yet
-  if (!playerReady) {
-    await initPlayer('yt-player', {
-      onEnd: () => playTrack(currentTrackIndex + 1),
-      onError: (code) => {
-        clearTimeout(silentFailTimer);
-        stopLoadingProgress();
-        const reason = code === 150 || code === 101 ? 'embed restricted' : code === 100 ? 'removed' : 'error ' + code;
-        tryBackupOrFail(reason);
-      },
-      onStateChange: (state) => {
-        if (state === window.YT.PlayerState.PLAYING) {
-          updatePlayButton(true);
-        } else if (state === window.YT.PlayerState.BUFFERING || !hasPlayed) {
-          updatePlayButton('buffering');
-        } else {
-          updatePlayButton(false);
-        }
-        if (state === window.YT.PlayerState.PLAYING) {
-          hasPlayed = true;
-          sessionHasPlayed = true;
-          clearTimeout(silentFailTimer);
-          stopLoadingProgress();
-          hideBuffering();
-          const title = getVideoTitle();
-          const track = tracks[currentTrackIndex];
-          if (track) updateNowPlaying(track.name, title);
-          clearInterval(progressInterval);
-          progressInterval = setInterval(() => {
-            updateProgress(getCurrentTime(), getDuration());
-          }, 500);
-        } else {
-          clearInterval(progressInterval);
-          progressInterval = null;
-          if (hasPlayed && state === window.YT.PlayerState.BUFFERING) {
-            const dur = getDuration();
-            const cur = getCurrentTime();
-            if (dur > 0) showBuffering((cur / dur) * 100);
-          }
-        }
-      },
-    });
-    playerReady = true;
-  }
-
   playTrack(0);
 }
 
