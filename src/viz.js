@@ -20,8 +20,7 @@ const ELEMENTS = {
 };
 
 // Tabler Icons zodiac signs (MIT, 24×24, stroke-based) — multi-path per sign
-// Each sign is an array of path strings, rendered with ctx.stroke(Path2D)
-const ZODIAC_PATHS = [
+const ZODIAC_PATHS_RAW = [
   // Aries ♈
   ["M12 5a5 5 0 1 0 -4 8", "M16 13a5 5 0 1 0 -4 -8", "M12 21l0 -16"],
   // Taurus ♉
@@ -47,6 +46,11 @@ const ZODIAC_PATHS = [
   // Pisces ♓
   ["M5 3a21 21 0 0 1 0 18", "M19 3a21 21 0 0 0 0 18", "M5 12l14 0"],
 ];
+
+// Cache Path2D objects once so we don't parse strings every frame
+const ZODIAC_PATHS = ZODIAC_PATHS_RAW.map(signPaths => 
+  signPaths.map(d => new Path2D(d))
+);
 
 // Deterministic hash from artist name → stable jitter value (0-1)
 function nameHash(name, seed = 0) {
@@ -87,20 +91,66 @@ let zoomAnimDuration = 2000;
 let zoomRotStart = 0;      // rotation snapshot when animation starts
 let zoomResolve = null;    // promise resolver
 
-// Generate a minimal crosshair cursor (24×24, thin white lines with dark shadow)
+// Sprite cache for artist dots
+const spriteCache = new Map();
+
+// Helper to get or create a cached canvas for a specific dot style
+function getDotSprite(r, g, b, size, alpha) {
+  const kSize = Math.round(size * 10) / 10; 
+  const kAlpha = Math.round(alpha * 10) / 10;
+  const key = `${r},${g},${b},${kSize},${kAlpha}`;
+  
+  if (spriteCache.has(key)) return spriteCache.get(key);
+
+  const sCanvas = document.createElement('canvas');
+  // 1.5 multiplier matches the drawSize logic in original render
+  const drawSize = kSize * 1.5; 
+  const padding = 2;
+  const dim = Math.ceil(drawSize * 2 + padding * 2);
+  const c = dim / 2;
+  
+  sCanvas.width = dim;
+  sCanvas.height = dim;
+  const sCtx = sCanvas.getContext('2d');
+  
+  const grad = sCtx.createRadialGradient(
+    c - drawSize * 0.35, c - drawSize * 0.35, drawSize * 0.05,
+    c, c, drawSize
+  );
+  
+  const dr = r, dg = g, db = b;
+  const lr = Math.min(255, dr + 100);
+  const lg = Math.min(255, dg + 100);
+  const lb = Math.min(255, db + 100);
+  
+  grad.addColorStop(0, `rgba(255, 255, 255, ${kAlpha})`);
+  grad.addColorStop(0.2, `rgba(${lr}, ${lg}, ${lb}, ${kAlpha * 0.95})`);
+  grad.addColorStop(0.5, `rgba(${dr}, ${dg}, ${db}, ${kAlpha * 0.9})`);
+  grad.addColorStop(0.8, `rgba(${Math.round(dr * 0.5)}, ${Math.round(dg * 0.5)}, ${Math.round(db * 0.5)}, ${kAlpha * 0.85})`);
+  grad.addColorStop(0.95, `rgba(${Math.round(dr * 0.3)}, ${Math.round(dg * 0.3)}, ${Math.round(db * 0.3)}, ${kAlpha * 0.7})`);
+  grad.addColorStop(1, `rgba(${Math.round(dr * 0.1)}, ${Math.round(dg * 0.1)}, ${Math.round(db * 0.1)}, 0)`);
+  
+  sCtx.fillStyle = grad;
+  sCtx.beginPath();
+  sCtx.arc(c, c, drawSize, 0, Math.PI * 2);
+  sCtx.fill();
+  
+  spriteCache.set(key, sCanvas);
+  return sCanvas;
+}
+
+// Generate a minimal crosshair cursor (24×24)
 const crosshairCursor = (() => {
   const s = 24, c = s / 2;
   const cur = document.createElement('canvas');
   cur.width = cur.height = s;
   const cx = cur.getContext('2d');
-  // Shadow for visibility on bright dots
   cx.strokeStyle = 'rgba(0,0,0,0.5)';
   cx.lineWidth = 3;
   cx.beginPath();
   cx.moveTo(c, 4); cx.lineTo(c, s - 4);
   cx.moveTo(4, c); cx.lineTo(s - 4, c);
   cx.stroke();
-  // Crisp white cross
   cx.strokeStyle = 'rgba(255,255,255,0.9)';
   cx.lineWidth = 1;
   cx.beginPath();
@@ -117,16 +167,13 @@ export function initNebula(containerId) {
   canvas = document.createElement('canvas');
   canvas.className = 'nebula-canvas';
   containerEl.appendChild(canvas);
-  ctx = canvas.getContext('2d');
+  ctx = canvas.getContext('2d', { alpha: false }); 
 
   resize();
   window.addEventListener('resize', resize);
 
-  // Global mousemove for hover — no pointer-events needed on canvas,
-  // so inputs/buttons on top always stay clickable.
   document.addEventListener('mousemove', (e) => {
     if (!canvas) return;
-    // Skip hover when mouse is over interactive elements (inputs, buttons, links)
     const tag = e.target.tagName;
     const isInteractive = tag === 'INPUT' || tag === 'BUTTON' || tag === 'A'
       || tag === 'SELECT' || tag === 'TEXTAREA'
@@ -147,13 +194,11 @@ export function initNebula(containerId) {
   });
   document.addEventListener('click', (e) => {
     if (!hoveredDot || !clickCallback || zoomSign == null) return;
-    // Only fire if click wasn't on any UI content (track items, genre grid, etc.)
     if (e.target.closest('button, a, input, select, textarea, .screen-inner')) return;
     clickCallback({ name: hoveredDot.name, genres: hoveredDot.genres });
   });
 
-  // ── Drag-to-rotate (touch + mouse) ────────────────────────────────────
-  const DRAG_SENSITIVITY = 0.25; // degrees per pixel
+  const DRAG_SENSITIVITY = 0.25; 
 
   function dragStart(x) {
     if (!dragRotateEnabled || zoomSign == null) return;
@@ -173,7 +218,6 @@ export function initNebula(containerId) {
 
   function dragEnd() {
     dragging = false;
-    // inertia continues via dragVelocity in tick()
   }
 
   document.addEventListener('mousedown', (e) => {
@@ -210,6 +254,7 @@ function resize() {
 
 export function renderNebula(musicians) {
   dots = [];
+  spriteCache.clear(); 
 
   for (const m of musicians) {
     if (!m.venus || !m.venus.sign) continue;
@@ -219,26 +264,32 @@ export function renderNebula(musicians) {
     const element = ELEMENTS[m.venus.sign] || 'air';
     const [r, g, b] = ELEMENT_COLORS[element];
 
-    // Deterministic jitter from name
-    const jR = nameHash(m.name, 1);  // radial offset (0-1)
-    const jA = nameHash(m.name, 2);  // angular wobble
-    const jS = nameHash(m.name, 3);  // size variation
+    const jR = nameHash(m.name, 1);
+    const jA = nameHash(m.name, 2);
+    const jS = nameHash(m.name, 3);
 
-    // Size by genre count: more genres = larger, more prominent dot
     const nGenres = (m.genres || []).length;
     const genreSize = nGenres <= 1 ? 1.2 : nGenres === 2 ? 1.5 : nGenres === 3 ? 1.8 : 2.1;
     const genreAlpha = nGenres <= 1 ? 0.35 : nGenres === 2 ? 0.5 : nGenres === 3 ? 0.65 : 0.8;
 
+    const finalSize = genreSize + jS * 0.6;
+    const finalAlpha = genreAlpha + jS * 0.1;
+
+    // Pre-generate sprite
+    const sprite = getDotSprite(r, g, b, finalSize, finalAlpha);
+
     dots.push({
       deg,
       jR,
-      jA: (jA - 0.5) * 1.5, // ±0.75° angular wobble
+      jA: (jA - 0.5) * 1.5,
       r, g, b,
-      size: genreSize + jS * 0.6,   // jitter ±0.6px within tier
-      alpha: genreAlpha + jS * 0.1,  // slight alpha jitter
+      size: finalSize,
+      alpha: finalAlpha,
       name: m.name,
       sign: m.venus.sign,
       genres: m.genres || [],
+      sprite: sprite, 
+      spriteHalf: sprite.width / 2
     });
   }
 
@@ -248,29 +299,19 @@ export function renderNebula(musicians) {
 export function setUserVenus(longitude, element) {
   const [r, g, b] = ELEMENT_COLORS[element] || ELEMENT_COLORS.air;
   userDot = { deg: longitude, r, g, b, birth: performance.now() };
-  previewDot = null; // preview is replaced by the real dot
+  previewDot = null;
 }
 
-export function clearUserVenus() {
-  userDot = null;
-}
+export function clearUserVenus() { userDot = null; }
 
 export function setPreviewVenus(longitude, element) {
   const [r, g, b] = ELEMENT_COLORS[element] || ELEMENT_COLORS.air;
   previewDot = { deg: longitude, r, g, b };
 }
 
-export function clearPreviewVenus() {
-  previewDot = null;
-}
-
-export function onNebulaHover(callback) {
-  hoverCallback = callback;
-}
-
-export function onNebulaClick(callback) {
-  clickCallback = callback;
-}
+export function clearPreviewVenus() { previewDot = null; }
+export function onNebulaHover(callback) { hoverCallback = callback; }
+export function onNebulaClick(callback) { clickCallback = callback; }
 
 // ── Zoom control ──────────────────────────────────────────────────────────────
 
@@ -296,7 +337,6 @@ export function zoomToSign(signIndex, { duration = 2000, animate = true } = {}) 
 
 export function zoomOut({ duration = 1800, animate = true } = {}) {
   if (animate && zoomSign != null) {
-    // Reverse animation: progress goes from 1 → 0
     zoomAnimStart = performance.now();
     zoomAnimDuration = duration;
     zoomAnimating = 'out';
@@ -310,28 +350,13 @@ export function zoomOut({ duration = 1800, animate = true } = {}) {
   return Promise.resolve();
 }
 
-export function showNebula(visible) {
-  if (containerEl) containerEl.classList.toggle('is-hidden', !visible);
-}
-
-export function dimNebula(dim) {
-  if (containerEl) containerEl.classList.toggle('is-dimmed', dim);
-}
-
-export function deepDimNebula(deep) {
-  if (containerEl) containerEl.classList.toggle('is-deep-dimmed', deep);
-}
-
-export function setZoomDrift(enabled) {
-  zoomDriftEnabled = enabled;
-}
-
+export function showNebula(visible) { if (containerEl) containerEl.classList.toggle('is-hidden', !visible); }
+export function dimNebula(dim) { if (containerEl) containerEl.classList.toggle('is-dimmed', dim); }
+export function deepDimNebula(deep) { if (containerEl) containerEl.classList.toggle('is-deep-dimmed', deep); }
+export function setZoomDrift(enabled) { zoomDriftEnabled = enabled; }
 export function enableDragRotate(enabled) {
   dragRotateEnabled = enabled;
-  if (!enabled) {
-    dragging = false;
-    dragVelocity = 0;
-  }
+  if (!enabled) { dragging = false; dragVelocity = 0; }
 }
 
 // ── Render loop ───────────────────────────────────────────────────────────────
@@ -348,15 +373,14 @@ function tick() {
   const innerR = minDim * 0.28;
   const outerR = minDim * 0.44;
   const bandWidth = outerR - innerR;
-  const glyphR = innerR + bandWidth * 0.70;  // separator: glyph band is outer 30%
-  const dotBand = glyphR - innerR;            // dot band width
-  const midR = (innerR + glyphR) / 2;         // center of dot band
-  const glyphMidR = (glyphR + outerR) / 2;    // center of glyph band
-  const fullMidR = (innerR + outerR) / 2;     // center of full ring
+  const glyphR = innerR + bandWidth * 0.70;
+  const dotBand = glyphR - innerR;
+  const midR = (innerR + glyphR) / 2;
+  const fullMidR = (innerR + outerR) / 2;
 
   ctx.clearRect(0, 0, w, h);
 
-  // Subtle deep blue center glow
+  // Background glow
   const centerGlow = ctx.createRadialGradient(cx, cy, 0, cx, cy, innerR * 0.9);
   centerGlow.addColorStop(0, 'rgba(30, 50, 80, 0.25)');
   centerGlow.addColorStop(0.6, 'rgba(15, 25, 50, 0.1)');
@@ -364,33 +388,30 @@ function tick() {
   ctx.fillStyle = centerGlow;
   ctx.fillRect(0, 0, w, h);
 
-  // ── Zoom animation update ────────────────────────────────────────────────
+  // ── Update Logic ────────────────────────────────────────────────
   if (zoomAnimating === true) {
-    // Zoom in
     const elapsed = performance.now() - zoomAnimStart;
     const raw = Math.min(1, elapsed / zoomAnimDuration);
-    zoomProgress = 1 - Math.pow(1 - raw, 3); // ease-out cubic
+    zoomProgress = 1 - Math.pow(1 - raw, 3);
     if (raw >= 1) {
       zoomProgress = 1;
       zoomAnimating = false;
       if (zoomResolve) { zoomResolve(); zoomResolve = null; }
     }
   } else if (zoomAnimating === 'out') {
-    // Zoom out (reverse)
     const elapsed = performance.now() - zoomAnimStart;
     const raw = Math.min(1, elapsed / zoomAnimDuration);
-    zoomProgress = Math.pow(1 - raw, 3); // ease-in cubic (slow start, fast finish)
+    zoomProgress = Math.pow(1 - raw, 3);
     if (raw >= 1) {
       zoomProgress = 0;
       zoomAnimating = false;
       zoomSign = null;
-      rotation = zoomRotStart; // resume free-spin from where we locked
+      rotation = zoomRotStart;
       if (containerEl) containerEl.classList.remove('is-zoomed');
       if (zoomResolve) { zoomResolve(); zoomResolve = null; }
     }
   }
 
-  // Drag inertia: keep spinning after release
   if (!dragging && Math.abs(dragVelocity) > 0.01) {
     zoomDrift += dragVelocity;
     dragVelocity *= 0.93;
@@ -398,12 +419,10 @@ function tick() {
     dragVelocity = 0;
   }
 
-  // Rotation: free-spin when full ring, interpolated when animating, locked when zoomed
   let rot;
   if (zoomSign != null) {
     const targetRot = zoomSign * 30 + 15;
     if (zoomAnimating || zoomProgress < 1) {
-      // Smoothly rotate from free-spin angle to locked angle (shortest path)
       let delta = targetRot - zoomRotStart;
       if (delta > 180) delta -= 360;
       if (delta < -180) delta += 360;
@@ -413,16 +432,20 @@ function tick() {
       rot = targetRot + zoomDrift;
     }
   } else {
-    rotation += (360 / 240) / 60; // ~60fps → 360° in 240s
+    rotation += (360 / 240) / 60;
     if (rotation >= 360) rotation -= 360;
     rot = rotation;
   }
 
-  // ── Zoom transform (interpolated) ──────────────────────────────────────
+  // ── Transform ──────────────────────────────────────
   const isZoomed = zoomSign != null;
+  let viewScale = 1; 
+  
+  // Wrap everything (Rings + Dots) in the zoom transform to guarantee alignment
   if (isZoomed) {
     const targetScale = (h * 0.85) / bandWidth;
     const s = 1 + (targetScale - 1) * zoomProgress;
+    viewScale = s;
     const focusX = cx;
     const focusY = cy - fullMidR;
     const tx = (w / 2 - focusX) * zoomProgress;
@@ -433,45 +456,33 @@ function tick() {
     ctx.translate(-focusX, -focusY);
   }
 
-  // ── Whole-sign sector outlines ──────────────────────────────────────────
-  ctx.save();
-
-  // Teal metallic palette — horizontal sweep gradients
+  // ── Static Gradients (Reused) ──────────────────────
   const tealRing = ctx.createLinearGradient(cx - outerR, cy, cx + outerR, cy);
-  tealRing.addColorStop(0,    '#2a4a4a');
-  tealRing.addColorStop(0.15, '#5a9090');
-  tealRing.addColorStop(0.3,  '#a0d4d4');
-  tealRing.addColorStop(0.45, '#c8ece8');
-  tealRing.addColorStop(0.55, '#80b0b0');
-  tealRing.addColorStop(0.7,  '#c8ece8');
-  tealRing.addColorStop(0.85, '#5a9090');
-  tealRing.addColorStop(1,    '#2a4a4a');
+  tealRing.addColorStop(0, '#2a4a4a');
+  tealRing.addColorStop(0.3, '#a0d4d4');
+  tealRing.addColorStop(0.7, '#c8ece8');
+  tealRing.addColorStop(1, '#2a4a4a');
 
   const thinRing = ctx.createLinearGradient(cx - outerR, cy, cx + outerR, cy);
-  thinRing.addColorStop(0,    '#3a5858');
-  thinRing.addColorStop(0.25, '#7ab0a8');
-  thinRing.addColorStop(0.5,  '#4a7070');
-  thinRing.addColorStop(0.75, '#7ab0a8');
-  thinRing.addColorStop(1,    '#3a5858');
+  thinRing.addColorStop(0, '#3a5858');
+  thinRing.addColorStop(0.5, '#4a7070');
+  thinRing.addColorStop(1, '#3a5858');
 
-  // ── Thick outer ring (filled band with 3D tube effect) ────────────────
-  const outerBandW = minDim * 0.018; // thick teal band
+  ctx.save();
+
+  // ── Thick outer ring ──────────────────────────────
+  const outerBandW = minDim * 0.018;
   ctx.beginPath();
   ctx.arc(cx, cy, outerR + outerBandW / 2, 0, Math.PI * 2);
   ctx.arc(cx, cy, outerR - outerBandW / 2, 0, Math.PI * 2);
-  // Radial gradient for tube depth on outer ring
+  
   const tubeGrad = ctx.createRadialGradient(cx, cy, outerR - outerBandW / 2, cx, cy, outerR + outerBandW / 2);
-  tubeGrad.addColorStop(0,    '#1a3838');
-  tubeGrad.addColorStop(0.2,  '#3a6868');
-  tubeGrad.addColorStop(0.4,  '#8ac0c0');
-  tubeGrad.addColorStop(0.55, '#c8ece8');
-  tubeGrad.addColorStop(0.7,  '#8ac0c0');
-  tubeGrad.addColorStop(0.9,  '#3a6868');
-  tubeGrad.addColorStop(1,    '#1a3838');
+  tubeGrad.addColorStop(0, '#1a3838');
+  tubeGrad.addColorStop(0.5, '#c8ece8');
+  tubeGrad.addColorStop(1, '#1a3838');
   ctx.fillStyle = tubeGrad;
   ctx.fill('evenodd');
 
-  // Highlight sweep on outer ring
   ctx.beginPath();
   ctx.arc(cx, cy, outerR, 0, Math.PI * 2);
   ctx.strokeStyle = tealRing;
@@ -480,11 +491,10 @@ function tick() {
   ctx.stroke();
   ctx.globalAlpha = 1;
 
-  // Dark fuzzy outer edge — fades ring into the void
+  // Dark fuzzy outer edge
   const fadeW = outerBandW * 2.5;
   const outerFade = ctx.createRadialGradient(cx, cy, outerR + outerBandW / 2, cx, cy, outerR + outerBandW / 2 + fadeW);
   outerFade.addColorStop(0, 'rgba(0,0,0,0.7)');
-  outerFade.addColorStop(0.4, 'rgba(0,0,0,0.3)');
   outerFade.addColorStop(1, 'rgba(0,0,0,0)');
   ctx.beginPath();
   ctx.arc(cx, cy, outerR + outerBandW / 2 + fadeW, 0, Math.PI * 2);
@@ -492,32 +502,30 @@ function tick() {
   ctx.fillStyle = outerFade;
   ctx.fill('evenodd');
 
-  // ── Inner structural rings (thinner, subtle) ──────────────────────────
-  // Glyph separator ring
+  // ── Inner rings ──────────────────────────────────
   ctx.beginPath();
   ctx.arc(cx, cy, glyphR, 0, Math.PI * 2);
   ctx.strokeStyle = thinRing;
   ctx.lineWidth = 1.5;
   ctx.stroke();
 
-  // Inner ring
   ctx.beginPath();
   ctx.arc(cx, cy, innerR, 0, Math.PI * 2);
-  ctx.strokeStyle = thinRing;
   ctx.lineWidth = 2;
   ctx.stroke();
 
-  // ── Spokes — 12 primary (thicker) + 24 secondary (fine) ──────────────
+  // ── Spokes ───────────────────────────────────────
   const metalGrad = ctx.createLinearGradient(0, -2, 0, 2);
-  metalGrad.addColorStop(0.0, '#0a1a1a');
-  metalGrad.addColorStop(0.35, '#5a9898');
+  metalGrad.addColorStop(0, '#0a1a1a');
   metalGrad.addColorStop(0.5, '#a0d4cc');
-  metalGrad.addColorStop(0.65, '#5a9898');
-  metalGrad.addColorStop(1.0, '#0a1a1a');
+  metalGrad.addColorStop(1, '#0a1a1a');
+  ctx.fillStyle = metalGrad;
 
-  // Primary spokes (every 30°, tapered trapezoids)
+  // Draw spokes
   for (let i = 0; i < 12; i++) {
     const angle = (-(i * 30) - 90 + rot) * Math.PI / 180;
+    
+    // Correctly using save/restore to preserve hierarchy
     ctx.save();
     ctx.translate(cx, cy);
     ctx.rotate(angle);
@@ -526,50 +534,21 @@ function tick() {
     ctx.lineTo(outerR, -0.3);
     ctx.lineTo(outerR, 0.3);
     ctx.lineTo(innerR, 1.5);
-    ctx.closePath();
-    ctx.fillStyle = metalGrad;
     ctx.fill();
     ctx.restore();
   }
 
-  // ── Zodiac sign icons + degree ticks ────────────────────────────────────
+  // ── Ticks & Icons ────────────────────────────────
   const glyphBandW = outerR - glyphR;
-
-  // Degree tick marks (30 per sign, along inner edge of glyph band)
   const tickInner = glyphR;
-  const tickLen = glyphBandW * 0.15;
-  const tickLenMajor = glyphBandW * 0.25; // every 5°
-  ctx.strokeStyle = 'rgba(100,160,155,0.35)';
-  for (let sign = 0; sign < 12; sign++) {
-    for (let deg = 0; deg < 30; deg++) {
-      const angle = (-(sign * 30 + deg) - 90 + rot) * Math.PI / 180;
-      const isMajor = deg % 5 === 0;
-      const len = isMajor ? tickLenMajor : tickLen;
-      ctx.save();
-      ctx.translate(cx, cy);
-      ctx.rotate(angle);
-      ctx.beginPath();
-      ctx.moveTo(tickInner, 0);
-      ctx.lineTo(tickInner + len, 0);
-      ctx.lineWidth = isMajor ? 0.8 : 0.4;
-      ctx.stroke();
-      ctx.restore();
-    }
-  }
-
-  // Zodiac sign icons (Tabler, stroke-based, teal metallic)
   const iconScale = glyphBandW * 0.6 / 24;
-  // Nudge outward slightly — visual center between separator and thick outer ring's inner edge
   const iconR = glyphR + glyphBandW * 0.55;
-  const iconGrad = ctx.createLinearGradient(0, 0, 0, 24);
-  iconGrad.addColorStop(0.0, '#2a4a4a');
-  iconGrad.addColorStop(0.25, '#80c0b8');
-  iconGrad.addColorStop(0.5, '#c8ece8');
-  iconGrad.addColorStop(0.75, '#80c0b8');
-  iconGrad.addColorStop(1.0, '#2a4a4a');
 
-  for (let i = 0; i < 12; i++) {
-    const centerAngle = (-(i * 30 + 15) - 90 + rot) * Math.PI / 180;
+  ctx.strokeStyle = 'rgba(100,160,155,0.35)';
+  
+  for (let sign = 0; sign < 12; sign++) {
+    // Icons
+    const centerAngle = (-(sign * 30 + 15) - 90 + rot) * Math.PI / 180;
     const ix = cx + iconR * Math.cos(centerAngle);
     const iy = cy + iconR * Math.sin(centerAngle);
 
@@ -578,106 +557,146 @@ function tick() {
     ctx.rotate(centerAngle + Math.PI / 2);
     ctx.scale(iconScale, iconScale);
     ctx.translate(-12, -12);
-
+    
+    const iconGrad = ctx.createLinearGradient(0, 0, 0, 24);
+    iconGrad.addColorStop(0, '#2a4a4a');
+    iconGrad.addColorStop(0.5, '#c8ece8');
+    iconGrad.addColorStop(1, '#2a4a4a');
     ctx.strokeStyle = iconGrad;
     ctx.lineWidth = 2;
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
 
-    for (const d of ZODIAC_PATHS[i]) {
-      ctx.stroke(new Path2D(d));
+    // Use pre-compiled Path2D
+    const paths = ZODIAC_PATHS[sign];
+    for (let k = 0; k < paths.length; k++) {
+      ctx.stroke(paths[k]);
     }
     ctx.restore();
+
+    // Ticks (drawing lines relative to center)
+    for (let deg = 0; deg < 30; deg+=1) {
+       const angle = (-(sign * 30 + deg) - 90 + rot) * Math.PI / 180;
+       const isMajor = deg % 5 === 0;
+       const len = isMajor ? glyphBandW * 0.25 : glyphBandW * 0.15;
+       
+       const cA = Math.cos(angle);
+       const sA = Math.sin(angle);
+       
+       ctx.beginPath();
+       ctx.moveTo(cx + tickInner * cA, cy + tickInner * sA);
+       ctx.lineTo(cx + (tickInner + len) * cA, cy + (tickInner + len) * sA);
+       ctx.lineWidth = isMajor ? 0.8 : 0.4;
+       ctx.stroke();
+    }
   }
+  
+  ctx.restore(); // End ring drawing (inner save)
 
-  ctx.restore();
-
-  // ── Artist dots ─────────────────────────────────────────────────────────
+  // ── Artist dots ──────────────────────────────────
   ctx.save();
   ctx.globalCompositeOperation = 'lighter';
 
-  // Hit-test in both full-ring and zoomed modes
   let closestDot = null;
-  let closestDist = isZoomed ? 4 : 8; // tighter threshold when zoomed (canvas space)
+  // SQRT Optimization: Compare squared distances
+  let closestDistSq = isZoomed ? 16 : 64; 
 
-  // Convert mouse to canvas space when zoomed
   let hitX = mouseX, hitY = mouseY;
   if (isZoomed && mouseX >= 0) {
-    const scale = (h * 0.85) / bandWidth;
-    hitX = (mouseX - w / 2) / scale + cx;
-    hitY = (mouseY - h / 2) / scale + (cy - fullMidR);
+    const scale = viewScale;
+    const focusX = cx; 
+    const focusY = cy - fullMidR;
+    const tx = (w / 2 - focusX) * zoomProgress;
+    const ty = (h / 2 - focusY) * zoomProgress;
+    // inverse transform
+    hitX = (mouseX - (focusX + tx)) / scale + focusX;
+    hitY = (mouseY - (focusY + ty)) / scale + focusY;
   }
 
-  for (const dot of dots) {
+  for (let i = 0; i < dots.length; i++) {
+    const dot = dots[i];
     const angle = (-(dot.deg + dot.jA) - 90 + rot) * Math.PI / 180;
     const r = innerR + dot.jR * dotBand;
     const x = cx + r * Math.cos(angle);
     const y = cy + r * Math.sin(angle);
 
-    // Hit-test
+    // Hit Test
     if (hitX >= 0) {
       const dx = x - hitX;
       const dy = y - hitY;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < closestDist) {
-        closestDist = dist;
+      const distSq = dx*dx + dy*dy;
+      if (distSq < closestDistSq) {
+        closestDistSq = distSq;
         closestDot = dot;
       }
     }
 
     const isHovered = hoveredDot === dot;
-    // Scale up 1.5× since soft gradient edges look smaller than flat fills
-    const baseSize = dot.size * 1.5;
-    const drawSize = isHovered ? 7 : baseSize;
-    const drawAlpha = isHovered ? 1 : dot.alpha;
-    const dr = isHovered ? 255 : dot.r;
-    const dg = isHovered ? 255 : dot.g;
-    const db = isHovered ? 255 : dot.b;
-
-    // Glassy "sharkot ball" gradient — hard graphic edge
-    const grad = ctx.createRadialGradient(
-      x - drawSize * 0.35, y - drawSize * 0.35, drawSize * 0.05,
-      x, y, drawSize
-    );
-    const lr = Math.min(255, dr + 100);
-    const lg = Math.min(255, dg + 100);
-    const lb = Math.min(255, db + 100);
-    grad.addColorStop(0, `rgba(255, 255, 255, ${drawAlpha})`);
-    grad.addColorStop(0.2, `rgba(${lr}, ${lg}, ${lb}, ${drawAlpha * 0.95})`);
-    grad.addColorStop(0.5, `rgba(${dr}, ${dg}, ${db}, ${drawAlpha * 0.9})`);
-    grad.addColorStop(0.8, `rgba(${Math.round(dr * 0.5)}, ${Math.round(dg * 0.5)}, ${Math.round(db * 0.5)}, ${drawAlpha * 0.85})`);
-    grad.addColorStop(0.95, `rgba(${Math.round(dr * 0.3)}, ${Math.round(dg * 0.3)}, ${Math.round(db * 0.3)}, ${drawAlpha * 0.7})`);
-    grad.addColorStop(1, `rgba(${Math.round(dr * 0.1)}, ${Math.round(dg * 0.1)}, ${Math.round(db * 0.1)}, 0)`);
-
-    ctx.fillStyle = grad;
-    ctx.beginPath();
-    ctx.arc(x, y, drawSize, 0, Math.PI * 2);
-    ctx.fill();
-
-    // Label under the dot (zoomed mode only): name + sign + degree
-    if (isZoomed) {
+    
+    // Use Sprite
+    if (dot.sprite) {
+        if (isHovered) {
+             const drawSize = 7;
+             // Draw dynamic glow for hovered
+             const grad = ctx.createRadialGradient(x - drawSize*0.35, y - drawSize*0.35, drawSize*0.05, x, y, drawSize);
+             grad.addColorStop(0, `rgba(255,255,255,1)`);
+             grad.addColorStop(0.5, `rgba(${dot.r},${dot.g},${dot.b},0.9)`);
+             grad.addColorStop(1, `rgba(${Math.round(dot.r*0.1)},${Math.round(dot.g*0.1)},${Math.round(dot.b*0.1)},0)`);
+             ctx.fillStyle = grad;
+             ctx.beginPath();
+             ctx.arc(x, y, drawSize, 0, Math.PI*2);
+             ctx.fill();
+        } else {
+             // Draw cached sprite
+             ctx.drawImage(dot.sprite, x - dot.spriteHalf, y - dot.spriteHalf);
+        }
+    }
+  }
+  
+  // Render Labels (Second pass to ensure on top, only if zoomed)
+  if (isZoomed) {
       ctx.save();
       ctx.globalCompositeOperation = 'source-over';
-      const degInSign = Math.round((dot.deg % 30) * 10) / 10;
-      if (isHovered) {
+      
+      for (let i = 0; i < dots.length; i++) {
+        const dot = dots[i];
+        if (dot === hoveredDot) continue; 
+        
+        // Simple alpha check culling
+        if (dot.alpha <= 0.3) continue;
+
+        const angle = (-(dot.deg + dot.jA) - 90 + rot) * Math.PI / 180;
+        const r = innerR + dot.jR * dotBand;
+        const x = cx + r * Math.cos(angle);
+        const y = cy + r * Math.sin(angle);
+        
+        ctx.font = '1.3px monospace';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'top';
+        ctx.fillStyle = `rgba(${dot.r}, ${dot.g}, ${dot.b}, ${dot.alpha})`;
+        ctx.fillText(dot.name, x, y + dot.size*1.5 + 0.95);
+      }
+      
+      // Draw Hovered Label on top
+      if (closestDot) {
+        const dot = closestDot;
+        const angle = (-(dot.deg + dot.jA) - 90 + rot) * Math.PI / 180;
+        const r = innerR + dot.jR * dotBand;
+        const x = cx + r * Math.cos(angle);
+        const y = cy + r * Math.sin(angle);
+        const degInSign = Math.round((dot.deg % 30) * 10) / 10;
+        
         ctx.font = '2.2px monospace';
         ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'top';
-        ctx.fillText(dot.name, x, y + drawSize + 0.8);
+        ctx.fillText(dot.name, x, y + 7 + 0.8);
         ctx.font = '1.8px monospace';
         ctx.fillStyle = `rgba(${dot.r}, ${dot.g}, ${dot.b}, 1)`;
-        ctx.fillText(`${dot.sign} ${degInSign}°`, x, y + drawSize + 2.8);
-      } else {
-        ctx.font = '1.3px monospace';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'top';
-        ctx.fillStyle = `rgba(${dot.r}, ${dot.g}, ${dot.b}, ${dot.alpha * 1})`;
-        ctx.fillText(dot.name, x, y + drawSize + 0.95);
+        ctx.fillText(`${dot.sign} ${degInSign}°`, x, y + 7 + 2.8);
       }
+      
       ctx.restore();
-    }
-
   }
 
   const prevHovered = hoveredDot;
@@ -687,22 +706,19 @@ function tick() {
   } else if (document.body.style.cursor) {
     document.body.style.cursor = '';
   }
-  // Notify listener when hovered dot changes
   if (hoverCallback && hoveredDot !== prevHovered) {
     hoverCallback(hoveredDot ? { name: hoveredDot.name, genres: hoveredDot.genres } : null);
   }
 
-  ctx.restore();
+  ctx.restore(); // End Dots save
 
-  // ── Preview dot (soft glow while typing birth date) ────────────────────
+  // ── User's Venus / Preview ──────────────────────────────
   if (previewDot && !userDot) {
     const angle = (-(previewDot.deg) - 90 + rot) * Math.PI / 180;
     const x = cx + midR * Math.cos(angle);
     const y = cy + midR * Math.sin(angle);
-
     ctx.save();
     ctx.globalCompositeOperation = 'lighter';
-    // Gentle breathing (slower + subtler than user dot)
     const breath = 0.3 + 0.15 * Math.sin(performance.now() / 600);
     const glowR = isZoomed ? 8 : 16;
     const grad = ctx.createRadialGradient(x, y, 0, x, y, glowR);
@@ -715,10 +731,9 @@ function tick() {
     ctx.restore();
   }
 
-  // ── User's Venus dot (glassy ball + slow radiating glow) ────────────────
   if (userDot) {
     const t = (performance.now() - userDot.birth) / 1000;
-    const pulse = 1 + 0.15 * Math.sin(t * 0.8); // slow, subtle pulse
+    const pulse = 1 + 0.15 * Math.sin(t * 0.8);
     const angle = (-(userDot.deg) - 90 + rot) * Math.PI / 180;
     const x = cx + midR * Math.cos(angle);
     const y = cy + midR * Math.sin(angle);
@@ -727,42 +742,30 @@ function tick() {
     const glowR = isZoomed ? 9 : 16;
     const { r: ur, g: ug, b: ub } = userDot;
 
-    // All in one 'lighter' pass (same as artist dots — works on iOS)
     ctx.save();
     ctx.globalCompositeOperation = 'lighter';
-
-    // Outer radiating glow
+    
     const glow = ctx.createRadialGradient(x, y, 0, x, y, glowR * pulse);
     glow.addColorStop(0, `rgba(${ur}, ${ug}, ${ub}, 0.5)`);
-    glow.addColorStop(0.3, `rgba(${ur}, ${ug}, ${ub}, 0.2)`);
     glow.addColorStop(1, `rgba(${ur}, ${ug}, ${ub}, 0)`);
     ctx.beginPath();
     ctx.arc(x, y, glowR * pulse, 0, Math.PI * 2);
     ctx.fillStyle = glow;
     ctx.fill();
 
-    // Glassy ball (offset highlight, same technique as artist dots)
-    const lr = Math.min(255, ur + 100);
-    const lg = Math.min(255, ug + 100);
-    const lb = Math.min(255, ub + 100);
     const ball = ctx.createRadialGradient(
       x - ballR * 0.35, y - ballR * 0.35, ballR * 0.05,
       x, y, ballR
     );
     ball.addColorStop(0, `rgba(255, 255, 255, 1)`);
-    ball.addColorStop(0.2, `rgba(${lr}, ${lg}, ${lb}, 0.95)`);
     ball.addColorStop(0.5, `rgba(${ur}, ${ug}, ${ub}, 0.9)`);
-    ball.addColorStop(0.8, `rgba(${Math.round(ur * 0.5)}, ${Math.round(ug * 0.5)}, ${Math.round(ub * 0.5)}, 0.85)`);
-    ball.addColorStop(0.95, `rgba(${Math.round(ur * 0.3)}, ${Math.round(ug * 0.3)}, ${Math.round(ub * 0.3)}, 0.7)`);
     ball.addColorStop(1, `rgba(${Math.round(ur * 0.1)}, ${Math.round(ug * 0.1)}, ${Math.round(ub * 0.1)}, 0)`);
     ctx.beginPath();
     ctx.arc(x, y, ballR, 0, Math.PI * 2);
     ctx.fillStyle = ball;
     ctx.fill();
-
     ctx.restore();
 
-    // "You" label under the user dot
     ctx.save();
     ctx.globalCompositeOperation = 'source-over';
     if (isZoomed) {
@@ -781,10 +784,7 @@ function tick() {
     ctx.restore();
   }
 
-  // Restore zoom transform
-  if (isZoomed) {
-    ctx.restore();
-  }
+  if (isZoomed) ctx.restore(); // final restore for zoom transform
 }
 
 export function destroyNebula() {
@@ -794,6 +794,7 @@ export function destroyNebula() {
   canvas = null;
   ctx = null;
   dots = [];
+  spriteCache.clear();
   userDot = null;
   previewDot = null;
   hoveredDot = null;
