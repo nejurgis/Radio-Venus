@@ -28,6 +28,7 @@ let silentFailTimer = null;        // detect videos that never start
 let loadingInterval = null;        // loading progress animation
 let loadStartTime = 0;
 const SILENT_FAIL_MS = 15000;
+let activeGenreLabel = null;       // label of the currently playing genre
 
 // ── Init ────────────────────────────────────────────────────────────────────
 
@@ -237,6 +238,7 @@ async function onDateSubmit(d, m, y) {
     showNebula(true);
     dimNebula(true);
     showScreen('genre');
+    updateNowPlayingButton(true);
     history.pushState({ screen: 'genre' }, '');
   });
 
@@ -253,6 +255,7 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
   currentTrackIndex = 0;
   failedIds.clear();
   trackVideoIndex.clear();
+  activeGenreLabel = subgenreId ? `${genreLabel} · ${subgenreId}` : genreLabel;
 
   renderRadioHeader(venus.sign, genreLabel, subgenreId);
   showNebula(true);
@@ -378,6 +381,28 @@ function shuffleTracks() {
   renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds);
 }
 
+// ── Now-playing button on genre screen ────────────────────────────────────
+
+function updateNowPlayingButton(show) {
+  const btn = document.getElementById('btn-now-playing');
+  if (!btn) return;
+  if (show && tracks.length > 0 && activeGenreLabel) {
+    document.getElementById('btn-np-label').textContent = activeGenreLabel;
+    btn.hidden = false;
+  } else {
+    btn.hidden = true;
+  }
+}
+
+document.getElementById('btn-now-playing').addEventListener('click', () => {
+  showNebula(true);
+  dimNebula(false);
+  deepDimNebula(true);
+  setZoomDrift(true);
+  showScreen('radio');
+  history.pushState({ screen: 'radio' }, '');
+});
+
 // ── Radio controls ──────────────────────────────────────────────────────────
 
 document.addEventListener('click', e => {
@@ -423,17 +448,20 @@ window.addEventListener('popstate', (e) => {
       showScreen('portal');
       showNebula(true);
       dimNebula(false);
+      updateNowPlayingButton(false);
       zoomOut({ duration: 1800 });
       break;
     case 'reveal':
       showNebula(true);
       dimNebula(false);
       showScreen('reveal');
+      updateNowPlayingButton(false);
       break;
     case 'genre':
       showNebula(true);
       dimNebula(true);
       showScreen('genre');
+      updateNowPlayingButton(true);
       break;
     case 'radio':
       showNebula(true);

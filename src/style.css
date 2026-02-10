@@ -307,6 +307,36 @@ html, body {
   pointer-events: none;
 }
 
+.btn-now-playing {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: color 0.2s, border-color 0.2s;
+  z-index: 2;
+  white-space: nowrap;
+}
+
+.btn-now-playing:hover {
+  color: var(--text-bright);
+  border-color: var(--accent);
+}
+
+.btn-np-arrow {
+  font-size: 0.85rem;
+}
+
 .genre-heading {
   font-family: var(--font-mono);
   font-size: 66.66%;
