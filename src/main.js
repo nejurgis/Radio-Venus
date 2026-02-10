@@ -113,11 +113,14 @@ function setupDateInput() {
   const errorEl = document.getElementById('date-error');
   const fields = [dayEl, monthEl, yearEl];
 
-  // Auto-advance focus on 2 digits
-  function onFieldInput(el, nextEl, maxLen) {
+  // Auto-advance focus — smart single-digit advance for day/month
+  function onFieldInput(el, nextEl, maxLen, smartMin) {
     el.addEventListener('input', () => {
       el.value = el.value.replace(/\D/g, '');
       if (el.value.length >= maxLen && nextEl) {
+        nextEl.focus();
+      } else if (smartMin && el.value.length === 1 && parseInt(el.value) >= smartMin && nextEl) {
+        el.value = '0' + el.value;
         nextEl.focus();
       }
       validateAndToggle();
@@ -137,8 +140,8 @@ function setupDateInput() {
     });
   }
 
-  onFieldInput(dayEl, monthEl, 2);
-  onFieldInput(monthEl, yearEl, 2);
+  onFieldInput(dayEl, monthEl, 2, 4);   // day 4-9 → auto-advance (no valid 2nd digit)
+  onFieldInput(monthEl, yearEl, 2, 2);  // month 2-9 → auto-advance (20+ invalid)
   onFieldInput(yearEl, null, 4);
   onFieldKeydown(dayEl, null);
   onFieldKeydown(monthEl, dayEl);
