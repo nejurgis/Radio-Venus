@@ -216,7 +216,6 @@ async function onDateSubmit(d, m, y) {
   portalScreen.classList.add('is-fading');
   await zoomToSign(signIndex, { duration: 2500 });
   showScreen('reveal');
-  portalScreen.classList.remove('is-fading');
   history.pushState({ screen: 'reveal' }, '');
 
   // Set up genre screen
@@ -392,6 +391,7 @@ function updateNowPlayingButton(show) {
     const title = getVideoTitle();
     const label = title ? `${artist} — ${title}` : artist || activeGenreLabel;
     document.getElementById('btn-np-label').textContent = label;
+    document.getElementById('btn-np-label-dup').textContent = label;
     btn.hidden = false;
   } else {
     btn.hidden = true;
@@ -450,6 +450,7 @@ window.addEventListener('popstate', (e) => {
   switch (screen) {
     case 'portal':
       showScreen('portal');
+      document.getElementById('screen-portal').classList.remove('is-fading');
       showNebula(true);
       dimNebula(false);
       updateNowPlayingButton(false);
