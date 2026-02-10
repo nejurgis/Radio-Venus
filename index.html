@@ -5,11 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Radio Venus</title>
   <link rel="icon" href="/Radio-Venus/favicon.svg" type="image/svg+xml" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/Radio-Venus/assets/index-ccGlTC1k.js"></script>
-  <link rel="stylesheet" crossorigin href="/Radio-Venus/assets/index-wzb_zvZW.css">
+  <script type="importmap">
+    { "imports": { "astronomy-engine": "/node_modules/astronomy-engine/esm/astronomy.js" } }
+  </script>
+  <script type="module" crossorigin src="/Radio-Venus/assets/index-CkUPJKD0.js"></script>
+  <link rel="stylesheet" crossorigin href="/Radio-Venus/assets/index-BJsqHZYA.css">
 </head>
 <body>
 
@@ -24,9 +28,9 @@
       <div class="date-input-group">
         <div class="date-fields">
           <input type="text" id="input-day" class="date-field" placeholder="DD" maxlength="2" inputmode="numeric" autocomplete="off" />
-          <span class="date-sep">/</span>
+          <span class="date-sep">●</span>
           <input type="text" id="input-month" class="date-field" placeholder="MM" maxlength="2" inputmode="numeric" autocomplete="off" />
-          <span class="date-sep">/</span>
+          <span class="date-sep">●</span>
           <input type="text" id="input-year" class="date-field date-field--year" placeholder="YYYY" maxlength="4" inputmode="numeric" autocomplete="off" />
         </div>
         <button id="btn-enter" class="btn-primary" disabled>Enter</button>

@@ -9,10 +9,10 @@
       "element": "air"
     },
     "genres": [
-      "darkwave"
+      "artpop"
     ],
     "subgenres": [
-      "synth-pop"
+      "art-rock"
     ],
     "youtubeVideoId": "ikP-a49YbwU",
     "backupVideoIds": [
@@ -35,7 +35,7 @@
     "subgenres": [
       "darkwave"
     ],
-    "youtubeVideoId": "EWxFJuE6nkI",
+    "youtubeVideoId": "rWEPi4wPRFw",
     "backupVideoIds": [
       "GY5WUXdF7c0",
       "FDegghwtToc"
@@ -120,15 +120,13 @@
       "element": "water"
     },
     "genres": [
-      "jazz",
-      "artpop",
-      "idm"
+      "jazz"
     ],
     "subgenres": [
-      "spiritual-jazz",
-      "idm"
+      "free-jazz",
+      "spiritual-jazz"
     ],
-    "youtubeVideoId": "z6vmVmockt0",
+    "youtubeVideoId": "xWsIG5sNq1Q",
     "backupVideoIds": [
       "xWsIG5sNq1Q",
       "ABVjU9nf5oM"
@@ -313,17 +311,15 @@
     },
     "genres": [
       "idm",
-      "techno",
       "darkwave",
       "industrial"
     ],
     "subgenres": [
       "idm",
-      "techno",
       "darkwave",
       "industrial"
     ],
-    "youtubeVideoId": "RkXkcqNtWn8",
+    "youtubeVideoId": "p2WyFrFi-CI",
     "backupVideoIds": [
       "W3qkPT9Ed1s",
       "rdfs-UInz-A"
@@ -370,7 +366,7 @@
       "minimalist",
       "experimental"
     ],
-    "youtubeVideoId": "B5zqUw6HrxE",
+    "youtubeVideoId": "vXbAfntiisI",
     "backupVideoIds": [
       "d2SUQ5-N2QA",
       "xnFcuEwEM94"
@@ -489,6 +485,25 @@
     ]
   },
   {
+    "name": "Angel-Ho",
+    "birthDate": "1994-01-01",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 7.1,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "industrial",
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "youtubeVideoId": "kWZ4EfQnF3w",
+    "backupVideoIds": []
+  },
+  {
     "name": "Angelo Frondoni",
     "birthDate": "1809-02-26",
     "venus": {
@@ -583,19 +598,16 @@
       "element": "air"
     },
     "genres": [
-      "darkwave",
-      "classical",
       "ambient",
-      "artpop",
-      "idm"
+      "classical",
+      "darkwave"
     ],
     "subgenres": [
-      "darkwave",
-      "classical",
       "ambient",
-      "idm"
+      "classical",
+      "darkwave"
     ],
-    "youtubeVideoId": "EU7_YDSlyP4",
+    "youtubeVideoId": "1x11nd1Ft-4",
     "backupVideoIds": [
       "1x11nd1Ft-4",
       "QpxBgVW2A8I"
@@ -618,7 +630,7 @@
       "synth-pop",
       "darkwave"
     ],
-    "youtubeVideoId": "itKVM16wZzA",
+    "youtubeVideoId": "9g_qzNs6oNE",
     "backupVideoIds": [
       "htKb4UxdtgE",
       "E43hTHbiD_U"
@@ -655,15 +667,12 @@
       "element": "fire"
     },
     "genres": [
-      "jazz",
-      "artpop",
-      "idm"
+      "jazz"
     ],
     "subgenres": [
-      "spiritual-jazz",
-      "idm"
+      "free-jazz"
     ],
-    "youtubeVideoId": "UzeoNySCpIE",
+    "youtubeVideoId": "TLMaE-kGr4k",
     "backupVideoIds": [
       "ArWOTP2x9BU",
       "xpop6gO30EQ"
@@ -680,19 +689,13 @@
     },
     "genres": [
       "techno",
-      "idm",
-      "darkwave",
-      "classical",
-      "ambient"
+      "darkwave"
     ],
     "subgenres": [
       "techno",
-      "idm",
-      "darkwave",
-      "classical",
-      "ambient"
+      "darkwave"
     ],
-    "youtubeVideoId": "hZOIMtTJiso",
+    "youtubeVideoId": "sl3TFF9TvvI",
     "backupVideoIds": [
       "rnG2HskuiZo",
       "x-sxBsqfds0"
@@ -862,13 +865,13 @@
       "element": "fire"
     },
     "genres": [
-      "jazz",
-      "artpop"
+      "jazz"
     ],
     "subgenres": [
+      "free-jazz",
       "spiritual-jazz"
     ],
-    "youtubeVideoId": "jowg5wGKNrU",
+    "youtubeVideoId": "8CQ2Bpi00tk",
     "backupVideoIds": [
       "iJpV0jS7wYY",
       "uK76sWSmwMY"
@@ -1165,6 +1168,25 @@
     ]
   },
   {
+    "name": "Babyfather",
+    "birthDate": "1984-02-08",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 16.8,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "triphop",
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "youtubeVideoId": "ysCedXhbwiw",
+    "backupVideoIds": []
+  },
+  {
     "name": "Bar Italia",
     "birthDate": "2019-00-00",
     "venus": {
@@ -1175,14 +1197,12 @@
     },
     "genres": [
       "darkwave",
-      "idm",
       "artpop"
     ],
     "subgenres": [
-      "darkwave",
-      "idm"
+      "art-rock"
     ],
-    "youtubeVideoId": "3M6AvCq268Q",
+    "youtubeVideoId": "qNCk8Dgmvqk",
     "backupVideoIds": [
       "dUYU5RNyiYo",
       "7pNyFniC5tc"
@@ -1467,7 +1487,7 @@
       "idm",
       "ambient"
     ],
-    "youtubeVideoId": "9JE6rUwfckI",
+    "youtubeVideoId": "fW7AUFadFGo",
     "backupVideoIds": [
       "gWwQrb3-BGY",
       "4P5nmO68XbA"
@@ -1483,14 +1503,12 @@
       "element": "air"
     },
     "genres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
     "subgenres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
-    "youtubeVideoId": "Cvb8m8Trh8c",
+    "youtubeVideoId": "LTHmxMlnD4w",
     "backupVideoIds": [
       "nCVz1pe-0oU",
       "Q2rad54BVak"
@@ -1513,7 +1531,7 @@
       "idm",
       "darkwave"
     ],
-    "youtubeVideoId": "EqMqb6A7deU",
+    "youtubeVideoId": "vIi57zhDl78",
     "backupVideoIds": [
       "Wv3G_nPgR4s",
       "lHSdQ6ZOzQY"
@@ -1554,8 +1572,6 @@
     },
     "genres": [
       "idm",
-      "industrial",
-      "darkwave",
       "ambient"
     ],
     "subgenres": [
@@ -1623,7 +1639,7 @@
     },
     "genres": [
       "triphop",
-      "techno"
+      "ambient"
     ],
     "subgenres": [
       "downtempo",
@@ -1746,10 +1762,10 @@
       "dubstep",
       "ambient"
     ],
-    "youtubeVideoId": "E2qLD9c3Gq4",
+    "youtubeVideoId": "IlEkvbRmfrA",
     "backupVideoIds": [
-      "o6OMwz2uXGM",
-      "swQdVtt0saA"
+      "wRPHQzXD-5k",
+      "9hI4bSCy9iE"
     ]
   },
   {
@@ -1807,14 +1823,12 @@
       "element": "air"
     },
     "genres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
     "subgenres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
-    "youtubeVideoId": "avpKLQ27Z3g",
+    "youtubeVideoId": "k6s1-caKRtQ",
     "backupVideoIds": [
       "wKeoWtqVNcg",
       "fvPUSW6HnYk"
@@ -2137,14 +2151,12 @@
     },
     "genres": [
       "jazz",
-      "artpop",
       "classical"
     ],
     "subgenres": [
-      "spiritual-jazz",
-      "classical"
+      "free-jazz"
     ],
-    "youtubeVideoId": "Ca4g1pRcbAI",
+    "youtubeVideoId": "LT4h3i36G4k",
     "backupVideoIds": [
       "_hheqQfFOh8",
       "KXUy_AvDdYg"
@@ -2160,17 +2172,13 @@
       "element": "fire"
     },
     "genres": [
-      "idm",
-      "darkwave",
       "artpop",
-      "techno"
+      "darkwave"
     ],
     "subgenres": [
-      "idm",
-      "darkwave",
-      "techno"
+      "darkwave"
     ],
-    "youtubeVideoId": "cfVryx20BoM",
+    "youtubeVideoId": "bZdCdpvofqQ",
     "backupVideoIds": [
       "pWEosXQGG2w",
       "JZtspsSPxQ4"
@@ -2228,16 +2236,14 @@
       "element": "fire"
     },
     "genres": [
-      "idm",
-      "darkwave",
-      "techno"
+      "artpop",
+      "darkwave"
     ],
     "subgenres": [
-      "idm",
-      "darkwave",
-      "techno"
+      "art-pop",
+      "synth-pop"
     ],
-    "youtubeVideoId": "39RxXGcf9-E",
+    "youtubeVideoId": "Rj6dwEBmBJA",
     "backupVideoIds": [
       "Eb2Nk3OHHhc",
       "E6oq5HCzG4c"
@@ -2261,7 +2267,7 @@
       "techno",
       "idm"
     ],
-    "youtubeVideoId": "SMjN7sv7WP4",
+    "youtubeVideoId": "vOiONgG0eGQ",
     "backupVideoIds": [
       "wDoK2sehsj8",
       "vZ4ag4BKOYc"
@@ -2284,7 +2290,7 @@
       "experimental",
       "ambient"
     ],
-    "youtubeVideoId": "uLsZVyDcypE",
+    "youtubeVideoId": "d9EiXmZPEqc",
     "backupVideoIds": [
       "GZoazol8NJE",
       "P3-9jILAvGQ"
@@ -2344,16 +2350,14 @@
       "element": "water"
     },
     "genres": [
-      "darkwave",
       "industrial",
-      "idm"
+      "darkwave"
     ],
     "subgenres": [
-      "darkwave",
       "industrial",
-      "idm"
+      "darkwave"
     ],
-    "youtubeVideoId": "p3-MhHkIIyA",
+    "youtubeVideoId": "2FZGba4hIq4",
     "backupVideoIds": [
       "dTS9_q4aiHM",
       "f3JIdczx5gA"
@@ -2476,15 +2480,13 @@
     },
     "genres": [
       "industrial",
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
     "subgenres": [
       "industrial",
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
-    "youtubeVideoId": "VMZMdwfvo6Y",
+    "youtubeVideoId": "tMGFI6vfjcE",
     "backupVideoIds": [
       "0trGVy6EefE",
       "tMGFI6vfjcE"
@@ -2509,7 +2511,7 @@
       "drone",
       "industrial"
     ],
-    "youtubeVideoId": "UthPKOmCEig",
+    "youtubeVideoId": "oV0QhDOhuKI",
     "backupVideoIds": [
       "nLDO1XFXDPw",
       "mY3hHQDPkkw"
@@ -2537,6 +2539,27 @@
     ]
   },
   {
+    "name": "Cooly G",
+    "birthDate": "1982-09-21",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 16.9,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "techno",
+      "dnb"
+    ],
+    "subgenres": [
+      "uk-garage",
+      "dubstep",
+      "house"
+    ],
+    "youtubeVideoId": "TKxKPkp_riY",
+    "backupVideoIds": []
+  },
+  {
     "name": "Dan Terminus",
     "birthDate": "1964-06-22",
     "venus": {
@@ -2546,12 +2569,10 @@
       "element": "air"
     },
     "genres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
     "subgenres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
     "youtubeVideoId": "nBhgTt7xNh0",
     "backupVideoIds": [
@@ -2604,6 +2625,26 @@
     ]
   },
   {
+    "name": "Darkstar",
+    "birthDate": "1985-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 26.9,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "synth-pop",
+      "dubstep"
+    ],
+    "youtubeVideoId": "02XLLA-lZqI",
+    "backupVideoIds": []
+  },
+  {
     "name": "Datach'i",
     "birthDate": "1977-06-15",
     "venus": {
@@ -2643,7 +2684,7 @@
       "idm",
       "electro"
     ],
-    "youtubeVideoId": "-Dp0jL8VSKU",
+    "youtubeVideoId": "QJN8BOeYezE",
     "backupVideoIds": [
       "OyEFTSO79iU",
       "wLpy_vgWs8g"
@@ -2659,16 +2700,13 @@
       "element": "air"
     },
     "genres": [
-      "idm",
       "darkwave",
-      "industrial"
+      "artpop"
     ],
     "subgenres": [
-      "idm",
-      "darkwave",
-      "industrial"
+      "darkwave"
     ],
-    "youtubeVideoId": "pSozvePvdek",
+    "youtubeVideoId": "DO2ghmMVE0Y",
     "backupVideoIds": [
       "vokw268XFaY",
       "cXzppoqAaRc"
@@ -2691,7 +2729,7 @@
       "techno",
       "idm"
     ],
-    "youtubeVideoId": "efuSgHmVoRc",
+    "youtubeVideoId": "bSFHabd3OKs",
     "backupVideoIds": [
       "K3HQzfOKZKc",
       "T-u3HRaPb98"
@@ -2728,13 +2766,11 @@
       "element": "earth"
     },
     "genres": [
-      "idm",
-      "triphop",
-      "industrial"
+      "artpop",
+      "idm"
     ],
     "subgenres": [
-      "experimental",
-      "noise"
+      "experimental"
     ],
     "youtubeVideoId": "OuK_eqGCPC0",
     "backupVideoIds": [
@@ -2873,7 +2909,7 @@
       "industrial",
       "idm"
     ],
-    "youtubeVideoId": "BhrjXCylhNk",
+    "youtubeVideoId": "j9mJ2qwRetQ",
     "backupVideoIds": [
       "Cq2Q9lP5Yj0",
       "7arQH6ldri8"
@@ -2943,6 +2979,25 @@
       "jSr4MhW3Tgw",
       "zdZBDXG82OU"
     ]
+  },
+  {
+    "name": "DJ Rashad",
+    "birthDate": "1979-10-09",
+    "venus": {
+      "sign": "Libra",
+      "degree": 27.6,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "dnb",
+      "techno"
+    ],
+    "subgenres": [
+      "footwork"
+    ],
+    "youtubeVideoId": "UH9J-5cVncM",
+    "backupVideoIds": []
   },
   {
     "name": "DJ Shadow",
@@ -3044,10 +3099,10 @@
       "element": "earth"
     },
     "genres": [
-      "jazz",
-      "artpop"
+      "jazz"
     ],
     "subgenres": [
+      "free-jazz",
       "spiritual-jazz"
     ],
     "youtubeVideoId": "dt97Sn6lM_U",
@@ -3201,15 +3256,13 @@
     },
     "genres": [
       "darkwave",
-      "idm",
-      "industrial"
+      "artpop"
     ],
     "subgenres": [
-      "darkwave",
-      "idm",
-      "industrial"
+      "synth-pop",
+      "new-wave"
     ],
-    "youtubeVideoId": "BpWrSTBP5rg",
+    "youtubeVideoId": "1Rq_AuwT5-o",
     "backupVideoIds": [
       "BLwOPYjIjx8",
       "xXMNX5xljZs"
@@ -3225,14 +3278,12 @@
       "element": "fire"
     },
     "genres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
     "subgenres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
-    "youtubeVideoId": "lcd4y6yYe1s",
+    "youtubeVideoId": "OOz79-Akyzw",
     "backupVideoIds": [
       "09oAM_mU0AE",
       "Q2rad54BVak"
@@ -3277,7 +3328,7 @@
       "art-pop",
       "experimental-pop"
     ],
-    "youtubeVideoId": "cic-uQv4tIA",
+    "youtubeVideoId": "Rp8Fqs7TdGk",
     "backupVideoIds": [
       "-icgM6KsDkA",
       "xsUocU4y9hA"
@@ -3425,14 +3476,14 @@
       "element": "air"
     },
     "genres": [
-      "idm",
-      "darkwave"
+      "darkwave",
+      "techno"
     ],
     "subgenres": [
-      "idm",
-      "darkwave"
+      "darkwave",
+      "techno"
     ],
-    "youtubeVideoId": "LE5HcLE-Zo8",
+    "youtubeVideoId": "_7sVSSb2mU4",
     "backupVideoIds": [
       "uXr4lXYjXuU",
       "s3vpH3A_eTA"
@@ -3562,13 +3613,12 @@
     },
     "genres": [
       "darkwave",
-      "idm"
+      "artpop"
     ],
     "subgenres": [
-      "darkwave",
-      "idm"
+      "synth-pop"
     ],
-    "youtubeVideoId": "3MAXG35YPsQ",
+    "youtubeVideoId": "FPXteUWT6r0",
     "backupVideoIds": [
       "wdiihv3Vl8w",
       "NGNd3E8xuIU"
@@ -3584,13 +3634,12 @@
       "element": "air"
     },
     "genres": [
-      "jazz",
-      "artpop"
+      "jazz"
     ],
     "subgenres": [
-      "spiritual-jazz"
+      "free-jazz"
     ],
-    "youtubeVideoId": "zZ1M33RFpFY",
+    "youtubeVideoId": "AGcyUY7svr4",
     "backupVideoIds": [
       "oPiDFQJ15P8",
       "AGcyUY7svr4"
@@ -3777,13 +3826,10 @@
       "element": "fire"
     },
     "genres": [
-      "idm",
       "artpop"
     ],
-    "subgenres": [
-      "idm"
-    ],
-    "youtubeVideoId": "hspqz2Rc4d0",
+    "subgenres": [],
+    "youtubeVideoId": "fNWcpN5eQ48",
     "backupVideoIds": [
       "fNWcpN5eQ48",
       "bRCQgsa1Azo"
@@ -3800,12 +3846,10 @@
     },
     "genres": [
       "darkwave",
-      "idm",
       "industrial"
     ],
     "subgenres": [
       "darkwave",
-      "idm",
       "industrial"
     ],
     "youtubeVideoId": "ypINKMapdE0",
@@ -3813,6 +3857,26 @@
       "AOBSz3xSjDM",
       "UK4jsnxiNpo"
     ]
+  },
+  {
+    "name": "Fatima Al Qadiri",
+    "birthDate": "1981-07-01",
+    "venus": {
+      "sign": "Leo",
+      "degree": 2,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "idm",
+      "dnb"
+    ],
+    "subgenres": [
+      "grime",
+      "experimental"
+    ],
+    "youtubeVideoId": "XM8na3eeYVE",
+    "backupVideoIds": []
   },
   {
     "name": "Federico Chueca",
@@ -3972,6 +4036,25 @@
     ]
   },
   {
+    "name": "Fhloston Paradigm",
+    "birthDate": "1968-11-26",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 14,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "techno",
+      "ambient"
+    ],
+    "subgenres": [
+      "house"
+    ],
+    "youtubeVideoId": "eD3rcbf0Vyk",
+    "backupVideoIds": []
+  },
+  {
     "name": "Fiona Apple",
     "birthDate": "1977-09-13",
     "venus": {
@@ -3987,7 +4070,7 @@
     "subgenres": [
       "classical"
     ],
-    "youtubeVideoId": "wB09p4MF7gw",
+    "youtubeVideoId": "ki1nvcNbYH8",
     "backupVideoIds": [
       "XU46O2QzYF0",
       "Z7nekCeeRyg"
@@ -4012,7 +4095,7 @@
       "experimental",
       "noise"
     ],
-    "youtubeVideoId": "u31thuMehjM",
+    "youtubeVideoId": "JLIV7pG0gd8",
     "backupVideoIds": [
       "5we6E17qRDI",
       "zVmYhm1yVtw"
@@ -4028,13 +4111,12 @@
       "element": "water"
     },
     "genres": [
-      "idm",
       "triphop",
-      "techno"
+      "artpop"
     ],
     "subgenres": [
-      "idm",
-      "techno"
+      "trip-hop",
+      "art-pop"
     ],
     "youtubeVideoId": "E3RG4LGmSMY",
     "backupVideoIds": [
@@ -4052,10 +4134,10 @@
       "element": "fire"
     },
     "genres": [
-      "darkwave"
+      "artpop"
     ],
     "subgenres": [
-      "synth-pop"
+      "art-rock"
     ],
     "youtubeVideoId": "kVE4aOUX2iM",
     "backupVideoIds": [
@@ -4088,6 +4170,26 @@
     ]
   },
   {
+    "name": "Flowdan",
+    "birthDate": "1980-03-17",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 11.9,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "dnb",
+      "industrial"
+    ],
+    "subgenres": [
+      "grime",
+      "dub"
+    ],
+    "youtubeVideoId": "-yyHn0eGObk",
+    "backupVideoIds": []
+  },
+  {
     "name": "Flying Lotus",
     "birthDate": "1983-10-07",
     "venus": {
@@ -4110,6 +4212,25 @@
       "DtYckLpG2Mg",
       "TEgF9OhC7p8"
     ]
+  },
+  {
+    "name": "Foodman",
+    "birthDate": "1985-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 26.9,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "footwork",
+      "experimental"
+    ],
+    "youtubeVideoId": "oJ9wTLb1lsA",
+    "backupVideoIds": []
   },
   {
     "name": "Forward Strategy Group",
@@ -4230,7 +4351,7 @@
       "classical",
       "synth-pop"
     ],
-    "youtubeVideoId": "Dbp-O5N7x-w",
+    "youtubeVideoId": "BUW6lBS57Cc",
     "backupVideoIds": [
       "qlWf-Zj7CJM",
       "1GY8kmJdspo"
@@ -4336,14 +4457,12 @@
       "element": "fire"
     },
     "genres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
     "subgenres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
-    "youtubeVideoId": "WHpGFSIABw4",
+    "youtubeVideoId": "UV1AGT2dpAo",
     "backupVideoIds": [
       "CxdyRVOZpeQ",
       "QcPePz6pfQ8"
@@ -4928,16 +5047,13 @@
       "element": "air"
     },
     "genres": [
-      "darkwave",
-      "idm",
       "artpop",
-      "triphop"
+      "darkwave"
     ],
     "subgenres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
-    "youtubeVideoId": "F9urI2XgvNg",
+    "youtubeVideoId": "ksk5mthTR_c",
     "backupVideoIds": [
       "XQmBCL53QZY",
       "qxZ7C1hccf8"
@@ -5109,7 +5225,7 @@
       "darkwave",
       "industrial"
     ],
-    "youtubeVideoId": "VW8ahnRlkLU",
+    "youtubeVideoId": "Z2KB7y0fdpk",
     "backupVideoIds": [
       "_XhLIXjUtFg",
       "Z2KB7y0fdpk"
@@ -5302,15 +5418,14 @@
       "element": "fire"
     },
     "genres": [
-      "idm",
       "darkwave",
-      "dnb"
+      "techno"
     ],
     "subgenres": [
-      "idm",
-      "darkwave"
+      "darkwave",
+      "techno"
     ],
-    "youtubeVideoId": "aUFbN492-R0",
+    "youtubeVideoId": "M9SGYBHY0qs",
     "backupVideoIds": [
       "M9SGYBHY0qs",
       "-ROOEzNa3nY"
@@ -5644,13 +5759,13 @@
     },
     "genres": [
       "darkwave",
-      "idm"
+      "artpop"
     ],
     "subgenres": [
-      "darkwave",
-      "idm"
+      "synth-pop",
+      "new-wave"
     ],
-    "youtubeVideoId": "ld7j0i0jNtg",
+    "youtubeVideoId": "gL8WdjkPhdM",
     "backupVideoIds": [
       "dYfbxkzel6o",
       "NGNd3E8xuIU"
@@ -5990,12 +6105,10 @@
       "element": "air"
     },
     "genres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
     "subgenres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
     "youtubeVideoId": "YxL4cK6G_8U",
     "backupVideoIds": [
@@ -6020,7 +6133,7 @@
       "ambient",
       "experimental"
     ],
-    "youtubeVideoId": "CvzmVaXJizc",
+    "youtubeVideoId": "UKGhlAI2anU",
     "backupVideoIds": [
       "0y7adtAEH0Q",
       "QfcWu6qoo7Q"
@@ -6051,21 +6164,20 @@
   },
   {
     "name": "Hype Williams",
-    "birthDate": "1970-07-00",
+    "birthDate": "1984-02-08",
     "venus": {
-      "sign": "Leo",
-      "degree": 16.1,
+      "sign": "Capricorn",
+      "degree": 16.8,
       "decan": 2,
-      "element": "fire"
+      "element": "earth"
     },
     "genres": [
-      "idm",
-      "industrial",
-      "techno"
+      "triphop",
+      "idm"
     ],
     "subgenres": [
       "experimental",
-      "noise"
+      "dub"
     ],
     "youtubeVideoId": "BYTPiHTfKbA",
     "backupVideoIds": [
@@ -6129,6 +6241,26 @@
     "backupVideoIds": []
   },
   {
+    "name": "Ikonika",
+    "birthDate": "1985-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 26.9,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "techno",
+      "dnb"
+    ],
+    "subgenres": [
+      "dubstep",
+      "electro"
+    ],
+    "youtubeVideoId": "KFDuvmnnzBg",
+    "backupVideoIds": []
+  },
+  {
     "name": "Ildebrando D'Arcangelo",
     "birthDate": "1969-01-01",
     "venus": {
@@ -6144,6 +6276,45 @@
       "classical"
     ],
     "youtubeVideoId": "bxi1fDymXUQ",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Ill Blu",
+    "birthDate": "1988-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 12.6,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "techno",
+      "dnb"
+    ],
+    "subgenres": [
+      "uk-garage",
+      "house"
+    ],
+    "youtubeVideoId": "T622zo25WwE",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Inga Copeland",
+    "birthDate": "1985-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 26.9,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "idm",
+      "artpop"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "youtubeVideoId": "CsewLteZIio",
     "backupVideoIds": []
   },
   {
@@ -6587,21 +6758,36 @@
       "element": "air"
     },
     "genres": [
-      "idm",
       "artpop",
-      "ambient",
-      "darkwave"
+      "ambient"
     ],
     "subgenres": [
-      "idm",
-      "ambient",
-      "darkwave"
+      "ambient"
     ],
-    "youtubeVideoId": "7FhQybmoRvo",
+    "youtubeVideoId": "pPW9Qp45g74",
     "backupVideoIds": [
       "K8oUoD8dxnE",
       "XQtW4BRLQro"
     ]
+  },
+  {
+    "name": "Jessy Lanza",
+    "birthDate": "1985-09-03",
+    "venus": {
+      "sign": "Leo",
+      "degree": 7.5,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "darkwave",
+      "artpop"
+    ],
+    "subgenres": [
+      "synth-pop"
+    ],
+    "youtubeVideoId": "dqQAPY2bdfU",
+    "backupVideoIds": []
   },
   {
     "name": "Jiři Strniště",
@@ -6638,7 +6824,7 @@
       "minimal",
       "new-age"
     ],
-    "youtubeVideoId": "-fKeis-WFnQ",
+    "youtubeVideoId": "npiLTykuDus",
     "backupVideoIds": [
       "npiLTykuDus",
       "2A6FgZ1vH2U"
@@ -6672,12 +6858,14 @@
       "element": "air"
     },
     "genres": [
-      "idm"
+      "artpop",
+      "classical"
     ],
     "subgenres": [
-      "idm"
+      "chamber-pop",
+      "baroque-pop"
     ],
-    "youtubeVideoId": "6EHemagYSs8",
+    "youtubeVideoId": "TdPC1tvAcYo",
     "backupVideoIds": [
       "CBtVaHkJc4I",
       "1nz0t7K1prY"
@@ -6988,13 +7176,14 @@
       "element": "earth"
     },
     "genres": [
-      "jazz",
-      "artpop"
+      "jazz"
     ],
     "subgenres": [
-      "spiritual-jazz"
+      "spiritual-jazz",
+      "modal-jazz",
+      "free-jazz"
     ],
-    "youtubeVideoId": "JQvc-Gkwhow",
+    "youtubeVideoId": "4tncD1oA6i4",
     "backupVideoIds": [
       "4tncD1oA6i4",
       "xy_fxxj1mMY"
@@ -7011,12 +7200,10 @@
     },
     "genres": [
       "darkwave",
-      "idm",
       "ambient"
     ],
     "subgenres": [
       "darkwave",
-      "idm",
       "ambient"
     ],
     "youtubeVideoId": "KyGYK_v9rw4",
@@ -7024,6 +7211,26 @@
       "mIYPCxdkIzw",
       "qRA6THTrwx8"
     ]
+  },
+  {
+    "name": "Joker",
+    "birthDate": "1989-03-10",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 13.5,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "dnb",
+      "idm"
+    ],
+    "subgenres": [
+      "dubstep",
+      "grime"
+    ],
+    "youtubeVideoId": "0bIR_YmiuVw",
+    "backupVideoIds": []
   },
   {
     "name": "Jolán Máthé",
@@ -7094,14 +7301,13 @@
       "element": "earth"
     },
     "genres": [
-      "idm",
-      "jazz"
+      "jazz",
+      "artpop"
     ],
     "subgenres": [
-      "idm",
-      "spiritual-jazz"
+      "soul-jazz"
     ],
-    "youtubeVideoId": "qAZp5JfDmz4",
+    "youtubeVideoId": "zL1S8461znc",
     "backupVideoIds": [
       "XZLVYoO6r9g",
       "8PGITZmJrkE"
@@ -7268,7 +7474,7 @@
       "darkwave",
       "industrial"
     ],
-    "youtubeVideoId": "1EdUjlawLJM",
+    "youtubeVideoId": "zDtMbuF_sCA",
     "backupVideoIds": [
       "MStF-Yos4Es",
       "Xk5_g6ddCMk"
@@ -7341,15 +7547,13 @@
       "element": "air"
     },
     "genres": [
-      "idm",
-      "ambient",
-      "artpop"
+      "artpop",
+      "ambient"
     ],
     "subgenres": [
-      "experimental",
-      "ambient",
       "baroque-pop",
-      "art-pop"
+      "art-pop",
+      "ambient"
     ],
     "youtubeVideoId": "3HGOxuMecP0",
     "backupVideoIds": [
@@ -7475,7 +7679,7 @@
       "experimental",
       "drone"
     ],
-    "youtubeVideoId": "Tnh1ZvCyQqc",
+    "youtubeVideoId": "RiDUm54BcKE",
     "backupVideoIds": [
       "FQ8_4dyPJ2g",
       "YX6uUB1T_0w"
@@ -7629,20 +7833,15 @@
       "element": "water"
     },
     "genres": [
-      "idm",
       "triphop",
-      "jazz",
-      "techno",
       "dnb",
-      "ambient"
+      "artpop"
     ],
     "subgenres": [
-      "idm",
-      "spiritual-jazz",
-      "techno",
-      "ambient"
+      "trip-hop",
+      "art-pop"
     ],
-    "youtubeVideoId": "_GT9SmA1vlI",
+    "youtubeVideoId": "87SSDIEQoO8",
     "backupVideoIds": [
       "0q9LcifnTV4",
       "sMtj11kyb2A"
@@ -7670,6 +7869,26 @@
       "TI1KWU0bc2U",
       "4pDqsjooaJw"
     ]
+  },
+  {
+    "name": "King Midas Sound",
+    "birthDate": "1965-09-22",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 10.2,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "triphop",
+      "industrial"
+    ],
+    "subgenres": [
+      "dub",
+      "trip-hop"
+    ],
+    "youtubeVideoId": "HI8XhwncEW4",
+    "backupVideoIds": []
   },
   {
     "name": "Klaus Ager",
@@ -7767,21 +7986,19 @@
   },
   {
     "name": "Klein",
-    "birthDate": "1945-06-15",
+    "birthDate": "1994-01-01",
     "venus": {
-      "sign": "Taurus",
-      "degree": 8.7,
+      "sign": "Capricorn",
+      "degree": 7.1,
       "decan": 1,
       "element": "earth"
     },
     "genres": [
       "idm",
-      "ambient",
-      "industrial"
+      "ambient"
     ],
     "subgenres": [
-      "experimental",
-      "idm"
+      "experimental"
     ],
     "youtubeVideoId": "NXZXZypxQnw",
     "backupVideoIds": [
@@ -7805,11 +8022,32 @@
       "drone",
       "ambient"
     ],
-    "youtubeVideoId": "ODuS2y05uPU",
+    "youtubeVideoId": "P6cYQBLjLDQ",
     "backupVideoIds": [
       "b9KfQZ9yelg",
       "1A_PBLprJ0c"
     ]
+  },
+  {
+    "name": "Kode9",
+    "birthDate": "1973-01-01",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 17.1,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "dnb",
+      "idm"
+    ],
+    "subgenres": [
+      "dubstep",
+      "footwork",
+      "jungle"
+    ],
+    "youtubeVideoId": "zkQQwsRVUf4",
+    "backupVideoIds": []
   },
   {
     "name": "Korla Awgust Kocor",
@@ -7953,14 +8191,12 @@
       "element": "fire"
     },
     "genres": [
-      "idm",
       "techno",
       "ambient"
     ],
     "subgenres": [
       "experimental",
-      "techno",
-      "ambient"
+      "techno"
     ],
     "youtubeVideoId": "8TeMNkNEPeM",
     "backupVideoIds": [
@@ -8161,11 +8397,30 @@
       "minimalist",
       "ambient"
     ],
-    "youtubeVideoId": "1cIIfH7TayI",
+    "youtubeVideoId": "S7OIfY2dfqk",
     "backupVideoIds": [
       "jAaPvlpWNOg",
       "tBCdn4-bn4w"
     ]
+  },
+  {
+    "name": "Loraine James",
+    "birthDate": "1995-12-18",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 26,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "idm",
+      "techno"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "youtubeVideoId": "gQ3LQRep0MY",
+    "backupVideoIds": []
   },
   {
     "name": "Lorin Maazel",
@@ -8260,7 +8515,7 @@
       "darkwave",
       "industrial"
     ],
-    "youtubeVideoId": "yhaXBZl7zu8",
+    "youtubeVideoId": "-L41MhFPU9s",
     "backupVideoIds": [
       "izoST3hMBNA",
       "-L41MhFPU9s"
@@ -8283,7 +8538,7 @@
       "drone",
       "industrial"
     ],
-    "youtubeVideoId": "0mz14673i5A",
+    "youtubeVideoId": "k6PgftKbQnQ",
     "backupVideoIds": [
       "nLIu4B0xTCM",
       "e0SCUe5PsJw"
@@ -8367,7 +8622,7 @@
       "ambient",
       "neo-classical"
     ],
-    "youtubeVideoId": "4UqwhwKd8Nc",
+    "youtubeVideoId": "k0h9QGrsZ0w",
     "backupVideoIds": [
       "7Xfogas8p_M",
       "YYWYDG3Ump0"
@@ -8563,10 +8818,7 @@
     "genres": [
       "idm",
       "ambient",
-      "techno",
-      "darkwave",
-      "classical",
-      "triphop"
+      "techno"
     ],
     "subgenres": [
       "idm",
@@ -8612,15 +8864,13 @@
       "element": "air"
     },
     "genres": [
-      "ambient",
       "artpop",
-      "idm"
+      "ambient"
     ],
     "subgenres": [
-      "ambient",
-      "idm"
+      "ambient"
     ],
-    "youtubeVideoId": "hCNF5Y7SNYk",
+    "youtubeVideoId": "QTskdzJ1VCE",
     "backupVideoIds": [
       "8tOHWKuMjE4",
       "A-ykBIO9F4A"
@@ -8654,15 +8904,13 @@
       "element": "fire"
     },
     "genres": [
-      "idm",
-      "darkwave",
-      "artpop"
+      "artpop",
+      "techno"
     ],
     "subgenres": [
-      "idm",
-      "darkwave"
+      "art-pop"
     ],
-    "youtubeVideoId": "aAQZPBwz2CI",
+    "youtubeVideoId": "0-pXUCkcCgY",
     "backupVideoIds": [
       "Mb1gAP2U4x8",
       "BT-tx-Y5ZP0"
@@ -8678,12 +8926,10 @@
       "element": "water"
     },
     "genres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
     "subgenres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
     "youtubeVideoId": "q0RVXs3gXnY",
     "backupVideoIds": [
@@ -8707,7 +8953,7 @@
     "subgenres": [
       "synthwave"
     ],
-    "youtubeVideoId": "2vJ_1GDzBzc",
+    "youtubeVideoId": "Rf1PydBVzQI",
     "backupVideoIds": [
       "CactVeNcCxI",
       "Eha6KgS6pys"
@@ -8846,6 +9092,26 @@
     ]
   },
   {
+    "name": "Mark Pritchard",
+    "birthDate": "1971-05-13",
+    "venus": {
+      "sign": "Aries",
+      "degree": 23.9,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient",
+      "techno"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "3yMIOhL0kyU",
+    "backupVideoIds": []
+  },
+  {
     "name": "Martin L. Gore",
     "birthDate": "1961-07-23",
     "venus": {
@@ -8855,18 +9121,38 @@
       "element": "air"
     },
     "genres": [
-      "idm",
-      "darkwave"
+      "darkwave",
+      "ambient"
     ],
     "subgenres": [
-      "idm",
-      "darkwave"
+      "darkwave",
+      "ambient"
     ],
     "youtubeVideoId": "SYoPniPEf3o",
     "backupVideoIds": [
       "CFxaE6OURiw",
       "es1zimQq9Xk"
     ]
+  },
+  {
+    "name": "Martyn",
+    "birthDate": "1975-01-01",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 24,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "techno",
+      "dnb"
+    ],
+    "subgenres": [
+      "dubstep",
+      "house"
+    ],
+    "youtubeVideoId": "chSHwbw0iGk",
+    "backupVideoIds": []
   },
   {
     "name": "Massive Attack",
@@ -9009,16 +9295,12 @@
       "element": "earth"
     },
     "genres": [
-      "darkwave",
-      "idm",
-      "techno"
+      "darkwave"
     ],
     "subgenres": [
-      "darkwave",
-      "idm",
-      "techno"
+      "darkwave"
     ],
-    "youtubeVideoId": "jzHQ6vfnxxo",
+    "youtubeVideoId": "l3NoYyNKSXQ",
     "backupVideoIds": [
       "Uo0ihRd1Ji0",
       "kcPtMyOPgBw"
@@ -9045,6 +9327,26 @@
       "--0yWWe9ry8",
       "c98tDY4p-2M"
     ]
+  },
+  {
+    "name": "Mica Levi",
+    "birthDate": "1987-02-28",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 26.7,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "classical",
+      "ambient"
+    ],
+    "subgenres": [
+      "modern-classical",
+      "experimental"
+    ],
+    "youtubeVideoId": "Z_Cc20I-maM",
+    "backupVideoIds": []
   },
   {
     "name": "Michael Jarrell",
@@ -9257,7 +9559,7 @@
       "idm",
       "darkwave"
     ],
-    "youtubeVideoId": "_LGI5qAwKP8",
+    "youtubeVideoId": "RG7SgUlj05g",
     "backupVideoIds": [
       "dem4qBwWVdY",
       "gNuQCr_QNP0"
@@ -9296,10 +9598,11 @@
       "element": "water"
     },
     "genres": [
-      "idm"
+      "artpop",
+      "ambient"
     ],
     "subgenres": [
-      "experimental",
+      "art-pop",
       "ambient"
     ],
     "youtubeVideoId": "dAVPDFIZXdI",
@@ -9325,7 +9628,7 @@
       "techno",
       "idm"
     ],
-    "youtubeVideoId": "lP53ypyiqyM",
+    "youtubeVideoId": "EarSRa19sZc",
     "backupVideoIds": [
       "C4fAsLZYPwo",
       "xIYlShRavI0"
@@ -9384,13 +9687,13 @@
     },
     "genres": [
       "darkwave",
-      "idm"
+      "artpop"
     ],
     "subgenres": [
-      "darkwave",
-      "idm"
+      "synth-pop",
+      "new-wave"
     ],
-    "youtubeVideoId": "-Ok_xIC3xm8",
+    "youtubeVideoId": "WxZ9IFsGeXs",
     "backupVideoIds": [
       "dUYU5RNyiYo",
       "aqOnr8cRv8w"
@@ -9497,7 +9800,7 @@
       "idm",
       "ambient"
     ],
-    "youtubeVideoId": "J1kzMFnFSh0",
+    "youtubeVideoId": "PjaDGMRgXU0",
     "backupVideoIds": [
       "zdZE5JoTTPc",
       "hHQHRO_9Xmg"
@@ -9630,15 +9933,13 @@
     },
     "genres": [
       "darkwave",
-      "idm",
-      "industrial"
+      "techno"
     ],
     "subgenres": [
       "darkwave",
-      "idm",
-      "industrial"
+      "techno"
     ],
-    "youtubeVideoId": "c1GxjzHm5us",
+    "youtubeVideoId": "9-NFosnfd2c",
     "backupVideoIds": [
       "uThdFoa3sNY",
       "qGHDPbDYJdY"
@@ -9795,7 +10096,7 @@
       "idm",
       "techno"
     ],
-    "youtubeVideoId": "AGHMS_zh0zM",
+    "youtubeVideoId": "pJYL_YKhC10",
     "backupVideoIds": [
       "mx-bm2yz7ys",
       "h0l-Fk3Wf8k"
@@ -9837,7 +10138,7 @@
       "glitch",
       "experimental"
     ],
-    "youtubeVideoId": "IM27cRY_31s",
+    "youtubeVideoId": "t3WeS72cyyw",
     "backupVideoIds": [
       "t3WeS72cyyw",
       "iQfKPbfdp5s"
@@ -9866,6 +10167,25 @@
       "kjG6Q7Sz3jc",
       "_j0zh4vmvaQ"
     ]
+  },
+  {
+    "name": "Okzharp and Manthe Ribane",
+    "birthDate": "1985-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 26.9,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "techno",
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "youtubeVideoId": "2btaDYuVFfw",
+    "backupVideoIds": []
   },
   {
     "name": "Olga Borodina",
@@ -9959,15 +10279,13 @@
     },
     "genres": [
       "darkwave",
-      "idm",
-      "industrial"
+      "artpop"
     ],
     "subgenres": [
-      "darkwave",
-      "idm",
-      "industrial"
+      "synth-pop",
+      "new-wave"
     ],
-    "youtubeVideoId": "fVnsiFHfeAM",
+    "youtubeVideoId": "NtK4aF4zHdQ",
     "backupVideoIds": [
       "NtK4aF4zHdQ",
       "1i7jy-3CIQ4"
@@ -9983,13 +10301,10 @@
       "element": "water"
     },
     "genres": [
-      "jazz",
-      "artpop",
-      "idm"
+      "jazz"
     ],
     "subgenres": [
-      "spiritual-jazz",
-      "idm"
+      "free-jazz"
     ],
     "youtubeVideoId": "CblTx-tdVMA",
     "backupVideoIds": [
@@ -10139,18 +10454,12 @@
       "element": "air"
     },
     "genres": [
-      "techno",
-      "darkwave",
-      "classical",
-      "idm"
+      "techno"
     ],
     "subgenres": [
-      "techno",
-      "darkwave",
-      "classical",
-      "idm"
+      "techno"
     ],
-    "youtubeVideoId": "FO566BKY2Jc",
+    "youtubeVideoId": "MIM9-wOClmQ",
     "backupVideoIds": [
       "TrsAaX1u4HU",
       "CGBJVlY_yAY"
@@ -10215,7 +10524,7 @@
       "house",
       "techno"
     ],
-    "youtubeVideoId": "xnvpg80_BeY",
+    "youtubeVideoId": "hZDlAcn5yWk",
     "backupVideoIds": [
       "J51wha58y4g",
       "NYY4AGPJJBo"
@@ -10358,15 +10667,10 @@
       "element": "water"
     },
     "genres": [
-      "ambient",
-      "idm",
       "artpop"
     ],
-    "subgenres": [
-      "ambient",
-      "idm"
-    ],
-    "youtubeVideoId": "oply9BPy6nU",
+    "subgenres": [],
+    "youtubeVideoId": "KKqlxdh9pDE",
     "backupVideoIds": [
       "KKqlxdh9pDE",
       "O7x79AtDKEw"
@@ -10405,13 +10709,12 @@
     },
     "genres": [
       "darkwave",
-      "idm"
+      "artpop"
     ],
     "subgenres": [
-      "darkwave",
-      "idm"
+      "synth-pop"
     ],
-    "youtubeVideoId": "ENArDA1x0hE",
+    "youtubeVideoId": "ITLLWWdf0no",
     "backupVideoIds": [
       "dc_vZBvYqLA",
       "iQAiRNeZMYg"
@@ -10536,13 +10839,13 @@
       "element": "earth"
     },
     "genres": [
-      "jazz",
-      "artpop"
+      "jazz"
     ],
     "subgenres": [
-      "spiritual-jazz"
+      "spiritual-jazz",
+      "free-jazz"
     ],
-    "youtubeVideoId": "ii63fKLTSuU",
+    "youtubeVideoId": "ucdYt46DpX8",
     "backupVideoIds": [
       "ucdYt46DpX8",
       "BiMHewopOAY"
@@ -10604,12 +10907,10 @@
       "element": "earth"
     },
     "genres": [
-      "industrial",
-      "darkwave",
-      "artpop"
+      "artpop",
+      "darkwave"
     ],
     "subgenres": [
-      "industrial",
       "darkwave"
     ],
     "youtubeVideoId": "mxZtKK5TzdI",
@@ -10816,6 +11117,26 @@
     ]
   },
   {
+    "name": "Pressure",
+    "birthDate": "1965-09-22",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 10.2,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "industrial",
+      "techno"
+    ],
+    "subgenres": [
+      "dub",
+      "dub-techno"
+    ],
+    "youtubeVideoId": "eN9k6Dz1SX0",
+    "backupVideoIds": []
+  },
+  {
     "name": "Purelink",
     "birthDate": "2020-01-01",
     "venus": {
@@ -10834,7 +11155,7 @@
       "dub-techno",
       "downtempo"
     ],
-    "youtubeVideoId": "Do8c5JMwKqk",
+    "youtubeVideoId": "T4QhJEXF7MA",
     "backupVideoIds": [
       "w2iWpva3-yc",
       "T4QhJEXF7MA"
@@ -10960,12 +11281,12 @@
       "element": "fire"
     },
     "genres": [
-      "idm"
+      "artpop"
     ],
     "subgenres": [
-      "experimental"
+      "experimental-pop"
     ],
-    "youtubeVideoId": "1Cjd_jQoVkc",
+    "youtubeVideoId": "qrEmcwEVG6c",
     "backupVideoIds": [
       "w8ed4RIZed8",
       "gxQo7ndvhxs"
@@ -11203,7 +11524,7 @@
       "drone",
       "ambient"
     ],
-    "youtubeVideoId": "KZsWUUKW1hA",
+    "youtubeVideoId": "13N-piyq4sw",
     "backupVideoIds": [
       "s98IdjNmltI",
       "2eF1-NL7PXY"
@@ -11592,6 +11913,25 @@
     "backupVideoIds": []
   },
   {
+    "name": "Samiyam",
+    "birthDate": "1985-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 26.9,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "triphop",
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "youtubeVideoId": "VYJUOvIY1BU",
+    "backupVideoIds": []
+  },
+  {
     "name": "Schwefelgelb",
     "birthDate": "2004-06-15",
     "venus": {
@@ -11601,22 +11941,41 @@
       "element": "air"
     },
     "genres": [
-      "idm",
       "industrial",
       "darkwave",
       "techno"
     ],
     "subgenres": [
-      "idm",
       "industrial",
       "darkwave",
       "techno"
     ],
-    "youtubeVideoId": "Ek5MjpcmBoI",
+    "youtubeVideoId": "sz3WGYKGNYU",
     "backupVideoIds": [
       "wLpy_vgWs8g",
       "61FfMYvaUIg"
     ]
+  },
+  {
+    "name": "Scratcha DVA",
+    "birthDate": "1980-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 12,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "techno",
+      "dnb"
+    ],
+    "subgenres": [
+      "uk-garage",
+      "grime",
+      "house"
+    ],
+    "youtubeVideoId": "cN8AryMZRzU",
+    "backupVideoIds": []
   },
   {
     "name": "Sebastián Durón",
@@ -11652,7 +12011,7 @@
       "coldwave",
       "synth-pop"
     ],
-    "youtubeVideoId": "i3G2vYje3-k",
+    "youtubeVideoId": "sI9ZwiEPRkE",
     "backupVideoIds": [
       "tu4aYX2QXgU",
       "ete5t1z6KDM"
@@ -11668,14 +12027,12 @@
       "element": "earth"
     },
     "genres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
     "subgenres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
-    "youtubeVideoId": "Snt_MgkNhUc",
+    "youtubeVideoId": "jrY5gkEVTY4",
     "backupVideoIds": [
       "75YrZzjqtdE",
       "ub6rElEyXGc"
@@ -11697,7 +12054,7 @@
     "subgenres": [
       "idm"
     ],
-    "youtubeVideoId": "GJc0LqokkW4",
+    "youtubeVideoId": "lkDXEz58ntg",
     "backupVideoIds": [
       "HkBHp3IZ9ik",
       "DomTr_YkT8Q"
@@ -11837,7 +12194,7 @@
       "idm",
       "darkwave"
     ],
-    "youtubeVideoId": "YsVm6xidkSo",
+    "youtubeVideoId": "Orr2ZqtijCQ",
     "backupVideoIds": [
       "nhMQUw5Kln8",
       "V5bpvh4y6Tg"
@@ -11875,12 +12232,10 @@
       "element": "fire"
     },
     "genres": [
-      "idm",
       "dnb",
       "techno"
     ],
     "subgenres": [
-      "idm",
       "techno"
     ],
     "youtubeVideoId": "-DrlW5w5cpc",
@@ -11932,16 +12287,12 @@
       "element": "water"
     },
     "genres": [
-      "darkwave",
-      "idm",
-      "techno"
+      "darkwave"
     ],
     "subgenres": [
-      "darkwave",
-      "idm",
-      "techno"
+      "darkwave"
     ],
-    "youtubeVideoId": "bfIpG9C9F_4",
+    "youtubeVideoId": "EjppiXZLXtU",
     "backupVideoIds": [
       "jKihSKvI_Sw",
       "AmuIbz3s29Q"
@@ -11957,17 +12308,12 @@
       "element": "fire"
     },
     "genres": [
-      "industrial",
-      "darkwave",
-      "artpop",
-      "idm"
+      "artpop"
     ],
     "subgenres": [
-      "industrial",
-      "darkwave",
-      "idm"
+      "art-pop"
     ],
-    "youtubeVideoId": "EzRRQxcVXlc",
+    "youtubeVideoId": "OklWRgYmoHw",
     "backupVideoIds": [
       "OklWRgYmoHw",
       "lfUdGECG3EY"
@@ -12005,18 +12351,14 @@
       "element": "water"
     },
     "genres": [
-      "idm",
-      "darkwave",
-      "techno",
-      "industrial"
+      "artpop",
+      "darkwave"
     ],
     "subgenres": [
-      "idm",
-      "darkwave",
-      "techno",
-      "industrial"
+      "art-pop",
+      "synth-pop"
     ],
-    "youtubeVideoId": "fVA4Slj0SXs",
+    "youtubeVideoId": "MklXAmT68oI",
     "backupVideoIds": [
       "5D0JeugTeNs",
       "MklXAmT68oI"
@@ -12062,7 +12404,7 @@
       "industrial",
       "noise"
     ],
-    "youtubeVideoId": "FKXXj0wSbu0",
+    "youtubeVideoId": "CLVSrDCJupg",
     "backupVideoIds": [
       "MUq6ve2cv9k",
       "CLVSrDCJupg"
@@ -12078,14 +12420,12 @@
       "element": "air"
     },
     "genres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
     "subgenres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
-    "youtubeVideoId": "QTnJSl6a_48",
+    "youtubeVideoId": "h4vUIZ2MDJs",
     "backupVideoIds": [
       "zPPJ0vAmmgA",
       "h4vUIZ2MDJs"
@@ -12101,13 +12441,10 @@
       "element": "water"
     },
     "genres": [
-      "jazz",
-      "artpop",
-      "idm"
+      "jazz"
     ],
     "subgenres": [
-      "spiritual-jazz",
-      "idm"
+      "free-jazz"
     ],
     "youtubeVideoId": "w38o2dJI_cQ",
     "backupVideoIds": [
@@ -12139,6 +12476,26 @@
     ]
   },
   {
+    "name": "Spaceape",
+    "birthDate": "1970-06-17",
+    "venus": {
+      "sign": "Leo",
+      "degree": 0.9,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "dnb",
+      "triphop"
+    ],
+    "subgenres": [
+      "dubstep",
+      "dub"
+    ],
+    "youtubeVideoId": "9JaETb3IZf0",
+    "backupVideoIds": []
+  },
+  {
     "name": "SPELLLING",
     "birthDate": "1991-05-18",
     "venus": {
@@ -12149,14 +12506,12 @@
     },
     "genres": [
       "artpop",
-      "idm",
       "darkwave"
     ],
     "subgenres": [
-      "idm",
       "darkwave"
     ],
-    "youtubeVideoId": "QR2HE0YyYOs",
+    "youtubeVideoId": "rdf62fcwmeA",
     "backupVideoIds": [
       "hsHqjq0EGlE",
       "NbPqfFUz2Sg"
@@ -12196,13 +12551,10 @@
       "element": "earth"
     },
     "genres": [
-      "artpop",
-      "industrial"
+      "artpop"
     ],
-    "subgenres": [
-      "industrial"
-    ],
-    "youtubeVideoId": "BWkxzcWt51w",
+    "subgenres": [],
+    "youtubeVideoId": "nWW4tFuzxGE",
     "backupVideoIds": [
       "9tw2LMnxvW0",
       "jKAA_INzDGo"
@@ -12271,7 +12623,7 @@
       "ambient",
       "synthwave"
     ],
-    "youtubeVideoId": "PXOtpbOF3rM",
+    "youtubeVideoId": "QmM35p7Z-ng",
     "backupVideoIds": [
       "JFZN8urMwIE",
       "qlEqnctLVOc"
@@ -12335,7 +12687,7 @@
       "electro",
       "experimental"
     ],
-    "youtubeVideoId": "hE_VN7Z9KwY",
+    "youtubeVideoId": "FyzcFV8lUEE",
     "backupVideoIds": [
       "OwrH8gx0r-M",
       "cLjVS8qxxaY"
@@ -12481,6 +12833,25 @@
     ]
   },
   {
+    "name": "Terror Danjah",
+    "birthDate": "1980-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 12,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "dnb",
+      "idm"
+    ],
+    "subgenres": [
+      "grime"
+    ],
+    "youtubeVideoId": "kwLop3xcJ_0",
+    "backupVideoIds": []
+  },
+  {
     "name": "Terry Riley",
     "birthDate": "1935-06-24",
     "venus": {
@@ -12523,6 +12894,26 @@
     ]
   },
   {
+    "name": "The Bug",
+    "birthDate": "1965-09-22",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 10.2,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "industrial",
+      "dnb"
+    ],
+    "subgenres": [
+      "dub",
+      "noise"
+    ],
+    "youtubeVideoId": "bjx1HVch8Xw",
+    "backupVideoIds": []
+  },
+  {
     "name": "The Cure",
     "birthDate": "1976-06-15",
     "venus": {
@@ -12532,14 +12923,12 @@
       "element": "air"
     },
     "genres": [
-      "darkwave",
-      "industrial"
+      "darkwave"
     ],
     "subgenres": [
-      "darkwave",
-      "industrial"
+      "darkwave"
     ],
-    "youtubeVideoId": "zzQT8f69ujU",
+    "youtubeVideoId": "Dar2X1tCIQM",
     "backupVideoIds": [
       "latEhwt1uis",
       "n3nPiBai66M"
@@ -12627,13 +13016,12 @@
     },
     "genres": [
       "darkwave",
-      "idm"
+      "artpop"
     ],
     "subgenres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
-    "youtubeVideoId": "utbbZDNKncg",
+    "youtubeVideoId": "ua9TsN-c7dw",
     "backupVideoIds": [
       "uPudE8nDog0",
       "qBfMoPvOSmc"
@@ -12709,7 +13097,7 @@
       "darkwave",
       "industrial"
     ],
-    "youtubeVideoId": "bAB8bgLWOWI",
+    "youtubeVideoId": "5-Yyifc6NgI",
     "backupVideoIds": [
       "wLpy_vgWs8g",
       "LqK6fy1h1js"
@@ -12749,17 +13137,13 @@
       "element": "water"
     },
     "genres": [
-      "industrial",
       "darkwave",
-      "artpop",
-      "idm"
+      "artpop"
     ],
     "subgenres": [
-      "industrial",
-      "darkwave",
-      "idm"
+      "art-rock"
     ],
-    "youtubeVideoId": "qQPm5wqMScE",
+    "youtubeVideoId": "4pnpeyAv64o",
     "backupVideoIds": [
       "Z5fAWpv_axs",
       "4pnpeyAv64o"
@@ -12862,10 +13246,10 @@
       "element": "fire"
     },
     "genres": [
-      "idm"
+      "artpop"
     ],
     "subgenres": [
-      "experimental"
+      "art-rock"
     ],
     "youtubeVideoId": "nod00ZZVZ0M",
     "backupVideoIds": [
@@ -12883,15 +13267,11 @@
       "element": "fire"
     },
     "genres": [
-      "classical",
-      "industrial",
-      "darkwave",
-      "artpop"
+      "artpop",
+      "classical"
     ],
     "subgenres": [
-      "classical",
-      "industrial",
-      "darkwave"
+      "classical"
     ],
     "youtubeVideoId": "2CdWEHjaL30",
     "backupVideoIds": [
@@ -12931,14 +13311,12 @@
       "element": "air"
     },
     "genres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
     "subgenres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
-    "youtubeVideoId": "3kdefBY9-PU",
+    "youtubeVideoId": "7rKJf_DWecU",
     "backupVideoIds": [
       "d_7wN_276aU",
       "7rKJf_DWecU"
@@ -13025,14 +13403,12 @@
       "element": "water"
     },
     "genres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
     "subgenres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
-    "youtubeVideoId": "9RdrgRma0mw",
+    "youtubeVideoId": "BjnuCB7Jixc",
     "backupVideoIds": [
       "dVWyEWW-vjw",
       "FCne9_9yCoM"
@@ -13288,14 +13664,12 @@
       "element": "water"
     },
     "genres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
     "subgenres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
-    "youtubeVideoId": "tbMAY2Mx1bE",
+    "youtubeVideoId": "UMPC8QJF6sI",
     "backupVideoIds": []
   },
   {
@@ -13315,7 +13689,7 @@
       "synth-pop",
       "experimental"
     ],
-    "youtubeVideoId": "cw3-K_QAqPo",
+    "youtubeVideoId": "9ZVhzFt8Uc4",
     "backupVideoIds": []
   },
   {
@@ -13438,14 +13812,12 @@
       "element": "water"
     },
     "genres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
     "subgenres": [
-      "darkwave",
-      "idm"
+      "darkwave"
     ],
-    "youtubeVideoId": "BwCQ7cDxNH8",
+    "youtubeVideoId": "TBrR-IsYP0I",
     "backupVideoIds": []
   },
   {
@@ -13494,13 +13866,10 @@
       "element": "air"
     },
     "genres": [
-      "artpop",
-      "idm"
+      "artpop"
     ],
-    "subgenres": [
-      "idm"
-    ],
-    "youtubeVideoId": "BXm93rjHAPI",
+    "subgenres": [],
+    "youtubeVideoId": "Mwu3kCaIFf0",
     "backupVideoIds": []
   },
   {
@@ -13704,7 +14073,7 @@
       "ambient",
       "darkwave"
     ],
-    "youtubeVideoId": "dKjYY7nHEtc",
+    "youtubeVideoId": "FQMarD0iTII",
     "backupVideoIds": []
   },
   {
@@ -13820,6 +14189,26 @@
     "backupVideoIds": []
   },
   {
+    "name": "Zomby",
+    "birthDate": "1980-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 12,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "dnb",
+      "idm"
+    ],
+    "subgenres": [
+      "jungle",
+      "dubstep"
+    ],
+    "youtubeVideoId": "swCqGEwLO4Y",
+    "backupVideoIds": []
+  },
+  {
     "name": "Zoviet France",
     "birthDate": "1980-01-01",
     "venus": {
@@ -13837,7 +14226,7 @@
       "drone",
       "ambient"
     ],
-    "youtubeVideoId": "BzW_Hk8skgo",
+    "youtubeVideoId": "vW5wRHI28uo",
     "backupVideoIds": []
   },
   {
