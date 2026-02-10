@@ -23,6 +23,7 @@ let progressInterval = null;
 const failedIds = new Set();       // video IDs that failed
 const trackVideoIndex = new Map(); // trackIndex → which video ID we're trying
 let hasPlayed = false;             // whether current video reached PLAYING
+let sessionHasPlayed = false;      // whether ANY video played this session
 let silentFailTimer = null;        // detect videos that never start
 let loadingInterval = null;        // loading progress animation
 let loadStartTime = 0;
@@ -246,6 +247,7 @@ async function startRadio(genreId, genreLabel, subgenreId = null) {
         }
         if (state === window.YT.PlayerState.PLAYING) {
           hasPlayed = true;
+          sessionHasPlayed = true;
           clearTimeout(silentFailTimer);
           stopLoadingProgress();
           hideBuffering();
@@ -301,6 +303,9 @@ function tryBackupOrFail(reason) {
 function startSilentFailTimer() {
   clearTimeout(silentFailTimer);
   hasPlayed = false;
+  // Don't timeout until the player has proven it can play something —
+  // the first video(s) in a session can take much longer to auto-play
+  if (!sessionHasPlayed) return;
   silentFailTimer = setTimeout(() => {
     if (!hasPlayed) {
       tryBackupOrFail(`silent fail (no playback after ${SILENT_FAIL_MS / 1000}s)`);
@@ -311,6 +316,11 @@ function startSilentFailTimer() {
 function startLoadingProgress() {
   loadStartTime = Date.now();
   clearInterval(loadingInterval);
+  if (!sessionHasPlayed) {
+    // Before first successful play, just show full-width shimmer (no countdown)
+    showBuffering(100);
+    return;
+  }
   showBuffering(0);
   loadingInterval = setInterval(() => {
     const pct = Math.min((Date.now() - loadStartTime) / SILENT_FAIL_MS * 100, 100);
