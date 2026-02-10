@@ -51,12 +51,6 @@
       <h2 class="genre-heading">Pick your frequency</h2>
       <div id="genre-grid" class="genre-grid"></div>
     </div>
-    <button id="btn-now-playing" class="btn-now-playing" hidden>
-      <span class="btn-np-marquee">
-        <span id="btn-np-label" class="btn-np-track"></span>
-        <span id="btn-np-label-dup" class="btn-np-track" aria-hidden="true"></span>
-      </span>
-    </button>
   </section>
 
   <!-- Screen 4: Radio -->
@@ -95,6 +89,14 @@
       <p id="empty-state" class="empty-state" hidden>No musicians found for this combination. Try another genre.</p>
     </div>
   </section>
+
+  <!-- Now-playing floating bar (visible on portal, reveal, genre screens) -->
+  <button id="btn-now-playing" class="btn-now-playing" hidden>
+    <span class="btn-np-marquee">
+      <span id="btn-np-label" class="btn-np-track"></span>
+      <span id="btn-np-label-dup" class="btn-np-track" aria-hidden="true"></span>
+    </span>
+  </button>
 
   <!-- Loading overlay -->
   <div id="loading-overlay" class="loading-overlay" hidden>

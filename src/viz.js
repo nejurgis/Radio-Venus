@@ -73,6 +73,11 @@ let zoomSign = null;       // null = full ring, sign index = zoomed
 let containerEl = null;
 let hoverCallback = null;  // called with { name, genres } or null
 let clickCallback = null;  // called with { name, genres } when dot clicked in zoom
+let dragRotateEnabled = false;
+let dragging = false;
+let dragStartX = 0;
+let dragLastX = 0;
+let dragVelocity = 0;       // degrees per frame for inertia
 
 // Zoom animation state
 let zoomProgress = 0;      // 0 = full ring, 1 = fully zoomed
@@ -146,6 +151,50 @@ export function initNebula(containerId) {
     if (e.target.closest('button, a, input, select, textarea, .screen-inner')) return;
     clickCallback({ name: hoveredDot.name, genres: hoveredDot.genres });
   });
+
+  // ── Drag-to-rotate (touch + mouse) ────────────────────────────────────
+  const DRAG_SENSITIVITY = 0.25; // degrees per pixel
+
+  function dragStart(x) {
+    if (!dragRotateEnabled || zoomSign == null) return;
+    dragging = true;
+    dragStartX = x;
+    dragLastX = x;
+    dragVelocity = 0;
+  }
+
+  function dragMove(x) {
+    if (!dragging) return;
+    const delta = (x - dragLastX) * DRAG_SENSITIVITY;
+    zoomDrift += delta;
+    dragVelocity = delta;
+    dragLastX = x;
+  }
+
+  function dragEnd() {
+    dragging = false;
+    // inertia continues via dragVelocity in tick()
+  }
+
+  document.addEventListener('mousedown', (e) => {
+    if (e.target.closest('button, a, input, select, textarea')) return;
+    dragStart(e.clientX);
+  });
+  document.addEventListener('mousemove', (e) => dragMove(e.clientX));
+  document.addEventListener('mouseup', dragEnd);
+
+  document.addEventListener('touchstart', (e) => {
+    if (e.target.closest('button, a, input, select, textarea')) return;
+    if (e.touches.length === 1) dragStart(e.touches[0].clientX);
+  }, { passive: true });
+  document.addEventListener('touchmove', (e) => {
+    if (dragging && e.touches.length === 1) {
+      e.preventDefault();
+      dragMove(e.touches[0].clientX);
+    }
+  }, { passive: false });
+  document.addEventListener('touchend', dragEnd);
+  document.addEventListener('touchcancel', dragEnd);
 }
 
 function resize() {
@@ -272,6 +321,14 @@ export function setZoomDrift(enabled) {
   zoomDriftEnabled = enabled;
 }
 
+export function enableDragRotate(enabled) {
+  dragRotateEnabled = enabled;
+  if (!enabled) {
+    dragging = false;
+    dragVelocity = 0;
+  }
+}
+
 // ── Render loop ───────────────────────────────────────────────────────────────
 
 function tick() {
@@ -328,6 +385,14 @@ function tick() {
     }
   }
 
+  // Drag inertia: keep spinning after release
+  if (!dragging && Math.abs(dragVelocity) > 0.01) {
+    zoomDrift += dragVelocity;
+    dragVelocity *= 0.93;
+  } else if (!dragging) {
+    dragVelocity = 0;
+  }
+
   // Rotation: free-spin when full ring, interpolated when animating, locked when zoomed
   let rot;
   if (zoomSign != null) {
@@ -339,7 +404,7 @@ function tick() {
       if (delta < -180) delta += 360;
       rot = zoomRotStart + delta * zoomProgress;
     } else {
-      if (zoomDriftEnabled) zoomDrift += (360 / 600) / 60;
+      if (zoomDriftEnabled && !dragRotateEnabled) zoomDrift += (360 / 600) / 60;
       rot = targetRot + zoomDrift;
     }
   } else {

@@ -1,7 +1,7 @@
 import { calculateVenus, makeBirthDate } from './venus.js';
 import { GENRE_CATEGORIES, SUBGENRES } from './genres.js';
 import { loadDatabase, getDatabase, match, getSubgenreCounts } from './matcher.js';
-import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, onNebulaHover, onNebulaClick } from './viz.js';
+import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, enableDragRotate, onNebulaHover, onNebulaClick } from './viz.js';
 import { loadYouTubeAPI, initPlayer, loadVideo, togglePlay, isPlaying, getDuration, getCurrentTime, seekTo, getVideoTitle } from './player.js';
 import {
   initScreens, showScreen, setElementTheme,
@@ -216,6 +216,7 @@ async function onDateSubmit(d, m, y) {
   portalScreen.classList.add('is-fading');
   await zoomToSign(signIndex, { duration: 2500 });
   showScreen('reveal');
+  enableDragRotate(true);
   history.pushState({ screen: 'reveal' }, '');
 
   // Set up genre screen
@@ -234,6 +235,7 @@ async function onDateSubmit(d, m, y) {
   );
 
   document.getElementById('btn-choose-genre').addEventListener('click', () => {
+    enableDragRotate(false);
     showNebula(true);
     dimNebula(true);
     showScreen('genre');
@@ -257,6 +259,8 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
   activeGenreLabel = subgenreId ? `${genreLabel} · ${subgenreId}` : genreLabel;
 
   renderRadioHeader(venus.sign, genreLabel, subgenreId);
+  enableDragRotate(false);
+  updateNowPlayingButton(false);
   showNebula(true);
   dimNebula(false);
   deepDimNebula(true);
@@ -399,6 +403,7 @@ function updateNowPlayingButton(show) {
 }
 
 document.getElementById('btn-now-playing').addEventListener('click', () => {
+  updateNowPlayingButton(false);
   showNebula(true);
   dimNebula(false);
   deepDimNebula(true);
@@ -446,6 +451,7 @@ window.addEventListener('popstate', (e) => {
   // Always clean up radio state
   setZoomDrift(screen === 'radio');
   deepDimNebula(screen === 'radio');
+  enableDragRotate(screen === 'reveal');
 
   switch (screen) {
     case 'portal':
@@ -453,14 +459,14 @@ window.addEventListener('popstate', (e) => {
       document.getElementById('screen-portal').classList.remove('is-fading');
       showNebula(true);
       dimNebula(false);
-      updateNowPlayingButton(false);
+      updateNowPlayingButton(true);
       zoomOut({ duration: 1800 });
       break;
     case 'reveal':
       showNebula(true);
       dimNebula(false);
       showScreen('reveal');
-      updateNowPlayingButton(false);
+      updateNowPlayingButton(true);
       break;
     case 'genre':
       showNebula(true);
@@ -472,6 +478,7 @@ window.addEventListener('popstate', (e) => {
       showNebula(true);
       dimNebula(false);
       showScreen('radio');
+      updateNowPlayingButton(false);
       break;
   }
 });
