@@ -20,7 +20,8 @@ const SAME_ELEMENT = {
 };
 
 export async function loadDatabase() {
-  const res = await fetch(`${import.meta.env.BASE_URL}data/musicians.json`);
+  const base = import.meta.env?.BASE_URL || '/public/';
+  const res = await fetch(`${base}data/musicians.json`);
   db = await res.json();
   return db;
 }

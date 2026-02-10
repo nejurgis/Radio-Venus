@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Radio Venus</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <script type="importmap">
+    { "imports": { "astronomy-engine": "/node_modules/astronomy-engine/esm/astronomy.js" } }
+  </script>
   <link rel="stylesheet" href="/src/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,9 +26,9 @@
       <div class="date-input-group">
         <div class="date-fields">
           <input type="text" id="input-day" class="date-field" placeholder="DD" maxlength="2" inputmode="numeric" autocomplete="off" />
-          <span class="date-sep">/</span>
+          <span class="date-sep">●</span>
           <input type="text" id="input-month" class="date-field" placeholder="MM" maxlength="2" inputmode="numeric" autocomplete="off" />
-          <span class="date-sep">/</span>
+          <span class="date-sep">●</span>
           <input type="text" id="input-year" class="date-field date-field--year" placeholder="YYYY" maxlength="4" inputmode="numeric" autocomplete="off" />
         </div>
         <button id="btn-enter" class="btn-primary" disabled>Enter</button>

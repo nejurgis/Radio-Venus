@@ -423,6 +423,42 @@ html, body {
   grid-column: 1 / -1;
 }
 
+.genre-row {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.genre-row .genre-btn {
+  flex: 1;
+  min-width: 0;
+}
+
+.subgenre-toggle {
+  flex-shrink: 0;
+  width: 1.2rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  background: none;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.subgenre-toggle svg {
+  transition: transform 0.3s ease;
+}
+
+.subgenre-toggle.is-open svg {
+  transform: rotate(180deg);
+}
+
+.subgenre-toggle:hover {
+  color: var(--text-bright);
+}
+
 /* ── Subgenre chips ─────────────────────────────────────────────────────── */
 
 .subgenre-chips {
@@ -431,6 +467,17 @@ html, body {
   gap: 0.3rem;
   padding: 0 0.25rem;
   justify-content: center;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease, margin 0.35s ease;
+  margin-top: -0.5rem;
+}
+
+.subgenre-chips.is-open {
+  max-height: 12rem;
+  opacity: 1;
+  margin-top: 0;
 }
 
 .subgenre-chip {
@@ -927,7 +974,6 @@ body.element-water  { --accent: var(--water); }
 
   .subgenre-chips {
     gap: 0.25rem;
-    padding-top: 0.3rem;
   }
 
   .subgenre-chip {

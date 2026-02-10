@@ -48,11 +48,15 @@
       "dnb",
       "ambient"
     ],
-    "youtubeVideoId": "E2qLD9c3Gq4",
+    "youtubeVideoId": "IlEkvbRmfrA",
     "subgenres": [
       "future-garage",
       "dubstep",
       "ambient"
+    ],
+    "backupVideoIds": [
+      "wRPHQzXD-5k",
+      "9hI4bSCy9iE"
     ]
   },
   {
@@ -603,7 +607,7 @@
     "birthDate": "1976-03-30",
     "genres": [
       "triphop",
-      "techno"
+      "ambient"
     ],
     "youtubeVideoId": "cTjF2_-bneM",
     "subgenres": [
@@ -1907,15 +1911,13 @@
     "name": "Laurel Halo",
     "birthDate": "1985-06-03",
     "genres": [
-      "idm",
       "techno",
       "ambient"
     ],
     "youtubeVideoId": "8TeMNkNEPeM",
     "subgenres": [
       "experimental",
-      "techno",
-      "ambient"
+      "techno"
     ]
   },
   {
@@ -1987,16 +1989,15 @@
   },
   {
     "name": "Hype Williams",
-    "birthDate": "1970-07-00",
+    "birthDate": "1984-02-08",
     "genres": [
-      "idm",
-      "industrial",
-      "techno"
+      "triphop",
+      "idm"
     ],
     "youtubeVideoId": "BYTPiHTfKbA",
     "subgenres": [
       "experimental",
-      "noise"
+      "dub"
     ]
   },
   {
@@ -2016,14 +2017,12 @@
     "name": "Dean Blunt",
     "birthDate": "1984-02-08",
     "genres": [
-      "idm",
-      "triphop",
-      "industrial"
+      "artpop",
+      "idm"
     ],
     "youtubeVideoId": "OuK_eqGCPC0",
     "subgenres": [
-      "experimental",
-      "noise"
+      "experimental"
     ]
   },
   {
@@ -2043,16 +2042,14 @@
     "name": "Julia Holter",
     "birthDate": "1984-12-18",
     "genres": [
-      "idm",
-      "ambient",
-      "artpop"
+      "artpop",
+      "ambient"
     ],
     "youtubeVideoId": "3HGOxuMecP0",
     "subgenres": [
-      "experimental",
-      "ambient",
       "baroque-pop",
-      "art-pop"
+      "art-pop",
+      "ambient"
     ]
   },
   {
@@ -2071,16 +2068,14 @@
   },
   {
     "name": "Klein",
-    "birthDate": "1945-06-15",
+    "birthDate": "1994-01-01",
     "genres": [
       "idm",
-      "ambient",
-      "industrial"
+      "ambient"
     ],
     "youtubeVideoId": "NXZXZypxQnw",
     "subgenres": [
-      "experimental",
-      "idm"
+      "experimental"
     ]
   },
   {
@@ -2143,11 +2138,12 @@
     "name": "ML Buch",
     "birthDate": "1987-01-01",
     "genres": [
-      "idm"
+      "artpop",
+      "ambient"
     ],
     "youtubeVideoId": "dAVPDFIZXdI",
     "subgenres": [
-      "experimental",
+      "art-pop",
       "ambient"
     ]
   },
@@ -2228,10 +2224,7 @@
     "genres": [
       "idm",
       "ambient",
-      "techno",
-      "darkwave",
-      "classical",
-      "triphop"
+      "techno"
     ],
     "youtubeVideoId": "Rtl3vMF9-Ck",
     "subgenres": [
@@ -2245,8 +2238,6 @@
     "birthDate": "1975-06-15",
     "genres": [
       "idm",
-      "industrial",
-      "darkwave",
       "ambient"
     ],
     "youtubeVideoId": "yBEqqYKF8ck",
@@ -2260,192 +2251,214 @@
     "name": "Dave Gahan",
     "birthDate": "1962-05-09",
     "genres": [
-      "idm",
       "darkwave",
-      "industrial"
-    ]
+      "artpop"
+    ],
+    "youtubeVideoId": "DO2ghmMVE0Y"
   },
   {
     "name": "Martin L. Gore",
     "birthDate": "1961-07-23",
     "genres": [
-      "idm",
-      "darkwave"
-    ]
+      "darkwave",
+      "ambient"
+    ],
+    "youtubeVideoId": "SYoPniPEf3o"
   },
   {
     "name": "Camouflage",
     "birthDate": "1984-06-15",
     "genres": [
-      "darkwave",
-      "idm"
-    ]
+      "darkwave"
+    ],
+    "youtubeVideoId": "k6s1-caKRtQ"
   },
   {
     "name": "New Order",
     "birthDate": "1980-06-15",
     "genres": [
       "darkwave",
-      "idm",
-      "industrial"
-    ]
+      "techno"
+    ],
+    "youtubeVideoId": "9-NFosnfd2c"
   },
   {
     "name": "Erasure",
     "birthDate": "1985-06-15",
     "genres": [
       "darkwave",
-      "idm"
-    ]
+      "artpop"
+    ],
+    "subgenres": [
+      "synth-pop"
+    ],
+    "youtubeVideoId": "FPXteUWT6r0"
   },
   {
     "name": "Soft Cell",
     "birthDate": "1980-06-15",
     "genres": [
-      "darkwave",
-      "idm"
-    ]
+      "darkwave"
+    ],
+    "youtubeVideoId": "h4vUIZ2MDJs"
   },
   {
     "name": "Pet Shop Boys",
     "birthDate": "1981-08-19",
     "genres": [
       "darkwave",
-      "idm"
-    ]
+      "artpop"
+    ],
+    "subgenres": [
+      "synth-pop"
+    ],
+    "youtubeVideoId": "ITLLWWdf0no"
   },
   {
     "name": "Duran Duran",
     "birthDate": "1978-06-15",
     "genres": [
       "darkwave",
-      "idm",
-      "industrial"
-    ]
+      "artpop"
+    ],
+    "subgenres": [
+      "synth-pop",
+      "new-wave"
+    ],
+    "youtubeVideoId": "1Rq_AuwT5-o"
   },
   {
     "name": "Orchestral Manoeuvres in the Dark",
     "birthDate": "1978-06-15",
     "genres": [
       "darkwave",
-      "idm",
-      "industrial"
-    ]
+      "artpop"
+    ],
+    "subgenres": [
+      "synth-pop",
+      "new-wave"
+    ],
+    "youtubeVideoId": "NtK4aF4zHdQ"
   },
   {
     "name": "Dan Terminus",
     "birthDate": "1964-06-22",
     "genres": [
-      "darkwave",
-      "idm"
-    ]
+      "darkwave"
+    ],
+    "youtubeVideoId": "nBhgTt7xNh0"
   },
   {
     "name": "Mega Drive",
     "birthDate": "1998-06-19",
     "genres": [
-      "darkwave",
-      "idm",
-      "techno"
-    ]
+      "darkwave"
+    ],
+    "youtubeVideoId": "l3NoYyNKSXQ"
   },
   {
     "name": "Waveshaper",
     "birthDate": "1984-09-26",
     "genres": [
-      "darkwave",
-      "idm"
-    ]
+      "darkwave"
+    ],
+    "youtubeVideoId": "TBrR-IsYP0I"
   },
   {
     "name": "Dynatron",
     "birthDate": "1980-12-26",
     "genres": [
-      "darkwave",
-      "idm"
-    ]
+      "darkwave"
+    ],
+    "youtubeVideoId": "OOz79-Akyzw"
   },
   {
     "name": "Hollywood Burns",
     "birthDate": "1985-10-31",
     "genres": [
-      "darkwave",
-      "idm"
-    ]
+      "darkwave"
+    ],
+    "youtubeVideoId": "YxL4cK6G_8U"
   },
   {
     "name": "Magic Sword",
     "birthDate": "1988-12-09",
     "genres": [
-      "darkwave",
-      "idm"
-    ]
+      "darkwave"
+    ],
+    "youtubeVideoId": "q0RVXs3gXnY"
   },
   {
     "name": "Tubeway Army",
     "birthDate": "1976-06-15",
     "genres": [
-      "darkwave",
-      "idm"
-    ]
+      "darkwave"
+    ],
+    "youtubeVideoId": "7rKJf_DWecU"
   },
   {
     "name": "John Foxx",
     "birthDate": "1947-09-29",
     "genres": [
       "darkwave",
-      "idm",
       "ambient"
-    ]
+    ],
+    "youtubeVideoId": "KyGYK_v9rw4"
   },
   {
     "name": "The Human League",
     "birthDate": "1977-06-15",
     "genres": [
       "darkwave",
-      "idm"
-    ]
+      "artpop"
+    ],
+    "youtubeVideoId": "ua9TsN-c7dw"
   },
   {
     "name": "Ultravox",
     "birthDate": "1973-06-15",
     "genres": [
-      "darkwave",
-      "idm"
-    ]
+      "darkwave"
+    ],
+    "youtubeVideoId": "BjnuCB7Jixc"
   },
   {
     "name": "Heaven 17",
     "birthDate": "1980-06-15",
     "genres": [
       "darkwave",
-      "idm"
-    ]
+      "artpop"
+    ],
+    "subgenres": [
+      "synth-pop",
+      "new-wave"
+    ],
+    "youtubeVideoId": "gL8WdjkPhdM"
   },
   {
     "name": "Visage",
     "birthDate": "1978-06-15",
     "genres": [
-      "darkwave",
-      "idm"
-    ]
+      "darkwave"
+    ],
+    "youtubeVideoId": "UMPC8QJF6sI"
   },
   {
     "name": "Blancmange",
     "birthDate": "1979-06-15",
     "genres": [
-      "darkwave",
-      "idm"
-    ]
+      "darkwave"
+    ],
+    "youtubeVideoId": "LTHmxMlnD4w"
   },
   {
     "name": "Clock DVA",
     "birthDate": "1978-06-15",
     "genres": [
       "industrial",
-      "darkwave",
-      "idm"
-    ]
+      "darkwave"
+    ],
+    "youtubeVideoId": "tMGFI6vfjcE"
   },
   {
     "name": "Richard H. Kirk",
@@ -2455,7 +2468,8 @@
       "techno",
       "ambient",
       "industrial"
-    ]
+    ],
+    "youtubeVideoId": "N7aZihQJmcU"
   },
   {
     "name": "Severed Heads",
@@ -2464,16 +2478,17 @@
       "industrial",
       "idm",
       "darkwave"
-    ]
+    ],
+    "youtubeVideoId": "Orr2ZqtijCQ"
   },
   {
     "name": "Fad Gadget",
     "birthDate": "1956-09-08",
     "genres": [
       "darkwave",
-      "idm",
       "industrial"
-    ]
+    ],
+    "youtubeVideoId": "ypINKMapdE0"
   },
   {
     "name": "Nitzer Ebb",
@@ -2483,16 +2498,17 @@
       "darkwave",
       "idm",
       "techno"
-    ]
+    ],
+    "youtubeVideoId": "pJYL_YKhC10"
   },
   {
     "name": "Chrome",
     "birthDate": "1970-06-04",
     "genres": [
-      "darkwave",
       "industrial",
-      "idm"
-    ]
+      "darkwave"
+    ],
+    "youtubeVideoId": "2FZGba4hIq4"
   },
   {
     "name": "Miss Kittin & The Hacker",
@@ -2500,18 +2516,17 @@
     "genres": [
       "techno",
       "idm"
-    ]
+    ],
+    "youtubeVideoId": "_LGI5qAwKP8"
   },
   {
     "name": "Anthony Rother",
     "birthDate": "1972-04-29",
     "genres": [
       "techno",
-      "idm",
-      "darkwave",
-      "classical",
-      "ambient"
-    ]
+      "darkwave"
+    ],
+    "youtubeVideoId": "sl3TFF9TvvI"
   },
   {
     "name": "Miss Kittin",
@@ -2520,7 +2535,8 @@
       "techno",
       "idm",
       "darkwave"
-    ]
+    ],
+    "youtubeVideoId": "RG7SgUlj05g"
   },
   {
     "name": "Dopplereffekt",
@@ -2539,7 +2555,8 @@
       "industrial",
       "darkwave",
       "idm"
-    ]
+    ],
+    "youtubeVideoId": "nBYQYBnifrQ"
   },
   {
     "name": "David Carretta",
@@ -2547,17 +2564,16 @@
     "genres": [
       "techno",
       "idm"
-    ]
+    ],
+    "youtubeVideoId": "bSFHabd3OKs"
   },
   {
     "name": "Oxia",
     "birthDate": "1971-06-15",
     "genres": [
-      "techno",
-      "darkwave",
-      "classical",
-      "idm"
-    ]
+      "techno"
+    ],
+    "youtubeVideoId": "MIM9-wOClmQ"
   },
   {
     "name": "Gesaffelstein",
@@ -2567,17 +2583,18 @@
       "idm",
       "darkwave",
       "industrial"
-    ]
+    ],
+    "youtubeVideoId": "Z2KB7y0fdpk"
   },
   {
     "name": "Schwefelgelb",
     "birthDate": "2004-06-15",
     "genres": [
-      "idm",
       "industrial",
       "darkwave",
       "techno"
-    ]
+    ],
+    "youtubeVideoId": "sz3WGYKGNYU"
   },
   {
     "name": "Model 500",
@@ -2585,25 +2602,30 @@
     "genres": [
       "techno",
       "idm"
-    ]
+    ],
+    "youtubeVideoId": "EarSRa19sZc"
   },
   {
     "name": "Grimes & i_o",
     "birthDate": "1990-05-16",
     "genres": [
-      "idm",
       "darkwave",
-      "dnb"
-    ]
+      "techno"
+    ],
+    "youtubeVideoId": "M9SGYBHY0qs"
   },
   {
     "name": "FKA twigs",
     "birthDate": "1988-01-16",
     "genres": [
-      "idm",
       "triphop",
-      "techno"
-    ]
+      "artpop"
+    ],
+    "subgenres": [
+      "trip-hop",
+      "art-pop"
+    ],
+    "youtubeVideoId": "E3RG4LGmSMY"
   },
   {
     "name": "Björk",
@@ -2612,7 +2634,8 @@
       "idm",
       "triphop",
       "ambient"
-    ]
+    ],
+    "youtubeVideoId": "fW7AUFadFGo"
   },
   {
     "name": "Blood Diamonds",
@@ -2620,17 +2643,21 @@
     "genres": [
       "idm",
       "darkwave"
-    ]
+    ],
+    "youtubeVideoId": "vIi57zhDl78"
   },
   {
     "name": "Sky Ferreira",
     "birthDate": "1992-07-08",
     "genres": [
-      "idm",
-      "darkwave",
-      "techno",
-      "industrial"
-    ]
+      "artpop",
+      "darkwave"
+    ],
+    "subgenres": [
+      "art-pop",
+      "synth-pop"
+    ],
+    "youtubeVideoId": "MklXAmT68oI"
   },
   {
     "name": "Eartheater",
@@ -2643,7 +2670,8 @@
     "subgenres": [
       "art-pop",
       "experimental-pop"
-    ]
+    ],
+    "youtubeVideoId": "Rp8Fqs7TdGk"
   },
   {
     "name": "yeule",
@@ -2652,34 +2680,39 @@
       "idm",
       "ambient",
       "darkwave"
-    ]
+    ],
+    "youtubeVideoId": "FQMarD0iTII"
   },
   {
     "name": "Alice Glass",
     "birthDate": "1988-08-23",
     "genres": [
       "idm",
-      "techno",
       "darkwave",
       "industrial"
-    ]
+    ],
+    "youtubeVideoId": "p2WyFrFi-CI"
   },
   {
     "name": "Charli xcx",
     "birthDate": "1992-08-02",
     "genres": [
-      "idm",
-      "darkwave",
-      "techno"
-    ]
+      "artpop",
+      "darkwave"
+    ],
+    "subgenres": [
+      "art-pop",
+      "synth-pop"
+    ],
+    "youtubeVideoId": "Rj6dwEBmBJA"
   },
   {
     "name": "Frank Tovey",
     "birthDate": "1956-09-08",
     "genres": [
-      "darkwave",
-      "idm"
-    ]
+      "darkwave"
+    ],
+    "youtubeVideoId": "UV1AGT2dpAo"
   },
   {
     "name": "The Normal",
@@ -2688,16 +2721,16 @@
       "idm",
       "darkwave",
       "industrial"
-    ]
+    ],
+    "youtubeVideoId": "5-Yyifc6NgI"
   },
   {
     "name": "Silicon Teens",
     "birthDate": "1979-01-01",
     "genres": [
-      "darkwave",
-      "idm",
-      "techno"
-    ]
+      "darkwave"
+    ],
+    "youtubeVideoId": "EjppiXZLXtU"
   },
   {
     "name": "Love and Rockets",
@@ -2705,15 +2738,17 @@
     "genres": [
       "darkwave",
       "industrial"
-    ]
+    ],
+    "youtubeVideoId": "-L41MhFPU9s"
   },
   {
     "name": "Electronic",
     "birthDate": "1988-06-15",
     "genres": [
-      "idm",
-      "darkwave"
-    ]
+      "darkwave",
+      "techno"
+    ],
+    "youtubeVideoId": "_7sVSSb2mU4"
   },
   {
     "name": "Joy Division",
@@ -2721,38 +2756,45 @@
     "genres": [
       "darkwave",
       "industrial"
-    ]
+    ],
+    "youtubeVideoId": "zDtMbuF_sCA"
   },
   {
     "name": "Monaco",
     "birthDate": "1995-06-15",
     "genres": [
       "darkwave",
-      "idm"
-    ]
+      "artpop"
+    ],
+    "subgenres": [
+      "synth-pop",
+      "new-wave"
+    ],
+    "youtubeVideoId": "WxZ9IFsGeXs"
   },
   {
     "name": "A Certain Ratio",
     "birthDate": "1977-06-15",
     "genres": [
       "darkwave"
-    ]
+    ],
+    "youtubeVideoId": "rWEPi4wPRFw"
   },
   {
     "name": "The Cure",
     "birthDate": "1976-06-15",
     "genres": [
-      "darkwave",
-      "industrial"
-    ]
+      "darkwave"
+    ],
+    "youtubeVideoId": "Dar2X1tCIQM"
   },
   {
     "name": "Section 25",
     "birthDate": "1977-06-15",
     "genres": [
-      "darkwave",
-      "idm"
-    ]
+      "darkwave"
+    ],
+    "youtubeVideoId": "jrY5gkEVTY4"
   },
   {
     "name": "Zoviet France",
@@ -2765,7 +2807,8 @@
       "industrial",
       "drone",
       "ambient"
-    ]
+    ],
+    "youtubeVideoId": "vW5wRHI28uo"
   },
   {
     "name": "Annie Hogan",
@@ -2777,7 +2820,8 @@
     "subgenres": [
       "synth-pop",
       "darkwave"
-    ]
+    ],
+    "youtubeVideoId": "9g_qzNs6oNE"
   },
   {
     "name": "Stéphane Picq",
@@ -2789,7 +2833,8 @@
     "subgenres": [
       "downtempo",
       "ambient"
-    ]
+    ],
+    "youtubeVideoId": "TWn1C1POc6M"
   },
   {
     "name": "Francis Monkman",
@@ -2801,7 +2846,8 @@
     "subgenres": [
       "classical",
       "synth-pop"
-    ]
+    ],
+    "youtubeVideoId": "BUW6lBS57Cc"
   },
   {
     "name": "Malcolm Ironton",
@@ -2812,7 +2858,8 @@
     ],
     "subgenres": [
       "synthwave"
-    ]
+    ],
+    "youtubeVideoId": "Rf1PydBVzQI"
   },
   {
     "name": "Purelink",
@@ -2826,7 +2873,8 @@
       "ambient",
       "dub-techno",
       "downtempo"
-    ]
+    ],
+    "youtubeVideoId": "T4QhJEXF7MA"
   },
   {
     "name": "Lucinda Chua",
@@ -2838,7 +2886,8 @@
     "subgenres": [
       "ambient",
       "neo-classical"
-    ]
+    ],
+    "youtubeVideoId": "k0h9QGrsZ0w"
   },
   {
     "name": "Datassette",
@@ -2850,7 +2899,8 @@
     "subgenres": [
       "idm",
       "electro"
-    ]
+    ],
+    "youtubeVideoId": "QJN8BOeYezE"
   },
   {
     "name": "Alvin Curran",
@@ -2862,7 +2912,8 @@
     "subgenres": [
       "minimalist",
       "experimental"
-    ]
+    ],
+    "youtubeVideoId": "vXbAfntiisI"
   },
   {
     "name": "Lino Capra Vaccina",
@@ -2874,17 +2925,19 @@
     "subgenres": [
       "minimalist",
       "ambient"
-    ]
+    ],
+    "youtubeVideoId": "S7OIfY2dfqk"
   },
   {
     "name": "R. Stevie Moore",
     "birthDate": "1952-01-18",
     "genres": [
-      "idm"
+      "artpop"
     ],
     "subgenres": [
-      "experimental"
-    ]
+      "experimental-pop"
+    ],
+    "youtubeVideoId": "qrEmcwEVG6c"
   },
   {
     "name": "Richard Skelton",
@@ -2895,7 +2948,8 @@
     "subgenres": [
       "drone",
       "ambient"
-    ]
+    ],
+    "youtubeVideoId": "13N-piyq4sw"
   },
   {
     "name": "Chevel",
@@ -2908,7 +2962,8 @@
       "minimal",
       "techno",
       "idm"
-    ]
+    ],
+    "youtubeVideoId": "vOiONgG0eGQ"
   },
   {
     "name": "Odd Nosdam",
@@ -2920,7 +2975,8 @@
     "subgenres": [
       "glitch",
       "experimental"
-    ]
+    ],
+    "youtubeVideoId": "t3WeS72cyyw"
   },
   {
     "name": "Steve Everitt",
@@ -2932,7 +2988,8 @@
     "subgenres": [
       "ambient",
       "synthwave"
-    ]
+    ],
+    "youtubeVideoId": "QmM35p7Z-ng"
   },
   {
     "name": "Klimek",
@@ -2943,7 +3000,8 @@
     "subgenres": [
       "drone",
       "ambient"
-    ]
+    ],
+    "youtubeVideoId": "P6cYQBLjLDQ"
   },
   {
     "name": "Fis",
@@ -2957,7 +3015,8 @@
       "breakcore",
       "experimental",
       "noise"
-    ]
+    ],
+    "youtubeVideoId": "JLIV7pG0gd8"
   },
   {
     "name": "Howlround",
@@ -2969,7 +3028,8 @@
     "subgenres": [
       "ambient",
       "experimental"
-    ]
+    ],
+    "youtubeVideoId": "UKGhlAI2anU"
   },
   {
     "name": "Detritus",
@@ -2983,7 +3043,8 @@
       "breakcore",
       "industrial",
       "idm"
-    ]
+    ],
+    "youtubeVideoId": "j9mJ2qwRetQ"
   },
   {
     "name": "Vit Fana",
@@ -2995,7 +3056,8 @@
     "subgenres": [
       "synth-pop",
       "experimental"
-    ]
+    ],
+    "youtubeVideoId": "9ZVhzFt8Uc4"
   },
   {
     "name": "Pantha Du Prince",
@@ -3007,7 +3069,8 @@
       "minimal",
       "house",
       "techno"
-    ]
+    ],
+    "youtubeVideoId": "hZDlAcn5yWk"
   },
   {
     "name": "Eugen Thomass",
@@ -3033,7 +3096,8 @@
       "experimental",
       "drone",
       "industrial"
-    ]
+    ],
+    "youtubeVideoId": "oV0QhDOhuKI"
   },
   {
     "name": "Stringtronics",
@@ -3045,7 +3109,8 @@
     "subgenres": [
       "electro",
       "experimental"
-    ]
+    ],
+    "youtubeVideoId": "FyzcFV8lUEE"
   },
   {
     "name": "Kane Ikin",
@@ -3058,7 +3123,8 @@
       "ambient",
       "experimental",
       "drone"
-    ]
+    ],
+    "youtubeVideoId": "RiDUm54BcKE"
   },
   {
     "name": "Jo Johnson",
@@ -3070,7 +3136,8 @@
       "ambient",
       "minimal",
       "new-age"
-    ]
+    ],
+    "youtubeVideoId": "npiLTykuDus"
   },
   {
     "name": "Forward Strategy Group",
@@ -3083,7 +3150,8 @@
       "techno",
       "industrial",
       "drone"
-    ]
+    ],
+    "youtubeVideoId": "PVA64LhNICw"
   },
   {
     "name": "Sluagh Ghairm",
@@ -3094,7 +3162,8 @@
     "subgenres": [
       "industrial",
       "noise"
-    ]
+    ],
+    "youtubeVideoId": "CLVSrDCJupg"
   },
   {
     "name": "Children of Alice",
@@ -3106,7 +3175,8 @@
     "subgenres": [
       "experimental",
       "ambient"
-    ]
+    ],
+    "youtubeVideoId": "d9EiXmZPEqc"
   },
   {
     "name": "Love Cult",
@@ -3118,7 +3188,8 @@
     "subgenres": [
       "drone",
       "industrial"
-    ]
+    ],
+    "youtubeVideoId": "k6PgftKbQnQ"
   },
   {
     "name": "Digit",
@@ -3141,7 +3212,8 @@
     "subgenres": [
       "coldwave",
       "synth-pop"
-    ]
+    ],
+    "youtubeVideoId": "sI9ZwiEPRkE"
   },
   {
     "name": "Mort Garson",
@@ -3160,10 +3232,10 @@
     "name": "Tonstartssbandht",
     "birthDate": "2007-08-24",
     "genres": [
-      "idm"
+      "artpop"
     ],
     "subgenres": [
-      "experimental"
+      "art-rock"
     ],
     "youtubeId": "5vv2se_K_J0"
   },
@@ -3171,10 +3243,10 @@
     "name": "10cc",
     "birthDate": "1972-07-01",
     "genres": [
-      "darkwave"
+      "artpop"
     ],
     "subgenres": [
-      "synth-pop"
+      "art-rock"
     ],
     "youtubeId": "STugQ0X1NoI"
   },
@@ -3182,10 +3254,10 @@
     "name": "Fleetwood Mac",
     "birthDate": "1967-07-01",
     "genres": [
-      "darkwave"
+      "artpop"
     ],
     "subgenres": [
-      "synth-pop"
+      "art-rock"
     ],
     "youtubeId": "fXeKi6ZkbOw"
   },
@@ -3346,20 +3418,19 @@
     "name": "Tori Amos",
     "birthDate": "1963-08-22",
     "genres": [
-      "classical",
-      "industrial",
-      "darkwave",
-      "artpop"
-    ]
+      "artpop",
+      "classical"
+    ],
+    "youtubeVideoId": "2CdWEHjaL30"
   },
   {
     "name": "PJ Harvey",
     "birthDate": "1969-10-09",
     "genres": [
-      "industrial",
-      "darkwave",
-      "artpop"
-    ]
+      "artpop",
+      "darkwave"
+    ],
+    "youtubeVideoId": "mxZtKK5TzdI"
   },
   {
     "name": "Fiona Apple",
@@ -3367,68 +3438,88 @@
     "genres": [
       "classical",
       "artpop"
-    ]
+    ],
+    "youtubeVideoId": "ki1nvcNbYH8"
   },
   {
     "name": "Joni Mitchell",
     "birthDate": "1943-11-07",
     "genres": [
-      "idm",
-      "jazz"
-    ]
+      "jazz",
+      "artpop"
+    ],
+    "subgenres": [
+      "soul-jazz"
+    ],
+    "youtubeVideoId": "zL1S8461znc"
   },
   {
     "name": "Sinéad O'Connor",
     "birthDate": "1966-12-08",
     "genres": [
-      "industrial",
-      "darkwave",
-      "artpop",
-      "idm"
-    ]
+      "artpop"
+    ],
+    "subgenres": [
+      "art-pop"
+    ],
+    "youtubeVideoId": "OklWRgYmoHw"
   },
   {
     "name": "Madonna",
     "birthDate": "1958-08-16",
     "genres": [
-      "idm",
-      "darkwave",
-      "artpop"
-    ]
+      "artpop",
+      "techno"
+    ],
+    "subgenres": [
+      "art-pop"
+    ],
+    "youtubeVideoId": "0-pXUCkcCgY"
   },
   {
     "name": "St. Vincent",
     "birthDate": "1982-09-28",
     "genres": [
-      "artpop",
-      "industrial"
-    ]
+      "artpop"
+    ],
+    "youtubeVideoId": "nWW4tFuzxGE"
   },
   {
     "name": "Joanna Newsom",
     "birthDate": "1982-01-18",
     "genres": [
-      "idm"
-    ]
+      "artpop",
+      "classical"
+    ],
+    "subgenres": [
+      "chamber-pop",
+      "baroque-pop"
+    ],
+    "youtubeVideoId": "TdPC1tvAcYo"
   },
   {
     "name": "The Sugarcubes",
     "birthDate": "1986-00-00",
     "genres": [
-      "industrial",
       "darkwave",
-      "artpop",
-      "idm"
-    ]
+      "artpop"
+    ],
+    "subgenres": [
+      "art-rock"
+    ],
+    "youtubeVideoId": "4pnpeyAv64o"
   },
   {
     "name": "Bar Italia",
     "birthDate": "2019-00-00",
     "genres": [
       "darkwave",
-      "idm",
       "artpop"
-    ]
+    ],
+    "subgenres": [
+      "art-rock"
+    ],
+    "youtubeVideoId": "qNCk8Dgmvqk"
   },
   {
     "name": "Mount Kimbie",
@@ -3437,17 +3528,17 @@
       "idm",
       "triphop",
       "ambient"
-    ]
+    ],
+    "youtubeVideoId": "PjaDGMRgXU0"
   },
   {
     "name": "George Clanton",
     "birthDate": "1988-01-12",
     "genres": [
-      "darkwave",
-      "idm",
       "artpop",
-      "triphop"
-    ]
+      "darkwave"
+    ],
+    "youtubeVideoId": "ksk5mthTR_c"
   },
   {
     "name": "Vegyn",
@@ -3456,63 +3547,61 @@
       "idm",
       "ambient",
       "triphop"
-    ]
+    ],
+    "youtubeVideoId": "Fi3tuTLa1C0"
   },
   {
     "name": "Jenny Hval",
     "birthDate": "1980-07-11",
     "genres": [
-      "idm",
       "artpop",
-      "ambient",
-      "darkwave"
-    ]
+      "ambient"
+    ],
+    "youtubeVideoId": "pPW9Qp45g74"
   },
   {
     "name": "Mabe Fratti",
     "birthDate": "1992-00-00",
     "genres": [
-      "ambient",
       "artpop",
-      "idm"
-    ]
+      "ambient"
+    ],
+    "youtubeVideoId": "QTskdzJ1VCE"
   },
   {
     "name": "Perfume Genius",
     "birthDate": "1981-09-25",
     "genres": [
-      "ambient",
-      "idm",
       "artpop"
-    ]
+    ],
+    "youtubeVideoId": "KKqlxdh9pDE"
   },
   {
     "name": "SPELLLING",
     "birthDate": "1991-05-18",
     "genres": [
       "artpop",
-      "idm",
       "darkwave"
-    ]
+    ],
+    "youtubeVideoId": "rdf62fcwmeA"
   },
   {
     "name": "Weyes Blood",
     "birthDate": "1988-06-11",
     "genres": [
-      "artpop",
-      "idm"
-    ]
+      "artpop"
+    ],
+    "youtubeVideoId": "Mwu3kCaIFf0"
   },
   {
     "name": "Anna von Hausswolff",
     "birthDate": "1986-09-06",
     "genres": [
-      "darkwave",
-      "classical",
       "ambient",
-      "artpop",
-      "idm"
-    ]
+      "classical",
+      "darkwave"
+    ],
+    "youtubeVideoId": "1x11nd1Ft-4"
   },
   {
     "name": "Sega Bodega",
@@ -3520,26 +3609,26 @@
     "genres": [
       "idm",
       "dnb"
-    ]
+    ],
+    "youtubeVideoId": "lkDXEz58ntg"
   },
   {
     "name": "Shygirl",
     "birthDate": "1993-05-04",
     "genres": [
-      "idm",
       "dnb",
       "techno"
-    ]
+    ],
+    "youtubeVideoId": "-DrlW5w5cpc"
   },
   {
     "name": "Cecile Believe",
     "birthDate": "1985-02-15",
     "genres": [
-      "idm",
-      "darkwave",
       "artpop",
-      "techno"
-    ]
+      "darkwave"
+    ],
+    "youtubeVideoId": "bZdCdpvofqQ"
   },
   {
     "name": "Doon Kanda",
@@ -3547,112 +3636,147 @@
     "genres": [
       "idm",
       "ambient"
-    ]
+    ],
+    "youtubeVideoId": "7A3ecrtub94"
   },
   {
     "name": "Kelela",
     "birthDate": "1983-06-04",
     "genres": [
-      "idm",
       "triphop",
-      "jazz",
-      "techno",
       "dnb",
-      "ambient"
-    ]
+      "artpop"
+    ],
+    "subgenres": [
+      "trip-hop",
+      "art-pop"
+    ],
+    "youtubeVideoId": "87SSDIEQoO8"
   },
   {
     "name": "Evita Manji",
     "birthDate": "1987-11-25",
     "genres": [
-      "idm",
       "artpop"
-    ]
+    ],
+    "youtubeVideoId": "fNWcpN5eQ48"
   },
   {
     "name": "Ornette Coleman",
     "birthDate": "1930-03-09",
     "genres": [
-      "jazz",
-      "artpop",
-      "idm"
-    ]
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "youtubeVideoId": "CblTx-tdVMA"
   },
   {
     "name": "Albert Ayler",
     "birthDate": "1936-07-13",
     "genres": [
-      "jazz",
-      "artpop",
-      "idm"
-    ]
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "youtubeVideoId": "xWsIG5sNq1Q"
   },
   {
     "name": "Cecil Taylor",
     "birthDate": "1929-03-25",
     "genres": [
       "jazz",
-      "artpop",
       "classical"
-    ]
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "youtubeVideoId": "LT4h3i36G4k"
   },
   {
     "name": "Don Cherry",
     "birthDate": "1936-11-18",
     "genres": [
-      "jazz",
-      "artpop"
-    ]
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "youtubeVideoId": "dt97Sn6lM_U"
   },
   {
     "name": "Eric Dolphy",
     "birthDate": "1928-06-20",
     "genres": [
-      "jazz",
-      "artpop"
-    ]
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "youtubeVideoId": "AGcyUY7svr4"
   },
   {
     "name": "Anthony Braxton",
     "birthDate": "1945-06-04",
     "genres": [
-      "jazz",
-      "artpop",
-      "idm"
-    ]
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "youtubeVideoId": "TLMaE-kGr4k"
   },
   {
     "name": "Archie Shepp",
     "birthDate": "1937-05-24",
     "genres": [
-      "jazz",
-      "artpop"
-    ]
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "youtubeVideoId": "8CQ2Bpi00tk"
   },
   {
     "name": "Pharoah Sanders",
     "birthDate": "1940-10-13",
     "genres": [
-      "jazz",
-      "artpop"
-    ]
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "youtubeVideoId": "ucdYt46DpX8"
   },
   {
     "name": "John Coltrane",
     "birthDate": "1926-09-23",
     "genres": [
-      "jazz",
-      "artpop"
-    ]
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "modal-jazz",
+      "free-jazz"
+    ],
+    "youtubeVideoId": "4tncD1oA6i4"
   },
   {
     "name": "Sonny Sharrock",
     "birthDate": "1940-08-27",
     "genres": [
-      "jazz",
-      "artpop",
-      "idm"
-    ]
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "youtubeVideoId": "w38o2dJI_cQ"
   },
   {
     "name": "The Kilimanjaro Darkjazz Ensemble",
@@ -3662,7 +3786,8 @@
       "idm",
       "ambient",
       "triphop"
-    ]
+    ],
+    "youtubeVideoId": "tMpbiwN9wlI"
   },
   {
     "name": "Lowering",
@@ -3670,7 +3795,8 @@
     "genres": [
       "jazz",
       "ambient"
-    ]
+    ],
+    "youtubeVideoId": "Q1eRJi6-C3o"
   },
   {
     "name": "The Mount Fuji Doomjazz Corporation",
@@ -3679,6 +3805,363 @@
       "ambient",
       "jazz",
       "idm"
-    ]
+    ],
+    "youtubeVideoId": "LvAtGjZc_sc"
+  },
+  {
+    "name": "Angel-Ho",
+    "birthDate": "1994-01-01",
+    "genres": [
+      "industrial",
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "youtubeVideoId": "kWZ4EfQnF3w"
+  },
+  {
+    "name": "The Bug",
+    "birthDate": "1965-09-22",
+    "genres": [
+      "industrial",
+      "dnb"
+    ],
+    "subgenres": [
+      "dub",
+      "noise"
+    ],
+    "youtubeVideoId": "bjx1HVch8Xw"
+  },
+  {
+    "name": "Babyfather",
+    "birthDate": "1984-02-08",
+    "genres": [
+      "triphop",
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "youtubeVideoId": "ysCedXhbwiw"
+  },
+  {
+    "name": "Cooly G",
+    "birthDate": "1982-09-21",
+    "genres": [
+      "techno",
+      "dnb"
+    ],
+    "subgenres": [
+      "uk-garage",
+      "dubstep",
+      "house"
+    ],
+    "youtubeVideoId": "TKxKPkp_riY"
+  },
+  {
+    "name": "Darkstar",
+    "birthDate": "1985-01-01",
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "synth-pop",
+      "dubstep"
+    ],
+    "youtubeVideoId": "02XLLA-lZqI"
+  },
+  {
+    "name": "DJ Rashad",
+    "birthDate": "1979-10-09",
+    "genres": [
+      "dnb",
+      "techno"
+    ],
+    "subgenres": [
+      "footwork"
+    ],
+    "youtubeVideoId": "UH9J-5cVncM"
+  },
+  {
+    "name": "Fhloston Paradigm",
+    "birthDate": "1968-11-26",
+    "genres": [
+      "techno",
+      "ambient"
+    ],
+    "subgenres": [
+      "house"
+    ],
+    "youtubeVideoId": "eD3rcbf0Vyk"
+  },
+  {
+    "name": "Fatima Al Qadiri",
+    "birthDate": "1981-07-01",
+    "genres": [
+      "idm",
+      "dnb"
+    ],
+    "subgenres": [
+      "grime",
+      "experimental"
+    ],
+    "youtubeVideoId": "XM8na3eeYVE"
+  },
+  {
+    "name": "Flowdan",
+    "birthDate": "1980-03-17",
+    "genres": [
+      "dnb",
+      "industrial"
+    ],
+    "subgenres": [
+      "grime",
+      "dub"
+    ],
+    "youtubeVideoId": "-yyHn0eGObk"
+  },
+  {
+    "name": "Foodman",
+    "birthDate": "1985-01-01",
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "footwork",
+      "experimental"
+    ],
+    "youtubeVideoId": "oJ9wTLb1lsA"
+  },
+  {
+    "name": "Ikonika",
+    "birthDate": "1985-01-01",
+    "genres": [
+      "techno",
+      "dnb"
+    ],
+    "subgenres": [
+      "dubstep",
+      "electro"
+    ],
+    "youtubeVideoId": "KFDuvmnnzBg"
+  },
+  {
+    "name": "Ill Blu",
+    "birthDate": "1988-01-01",
+    "genres": [
+      "techno",
+      "dnb"
+    ],
+    "subgenres": [
+      "uk-garage",
+      "house"
+    ],
+    "youtubeVideoId": "T622zo25WwE"
+  },
+  {
+    "name": "Inga Copeland",
+    "birthDate": "1985-01-01",
+    "genres": [
+      "idm",
+      "artpop"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "youtubeVideoId": "CsewLteZIio"
+  },
+  {
+    "name": "Jessy Lanza",
+    "birthDate": "1985-09-03",
+    "genres": [
+      "darkwave",
+      "artpop"
+    ],
+    "subgenres": [
+      "synth-pop"
+    ],
+    "youtubeVideoId": "dqQAPY2bdfU"
+  },
+  {
+    "name": "Joker",
+    "birthDate": "1989-03-10",
+    "genres": [
+      "dnb",
+      "idm"
+    ],
+    "subgenres": [
+      "dubstep",
+      "grime"
+    ],
+    "youtubeVideoId": "0bIR_YmiuVw"
+  },
+  {
+    "name": "Kode9",
+    "birthDate": "1973-01-01",
+    "genres": [
+      "dnb",
+      "idm"
+    ],
+    "subgenres": [
+      "dubstep",
+      "footwork",
+      "jungle"
+    ],
+    "youtubeVideoId": "zkQQwsRVUf4"
+  },
+  {
+    "name": "King Midas Sound",
+    "birthDate": "1965-09-22",
+    "genres": [
+      "triphop",
+      "industrial"
+    ],
+    "subgenres": [
+      "dub",
+      "trip-hop"
+    ],
+    "youtubeVideoId": "HI8XhwncEW4"
+  },
+  {
+    "name": "Loraine James",
+    "birthDate": "1995-12-18",
+    "genres": [
+      "idm",
+      "techno"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "youtubeVideoId": "gQ3LQRep0MY"
+  },
+  {
+    "name": "Mark Pritchard",
+    "birthDate": "1971-05-13",
+    "genres": [
+      "ambient",
+      "techno"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "3yMIOhL0kyU"
+  },
+  {
+    "name": "Martyn",
+    "birthDate": "1975-01-01",
+    "genres": [
+      "techno",
+      "dnb"
+    ],
+    "subgenres": [
+      "dubstep",
+      "house"
+    ],
+    "youtubeVideoId": "chSHwbw0iGk"
+  },
+  {
+    "name": "Mica Levi",
+    "birthDate": "1987-02-28",
+    "genres": [
+      "classical",
+      "ambient"
+    ],
+    "subgenres": [
+      "modern-classical",
+      "experimental"
+    ],
+    "youtubeVideoId": "Z_Cc20I-maM"
+  },
+  {
+    "name": "Okzharp and Manthe Ribane",
+    "birthDate": "1985-01-01",
+    "genres": [
+      "techno",
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "youtubeVideoId": "2btaDYuVFfw"
+  },
+  {
+    "name": "Pressure",
+    "birthDate": "1965-09-22",
+    "genres": [
+      "industrial",
+      "techno"
+    ],
+    "subgenres": [
+      "dub",
+      "dub-techno"
+    ],
+    "youtubeVideoId": "eN9k6Dz1SX0"
+  },
+  {
+    "name": "Samiyam",
+    "birthDate": "1985-01-01",
+    "genres": [
+      "triphop",
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "youtubeVideoId": "VYJUOvIY1BU"
+  },
+  {
+    "name": "Scratcha DVA",
+    "birthDate": "1980-01-01",
+    "genres": [
+      "techno",
+      "dnb"
+    ],
+    "subgenres": [
+      "uk-garage",
+      "grime",
+      "house"
+    ],
+    "youtubeVideoId": "cN8AryMZRzU"
+  },
+  {
+    "name": "Spaceape",
+    "birthDate": "1970-06-17",
+    "genres": [
+      "dnb",
+      "triphop"
+    ],
+    "subgenres": [
+      "dubstep",
+      "dub"
+    ],
+    "youtubeVideoId": "9JaETb3IZf0"
+  },
+  {
+    "name": "Terror Danjah",
+    "birthDate": "1980-01-01",
+    "genres": [
+      "dnb",
+      "idm"
+    ],
+    "subgenres": [
+      "grime"
+    ],
+    "youtubeVideoId": "kwLop3xcJ_0"
+  },
+  {
+    "name": "Zomby",
+    "birthDate": "1980-01-01",
+    "genres": [
+      "dnb",
+      "idm"
+    ],
+    "subgenres": [
+      "jungle",
+      "dubstep"
+    ],
+    "youtubeVideoId": "swCqGEwLO4Y"
   }
 ]
