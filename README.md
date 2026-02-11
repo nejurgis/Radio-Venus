@@ -4,7 +4,7 @@
 
 Radio Venus is an astrology-based music discovery app. Enter your birth date, the app calculates your Venus placement, you pick a genre, and it plays music from artists who share your Venus sign — streamed via YouTube.
 
-The database spans from Vivaldi (1678) to contemporary electronic producers, covering classical orchestral works, ambient, techno, IDM, industrial, darkwave, trip-hop, and drum & bass.
+The database spans from Hildegard von Bingen (1098) to contemporary electronic producers, covering classical orchestral works, ambient, techno, IDM, industrial, darkwave, trip-hop, drum & bass, art pop, and jazz.
 
 ## How it works
 
@@ -18,9 +18,9 @@ Genre pick  ──►  Subgenre filter  ──►  Venus similarity sort  ──
 
 1. **Portal** — User enters their birth date (DD/MM/YYYY). A zodiac nebula ring shows the distribution of all artists as glassy element-colored dots at their ecliptic longitudes, with crisp Rudnick-style sector outlines. Hover over any dot to see the artist name, sign, and Venus degree underneath. As you type, a preview dot glows at your Venus position. A "You" label marks the user's dot.
 2. **Zoom transition** — On submit, the nebula smoothly zooms into the user's Venus sign over 2.5s with ease-out cubic easing. Rotation interpolates from free-spin to the locked sign position. The portal content fades away as the camera pushes in.
-3. **Reveal** — Venus sign is displayed with its glyph, degree, decan, and element. Back button triggers a reverse zoom-out animation (1.8s) returning to the full ring.
-4. **Genre** — User picks from 8 genre categories with Rudnick-palette color overlays that pop on hover. Subgenre chips shown underneath. The nebula remains zoomed as a background, showing just the 30° wedge of their Venus sign.
-5. **Radio** — Matched artists play via a hidden YouTube iframe with custom controls (progress bar, seeker, time display, buffering spinner). The track list stretches to the bottom of the viewport with a fade-out gradient. Each track shows the artist's Venus sign (element-colored) and degree. A shuffle button randomizes the order. The zoomed nebula drifts slowly behind at 8% opacity.
+3. **Reveal** — Venus sign is displayed with degree and element. A red **tuner needle** sits at 12 o'clock on the zodiac ring — drag-rotate the ring to tune to any position, and the displayed Venus text and element color update in real-time. When music is playing, a now-playing marquee scrolls between the Venus text and the genre button (mix-blend-mode: difference against the nebula). Back button triggers a reverse zoom-out animation (1.8s) returning to the full ring.
+4. **Genre** — User picks from 10 genre categories with Rudnick-palette color overlays that pop on hover. Each genre button has a dropdown arrow that reveals subgenre chips on click. The nebula remains zoomed as a background, showing just the 30° wedge of their Venus sign.
+5. **Radio** — Matched artists play via a hidden YouTube iframe with custom controls (progress bar, seeker, time display, buffering spinner). Similarity scoring uses the **tuned position** from the reveal screen's needle, not just the natal Venus — rotate to explore different cosmic neighborhoods. The track list stretches to the bottom of the viewport with a fade-out gradient. Each track shows the artist's Venus sign (element-colored) and degree. A shuffle button randomizes the order. The zoomed nebula drifts slowly behind at 8% opacity.
 
 ### Venus calculation
 
@@ -81,7 +81,7 @@ YouTube videos frequently block embedded playback (Error 150/101). The player ha
 - On error, the player **hot-swaps** to the next backup ID before marking the track as failed
 - Failed tracks are visually struck through and marked "restricted"
 - The player auto-skips to the next playable track after all IDs are exhausted
-- 347 of 293 non-classical artists have 2 backup video IDs
+- 265 of 306 non-classical artists have backup video IDs
 
 The `scripts/find-backups.mjs` script searches YouTube for backup videos per artist using queries like `"Artist genre full track"`, `"Artist topic"`, and `"Artist live"`, filtering for 1-60 minute duration.
 
@@ -105,17 +105,17 @@ Radio-Venus/
     build-db.mjs                    # Wikidata + Venus calc + YouTube lookup → musicians.json
     smart-match.mjs                 # Last.fm similarity graph → discover new artists
     find-backups.mjs                # Find 2 backup YouTube video IDs per artist
-    seed-musicians.json             # 230 artists (174 hand-curated + 56 discovered) with verified video IDs
+    seed-musicians.json             # 361 hand-curated artists with verified video IDs
     manual-overrides.json           # Birth dates for artists invisible to all databases
   public/
-    data/musicians.json             # Generated database (536 artists)
+    data/musicians.json             # Generated database (712 artists)
     favicon.svg                     # Venus glyph
   .github/workflows/
     deploy.yml                      # Auto-deploy to GitHub Pages on push to master
 ```
 
 **Build time** (Node.js, `scripts/build-db.mjs`):
-1. Loads seed data (174 artists with subgenres + YouTube IDs)
+1. Loads seed data (361 artists with subgenres + YouTube IDs)
 2. Queries Wikidata SPARQL for musicians with birth dates
 3. Maps raw genre tags through `categorizeGenres()` and `categorizeSubgenres()` from `src/genres.js`
 4. Calculates Venus positions (sign, degree, decan, element) using astronomy-engine
@@ -144,20 +144,22 @@ Radio-Venus/
 
 ## Database
 
-**666 musicians** across all 12 Venus signs and 8 genres.
+**712 musicians** across all 12 Venus signs and 10 genres.
 
 | Genre | Artists |
 |-------|---------|
-| Classical / Orchestral | 345 |
-| IDM / Experimental | 128 |
-| Ambient / Drone | 81 |
-| Techno / House | 74 |
-| Synthwave / Darkwave | 63 |
-| Industrial / Noise | 42 |
-| Trip-Hop / Downtempo | 25 |
-| Drum & Bass / Jungle | 13 |
+| Classical / Orchestral | 406 |
+| IDM / Experimental | 130 |
+| Ambient / Drone | 119 |
+| Techno / House | 93 |
+| Synthwave / Darkwave | 87 |
+| Industrial / Noise | 44 |
+| Art Pop | 43 |
+| Trip-Hop / Downtempo | 42 |
+| Drum & Bass / Jungle | 31 |
+| Jazz | 19 |
 
-The seed file contains **230 artists** (174 original hand-curated + 56 discovered via smart-match) with verified embeddable YouTube video IDs and hand-assigned subgenres. Wikidata supplements this with additional musicians (primarily classical composers). The build script auto-derives subgenres for all artists using `categorizeSubgenres()`, so all 666 artists participate in subgenre filtering. The build processes artists in parallel batches of 5.
+The seed file contains **361 artists** with verified embeddable YouTube video IDs and hand-assigned subgenres. Wikidata supplements this with additional musicians (primarily classical composers). The build script auto-derives subgenres for all artists using `categorizeSubgenres()`, so all 712 artists participate in subgenre filtering. The build processes artists in parallel batches of 5.
 
 ### Data model
 
@@ -191,7 +193,7 @@ The matcher reconstructs the full ecliptic longitude from `sign + degree` for si
 
 ## Genre taxonomy
 
-Radio Venus uses a two-level genre system: **8 top-level categories** for primary UI filtering, and **~60 Discogs-derived subgenres** displayed as clickable chips beneath each genre button. Subgenres with 7+ artists in the database are interactive (accent-colored, clickable); those with fewer are shown dimmed as informational tags. All genre/subgenre data lives in `src/genres.js` — the single source of truth imported by both build scripts and the browser client.
+Radio Venus uses a two-level genre system: **10 top-level categories** for primary UI filtering, and **~60 Discogs-derived subgenres** displayed as clickable chips beneath each genre button. Subgenres with 7+ artists in the database are interactive (accent-colored, clickable); those with fewer are shown dimmed as informational tags. Each genre button has a small dropdown arrow that reveals/hides its subgenre chips. All genre/subgenre data lives in `src/genres.js` — the single source of truth imported by both build scripts and the browser client.
 
 ### Research methodology
 
@@ -199,7 +201,7 @@ The genre taxonomy was built by cross-referencing three sources:
 
 1. **MusicBrainz** — 2,000 official curated genres with user-voted popularity counts. Queried via the [MusicBrainz API](https://musicbrainz.org/doc/MusicBrainz_API) (`inc=genres+tags`) for all seed artists to identify unmapped tags.
 
-2. **Discogs** — 15 top-level genres and ~300 styles (81 electronic). Analyzed via the [AcousticBrainz Genre Dataset](https://mtg.github.io/acousticbrainz-genre-dataset/) (Zenodo), which contains Discogs genre annotations for 905K recordings across 118K release groups. Co-occurrence analysis of electronic subgenres confirmed the 8-category clustering.
+2. **Discogs** — 15 top-level genres and ~300 styles (81 electronic). Analyzed via the [AcousticBrainz Genre Dataset](https://mtg.github.io/acousticbrainz-genre-dataset/) (Zenodo), which contains Discogs genre annotations for 905K recordings across 118K release groups. Co-occurrence analysis of electronic subgenres confirmed the 10-category clustering.
 
 3. **UPF ISMIR 2022** — Alonso-Jimenez, Serra & Bogdanov, "[Music Representation Learning Based on Editorial Metadata From Discogs](https://repositori.upf.edu/handle/10230/54473)". Trained contrastive models on the top-400 Discogs styles across 3.3M tracks. Their finding that artist-level associations produce the strongest genre representations (87.7 ROC-AUC) validates our artist-level genre tagging approach.
 
@@ -217,32 +219,45 @@ The [MetaBrainz genre-matching project](https://github.com/metabrainz/genre-matc
 | `triphop` | Trip-Hop / Downtempo | trip-hop, downtempo, dub, future-jazz, chillout, broken-beat, nu-jazz |
 | `dnb` | Drum & Bass / Jungle | drum-n-bass, jungle, breakbeat, breakcore, dubstep, grime, uk-garage, future-garage, footwork |
 | `classical` | Classical / Orchestral | classical, baroque, romantic, contemporary, neo-classical, impressionist, modern-classical, opera, minimalist |
+| `artpop` | Art Pop | art-pop, art-rock, post-punk, shoegaze, dream-pop, indie-pop, noise-pop |
+| `jazz` | Jazz | spiritual-jazz, free-jazz, nu-jazz, jazz-fusion, modal-jazz, avant-garde-jazz |
 
 ### Subgenre coverage
 
-Of the ~60 subgenres defined, **20 have 7+ artists** and are clickable in the UI:
+Of the ~60 subgenres defined, **28 have 7+ artists** and are clickable in the UI:
 
 | Subgenre | Artists | Parent genre |
 |----------|---------|-------------|
-| classical | 277 | classical |
-| ambient | 57 | ambient |
-| experimental | 48 | idm |
-| idm | 46 | idm |
-| opera | 37 | classical |
-| techno | 28 | techno |
-| modern-classical | 14 | classical |
-| trip-hop | 13 | triphop |
-| industrial | 13 | industrial |
-| dub-techno | 13 | techno |
+| classical | 307 | classical |
+| ambient | 92 | ambient |
+| experimental | 75 | idm |
+| idm | 72 | idm |
+| opera | 69 | classical |
+| darkwave | 54 | darkwave |
+| techno | 47 | techno |
+| industrial | 32 | industrial |
+| contemporary | 29 | classical |
+| synth-pop | 21 | darkwave |
+| trip-hop | 19 | triphop |
+| modern-classical | 18 | classical |
+| glitch | 15 | idm |
+| dub-techno | 15 | techno |
+| electro | 15 | techno |
+| downtempo | 15 | triphop |
+| drone | 15 | ambient |
+| minimal | 13 | techno |
 | romantic | 13 | classical |
 | acid | 12 | techno |
-| glitch | 12 | idm |
-| minimal | 10 | techno |
-| minimalist | 8 | classical |
-| downtempo | 8 | triphop |
-| drone | 7 | ambient |
+| spiritual-jazz | 12 | jazz |
+| free-jazz | 11 | jazz |
+| art-pop | 11 | artpop |
+| minimalist | 10 | classical |
+| new-wave | 10 | darkwave |
+| dubstep | 9 | dnb |
+| house | 9 | techno |
+| dub | 9 | triphop |
 
-The remaining ~40 subgenres have 1-6 artists each and appear as dimmed (non-clickable) chips. The 230 seed artists have hand-curated subgenres; Wikidata artists have subgenres auto-derived from their genre categories via `categorizeSubgenres()`.
+The remaining ~30 subgenres have 1-6 artists each and appear as dimmed (non-clickable) chips. The 361 seed artists have hand-curated subgenres; all 712 artists have subgenres either hand-curated or auto-derived from their genre categories via `categorizeSubgenres()`.
 
 ### Tag mapping
 
@@ -297,13 +312,14 @@ Screens transition with opacity fades. The zoom animation replaces the loading o
 
 ### Zodiac Nebula
 
-A Canvas-based visualization (`src/viz.js`) draws all 666 artists as a ring of element-colored dots at their ecliptic longitudes. Key features:
+A Canvas-based visualization (`src/viz.js`) draws all 712 artists as a ring of element-colored dots at their ecliptic longitudes. Key features:
 
 - **Whole-sign sector outlines** — 12 annular wedges with white outlines, signs progress counter-clockwise (astrological convention)
 - **Element colors** — fire (red), earth (green), air (yellow), water (blue)
 - **Glassy "sharkot ball" dots** — 6-stop radial gradient with specular highlight offset top-left, bright glare falloff, body color, darkened rim, and hard edge cutoff. Gives dots a gem-like, graphic quality. Scaled 1.5x to compensate for gradient edges.
 - **Deterministic jitter** — Artist positions are hashed from their name, so the nebula is stable across renders (no `Math.random()`)
 - **Additive blending** — `globalCompositeOperation: 'lighter'` makes overlapping dots glow where signs are dense
+- **Tuner needle** — A red line at 12 o'clock on the zodiac ring (drawn behind the ring so it appears between the dots and the dial face). When zoomed in, drag-rotating the ring sweeps the needle across artist dots. Dots within ±1° of the needle get a hover-like glow highlight. The needle fires a rotation callback each frame with the current ecliptic longitude, updating the display and similarity scoring in real-time.
 - **Slow rotation** — 360° in 240 seconds
 - **Under-dot labels** — In zoomed mode, each dot shows the artist name underneath in element color. On hover, the label goes bold white with a second line showing zodiac sign + degree (e.g., "Gemini 14.2°")
 - **"You" label** — The user's pulsing Venus dot has a "You" label beneath it in both full-ring and zoomed modes
@@ -349,7 +365,7 @@ Each track displays: artist name (left, truncated with ellipsis if long), Venus 
 
 ## Known limitations
 
-- **Subgenre precision varies** — Seed artists (174) have hand-curated subgenres. Wikidata artists have subgenres auto-derived from their genre categories, which gives broad but less precise assignments (e.g., a classical composer gets `classical` and `opera` subgenres based on Wikidata labels, but not fine-grained tags like `romantic` or `impressionist` unless those labels were present).
+- **Subgenre precision varies** — Seed artists (361) have hand-curated subgenres. Wikidata artists have subgenres auto-derived from their genre categories, which gives broad but less precise assignments (e.g., a classical composer gets `classical` and `opera` subgenres based on Wikidata labels, but not fine-grained tags like `romantic` or `impressionist` unless those labels were present).
 - **Embed restrictions** — Some YouTube videos block embedded playback (Error 150/101). The app hot-swaps to backup video IDs before skipping, but some tracks may still fail if all IDs are restricted.
 - **Birth time not considered** — Venus sign is calculated at noon UTC. For birth dates where Venus changes signs that day, the result may differ from a full natal chart with exact birth time. The similarity score could show ~100% for an artist whose actual Venus is in the adjacent sign.
 - **Electronic genre coverage is thin vs. classical** — Wikidata has far more classical composers with birth dates than electronic musicians. The seed file compensates but could always use more entries.
@@ -373,7 +389,7 @@ To add more artists, edit `scripts/seed-musicians.json`:
 
 **Tip**: Use YouTube "Topic" channel videos (auto-generated, static artwork) — they're almost always embeddable. Search for `"Artist Name" - Topic` on YouTube.
 
-Genre IDs: `ambient`, `techno`, `idm`, `industrial`, `darkwave`, `triphop`, `dnb`, `classical`
+Genre IDs: `ambient`, `techno`, `idm`, `industrial`, `darkwave`, `triphop`, `dnb`, `classical`, `artpop`, `jazz`
 
 Subgenre IDs: see the taxonomy table above, or check `SUBGENRES` in `src/genres.js`.
 
@@ -389,7 +405,7 @@ The genre research drew on three datasets. Here's an honest accounting of what a
 
 **Used:**
 - Extracted the Discogs electronic subgenre vocabulary (81 styles) → became the `SUBGENRES` and `SUBGENRE_MAP` in `src/genres.js`
-- Co-occurrence analysis of subgenre pairs validated the 8-category clustering (e.g., electro+synth-pop co-occur 1,192 times → confirms darkwave cluster)
+- Co-occurrence analysis of subgenre pairs validated the 10-category clustering (e.g., electro+synth-pop co-occur 1,192 times → confirms darkwave cluster)
 - Gap analysis against our `GENRE_MAP` identified ~30 unmapped MusicBrainz/Last.fm tags
 
 **Not used (available for future work):**
