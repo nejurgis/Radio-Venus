@@ -2493,6 +2493,29 @@
     ]
   },
   {
+    "name": "Cocteau Twins",
+    "birthDate": "1963-08-29",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 5.3,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "darkwave",
+      "ambient"
+    ],
+    "subgenres": [
+      "darkwave",
+      "new-wave",
+      "ambient"
+    ],
+    "youtubeVideoId": "PbbUeLkZt74",
+    "backupVideoIds": [
+      "wMwO9UACbSQ"
+    ]
+  },
+  {
     "name": "Colin Potter",
     "birthDate": "1980-06-01",
     "venus": {
@@ -2776,6 +2799,31 @@
     "backupVideoIds": [
       "eJ5lY5dgfQE",
       "9WoAo57HKLk"
+    ]
+  },
+  {
+    "name": "Death in Vegas",
+    "birthDate": "1971-03-13",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 11,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave",
+      "triphop",
+      "techno"
+    ],
+    "subgenres": [
+      "darkwave",
+      "experimental",
+      "trip-hop"
+    ],
+    "youtubeVideoId": "8UvQvOFRS9o",
+    "backupVideoIds": [
+      "4uIBLg2WWeI",
+      "oJu6vG64C2M"
     ]
   },
   {
@@ -4214,6 +4262,27 @@
     ]
   },
   {
+    "name": "Fontaines D.C.",
+    "birthDate": "1997-07-01",
+    "venus": {
+      "sign": "Leo",
+      "degree": 3.3,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "darkwave"
+    ],
+    "subgenres": [
+      "new-wave",
+      "coldwave"
+    ],
+    "youtubeVideoId": "abxGaMCDhmU",
+    "backupVideoIds": [
+      "TNXrKBt76zI"
+    ]
+  },
+  {
     "name": "Foodman",
     "birthDate": "1985-01-01",
     "venus": {
@@ -5363,6 +5432,29 @@
     ]
   },
   {
+    "name": "Goldfrapp",
+    "birthDate": "1966-05-13",
+    "venus": {
+      "sign": "Aries",
+      "degree": 9.2,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "darkwave",
+      "triphop"
+    ],
+    "subgenres": [
+      "synth-pop",
+      "darkwave",
+      "downtempo"
+    ],
+    "youtubeVideoId": "YeawPUpTHJA",
+    "backupVideoIds": [
+      "sBAS9hvSuQw"
+    ]
+  },
+  {
     "name": "Goldie",
     "birthDate": "1965-09-19",
     "venus": {
@@ -5539,10 +5631,13 @@
       "classical"
     ],
     "subgenres": [
-      "classical"
+      "modern-classical",
+      "contemporary"
     ],
     "youtubeVideoId": "RCNzwdLwA8g",
-    "backupVideoIds": []
+    "backupVideoIds": [
+      "wqrJmxy4q3A"
+    ]
   },
   {
     "name": "Hanno Müller-Brachmann",
@@ -6048,6 +6143,26 @@
     ],
     "youtubeVideoId": "vTv1VROkPTw",
     "backupVideoIds": []
+  },
+  {
+    "name": "Hildegard von Bingen",
+    "birthDate": "1098-09-16",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 19.7,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "classical"
+    ],
+    "youtubeVideoId": "9eFPJa95qQE",
+    "backupVideoIds": [
+      "_Vcv2HdApcs"
+    ]
   },
   {
     "name": "Hiroshi Yoshimura",
@@ -6727,6 +6842,29 @@
     "backupVideoIds": []
   },
   {
+    "name": "Jean-Michel Jarre",
+    "birthDate": "1948-08-24",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 15.7,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "darkwave"
+    ],
+    "subgenres": [
+      "berlin-school",
+      "synth-pop",
+      "space-ambient"
+    ],
+    "youtubeVideoId": "kSIMVnPA994",
+    "backupVideoIds": [
+      "s_SVhB-a7cc"
+    ]
+  },
+  {
     "name": "Jeff Mills",
     "birthDate": "1963-06-18",
     "venus": {
@@ -7261,16 +7399,18 @@
     },
     "genres": [
       "ambient",
-      "techno"
+      "techno",
+      "idm"
     ],
     "subgenres": [
       "techno",
-      "ambient"
+      "ambient",
+      "idm"
     ],
-    "youtubeVideoId": "Q04ILDXe3QE",
+    "youtubeVideoId": "bazz7A_tD0g",
     "backupVideoIds": [
-      "p0UFP6XNWIM",
-      "NyVXFnWcOJc"
+      "r5umlj3eyYk",
+      "Q04ILDXe3QE"
     ]
   },
   {
@@ -8107,6 +8247,27 @@
     "backupVideoIds": [
       "9Sbvylpwah8",
       "rrjHdir7_Qw"
+    ]
+  },
+  {
+    "name": "Krzysztof Penderecki",
+    "birthDate": "1933-11-23",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 18,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "modern-classical",
+      "contemporary"
+    ],
+    "youtubeVideoId": "Dp3BlFZWJNA",
+    "backupVideoIds": [
+      "HilGthRhwP8"
     ]
   },
   {
@@ -9742,6 +9903,28 @@
     "backupVideoIds": []
   },
   {
+    "name": "Morcheeba",
+    "birthDate": "1969-03-11",
+    "venus": {
+      "sign": "Aries",
+      "degree": 25.9,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "triphop"
+    ],
+    "subgenres": [
+      "trip-hop",
+      "downtempo",
+      "chillout"
+    ],
+    "youtubeVideoId": "zWHXPz6qF7g",
+    "backupVideoIds": [
+      "rOLN9T9w9kA"
+    ]
+  },
+  {
     "name": "Moritz Hauptmann",
     "birthDate": "1792-10-13",
     "venus": {
@@ -10186,6 +10369,29 @@
     ],
     "youtubeVideoId": "2btaDYuVFfw",
     "backupVideoIds": []
+  },
+  {
+    "name": "Ólafur Arnalds",
+    "birthDate": "1986-11-03",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 13.9,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "classical"
+    ],
+    "subgenres": [
+      "neo-classical",
+      "ambient",
+      "modern-classical"
+    ],
+    "youtubeVideoId": "0kYc55bXJFI",
+    "backupVideoIds": [
+      "ejaaxLeUQd4"
+    ]
   },
   {
     "name": "Olga Borodina",
@@ -10677,6 +10883,26 @@
     ]
   },
   {
+    "name": "Pérotin",
+    "birthDate": "1160-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 22.8,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "classical"
+    ],
+    "youtubeVideoId": "KA6oq_UYbyA",
+    "backupVideoIds": [
+      "aySwfcRaOZM"
+    ]
+  },
+  {
     "name": "Perturbator",
     "birthDate": "1990-11-15",
     "venus": {
@@ -11049,6 +11275,29 @@
     "backupVideoIds": []
   },
   {
+    "name": "Popol Vuh",
+    "birthDate": "1944-06-06",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 10,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "darkwave"
+    ],
+    "subgenres": [
+      "krautrock",
+      "ambient",
+      "berlin-school"
+    ],
+    "youtubeVideoId": "4DdVTwPt794",
+    "backupVideoIds": [
+      "zdeIN3sYcfk"
+    ]
+  },
+  {
     "name": "Porter Ricks",
     "birthDate": "1966-01-01",
     "venus": {
@@ -11135,6 +11384,29 @@
     ],
     "youtubeVideoId": "eN9k6Dz1SX0",
     "backupVideoIds": []
+  },
+  {
+    "name": "Primal Scream",
+    "birthDate": "1961-06-22",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 15.1,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "darkwave",
+      "triphop"
+    ],
+    "subgenres": [
+      "new-wave",
+      "downtempo",
+      "experimental"
+    ],
+    "youtubeVideoId": "Y3ixEzKA4k0",
+    "backupVideoIds": [
+      "Ha1H-UQhVW0"
+    ]
   },
   {
     "name": "Purelink",
@@ -12320,6 +12592,28 @@
     ]
   },
   {
+    "name": "Siouxsie and the Banshees",
+    "birthDate": "1957-05-27",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 17.2,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave"
+    ],
+    "subgenres": [
+      "darkwave",
+      "new-wave",
+      "coldwave"
+    ],
+    "youtubeVideoId": "TjvvK-Rj0WI",
+    "backupVideoIds": [
+      "Qksrc5h98yk"
+    ]
+  },
+  {
     "name": "Skinny Puppy",
     "birthDate": "1959-12-08",
     "venus": {
@@ -12408,6 +12702,29 @@
     "backupVideoIds": [
       "MUq6ve2cv9k",
       "CLVSrDCJupg"
+    ]
+  },
+  {
+    "name": "Sneaker Pimps",
+    "birthDate": "1974-07-20",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 29.2,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "triphop",
+      "darkwave"
+    ],
+    "subgenres": [
+      "trip-hop",
+      "downtempo"
+    ],
+    "youtubeVideoId": "Wuwfe3DRJzE",
+    "backupVideoIds": [
+      "WFB31_8V6Ms",
+      "ECooA0roht4"
     ]
   },
   {
@@ -13542,6 +13859,30 @@
     "backupVideoIds": []
   },
   {
+    "name": "Vangelis",
+    "birthDate": "1943-03-29",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 9.2,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "classical"
+    ],
+    "subgenres": [
+      "ambient",
+      "berlin-school",
+      "neo-classical"
+    ],
+    "youtubeVideoId": "ECYLHiXvrBQ",
+    "backupVideoIds": [
+      "RScZrvTebeA",
+      "3kK_HGNOo9A"
+    ]
+  },
+  {
     "name": "Vano Muradeli",
     "birthDate": "1908-04-06",
     "venus": {
@@ -13747,6 +14088,29 @@
     ],
     "youtubeVideoId": "0p5vNxJZVMg",
     "backupVideoIds": []
+  },
+  {
+    "name": "Von Südenfed",
+    "birthDate": "1957-03-05",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 4.5,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "idm",
+      "techno"
+    ],
+    "subgenres": [
+      "experimental",
+      "electro"
+    ],
+    "youtubeVideoId": "iG-CLFPU6RY",
+    "backupVideoIds": [
+      "j2EgYucuK8E",
+      "Pdv2UMiBLdc"
+    ]
   },
   {
     "name": "Waldemar von Baußnern",
