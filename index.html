@@ -12,8 +12,8 @@
   <script type="importmap">
     { "imports": { "astronomy-engine": "/node_modules/astronomy-engine/esm/astronomy.js" } }
   </script>
-  <script type="module" crossorigin src="/Radio-Venus/assets/index-CkUPJKD0.js"></script>
-  <link rel="stylesheet" crossorigin href="/Radio-Venus/assets/index-BJsqHZYA.css">
+  <script type="module" crossorigin src="/Radio-Venus/assets/index-C3q6wwxI.js"></script>
+  <link rel="stylesheet" crossorigin href="/Radio-Venus/assets/index-hnbEg5Tr.css">
 </head>
 <body>
 
@@ -94,6 +94,14 @@
       <p id="empty-state" class="empty-state" hidden>No musicians found for this combination. Try another genre.</p>
     </div>
   </section>
+
+  <!-- Now-playing on reveal screen (body-level for mix-blend-mode) -->
+  <div id="reveal-now-playing" class="reveal-np" hidden>
+    <span class="reveal-np-marquee">
+      <span id="reveal-np-label" class="reveal-np-track"></span>
+      <span id="reveal-np-label-dup" class="reveal-np-track" aria-hidden="true"></span>
+    </span>
+  </div>
 
   <!-- Now-playing floating bar (visible on portal, reveal, genre screens) -->
   <button id="btn-now-playing" class="btn-now-playing" hidden>
