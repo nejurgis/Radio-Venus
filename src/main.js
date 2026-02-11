@@ -49,18 +49,22 @@ const ZODIAC_ELEMENTS = {
 document.addEventListener('DOMContentLoaded', async () => {
   initScreens();
 
-  // ── Pinch-to-zoom-out on reveal screen (mobile gesture) ──
-  const revealScreen = document.getElementById('screen-reveal');
+  // ── Pinch gestures (mobile) ──
   let pinchStartDist = 0;
+  let pinchZooming = false; // prevent double-trigger during async zoom
 
-  revealScreen.addEventListener('touchstart', (e) => {
+  // Shared touchstart for both screens
+  function onPinchStart(e) {
     if (e.touches.length === 2) {
       const dx = e.touches[0].pageX - e.touches[1].pageX;
       const dy = e.touches[0].pageY - e.touches[1].pageY;
       pinchStartDist = Math.hypot(dx, dy);
     }
-  }, { passive: true });
+  }
 
+  // Reveal: pinch-in (fingers closer) → zoom out to portal
+  const revealScreen = document.getElementById('screen-reveal');
+  revealScreen.addEventListener('touchstart', onPinchStart, { passive: true });
   revealScreen.addEventListener('touchmove', (e) => {
     if (e.touches.length === 2 && pinchStartDist > 0 && revealScreen.classList.contains('active')) {
       const dx = e.touches[0].pageX - e.touches[1].pageX;
@@ -69,6 +73,22 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (pinchStartDist - newDist > 70) {
         pinchStartDist = 0;
         history.back();
+      }
+    }
+  }, { passive: true });
+
+  // Portal: pinch-out (fingers apart) → zoom in to reveal (if date was entered)
+  const portalScreen = document.getElementById('screen-portal');
+  portalScreen.addEventListener('touchstart', onPinchStart, { passive: true });
+  portalScreen.addEventListener('touchmove', (e) => {
+    if (e.touches.length === 2 && pinchStartDist > 0 && portalScreen.classList.contains('active') && venus && !pinchZooming) {
+      const dx = e.touches[0].pageX - e.touches[1].pageX;
+      const dy = e.touches[0].pageY - e.touches[1].pageY;
+      const newDist = Math.hypot(dx, dy);
+      if (newDist - pinchStartDist > 70) {
+        pinchStartDist = 0;
+        pinchZooming = true;
+        zoomInToReveal().then(() => { pinchZooming = false; });
       }
     }
   }, { passive: true });
@@ -329,6 +349,23 @@ async function onDateSubmit(d, m, y) {
   // Back buttons use history so browser back/forward works
   document.getElementById('btn-back-reveal').addEventListener('click', () => history.back());
   document.getElementById('btn-back-genre').addEventListener('click', () => history.back());
+}
+
+async function zoomInToReveal() {
+  const signIndex = ZODIAC_SIGNS.indexOf(venus.sign);
+
+  setElementTheme(venus.element);
+  setUserVenus(venus.longitude, venus.element);
+  renderReveal(venus);
+
+  const portalScreen = document.getElementById('screen-portal');
+  portalScreen.classList.add('is-fading');
+  tunedLongitude = venus.longitude;
+  await zoomToSign(signIndex, { duration: 2500, targetDeg: venus.longitude });
+  showScreen('reveal');
+  enableDragRotate(true);
+  history.pushState({ screen: 'reveal' }, '');
+  updateNowPlayingButton(true);
 }
 
 function rebuildGenreGrid() {
