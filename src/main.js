@@ -10,7 +10,7 @@ import {
   renderTrackList, updateNowPlaying, updatePlayButton, updateFavoriteButton, showEmptyState,
   markTrackFailed,
   highlightGenres,
-  updateProgress, resetProgress,
+  updateProgress, resetProgress, glideToPosition,
   showBuffering, hideBuffering,
 } from './ui.js';
 
@@ -674,8 +674,9 @@ document.addEventListener('click', e => {
 document.getElementById('seeker').addEventListener('input', e => {
   const duration = getDuration();
   if (duration > 0) {
-    const targetPct = e.target.value / 10;
+    const targetPct = (e.target.value / 1000) * 100;
     showBuffering(targetPct);
+    glideToPosition(targetPct);
     seekTo(duration * e.target.value / 1000);
   }
 });

@@ -233,12 +233,26 @@ export function markTrackFailed(index) {
 export function updateNowPlaying(name, title) {
   const label = title ? `${name} — ${title}` : name || '';
   if (ui.npLabel) ui.npLabel.textContent = label;
-  if (ui.npLabelDup) ui.npLabelDup.textContent = label;
-  
-  // Only force reflow if marquee actually exists
-  if (ui.npMarquee) {
+
+  // Measure overflow and set bounce-scroll if needed
+  if (ui.npMarquee && ui.nowPlaying) {
+    // Reset animation to measure true width
     ui.npMarquee.style.animation = 'none';
-    ui.npMarquee.offsetHeight; // Trigger reflow
+    ui.npMarquee.offsetHeight;
+
+    const textWidth = ui.npMarquee.scrollWidth;
+    const containerWidth = ui.nowPlaying.clientWidth;
+    const overflow = textWidth - containerWidth;
+
+    if (overflow > 0) {
+      const duration = Math.max(8, overflow / 10);
+      ui.npMarquee.style.setProperty('--scroll-distance', `-${overflow}px`);
+      ui.npMarquee.style.setProperty('--scroll-duration', `${duration}s`);
+      ui.npMarquee.style.setProperty('--scroll-state', 'running');
+    } else {
+      ui.npMarquee.style.setProperty('--scroll-state', 'paused');
+    }
+
     ui.npMarquee.style.animation = '';
   }
 }
@@ -279,16 +293,13 @@ function arcY(pct) {
 }
 
 let lastSecond = -1;
+let glideRaf = null;
+let isGliding = false;
 
-export function updateProgress(current, duration) {
-  const pct = duration > 0 ? (current / duration) * 100 : 0;
-  const currentSec = Math.floor(current);
-
-  // HIGH PRIORITY: smooth visuals (every frame)
-  if (ui.progressClip) ui.progressClip.setAttribute('width', pct * 10);
-
+function setArcPosition(pct) {
+  const cx = pct * 10, cy = arcY(pct);
+  if (ui.progressClip) ui.progressClip.setAttribute('width', cx);
   if (ui.playhead) {
-    const cx = pct * 10, cy = arcY(pct);
     ui.playhead.setAttribute('cx', cx);
     ui.playhead.setAttribute('cy', cy);
     if (ui.playheadHalo) {
@@ -296,8 +307,42 @@ export function updateProgress(current, duration) {
       ui.playheadHalo.setAttribute('cy', cy);
     }
   }
+}
 
-  // LOW PRIORITY: text & seeker (only once per second)
+export function glideToPosition(targetPct, duration = 400) {
+  if (!ui.playhead) return;
+  const startCx = parseFloat(ui.playhead.getAttribute('cx')) || 0;
+  const startPct = startCx / 10;
+
+  if (glideRaf) cancelAnimationFrame(glideRaf);
+  isGliding = true;
+  const startTime = performance.now();
+
+  function animate(now) {
+    const t = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - t, 3); // ease-out cubic
+    setArcPosition(startPct + (targetPct - startPct) * eased);
+
+    if (t < 1) {
+      glideRaf = requestAnimationFrame(animate);
+    } else {
+      glideRaf = null;
+      isGliding = false;
+    }
+  }
+  glideRaf = requestAnimationFrame(animate);
+}
+
+export function updateProgress(current, duration) {
+  const pct = duration > 0 ? (current / duration) * 100 : 0;
+  const currentSec = Math.floor(current);
+
+  // Skip visual updates while gliding (seek animation in progress)
+  if (!isGliding) {
+    setArcPosition(pct);
+  }
+
+  // Text & seeker — only once per second
   if (currentSec !== lastSecond) {
     if (ui.currentTime) ui.currentTime.textContent = formatTime(current);
     if (ui.duration) ui.duration.textContent = formatTime(duration);
@@ -308,18 +353,15 @@ export function updateProgress(current, duration) {
 
 export function resetProgress() {
   lastSecond = -1;
-  if (ui.progressClip) ui.progressClip.setAttribute('width', 0);
-  if (ui.bufferClip) ui.bufferClip.setAttribute('width', 0);
-
-  if (ui.playhead) {
-    ui.playhead.setAttribute('cx', 0);
-    ui.playhead.setAttribute('cy', 100);
-    if (ui.playheadHalo) {
-      ui.playheadHalo.setAttribute('cx', 0);
-      ui.playheadHalo.setAttribute('cy', 100);
-    }
+  // Glide playhead back to start if it's not already there
+  const currentCx = ui.playhead ? parseFloat(ui.playhead.getAttribute('cx')) || 0 : 0;
+  if (currentCx > 10) {
+    glideToPosition(0, 300);
+  } else {
+    setArcPosition(0);
   }
 
+  if (ui.bufferClip) ui.bufferClip.setAttribute('width', 0);
   if (ui.currentTime) ui.currentTime.textContent = '0:00';
   if (ui.duration) ui.duration.textContent = '0:00';
   if (ui.seeker) ui.seeker.value = 0;
