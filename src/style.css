@@ -695,46 +695,77 @@ html, body {
   overflow: visible;
 }
 
+/* Track — gradient dome + faint line + soft wide glow stroke */
 .progress-arc-track {
+  fill: url(#arc-track-grad);
+  stroke: none;
+}
+
+.progress-arc-track-glow {
   fill: none;
-  stroke: var(--border);
-  stroke-width: 1.5;
+  stroke: rgba(220, 200, 225, 0.06);
+  stroke-width: 8;
   vector-effect: non-scaling-stroke;
 }
 
-.progress-arc-buffer {
+.progress-arc-track-line {
   fill: none;
-  stroke: var(--text-dim);
-  stroke-width: 1.5;
+  stroke: rgba(220, 200, 225, 0.12);
+  stroke-width: 1;
   vector-effect: non-scaling-stroke;
+}
+
+/* Buffer */
+.progress-arc-buffer {
+  fill: url(#arc-buffer-grad);
+  stroke: none;
   opacity: 0;
 }
 
 .progress-container.is-buffering .progress-arc-buffer {
-  opacity: 0.35;
+  opacity: 1;
   animation: buffer-shimmer 1.2s ease-in-out infinite;
 }
 
 @keyframes buffer-shimmer {
-  0%, 100% { opacity: 0.2; }
-  50%      { opacity: 0.45; }
+  0%, 100% { opacity: 0.4; }
+  50%      { opacity: 1; }
 }
 
+/* Progress fill — gradient dome + glow stroke + bright line */
 .progress-arc-fill {
+  fill: url(#arc-fill-grad);
+  stroke: none;
+}
+
+.progress-arc-glow {
   fill: none;
-  stroke: var(--accent);
-  stroke-width: 1.5;
+  stroke: rgba(240, 200, 255, 0.1);
+  stroke-width: 10;
   vector-effect: non-scaling-stroke;
 }
 
+.progress-arc-line {
+  fill: none;
+  stroke: rgba(240, 215, 245, 0.6);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+/* Playhead — soft halo circle behind, small bright dot in front */
+.progress-arc-playhead-halo {
+  fill: rgba(240, 215, 245, 0.08);
+  stroke: none;
+}
+
 .progress-arc-playhead {
-  fill: var(--accent);
-  filter: drop-shadow(0 0 4px var(--accent)) drop-shadow(0 0 8px var(--accent));
+  fill: rgba(240, 220, 245, 0.9);
+  stroke: none;
   animation: playhead-pulse 2.5s ease-in-out infinite;
 }
 
 @keyframes playhead-pulse {
-  0%, 100% { opacity: 0.8; }
+  0%, 100% { opacity: 0.7; }
   50%      { opacity: 1; }
 }
 
@@ -917,9 +948,8 @@ html, body {
 
 /* ACTIVE STATE: Expanded */
 .track-item.is-favorited .track-fav-container {
-  width: 30px; /* Space for star + margin */
+  width: 20px; /* Space for star + margin */
   opacity: 1;
-  margin-right: 4px;
 }
 
 /* Prevent the star inside from squishing while sliding */
@@ -978,25 +1008,26 @@ html, body {
   border-left: none;  /* Remove the old, sharp border */
 }
 
-/* The "Fuzzy" Glow Border */
 .track-item.active::before {
   content: "";
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
-  width: 2px; /* The thickness of your border */
-  background: var(--accent);
-  
-  /* 1. Subtle Glow (Standard) */
-  box-shadow: 0 0 6px var(--accent);
-  
-  /* 2. The "Fuzzy" Hacker look (Double drop-shadow) */
-  /* This creates a more organic, vibrating light effect */
-  filter: drop-shadow(0 0 1px var(--accent)) drop-shadow(0 0 2px var(--accent));
-  
-  /* 3. Smooth entrance */
-  animation: border-flicker .4s ease-out;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+  opacity: 0.5;
+}
+
+.track-item.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+  opacity: 0.08;
 }
 
 /* Optional: Add a tiny bit of "hacker" jitter on entrance */
@@ -1214,7 +1245,7 @@ body.element-water  { --accent: var(--water); }
   /* FORCE SIZE so it cannot be 0x0 */
   width: 16px; 
   height: 16px;
-  /* margin: 4px 4px 4px 4px; */
+  margin: 4px 4px 4px 4px;
 
 }
 
@@ -1276,4 +1307,30 @@ body.element-water  { --accent: var(--water); }
   0%   { transform: scale(1); opacity: 1; }
   50%  { transform: scale(1.1); opacity: 0.8; }
   100% { transform: scale(1); opacity: 1; }
+}
+
+
+
+
+.hacker-glow-line {                                                                                                                                  
+  width: 100%;                                                                                                                                       
+  height: 1px;                                                                                                                                       
+                                                                                                                                                     
+  /* Thin core line — muted lavender-white, not neon */
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(220, 200, 225, 0.2) 10%,
+    rgba(235, 210, 235, 0.45) 35%,
+    rgba(240, 215, 240, 0.5) 50%,
+    rgba(235, 210, 235, 0.45) 65%,
+    rgba(220, 200, 225, 0.2) 90%,
+    transparent 100%
+  );
+
+  /* Layered bloom — soft vertical spread at different radii */
+  box-shadow:
+    0 0 6px 1px rgba(230, 200, 240, 0.15),
+    0 0 20px 4px rgba(230, 200, 240, 0.07),
+    0 0 50px 10px rgba(235, 210, 245, 0.03);
 }

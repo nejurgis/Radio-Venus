@@ -18,6 +18,7 @@ const ui = {
   progressClip: null,
   bufferClip: null,
   playhead: null,
+  playheadHalo: null,
   currentTime: null,
   duration: null,
   seeker: null,
@@ -57,6 +58,7 @@ export function initScreens() {
   ui.progressClip = document.getElementById('progress-clip-rect');
   ui.bufferClip = document.getElementById('buffer-clip-rect');
   ui.playhead = document.getElementById('progress-playhead');
+  ui.playheadHalo = document.querySelector('.progress-arc-playhead-halo');
   ui.currentTime = document.getElementById('current-time');
   ui.duration = document.getElementById('duration');
   ui.seeker = document.getElementById('seeker');
@@ -193,7 +195,7 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
     // We ALWAYS render the container. CSS decides if width is 0 or 24.
     const favHtml = `
       <div class="track-fav-container">
-        <div class="star-toggle active" style="width:12px; height:12px; margin-right:6px;"></div>
+        <div class="star-toggle active" style="width:12px; height:12px;"></div>
       </div>
     `;
     
@@ -283,8 +285,13 @@ export function updateProgress(current, duration) {
   if (ui.progressClip) ui.progressClip.setAttribute('width', pct * 10);
 
   if (ui.playhead) {
-    ui.playhead.setAttribute('cx', pct * 10);
-    ui.playhead.setAttribute('cy', arcY(pct));
+    const cx = pct * 10, cy = arcY(pct);
+    ui.playhead.setAttribute('cx', cx);
+    ui.playhead.setAttribute('cy', cy);
+    if (ui.playheadHalo) {
+      ui.playheadHalo.setAttribute('cx', cx);
+      ui.playheadHalo.setAttribute('cy', cy);
+    }
   }
 
   if (ui.currentTime) ui.currentTime.textContent = formatTime(current);
@@ -299,6 +306,10 @@ export function resetProgress() {
   if (ui.playhead) {
     ui.playhead.setAttribute('cx', 0);
     ui.playhead.setAttribute('cy', 100);
+    if (ui.playheadHalo) {
+      ui.playheadHalo.setAttribute('cx', 0);
+      ui.playheadHalo.setAttribute('cy', 100);
+    }
   }
 
   if (ui.currentTime) ui.currentTime.textContent = '0:00';
