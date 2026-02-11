@@ -43,10 +43,6 @@ export function renderGenreGrid(categories, subgenreMap, subgenreCounts, onGenre
     const cell = document.createElement('div');
     cell.className = 'genre-cell';
 
-    const subs = subgenreMap[cat.id] || [];
-    const counts = subgenreCounts[cat.id] || {};
-    const hasSubs = subs.some(s => (counts[s] || 0) > 0);
-
     const row = document.createElement('div');
     row.className = 'genre-row';
 
@@ -57,44 +53,7 @@ export function renderGenreGrid(categories, subgenreMap, subgenreCounts, onGenre
     btn.addEventListener('click', () => onGenreSelect(cat.id));
     row.appendChild(btn);
 
-    if (hasSubs) {
-      const toggle = document.createElement('button');
-      toggle.className = 'subgenre-toggle';
-      toggle.dataset.genre = cat.id;
-      toggle.innerHTML = '<svg viewBox="0 0 12 8" width="10" height="7"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-      toggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const chips = cell.querySelector('.subgenre-chips');
-        if (!chips) return;
-        const open = chips.classList.toggle('is-open');
-        toggle.classList.toggle('is-open', open);
-      });
-      row.appendChild(toggle);
-    }
-
     cell.appendChild(row);
-
-    if (hasSubs) {
-      const chipRow = document.createElement('div');
-      chipRow.className = 'subgenre-chips';
-      for (const sub of subs) {
-        const count = counts[sub] || 0;
-        if (count === 0) continue;
-        const chip = document.createElement('span');
-        const isClickable = count >= 7;
-        chip.className = 'subgenre-chip' + (isClickable ? ' is-active' : '');
-        chip.textContent = sub;
-        chip.title = `${count} artist${count !== 1 ? 's' : ''}`;
-        if (isClickable) {
-          chip.addEventListener('click', (e) => {
-            e.stopPropagation();
-            onSubgenreSelect(cat.id, sub);
-          });
-        }
-        chipRow.appendChild(chip);
-      }
-      cell.appendChild(chipRow);
-    }
 
     grid.appendChild(cell);
   }

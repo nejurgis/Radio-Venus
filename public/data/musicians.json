@@ -6568,14 +6568,11 @@
       "element": "earth"
     },
     "genres": [
-      "classical",
-      "techno",
-      "idm"
+      "classical"
     ],
     "subgenres": [
       "contemporary",
       "experimental",
-      "electro",
       "classical"
     ],
     "youtubeVideoId": "YBz97nJLej0",
@@ -14613,6 +14610,25 @@
       "breakbeat"
     ],
     "youtubeVideoId": "XHtbU-lHb-s",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Bronius Kutavičius",
+    "birthDate": "1932-09-13",
+    "venus": {
+      "sign": "Leo",
+      "degree": 4.6,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "contemporary",
+      "modern classical"
+    ],
+    "youtubeVideoId": "jj_H-GGQNUU",
     "backupVideoIds": []
   }
 ]

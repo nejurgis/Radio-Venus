@@ -368,16 +368,22 @@ async function zoomInToReveal() {
   updateNowPlayingButton(true);
 }
 
+let cachedShuffledGenres = null;
+
 function rebuildGenreGrid() {
   const genreLabel = id => {
     if (id === 'favorites') return 'Favorites';
     return GENRE_CATEGORIES.find(c => c.id === id)?.label || id;
   };
-  const shuffledGenres = [...GENRE_CATEGORIES];
-  for (let i = shuffledGenres.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffledGenres[i], shuffledGenres[j]] = [shuffledGenres[j], shuffledGenres[i]];
+  // Shuffle only once, then reuse the cached order
+  if (!cachedShuffledGenres) {
+    cachedShuffledGenres = [...GENRE_CATEGORIES];
+    for (let i = cachedShuffledGenres.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [cachedShuffledGenres[i], cachedShuffledGenres[j]] = [cachedShuffledGenres[j], cachedShuffledGenres[i]];
+    }
   }
+  const shuffledGenres = [...cachedShuffledGenres];
   // Prepend favorites if any exist
   if (getFavorites().length > 0) {
     shuffledGenres.unshift({ id: 'favorites', label: 'Favorites' });
