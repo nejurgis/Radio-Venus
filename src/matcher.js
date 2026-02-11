@@ -101,6 +101,11 @@ export function match(venusSign, genre, element, { subgenre = null, userLongitud
   return shuffle(pool);
 }
 
+export function matchFavorites(names, userLongitude) {
+  const pool = db.filter(m => names.includes(m.name));
+  return sortBySimilarity(pool, userLongitude);
+}
+
 function shuffle(arr) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {

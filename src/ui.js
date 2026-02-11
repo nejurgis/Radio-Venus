@@ -122,7 +122,14 @@ const SIGN_ELEMENTS = {
   Cancer: 'water', Scorpio: 'water', Pisces: 'water',
 };
 
-export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new Set()) {
+export function updateFavoriteButton(isFav) {
+  const btn = document.getElementById('btn-fav');
+  if (!btn) return;
+  btn.innerHTML = isFav ? '&#9829;' : '&#9825;';
+  btn.classList.toggle('is-favorited', isFav);
+}
+
+export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new Set(), favSet = new Set()) {
   const list = document.getElementById('track-list');
   list.innerHTML = '';
   tracks.forEach((track, i) => {
@@ -136,7 +143,8 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
       ? `<span class="track-similarity">${track.similarity}%</span>` : '';
     const deg = track.venus.degree != null ? ` ${Math.round(track.venus.degree * 10) / 10}°` : '';
     const el = SIGN_ELEMENTS[track.venus.sign] || 'air';
-    item.innerHTML = `<span class="track-name">${track.name}${failed ? ' <span class="track-restricted">restricted</span>' : ''}</span><span class="track-meta">${simHtml}<span class="track-item-sign" style="color:var(--${el})">${track.venus.sign}${deg}</span></span>`;
+    const favHtml = favSet.has(track.name) ? '<span class="track-fav">\u2665</span>' : '';
+    item.innerHTML = `<span class="track-name">${favHtml}${track.name}${failed ? ' <span class="track-restricted">restricted</span>' : ''}</span><span class="track-meta">${simHtml}<span class="track-item-sign" style="color:var(--${el})">${track.venus.sign}${deg}</span></span>`;
     if (!failed) item.addEventListener('click', () => onSelect(i));
     list.appendChild(item);
   });

@@ -446,6 +446,7 @@ html, body {
 [data-genre="artpop"]     { --genre-color-pop: rgba(232, 141, 142, 0.65); }
 [data-genre="jazz"]       { --genre-color-pop: rgba(55, 109, 89, 0.7); }
 [data-genre="classical"]  { --genre-color-pop: rgba(61, 43, 145, 0.7); }
+[data-genre="favorites"] { --genre-color-pop: rgba(192, 57, 43, 0.7); }
 
 .genre-cell {
   display: flex;
@@ -771,6 +772,29 @@ html, body {
   padding: 0.5rem 0.7rem;
   border-color: transparent;
   color: var(--text-dim);
+}
+
+.btn-fav {
+  font-size: 0.95rem;
+  padding: 0.5rem 0.7rem;
+  border-color: transparent;
+  color: var(--text-dim);
+  transition: color 0.2s, transform 0.15s;
+}
+
+.btn-fav.is-favorited {
+  color: var(--fire);
+}
+
+.btn-fav:hover {
+  color: var(--fire);
+}
+
+.track-fav {
+  color: var(--fire);
+  font-size: 0.7em;
+  margin-right: 0.4em;
+  opacity: 0.7;
 }
 
 .track-list-wrap {

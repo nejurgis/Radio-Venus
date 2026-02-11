@@ -1,12 +1,13 @@
 import { calculateVenus, makeBirthDate } from './venus.js';
 import { GENRE_CATEGORIES, SUBGENRES } from './genres.js';
-import { loadDatabase, getDatabase, match, getSubgenreCounts } from './matcher.js';
+import { loadDatabase, getDatabase, match, matchFavorites, getSubgenreCounts } from './matcher.js';
+import { getFavorites, toggleFavorite, isFavorite } from './favorites.js';
 import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, enableDragRotate, onNebulaHover, onNebulaClick, onRotation } from './viz.js';
 import { loadYouTubeAPI, initPlayer, loadVideo, togglePlay, isPlaying, getDuration, getCurrentTime, seekTo, getVideoTitle } from './player.js';
 import {
   initScreens, showScreen, setElementTheme,
   renderReveal, renderGenreGrid, renderRadioHeader,
-  renderTrackList, updateNowPlaying, updatePlayButton, showEmptyState,
+  renderTrackList, updateNowPlaying, updatePlayButton, updateFavoriteButton, showEmptyState,
   markTrackFailed,
   highlightGenres,
   updateProgress, resetProgress,
@@ -18,9 +19,10 @@ import {
 let venus = null;
 let tracks = [];
 let currentTrackIndex = 0;
-let playerReady = false;
+let playingGenreId = null;
+let playingSubgenreId = null;
 let progressInterval = null;
-const failedIds = new Set();       // video IDs that failed
+const failedIds = new Set();       // track indices that failed
 const trackVideoIndex = new Map(); // trackIndex → which video ID we're trying
 let hasPlayed = false;             // whether current video reached PLAYING
 let sessionHasPlayed = false;      // whether ANY video played this session
@@ -46,6 +48,31 @@ const ZODIAC_ELEMENTS = {
 
 document.addEventListener('DOMContentLoaded', async () => {
   initScreens();
+
+  // ── Pinch-to-zoom-out on reveal screen (mobile gesture) ──
+  const revealScreen = document.getElementById('screen-reveal');
+  let pinchStartDist = 0;
+
+  revealScreen.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 2) {
+      const dx = e.touches[0].pageX - e.touches[1].pageX;
+      const dy = e.touches[0].pageY - e.touches[1].pageY;
+      pinchStartDist = Math.hypot(dx, dy);
+    }
+  }, { passive: true });
+
+  revealScreen.addEventListener('touchmove', (e) => {
+    if (e.touches.length === 2 && pinchStartDist > 0 && revealScreen.classList.contains('active')) {
+      const dx = e.touches[0].pageX - e.touches[1].pageX;
+      const dy = e.touches[0].pageY - e.touches[1].pageY;
+      const newDist = Math.hypot(dx, dy);
+      if (pinchStartDist - newDist > 70) {
+        pinchStartDist = 0;
+        history.back();
+      }
+    }
+  }, { passive: true });
+
   setupDateInput();
   history.replaceState({ screen: 'portal' }, '');
 
@@ -82,7 +109,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         const title = getVideoTitle();
         const track = tracks[currentTrackIndex];
         if (track) updateNowPlaying(track.name, title);
-        // Refresh floating button (removes "loading..." prefix)
         updateNowPlayingButton(!document.getElementById('screen-radio').classList.contains('active'));
         clearInterval(progressInterval);
         progressInterval = setInterval(() => {
@@ -98,7 +124,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
       }
     },
-  }).then(() => { playerReady = true; });
+  });
 
   if (dbResult.status === 'rejected') {
     console.error('Failed to load musician database:', dbResult.reason);
@@ -116,9 +142,28 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (!venus || !info.genres.length) return;
       const genreId = info.genres[0];
       const label = GENRE_CATEGORIES.find(c => c.id === genreId)?.label || genreId;
-      startRadio(genreId, label);
-      const idx = tracks.findIndex(t => t.name === info.name);
-      if (idx >= 0) playTrack(idx);
+
+      // Load the genre track list (won't interrupt audio if playing)
+      const trackList = startRadio(genreId, label);
+      if (!trackList || trackList.length === 0) return;
+
+      const idx = trackList.findIndex(t => t.name === info.name);
+      if (idx === -1) return;
+
+      if (isPlaying() && hasPlayed) {
+        // Music is playing — don't interrupt, just scroll to the artist
+        setTimeout(() => {
+          const items = document.querySelectorAll('#track-list .track-item');
+          if (items[idx]) {
+            items[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
+            items[idx].style.background = 'rgba(255,255,255,0.08)';
+            setTimeout(() => { items[idx].style.background = ''; }, 1200);
+          }
+        }, 50);
+      } else {
+        // Silence — play the artist immediately
+        playTrack(idx);
+      }
     });
   }
 });
@@ -131,7 +176,6 @@ function setupDateInput() {
   const yearEl = document.getElementById('input-year');
   const btnEnter = document.getElementById('btn-enter');
   const errorEl = document.getElementById('date-error');
-  const fields = [dayEl, monthEl, yearEl];
 
   // Auto-advance focus — smart single-digit advance for day/month
   function onFieldInput(el, nextEl, maxLen, smartMin) {
@@ -269,27 +313,11 @@ async function onDateSubmit(d, m, y) {
   enableDragRotate(true);
   history.pushState({ screen: 'reveal' }, '');
 
-  // Set up genre screen (shuffled order each time)
-  const genreLabel = id => GENRE_CATEGORIES.find(c => c.id === id)?.label || id;
-  const shuffledGenres = [...GENRE_CATEGORIES];
-  for (let i = shuffledGenres.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffledGenres[i], shuffledGenres[j]] = [shuffledGenres[j], shuffledGenres[i]];
-  }
-  const subgenreCounts = {};
-  for (const cat of GENRE_CATEGORIES) {
-    subgenreCounts[cat.id] = getSubgenreCounts(cat.id);
-  }
-
-  renderGenreGrid(
-    shuffledGenres,
-    SUBGENRES,
-    subgenreCounts,
-    genreId => startRadio(genreId, genreLabel(genreId)),
-    (genreId, subgenreId) => startRadio(genreId, genreLabel(genreId), subgenreId),
-  );
+  // Set up genre screen
+  rebuildGenreGrid();
 
   document.getElementById('btn-choose-genre').addEventListener('click', () => {
+    rebuildGenreGrid(); // refresh favorites entry
     enableDragRotate(false);
     showNebula(true);
     dimNebula(true);
@@ -303,20 +331,40 @@ async function onDateSubmit(d, m, y) {
   document.getElementById('btn-back-genre').addEventListener('click', () => history.back());
 }
 
+function rebuildGenreGrid() {
+  const genreLabel = id => {
+    if (id === 'favorites') return 'Favorites';
+    return GENRE_CATEGORIES.find(c => c.id === id)?.label || id;
+  };
+  const shuffledGenres = [...GENRE_CATEGORIES];
+  for (let i = shuffledGenres.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledGenres[i], shuffledGenres[j]] = [shuffledGenres[j], shuffledGenres[i]];
+  }
+  // Prepend favorites if any exist
+  if (getFavorites().length > 0) {
+    shuffledGenres.unshift({ id: 'favorites', label: 'Favorites' });
+  }
+  const subgenreCounts = {};
+  for (const cat of GENRE_CATEGORIES) {
+    subgenreCounts[cat.id] = getSubgenreCounts(cat.id);
+  }
+
+  renderGenreGrid(
+    shuffledGenres,
+    SUBGENRES,
+    subgenreCounts,
+    genreId => startRadio(genreId, genreLabel(genreId)),
+    (genreId, subgenreId) => startRadio(genreId, genreLabel(genreId), subgenreId),
+  );
+}
+
 function startRadio(genreId, genreLabel, subgenreId = null) {
   const effectiveLong = tunedLongitude != null ? tunedLongitude : venus.longitude;
   const effectiveSign = signFromLongitude(effectiveLong);
   const effectiveElement = ZODIAC_ELEMENTS[effectiveSign];
 
-  tracks = match(effectiveSign, genreId, effectiveElement, {
-    subgenre: subgenreId,
-    userLongitude: effectiveLong,
-  });
-  currentTrackIndex = 0;
-  failedIds.clear();
-  trackVideoIndex.clear();
-  activeGenreLabel = subgenreId ? `${genreLabel} · ${subgenreId}` : genreLabel;
-
+  // 1. Visuals & navigation (always)
   renderRadioHeader(effectiveSign, genreLabel, subgenreId);
   enableDragRotate(false);
   updateNowPlayingButton(false);
@@ -325,15 +373,61 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
   deepDimNebula(true);
   setZoomDrift(true);
   showScreen('radio');
-  history.pushState({ screen: 'radio' }, '');
-
-  if (tracks.length === 0) {
-    showEmptyState(true);
-    return;
+  if (history.state?.screen !== 'radio') {
+    history.pushState({ screen: 'radio' }, '');
   }
 
+  // 2. Same genre already playing — just re-render the list, don't touch audio
+  if (tracks.length > 0 && genreId === playingGenreId && subgenreId === playingSubgenreId) {
+    renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()));
+    return tracks;
+  }
+
+  // 3. New genre — calculate candidates
+  let candidateTracks;
+  if (genreId === 'favorites') {
+    candidateTracks = matchFavorites(getFavorites(), effectiveLong);
+  } else {
+    candidateTracks = match(effectiveSign, genreId, effectiveElement, {
+      subgenre: subgenreId,
+      userLongitude: effectiveLong,
+    });
+  }
+
+  const newLabel = subgenreId ? `${genreLabel} · ${subgenreId}` : genreLabel;
+
+  if (candidateTracks.length === 0) {
+    showEmptyState(true);
+    return candidateTracks;
+  }
   showEmptyState(false);
-  playTrack(0);
+
+  // 4. Play or queue depending on whether audio is active
+  if (isPlaying() && hasPlayed) {
+    // Music is playing — show the new list but don't interrupt audio.
+    // No track highlighted (-1). Clicking a track in the list will switch.
+    renderTrackList(candidateTracks, -1, (i) => {
+      tracks = candidateTracks;
+      playingGenreId = genreId;
+      playingSubgenreId = subgenreId;
+      activeGenreLabel = newLabel;
+      failedIds.clear();
+      trackVideoIndex.clear();
+      playTrack(i);
+    }, new Set(), new Set(getFavorites()));
+  } else {
+    // Silence — switch immediately
+    tracks = candidateTracks;
+    playingGenreId = genreId;
+    playingSubgenreId = subgenreId;
+    activeGenreLabel = newLabel;
+    failedIds.clear();
+    trackVideoIndex.clear();
+    renderTrackList(tracks, 0, i => playTrack(i), failedIds, new Set(getFavorites()));
+    playTrack(0);
+  }
+
+  return candidateTracks;
 }
 
 function getVideoIds(track) {
@@ -408,7 +502,8 @@ function playTrack(index) {
   startSilentFailTimer();
   startLoadingProgress();
   updateNowPlaying(track.name);
-  renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds);
+  updateFavoriteButton(isFavorite(track.name));
+  renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()));
   updatePlayButton('buffering');
 
   const activeItem = document.querySelector('#track-list .track-item.active');
@@ -440,7 +535,7 @@ function shuffleTracks() {
   trackVideoIndex.clear();
   tracks.forEach((t, i) => { if (failedTracks.has(t)) failedIds.add(i); });
   currentTrackIndex = tracks.indexOf(current);
-  renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds);
+  renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()));
 }
 
 // ── Now-playing button on genre screen ────────────────────────────────────
@@ -507,7 +602,9 @@ function goToRadio() {
   deepDimNebula(true);
   setZoomDrift(true);
   showScreen('radio');
-  history.pushState({ screen: 'radio' }, '');
+  if (history.state?.screen !== 'radio') {
+    history.pushState({ screen: 'radio' }, '');
+  }
 }
 
 // ── Radio controls ──────────────────────────────────────────────────────────
@@ -527,6 +624,14 @@ document.addEventListener('click', e => {
   }
   if (e.target.id === 'btn-shuffle' || e.target.closest('#btn-shuffle')) {
     shuffleTracks();
+  }
+  if (e.target.id === 'btn-fav' || e.target.closest('#btn-fav')) {
+    if (tracks.length === 0) return;
+    const track = tracks[currentTrackIndex];
+    if (!track) return;
+    const nowFav = toggleFavorite(track.name);
+    updateFavoriteButton(nowFav);
+    renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()));
   }
 });
 
@@ -568,6 +673,7 @@ window.addEventListener('popstate', (e) => {
       if (tunedLongitude != null) updateTunedDisplay(tunedLongitude);
       break;
     case 'genre':
+      rebuildGenreGrid(); // refresh favorites entry
       showNebula(true);
       dimNebula(true);
       showScreen('genre');
@@ -589,4 +695,3 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight') playTrack(currentTrackIndex + 1);
   if (e.key === ' ') { e.preventDefault(); togglePlay(); }
 });
-

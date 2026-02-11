@@ -5,15 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Radio Venus</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  
   <script type="importmap">
     { "imports": { "astronomy-engine": "/node_modules/astronomy-engine/esm/astronomy.js" } }
   </script>
+  
   <link rel="stylesheet" href="/src/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <!-- Hidden Audio Proxy for Visualizer -->
+  <audio id="proxy-audio" crossorigin="anonymous"></audio>
 
   <!-- Nebula background (shared across screens) -->
   <div id="nebula-container" class="nebula-container"></div>
@@ -66,6 +71,7 @@
           <span id="radio-genre" class="radio-genre-label"></span>
         </div>
       </div>
+      <!-- Note: yt-player is visually hidden via CSS usually, or kept small -->
       <div class="player-container">
         <div id="yt-player" class="yt-player"></div>
       </div>
@@ -85,6 +91,7 @@
         <span id="duration" class="time-display">0:00</span>
         <button id="btn-next" class="btn-control" aria-label="Next">&#9654;&#9654;</button>
         <button id="btn-shuffle" class="btn-control btn-shuffle" aria-label="Shuffle">randomize</button>
+        <button id="btn-fav" class="btn-control btn-fav" aria-label="Favorite">&#9825;</button>
       </div>
       <div class="track-list-wrap">
         <div id="track-list" class="track-list"></div>
@@ -93,7 +100,6 @@
     </div>
   </section>
 
-  <!-- Now-playing on reveal screen (body-level for mix-blend-mode) -->
   <div id="reveal-now-playing" class="reveal-np" hidden>
     <span class="reveal-np-marquee">
       <span id="reveal-np-label" class="reveal-np-track"></span>
@@ -101,7 +107,6 @@
     </span>
   </div>
 
-  <!-- Now-playing floating bar (visible on portal, reveal, genre screens) -->
   <button id="btn-now-playing" class="btn-now-playing" hidden>
     <span class="btn-np-marquee">
       <span id="btn-np-label" class="btn-np-track"></span>
@@ -109,9 +114,9 @@
     </span>
   </button>
 
-  <!-- Loading overlay -->
   <div id="loading-overlay" class="loading-overlay" hidden>
     <div class="loading-spinner">
+      <!-- Your existing SVG -->
       <svg class="loading-ring" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M10,50c0,0,0,0.5,0.1,1.4c0,0.5,0.1,1,0.2,1.7c0,0.3,0.1,0.7,0.1,1.1c0.1,0.4,0.1,0.8,0.2,1.2c0.2,0.8,0.3,1.8,0.5,2.8c0.3,1,0.6,2.1,0.9,3.2c0.3,1.1,0.9,2.3,1.4,3.5c0.5,1.2,1.2,2.4,1.8,3.7c0.3,0.6,0.8,1.2,1.2,1.9c0.4,0.6,0.8,1.3,1.3,1.9c1,1.2,1.9,2.6,3.1,3.7c2.2,2.5,5,4.7,7.9,6.7c3,2,6.5,3.4,10.1,4.6c3.6,1.1,7.5,1.5,11.2,1.6c4-0.1,7.7-0.6,11.3-1.6c3.6-1.2,7-2.6,10-4.6c3-2,5.8-4.2,7.9-6.7c1.2-1.2,2.1-2.5,3.1-3.7c0.5-0.6,0.9-1.3,1.3-1.9c0.4-0.6,0.8-1.3,1.2-1.9c0.6-1.3,1.3-2.5,1.8-3.7c0.5-1.2,1-2.4,1.4-3.5c0.3-1.1,0.6-2.2,0.9-3.2c0.2-1,0.4-1.9,0.5-2.8c0.1-0.4,0.1-0.8,0.2-1.2c0-0.4,0.1-0.7,0.1-1.1c0.1-0.7,0.1-1.2,0.2-1.7C90,50.5,90,50,90,50s0,0.5,0,1.4c0,0.5,0,1,0,1.7c0,0.3,0,0.7,0,1.1c0,0.4-0.1,0.8-0.1,1.2c-0.1,0.9-0.2,1.8-0.4,2.8c-0.2,1-0.5,2.1-0.7,3.3c-0.3,1.2-0.8,2.4-1.2,3.7c-0.2,0.7-0.5,1.3-0.8,1.9c-0.3,0.7-0.6,1.3-0.9,2c-0.3,0.7-0.7,1.3-1.1,2c-0.4,0.7-0.7,1.4-1.2,2c-1,1.3-1.9,2.7-3.1,4c-2.2,2.7-5,5-8.1,7.1c-0.8,0.5-1.6,1-2.4,1.5c-0.8,0.5-1.7,0.9-2.6,1.3L66,87.7l-1.4,0.5c-0.9,0.3-1.8,0.7-2.8,1c-3.8,1.1-7.9,1.7-11.8,1.8L47,90.8c-1,0-2-0.2-3-0.3l-1.5-0.2l-0.7-0.1L41.1,90c-1-0.3-1.9-0.5-2.9-0.7c-0.9-0.3-1.9-0.7-2.8-1L34,87.7l-1.3-0.6c-0.9-0.4-1.8-0.8-2.6-1.3c-0.8-0.5-1.6-1-2.4-1.5c-3.1-2.1-5.9-4.5-8.1-7.1c-1.2-1.2-2.1-2.7-3.1-4c-0.5-0.6-0.8-1.4-1.2-2c-0.4-0.7-0.8-1.3-1.1-2c-0.3-0.7-0.6-1.3-0.9-2c-0.3-0.7-0.6-1.3-0.8-1.9c-0.4-1.3-0.9-2.5-1.2-3.7c-0.3-1.2-0.5-2.3-0.7-3.3c-0.2-1-0.3-2-0.4-2.8c-0.1-0.4-0.1-0.8-0.1-1.2c0-0.4,0-0.7,0-1.1c0-0.7,0-1.2,0-1.7C10,50.5,10,50,10,50z" fill="currentColor"/></svg>
     </div>
     <p class="loading-text">Calculating your Venus placement...</p>
