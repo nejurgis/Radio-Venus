@@ -93,6 +93,14 @@
     </div>
   </section>
 
+  <!-- Now-playing on reveal screen (body-level for mix-blend-mode) -->
+  <div id="reveal-now-playing" class="reveal-np" hidden>
+    <span class="reveal-np-marquee">
+      <span id="reveal-np-label" class="reveal-np-track"></span>
+      <span id="reveal-np-label-dup" class="reveal-np-track" aria-hidden="true"></span>
+    </span>
+  </div>
+
   <!-- Now-playing floating bar (visible on portal, reveal, genre screens) -->
   <button id="btn-now-playing" class="btn-now-playing" hidden>
     <span class="btn-np-marquee">

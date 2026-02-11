@@ -1,7 +1,7 @@
 import { calculateVenus, makeBirthDate } from './venus.js';
 import { GENRE_CATEGORIES, SUBGENRES } from './genres.js';
 import { loadDatabase, getDatabase, match, getSubgenreCounts } from './matcher.js';
-import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, enableDragRotate, onNebulaHover, onNebulaClick } from './viz.js';
+import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, enableDragRotate, onNebulaHover, onNebulaClick, onRotation } from './viz.js';
 import { loadYouTubeAPI, initPlayer, loadVideo, togglePlay, isPlaying, getDuration, getCurrentTime, seekTo, getVideoTitle } from './player.js';
 import {
   initScreens, showScreen, setElementTheme,
@@ -29,6 +29,18 @@ let loadingInterval = null;        // loading progress animation
 let loadStartTime = 0;
 const SILENT_FAIL_MS = 15000;
 let activeGenreLabel = null;       // label of the currently playing genre
+let tunedLongitude = null;         // current longitude at the tuner needle
+
+const ZODIAC_SIGNS = [
+  'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo',
+  'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces',
+];
+const ZODIAC_ELEMENTS = {
+  Aries: 'fire', Leo: 'fire', Sagittarius: 'fire',
+  Taurus: 'earth', Virgo: 'earth', Capricorn: 'earth',
+  Gemini: 'air', Libra: 'air', Aquarius: 'air',
+  Cancer: 'water', Scorpio: 'water', Pisces: 'water',
+};
 
 // ── Init ────────────────────────────────────────────────────────────────────
 
@@ -94,6 +106,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     initNebula('nebula-container');
     renderNebula(getDatabase());
     onNebulaHover(info => highlightGenres(info ? info.genres : null));
+    onRotation(longitude => {
+      tunedLongitude = longitude;
+      if (document.getElementById('screen-reveal').classList.contains('active')) {
+        updateTunedDisplay(longitude);
+      }
+    });
     onNebulaClick(info => {
       if (!venus || !info.genres.length) return;
       const genreId = info.genres[0];
@@ -202,6 +220,32 @@ function validateDate(d, m, y) {
   return null;
 }
 
+// ── Tuner display ────────────────────────────────────────────────────────────
+
+let lastTunedSignIdx = -1;
+let lastTunedDeg = -1;
+
+function updateTunedDisplay(longitude) {
+  const signIdx = Math.floor(longitude / 30) % 12;
+  const deg = Math.min(29, Math.round(longitude % 30));
+  if (signIdx === lastTunedSignIdx && deg === lastTunedDeg) return;
+  lastTunedSignIdx = signIdx;
+  lastTunedDeg = deg;
+
+  const sign = ZODIAC_SIGNS[signIdx];
+  const element = ZODIAC_ELEMENTS[sign];
+
+  document.getElementById('reveal-sign').textContent =
+    `venus in ${deg}° ${sign}`;
+  const detail = document.getElementById('reveal-detail');
+  detail.textContent = element;
+  detail.style.color = `var(--${element})`;
+}
+
+function signFromLongitude(lon) {
+  return ZODIAC_SIGNS[Math.floor(lon / 30) % 12];
+}
+
 // ── Flow ────────────────────────────────────────────────────────────────────
 
 async function onDateSubmit(d, m, y) {
@@ -219,7 +263,8 @@ async function onDateSubmit(d, m, y) {
   // Fade out portal content, then zoom into the user's Venus sign
   const portalScreen = document.getElementById('screen-portal');
   portalScreen.classList.add('is-fading');
-  await zoomToSign(signIndex, { duration: 2500 });
+  tunedLongitude = venus.longitude;
+  await zoomToSign(signIndex, { duration: 2500, targetDeg: venus.longitude });
   showScreen('reveal');
   enableDragRotate(true);
   history.pushState({ screen: 'reveal' }, '');
@@ -259,16 +304,20 @@ async function onDateSubmit(d, m, y) {
 }
 
 function startRadio(genreId, genreLabel, subgenreId = null) {
-  tracks = match(venus.sign, genreId, venus.element, {
+  const effectiveLong = tunedLongitude != null ? tunedLongitude : venus.longitude;
+  const effectiveSign = signFromLongitude(effectiveLong);
+  const effectiveElement = ZODIAC_ELEMENTS[effectiveSign];
+
+  tracks = match(effectiveSign, genreId, effectiveElement, {
     subgenre: subgenreId,
-    userLongitude: venus.longitude,
+    userLongitude: effectiveLong,
   });
   currentTrackIndex = 0;
   failedIds.clear();
   trackVideoIndex.clear();
   activeGenreLabel = subgenreId ? `${genreLabel} · ${subgenreId}` : genreLabel;
 
-  renderRadioHeader(venus.sign, genreLabel, subgenreId);
+  renderRadioHeader(effectiveSign, genreLabel, subgenreId);
   enableDragRotate(false);
   updateNowPlayingButton(false);
   showNebula(true);
@@ -398,8 +447,14 @@ function shuffleTracks() {
 
 function updateNowPlayingButton(show) {
   const btn = document.getElementById('btn-now-playing');
+  const revealNp = document.getElementById('reveal-now-playing');
   if (!btn) return;
-  if (show && tracks.length > 0 && activeGenreLabel) {
+
+  const hasTrack = tracks.length > 0 && activeGenreLabel;
+
+  // Show floating marquee on genre screen only (reveal has its own inline one)
+  const onReveal = document.getElementById('screen-reveal').classList.contains('active');
+  if (show && hasTrack && !onReveal) {
     const track = tracks[currentTrackIndex];
     const artist = track ? track.name : '';
     const title = getVideoTitle();
@@ -418,9 +473,34 @@ function updateNowPlayingButton(show) {
   } else {
     btn.hidden = true;
   }
+
+  // Update inline now-playing on reveal screen (only visible when reveal is active)
+  if (revealNp) {
+    if (hasTrack && onReveal) {
+      const track = tracks[currentTrackIndex];
+      const artist = track ? track.name : '';
+      const title = getVideoTitle();
+      const revealLabel = title ? `${artist} — ${title}` : artist || activeGenreLabel;
+      document.getElementById('reveal-np-label').textContent = revealLabel;
+      document.getElementById('reveal-np-label-dup').textContent = revealLabel;
+      // Restart marquee animation
+      const rMarquee = revealNp.querySelector('.reveal-np-marquee');
+      if (rMarquee) {
+        rMarquee.style.animation = 'none';
+        rMarquee.offsetHeight;
+        rMarquee.style.animation = '';
+      }
+      revealNp.hidden = false;
+    } else {
+      revealNp.hidden = true;
+    }
+  }
 }
 
-document.getElementById('btn-now-playing').addEventListener('click', () => {
+document.getElementById('btn-now-playing').addEventListener('click', goToRadio);
+document.getElementById('reveal-now-playing').addEventListener('click', goToRadio);
+
+function goToRadio() {
   updateNowPlayingButton(false);
   showNebula(true);
   dimNebula(false);
@@ -428,7 +508,7 @@ document.getElementById('btn-now-playing').addEventListener('click', () => {
   setZoomDrift(true);
   showScreen('radio');
   history.pushState({ screen: 'radio' }, '');
-});
+}
 
 // ── Radio controls ──────────────────────────────────────────────────────────
 
@@ -485,6 +565,7 @@ window.addEventListener('popstate', (e) => {
       dimNebula(false);
       showScreen('reveal');
       updateNowPlayingButton(true);
+      if (tunedLongitude != null) updateTunedDisplay(tunedLongitude);
       break;
     case 'genre':
       showNebula(true);

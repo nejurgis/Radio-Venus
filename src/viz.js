@@ -77,6 +77,8 @@ let zoomSign = null;       // null = full ring, sign index = zoomed
 let containerEl = null;
 let hoverCallback = null;  // called with { name, genres } or null
 let clickCallback = null;  // called with { name, genres } when dot clicked in zoom
+let rotationCallback = null; // called with tuned longitude each frame
+let zoomTargetDeg = null;    // exact degree to center on (null = sign center)
 let dragRotateEnabled = false;
 let dragging = false;
 let dragStartX = 0;
@@ -94,7 +96,7 @@ let zoomResolve = null;    // promise resolver
 // ── OPTIMIZED SPRITE GENERATOR (High-Res + Soft Glow Filter) ──────────────
 
 const spriteCache = new Map();
-const SPRITE_SCALE = 4; // Supersampling for Retina/High-DPI smoothness
+const SPRITE_SCALE = 8; // Supersampling for Retina/High-DPI smoothness
 
 function getDotSprite(r, g, b, size, alpha) {
   // Round params for cache hits
@@ -330,11 +332,13 @@ export function setPreviewVenus(longitude, element) {
 export function clearPreviewVenus() { previewDot = null; }
 export function onNebulaHover(callback) { hoverCallback = callback; }
 export function onNebulaClick(callback) { clickCallback = callback; }
+export function onRotation(callback) { rotationCallback = callback; }
 
 // ── Zoom control ──────────────────────────────────────────────────────────────
 
-export function zoomToSign(signIndex, { duration = 2000, animate = true } = {}) {
+export function zoomToSign(signIndex, { duration = 2000, animate = true, targetDeg = null } = {}) {
   zoomSign = signIndex;
+  zoomTargetDeg = targetDeg;
   zoomDrift = 0;
   hoveredDot = null;
   if (containerEl) containerEl.classList.add('is-zoomed');
@@ -362,6 +366,7 @@ export function zoomOut({ duration = 1800, animate = true } = {}) {
     return new Promise(r => { zoomResolve = r; });
   }
   zoomSign = null;
+  zoomTargetDeg = null;
   zoomProgress = 0;
   zoomAnimating = false;
   if (containerEl) containerEl.classList.remove('is-zoomed');
@@ -424,6 +429,7 @@ function tick() {
       zoomProgress = 0;
       zoomAnimating = false;
       zoomSign = null;
+      zoomTargetDeg = null;
       rotation = zoomRotStart;
       if (containerEl) containerEl.classList.remove('is-zoomed');
       if (zoomResolve) { zoomResolve(); zoomResolve = null; }
@@ -439,7 +445,7 @@ function tick() {
 
   let rot;
   if (zoomSign != null) {
-    const targetRot = zoomSign * 30 + 15;
+    const targetRot = zoomTargetDeg != null ? zoomTargetDeg : zoomSign * 30 + 15;
     if (zoomAnimating || zoomProgress < 1) {
       let delta = targetRot - zoomRotStart;
       if (delta > 180) delta -= 360;
@@ -453,6 +459,11 @@ function tick() {
     rotation += (360 / 240) / 60;
     if (rotation >= 360) rotation -= 360;
     rot = rotation;
+  }
+
+  // Fire tuner callback with longitude at the 12-o'clock needle
+  if (zoomSign != null && rotationCallback) {
+    rotationCallback(((rot % 360) + 360) % 360);
   }
 
   // ── Transform ──────────────────────────────────────
@@ -472,6 +483,52 @@ function tick() {
     ctx.translate(focusX + tx, focusY + ty);
     ctx.scale(s, s);
     ctx.translate(-focusX, -focusY);
+  }
+
+  // ── Tuner needle (drawn first so the ring occludes it — behind the dial) ──
+  if (dragRotateEnabled && zoomSign != null) {
+    ctx.save();
+    const nW = Math.max(0.3, 1.2 / viewScale);
+
+    // Glow
+    ctx.beginPath();
+    ctx.moveTo(cx, cy - innerR + 2 / viewScale);
+    ctx.lineTo(cx, cy - outerR - 2 / viewScale);
+    ctx.strokeStyle = 'rgba(192, 57, 43, 0.25)';
+    ctx.lineWidth = nW * 6;
+    ctx.stroke();
+
+    // Main line
+    ctx.beginPath();
+    ctx.moveTo(cx, cy - innerR + 2 / viewScale);
+    ctx.lineTo(cx, cy - outerR - 2 / viewScale);
+    ctx.strokeStyle = 'rgba(192, 57, 43, 0.85)';
+    ctx.lineWidth = nW;
+    ctx.stroke();
+
+    ctx.restore();
+  }
+
+  // ── Spokes (drawn before rings so they appear behind the dial face) ────────
+  {
+    const metalGrad = ctx.createLinearGradient(0, -2, 0, 2);
+    metalGrad.addColorStop(0, '#0a1a1a');
+    metalGrad.addColorStop(0.5, '#a0d4cc');
+    metalGrad.addColorStop(1, '#0a1a1a');
+    ctx.fillStyle = metalGrad;
+    for (let i = 0; i < 12; i++) {
+      const angle = (-(i * 30) - 90 + rot) * Math.PI / 180;
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.rotate(angle);
+      ctx.beginPath();
+      ctx.moveTo(innerR, -1.5);
+      ctx.lineTo(outerR, -0.3);
+      ctx.lineTo(outerR, 0.3);
+      ctx.lineTo(innerR, 1.5);
+      ctx.fill();
+      ctx.restore();
+    }
   }
 
   // ── Static Gradients (Reused) ──────────────────────
@@ -532,29 +589,6 @@ function tick() {
   ctx.lineWidth = 2;
   ctx.stroke();
 
-  // ── Spokes ───────────────────────────────────────
-  const metalGrad = ctx.createLinearGradient(0, -2, 0, 2);
-  metalGrad.addColorStop(0, '#0a1a1a');
-  metalGrad.addColorStop(0.5, '#a0d4cc');
-  metalGrad.addColorStop(1, '#0a1a1a');
-  ctx.fillStyle = metalGrad;
-
-  // Draw spokes
-  for (let i = 0; i < 12; i++) {
-    const angle = (-(i * 30) - 90 + rot) * Math.PI / 180;
-    
-    ctx.save();
-    ctx.translate(cx, cy);
-    ctx.rotate(angle);
-    ctx.beginPath();
-    ctx.moveTo(innerR, -1.5);
-    ctx.lineTo(outerR, -0.3);
-    ctx.lineTo(outerR, 0.3);
-    ctx.lineTo(innerR, 1.5);
-    ctx.fill();
-    ctx.restore();
-  }
-
   // ── Ticks & Icons ────────────────────────────────
   const glyphBandW = outerR - glyphR;
   const tickInner = glyphR;
@@ -609,8 +643,11 @@ function tick() {
   ctx.save();
   ctx.globalCompositeOperation = 'lighter';
 
+  const needleDeg = (dragRotateEnabled && zoomSign != null)
+    ? ((rot % 360) + 360) % 360 : -1;
+
   let closestDot = null;
-  let closestDistSq = isZoomed ? 16 : 64; 
+  let closestDistSq = isZoomed ? 16 : 64;
 
   let hitX = mouseX, hitY = mouseY;
   if (isZoomed && mouseX >= 0) {
@@ -672,10 +709,19 @@ function tick() {
     }
 
     const isHovered = hoveredDot === dot;
-    
+
+    // Needle proximity — highlight dots the red line passes through
+    let isOnNeedle = false;
+    if (needleDeg >= 0) {
+      const angDist = Math.abs(constrainedDeg - needleDeg);
+      isOnNeedle = (angDist > 180 ? 360 - angDist : angDist) < 1;
+    }
+
+    const isHighlighted = isHovered || isOnNeedle;
+
     if (dot.sprite) {
-        if (isHovered) {
-             const drawSize = 7;
+        if (isHighlighted) {
+             const drawSize = isHovered ? 7 : 5;
              const grad = ctx.createRadialGradient(x - drawSize*0.35, y - drawSize*0.35, drawSize*0.05, x, y, drawSize);
              grad.addColorStop(0, `rgba(255,255,255,1)`);
              grad.addColorStop(0.5, `rgba(${dot.r},${dot.g},${dot.b},0.9)`);
@@ -858,5 +904,7 @@ export function destroyNebula() {
   hoveredDot = null;
   mouseX = mouseY = -1;
   zoomSign = null;
+  zoomTargetDeg = null;
+  rotationCallback = null;
   containerEl = null;
 }

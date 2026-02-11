@@ -30,7 +30,7 @@ export function setElementTheme(element) {
 
 export function renderReveal(venus) {
   document.getElementById('reveal-sign').textContent =
-    `venus in ${Math.round(venus.degree)}° ${venus.sign}`;
+    `venus in ${Math.min(29, Math.round(venus.degree))}° ${venus.sign}`;
   const detail = document.getElementById('reveal-detail');
   detail.textContent = venus.element;
   detail.style.color = `var(--${venus.element})`;
