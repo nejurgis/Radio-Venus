@@ -693,6 +693,19 @@ html, body {
   width: 100%;
   height: auto;
   overflow: visible;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.progress-arc path {
+  shape-rendering: geometricPrecision;
+}
+
+.progress-arc-fill,
+.progress-arc-line,
+#progress-playhead,
+.progress-arc-playhead-halo {
+  will-change: transform, opacity;
 }
 
 /* Track — gradient dome + faint line + soft wide glow stroke */

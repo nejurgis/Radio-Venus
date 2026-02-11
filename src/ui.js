@@ -278,10 +278,13 @@ function arcY(pct) {
   return 100 - 192 * t + 192 * t * t;
 }
 
+let lastSecond = -1;
+
 export function updateProgress(current, duration) {
   const pct = duration > 0 ? (current / duration) * 100 : 0;
+  const currentSec = Math.floor(current);
 
-  // Use cached elements - no document.getElementById calls!
+  // HIGH PRIORITY: smooth visuals (every frame)
   if (ui.progressClip) ui.progressClip.setAttribute('width', pct * 10);
 
   if (ui.playhead) {
@@ -294,12 +297,17 @@ export function updateProgress(current, duration) {
     }
   }
 
-  if (ui.currentTime) ui.currentTime.textContent = formatTime(current);
-  if (ui.duration) ui.duration.textContent = formatTime(duration);
-  if (ui.seeker) ui.seeker.value = duration > 0 ? (current / duration) * 1000 : 0;
+  // LOW PRIORITY: text & seeker (only once per second)
+  if (currentSec !== lastSecond) {
+    if (ui.currentTime) ui.currentTime.textContent = formatTime(current);
+    if (ui.duration) ui.duration.textContent = formatTime(duration);
+    if (ui.seeker) ui.seeker.value = duration > 0 ? (current / duration) * 1000 : 0;
+    lastSecond = currentSec;
+  }
 }
 
 export function resetProgress() {
+  lastSecond = -1;
   if (ui.progressClip) ui.progressClip.setAttribute('width', 0);
   if (ui.bufferClip) ui.bufferClip.setAttribute('width', 0);
 
