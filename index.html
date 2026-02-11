@@ -14,8 +14,8 @@
   <script type="importmap">
     { "imports": { "astronomy-engine": "/node_modules/astronomy-engine/esm/astronomy.js" } }
   </script>
-  <script type="module" crossorigin src="/Radio-Venus/assets/index-D32PBQac.js"></script>
-  <link rel="stylesheet" crossorigin href="/Radio-Venus/assets/index-CC7IoxQl.css">
+  <script type="module" crossorigin src="/Radio-Venus/assets/index-EYQcXp7X.js"></script>
+  <link rel="stylesheet" crossorigin href="/Radio-Venus/assets/index-CPVcBtFl.css">
 </head>
 <body>
 
@@ -99,7 +99,16 @@
       <div class="radio-controls">
         <button id="btn-prev" class="btn-control" aria-label="Previous">&#9664;&#9664;</button>
         <span id="current-time" class="time-display">0:00</span>
-        <button id="btn-play" class="btn-control btn-play" aria-label="Play/Pause">&#9654;</button>
+
+        <!-- <button class="hyper-btn" id="btn-play btn-control" aria-label="Play/Pause">
+          <div class="hyper-glass">
+            <div class="hyper-content">
+              &#9654;
+            </div>
+          </div>
+        </button> -->
+        <button id="btn-play" class="btn-control btn-play" aria-label="Play/Pause">&#9654;<div class="hyper-shine"></div></button>
+
         <span id="duration" class="time-display">0:00</span>
         <button id="btn-next" class="btn-control" aria-label="Next">&#9654;&#9654;</button>
         <!-- <button id="btn-shuffle" class="btn-control btn-shuffle" aria-label="Shuffle">randomize</button> -->
@@ -114,9 +123,9 @@
             <polyline points="16 20 20 20 20 16"></polyline>
           </svg>
         </button>
-        <button class="skeuo-btn" id="btn-play">
-          <div class="play-icon"></div>
-        </button>
+
+
+
         <button id="btn-fav" class="btn-control btn-fav" aria-label="Favorite">&#9825;</button>
       </div>
       <div class="track-list-wrap">
