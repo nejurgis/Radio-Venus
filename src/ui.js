@@ -122,8 +122,16 @@ export function markTrackFailed(index) {
 }
 
 export function updateNowPlaying(name, title) {
-  document.getElementById('np-artist').textContent = name || '';
-  document.getElementById('np-title').textContent = title || '';
+  const label = title ? `${name} — ${title}` : name || '';
+  document.getElementById('np-label').textContent = label;
+  document.getElementById('np-label-dup').textContent = label;
+  // Restart marquee animation
+  const marquee = document.querySelector('.np-marquee');
+  if (marquee) {
+    marquee.style.animation = 'none';
+    marquee.offsetHeight;
+    marquee.style.animation = '';
+  }
 }
 
 export function updatePlayButton(state) {
@@ -142,17 +150,38 @@ function formatTime(s) {
   return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
 }
 
+// Bezier math for path "M 0,100 Q 500,4 1000,100": x = 1000*t, y = 100 - 192*t + 192*t²
+function arcY(pct) {
+  const t = pct / 100;
+  return 100 - 192 * t + 192 * t * t;
+}
+
 export function updateProgress(current, duration) {
   const pct = duration > 0 ? (current / duration) * 100 : 0;
-  document.getElementById('progress-bar').style.width = pct + '%';
+
+  document.getElementById('progress-clip-rect').setAttribute('width', pct * 10);
+
+  const playhead = document.getElementById('progress-playhead');
+  if (playhead) {
+    playhead.setAttribute('cx', pct * 10);
+    playhead.setAttribute('cy', arcY(pct));
+  }
+
   document.getElementById('current-time').textContent = formatTime(current);
   document.getElementById('duration').textContent = formatTime(duration);
   document.getElementById('seeker').value = duration > 0 ? (current / duration) * 1000 : 0;
 }
 
 export function resetProgress() {
-  document.getElementById('progress-bar').style.width = '0%';
-  document.getElementById('progress-buffer').style.width = '0%';
+  document.getElementById('progress-clip-rect').setAttribute('width', 0);
+  document.getElementById('buffer-clip-rect').setAttribute('width', 0);
+
+  const playhead = document.getElementById('progress-playhead');
+  if (playhead) {
+    playhead.setAttribute('cx', 0);
+    playhead.setAttribute('cy', 100);
+  }
+
   document.getElementById('current-time').textContent = '0:00';
   document.getElementById('duration').textContent = '0:00';
   document.getElementById('seeker').value = 0;
@@ -160,13 +189,13 @@ export function resetProgress() {
 }
 
 export function showBuffering(targetPct) {
-  document.getElementById('progress-buffer').style.width = targetPct + '%';
+  document.getElementById('buffer-clip-rect').setAttribute('width', targetPct * 10);
   document.querySelector('.progress-container').classList.add('is-buffering');
 }
 
 export function hideBuffering() {
   document.querySelector('.progress-container').classList.remove('is-buffering');
-  document.getElementById('progress-buffer').style.width = '0%';
+  document.getElementById('buffer-clip-rect').setAttribute('width', 0);
 }
 
 export function showEmptyState(show) {

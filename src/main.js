@@ -544,7 +544,7 @@ function playTrack(index) {
   loadVideo(getVideoIds(track)[0]);
   startSilentFailTimer();
   startLoadingProgress();
-  updateNowPlaying(track.name);
+  updateNowPlaying('Loading...');
   updateFavoriteButton(isFavorite(track.name));
   renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()));
   updatePlayButton('buffering');
