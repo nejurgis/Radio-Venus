@@ -304,7 +304,7 @@ html, body {
   display: inline-flex;
   gap: 3em;
   white-space: nowrap;
-  animation: marquee 16s linear infinite;
+  animation: marquee 19s linear infinite;
 }
 
 .reveal-np-track {
@@ -422,89 +422,13 @@ html, body {
     0 0 0 5px rgba(0, 0, 0, 1);
     
   transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  background-image: linear-gradient(to top, rgba(255, 200, 255, 1.0) -2.9%, rgba(0,125,255,1) 100%), radial-gradient(circle at 20% 20%, rgba(255, 257, 255, 0.01) 100%, transparent 101%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, rgba(0, 0, 0, 0.6) 60%, transparent 90%);
+  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, rgba(0, 0, 0, 0.9) 41%, transparent 63.5%);
+  background-blend-mode: screen;
+  transition: all 0.5s ease;
 }
 
-/* The Glass Dome Container */
-.hyper-glass {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  overflow: hidden;
-  position: relative;
-  
-  /* 3. The "Lens" Physics (Inner Shadows) */
-  /* This mimics light refracting through thick glass */
-  box-shadow: 
-    /* Darken edges to show curvature */
-    inset 0 0 20px rgba(0,0,0,0.8),
-    /* Subtle inner rim light */
-    inset 0 2px 2px rgba(255,255,255,0.4);
-}
-
-/* The Cosmic Background (Your Vibe) */
-.hyper-content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.9);
-  
-  /* YOUR COSMIC GRADIENT (Adapted) */
-  background-image: 
-    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 20%), /* Hotspot */
-    linear-gradient(to top, #3a1c71, #d76d77, #ffaf7b); /* Deep Space Sunset */
-    
-  /* Texture: Add slight noise if you want it gritty */
-  filter: contrast(1.1);
-}
-
-/* The Specular Highlight (The "Wet" Look) */
-.hyper-shine {
-  position: absolute;
-  top: 5%;
-  left: 20%;
-  width: 60%;
-  height: 35%;
-  border-radius: 50%;
-  
-  /* A distinct, sharp reflection like a studio light */
-  background: linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(255,255,255,0.1));
-  filter: blur(1px);
-  opacity: 0.9;
-  pointer-events: none;
-}
-
-/* ─── INTERACTION ─── */
-
-.hyper-btn:hover {
-  /* Glows when you touch it */
-  box-shadow: 
-    0 25px 35px -5px rgba(215, 109, 119, 0.4), /* Colored glow matching the button */
-    0 0 0 1px rgba(20, 20, 20, 1),
-    0 0 0 4px rgba(60, 60, 60, 1),
-    0 0 0 5px rgba(0, 0, 0, 1);
-  transform: translateY(-2px);
-}
-
-.hyper-btn:active {
-  /* PRESS IT DOWN */
-  transform: scale(0.96) translateY(2px);
-  
-  /* Kill the outer shadow to look flush with surface */
-  box-shadow: 
-    0 5px 10px -5px rgba(0, 0, 0, 0.8),
-    0 0 0 1px rgba(10, 10, 10, 1),
-    0 0 0 4px rgba(30, 30, 30, 1),
-    0 0 0 5px rgba(0, 0, 0, 1);
-}
-
-/* Debossed Icon Effect */
-.hyper-btn svg {
-  filter: drop-shadow(0 2px 0 rgba(0,0,0,0.3)); /* Icon casts shadow inside */
-  width: 32px;
-  height: 32px;
-}
 
 .genre-btn:hover {
   background: var(--genre-color-pop, var(--accent));
@@ -547,6 +471,30 @@ html, body {
   display: flex;
   gap: 0.25rem;
 }
+
+.genre-btn {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  padding: 1.5rem 2rem;
+  color: var(--text);
+  color: white;
+  font-weight: bold;
+  letter-spacing: -0.03em;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-transform: lowercase;
+  background-color: #000;
+  background-image: linear-gradient(to top, rgba(255, 200, 255, 1.0) -2.9%, rgba(0,125,255,1) 100%), radial-gradient(circle at 20% 20%, rgba(255, 257, 255, 0.01) 100%, transparent 101%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, rgba(0, 0, 0, 0.6) 60%, transparent 90%);
+  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, rgba(0, 0, 0, 0.9) 41%, transparent 63.5%);
+  background-blend-mode: screen;
+  transition: all 0.5s ease;
+}
+
+
+
 
 .genre-row .genre-btn {
   flex: 1;
@@ -714,9 +662,9 @@ html, body {
 
 .np-marquee {
   display: inline-flex;
-  gap: 3em;
+  gap: 4em;
   white-space: nowrap;
-  animation: marquee 16s linear infinite;
+  animation: marquee 21s linear infinite;
 }
 
 .np-track {
@@ -924,14 +872,14 @@ html, body {
 
 .btn-shuffle {
   font-size: 0.75rem;
-  padding: 0.5rem 0.7rem;
+  padding: 0.2rem 0.2rem;
   border-color: transparent;
   color: var(--text-dim);
 }
 
 .btn-fav {
   font-size: 0.95rem;
-  padding: 0.5rem 0.7rem;
+  padding: 0.2rem 0.2rem;
   border-color: transparent;
   color: var(--text-dim);
   transition: color 0.2s, transform 0.15s;
@@ -950,6 +898,33 @@ html, body {
   font-size: 0.7em;
   margin-right: 0.4em;
   opacity: 0.7;
+}
+
+/* Container for the star in the list THIS IS HERE SO THAT THE STAR WOULD ANIMATE WHEN ITS ADDED */ 
+.track-fav-container {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  
+  /* DEFAULT STATE: Hidden */
+  width: 0;
+  opacity: 0;
+  margin-right: 0;
+  
+  /* THE MAGIC: Smoothly slide open/closed */
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ACTIVE STATE: Expanded */
+.track-item.is-favorited .track-fav-container {
+  width: 30px; /* Space for star + margin */
+  opacity: 1;
+  margin-right: 4px;
+}
+
+/* Prevent the star inside from squishing while sliding */
+.track-fav-container .star-toggle {
+  flex-shrink: 0;
 }
 
 .track-list-wrap {
@@ -988,6 +963,7 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
 }
 
 .track-item:hover {
@@ -998,7 +974,35 @@ html, body {
 .track-item.active {
   color: var(--accent);
   background: rgba(255, 255, 255, 0.03);
-  border-left-color: var(--accent);
+  position: relative; /* Required for the pseudo-element positioning */
+  border-left: none;  /* Remove the old, sharp border */
+}
+
+/* The "Fuzzy" Glow Border */
+.track-item.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px; /* The thickness of your border */
+  background: var(--accent);
+  
+  /* 1. Subtle Glow (Standard) */
+  box-shadow: 0 0 6px var(--accent);
+  
+  /* 2. The "Fuzzy" Hacker look (Double drop-shadow) */
+  /* This creates a more organic, vibrating light effect */
+  filter: drop-shadow(0 0 1px var(--accent)) drop-shadow(0 0 2px var(--accent));
+  
+  /* 3. Smooth entrance */
+  animation: border-flicker .4s ease-out;
+}
+
+/* Optional: Add a tiny bit of "hacker" jitter on entrance */
+@keyframes border-flicker {
+  0% { opacity: 0; height: 0; }
+  100% { opacity: 1; height: 100%; }
 }
 
 .track-item.is-failed {
@@ -1189,4 +1193,78 @@ body.element-water  { --accent: var(--water); }
   .subgenre-chip {
     padding: 0.2rem 0.4rem;
   }
+}
+
+
+/* ─── THE STAR COMPONENT (Fixed Visibility) ─── */
+.star-toggle {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  
+  /* FORCE SIZE so it cannot be 0x0 */
+  width: 12px; 
+  height: 12px;
+  margin: 4px 4px 4px 4px;
+
+}
+
+/* The Beams (Vertical & Horizontal) */
+.star-toggle::before,
+.star-toggle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+/* Vertical Beam */
+.star-toggle::before {
+  width: 1px;
+  height: 100%; /* Full Height */
+  
+  /* Inactive: Dull Grey Gradient */
+  background: linear-gradient(180deg, transparent, #adadad, transparent);
+  opacity: 0.9; 
+}
+
+/* Horizontal Beam */
+.star-toggle::after {
+  width: 100%; /* Full Width */
+  height: 1px;
+  
+  /* Inactive: Dull Grey Gradient */
+  background: linear-gradient(90deg, transparent, #adadad, transparent);
+  opacity: 0.9;
+}
+
+/* ─── ACTIVE STATE (The Glow) ─── */
+.star-toggle.active::before {
+  /* Active: Bright White Vertical */
+  background: linear-gradient(180deg, transparent, #fff, transparent);
+  opacity: 1;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+  height: 120%; /* Grow slightly */
+}
+
+.star-toggle.active::after {
+  /* Active: Bright White Horizontal */
+  background: linear-gradient(90deg, transparent, #fff, transparent);
+  opacity: 1;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+  width: 120%; /* Grow slightly */
+}
+
+/* ─── ANIMATION (Pulse) ─── */
+.star-toggle.active {
+  animation: starPulse 2s infinite ease-in-out;
+}
+
+@keyframes starPulse {
+  0%   { transform: scale(1); opacity: 1; }
+  50%  { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
 }

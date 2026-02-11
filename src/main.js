@@ -27,9 +27,12 @@ const trackVideoIndex = new Map(); // trackIndex → which video ID we're trying
 let hasPlayed = false;             // whether current video reached PLAYING
 let sessionHasPlayed = false;      // whether ANY video played this session
 let silentFailTimer = null;        // detect videos that never start
-let loadingInterval = null;        // loading progress animation
+
+// CHANGED: Use AnimationFrame ID instead of Interval ID for smoothness
+let loadingAnimFrame = null;        
 let loadStartTime = 0;
 const SILENT_FAIL_MS = 15000;
+
 let activeGenreLabel = null;       // label of the currently playing genre
 let tunedLongitude = null;         // current longitude at the tuner needle
 
@@ -51,9 +54,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // ── Pinch gestures (mobile) ──
   let pinchStartDist = 0;
-  let pinchZooming = false; // prevent double-trigger during async zoom
+  let pinchZooming = false; 
 
-  // Shared touchstart for both screens
   function onPinchStart(e) {
     if (e.touches.length === 2) {
       const dx = e.touches[0].pageX - e.touches[1].pageX;
@@ -62,7 +64,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  // Reveal: pinch-in (fingers closer) → zoom out to portal
   const revealScreen = document.getElementById('screen-reveal');
   revealScreen.addEventListener('touchstart', onPinchStart, { passive: true });
   revealScreen.addEventListener('touchmove', (e) => {
@@ -77,7 +78,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }, { passive: true });
 
-  // Portal: pinch-out (fingers apart) → zoom in to reveal (if date was entered)
   const portalScreen = document.getElementById('screen-portal');
   portalScreen.addEventListener('touchstart', onPinchStart, { passive: true });
   portalScreen.addEventListener('touchmove', (e) => {
@@ -96,14 +96,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   setupDateInput();
   history.replaceState({ screen: 'portal' }, '');
 
-  // Preload data + YT API in parallel
   const [dbResult] = await Promise.allSettled([
     loadDatabase(),
     loadYouTubeAPI(),
   ]);
 
-  // Init player early so it's ready when user picks a genre —
-  // mobile autoplay requires loadVideo() in the direct click gesture chain
   initPlayer('yt-player', {
     onEnd: () => playTrack(currentTrackIndex + 1),
     onError: (code) => {
@@ -130,10 +127,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         const track = tracks[currentTrackIndex];
         if (track) updateNowPlaying(track.name, title);
         updateNowPlayingButton(!document.getElementById('screen-radio').classList.contains('active'));
+        
         clearInterval(progressInterval);
+        // CHANGED: 500ms -> 100ms for smoother playback progress
         progressInterval = setInterval(() => {
           updateProgress(getCurrentTime(), getDuration());
-        }, 500);
+        }, 100);
+
       } else {
         clearInterval(progressInterval);
         progressInterval = null;
@@ -163,7 +163,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       const genreId = info.genres[0];
       const label = GENRE_CATEGORIES.find(c => c.id === genreId)?.label || genreId;
 
-      // Load the genre track list (won't interrupt audio if playing)
       const trackList = startRadio(genreId, label);
       if (!trackList || trackList.length === 0) return;
 
@@ -171,7 +170,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (idx === -1) return;
 
       if (isPlaying() && hasPlayed) {
-        // Music is playing — don't interrupt, just scroll to the artist
         setTimeout(() => {
           const items = document.querySelectorAll('#track-list .track-item');
           if (items[idx]) {
@@ -181,7 +179,6 @@ document.addEventListener('DOMContentLoaded', async () => {
           }
         }, 50);
       } else {
-        // Silence — play the artist immediately
         playTrack(idx);
       }
     });
@@ -197,7 +194,6 @@ function setupDateInput() {
   const btnEnter = document.getElementById('btn-enter');
   const errorEl = document.getElementById('date-error');
 
-  // Auto-advance focus — smart single-digit advance for day/month
   function onFieldInput(el, nextEl, maxLen, smartMin) {
     el.addEventListener('input', () => {
       el.value = el.value.replace(/\D/g, '');
@@ -211,7 +207,6 @@ function setupDateInput() {
     });
   }
 
-  // Backspace to previous field
   function onFieldKeydown(el, prevEl) {
     el.addEventListener('keydown', e => {
       if (e.key === 'Backspace' && el.value === '' && prevEl) {
@@ -224,8 +219,8 @@ function setupDateInput() {
     });
   }
 
-  onFieldInput(dayEl, monthEl, 2, 4);   // day 4-9 → auto-advance (no valid 2nd digit)
-  onFieldInput(monthEl, yearEl, 2, 2);  // month 2-9 → auto-advance (20+ invalid)
+  onFieldInput(dayEl, monthEl, 2, 4);
+  onFieldInput(monthEl, yearEl, 2, 2); 
   onFieldInput(yearEl, null, 4);
   onFieldKeydown(dayEl, null);
   onFieldKeydown(monthEl, dayEl);
@@ -254,7 +249,6 @@ function setupDateInput() {
 
     btnEnter.disabled = false;
 
-    // Live preview: show soft glow at Venus position as user types
     try {
       const preview = calculateVenus(makeBirthDate(d, m, y));
       setPreviewVenus(preview.longitude, preview.element);
@@ -271,8 +265,6 @@ function setupDateInput() {
     const y = parseInt(yearEl.value, 10);
     onDateSubmit(d, m, y);
   }
-
-  // Focus first field
   dayEl.focus();
 }
 
@@ -320,11 +312,9 @@ async function onDateSubmit(d, m, y) {
   setUserVenus(venus.longitude, venus.element);
   renderReveal(venus);
 
-  // Venus sign index for zoom
   const signIndex = ['Aries','Taurus','Gemini','Cancer','Leo','Virgo',
     'Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'].indexOf(venus.sign);
 
-  // Fade out portal content, then zoom into the user's Venus sign
   const portalScreen = document.getElementById('screen-portal');
   portalScreen.classList.add('is-fading');
   tunedLongitude = venus.longitude;
@@ -333,11 +323,10 @@ async function onDateSubmit(d, m, y) {
   enableDragRotate(true);
   history.pushState({ screen: 'reveal' }, '');
 
-  // Set up genre screen
   rebuildGenreGrid();
 
   document.getElementById('btn-choose-genre').addEventListener('click', () => {
-    rebuildGenreGrid(); // refresh favorites entry
+    rebuildGenreGrid();
     enableDragRotate(false);
     showNebula(true);
     dimNebula(true);
@@ -346,7 +335,6 @@ async function onDateSubmit(d, m, y) {
     history.pushState({ screen: 'genre' }, '');
   });
 
-  // Back buttons use history so browser back/forward works
   document.getElementById('btn-back-reveal').addEventListener('click', () => history.back());
   document.getElementById('btn-back-genre').addEventListener('click', () => history.back());
 }
@@ -375,7 +363,6 @@ function rebuildGenreGrid() {
     if (id === 'favorites') return 'Favorites';
     return GENRE_CATEGORIES.find(c => c.id === id)?.label || id;
   };
-  // Shuffle only once, then reuse the cached order
   if (!cachedShuffledGenres) {
     cachedShuffledGenres = [...GENRE_CATEGORIES];
     for (let i = cachedShuffledGenres.length - 1; i > 0; i--) {
@@ -384,7 +371,6 @@ function rebuildGenreGrid() {
     }
   }
   const shuffledGenres = [...cachedShuffledGenres];
-  // Prepend favorites if any exist
   if (getFavorites().length > 0) {
     shuffledGenres.unshift({ id: 'favorites', label: 'Favorites' });
   }
@@ -407,7 +393,6 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
   const effectiveSign = signFromLongitude(effectiveLong);
   const effectiveElement = ZODIAC_ELEMENTS[effectiveSign];
 
-  // 1. Visuals & navigation (always)
   renderRadioHeader(effectiveSign, genreLabel, subgenreId);
   enableDragRotate(false);
   updateNowPlayingButton(false);
@@ -420,13 +405,11 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
     history.pushState({ screen: 'radio' }, '');
   }
 
-  // 2. Same genre already playing — just re-render the list, don't touch audio
   if (tracks.length > 0 && genreId === playingGenreId && subgenreId === playingSubgenreId) {
     renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()));
     return tracks;
   }
 
-  // 3. New genre — calculate candidates
   let candidateTracks;
   if (genreId === 'favorites') {
     candidateTracks = matchFavorites(getFavorites(), effectiveLong);
@@ -445,10 +428,7 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
   }
   showEmptyState(false);
 
-  // 4. Play or queue depending on whether audio is active
   if (isPlaying() && hasPlayed) {
-    // Music is playing — show the new list but don't interrupt audio.
-    // No track highlighted (-1). Clicking a track in the list will switch.
     renderTrackList(candidateTracks, -1, (i) => {
       tracks = candidateTracks;
       playingGenreId = genreId;
@@ -459,7 +439,6 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
       playTrack(i);
     }, new Set(), new Set(getFavorites()));
   } else {
-    // Silence — switch immediately
     tracks = candidateTracks;
     playingGenreId = genreId;
     playingSubgenreId = subgenreId;
@@ -501,8 +480,6 @@ function tryBackupOrFail(reason) {
 function startSilentFailTimer() {
   clearTimeout(silentFailTimer);
   hasPlayed = false;
-  // Don't timeout until the player has proven it can play something —
-  // the first video(s) in a session can take much longer to auto-play
   if (!sessionHasPlayed) return;
   silentFailTimer = setTimeout(() => {
     if (!hasPlayed) {
@@ -511,25 +488,44 @@ function startSilentFailTimer() {
   }, SILENT_FAIL_MS);
 }
 
+// ─── OPTIMIZED LOADING ANIMATION (Uses requestAnimationFrame) ───────────────
+
 function startLoadingProgress() {
   loadStartTime = Date.now();
-  clearInterval(loadingInterval);
+  
+  // Clear any existing animation frame
+  if (loadingAnimFrame) cancelAnimationFrame(loadingAnimFrame);
+  
   if (!sessionHasPlayed) {
-    // Before first successful play, just show full-width shimmer (no countdown)
     showBuffering(100);
     return;
   }
+  
   showBuffering(0);
-  loadingInterval = setInterval(() => {
-    const pct = Math.min((Date.now() - loadStartTime) / SILENT_FAIL_MS * 100, 100);
+
+  // The 60fps Loop
+  function loop() {
+    const elapsed = Date.now() - loadStartTime;
+    // Calculate 0 to 100 over 15 seconds
+    const pct = Math.min((elapsed / SILENT_FAIL_MS) * 100, 100);
+    
     showBuffering(pct);
-  }, 100);
+    
+    if (pct < 100) {
+      loadingAnimFrame = requestAnimationFrame(loop);
+    }
+  }
+  
+  // Kickstart the loop
+  loop();
 }
 
 function stopLoadingProgress() {
-  clearInterval(loadingInterval);
-  loadingInterval = null;
+  if (loadingAnimFrame) cancelAnimationFrame(loadingAnimFrame);
+  loadingAnimFrame = null;
 }
+
+// ────────────────────────────────────────────────────────────────────────────
 
 function playTrack(index) {
   if (tracks.length === 0) return;
@@ -567,13 +563,11 @@ function skipToNextPlayable() {
 function shuffleTracks() {
   if (tracks.length < 2) return;
   const current = tracks[currentTrackIndex];
-  // Remember which tracks were failed by identity
   const failedTracks = new Set([...failedIds].map(i => tracks[i]));
   for (let i = tracks.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [tracks[i], tracks[j]] = [tracks[j], tracks[i]];
   }
-  // Remap failed indices + current index
   failedIds.clear();
   trackVideoIndex.clear();
   tracks.forEach((t, i) => { if (failedTracks.has(t)) failedIds.add(i); });
@@ -589,8 +583,6 @@ function updateNowPlayingButton(show) {
   if (!btn) return;
 
   const hasTrack = tracks.length > 0 && activeGenreLabel;
-
-  // Show floating marquee on genre screen only (reveal has its own inline one)
   const onReveal = document.getElementById('screen-reveal').classList.contains('active');
   if (show && hasTrack && !onReveal) {
     const track = tracks[currentTrackIndex];
@@ -600,11 +592,10 @@ function updateNowPlayingButton(show) {
     const label = title ? `${prefix}${artist} — ${title}` : `${prefix}${artist}` || activeGenreLabel;
     document.getElementById('btn-np-label').textContent = label;
     document.getElementById('btn-np-label-dup').textContent = label;
-    // Force marquee animation restart (fixes rare stall)
     const marquee = btn.querySelector('.btn-np-marquee');
     if (marquee) {
       marquee.style.animation = 'none';
-      marquee.offsetHeight; // reflow
+      marquee.offsetHeight; 
       marquee.style.animation = '';
     }
     btn.hidden = false;
@@ -612,7 +603,6 @@ function updateNowPlayingButton(show) {
     btn.hidden = true;
   }
 
-  // Update inline now-playing on reveal screen (only visible when reveal is active)
   if (revealNp) {
     if (hasTrack && onReveal) {
       const track = tracks[currentTrackIndex];
@@ -621,7 +611,6 @@ function updateNowPlayingButton(show) {
       const revealLabel = title ? `${artist} — ${title}` : artist || activeGenreLabel;
       document.getElementById('reveal-np-label').textContent = revealLabel;
       document.getElementById('reveal-np-label-dup').textContent = revealLabel;
-      // Restart marquee animation
       const rMarquee = revealNp.querySelector('.reveal-np-marquee');
       if (rMarquee) {
         rMarquee.style.animation = 'none';
@@ -668,17 +657,20 @@ document.addEventListener('click', e => {
   if (e.target.id === 'btn-shuffle' || e.target.closest('#btn-shuffle')) {
     shuffleTracks();
   }
+  // Inside your btn-fav click listener in main.js
   if (e.target.id === 'btn-fav' || e.target.closest('#btn-fav')) {
-    if (tracks.length === 0) return;
     const track = tracks[currentTrackIndex];
-    if (!track) return;
     const nowFav = toggleFavorite(track.name);
     updateFavoriteButton(nowFav);
-    renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()));
+
+    // FIND the active track in the list and toggle the class to trigger CSS transition
+    const activeItem = document.querySelector('.track-item.active');
+    if (activeItem) {
+      activeItem.classList.toggle('is-favorited', nowFav);
+    }
   }
 });
 
-// Seeker
 document.getElementById('seeker').addEventListener('input', e => {
   const duration = getDuration();
   if (duration > 0) {
@@ -693,8 +685,6 @@ document.getElementById('seeker').addEventListener('input', e => {
 window.addEventListener('popstate', (e) => {
   const screen = e.state?.screen;
   if (!screen) return;
-
-  // Always clean up radio state
   setZoomDrift(screen === 'radio');
   deepDimNebula(screen === 'radio');
   enableDragRotate(screen === 'reveal');
@@ -716,7 +706,7 @@ window.addEventListener('popstate', (e) => {
       if (tunedLongitude != null) updateTunedDisplay(tunedLongitude);
       break;
     case 'genre':
-      rebuildGenreGrid(); // refresh favorites entry
+      rebuildGenreGrid();
       showNebula(true);
       dimNebula(true);
       showScreen('genre');
@@ -731,7 +721,6 @@ window.addEventListener('popstate', (e) => {
   }
 });
 
-// Keyboard shortcuts
 document.addEventListener('keydown', e => {
   if (e.target.tagName === 'INPUT') return;
   if (e.key === 'ArrowLeft') playTrack(currentTrackIndex - 1);
