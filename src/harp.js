@@ -9,6 +9,10 @@ let audioCtx = null;
 let masterGain = null;
 let enabled = false;
 
+// Rate limiting — minimum ms between plucks so notes can breathe
+const MIN_INTERVAL = 24;
+let lastPluckTime = 0;
+
 // Buffer pool to reduce GC pressure during fast plucking
 const bufferPool = [];
 const MAX_POOL = 6;
@@ -39,13 +43,13 @@ const ELEMENT_CHORDS = {
     261.63, 349.23, 392.00,  // C4 F4 G4
     523.25, 698.46, 783.99,  // C5 F5 G5
   ],
-  // Air: Add9 — dreamy, ethereal, positive (D adds openness, E keeps warmth)
-  // Starts at C4: air is always higher than earth
+  // Air: Maj7 — floating, shimmering, almost-resolved (B adds dreamy tension)
+  // Similar range to earth (C2–G5) but lighter character
   air: [
-    261.63, 293.66, 329.63, 392.00,  // C4 D4 E4 G4
-    523.25, 587.33, 659.25, 783.99,  // C5 D5 E5 G5
-    1046.5, 1174.7, 1318.5, 1568.0,  // C6 D6 E6 G6
-    2093.0, 2349.3, 2637.0, 3136.0,  // C7 D7 E7 G7
+    65.41,  82.41,  98.00, 123.47,   // C2 E2 G2 B2
+    130.81, 164.81, 196.00, 246.94,  // C3 E3 G3 B3
+    261.63, 329.63, 392.00, 493.88,  // C4 E4 G4 B4
+    523.25, 659.25, 783.99, 987.77,  // C5 E5 G5 B5
   ],
 };
 
@@ -111,6 +115,9 @@ function ensureContext() {
  */
 export function pluck(radialFrac, element = 'air', velocity = 0.5) {
   if (!enabled) return;
+  const now = performance.now();
+  if (now - lastPluckTime < MIN_INTERVAL) return;
+  lastPluckTime = now;
   ensureContext();
   if (audioCtx.state === 'suspended') audioCtx.resume();
 
