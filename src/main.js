@@ -165,6 +165,10 @@ document.addEventListener('DOMContentLoaded', async () => {
           const cur = getCurrentTime();
           if (dur > 0) showBuffering((cur / dur) * 100);
         }
+        // Show [STOPPED] on now-playing when paused
+        if (hasPlayed && state === window.YT.PlayerState.PAUSED) {
+          updateNowPlayingButton(!document.getElementById('screen-radio').classList.contains('active'), true);
+        }
       }
     },
   });
@@ -685,7 +689,7 @@ function shuffleTracks() {
 
 // ── Now-playing button on genre screen ────────────────────────────────────
 
-function updateNowPlayingButton(show) {
+function updateNowPlayingButton(show, stopped = false) {
   const btn = document.getElementById('btn-now-playing');
   const revealNp = document.getElementById('reveal-now-playing');
   if (!btn) return;
@@ -696,15 +700,16 @@ function updateNowPlayingButton(show) {
     const track = tracks[currentTrackIndex];
     const artist = track ? track.name : '';
     const title = getVideoTitle();
-    const prefix = !hasPlayed ? 'loading... ' : '';
+    const stoppedPrefix = stopped ? '[STOPPED] ' : '';
+    const loadPrefix = !hasPlayed ? 'loading... ' : '';
+    const prefix = stoppedPrefix || loadPrefix;
     const label = title ? `${prefix}${artist} — ${title}` : `${prefix}${artist}` || activeGenreLabel;
     document.getElementById('btn-np-label').textContent = label;
     document.getElementById('btn-np-label-dup').textContent = label;
     const marquee = btn.querySelector('.btn-np-marquee');
     if (marquee) {
-      marquee.style.animation = 'none';
-      marquee.offsetHeight; 
-      marquee.style.animation = '';
+      marquee.style.animation = stopped ? 'none' : '';
+      if (!stopped) { marquee.style.animation = 'none'; marquee.offsetHeight; marquee.style.animation = ''; }
     }
     btn.hidden = false;
   } else {
@@ -716,14 +721,14 @@ function updateNowPlayingButton(show) {
       const track = tracks[currentTrackIndex];
       const artist = track ? track.name : '';
       const title = getVideoTitle();
-      const revealLabel = title ? `${artist} — ${title}` : artist || activeGenreLabel;
+      const stoppedPrefix = stopped ? '[STOPPED] ' : '';
+      const revealLabel = title ? `${stoppedPrefix}${artist} — ${title}` : `${stoppedPrefix}${artist}` || activeGenreLabel;
       document.getElementById('reveal-np-label').textContent = revealLabel;
       document.getElementById('reveal-np-label-dup').textContent = revealLabel;
       const rMarquee = revealNp.querySelector('.reveal-np-marquee');
       if (rMarquee) {
-        rMarquee.style.animation = 'none';
-        rMarquee.offsetHeight;
-        rMarquee.style.animation = '';
+        rMarquee.style.animation = stopped ? 'none' : '';
+        if (!stopped) { rMarquee.style.animation = 'none'; rMarquee.offsetHeight; rMarquee.style.animation = ''; }
       }
       revealNp.hidden = false;
     } else {
