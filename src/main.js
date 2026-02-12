@@ -4,7 +4,7 @@ import { loadDatabase, getDatabase, match, matchFavorites, getSubgenreCounts } f
 import { getFavorites, toggleFavorite, isFavorite } from './favorites.js';
 import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, enableDragRotate, onNebulaHover, onNebulaClick, onRotation, onNeedleCross } from './viz.js';
 import { pluck, setHarpEnabled, isHarpEnabled } from './harp.js';
-import { loadYouTubeAPI, initPlayer, loadVideo, togglePlay, isPlaying, getDuration, getCurrentTime, seekTo, getVideoTitle } from './player.js';
+import { loadYouTubeAPI, initPlayer, loadVideo, togglePlay, isPlaying, getDuration, getCurrentTime, seekTo, getVideoTitle, isMuted, unMute } from './player.js';
 import {
   initScreens, showScreen, setElementTheme,
   renderReveal, renderGenreGrid, renderRadioHeader,
@@ -145,6 +145,8 @@ document.addEventListener('DOMContentLoaded', async () => {
           seekTo(pendingSeekTime);
           pendingSeekTime = 0;
         }
+        // iOS muted autoplay: show tap-to-unmute if playing but muted
+        if (isMuted()) showUnmuteOverlay();
         updateNowPlayingButton(!document.getElementById('screen-radio').classList.contains('active'));
         
         clearInterval(progressInterval);
@@ -175,8 +177,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const sharedGenreId = shareParams.get('gid') || '';
     const sharedTime = parseInt(shareParams.get('t')) || 0;
 
-    // Clean URL without reloading
-    history.replaceState({ screen: 'radio' }, '', window.location.pathname);
+    // Set up history so back button works (portal → radio)
+    history.replaceState({ screen: 'portal' }, '', window.location.pathname);
+    history.pushState({ screen: 'radio' }, '');
 
     // Set up theme and header
     const sign = sharedSign || 'aries';
@@ -789,6 +792,21 @@ async function shareCurrentTrack() {
     ta.remove();
   }
   showToast('Link copied');
+}
+
+function showUnmuteOverlay() {
+  let overlay = document.getElementById('unmute-overlay');
+  if (overlay) return; // already showing
+  overlay = document.createElement('div');
+  overlay.id = 'unmute-overlay';
+  overlay.className = 'unmute-overlay';
+  overlay.innerHTML = '<span>tap to unmute</span>';
+  overlay.addEventListener('click', () => {
+    unMute();
+    overlay.remove();
+  }, { once: true });
+  document.body.appendChild(overlay);
+  requestAnimationFrame(() => overlay.classList.add('is-visible'));
 }
 
 function showToast(message) {

@@ -1004,6 +1004,29 @@ html, body {
   transform: translateX(-50%) translateY(0);
 }
 
+.unmute-overlay {
+  position: fixed;
+  bottom: 6rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background: rgba(58, 58, 60, 0.95);
+  color: #e5e5e7;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.4s, transform 0.4s;
+  z-index: 100;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+}
+.unmute-overlay.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 .track-fav {
   color: var(--fire);
   font-size: 0.7em;
@@ -1312,6 +1335,34 @@ body.element-water  { --accent: var(--water); }
 
   .subgenre-chip {
     padding: 0.2rem 0.4rem;
+  }
+
+  .reveal-np {
+    max-width: 95%;
+  }
+
+  /* Obsidian key style for mobile controls */
+  .btn-control {
+    background: rgba(58, 58, 60, 0.9);
+    border: none;
+    color: #e5e5e7;
+    font-size: 1rem;
+    padding: 0.65rem 0.9rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+  }
+  .btn-control:hover {
+    background: rgba(72, 72, 74, 0.95);
+    border-color: transparent;
+    color: #fff;
+  }
+  .btn-control:active {
+    background: rgba(44, 44, 46, 0.95);
+    transform: scale(0.96);
+  }
+  .btn-play {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.6rem;
   }
 }
 

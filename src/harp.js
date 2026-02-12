@@ -174,7 +174,12 @@ export function pluck(radialFrac, element = 'air', velocity = 0.5) {
 
 export function setHarpEnabled(on) {
   enabled = on;
-  if (on) ensureContext();
+  if (on) {
+    ensureContext();
+    // iOS requires resume() during a user gesture — this is called from
+    // a click handler, so it works. pluck() fires from rAF which doesn't.
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+  }
 }
 
 export function isHarpEnabled() {

@@ -112,3 +112,12 @@ export function getVideoTitle() {
   const data = player.getVideoData();
   return data?.title || '';
 }
+
+export function isMuted() {
+  if (!player || !isReady) return false;
+  return player.isMuted();
+}
+
+export function unMute() {
+  if (player && isReady) player.unMute();
+}
