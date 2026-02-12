@@ -69,6 +69,11 @@ export function loadVideo(videoId) {
   player.loadVideoById(videoId);
 }
 
+export function cueVideo(videoId) {
+  if (!player || !isReady) return;
+  player.cueVideoById(videoId);
+}
+
 export function play() {
   if (player && isReady) player.playVideo();
 }

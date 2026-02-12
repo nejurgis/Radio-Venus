@@ -4,7 +4,7 @@ import { loadDatabase, getDatabase, match, matchFavorites, getSubgenreCounts } f
 import { getFavorites, toggleFavorite, isFavorite } from './favorites.js';
 import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, enableDragRotate, onNebulaHover, onNebulaClick, onRotation, onNeedleCross } from './viz.js';
 import { pluck, setHarpEnabled, isHarpEnabled } from './harp.js';
-import { loadYouTubeAPI, initPlayer, loadVideo, togglePlay, isPlaying, getDuration, getCurrentTime, seekTo, getVideoTitle, isMuted, unMute } from './player.js';
+import { loadYouTubeAPI, initPlayer, loadVideo, cueVideo, togglePlay, isPlaying, getDuration, getCurrentTime, seekTo, getVideoTitle, isMuted, unMute } from './player.js';
 import {
   initScreens, showScreen, setElementTheme,
   renderReveal, renderGenreGrid, renderRadioHeader,
@@ -221,8 +221,10 @@ document.addEventListener('DOMContentLoaded', async () => {
           });
 
           pendingSeekTime = sharedTime;
-          loadVideo(sharedVid);
-          startSilentFailTimer();
+          // Cue instead of load — iOS blocks autoplay without user gesture.
+          // User taps play button to start; playTrack() handles the rest.
+          cueVideo(sharedVid);
+          updatePlayButton(false);
           return;
         }
       }
@@ -236,8 +238,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     updateNowPlaying(sharedArtist);
 
     pendingSeekTime = sharedTime;
-    loadVideo(sharedVid);
-    startSilentFailTimer();
+    cueVideo(sharedVid);
+    updatePlayButton(false);
 
     return; // skip normal init flow
   }
