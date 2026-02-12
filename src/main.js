@@ -213,6 +213,13 @@ document.addEventListener('DOMContentLoaded', async () => {
           renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()));
           updateNowPlaying(sharedArtist);
           updateFavoriteButton(isFavorite(sharedArtist));
+
+          // Scroll shared artist into view
+          requestAnimationFrame(() => {
+            const activeItem = document.querySelector('#track-list .track-item.active');
+            if (activeItem) activeItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          });
+
           pendingSeekTime = sharedTime;
           loadVideo(sharedVid);
           startSilentFailTimer();
@@ -708,12 +715,12 @@ document.getElementById('btn-now-playing').addEventListener('click', goToRadio);
 document.getElementById('reveal-now-playing').addEventListener('click', goToRadio);
 
 function goToRadio() {
+  showScreen('radio');
   updateNowPlayingButton(false);
   showNebula(true);
   dimNebula(false);
   deepDimNebula(true);
   setZoomDrift(true);
-  showScreen('radio');
   if (history.state?.screen !== 'radio') {
     history.pushState({ screen: 'radio' }, '');
   }
