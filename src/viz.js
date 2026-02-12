@@ -61,6 +61,7 @@ function nameHash(name, seed = 0) {
   return (h & 0x7fffffff) / 0x7fffffff;
 }
 
+
 let canvas = null;
 let ctx = null;
 let animId = null;

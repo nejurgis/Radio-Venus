@@ -32,6 +32,7 @@ let silentFailTimer = null;        // detect videos that never start
 let loadingAnimFrame = null;        
 let loadStartTime = 0;
 const SILENT_FAIL_MS = 15000;
+let pendingSeekTime = 0;  // for shared links — seek once on first PLAYING
 
 let activeGenreLabel = null;       // label of the currently playing genre
 let tunedLongitude = null;         // current longitude at the tuner needle
@@ -126,6 +127,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         const title = getVideoTitle();
         const track = tracks[currentTrackIndex];
         if (track) updateNowPlaying(track.name, title);
+        if (pendingSeekTime > 0) {
+          seekTo(pendingSeekTime);
+          pendingSeekTime = 0;
+        }
         updateNowPlayingButton(!document.getElementById('screen-radio').classList.contains('active'));
         
         clearInterval(progressInterval);
@@ -145,6 +150,41 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     },
   });
+
+  // ── Handle shared link (?vid=...&t=...&artist=...) ──
+  const shareParams = new URLSearchParams(window.location.search);
+  const sharedVid = shareParams.get('vid');
+  if (sharedVid) {
+    const sharedArtist = shareParams.get('artist') || '';
+    const sharedSign = shareParams.get('sign') || '';
+    const sharedGenre = shareParams.get('genre') || '';
+    const sharedTime = parseInt(shareParams.get('t')) || 0;
+
+    // Clean URL without reloading
+    history.replaceState({ screen: 'radio' }, '', window.location.pathname);
+
+    // Set up minimal radio UI
+    if (sharedSign) {
+      const el = ZODIAC_ELEMENTS[sharedSign] || 'air';
+      setElementTheme(el);
+    }
+    renderRadioHeader(sharedSign, sharedGenre);
+    showScreen('radio');
+    showNebula(false);
+    updateNowPlaying(sharedArtist);
+
+    // Create a single-track list so controls work
+    tracks = [{ name: sharedArtist, youtubeVideoId: sharedVid, backupVideoIds: [] }];
+    currentTrackIndex = 0;
+    activeGenreLabel = sharedGenre;
+    renderTrackList(tracks, 0, () => {}, new Set(), new Set());
+
+    pendingSeekTime = sharedTime;
+    loadVideo(sharedVid);
+    startSilentFailTimer();
+
+    return; // skip normal init flow
+  }
 
   if (dbResult.status === 'rejected') {
     console.error('Failed to load musician database:', dbResult.reason);
@@ -657,7 +697,9 @@ document.addEventListener('click', e => {
   if (e.target.id === 'btn-shuffle' || e.target.closest('#btn-shuffle')) {
     shuffleTracks();
   }
-  // Inside your btn-fav click listener in main.js
+  if (e.target.id === 'btn-share' || e.target.closest('#btn-share')) {
+    shareCurrentTrack();
+  }
   if (e.target.id === 'btn-fav' || e.target.closest('#btn-fav')) {
     const track = tracks[currentTrackIndex];
     const nowFav = toggleFavorite(track.name);
@@ -670,6 +712,56 @@ document.addEventListener('click', e => {
     }
   }
 });
+
+async function shareCurrentTrack() {
+  const track = tracks[currentTrackIndex];
+  if (!track) return;
+  const videoId = getVideoIds(track)[trackVideoIndex.get(currentTrackIndex) || 0];
+  const sign = venus ? venus.sign : '';
+  const genre = activeGenreLabel || '';
+  const time = Math.floor(getCurrentTime());
+
+  const params = new URLSearchParams({
+    vid: videoId,
+    t: time,
+    artist: track.name,
+    ...(sign && { sign }),
+    ...(genre && { genre }),
+  });
+  const base = window.location.origin + window.location.pathname;
+  const shareUrl = `${base}?${params}`;
+
+  try {
+    await navigator.clipboard.writeText(shareUrl);
+  } catch {
+    // Fallback for older browsers
+    const ta = document.createElement('textarea');
+    ta.value = shareUrl;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    ta.remove();
+  }
+  showToast('Link copied');
+}
+
+function showToast(message) {
+  let toast = document.getElementById('toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'toast';
+    toast.className = 'toast';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = message;
+  toast.classList.remove('is-visible');
+  toast.offsetHeight; // force reflow
+  toast.classList.add('is-visible');
+  clearTimeout(toast._timer);
+  toast._timer = setTimeout(() => toast.classList.remove('is-visible'), 2500);
+}
 
 document.getElementById('seeker').addEventListener('input', e => {
   const duration = getDuration();
