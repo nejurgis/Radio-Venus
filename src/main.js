@@ -225,23 +225,23 @@ document.addEventListener('DOMContentLoaded', async () => {
           // User taps play button to start; playTrack() handles the rest.
           cueVideo(sharedVid);
           updatePlayButton(false);
-          return;
         }
       }
     }
 
     // Fallback: single-track if genre not found
-    tracks = [{ name: sharedArtist, youtubeVideoId: sharedVid, backupVideoIds: [] }];
-    currentTrackIndex = 0;
-    activeGenreLabel = sharedGenre;
-    renderTrackList(tracks, 0, i => playTrack(i), new Set(), new Set());
-    updateNowPlaying(sharedArtist);
+    if (tracks.length === 0) {
+      tracks = [{ name: sharedArtist, youtubeVideoId: sharedVid, backupVideoIds: [] }];
+      currentTrackIndex = 0;
+      activeGenreLabel = sharedGenre;
+      renderTrackList(tracks, 0, i => playTrack(i), new Set(), new Set());
+      updateNowPlaying(sharedArtist);
 
-    pendingSeekTime = sharedTime;
-    cueVideo(sharedVid);
-    updatePlayButton(false);
-
-    return; // skip normal init flow
+      pendingSeekTime = sharedTime;
+      cueVideo(sharedVid);
+      updatePlayButton(false);
+    }
+    // Don't return — let nebula init below so back navigation works
   }
 
   if (dbResult.status === 'rejected') {
