@@ -389,6 +389,10 @@ export function enableDragRotate(enabled) {
 
 // ── Render loop ───────────────────────────────────────────────────────────────
 
+// Gradient cache — rebuilt only when canvas dimensions change
+let _gradW = 0, _gradH = 0;
+let _centerGlow, _tealRing, _thinRing, _iconGrad, _tubeGrad, _outerFade, _metalGrad;
+
 function tick() {
   animId = requestAnimationFrame(tick);
   if (!ctx || !canvas) return;
@@ -406,14 +410,51 @@ function tick() {
   const midR = (innerR + glyphR) / 2;
   const fullMidR = (innerR + outerR) / 2;
 
+  // Rebuild gradients only when canvas size changes
+  if (w !== _gradW || h !== _gradH) {
+    _gradW = w; _gradH = h;
+    _centerGlow = ctx.createRadialGradient(cx, cy, 0, cx, cy, innerR * 0.9);
+    _centerGlow.addColorStop(0, 'rgba(30, 50, 80, 0.25)');
+    _centerGlow.addColorStop(0.6, 'rgba(15, 25, 50, 0.1)');
+    _centerGlow.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+    _tealRing = ctx.createLinearGradient(cx - outerR, cy, cx + outerR, cy);
+    _tealRing.addColorStop(0, '#2a4a4a');
+    _tealRing.addColorStop(0.3, '#a0d4d4');
+    _tealRing.addColorStop(0.7, '#c8ece8');
+    _tealRing.addColorStop(1, '#2a4a4a');
+
+    _thinRing = ctx.createLinearGradient(cx - outerR, cy, cx + outerR, cy);
+    _thinRing.addColorStop(0, '#3a5858');
+    _thinRing.addColorStop(0.5, '#4a7070');
+    _thinRing.addColorStop(1, '#3a5858');
+
+    _iconGrad = ctx.createLinearGradient(0, 0, 0, 24);
+    _iconGrad.addColorStop(0, '#2a4a4a');
+    _iconGrad.addColorStop(0.5, '#c8ece8');
+    _iconGrad.addColorStop(1, '#2a4a4a');
+
+    const outerBandW = minDim * 0.018;
+    _tubeGrad = ctx.createRadialGradient(cx, cy, outerR - outerBandW / 2, cx, cy, outerR + outerBandW / 2);
+    _tubeGrad.addColorStop(0, '#1a3838');
+    _tubeGrad.addColorStop(0.5, '#c8ece8');
+    _tubeGrad.addColorStop(1, '#1a3838');
+
+    const fadeW = outerBandW * 2.5;
+    _outerFade = ctx.createRadialGradient(cx, cy, outerR + outerBandW / 2, cx, cy, outerR + outerBandW / 2 + fadeW);
+    _outerFade.addColorStop(0, 'rgba(0,0,0,0.7)');
+    _outerFade.addColorStop(1, 'rgba(0,0,0,0)');
+
+    _metalGrad = ctx.createLinearGradient(0, -2, 0, 2);
+    _metalGrad.addColorStop(0, '#0a1a1a');
+    _metalGrad.addColorStop(0.5, '#a0d4cc');
+    _metalGrad.addColorStop(1, '#0a1a1a');
+  }
+
   ctx.clearRect(0, 0, w, h);
 
   // Background glow
-  const centerGlow = ctx.createRadialGradient(cx, cy, 0, cx, cy, innerR * 0.9);
-  centerGlow.addColorStop(0, 'rgba(30, 50, 80, 0.25)');
-  centerGlow.addColorStop(0.6, 'rgba(15, 25, 50, 0.1)');
-  centerGlow.addColorStop(1, 'rgba(0, 0, 0, 0)');
-  ctx.fillStyle = centerGlow;
+  ctx.fillStyle = _centerGlow;
   ctx.fillRect(0, 0, w, h);
 
   // ── Update Logic ────────────────────────────────────────────────
@@ -516,37 +557,20 @@ function tick() {
 
   // ── Spokes (drawn before rings so they appear behind the dial face) ────────
   {
-    const metalGrad = ctx.createLinearGradient(0, -2, 0, 2);
-    metalGrad.addColorStop(0, '#0a1a1a');
-    metalGrad.addColorStop(0.5, '#a0d4cc');
-    metalGrad.addColorStop(1, '#0a1a1a');
-    ctx.fillStyle = metalGrad;
+    ctx.fillStyle = _metalGrad;
+    ctx.beginPath();
     for (let i = 0; i < 12; i++) {
       const angle = (-(i * 30) - 90 + rot) * Math.PI / 180;
-      ctx.save();
-      ctx.translate(cx, cy);
-      ctx.rotate(angle);
-      ctx.beginPath();
-      ctx.moveTo(innerR, -1.5);
-      ctx.lineTo(outerR, -0.3);
-      ctx.lineTo(outerR, 0.3);
-      ctx.lineTo(innerR, 1.5);
-      ctx.fill();
-      ctx.restore();
+      const cA = Math.cos(angle);
+      const sA = Math.sin(angle);
+      // Rotate (innerR, ±1.5) and (outerR, ±0.3) around center
+      ctx.moveTo(cx + innerR * cA - 1.5 * sA, cy + innerR * sA + 1.5 * cA);
+      ctx.lineTo(cx + outerR * cA - 0.3 * sA, cy + outerR * sA + 0.3 * cA);
+      ctx.lineTo(cx + outerR * cA + 0.3 * sA, cy + outerR * sA - 0.3 * cA);
+      ctx.lineTo(cx + innerR * cA + 1.5 * sA, cy + innerR * sA - 1.5 * cA);
     }
+    ctx.fill();
   }
-
-  // ── Static Gradients (Reused) ──────────────────────
-  const tealRing = ctx.createLinearGradient(cx - outerR, cy, cx + outerR, cy);
-  tealRing.addColorStop(0, '#2a4a4a');
-  tealRing.addColorStop(0.3, '#a0d4d4');
-  tealRing.addColorStop(0.7, '#c8ece8');
-  tealRing.addColorStop(1, '#2a4a4a');
-
-  const thinRing = ctx.createLinearGradient(cx - outerR, cy, cx + outerR, cy);
-  thinRing.addColorStop(0, '#3a5858');
-  thinRing.addColorStop(0.5, '#4a7070');
-  thinRing.addColorStop(1, '#3a5858');
 
   ctx.save();
 
@@ -555,17 +579,12 @@ function tick() {
   ctx.beginPath();
   ctx.arc(cx, cy, outerR + outerBandW / 2, 0, Math.PI * 2);
   ctx.arc(cx, cy, outerR - outerBandW / 2, 0, Math.PI * 2);
-  
-  const tubeGrad = ctx.createRadialGradient(cx, cy, outerR - outerBandW / 2, cx, cy, outerR + outerBandW / 2);
-  tubeGrad.addColorStop(0, '#1a3838');
-  tubeGrad.addColorStop(0.5, '#c8ece8');
-  tubeGrad.addColorStop(1, '#1a3838');
-  ctx.fillStyle = tubeGrad;
+  ctx.fillStyle = _tubeGrad;
   ctx.fill('evenodd');
 
   ctx.beginPath();
   ctx.arc(cx, cy, outerR, 0, Math.PI * 2);
-  ctx.strokeStyle = tealRing;
+  ctx.strokeStyle = _tealRing;
   ctx.lineWidth = outerBandW * 0.9;
   ctx.globalAlpha = 0.3;
   ctx.stroke();
@@ -573,19 +592,16 @@ function tick() {
 
   // Dark fuzzy outer edge
   const fadeW = outerBandW * 2.5;
-  const outerFade = ctx.createRadialGradient(cx, cy, outerR + outerBandW / 2, cx, cy, outerR + outerBandW / 2 + fadeW);
-  outerFade.addColorStop(0, 'rgba(0,0,0,0.7)');
-  outerFade.addColorStop(1, 'rgba(0,0,0,0)');
   ctx.beginPath();
   ctx.arc(cx, cy, outerR + outerBandW / 2 + fadeW, 0, Math.PI * 2);
   ctx.arc(cx, cy, outerR + outerBandW / 2, 0, Math.PI * 2);
-  ctx.fillStyle = outerFade;
+  ctx.fillStyle = _outerFade;
   ctx.fill('evenodd');
 
   // ── Inner rings ──────────────────────────────────
   ctx.beginPath();
   ctx.arc(cx, cy, glyphR, 0, Math.PI * 2);
-  ctx.strokeStyle = thinRing;
+  ctx.strokeStyle = _thinRing;
   ctx.lineWidth = 1.5;
   ctx.stroke();
 
@@ -602,11 +618,6 @@ function tick() {
 
   ctx.strokeStyle = 'rgba(100,160,155,0.35)';
 
-  // Pre-create icon gradient (local coords 0,0→0,24 are identical per sign)
-  const iconGrad = ctx.createLinearGradient(0, 0, 0, 24);
-  iconGrad.addColorStop(0, '#2a4a4a');
-  iconGrad.addColorStop(0.5, '#c8ece8');
-  iconGrad.addColorStop(1, '#2a4a4a');
 
   for (let sign = 0; sign < 12; sign++) {
     const centerAngle = (-(sign * 30 + 15) - 90 + rot) * Math.PI / 180;
@@ -619,7 +630,7 @@ function tick() {
     ctx.scale(iconScale, iconScale);
     ctx.translate(-12, -12);
 
-    ctx.strokeStyle = iconGrad;
+    ctx.strokeStyle = _iconGrad;
     ctx.lineWidth = 2;
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
@@ -630,18 +641,29 @@ function tick() {
     }
     ctx.restore();
 
-    for (let deg = 0; deg < 30; deg+=1) {
-       const angle = (-(sign * 30 + deg) - 90 + rot) * Math.PI / 180;
-       const isMajor = deg % 5 === 0;
-       const len = isMajor ? glyphBandW * 0.25 : glyphBandW * 0.15;
-       const cA = Math.cos(angle);
-       const sA = Math.sin(angle);
-       ctx.beginPath();
-       ctx.moveTo(cx + tickInner * cA, cy + tickInner * sA);
-       ctx.lineTo(cx + (tickInner + len) * cA, cy + (tickInner + len) * sA);
-       ctx.lineWidth = isMajor ? 0.8 : 0.4;
-       ctx.stroke();
+  }
+
+  // ── Batched tick marks (2 draw calls instead of 360) ──
+  {
+    const majorLen = glyphBandW * 0.25;
+    const minorLen = glyphBandW * 0.15;
+    const majorPath = new Path2D();
+    const minorPath = new Path2D();
+    for (let deg = 0; deg < 360; deg++) {
+      const angle = (-deg - 90 + rot) * Math.PI / 180;
+      const cA = Math.cos(angle);
+      const sA = Math.sin(angle);
+      const isMajor = deg % 5 === 0;
+      const len = isMajor ? majorLen : minorLen;
+      const path = isMajor ? majorPath : minorPath;
+      path.moveTo(cx + tickInner * cA, cy + tickInner * sA);
+      path.lineTo(cx + (tickInner + len) * cA, cy + (tickInner + len) * sA);
     }
+    ctx.strokeStyle = 'rgba(100,160,155,0.35)';
+    ctx.lineWidth = 0.8;
+    ctx.stroke(majorPath);
+    ctx.lineWidth = 0.4;
+    ctx.stroke(minorPath);
   }
   
   ctx.restore(); // End ring drawing

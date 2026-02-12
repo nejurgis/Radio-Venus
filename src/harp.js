@@ -128,8 +128,9 @@ export function pluck(radialFrac, element = 'air', velocity = 0.5) {
 
   // Karplus-Strong parameters
   const sampleRate = audioCtx.sampleRate;
-  // Lower notes ring longer (up to 5s), higher notes shorter (2.5s)
-  const duration = 2.5 + (1 - radialFrac) * 2.5;
+  // Lower notes ring longer (up to 2s), higher notes shorter (1s)
+  // Reverb tail adds sustain, so buffers can be short
+  const duration = 1.0 + (1 - radialFrac) * 1.0;
   const samples = Math.floor(sampleRate * duration);
   const period = Math.round(sampleRate / freq);
   const decay = ELEMENT_DECAY[element] || 0.996;
