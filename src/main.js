@@ -28,6 +28,8 @@ const trackVideoIndex = new Map(); // trackIndex → which video ID we're trying
 let hasPlayed = false;             // whether current video reached PLAYING
 let sessionHasPlayed = false;      // whether ANY video played this session
 let silentFailTimer = null;        // detect videos that never start
+let originalTrackOrder = null;     // unshuffled track order for toggle-back
+let isShuffled = false;
 
 // CHANGED: Use AnimationFrame ID instead of Interval ID for smoothness
 let loadingAnimFrame = null;        
@@ -516,6 +518,9 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
     return candidateTracks;
   }
   showEmptyState(false);
+  originalTrackOrder = null;
+  isShuffled = false;
+  document.getElementById('btn-shuffle').classList.remove('is-active');
 
   if (isPlaying() && hasPlayed) {
     renderTrackList(candidateTracks, -1, (i) => {
@@ -653,10 +658,24 @@ function shuffleTracks() {
   if (tracks.length < 2) return;
   const current = tracks[currentTrackIndex];
   const failedTracks = new Set([...failedIds].map(i => tracks[i]));
-  for (let i = tracks.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [tracks[i], tracks[j]] = [tracks[j], tracks[i]];
+  const btn = document.getElementById('btn-shuffle');
+
+  if (isShuffled) {
+    // Restore original order
+    tracks = [...originalTrackOrder];
+    isShuffled = false;
+    btn.classList.remove('is-active');
+  } else {
+    // Save original order before first shuffle
+    if (!originalTrackOrder) originalTrackOrder = [...tracks];
+    for (let i = tracks.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [tracks[i], tracks[j]] = [tracks[j], tracks[i]];
+    }
+    isShuffled = true;
+    btn.classList.add('is-active');
   }
+
   failedIds.clear();
   trackVideoIndex.clear();
   tracks.forEach((t, i) => { if (failedTracks.has(t)) failedIds.add(i); });
