@@ -85,6 +85,8 @@ let dragging = false;
 let dragStartX = 0;
 let dragLastX = 0;
 let dragVelocity = 0;       // degrees per frame for inertia
+let needleCrossCallback = null; // called when needle crosses a dot
+const prevOnNeedle = new Set(); // dot indices on needle last frame
 
 // Zoom animation state
 let zoomProgress = 0;      // 0 = full ring, 1 = fully zoomed
@@ -334,6 +336,7 @@ export function clearPreviewVenus() { previewDot = null; }
 export function onNebulaHover(callback) { hoverCallback = callback; }
 export function onNebulaClick(callback) { clickCallback = callback; }
 export function onRotation(callback) { rotationCallback = callback; }
+export function onNeedleCross(callback) { needleCrossCallback = callback; }
 
 // ── Zoom control ──────────────────────────────────────────────────────────────
 
@@ -646,6 +649,7 @@ function tick() {
 
   const needleDeg = (dragRotateEnabled && zoomSign != null)
     ? ((rot % 360) + 360) % 360 : -1;
+  const curOnNeedle = new Set();
 
   let closestDot = null;
   let closestDistSq = isZoomed ? 16 : 64;
@@ -718,6 +722,14 @@ function tick() {
       isOnNeedle = (angDist > 180 ? 360 - angDist : angDist) < 1;
     }
 
+    // Harp crossing detection: fire callback when dot enters needle zone
+    if (isOnNeedle && !prevOnNeedle.has(i) && needleCrossCallback) {
+      const rFrac = (r - innerR) / dotBand; // 0 = inner, 1 = outer
+      const element = ELEMENTS[dot.sign] || 'air';
+      const speed = Math.abs(dragVelocity);
+      needleCrossCallback({ name: dot.name, element, radialFrac: rFrac, speed });
+    }
+
     const isHighlighted = isHovered || isOnNeedle;
 
     if (dot.sprite) {
@@ -740,9 +752,16 @@ function tick() {
                dot.spriteDrawSize
              );
         }
+    // Track needle state for crossing detection
+    if (isOnNeedle) curOnNeedle.add(i);
     }
   }
-  
+
+  // Swap needle tracking sets
+  prevOnNeedle.clear();
+  for (const idx of curOnNeedle) prevOnNeedle.add(idx);
+  curOnNeedle.clear();
+
   // Render Labels
   if (isZoomed) {
       ctx.save();

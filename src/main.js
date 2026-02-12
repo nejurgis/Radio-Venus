@@ -2,7 +2,8 @@ import { calculateVenus, makeBirthDate } from './venus.js';
 import { GENRE_CATEGORIES, SUBGENRES } from './genres.js';
 import { loadDatabase, getDatabase, match, matchFavorites, getSubgenreCounts } from './matcher.js';
 import { getFavorites, toggleFavorite, isFavorite } from './favorites.js';
-import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, enableDragRotate, onNebulaHover, onNebulaClick, onRotation } from './viz.js';
+import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, enableDragRotate, onNebulaHover, onNebulaClick, onRotation, onNeedleCross } from './viz.js';
+import { pluck, setHarpEnabled, isHarpEnabled } from './harp.js';
 import { loadYouTubeAPI, initPlayer, loadVideo, togglePlay, isPlaying, getDuration, getCurrentTime, seekTo, getVideoTitle } from './player.js';
 import {
   initScreens, showScreen, setElementTheme,
@@ -158,26 +159,58 @@ document.addEventListener('DOMContentLoaded', async () => {
     const sharedArtist = shareParams.get('artist') || '';
     const sharedSign = shareParams.get('sign') || '';
     const sharedGenre = shareParams.get('genre') || '';
+    const sharedGenreId = shareParams.get('gid') || '';
     const sharedTime = parseInt(shareParams.get('t')) || 0;
 
     // Clean URL without reloading
     history.replaceState({ screen: 'radio' }, '', window.location.pathname);
 
-    // Set up minimal radio UI
-    if (sharedSign) {
-      const el = ZODIAC_ELEMENTS[sharedSign] || 'air';
-      setElementTheme(el);
-    }
-    renderRadioHeader(sharedSign, sharedGenre);
+    // Set up theme and header
+    const sign = sharedSign || 'aries';
+    const el = ZODIAC_ELEMENTS[sign] || 'air';
+    setElementTheme(el);
+    renderRadioHeader(sign, sharedGenre);
     showScreen('radio');
     showNebula(false);
-    updateNowPlaying(sharedArtist);
 
-    // Create a single-track list so controls work
+    // Try to load the full genre track list
+    if (sharedGenreId && dbResult.status === 'fulfilled') {
+      const genreCat = GENRE_CATEGORIES.find(g => g.id === sharedGenreId);
+      if (genreCat) {
+        const candidateTracks = match(sign, sharedGenreId, el, { userLongitude: 0 });
+        if (candidateTracks.length > 0) {
+          tracks = candidateTracks;
+          playingGenreId = sharedGenreId;
+          activeGenreLabel = sharedGenre || genreCat.label;
+
+          // Find the shared artist in the list
+          const idx = tracks.findIndex(t => t.name === sharedArtist);
+          currentTrackIndex = idx >= 0 ? idx : 0;
+
+          // Override the video ID for the shared track to match exactly
+          if (idx >= 0) {
+            tracks[idx] = { ...tracks[idx], youtubeVideoId: sharedVid };
+          }
+
+          failedIds.clear();
+          trackVideoIndex.clear();
+          renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()));
+          updateNowPlaying(sharedArtist);
+          updateFavoriteButton(isFavorite(sharedArtist));
+          pendingSeekTime = sharedTime;
+          loadVideo(sharedVid);
+          startSilentFailTimer();
+          return;
+        }
+      }
+    }
+
+    // Fallback: single-track if genre not found
     tracks = [{ name: sharedArtist, youtubeVideoId: sharedVid, backupVideoIds: [] }];
     currentTrackIndex = 0;
     activeGenreLabel = sharedGenre;
-    renderTrackList(tracks, 0, () => {}, new Set(), new Set());
+    renderTrackList(tracks, 0, i => playTrack(i), new Set(), new Set());
+    updateNowPlaying(sharedArtist);
 
     pendingSeekTime = sharedTime;
     loadVideo(sharedVid);
@@ -192,6 +225,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     initNebula('nebula-container');
     renderNebula(getDatabase());
     onNebulaHover(info => highlightGenres(info ? info.genres : null));
+    onNeedleCross(({ radialFrac, element, speed }) => {
+      const velocity = Math.min(1, 0.2 + speed * 0.8);
+      pluck(radialFrac, element, velocity);
+    });
     onRotation(longitude => {
       tunedLongitude = longitude;
       if (document.getElementById('screen-reveal').classList.contains('active')) {
@@ -697,6 +734,11 @@ document.addEventListener('click', e => {
   if (e.target.id === 'btn-shuffle' || e.target.closest('#btn-shuffle')) {
     shuffleTracks();
   }
+  if (e.target.id === 'btn-harp' || e.target.closest('#btn-harp')) {
+    const on = !isHarpEnabled();
+    setHarpEnabled(on);
+    document.getElementById('btn-harp').classList.toggle('is-active', on);
+  }
   if (e.target.id === 'btn-share' || e.target.closest('#btn-share')) {
     shareCurrentTrack();
   }
@@ -721,12 +763,14 @@ async function shareCurrentTrack() {
   const genre = activeGenreLabel || '';
   const time = Math.floor(getCurrentTime());
 
+  const genreId = playingGenreId || '';
   const params = new URLSearchParams({
     vid: videoId,
     t: time,
     artist: track.name,
     ...(sign && { sign }),
     ...(genre && { genre }),
+    ...(genreId && { gid: genreId }),
   });
   const base = window.location.origin + window.location.pathname;
   const shareUrl = `${base}?${params}`;
