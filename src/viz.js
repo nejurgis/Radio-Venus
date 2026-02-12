@@ -1,4 +1,5 @@
 // ── Zodiac Nebula: artist distribution ring on the portal screen ─────────────
+import { isHarpEnabled } from './harp.js';
 
 const SIGNS = [
   'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo',
@@ -209,7 +210,7 @@ export function initNebula(containerId) {
     document.body.style.cursor = '';
   });
   document.addEventListener('click', (e) => {
-    if (!hoveredDot || !clickCallback || zoomSign == null) return;
+    if (!hoveredDot || !clickCallback || zoomSign == null || isHarpEnabled()) return;
     if (e.target.closest('button, a, input, select, textarea, .screen-inner')) return;
     clickCallback({ name: hoveredDot.name, genres: hoveredDot.genres });
   });

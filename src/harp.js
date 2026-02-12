@@ -10,7 +10,7 @@ let masterGain = null;
 let enabled = false;
 
 // Rate limiting — minimum ms between plucks so notes can breathe
-const MIN_INTERVAL = 24;
+const MIN_INTERVAL = 40;
 let lastPluckTime = 0;
 
 // Buffer pool to reduce GC pressure during fast plucking
@@ -43,13 +43,13 @@ const ELEMENT_CHORDS = {
     261.63, 349.23, 392.00,  // C4 F4 G4
     523.25, 698.46, 783.99,  // C5 F5 G5
   ],
-  // Air: Maj7 — floating, shimmering, almost-resolved (B adds dreamy tension)
-  // Similar range to earth (C2–G5) but lighter character
+  // Air: Maj9(no3) — glassy, open stacked 5ths (no E avoids Fire overlap)
+  // Starts at C4: air floats above earth
   air: [
-    65.41,  82.41,  98.00, 123.47,   // C2 E2 G2 B2
-    130.81, 164.81, 196.00, 246.94,  // C3 E3 G3 B3
-    261.63, 329.63, 392.00, 493.88,  // C4 E4 G4 B4
-    523.25, 659.25, 783.99, 987.77,  // C5 E5 G5 B5
+    261.63, 392.00, 493.88, 587.33,  // C4 G4 B4 D5
+    523.25, 783.99, 987.77, 1174.7,  // C5 G5 B5 D6
+    1046.5, 1568.0, 1975.5, 2349.3,  // C6 G6 B6 D7
+    2093.0, 3136.0, 3951.1, 4698.6,  // C7 G7 B7 D8
   ],
 };
 
@@ -146,12 +146,14 @@ export function pluck(radialFrac, element = 'air', velocity = 0.5) {
   const data = buffer.getChannelData(0);
   data.fill(0);
 
-  // Seed delay line with noise, scaled gently
+  // Seed delay line — element shapes the noise amplitude
+  const noiseAmp = element === 'earth' ? 0.48 : element === 'air' ? 0.72 : 0.6;
   for (let i = 0; i < period; i++) {
-    data[i] = (Math.random() * 2 - 1) * vel * 0.6;
+    data[i] = (Math.random() * 2 - 1) * vel * noiseAmp;
   }
-  // Heavy pre-filtering for soft, rounded attack (more passes = mellower)
-  const filterPasses = 4 + Math.floor((1 - vel) * 4);
+  // Pre-filtering: more passes = duller (gut string), fewer = brighter (steel)
+  const basePasses = element === 'earth' ? 8 : element === 'air' ? 1 : element === 'fire' ? 3 : 4;
+  const filterPasses = basePasses + Math.floor((1 - vel) * 4);
   for (let pass = 0; pass < filterPasses; pass++) {
     for (let i = 1; i < period; i++) {
       data[i] = 0.6 * data[i] + 0.4 * data[i - 1];
@@ -168,7 +170,8 @@ export function pluck(radialFrac, element = 'air', velocity = 0.5) {
   source.buffer = buffer;
 
   const noteGain = audioCtx.createGain();
-  noteGain.gain.value = vel * 0.35;
+  const gainMod = element === 'earth' ? 1.3 : 1.0;
+  noteGain.gain.value = vel * 0.35 * gainMod;
 
   source.connect(noteGain);
   noteGain.connect(masterGain);
