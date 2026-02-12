@@ -693,7 +693,7 @@ function updateNowPlayingButton(show) {
   }
 
   if (revealNp) {
-    if (hasTrack && onReveal) {
+    if (show && hasTrack && onReveal) {
       const track = tracks[currentTrackIndex];
       const artist = track ? track.name : '';
       const title = getVideoTitle();

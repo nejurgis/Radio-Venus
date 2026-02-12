@@ -36,7 +36,7 @@
           <span class="date-sep">●</span>
           <input type="text" id="input-year" class="date-field date-field--year" placeholder="YYYY" maxlength="4" inputmode="numeric" autocomplete="off" />
         </div>
-        <button id="btn-enter" class="btn-primary" disabled>Enter</button>
+        <button id="btn-enter" class="btn-primary btn-enter" disabled>Enter</button>
       </div>
       <p id="date-error" class="error-msg"></p>
     </div>
@@ -119,21 +119,12 @@
           <circle id="progress-playhead" class="progress-arc-playhead" cx="0" cy="100" r="3" />
         </svg>
         <input type="range" id="seeker" min="0" max="1000" value="0" step="1">
+        <span id="current-time" class="time-display time-current">0:00</span>
+        <span id="duration" class="time-display time-duration">0:00</span>
       </div>
       <div class="radio-controls">
         <button id="btn-prev" class="btn-control" aria-label="Previous">&#9664;&#9664;</button>
-        <span id="current-time" class="time-display">0:00</span>
-
-        <!-- <button class="hyper-btn" id="btn-play btn-control" aria-label="Play/Pause">
-          <div class="hyper-glass">
-            <div class="hyper-content">
-              &#9654;
-            </div>
-          </div>
-        </button> -->
         <button id="btn-play" class="btn-control btn-play" aria-label="Play/Pause">&#9654;<div class="hyper-shine"></div></button>
-
-        <span id="duration" class="time-display">0:00</span>
         <button id="btn-next" class="btn-control" aria-label="Next">&#9654;&#9654;</button>
         <!-- <button id="btn-shuffle" class="btn-control btn-shuffle" aria-label="Shuffle">randomize</button> -->
         <button id="btn-shuffle" class="btn-control btn-shuffle" aria-label="Shuffle">
