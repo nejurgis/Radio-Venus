@@ -10,12 +10,12 @@ let masterGain = null;
 let enabled = false;
 
 // Rate limiting — minimum ms between plucks so notes can breathe
-const MIN_INTERVAL = 40;
+const MIN_INTERVAL = 35;
 let lastPluckTime = 0;
 
 // Buffer pool to reduce GC pressure during fast plucking
 const bufferPool = [];
-const MAX_POOL = 6;
+const MAX_POOL = 8;
 
 // Element → chord across 5 octaves, each always harmonic within itself
 const ELEMENT_CHORDS = {
@@ -55,10 +55,10 @@ const ELEMENT_CHORDS = {
 
 // Element → decay character
 const ELEMENT_DECAY = {
-  fire:  0.998,  // bright, longer ring
+  fire:  0.990,  // bright, longer ring
   water: 0.994,  // darker, shorter
   earth: 0.996,  // warm middle
-  air:   0.997,  // light, clear
+  air:   0.999,  // light, clear
 };
 
 function ensureContext() {
@@ -153,7 +153,7 @@ export function pluck(radialFrac, element = 'air', velocity = 0.5) {
     data[i] = (Math.random() * 2 - 1) * vel * noiseAmp;
   }
   // Pre-filtering: more passes = duller (gut string), fewer = brighter (steel)
-  const basePasses = element === 'earth' ? 8 : element === 'air' ? 1 : element === 'fire' ? 3 : 4;
+  const basePasses = element === 'earth' ? 8 : element === 'air' ? 8 : element === 'fire' ? 3 : 4;
   const filterPasses = basePasses + Math.floor((1 - vel) * 4);
   for (let pass = 0; pass < filterPasses; pass++) {
     for (let i = 1; i < period; i++) {
@@ -181,6 +181,48 @@ export function pluck(radialFrac, element = 'air', velocity = 0.5) {
   };
   source.start();
   source.stop(audioCtx.currentTime + duration);
+}
+
+/**
+ * Strike a gong/bell when the needle crosses a zodiac sign boundary.
+ * Layered inharmonic sine partials with slow decay — like a temple bell.
+ * @param {string} element - fire|water|earth|air → tints the pitch
+ * @param {number} velocity - 0 to 1 → loudness
+ */
+export function gong(element = 'air', velocity = 0.4) {
+  if (!enabled) return;
+  ensureContext();
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+
+  const now = audioCtx.currentTime;
+  const vel = Math.min(1, Math.max(0.1, velocity));
+
+  // Base frequency per element — lower = more gravitas
+  const baseFreq = { earth: 1055, water: 1155, fire: 1255, air: 1355 }[element] || 65;
+
+  // Inharmonic partials (like a real bell — not integer multiples)
+  const partials = [1, 1.5, 2.4, 3.2, 4.7];
+  const decays   = [4, 3,   2.5, 2,   1.5];
+  const amps     = [1, 0.6, 0.4, 0.25, 0.15];
+
+  const mix = audioCtx.createGain();
+  mix.gain.value = vel * 0.09;
+  mix.connect(masterGain);
+
+  for (let i = 0; i < partials.length; i++) {
+    const osc = audioCtx.createOscillator();
+    osc.type = 'sine';
+    osc.frequency.value = baseFreq * partials[i];
+
+    const env = audioCtx.createGain();
+    env.gain.setValueAtTime(amps[i], now);
+    env.gain.exponentialRampToValueAtTime(0.001, now + decays[i]);
+
+    osc.connect(env);
+    env.connect(mix);
+    osc.start(now);
+    osc.stop(now + decays[i]);
+  }
 }
 
 export function setHarpEnabled(on) {

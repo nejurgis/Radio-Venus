@@ -87,6 +87,8 @@ let dragStartX = 0;
 let dragLastX = 0;
 let dragVelocity = 0;       // degrees per frame for inertia
 let needleCrossCallback = null; // called when needle crosses a dot
+let signCrossCallback = null;  // called when needle crosses a sign boundary
+let prevNeedleSign = -1;       // sign index needle was in last frame
 const prevOnNeedle = new Set(); // dot indices on needle last frame
 
 // Zoom animation state
@@ -338,6 +340,7 @@ export function onNebulaHover(callback) { hoverCallback = callback; }
 export function onNebulaClick(callback) { clickCallback = callback; }
 export function onRotation(callback) { rotationCallback = callback; }
 export function onNeedleCross(callback) { needleCrossCallback = callback; }
+export function onSignCross(callback) { signCrossCallback = callback; }
 
 // ── Zoom control ──────────────────────────────────────────────────────────────
 
@@ -674,6 +677,20 @@ function tick() {
 
   const needleDeg = (dragRotateEnabled && zoomSign != null)
     ? ((rot % 360) + 360) % 360 : -1;
+
+  // Sign-boundary crossing: detect when needle enters a new sign
+  if (needleDeg >= 0 && signCrossCallback) {
+    const curSign = Math.floor(needleDeg / 30) % 12;
+    if (prevNeedleSign >= 0 && curSign !== prevNeedleSign) {
+      const element = ELEMENTS[SIGNS[curSign]] || 'air';
+      const speed = Math.abs(dragVelocity);
+      signCrossCallback({ sign: SIGNS[curSign], element, speed });
+    }
+    prevNeedleSign = curSign;
+  } else if (needleDeg < 0) {
+    prevNeedleSign = -1;
+  }
+
   const curOnNeedle = new Set();
 
   let closestDot = null;

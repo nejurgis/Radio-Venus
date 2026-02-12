@@ -2,8 +2,8 @@ import { calculateVenus, makeBirthDate } from './venus.js';
 import { GENRE_CATEGORIES, SUBGENRES } from './genres.js';
 import { loadDatabase, getDatabase, match, matchFavorites, getSubgenreCounts } from './matcher.js';
 import { getFavorites, toggleFavorite, isFavorite } from './favorites.js';
-import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, enableDragRotate, onNebulaHover, onNebulaClick, onRotation, onNeedleCross } from './viz.js';
-import { pluck, setHarpEnabled, isHarpEnabled } from './harp.js';
+import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, enableDragRotate, onNebulaHover, onNebulaClick, onRotation, onNeedleCross, onSignCross } from './viz.js';
+import { pluck, gong, setHarpEnabled, isHarpEnabled } from './harp.js';
 import { loadYouTubeAPI, initPlayer, loadVideo, cueVideo, togglePlay, isPlaying, getDuration, getCurrentTime, seekTo, getVideoTitle, isMuted, unMute } from './player.js';
 import {
   initScreens, showScreen, setElementTheme,
@@ -259,6 +259,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     onNeedleCross(({ radialFrac, element, speed }) => {
       const velocity = Math.min(1, 0.2 + speed * 0.8);
       pluck(radialFrac, element, velocity);
+    });
+    onSignCross(({ element, speed }) => {
+      const velocity = Math.min(1, 0.15 + speed * 0.5);
+      gong(element, velocity);
     });
     onRotation(longitude => {
       tunedLongitude = longitude;
