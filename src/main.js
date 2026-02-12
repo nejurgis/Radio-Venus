@@ -54,6 +54,19 @@ const ZODIAC_ELEMENTS = {
 document.addEventListener('DOMContentLoaded', async () => {
   initScreens();
 
+  // Static button listeners (registered once, not per date submit)
+  document.getElementById('btn-choose-genre').addEventListener('click', () => {
+    rebuildGenreGrid();
+    enableDragRotate(false);
+    showNebula(true);
+    dimNebula(true);
+    showScreen('genre');
+    updateNowPlayingButton(true);
+    history.pushState({ screen: 'genre' }, '');
+  });
+  document.getElementById('btn-back-reveal').addEventListener('click', () => history.back());
+  document.getElementById('btn-back-genre').addEventListener('click', () => history.back());
+
   // ── Pinch gestures (mobile) ──
   let pinchStartDist = 0;
   let pinchZooming = false; 
@@ -401,19 +414,6 @@ async function onDateSubmit(d, m, y) {
   history.pushState({ screen: 'reveal' }, '');
 
   rebuildGenreGrid();
-
-  document.getElementById('btn-choose-genre').addEventListener('click', () => {
-    rebuildGenreGrid();
-    enableDragRotate(false);
-    showNebula(true);
-    dimNebula(true);
-    showScreen('genre');
-    updateNowPlayingButton(true);
-    history.pushState({ screen: 'genre' }, '');
-  });
-
-  document.getElementById('btn-back-reveal').addEventListener('click', () => history.back());
-  document.getElementById('btn-back-genre').addEventListener('click', () => history.back());
 }
 
 async function zoomInToReveal() {

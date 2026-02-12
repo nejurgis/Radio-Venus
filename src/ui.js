@@ -1,4 +1,6 @@
 // ─── CACHED ELEMENTS (The Speed Boost) ──────────────────────────────────────
+let trackSelectCallback = null; // delegated click handler for track list
+
 const ui = {
   // We will populate these once in initScreens()
   screens: {},
@@ -68,6 +70,14 @@ export function initScreens() {
   ui.playerContainer = document.querySelector('.player-container');
   ui.radioControls = document.querySelector('.radio-controls');
   ui.nowPlaying = document.getElementById('now-playing');
+
+  // Delegated click handler for track list (single listener instead of per-track)
+  ui.trackList.addEventListener('click', e => {
+    const item = e.target.closest('.track-item');
+    if (!item || item.classList.contains('is-failed')) return;
+    const idx = parseInt(item.dataset.index, 10);
+    if (!isNaN(idx) && trackSelectCallback) trackSelectCallback(idx);
+  });
 }
 
 // ─── NAVIGATION ─────────────────────────────────────────────────────────────
@@ -171,6 +181,7 @@ export function updateFavoriteButton(isFav) {
 
 export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new Set(), favSet = new Set()) {
   if (!ui.trackList) return;
+  trackSelectCallback = onSelect;
   ui.trackList.innerHTML = '';
   const fragment = document.createDocumentFragment();
 
@@ -210,7 +221,6 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
       </span>
     `;
     
-    if (!failed) item.addEventListener('click', () => onSelect(i));
     fragment.appendChild(item);
   });
   ui.trackList.appendChild(fragment);

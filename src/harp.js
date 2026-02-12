@@ -9,6 +9,10 @@ let audioCtx = null;
 let masterGain = null;
 let enabled = false;
 
+// Buffer pool to reduce GC pressure during fast plucking
+const bufferPool = [];
+const MAX_POOL = 6;
+
 // Element → chord across 5 octaves, each always harmonic within itself
 const ELEMENT_CHORDS = {
   // Fire: Major — bright, energetic, triumphant
@@ -125,9 +129,15 @@ export function pluck(radialFrac, element = 'air', velocity = 0.5) {
 
   const vel = Math.min(1, Math.max(0.1, velocity));
 
-  // Build the plucked string buffer
-  const buffer = audioCtx.createBuffer(1, samples, sampleRate);
+  // Reuse pooled buffer or allocate new one
+  let buffer = bufferPool.findIndex(b => b.length >= samples);
+  if (buffer >= 0) {
+    buffer = bufferPool.splice(buffer, 1)[0];
+  } else {
+    buffer = audioCtx.createBuffer(1, samples, sampleRate);
+  }
   const data = buffer.getChannelData(0);
+  data.fill(0);
 
   // Seed delay line with noise, scaled gently
   for (let i = 0; i < period; i++) {
@@ -155,6 +165,9 @@ export function pluck(radialFrac, element = 'air', velocity = 0.5) {
 
   source.connect(noteGain);
   noteGain.connect(masterGain);
+  source.onended = () => {
+    if (bufferPool.length < MAX_POOL) bufferPool.push(buffer);
+  };
   source.start();
   source.stop(audioCtx.currentTime + duration);
 }

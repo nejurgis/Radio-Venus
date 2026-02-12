@@ -49,9 +49,8 @@ function venusSimilarity(userLon, artistLon) {
 
 function sortBySimilarity(arr, userLon) {
   if (userLon == null) return shuffle(arr);
-  return arr
-    .map(m => ({ ...m, similarity: venusSimilarity(userLon, reconstructLongitude(m)) }))
-    .sort((a, b) => b.similarity - a.similarity || a.name.localeCompare(b.name));
+  for (const m of arr) m.similarity = venusSimilarity(userLon, reconstructLongitude(m));
+  return arr.sort((a, b) => b.similarity - a.similarity || a.name.localeCompare(b.name));
 }
 
 // ── Subgenre counts ─────────────────────────────────────────────────────────

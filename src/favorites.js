@@ -1,31 +1,35 @@
 const KEY = 'radio-venus-favorites';
 
+// In-memory cache — avoids JSON.parse on every check
+let cache = null;
+
 function load() {
-  try { return JSON.parse(localStorage.getItem(KEY)) || []; }
-  catch { return []; }
+  if (cache) return cache;
+  try { cache = new Set(JSON.parse(localStorage.getItem(KEY)) || []); }
+  catch { cache = new Set(); }
+  return cache;
 }
 
-function save(names) {
-  localStorage.setItem(KEY, JSON.stringify(names));
+function save() {
+  localStorage.setItem(KEY, JSON.stringify([...cache]));
 }
 
 export function getFavorites() {
-  return load();
+  return [...load()];
 }
 
 export function isFavorite(name) {
-  return load().includes(name);
+  return load().has(name);
 }
 
 export function toggleFavorite(name) {
   const favs = load();
-  const idx = favs.indexOf(name);
-  if (idx >= 0) {
-    favs.splice(idx, 1);
-    save(favs);
+  if (favs.has(name)) {
+    favs.delete(name);
+    save();
     return false;
   }
-  favs.push(name);
-  save(favs);
+  favs.add(name);
+  save();
   return true;
 }

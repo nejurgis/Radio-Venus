@@ -600,7 +600,13 @@ function tick() {
   const iconR = glyphR + glyphBandW * 0.55;
 
   ctx.strokeStyle = 'rgba(100,160,155,0.35)';
-  
+
+  // Pre-create icon gradient (local coords 0,0→0,24 are identical per sign)
+  const iconGrad = ctx.createLinearGradient(0, 0, 0, 24);
+  iconGrad.addColorStop(0, '#2a4a4a');
+  iconGrad.addColorStop(0.5, '#c8ece8');
+  iconGrad.addColorStop(1, '#2a4a4a');
+
   for (let sign = 0; sign < 12; sign++) {
     const centerAngle = (-(sign * 30 + 15) - 90 + rot) * Math.PI / 180;
     const ix = cx + iconR * Math.cos(centerAngle);
@@ -611,11 +617,7 @@ function tick() {
     ctx.rotate(centerAngle + Math.PI / 2);
     ctx.scale(iconScale, iconScale);
     ctx.translate(-12, -12);
-    
-    const iconGrad = ctx.createLinearGradient(0, 0, 0, 24);
-    iconGrad.addColorStop(0, '#2a4a4a');
-    iconGrad.addColorStop(0.5, '#c8ece8');
-    iconGrad.addColorStop(1, '#2a4a4a');
+
     ctx.strokeStyle = iconGrad;
     ctx.lineWidth = 2;
     ctx.lineCap = 'round';
@@ -697,9 +699,10 @@ function tick() {
     // Convert to render angle
     const angle = (-(constrainedDeg) - 90 + rot) * Math.PI / 180;
     
-    // Calculate final X/Y
+    // Calculate final X/Y and cache on dot for label pass
     const x = cx + r * Math.cos(angle);
     const y = cy + r * Math.sin(angle);
+    dot._x = x; dot._y = y;
     // ────────────────────────────────────────────────────────
 
     // Hit Test
@@ -769,25 +772,11 @@ function tick() {
       
       for (let i = 0; i < dots.length; i++) {
         const dot = dots[i];
-        if (dot === hoveredDot) continue; 
+        if (dot === hoveredDot) continue;
         if (dot.alpha <= 0.3) continue;
 
-        // Re-calculate position (copy-paste math from above or refactor, 
-        // for perf we repeat the calc to avoid storing state)
-        const margin = dot.size + 1;
-        const minR = innerR + margin;
-        const maxR = glyphR - margin;
-        let r = innerR + dot.jR * dotBand;
-        r = Math.max(minR, Math.min(maxR, r));
-
-        const degPadding = (margin / r) * (180 / Math.PI); 
-        const signStart = dot.signIndex * 30;
-        const signEnd = (dot.signIndex + 1) * 30;
-        let rawDeg = dot.deg + dot.jA;
-        const constrainedDeg = Math.max(signStart + degPadding, Math.min(signEnd - degPadding, rawDeg));
-        const angle = (-(constrainedDeg) - 90 + rot) * Math.PI / 180;
-        const x = cx + r * Math.cos(angle);
-        const y = cy + r * Math.sin(angle);
+        const x = dot._x;
+        const y = dot._y;
         
         ctx.font = '1.3px monospace';
         ctx.textAlign = 'center';
@@ -799,14 +788,8 @@ function tick() {
       // Draw Hovered Label
       if (closestDot) {
         const dot = closestDot;
-        // Calc pos
-        const margin = dot.size + 1;
-        let r = Math.max(innerR + margin, Math.min(glyphR - margin, innerR + dot.jR * dotBand));
-        const degPadding = (margin / r) * (180 / Math.PI); 
-        let constrainedDeg = Math.max(dot.signIndex*30 + degPadding, Math.min((dot.signIndex+1)*30 - degPadding, dot.deg + dot.jA));
-        const angle = (-(constrainedDeg) - 90 + rot) * Math.PI / 180;
-        const x = cx + r * Math.cos(angle);
-        const y = cy + r * Math.sin(angle);
+        const x = dot._x;
+        const y = dot._y;
         
         const degInSign = Math.round((dot.deg % 30) * 10) / 10;
         
