@@ -280,6 +280,26 @@
     ]
   },
   {
+    "name": "Alias",
+    "birthDate": "1976-04-05",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 26.5,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "idm",
+      "triphop"
+    ],
+    "subgenres": [
+      "abstract",
+      "downtempo"
+    ],
+    "youtubeVideoId": "m9n3nX8u7RQ",
+    "backupVideoIds": []
+  },
+  {
     "name": "Alice Coltrane",
     "birthDate": "1937-08-27",
     "venus": {
@@ -832,6 +852,27 @@
     ]
   },
   {
+    "name": "Apparat",
+    "birthDate": "1978-06-27",
+    "venus": {
+      "sign": "Leo",
+      "degree": 13.2,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "idm",
+      "ambient",
+      "triphop"
+    ],
+    "subgenres": [
+      "idm",
+      "downtempo"
+    ],
+    "youtubeVideoId": "TJ4INx5lfe4",
+    "backupVideoIds": []
+  },
+  {
     "name": "Arca",
     "birthDate": "1989-04-20",
     "venus": {
@@ -1341,6 +1382,27 @@
     ]
   },
   {
+    "name": "Ben Lukas Boysen",
+    "birthDate": "1981-12-01",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 24.5,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "classical"
+    ],
+    "subgenres": [
+      "ambient",
+      "modern classical"
+    ],
+    "youtubeVideoId": "rN6dGKRjX38",
+    "backupVideoIds": []
+  },
+  {
     "name": "Benjamin Britten",
     "birthDate": "1913-11-22",
     "venus": {
@@ -1743,6 +1805,25 @@
       "fEw2K7bwU_U",
       "e1CcVFRKzdM"
     ]
+  },
+  {
+    "name": "Bronius Kutavičius",
+    "birthDate": "1932-09-13",
+    "venus": {
+      "sign": "Leo",
+      "degree": 4.6,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "contemporary",
+      "modern classical"
+    ],
+    "youtubeVideoId": "jj_H-GGQNUU",
+    "backupVideoIds": []
   },
   {
     "name": "Burial",
@@ -2491,6 +2572,26 @@
       "0trGVy6EefE",
       "tMGFI6vfjcE"
     ]
+  },
+  {
+    "name": "cLOUDDEAD",
+    "birthDate": "1977-04-21",
+    "venus": {
+      "sign": "Aries",
+      "degree": 8.9,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "idm",
+      "ambient"
+    ],
+    "subgenres": [
+      "abstract",
+      "experimental"
+    ],
+    "youtubeVideoId": "BV7AF4q9N8U",
+    "backupVideoIds": []
   },
   {
     "name": "Cocteau Twins",
@@ -5337,6 +5438,27 @@
     "backupVideoIds": []
   },
   {
+    "name": "Gidge",
+    "birthDate": "1987-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 5.2,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "techno"
+    ],
+    "subgenres": [
+      "ambient techno",
+      "downtempo"
+    ],
+    "youtubeVideoId": "NZyafXiZ7cU",
+    "backupVideoIds": []
+  },
+  {
     "name": "Gioachino Rossini",
     "birthDate": "1792-02-29",
     "venus": {
@@ -5981,6 +6103,26 @@
     ]
   },
   {
+    "name": "Helios",
+    "birthDate": "1981-10-09",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 0.6,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "downtempo"
+    ],
+    "youtubeVideoId": "UgYpqdDsXGs",
+    "backupVideoIds": []
+  },
+  {
     "name": "Henry Hugo Pierson",
     "birthDate": "1815-04-12",
     "venus": {
@@ -6276,6 +6418,25 @@
       "p68SQ8cBD3c",
       "w0v3UtcE63g"
     ]
+  },
+  {
+    "name": "Hymie's Basement",
+    "birthDate": "1979-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 4.5,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "abstract",
+      "experimental"
+    ],
+    "youtubeVideoId": "cpTz8r5OMdg",
+    "backupVideoIds": []
   },
   {
     "name": "Hype Williams",
@@ -6882,6 +7043,26 @@
       "CiGCK1zgpfQ",
       "JsMYo7OrRXY"
     ]
+  },
+  {
+    "name": "Jel",
+    "birthDate": "1978-05-07",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 12.4,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "idm",
+      "triphop"
+    ],
+    "subgenres": [
+      "abstract",
+      "experimental"
+    ],
+    "youtubeVideoId": "izItV_ZFL70",
+    "backupVideoIds": []
   },
   {
     "name": "Jenny Hval",
@@ -11896,6 +12077,27 @@
     "backupVideoIds": []
   },
   {
+    "name": "Rival Consoles",
+    "birthDate": "1985-11-10",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 1.1,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "idm",
+      "ambient",
+      "techno"
+    ],
+    "subgenres": [
+      "idm",
+      "ambient techno"
+    ],
+    "youtubeVideoId": "dVAQO6Fs2f0",
+    "backupVideoIds": []
+  },
+  {
     "name": "Robert Erickson",
     "birthDate": "1917-03-07",
     "venus": {
@@ -12746,6 +12948,24 @@
     ]
   },
   {
+    "name": "Sole",
+    "birthDate": "1977-09-25",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 3.5,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "abstract"
+    ],
+    "youtubeVideoId": "CGnXL0lX44w",
+    "backupVideoIds": []
+  },
+  {
     "name": "Sonny Sharrock",
     "birthDate": "1940-08-27",
     "venus": {
@@ -13006,6 +13226,25 @@
       "OwrH8gx0r-M",
       "cLjVS8qxxaY"
     ]
+  },
+  {
+    "name": "Subtle",
+    "birthDate": "1970-08-02",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 23.6,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "abstract",
+      "experimental"
+    ],
+    "youtubeVideoId": "wvnh_-ZtFiM",
+    "backupVideoIds": []
   },
   {
     "name": "Sun Ra",
@@ -13485,6 +13724,25 @@
       "YScxxIoAYcw",
       "IMxNE54PXYQ"
     ]
+  },
+  {
+    "name": "Themselves",
+    "birthDate": "1977-04-21",
+    "venus": {
+      "sign": "Aries",
+      "degree": 8.9,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "abstract",
+      "experimental"
+    ],
+    "youtubeVideoId": "odeV7H9w60I",
+    "backupVideoIds": []
   },
   {
     "name": "Throbbing Gristle",
@@ -14234,6 +14492,25 @@
     "backupVideoIds": []
   },
   {
+    "name": "Why?",
+    "birthDate": "1979-04-30",
+    "venus": {
+      "sign": "Aries",
+      "degree": 8.8,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "abstract",
+      "experimental"
+    ],
+    "youtubeVideoId": "mA-_wJmBJ7s",
+    "backupVideoIds": []
+  },
+  {
     "name": "Wilhelm Killmayer",
     "birthDate": "1927-08-21",
     "venus": {
@@ -14610,25 +14887,6 @@
       "breakbeat"
     ],
     "youtubeVideoId": "XHtbU-lHb-s",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Bronius Kutavičius",
-    "birthDate": "1932-09-13",
-    "venus": {
-      "sign": "Leo",
-      "degree": 4.6,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "contemporary",
-      "modern classical"
-    ],
-    "youtubeVideoId": "jj_H-GGQNUU",
     "backupVideoIds": []
   }
 ]
