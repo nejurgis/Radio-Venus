@@ -353,6 +353,11 @@ html, body {
   background-image: linear-gradient(var(--accent), var(--accent));
 }
 
+@media (min-width: 768px) {
+  .about-content { font-size: 1.7rem; }
+  .about-lead, .about-heading { font-size: 1.5rem; }
+}
+
 .btn-lyre {
   background: none;
   border: none;
