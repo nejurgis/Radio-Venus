@@ -242,6 +242,13 @@ document.addEventListener('DOMContentLoaded', async () => {
       renderRadioHeader(sign, genreCat.label);
       showScreen('radio');
       showNebula(true);
+
+      const nebulaCont = document.getElementById('nebula-container');
+      if (nebulaCont) {
+        nebulaCont.classList.add('is-dimmed');
+        nebulaCont.classList.add('is-deep-dimmed');
+        nebulaCont.classList.add('is-zoomed');
+      }
       dimNebula(true);
       deepDimNebula(true);
       setZoomDrift(true);
@@ -255,6 +262,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       trackVideoIndex.clear();
       renderTrackList(tracks, 0, i => playTrack(i), failedIds, new Set(getFavorites()), shareCurrentTrack);
       playTrack(0);
+
+      const signIndex = ZODIAC_SIGNS.indexOf('Aries');
+      if (signIndex >= 0) zoomToSign(signIndex, { duration: 2500 });
       updateNowPlayingButton(false);
     }
   }
