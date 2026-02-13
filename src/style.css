@@ -1623,25 +1623,52 @@ body.element-water  { --accent: var(--water); }
 
 
 
-.hacker-glow-line {                                                                                                                                  
-  width: 100%;                                                                                                                                       
-  height: 1px;                                                                                                                                       
-                                                                                                                                                     
-  /* Thin core line — muted lavender-white, not neon */
+
+
+.hacker-glow-line {
+  /* 1. CONTAINER: Handles Position & Bloom */
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 18px;
+  
+  width: 120%;   /* Wider than screen for a flatter arch */
+  height: 363px; /* Your nice height */
+  z-index: 1;
+  pointer-events: none;
+
+  /* This is the magic. We apply the glow to the *container*, 
+     so it glows based on the shape of the child inside. */
+  filter: 
+    drop-shadow(0 0 6px rgba(255, 255, 255, 1))         /* Hot Core */
+    drop-shadow(0 0 8px rgba(255, 200, 255, 0.9))         /* Pink Mid */
+    drop-shadow(0 10px 4px rgba(200, 150, 255, 0.7));   /* Atmos Haze */
+
+  /* Ensure the filter renders correctly on GPU */
+  will-change: filter;
+}
+
+.hacker-glow-line::after {
+  /* 2. CONTENT: Handles Shape & Gradient */
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* The Arch Shape */
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  
+  /* Your Exact Gradient */
   background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(220, 200, 225, 0.2) 10%,
-    rgba(235, 210, 235, 0.45) 35%,
-    rgba(240, 215, 240, 0.5) 50%,
-    rgba(235, 210, 235, 0.45) 65%,
-    rgba(220, 200, 225, 0.2) 90%,
-    transparent 100%
+    90deg, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 0.4) 25%, 
+    rgba(255, 200, 255, 0.6) 50%,   
+    rgba(255, 145, 255, 0.519) 75%,   
+    rgba(255, 255, 255, 0) 100%
   );
 
-  /* Layered bloom — soft vertical spread at different radii */
-  box-shadow:
-    0 0 6px 1px rgba(230, 200, 240, 0.15),
-    0 0 20px 4px rgba(230, 200, 240, 0.07),
-    0 0 50px 10px rgba(235, 210, 245, 0.03);
+  /* The Mask: Cuts out the center to make it a line */
+  /* This says: "Keep the top 2px opaque, make the rest transparent" */
+  -webkit-mask: radial-gradient(farthest-side at 50% 100%, transparent calc(100% - 2px), black calc(100% - 1px));
+  mask: radial-gradient(farthest-side at 50% 100%, transparent calc(100% - 2px), black calc(100% - 1px));
 }
