@@ -230,6 +230,35 @@ document.addEventListener('DOMContentLoaded', async () => {
     },
   });
 
+  // ── Handle #valentine link ──
+  if (window.location.hash === '#valentine' && dbResult.status === 'fulfilled') {
+    history.replaceState({ screen: 'portal' }, '', window.location.pathname);
+    const sign = 'aries';
+    const el = ZODIAC_ELEMENTS[sign] || 'air';
+    const genreCat = GENRE_CATEGORIES.find(g => g.id === 'valentine');
+    const candidateTracks = match(sign, 'valentine', el, { userLongitude: 0 });
+    if (genreCat && candidateTracks.length > 0) {
+      setElementTheme(el);
+      renderRadioHeader(sign, genreCat.label);
+      showScreen('radio');
+      showNebula(true);
+      dimNebula(true);
+      deepDimNebula(true);
+      setZoomDrift(true);
+      history.pushState({ screen: 'radio' }, '');
+
+      tracks = candidateTracks;
+      playingGenreId = 'valentine';
+      activeGenreLabel = genreCat.label;
+      currentTrackIndex = 0;
+      failedIds.clear();
+      trackVideoIndex.clear();
+      renderTrackList(tracks, 0, i => playTrack(i), failedIds, new Set(getFavorites()), shareCurrentTrack);
+      playTrack(0);
+      updateNowPlayingButton(false);
+    }
+  }
+
   // ── Handle shared link (?vid=...&t=...&artist=...) ──
   const shareParams = new URLSearchParams(window.location.search);
   const sharedVid = shareParams.get('vid');
@@ -904,17 +933,23 @@ async function shareCurrentTrack() {
   const time = Math.floor(getCurrentTime());
   const genreId = playingGenreId || '';
 
-  const params = new URLSearchParams({
-    vid: videoId,
-    artist: track.name,
-    gid: genreId,
-    ...(genreId !== 'valentine' && { t: time }),
-    ...(sign && { sign }),
-    ...(genre && { genre }),
-  });
-
+  const isValentine = genreId === 'valentine';
   const base = window.location.origin + window.location.pathname;
-  const shareUrl = `${base}?${params}`;
+
+  let shareUrl;
+  if (isValentine) {
+    shareUrl = `${base}#valentine`;
+  } else {
+    const params = new URLSearchParams({
+      vid: videoId,
+      artist: track.name,
+      gid: genreId,
+      t: time,
+      ...(sign && { sign }),
+      ...(genre && { genre }),
+    });
+    shareUrl = `${base}?${params}`;
+  }
 
   // 1. Try the modern Clipboard API
   if (navigator.clipboard && window.isSecureContext) {
