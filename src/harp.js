@@ -8,6 +8,7 @@
 let audioCtx = null;
 let masterGain = null;
 let enabled = false;
+let silentAudio = null;
 
 // Rate limiting — minimum ms between plucks so notes can breathe
 const MIN_INTERVAL = 35;
@@ -239,6 +240,20 @@ export function setHarpEnabled(on) {
       src.connect(audioCtx.destination);
       src.start();
     });
+    // Force iOS "playback" audio session so audio ignores the mute switch.
+    // Web Audio alone uses "ambient" category (respects mute switch).
+    // Playing through an <audio> element switches to "playback" category.
+    if (!silentAudio) {
+      // Tiny silent WAV: 44-byte header + 1 sample of silence, looped
+      silentAudio = new Audio(
+        'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YQAAAAA='
+      );
+      silentAudio.loop = true;
+      silentAudio.volume = 0;
+    }
+    silentAudio.play().catch(() => {});
+  } else if (silentAudio) {
+    silentAudio.pause();
   }
 }
 
