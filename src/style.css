@@ -1672,3 +1672,60 @@ body.element-water  { --accent: var(--water); }
   -webkit-mask: radial-gradient(farthest-side at 50% 100%, transparent calc(100% - 2px), black calc(100% - 1px));
   mask: radial-gradient(farthest-side at 50% 100%, transparent calc(100% - 2px), black calc(100% - 1px));
 }
+
+.stats-readout {
+  font-family: var(--font-mono); /* IBM Plex Mono */
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  max-width: 520px; /* Keep it compact */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stats-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  opacity: 0.6;
+}
+
+.stats-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 0;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.05); /* The "Guide Line" */
+  transition: color 0.2s;
+}
+
+.stats-row:hover {
+  color: var(--text-bright);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.stats-label {
+  text-transform: lowercase; /* Fits your app's style */
+  letter-spacing: 0.05em;
+}
+
+.stats-value {
+  font-weight: 500;
+  color: var(--accent); /* Uses your theme color (Fire/Water/etc) */
+  letter-spacing: 0.05em;
+}
+
+.stats-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+  color: var(--text-bright);
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+}
