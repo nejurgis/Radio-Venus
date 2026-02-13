@@ -176,13 +176,41 @@ export function updateFavoriteButton(isFav) {
   star.className = 'star-toggle';
   if (isFav) star.classList.add('active');
   
+  const activeItem = document.querySelector('#track-list .track-item.active');
+  if (activeItem) activeItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  
   ui.favBtn.appendChild(star);
 }
 
-export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new Set(), favSet = new Set()) {
+export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new Set(), favSet = new Set(), onShare) {
   if (!ui.trackList) return;
   trackSelectCallback = onSelect;
   ui.trackList.innerHTML = '';
+  
+  if (tracks.length > 0 && tracks[0].genres && tracks[0].genres.includes('valentine')) {
+    const header = document.createElement('div');
+    header.className = 'playlist-curator-credit';
+    header.innerHTML = `
+      <span class="curator-label">Curated by</span>
+      <span class="curator-name"><a href="https://open.spotify.com/user/31twqnk7areg7b2p7ic6yk3hwnle?si=11735cabe2de4675" target="_blank" rel="noopener">최진영</a></span>
+      <button id="btn-share-playlist" class="btn-share-mini btn-primary" title="Share Playlist">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+          </svg>
+          copy playlist link
+      </button>
+    `;
+    ui.trackList.appendChild(header);
+
+    header.querySelector('#btn-share-playlist').addEventListener('click', (e) => {
+      e.stopPropagation();
+      // Now this will work because 'onShare' is defined in the line at the top
+      if (onShare) onShare(); 
+    });
+  }
+
+  // 2. Standard Track Rendering
   const fragment = document.createDocumentFragment();
 
   tracks.forEach((track, i) => {
@@ -198,10 +226,14 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
     
     item.dataset.index = i;
     
+    // Safety check for similarity (in case it wasn't calculated for Valentine mode)
     const simHtml = track.similarity != null
       ? `<span class="track-similarity">${track.similarity}%</span>` : '';
-    const deg = track.venus.degree != null ? ` ${Math.round(track.venus.degree * 10) / 10}°` : '';
-    const el = SIGN_ELEMENTS[track.venus.sign] || 'air';
+      
+    // Safety check for venus data
+    const deg = (track.venus && track.venus.degree != null) ? ` ${Math.round(track.venus.degree * 10) / 10}°` : '';
+    const sign = (track.venus && track.venus.sign) ? track.venus.sign : '';
+    const el = (track.venus && SIGN_ELEMENTS[track.venus.sign]) || 'air';
     
     // We ALWAYS render the container. CSS decides if width is 0 or 24.
     const favHtml = `
@@ -217,12 +249,20 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
       </span>
       <span class="track-meta">
         ${simHtml}
-        <span class="track-item-sign" style="color:var(--${el})">${track.venus.sign}${deg}</span>
+        <span class="track-item-sign" style="color:var(--${el})">${sign}${deg}</span>
       </span>
     `;
     
+    // Add click listener (was missing in your snippet but likely needed based on onSelect arg)
+    item.addEventListener('click', (e) => {
+        // Don't trigger if they clicked the Fav star (if you add logic for that later)
+        if (e.target.closest('.star-toggle')) return; 
+        onSelect(i);
+    });
+
     fragment.appendChild(item);
   });
+  
   ui.trackList.appendChild(fragment);
 }
 

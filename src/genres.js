@@ -9,6 +9,7 @@ export const GENRE_CATEGORIES = [
   { id: 'artpop',     label: 'Art Pop / Avant-Garde' },
   { id: 'jazz',       label: 'Jazz / Spiritual' },
   { id: 'classical',  label: 'Classical / Orchestral' },
+  { id: 'valentine', label: 'Valentine`s day special' },
 ];
 
 // ── Subgenre vocabulary (Discogs-derived) ────────────────────────────────────

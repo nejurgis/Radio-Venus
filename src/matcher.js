@@ -69,10 +69,21 @@ export function getSubgenreCounts(genre) {
 // ── Match ───────────────────────────────────────────────────────────────────
 
 export function match(venusSign, genre, element, { subgenre = null, userLongitude = null } = {}) {
+  
+  // 1. SPECIAL CASE: VALENTINE (Strict Sequence)
+  // If the genre is 'valentine', ignore astrology and sort by the specific sequence index.
+  if (genre === 'valentine') {
+    return db.filter(m => m.genres.includes('valentine'))
+             .sort((a, b) => (a.sequenceIndex || 999) - (b.sequenceIndex || 999));
+  }
+
+  // ── STANDARD LOGIC (The rest of your code) ──
+
   // Filter by genre, optionally narrow by subgenre
   let pool;
   if (subgenre) {
     const subPool = db.filter(m => m.genres.includes(genre) && m.subgenres.includes(subgenre));
+    // Fallback to full genre if subgenre pool is too small (<3)
     pool = subPool.length >= 3 ? subPool : db.filter(m => m.genres.includes(genre));
   } else {
     pool = db.filter(m => m.genres.includes(genre));

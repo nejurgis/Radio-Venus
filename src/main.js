@@ -137,6 +137,18 @@ document.addEventListener('DOMContentLoaded', async () => {
   initPlayer('yt-player', {
     onEnd: () => playTrack(currentTrackIndex + 1),
     onError: (code) => {
+      // If code is 2, it's often a handshake error. 
+      // If hasPlayed is false, we give it one "second chance" reload 
+      // before giving up and skipping.
+      if (code === 2 && !hasPlayed) {
+        console.warn(`[Radio Venus] Handshake glitch (Error 2). Retrying track...`);
+        const track = tracks[currentTrackIndex];
+        if (track) {
+          loadVideo(getVideoIds(track)[trackVideoIndex.get(currentTrackIndex) || 0]);
+          return; // Stop here, don't skip yet!
+        }
+      }
+
       clearTimeout(silentFailTimer);
       stopLoadingProgress();
       const reason = code === 150 || code === 101 ? 'embed restricted' : code === 100 ? 'removed' : 'error ' + code;
@@ -199,19 +211,31 @@ document.addEventListener('DOMContentLoaded', async () => {
     const sharedGenreId = shareParams.get('gid') || '';
     const sharedTime = parseInt(shareParams.get('t')) || 0;
 
-    // Set up history so back button works (portal → radio)
+    // 1. History & Screen Setup
     history.replaceState({ screen: 'portal' }, '', window.location.pathname);
     history.pushState({ screen: 'radio' }, '');
 
-    // Set up theme and header
+    // 2. Theme & Basic Visuals
     const sign = sharedSign || 'aries';
     const el = ZODIAC_ELEMENTS[sign] || 'air';
     setElementTheme(el);
     renderRadioHeader(sign, sharedGenre);
     showScreen('radio');
-    showNebula(false);
+    showNebula(true);
 
-    // Try to load the full genre track list
+    // 3. APPLY DEEP DIMMING IMMEDIATELY (Before rendering tracks)
+    const nebulaCont = document.getElementById('nebula-container');
+    if (nebulaCont) {
+      // Use the exact class names from your viz.js functions
+      nebulaCont.classList.add('is-dimmed');
+      nebulaCont.classList.add('is-deep-dimmed'); // Added hyphen to match viz.js
+      nebulaCont.classList.add('is-zoomed');
+    }
+    dimNebula(true);
+    deepDimNebula(true);
+    setZoomDrift(true);
+
+    // 4. Load Data
     if (sharedGenreId && dbResult.status === 'fulfilled') {
       const genreCat = GENRE_CATEGORIES.find(g => g.id === sharedGenreId);
       if (genreCat) {
@@ -221,50 +245,56 @@ document.addEventListener('DOMContentLoaded', async () => {
           playingGenreId = sharedGenreId;
           activeGenreLabel = sharedGenre || genreCat.label;
 
-          // Find the shared artist in the list
           const idx = tracks.findIndex(t => t.name === sharedArtist);
           currentTrackIndex = idx >= 0 ? idx : 0;
 
-          // Override the video ID for the shared track to match exactly
           if (idx >= 0) {
             tracks[idx] = { ...tracks[idx], youtubeVideoId: sharedVid };
           }
 
           failedIds.clear();
           trackVideoIndex.clear();
-          renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()));
+          
+          // Render tracks WITH the share callback
+          renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()), shareCurrentTrack);
+          
           updateNowPlaying(sharedArtist);
           updateFavoriteButton(isFavorite(sharedArtist));
 
-          // Scroll shared artist into view
           requestAnimationFrame(() => {
             const activeItem = document.querySelector('#track-list .track-item.active');
             if (activeItem) activeItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
           });
 
           pendingSeekTime = sharedTime;
-          // Cue instead of load — iOS blocks autoplay without user gesture.
-          // User taps play button to start; playTrack() handles the rest.
           cueVideo(sharedVid);
           updatePlayButton(false);
         }
       }
     }
 
-    // Fallback: single-track if genre not found
+    // 5. Fallback for single track
     if (tracks.length === 0) {
-      tracks = [{ name: sharedArtist, youtubeVideoId: sharedVid, backupVideoIds: [] }];
-      currentTrackIndex = 0;
+      tracks = [{ name: sharedArtist, youtubeVideoId: sharedVid, backupVideoIds: [], genres: [sharedGenreId] }];
+      currentTrackIndex = 0; 
       activeGenreLabel = sharedGenre;
-      renderTrackList(tracks, 0, i => playTrack(i), new Set(), new Set());
+      renderTrackList(tracks, 0, i => playTrack(i), new Set(), new Set(), shareCurrentTrack);
       updateNowPlaying(sharedArtist);
-
       pendingSeekTime = sharedTime;
       cueVideo(sharedVid);
       updatePlayButton(false);
     }
-    // Don't return — let nebula init below so back navigation works
-  }
+
+    // 6. Final Zoom Coordination
+    const formattedSign = sign.charAt(0).toUpperCase() + sign.slice(1).toLowerCase();
+    const signIndex = ZODIAC_SIGNS.indexOf(formattedSign);
+
+    if (signIndex >= 0) {
+      zoomToSign(signIndex, { duration: 2500 }); 
+    }
+    
+    updateNowPlayingButton(false);
+}
 
   if (dbResult.status === 'rejected') {
     console.error('Failed to load musician database:', dbResult.reason);
@@ -480,17 +510,30 @@ function rebuildGenreGrid() {
     if (id === 'favorites') return 'Favorites';
     return GENRE_CATEGORIES.find(c => c.id === id)?.label || id;
   };
+
   if (!cachedShuffledGenres) {
-    cachedShuffledGenres = [...GENRE_CATEGORIES];
-    for (let i = cachedShuffledGenres.length - 1; i > 0; i--) {
+    // 1. Extract Valentine
+    const valentine = GENRE_CATEGORIES.find(c => c.id === 'valentine');
+    // 2. Get all others
+    const others = GENRE_CATEGORIES.filter(c => c.id !== 'valentine');
+
+    // 3. Shuffle ONLY the 'others'
+    for (let i = others.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [cachedShuffledGenres[i], cachedShuffledGenres[j]] = [cachedShuffledGenres[j], cachedShuffledGenres[i]];
+      [others[i], others[j]] = [others[j], others[i]];
     }
+
+    // 4. Construct list: Valentine first (if it exists), then the rest
+    cachedShuffledGenres = valentine ? [valentine, ...others] : others;
   }
+
   const shuffledGenres = [...cachedShuffledGenres];
+  
+  // 5. Add Favorites at the very top (so it's Favorites -> Valentine -> Rest)
   if (getFavorites().length > 0) {
     shuffledGenres.unshift({ id: 'favorites', label: 'Favorites' });
   }
+
   const subgenreCounts = {};
   for (const cat of GENRE_CATEGORIES) {
     subgenreCounts[cat.id] = getSubgenreCounts(cat.id);
@@ -565,7 +608,8 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
     activeGenreLabel = newLabel;
     failedIds.clear();
     trackVideoIndex.clear();
-    renderTrackList(tracks, 0, i => playTrack(i), failedIds, new Set(getFavorites()));
+    // ADDED shareCurrentTrack here for sharing the valentines playlist
+    renderTrackList(tracks, 0, i => playTrack(i), failedIds, new Set(getFavorites()), shareCurrentTrack);
     playTrack(0);
   }
 
@@ -662,7 +706,8 @@ function playTrack(index) {
   startLoadingProgress();
   updateNowPlaying('Loading...');
   updateFavoriteButton(isFavorite(track.name));
-  renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()));
+  // ADDED shareCurrentTrack here for valentines day sharing
+  renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()), shareCurrentTrack);
   updatePlayButton('buffering');
 
   const activeItem = document.querySelector('#track-list .track-item.active');
@@ -706,7 +751,8 @@ function shuffleTracks() {
   trackVideoIndex.clear();
   tracks.forEach((t, i) => { if (failedTracks.has(t)) failedIds.add(i); });
   currentTrackIndex = tracks.indexOf(current);
-  renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()));
+  // ADDED shareCurrentTrack here for valentines day
+  renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()), shareCurrentTrack);
 }
 
 // ── Now-playing button on genre screen ────────────────────────────────────
@@ -817,37 +863,59 @@ document.addEventListener('click', e => {
 async function shareCurrentTrack() {
   const track = tracks[currentTrackIndex];
   if (!track) return;
+  
   const videoId = getVideoIds(track)[trackVideoIndex.get(currentTrackIndex) || 0];
   const sign = venus ? venus.sign : '';
   const genre = activeGenreLabel || '';
   const time = Math.floor(getCurrentTime());
-
   const genreId = playingGenreId || '';
+
   const params = new URLSearchParams({
     vid: videoId,
-    t: time,
     artist: track.name,
+    gid: genreId,
+    ...(genreId !== 'valentine' && { t: time }),
     ...(sign && { sign }),
     ...(genre && { genre }),
-    ...(genreId && { gid: genreId }),
   });
+
   const base = window.location.origin + window.location.pathname;
   const shareUrl = `${base}?${params}`;
 
-  try {
-    await navigator.clipboard.writeText(shareUrl);
-  } catch {
-    // Fallback for older browsers
-    const ta = document.createElement('textarea');
-    ta.value = shareUrl;
-    ta.style.position = 'fixed';
-    ta.style.opacity = '0';
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    ta.remove();
+  // 1. Try the modern Clipboard API
+  if (navigator.clipboard && window.isSecureContext) {
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      showToast(genreId === 'valentine' ? 'Valentine link copied' : 'Link copied');
+      return; // Success! Exit the function.
+    } catch (err) {
+      console.error("Clipboard API failed, trying fallback", err);
+    }
   }
-  showToast('Link copied');
+
+  // 2. Fallback: execCommand (The "Old Reliable")
+  const ta = document.createElement('textarea');
+  ta.value = shareUrl;
+  
+  // Prevent scrolling to the bottom of the page when appending
+  ta.style.position = 'fixed';
+  ta.style.left = '-9999px';
+  ta.style.top = '0';
+  
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  
+  try {
+    const successful = document.execCommand('copy');
+    if (successful) {
+      showToast(genreId === 'valentine' ? 'Valentine link copied' : 'Link copied');
+    }
+  } catch (err) {
+    console.error('Fallback copy failed', err);
+  }
+
+  document.body.removeChild(ta);
 }
 
 function showUnmuteOverlay() {
