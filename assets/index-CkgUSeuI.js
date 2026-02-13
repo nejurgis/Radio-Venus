@@ -37,7 +37,7 @@
             <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
             <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
         </svg>
-        share
+        share playlist
     </button>
   `;const c=l.querySelector("#btn-share-playlist");window.isLinkRecentlyCopied&&c.classList.add("is-copied"),c.addEventListener("click",function(i){i.stopPropagation(),i.preventDefault(),a&&a(),this.classList.add("is-copied"),window.isLinkRecentlyCopied=!0,setTimeout(()=>{this.classList.remove("is-copied"),window.isLinkRecentlyCopied=!1},1500)}),f.trackList.appendChild(l)}const s=document.createDocumentFragment();e.forEach((l,c)=>{const i=r.has(c),d=o.has(l.name),g=document.createElement("div");g.className="track-item"+(c===t?" active":"")+(i?" is-failed":"")+(d?" is-favorited":""),g.dataset.index=c;const p=l.similarity!=null?`<span class="track-similarity">${l.similarity}%</span>`:"",y=l.venus&&l.venus.degree!=null?` ${Math.round(l.venus.degree*10)/10}°`:"",b=l.venus&&l.venus.sign?l.venus.sign:"",S=l.venus&&A2[l.venus.sign]||"air",$=`
       <div class="track-fav-container">
