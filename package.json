@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "build:db": "node scripts/build-db.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "vite build && npx gh-pages -d dist"
   },
   "dependencies": {
     "astronomy-engine": "^2.1.0",
