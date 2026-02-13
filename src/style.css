@@ -1611,7 +1611,7 @@ body.element-water  { --accent: var(--water); }
 
   .radio-controls {
     gap: 0.6rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.7rem;
   }
 
   .now-playing {
@@ -1845,7 +1845,7 @@ body.element-water  { --accent: var(--water); }
   align-items: center;
   justify-content: center;
   padding: 0.5rem 1.5rem; /* Slightly smaller than your huge main buttons */
-  margin-top: 1.2rem;
+  margin-top: 0.6rem;
   width: auto; /* Ensure it doesn't stretch full width */
   font-size: 0.7rem; /* Keep the 'mini' feel while using primary look */
 }
