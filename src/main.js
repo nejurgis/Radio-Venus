@@ -2,7 +2,7 @@ import { calculateVenus, makeBirthDate } from './venus.js';
 import { GENRE_CATEGORIES, SUBGENRES } from './genres.js';
 import { loadDatabase, getDatabase, match, matchFavorites, getSubgenreCounts } from './matcher.js';
 import { getFavorites, toggleFavorite, isFavorite } from './favorites.js';
-import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, enableDragRotate, onNebulaHover, onNebulaClick, onRotation, onNeedleCross, onSignCross } from './viz.js';
+import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, enableDragRotate, nudgeWheel, onNebulaHover, onNebulaClick, onRotation, onNeedleCross, onSignCross } from './viz.js';
 import { pluck, gong, setHarpEnabled, isHarpEnabled } from './harp.js';
 import { loadYouTubeAPI, initPlayer, loadVideo, cueVideo, togglePlay, isPlaying, getDuration, getCurrentTime, seekTo, getVideoTitle, isMuted, unMute } from './player.js';
 import {
@@ -73,6 +73,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     history.pushState({ screen: 'about' }, '');
   });
   document.getElementById('btn-back-about').addEventListener('click', () => history.back());
+  document.getElementById('btn-lyre').addEventListener('click', () => {
+    setHarpEnabled(true);
+    const elements = ['fire', 'water', 'earth', 'air'];
+    const el = elements[Math.floor(Math.random() * 4)];
+    pluck(Math.random(), el, 0.5 + Math.random() * 0.3);
+  });
 
   // ── Pinch gestures (mobile) ──
   let pinchStartDist = 0;
@@ -434,6 +440,7 @@ async function onDateSubmit(d, m, y) {
 
   const portalScreen = document.getElementById('screen-portal');
   portalScreen.classList.add('is-fading');
+  document.getElementById('btn-harp').classList.add('is-visible');
   tunedLongitude = venus.longitude;
   await zoomToSign(signIndex, { duration: 2500, targetDeg: venus.longitude });
   showScreen('reveal');
@@ -452,6 +459,7 @@ async function zoomInToReveal() {
 
   const portalScreen = document.getElementById('screen-portal');
   portalScreen.classList.add('is-fading');
+  document.getElementById('btn-harp').classList.add('is-visible');
   tunedLongitude = venus.longitude;
   await zoomToSign(signIndex, { duration: 2500, targetDeg: venus.longitude });
   showScreen('reveal');
@@ -783,6 +791,7 @@ document.addEventListener('click', e => {
     const on = !isHarpEnabled();
     setHarpEnabled(on);
     document.getElementById('btn-harp').classList.toggle('is-active', on);
+    nudgeWheel(on ? 3 : -4);
   }
   if (e.target.id === 'btn-share' || e.target.closest('#btn-share')) {
     shareCurrentTrack();
@@ -890,6 +899,7 @@ window.addEventListener('popstate', (e) => {
     case 'portal':
       showScreen('portal');
       document.getElementById('screen-portal').classList.remove('is-fading');
+      document.getElementById('btn-harp').classList.remove('is-visible');
       showNebula(true);
       dimNebula(false);
       updateNowPlayingButton(true);
@@ -899,6 +909,7 @@ window.addEventListener('popstate', (e) => {
       showNebula(true);
       dimNebula(false);
       showScreen('reveal');
+      document.getElementById('btn-harp').classList.add('is-visible');
       updateNowPlayingButton(true);
       if (tunedLongitude != null) updateTunedDisplay(tunedLongitude);
       break;

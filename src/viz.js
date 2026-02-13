@@ -390,6 +390,10 @@ export function enableDragRotate(enabled) {
   if (!enabled) { dragging = false; dragVelocity = 0; }
 }
 
+export function nudgeWheel(degrees = 15) {
+  dragVelocity += degrees;
+}
+
 // ── Render loop ───────────────────────────────────────────────────────────────
 
 // Gradient cache — rebuilt only when canvas dimensions change
