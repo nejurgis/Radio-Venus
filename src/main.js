@@ -30,6 +30,7 @@ let sessionHasPlayed = false;      // whether ANY video played this session
 let silentFailTimer = null;        // detect videos that never start
 let originalTrackOrder = null;     // unshuffled track order for toggle-back
 let isShuffled = false;
+let isLinkRecentlyCopied = false;
 
 // CHANGED: Use AnimationFrame ID instead of Interval ID for smoothness
 let loadingAnimFrame = null;        
@@ -91,6 +92,35 @@ document.addEventListener('DOMContentLoaded', async () => {
       pinchStartDist = Math.hypot(dx, dy);
     }
   }
+
+    // --- Tactile Feedback System Tapping on laptop to trigger the buttons ---
+  function initTactileFeedback() {
+    const applyPulse = (e) => {
+      // This finds the button even if you click an icon/SVG inside it
+      const btn = e.target.closest('button, .btn-primary, .btn-shuffle, .track-item, .btn-share-mini');
+      
+      if (btn) {
+        btn.classList.add('is-pressed');
+        // 100ms is the "sweet spot" for human eyes to catch a tap
+        setTimeout(() => btn.classList.remove('is-pressed'), 100);
+      }
+    };
+
+    // Listen on the document to catch portal/home buttons
+    document.addEventListener('click', applyPulse);
+
+    // Catch radio buttons even if propagation is stopped in ui.js
+    const radioScreen = document.getElementById('screen-radio');
+    if (radioScreen) {
+      // Use mousedown for the fastest possible response on trackpads
+      radioScreen.addEventListener('mousedown', applyPulse);
+      // Support for hybrid/mobile tap behavior
+      radioScreen.addEventListener('touchstart', applyPulse, { passive: true });
+    }
+  }
+
+  // Execute the setup
+  initTactileFeedback();
 
   const revealScreen = document.getElementById('screen-reveal');
   revealScreen.addEventListener('touchstart', onPinchStart, { passive: true });
@@ -862,6 +892,11 @@ document.addEventListener('click', e => {
 
 async function shareCurrentTrack() {
   const track = tracks[currentTrackIndex];
+  isLinkRecentlyCopied = true;
+  // Auto-reset after 2 seconds
+  setTimeout(() => {
+      isLinkRecentlyCopied = false;
+  }, 2000);
   if (!track) return;
   
   const videoId = getVideoIds(track)[trackVideoIndex.get(currentTrackIndex) || 0];

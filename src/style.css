@@ -1903,3 +1903,46 @@ drop-shadow(0 0 8px rgba(255, 200, 255, 0.9))         /* Pink Mid */
 .btn-share-mini.btn-primary:hover svg {
   opacity: 1;
 }
+
+/* Base state of the pixel (Hidden/Dimmed) */
+.btn-share-mini.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  width: 2px;
+  height: 2px;
+  background: rgba(57, 255, 20, 0); /* Use rgba for smoother transitions */
+  transition: background 1.5s ease-out, box-shadow 1.5s ease-out;
+  pointer-events: none;
+}
+
+.btn-share-mini.btn-primary.is-copied::after {
+  background: rgba(57, 255, 20, 1) !important; /* Force the light-up */
+  box-shadow: 0px 0px 6px 1px #39ff14;
+  transition: none; /* No transition on the way UP for instant response */
+}
+
+/* Ensure the button is relative for the pixel positioning */
+.btn-share-mini.btn-primary {
+  position: relative;
+}
+
+/* UNIVERSAL PRESSED STATE */
+/* This targets literally anything that our JS touches */
+.is-pressed {
+  transform: translateY(2px) scale(0.96) !important;
+  box-shadow:
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6),
+    inset -1px -1px 1px rgba(255, 255, 255, 0.05),
+    0 1px 2px rgba(0, 0, 0, 0.2) !important;
+  transition: transform 0.05s ease-out !important;
+  filter: brightness(0.9); /* Subtle darkening adds to the 'pressed' feel */
+}
+
+/* Specific fix for buttons that might have their own transforms (like the wheel) */
+button.is-pressed svg, 
+.btn-shuffle.is-pressed svg {
+  transform: scale(0.9) !important;
+  transition: transform 0.05s ease-out !important;
+}

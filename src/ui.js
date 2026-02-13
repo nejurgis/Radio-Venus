@@ -187,9 +187,11 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
   trackSelectCallback = onSelect;
   ui.trackList.innerHTML = '';
   
+  // 1. Valentine Header Logic
   if (tracks.length > 0 && tracks[0].genres && tracks[0].genres.includes('valentine')) {
     const header = document.createElement('div');
     header.className = 'playlist-curator-credit';
+
     header.innerHTML = `
       <span class="curator-label">Curated by</span>
       <span class="curator-name"><a href="https://open.spotify.com/user/31twqnk7areg7b2p7ic6yk3hwnle?si=11735cabe2de4675" target="_blank" rel="noopener">최진영</a></span>
@@ -201,24 +203,44 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
           copy playlist link
       </button>
     `;
-    ui.trackList.appendChild(header);
 
-    header.querySelector('#btn-share-playlist').addEventListener('click', (e) => {
+    const shareBtn = header.querySelector('#btn-share-playlist');
+
+    // Keep the pixel lit if a re-render just happened
+    if (window.isLinkRecentlyCopied) {
+      shareBtn.classList.add('is-copied');
+    }
+
+    // SINGLE, ROBUST LISTENER
+    shareBtn.addEventListener('click', function(e) {
       e.stopPropagation();
-      // Now this will work because 'onShare' is defined in the line at the top
-      if (onShare) onShare(); 
+      e.preventDefault();
+
+      // Trigger clipboard/share from app.js
+      if (onShare) onShare();
+
+      // Visual feedback: Green Pixel
+      this.classList.add('is-copied');
+      window.isLinkRecentlyCopied = true;
+
+      // Decay/Dimming sequence
+      setTimeout(() => {
+        this.classList.remove('is-copied');
+        window.isLinkRecentlyCopied = false;
+      }, 1500);
     });
+
+    ui.trackList.appendChild(header);
   }
 
   // 2. Standard Track Rendering
   const fragment = document.createDocumentFragment();
-
   tracks.forEach((track, i) => {
+    // ... (rest of your track rendering logic is fine) ...
     const failed = failedIds.has(i);
     const isFav = favSet.has(track.name);
     
     const item = document.createElement('div');
-    // Add 'is-favorited' if the track is in the favSet
     item.className = 'track-item'
       + (i === currentIndex ? ' active' : '')
       + (failed ? ' is-failed' : '')
@@ -226,16 +248,13 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
     
     item.dataset.index = i;
     
-    // Safety check for similarity (in case it wasn't calculated for Valentine mode)
     const simHtml = track.similarity != null
       ? `<span class="track-similarity">${track.similarity}%</span>` : '';
       
-    // Safety check for venus data
     const deg = (track.venus && track.venus.degree != null) ? ` ${Math.round(track.venus.degree * 10) / 10}°` : '';
     const sign = (track.venus && track.venus.sign) ? track.venus.sign : '';
     const el = (track.venus && SIGN_ELEMENTS[track.venus.sign]) || 'air';
     
-    // We ALWAYS render the container. CSS decides if width is 0 or 24.
     const favHtml = `
       <div class="track-fav-container">
         <div class="star-toggle active" style="width:12px; height:12px;"></div>
@@ -253,9 +272,7 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
       </span>
     `;
     
-    // Add click listener (was missing in your snippet but likely needed based on onSelect arg)
     item.addEventListener('click', (e) => {
-        // Don't trigger if they clicked the Fav star (if you add logic for that later)
         if (e.target.closest('.star-toggle')) return; 
         onSelect(i);
     });
