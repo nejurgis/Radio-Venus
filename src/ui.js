@@ -193,16 +193,16 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
     header.className = 'playlist-curator-credit';
 
     header.innerHTML = `
-      <span class="curator-label">Curated by</span>
-      <span class="curator-name"><a href="https://open.spotify.com/user/31twqnk7areg7b2p7ic6yk3hwnle?si=11735cabe2de4675" target="_blank" rel="noopener">최진영</a></span>
-      <button id="btn-share-playlist" class="btn-share-mini btn-primary" title="Share Playlist">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
-              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-          </svg>
-          copy playlist link
-      </button>
-    `;
+    <span class="curator-label">Curated by</span>
+    <span class="curator-name"><a href="https://docs.google.com/document/d/1We4r9SyEyWY0rM8Njdcw7gkAy8e4lpBFb7aFTA7xtWY/edit?usp=sharing" target="_blank" rel="noopener">최진영</a></span>
+    <button id="btn-share-playlist" class="btn-share-mini btn-primary" title="Share Playlist">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+        copy playlist link
+    </button>
+  `;
 
     const shareBtn = header.querySelector('#btn-share-playlist');
 
@@ -271,7 +271,6 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
         <span class="track-item-sign" style="color:var(--${el})">${sign}${deg}</span>
       </span>
     `;
-    
     item.addEventListener('click', (e) => {
         if (e.target.closest('.star-toggle')) return; 
         onSelect(i);

@@ -32,10 +32,6 @@
   --transition: 0.2s ease;
 }
 
-* {
-  -webkit-tap-highlight-color: transparent;
-}
-
 
 html, body {
   height: 100%;
@@ -1843,50 +1839,6 @@ body.element-water  { --accent: var(--water); }
 }
 
 
-.playlist-curator-credit {
-  padding: 1.5rem 1rem 1rem 1rem; /* Extra top padding */
-  margin-bottom: 1rem;
-  text-align: center;
-  animation: fadeIn 0.8s ease-out;
-  width: 100%;
-}
-
-.curator-label {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: rgba(255, 255, 255, 0.3);
-  margin-bottom: 0.4rem;
-}
-
-.curator-name {
-  display: block;
-  font-family: var(--font-main); /* or serif */
-  font-size: 0.9rem;
-
-  color: var(--text-bright);
-  letter-spacing: 0.05em;
-  text-shadow: 0 0 10px rgba(255, 100, 150, 0.4);
-  filter: 
-  drop-shadow(0 0 6px rgba(255, 255, 255, 1))         /* Hot Core */
-drop-shadow(0 0 8px rgba(255, 200, 255, 0.9))         /* Pink Mid */
-  drop-shadow(0 10px 4px rgba(200, 150, 255, 0.7));   /* Atmos Haze */
-}
-
-.playlist-curator-credit a {
-  color: inherit;         /* Takes the color from .curator-name */
-  text-decoration: none;  /* Removes the underline */
-  cursor: pointer;
-}
-
-/* Optional: Add a subtle hover effect so users know it's a link */
-.playlist-curator-credit a:hover {
-  text-shadow: 0 0 15px rgba(255, 100, 150, 0.8); /* Glows on hover */
-  opacity: 1;
-}
-
 /* Mix the special mini placement with the primary button look */
 .btn-share-mini.btn-primary {
   display: inline-flex;
@@ -1949,4 +1901,68 @@ button.is-pressed svg,
 .btn-shuffle.is-pressed svg {
   transform: scale(0.9) !important;
   transition: transform 0.05s ease-out !important;
+}
+/* This targets the header you created in your JS */
+.playlist-curator-credit {
+  /* 1. The 'Tower' Look */
+  display: flex;
+  flex-direction: column; /* Stacks label, name, and button vertically */
+  align-items: center;    /* Centers them horizontally */
+  gap: 8px;               /* Adds space between the stacked items */
+  text-align: center;
+  animation: fadeIn 0.8s ease-out;
+  /* 2. The 'Always Seen' Logic */
+  position: sticky;
+  top: 0;
+  z-index: 10;            /* Keeps it above the tracks as they scroll */
+  width: 100%;
+
+  
+  /* 3. Visual Separation */
+  padding-bottom: 15px;
+  backdrop-filter: blur(10px);      /* Glass effect */
+  margin-bottom: 10px;    /* Space before the first song starts */
+}
+
+/* Optional: Make the curator name a bit bigger for the 'Tower' vibe */
+.curator-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.curator-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 0.4rem;
+}
+
+.curator-name {
+  display: block;
+  font-family: var(--font-main); /* or serif */
+  font-size: 0.9rem;
+
+  color: var(--text-bright);
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 10px rgba(255, 100, 150, 0.4);
+  filter: 
+  drop-shadow(0 0 6px rgba(255, 255, 255, 1))         /* Hot Core */
+drop-shadow(0 0 8px rgba(255, 200, 255, 0.9))         /* Pink Mid */
+  drop-shadow(0 10px 4px rgba(200, 150, 255, 0.7));   /* Atmos Haze */
+}
+
+.playlist-curator-credit a {
+  color: inherit;         /* Takes the color from .curator-name */
+  text-decoration: none;  /* Removes the underline */
+  cursor: pointer;
+}
+
+/* Optional: Add a subtle hover effect so users know it's a link */
+.playlist-curator-credit a:hover {
+  text-shadow: 0 0 15px rgba(255, 100, 150, 0.8); /* Glows on hover */
+  opacity: 1;
 }
