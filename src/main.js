@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('btn-back-genre').addEventListener('click', () => history.back());
   document.getElementById('btn-info').addEventListener('click', () => {
     showScreen('about');
-    history.pushState({ screen: 'about' }, '');
+    history.pushState({ screen: 'about' }, '', '#about');
   });
   document.getElementById('btn-back-about').addEventListener('click', () => history.back());
   document.getElementById('btn-lyre').addEventListener('click', () => {
@@ -122,7 +122,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   }, { passive: true });
 
   setupDateInput();
-  history.replaceState({ screen: 'portal' }, '');
+
+  if (window.location.hash === '#about') {
+    showScreen('about');
+    history.replaceState({ screen: 'about' }, '', '#about');
+  } else {
+    history.replaceState({ screen: 'portal' }, '');
+  }
 
   const [dbResult] = await Promise.allSettled([
     loadDatabase(),
