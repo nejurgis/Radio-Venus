@@ -338,7 +338,7 @@ export function updatePlayButton(state) {
     // Check if we actually need to change (Prevents flashing)
     const newState = state ? 'playing' : 'paused';
     if (ui.playBtn.getAttribute('data-state') !== newState) {
-      ui.playBtn.innerHTML = state ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg>' : '&#9654;';
+      ui.playBtn.innerHTML = state ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg>' : '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M20.346 11.58a.5.5 0 0 1 0 .84L7.77 20.506a.5.5 0 0 1-.77-.42V3.914a.5.5 0 0 1 .77-.42l12.576 8.084Z"/></svg>';
       ui.playBtn.setAttribute('data-state', newState);
     }
   }
