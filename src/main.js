@@ -68,6 +68,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
   document.getElementById('btn-back-reveal').addEventListener('click', () => history.back());
   document.getElementById('btn-back-genre').addEventListener('click', () => history.back());
+  document.getElementById('btn-info').addEventListener('click', () => {
+    showScreen('about');
+    history.pushState({ screen: 'about' }, '');
+  });
+  document.getElementById('btn-back-about').addEventListener('click', () => history.back());
 
   // ── Pinch gestures (mobile) ──
   let pinchStartDist = 0;
@@ -909,6 +914,9 @@ window.addEventListener('popstate', (e) => {
       dimNebula(false);
       showScreen('radio');
       updateNowPlayingButton(false);
+      break;
+    case 'about':
+      showScreen('about');
       break;
   }
 });

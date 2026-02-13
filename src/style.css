@@ -258,6 +258,90 @@ html, body {
   transition: opacity 0.8s ease;
 }
 
+.btn-info {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+}
+
+/* ── Screen: About ──────────────────────────────────────────────────────── */
+
+#screen-about {
+  align-items: flex-start;
+}
+
+.about-content {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+  text-align: left;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-dim);
+}
+
+.about-content p {
+  margin-bottom: 1.2rem;
+}
+
+.about-lead {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--text-bright);
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 0.01em;
+}
+
+.about-star {
+  text-align: center;
+  margin: 2.5rem 0;
+}
+
+.about-star .star-toggle {
+  width: 24px;
+  height: 24px;
+}
+
+.about-heading {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: lowercase;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.about-footnote {
+  font-size: 0.8rem;
+  opacity: 0.5;
+  font-style: italic;
+}
+
+.about-contact {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+  margin-top: 2rem;
+}
+
+.about-contact a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.about-contact a:hover {
+  color: var(--text-bright);
+  border-color: var(--accent);
+}
+
 /* ── Screen 2: Reveal ────────────────────────────────────────────────────── */
 
 #screen-reveal::before {
