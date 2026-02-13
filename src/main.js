@@ -3,7 +3,7 @@ import { GENRE_CATEGORIES, SUBGENRES } from './genres.js';
 import { loadDatabase, getDatabase, match, matchFavorites, getSubgenreCounts } from './matcher.js';
 import { getFavorites, toggleFavorite, isFavorite } from './favorites.js';
 import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, enableDragRotate, nudgeWheel, onNebulaHover, onNebulaClick, onRotation, onNeedleCross, onSignCross } from './viz.js';
-import { pluck, gong, setHarpEnabled, isHarpEnabled } from './harp.js';
+import { pluck, gong, setHarpEnabled, isHarpEnabled, pokeAudio } from './harp.js';
 import { loadYouTubeAPI, initPlayer, loadVideo, cueVideo, togglePlay, isPlaying, getDuration, getCurrentTime, seekTo, getVideoTitle, isMuted, unMute } from './player.js';
 import {
   initScreens, showScreen, setElementTheme,
@@ -80,6 +80,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     const el = elements[Math.floor(Math.random() * 4)];
     pluck(Math.random(), el, 0.5 + Math.random() * 0.3);
   });
+
+  // ── Keep iOS AudioContext alive on any touch/click ──
+  document.addEventListener('touchstart', () => pokeAudio(), { passive: true });
+  document.addEventListener('mousedown', () => pokeAudio());
 
   // ── Pinch gestures (mobile) ──
   let pinchStartDist = 0;

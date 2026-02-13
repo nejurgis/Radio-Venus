@@ -235,6 +235,12 @@ export function setHarpEnabled(on) {
   }
 }
 
+/** Call from any user gesture to keep iOS audio alive */
+export function pokeAudio() {
+  if (!enabled || !audioCtx) return;
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+}
+
 export function isHarpEnabled() {
   return enabled;
 }
