@@ -119,7 +119,7 @@ export function pluck(radialFrac, element = 'air', velocity = 0.5) {
   if (now - lastPluckTime < MIN_INTERVAL) return;
   lastPluckTime = now;
   ensureContext();
-  if (audioCtx.state === 'suspended') audioCtx.resume();
+  if (audioCtx.state !== 'running') audioCtx.resume();
 
   // Map radial position to element-specific chord note
   const chord = ELEMENT_CHORDS[element] || ELEMENT_CHORDS.air;
@@ -192,7 +192,7 @@ export function pluck(radialFrac, element = 'air', velocity = 0.5) {
 export function gong(element = 'air', velocity = 0.4) {
   if (!enabled) return;
   ensureContext();
-  if (audioCtx.state === 'suspended') audioCtx.resume();
+  if (audioCtx.state !== 'running') audioCtx.resume();
 
   const now = audioCtx.currentTime;
   const vel = Math.min(1, Math.max(0.1, velocity));
@@ -229,16 +229,23 @@ export function setHarpEnabled(on) {
   enabled = on;
   if (on) {
     ensureContext();
-    // iOS requires resume() during a user gesture — this is called from
-    // a click handler, so it works. pluck() fires from rAF which doesn't.
-    if (audioCtx.state === 'suspended') audioCtx.resume();
+    // iOS requires resume() + a silent buffer play during a user gesture
+    // to fully unlock audio output. pluck() fires from rAF which can't unlock.
+    audioCtx.resume().then(() => {
+      // Play a silent buffer to force iOS to open the audio route
+      const silent = audioCtx.createBuffer(1, 1, audioCtx.sampleRate);
+      const src = audioCtx.createBufferSource();
+      src.buffer = silent;
+      src.connect(audioCtx.destination);
+      src.start();
+    });
   }
 }
 
 /** Call from any user gesture to keep iOS audio alive */
 export function pokeAudio() {
   if (!enabled || !audioCtx) return;
-  if (audioCtx.state === 'suspended') audioCtx.resume();
+  audioCtx.resume();
 }
 
 export function isHarpEnabled() {
