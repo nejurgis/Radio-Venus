@@ -96,27 +96,22 @@ document.addEventListener('DOMContentLoaded', async () => {
     // --- Tactile Feedback System Tapping on laptop to trigger the buttons ---
   function initTactileFeedback() {
     const applyPulse = (e) => {
-      // This finds the button even if you click an icon/SVG inside it
-      const btn = e.target.closest('button, .btn-primary, .btn-shuffle, .track-item, .btn-share-mini');
+      // 1. Prevent "Ghost Clicks": If it's a mouse event on a touch device, skip it.
+      if (e.type === 'mousedown' && 'ontouchstart' in window) return;
+  
+      // 2. Identify the target
+      const btn = e.target.closest('button, .btn-primary, .btn-shuffle, .track-item, .btn-share-mini, .star-toggle');
       
       if (btn) {
         btn.classList.add('is-pressed');
-        // 100ms is the "sweet spot" for human eyes to catch a tap
         setTimeout(() => btn.classList.remove('is-pressed'), 100);
       }
     };
-
-    // Listen on the document to catch portal/home buttons
-    document.addEventListener('click', applyPulse);
-
-    // Catch radio buttons even if propagation is stopped in ui.js
-    const radioScreen = document.getElementById('screen-radio');
-    if (radioScreen) {
-      // Use mousedown for the fastest possible response on trackpads
-      radioScreen.addEventListener('mousedown', applyPulse);
-      // Support for hybrid/mobile tap behavior
-      radioScreen.addEventListener('touchstart', applyPulse, { passive: true });
-    }
+  
+    // Capture phase listeners (using 'true') are the "secret sauce" 
+    // they catch the tap before any other code can stop it.
+    window.addEventListener('mousedown', applyPulse, true);
+    window.addEventListener('touchstart', applyPulse, { capture: true, passive: true });
   }
 
   // Execute the setup

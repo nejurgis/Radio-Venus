@@ -6,6 +6,7 @@
   box-sizing: border-box;
 }
 
+
 :root {
   --bg: #0a0a0c;
   --bg-surface: #242424;
@@ -30,6 +31,11 @@
 
   --transition: 0.2s ease;
 }
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 
 html, body {
   height: 100%;
