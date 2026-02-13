@@ -13095,6 +13095,165 @@
     ]
   },
   {
+    "name": "Iko Chérie",
+    "birthDate": "1990-01-01",
+    "venus": { "sign": "Capricorn", "degree": 15.0, "decan": 2, "element": "earth" },
+    "genres": ["valentine"],
+    "subgenres": [],
+    "youtubeVideoId": "7jOkiDyxShI",
+    "backupVideoIds": [],
+    "sequenceIndex": 1
+  },
+  {
+    "name": "Nathanial Young",
+    "birthDate": "1995-02-14",
+    "venus": { "sign": "Aquarius", "degree": 10.5, "decan": 1, "element": "air" },
+    "genres": ["valentine"],
+    "subgenres": [],
+    "youtubeVideoId": "igZrrKLe81I",
+    "backupVideoIds": [],
+    "sequenceIndex": 2
+  },
+  {
+    "name": "Ouri",
+    "birthDate": "1992-06-20",
+    "venus": { "sign": "Cancer", "degree": 5.2, "decan": 1, "element": "water" },
+    "genres": ["valentine"],
+    "subgenres": [],
+    "youtubeVideoId": "QEh0WIY_ZRw",
+    "backupVideoIds": [],
+    "sequenceIndex": 3
+  },
+  {
+    "name": "Angel Olsen",
+    "birthDate": "1987-01-22",
+    "venus": { "sign": "Sagittarius", "degree": 18.4, "decan": 2, "element": "fire" },
+    "genres": ["valentine"],
+    "subgenres": [],
+    "youtubeVideoId": "W0J0m5sU_Ys",
+    "backupVideoIds": [],
+    "sequenceIndex": 4
+  },
+  {
+    "name": "Sonic Youth",
+    "birthDate": "1953-04-28",
+    "venus": { "sign": "Aries", "degree": 22.1, "decan": 3, "element": "fire" },
+    "genres": ["valentine"],
+    "subgenres": [],
+    "youtubeVideoId": "tFNnvQLvs7I",
+    "backupVideoIds": [],
+    "sequenceIndex": 5
+  },
+  {
+    "name": "Cassandra Jenkins",
+    "birthDate": "1984-01-01",
+    "venus": { "sign": "Sagittarius", "degree": 25.0, "decan": 3, "element": "fire" },
+    "genres": ["valentine"],
+    "subgenres": [],
+    "youtubeVideoId": "tsEbhrMh0mM",
+    "backupVideoIds": [],
+    "sequenceIndex": 6
+  },
+  {
+    "name": "Sam Gendel",
+    "birthDate": "1990-01-01",
+    "venus": { "sign": "Aquarius", "degree": 5.0, "decan": 1, "element": "air" },
+    "genres": ["valentine", "jazz"],
+    "subgenres": [],
+    "youtubeVideoId": "eSwjSbgXM78",
+    "backupVideoIds": [],
+    "sequenceIndex": 7
+  },
+  {
+    "name": "A. G. Cook",
+    "birthDate": "1990-08-23",
+    "venus": { "sign": "Leo", "degree": 12.8, "decan": 2, "element": "fire" },
+    "genres": ["valentine", "electronic"],
+    "subgenres": [],
+    "youtubeVideoId": "q2ZasIb0Hsw",
+    "backupVideoIds": [],
+    "sequenceIndex": 8
+  },
+  {
+    "name": "James K",
+    "birthDate": "1990-01-01",
+    "venus": { "sign": "Capricorn", "degree": 28.0, "decan": 3, "element": "earth" },
+    "genres": ["valentine", "electronic"],
+    "subgenres": [],
+    "youtubeVideoId": "knViDapTKmA",
+    "backupVideoIds": [],
+    "sequenceIndex": 9
+  },
+  {
+    "name": "Four Tet",
+    "birthDate": "1977-09-23",
+    "venus": { "sign": "Virgo", "degree": 15.5, "decan": 2, "element": "earth" },
+    "genres": ["valentine", "electronic"],
+    "subgenres": [],
+    "youtubeVideoId": "9W8Ei3ZUsEA",
+    "backupVideoIds": [],
+    "sequenceIndex": 10
+  },
+  {
+    "name": "Yves Tumor",
+    "birthDate": "1970-01-01",
+    "venus": { "sign": "Libra", "degree": 10.0, "decan": 1, "element": "air" },
+    "genres": ["valentine", "experimental"],
+    "subgenres": [],
+    "youtubeVideoId": "VMM5In5YT68",
+    "backupVideoIds": [],
+    "sequenceIndex": 11
+  },
+  {
+    "name": "Peter Kardas",
+    "birthDate": "1995-02-14",
+    "venus": { "sign": "Pisces", "degree": 2.0, "decan": 1, "element": "water" },
+    "genres": ["valentine"],
+    "subgenres": [],
+    "youtubeVideoId": "RmrlJpKlwcc",
+    "backupVideoIds": [],
+    "sequenceIndex": 12
+  },
+  {
+    "name": "Kelly Moran",
+    "birthDate": "1988-02-17",
+    "venus": { "sign": "Aries", "degree": 10.0, "decan": 1, "element": "fire" },
+    "genres": ["valentine", "classical"],
+    "subgenres": [],
+    "youtubeVideoId": "6XVngfOBBas",
+    "backupVideoIds": [],
+    "sequenceIndex": 13
+  },{
+    "name": "The Memphis Mustangs",
+    "birthDate": "1970-01-01",
+    "venus": { "sign": "Taurus", "degree": 15.0, "decan": 2, "element": "earth" },
+    "genres": ["valentine", "soul"],
+    "subgenres": [],
+    "youtubeVideoId": "54Lqir2N_Eo",
+    "backupVideoIds": [],
+    "sequenceIndex": 14
+  },
+  {
+    "name": "Semi Trucks",
+    "birthDate": "1995-01-01",
+    "venus": { "sign": "Gemini", "degree": 5.0, "decan": 1, "element": "air" },
+    "genres": ["valentine"],
+    "subgenres": [],
+    "youtubeVideoId": "JUiUPj0eXn8",
+    "backupVideoIds": [],
+    "sequenceIndex": 15
+  },
+  {
+    "name": "Vegyn",
+    "birthDate": "1993-11-23",
+    "venus": { "sign": "Scorpio", "degree": 15.0, "decan": 2, "element": "water" },
+    "genres": ["valentine", "electronic"],
+    "subgenres": [],
+    "youtubeVideoId": "UHiwhFhg-XQ",
+    "backupVideoIds": [],
+    "sequenceIndex": 16
+  },
+  {
     "name": "Stars of the Lid",
     "birthDate": "1969-09-17",
     "venus": {
