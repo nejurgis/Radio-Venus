@@ -261,10 +261,15 @@ document.addEventListener('DOMContentLoaded', async () => {
       failedIds.clear();
       trackVideoIndex.clear();
       renderTrackList(tracks, 0, i => playTrack(i), failedIds, new Set(getFavorites()), shareCurrentTrack);
-      updateNowPlaying(tracks[0].name);
-      updateFavoriteButton(isFavorite(tracks[0].name));
-      cueVideo(tracks[0].youtubeVideoId);
-      updatePlayButton(false);
+
+      if ('ontouchstart' in window) {
+        updateNowPlaying(tracks[0].name);
+        updateFavoriteButton(isFavorite(tracks[0].name));
+        cueVideo(tracks[0].youtubeVideoId);
+        updatePlayButton(false);
+      } else {
+        playTrack(0);
+      }
 
       const signIndex = ZODIAC_SIGNS.indexOf('Aries');
       if (signIndex >= 0) zoomToSign(signIndex, { duration: 2500 });
