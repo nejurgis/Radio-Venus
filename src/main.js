@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     loadYouTubeAPI(),
   ]);
 
-  initPlayer('yt-player', {
+  await initPlayer('yt-player', {
     onEnd: () => playTrack(currentTrackIndex + 1),
     onError: (code) => {
       // If code is 2, it's often a handshake error. 
