@@ -296,11 +296,18 @@ html, body {
 
 .about-content p {
   margin-bottom: 0.5rem;
+  text-indent: 1.5em;
+}
+
+.about-lead + p,
+.about-heading + p {
+  text-indent: 0;
 }
 
 .about-lead {
   font-size: 0.6rem;
   font-style: italic;
+  text-indent: 0;
   color: #fff;
   text-align: center;
   margin-bottom: 2rem;
@@ -329,12 +336,14 @@ html, body {
 .about-footnote {
   font-size: 0.8rem;
   opacity: 0.5;
+  text-indent: 0;
   font-style: italic;
 }
 
 .about-contact {
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.6);
+  text-indent: 0;
   margin-top: 2rem;
 }
 
@@ -354,6 +363,11 @@ html, body {
 }
 
 @media (min-width: 768px) {
+  .about-content { font-size: 1.05rem; }
+  .about-lead, .about-heading { font-size: 1.1rem; }
+}
+
+@media (min-width: 1024px) {
   .about-content { font-size: 1.7rem; }
   .about-lead, .about-heading { font-size: 1.5rem; }
 }
