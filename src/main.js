@@ -123,11 +123,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   setupDateInput();
 
+  history.replaceState({ screen: 'portal' }, '');
   if (window.location.hash === '#about') {
     showScreen('about');
-    history.replaceState({ screen: 'about' }, '', '#about');
-  } else {
-    history.replaceState({ screen: 'portal' }, '');
+    history.pushState({ screen: 'about' }, '', '#about');
   }
 
   const [dbResult] = await Promise.allSettled([
