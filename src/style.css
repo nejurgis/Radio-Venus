@@ -844,6 +844,7 @@ p a:hover {
   align-items: center;
   gap: 1rem;
   margin-bottom: 1.5rem;
+  padding-left: 2rem;
 }
 
 .btn-back {
