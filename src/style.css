@@ -335,18 +335,18 @@ html, body {
 .about-footnote {
   font-size: 0.8rem;
   opacity: 0.5;
-  text-indent: 0;
+  text-indent: 0 !important;
   font-style: italic;
 }
 
 .about-contact {
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.6);
-  text-indent: 0;
+  text-indent: 0 !important;
 
 }
 
-.about-contact a {
+p a {
   color: #fff;
   text-decoration: none;
   background-position: 0 96%;
@@ -356,7 +356,7 @@ html, body {
   transition: color 0.2s;
 }
 
-.about-contact a:hover {
+p a:hover {
   color: var(--accent);
   background-image: linear-gradient(var(--accent), var(--accent));
 }
