@@ -833,7 +833,7 @@ p a:hover {
   flex-direction: column;
   height: 100vh;
   height: 100dvh;
-  padding-top: 1.5rem;
+  padding-top: 3.5rem;
   padding-bottom: 1rem;
   margin: 0 auto;
   overflow-x: hidden;
@@ -843,8 +843,7 @@ p a:hover {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 1.5rem;
-  padding-left: 2rem;
+  margin-bottom: 1rem;
 }
 
 .btn-back {
@@ -1597,11 +1596,7 @@ body.element-water  { --accent: var(--water); }
 
   .radio-layout {
     padding: 1rem;
-    padding-top: 1.5rem;
-  }
-
-  .radio-header {
-    margin-bottom: 1rem;
+    padding-top: 3rem;
   }
 
   .radio-title {
