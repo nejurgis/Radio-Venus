@@ -1919,8 +1919,9 @@ button.is-pressed svg,
 
   
   /* 3. Visual Separation */
-  padding-bottom: 15px;
-  backdrop-filter: blur(10px);      /* Glass effect */
+  padding-bottom: 10px;
+  padding-top: 10px;
+  backdrop-filter: blur(8px);      /* Glass effect */
   margin-bottom: 10px;    /* Space before the first song starts */
 }
 
