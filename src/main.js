@@ -8,7 +8,7 @@ import { loadYouTubeAPI, initPlayer, loadVideo, cueVideo, togglePlay, isPlaying,
 import {
   initScreens, showScreen, setElementTheme,
   renderReveal, renderGenreGrid, renderRadioHeader,
-  renderTrackList, updateNowPlaying, updatePlayButton, updateFavoriteButton, showEmptyState,
+  renderTrackList, updateNowPlaying, setNowPlayingPaused, updatePlayButton, updateFavoriteButton, showEmptyState,
   markTrackFailed,
   highlightGenres,
   updateProgress, resetProgress, glideToPosition,
@@ -222,8 +222,10 @@ document.addEventListener('DOMContentLoaded', async () => {
           const cur = getCurrentTime();
           if (dur > 0) showBuffering((cur / dur) * 100);
         }
-        // Show [STOPPED] on now-playing when paused
+        // Show [PAUSED] on now-playing when paused
         if (hasPlayed && state === window.YT.PlayerState.PAUSED) {
+          const track = tracks[currentTrackIndex];
+          if (track) setNowPlayingPaused(track.name, getVideoTitle());
           updateNowPlayingButton(!document.getElementById('screen-radio').classList.contains('active'), true);
         }
       }
