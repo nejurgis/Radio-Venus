@@ -31,6 +31,7 @@ let silentFailTimer = null;        // detect videos that never start
 let originalTrackOrder = null;     // unshuffled track order for toggle-back
 let isShuffled = false;
 let isLinkRecentlyCopied = false;
+let isPaused = false;                // whether playback is currently paused
 
 // CHANGED: Use AnimationFrame ID instead of Interval ID for smoothness
 let loadingAnimFrame = null;        
@@ -64,7 +65,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     showNebula(true);
     dimNebula(true);
     showScreen('genre');
-    updateNowPlayingButton(true);
+    updateNowPlayingButton(true, isPaused);
     history.pushState({ screen: 'genre' }, '');
   });
   document.getElementById('btn-back-reveal').addEventListener('click', () => history.back());
@@ -194,6 +195,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (state === window.YT.PlayerState.PLAYING) {
         hasPlayed = true;
         sessionHasPlayed = true;
+        isPaused = false;
         clearTimeout(silentFailTimer);
         stopLoadingProgress();
         hideBuffering();
@@ -207,7 +209,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         // iOS muted autoplay: show tap-to-unmute if playing but muted
         if (isMuted()) showUnmuteOverlay();
         updateNowPlayingButton(!document.getElementById('screen-radio').classList.contains('active'));
-        
+
         clearInterval(progressInterval);
         // CHANGED: 500ms -> 100ms for smoother playback progress
         progressInterval = setInterval(() => {
@@ -224,6 +226,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
         // Show [PAUSED] on now-playing when paused
         if (hasPlayed && state === window.YT.PlayerState.PAUSED) {
+          isPaused = true;
           const track = tracks[currentTrackIndex];
           if (track) setNowPlayingPaused(track.name, getVideoTitle());
           updateNowPlayingButton(!document.getElementById('screen-radio').classList.contains('active'), true);
@@ -574,7 +577,7 @@ async function zoomInToReveal() {
   showScreen('reveal');
   enableDragRotate(true);
   history.pushState({ screen: 'reveal' }, '');
-  updateNowPlayingButton(true);
+  updateNowPlayingButton(true, isPaused);
 }
 
 let cachedShuffledGenres = null;
@@ -842,7 +845,7 @@ function updateNowPlayingButton(show, stopped = false) {
     const track = tracks[currentTrackIndex];
     const artist = track ? track.name : '';
     const title = getVideoTitle();
-    const stoppedPrefix = stopped ? '[STOPPED] ' : '';
+    const stoppedPrefix = stopped ? '[PAUSED] ' : '';
     const loadPrefix = !hasPlayed ? 'loading... ' : '';
     const prefix = stoppedPrefix || loadPrefix;
     const label = title ? `${prefix}${artist} — ${title}` : `${prefix}${artist}` || activeGenreLabel;
@@ -863,7 +866,7 @@ function updateNowPlayingButton(show, stopped = false) {
       const track = tracks[currentTrackIndex];
       const artist = track ? track.name : '';
       const title = getVideoTitle();
-      const stoppedPrefix = stopped ? '[STOPPED] ' : '';
+      const stoppedPrefix = stopped ? '[PAUSED] ' : '';
       const revealLabel = title ? `${stoppedPrefix}${artist} — ${title}` : `${stoppedPrefix}${artist}` || activeGenreLabel;
       document.getElementById('reveal-np-label').textContent = revealLabel;
       document.getElementById('reveal-np-label-dup').textContent = revealLabel;
@@ -1060,7 +1063,7 @@ window.addEventListener('popstate', (e) => {
       document.getElementById('btn-harp').classList.remove('is-visible');
       showNebula(true);
       dimNebula(false);
-      updateNowPlayingButton(true);
+      updateNowPlayingButton(true, isPaused);
       zoomOut({ duration: 1800 });
       break;
     case 'reveal':
@@ -1068,7 +1071,7 @@ window.addEventListener('popstate', (e) => {
       dimNebula(false);
       showScreen('reveal');
       document.getElementById('btn-harp').classList.add('is-visible');
-      updateNowPlayingButton(true);
+      updateNowPlayingButton(true, isPaused);
       if (tunedLongitude != null) updateTunedDisplay(tunedLongitude);
       break;
     case 'genre':
@@ -1076,7 +1079,7 @@ window.addEventListener('popstate', (e) => {
       showNebula(true);
       dimNebula(true);
       showScreen('genre');
-      updateNowPlayingButton(true);
+      updateNowPlayingButton(true, isPaused);
       break;
     case 'radio':
       showNebula(true);
