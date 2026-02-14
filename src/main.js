@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     onStateChange: (state) => {
       if (state === window.YT.PlayerState.PLAYING) {
         updatePlayButton(true);
-      } else if (state === window.YT.PlayerState.BUFFERING || !hasPlayed) {
+      } else if (state === window.YT.PlayerState.BUFFERING) {
         updatePlayButton('buffering');
       } else {
         updatePlayButton(false);
