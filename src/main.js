@@ -14,6 +14,11 @@ import {
   updateProgress, resetProgress, glideToPosition,
   showBuffering, hideBuffering,
 } from './ui.js';
+import {
+  startHeartbeat, stopHeartbeat,
+  trackSongStart, trackSongComplete, trackSongSkip, trackSongError,
+  trackShare, trackGenreSelect, trackFavorite,
+} from './analytics.js';
 
 // ── State ───────────────────────────────────────────────────────────────────
 
@@ -165,7 +170,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   ]);
 
   await initPlayer('yt-player', {
-    onEnd: () => playTrack(currentTrackIndex + 1),
+    onEnd: () => {
+      const track = tracks[currentTrackIndex];
+      if (track) trackSongComplete(track.name, playingGenreId, getDuration());
+      playTrack(currentTrackIndex + 1);
+    },
     onError: (code) => {
       // If code is 2, it's often a handshake error. 
       // If hasPlayed is false, we give it one "second chance" reload 
@@ -196,6 +205,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         hasPlayed = true;
         sessionHasPlayed = true;
         isPaused = false;
+        startHeartbeat();
         clearTimeout(silentFailTimer);
         stopLoadingProgress();
         hideBuffering();
@@ -217,6 +227,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }, 100);
 
       } else {
+        stopHeartbeat();
         clearInterval(progressInterval);
         progressInterval = null;
         if (hasPlayed && state === window.YT.PlayerState.BUFFERING) {
@@ -626,6 +637,7 @@ function rebuildGenreGrid() {
 }
 
 function startRadio(genreId, genreLabel, subgenreId = null) {
+  trackGenreSelect(genreId, subgenreId);
   const effectiveLong = tunedLongitude != null ? tunedLongitude : venus.longitude;
   const effectiveSign = signFromLongitude(effectiveLong);
   const effectiveElement = ZODIAC_ELEMENTS[effectiveSign];
@@ -713,6 +725,7 @@ function tryBackupOrFail(reason) {
   } else {
     failedIds.add(currentTrackIndex);
     markTrackFailed(currentTrackIndex);
+    trackSongError(track.name, reason);
     console.warn(`[Radio Venus] ${track.name}: ${reason} (no more backups)`);
     skipToNextPlayable();
   }
@@ -770,8 +783,21 @@ function stopLoadingProgress() {
 
 function playTrack(index) {
   if (tracks.length === 0) return;
+
+  // Track skip if switching away from a playing track
+  const prevTrack = tracks[currentTrackIndex];
+  if (prevTrack && hasPlayed) {
+    const listened = getCurrentTime();
+    const dur = getDuration();
+    if (dur > 0 && listened < dur - 1) {
+      trackSongSkip(prevTrack.name, playingGenreId, listened);
+    }
+  }
+
   currentTrackIndex = ((index % tracks.length) + tracks.length) % tracks.length;
   const track = tracks[currentTrackIndex];
+
+  trackSongStart(track.name, playingGenreId);
 
   clearInterval(progressInterval);
   progressInterval = null;
@@ -927,6 +953,7 @@ document.addEventListener('click', e => {
   if (e.target.id === 'btn-fav' || e.target.closest('#btn-fav')) {
     const track = tracks[currentTrackIndex];
     const nowFav = toggleFavorite(track.name);
+    trackFavorite(track.name, nowFav ? 'add' : 'remove');
     updateFavoriteButton(nowFav);
 
     // FIND the active track in the list and toggle the class to trigger CSS transition
@@ -957,18 +984,22 @@ async function shareCurrentTrack() {
 
   let shareUrl;
   if (isValentine) {
-    shareUrl = `${base}#valentine`;
+    shareUrl = `${base}?utm_source=share&utm_medium=clipboard&utm_campaign=valentine#valentine`;
   } else {
     const params = new URLSearchParams({
       vid: videoId,
       artist: track.name,
       gid: genreId,
       t: time,
+      utm_source: 'share',
+      utm_medium: 'clipboard',
       ...(sign && { sign }),
       ...(genre && { genre }),
     });
     shareUrl = `${base}?${params}`;
   }
+
+  trackShare(genreId, isValentine ? 'valentine_link' : 'track_link');
 
   // 1. Try the modern Clipboard API
   if (navigator.clipboard && window.isSecureContext) {
