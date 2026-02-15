@@ -42,9 +42,12 @@ function venusSimilarity(userLon, artistLon) {
   const angularDistance = diff > 180 ? 360 - diff : diff;
   // 0° = 100%, 180° (opposition) = 0%
   const base = 100 * (1 - angularDistance / 180);
-  // 5% dropoff for different sign (different modality + element)
+  // Same-sign artists always rank above cross-sign artists:
+  // same sign gets the raw score, different sign is capped so it
+  // never exceeds the worst possible same-sign score (~84%).
   const sameSign = Math.floor(userLon / 30) === Math.floor(artistLon / 30);
-  return Math.round(sameSign ? base : Math.max(0, base - 5));
+  if (sameSign) return Math.round(base);
+  return Math.round(Math.min(base, 83));
 }
 
 function sortBySimilarity(arr, userLon) {
