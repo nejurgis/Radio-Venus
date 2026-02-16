@@ -182,19 +182,24 @@ export function updateFavoriteButton(isFav) {
   ui.favBtn.appendChild(star);
 }
 
-export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new Set(), favSet = new Set(), onShare) {
+export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new Set(), favSet = new Set(), onSharePlaylist) {
   if (!ui.trackList) return;
   trackSelectCallback = onSelect;
   ui.trackList.innerHTML = '';
-  
-  // 1. Valentine Header Logic
-  if (tracks.length > 0 && tracks[0].genres && tracks[0].genres.includes('valentine')) {
+
+  // 1. Playlist header with share button (valentine + favorites only)
+  const isValentine = onSharePlaylist && tracks.length > 0 && tracks.every(t => t.genres && t.genres.includes('valentine'));
+  if (onSharePlaylist) {
     const header = document.createElement('div');
     header.className = 'playlist-curator-credit';
 
+    const curatorHtml = isValentine
+      ? `<span class="curator-label">Curated by</span>
+         <span class="curator-name"><a href="https://docs.google.com/document/d/1We4r9SyEyWY0rM8Njdcw7gkAy8e4lpBFb7aFTA7xtWY/edit?usp=sharing" target="_blank" rel="noopener">최진영</a></span>`
+      : '';
+
     header.innerHTML = `
-    <span class="curator-label">Curated by</span>
-    <span class="curator-name"><a href="https://docs.google.com/document/d/1We4r9SyEyWY0rM8Njdcw7gkAy8e4lpBFb7aFTA7xtWY/edit?usp=sharing" target="_blank" rel="noopener">최진영</a></span>
+    ${curatorHtml}
     <button id="btn-share-playlist" class="btn-share-mini" title="Share Playlist">
         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
@@ -217,7 +222,7 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
       e.preventDefault();
 
       // Trigger clipboard/share from app.js
-      if (onShare) onShare();
+      if (onSharePlaylist) onSharePlaylist();
 
       // Visual feedback: Green Pixel
       this.classList.add('is-copied');

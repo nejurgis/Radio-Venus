@@ -119,6 +119,16 @@ export function matchFavorites(names, userLongitude) {
   return sortBySimilarity(pool, userLongitude);
 }
 
+export function matchMoon(moonLongitude, limit = 10) {
+  const pool = db.filter(m => m.youtubeVideoId);
+  for (const m of pool) {
+    const lon = reconstructLongitude(m);
+    const diff = Math.abs(moonLongitude - lon);
+    m.similarity = Math.round(100 * (1 - (diff > 180 ? 360 - diff : diff) / 180));
+  }
+  return pool.sort((a, b) => b.similarity - a.similarity || a.name.localeCompare(b.name)).slice(0, limit);
+}
+
 function shuffle(arr) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {

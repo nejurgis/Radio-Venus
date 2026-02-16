@@ -71,6 +71,7 @@ let zoomDrift = 0;
 let zoomDriftEnabled = false;
 let userDot = null;
 let previewDot = null;  // soft glow while typing birth date
+let moonDot = null;     // current Moon position on the ecliptic
 let dots = [];
 let hoveredDot = null;
 let mouseX = -1;
@@ -336,6 +337,9 @@ export function setPreviewVenus(longitude, element) {
 }
 
 export function clearPreviewVenus() { previewDot = null; }
+export function setMoonPosition(longitude) {
+  moonDot = { deg: longitude, birth: performance.now() };
+}
 export function onNebulaHover(callback) { hoverCallback = callback; }
 export function onNebulaClick(callback) { clickCallback = callback; }
 export function onRotation(callback) { rotationCallback = callback; }
@@ -935,6 +939,59 @@ function tick() {
     ctx.restore();
   }
 
+  // ── Moon dot ──
+  if (moonDot) {
+    const mt = (performance.now() - moonDot.birth) / 1000;
+    const mPulse = 1 + 0.1 * Math.sin(mt * 0.5);
+    const mAngle = (-(moonDot.deg) - 90 + rot) * Math.PI / 180;
+    const mx = cx + midR * Math.cos(mAngle);
+    const my = cy + midR * Math.sin(mAngle);
+
+    const mBallR = isZoomed ? 2.5 : 4;
+    const mGlowR = isZoomed ? 7 : 12;
+
+    ctx.save();
+    ctx.globalCompositeOperation = 'lighter';
+
+    const mGlow = ctx.createRadialGradient(mx, my, 0, mx, my, mGlowR * mPulse);
+    mGlow.addColorStop(0, `rgba(200, 210, 230, 0.35)`);
+    mGlow.addColorStop(1, `rgba(200, 210, 230, 0)`);
+    ctx.beginPath();
+    ctx.arc(mx, my, mGlowR * mPulse, 0, Math.PI * 2);
+    ctx.fillStyle = mGlow;
+    ctx.fill();
+
+    const mBall = ctx.createRadialGradient(
+      mx - mBallR * 0.35, my - mBallR * 0.35, mBallR * 0.05,
+      mx, my, mBallR
+    );
+    mBall.addColorStop(0, `rgba(255, 255, 255, 1)`);
+    mBall.addColorStop(0.5, `rgba(200, 210, 230, 0.85)`);
+    mBall.addColorStop(1, `rgba(20, 21, 23, 0)`);
+    ctx.beginPath();
+    ctx.arc(mx, my, mBallR, 0, Math.PI * 2);
+    ctx.fillStyle = mBall;
+    ctx.fill();
+    ctx.restore();
+
+    ctx.save();
+    ctx.globalCompositeOperation = 'source-over';
+    if (isZoomed) {
+      ctx.font = '1.8px monospace';
+      ctx.fillStyle = 'rgba(200, 210, 230, 0.7)';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+      ctx.fillText('\u263D', mx, my + mGlowR * mPulse + 1);
+    } else {
+      ctx.font = '9px monospace';
+      ctx.fillStyle = 'rgba(200, 210, 230, 0.6)';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+      ctx.fillText('\u263D', mx, my + mGlowR * mPulse + 3);
+    }
+    ctx.restore();
+  }
+
   if (isZoomed) ctx.restore(); // final restore for zoom transform
 }
 
@@ -948,6 +1005,7 @@ export function destroyNebula() {
   spriteCache.clear();
   userDot = null;
   previewDot = null;
+  moonDot = null;
   hoveredDot = null;
   mouseX = mouseY = -1;
   zoomSign = null;

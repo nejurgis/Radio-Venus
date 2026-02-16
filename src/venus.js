@@ -38,6 +38,23 @@ export function calculateVenus(birthDate) {
   };
 }
 
+export function calculateMoon() {
+  const now = new Date();
+  const geo = GeoVector(Body.Moon, now, true);
+  const ecl = Ecliptic(geo);
+  const longitude = ecl.elon;
+
+  const signIndex = Math.floor(longitude / 30);
+  const sign = SIGNS[signIndex];
+
+  return {
+    sign,
+    glyph: SIGN_GLYPHS[sign],
+    element: ELEMENTS[sign],
+    longitude,
+  };
+}
+
 export function makeBirthDate(day, month, year) {
   return new Date(Date.UTC(year, month - 1, day, 12, 0, 0));
 }
