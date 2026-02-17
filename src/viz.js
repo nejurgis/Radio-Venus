@@ -1,3 +1,50 @@
+// --- PRE-RENDER MOON STICKER (Gradient + Soft Shadow) ---
+const moonCanvas = document.createElement('canvas');
+moonCanvas.width = 64;  
+moonCanvas.height = 64; 
+const mCtx = moonCanvas.getContext('2d');
+
+// ── 1. Draw the Base (The Lighted Part) ──
+mCtx.beginPath();
+// Center at 32, 32 | Radius 20
+mCtx.arc(32, 32, 20, 0, Math.PI * 2); 
+
+// DEFINE THE GRADIENT HERE (Local coordinates: 32,32)
+// We use the "Lunar Blue" values (100, 180, 255) directly
+const mGrad = mCtx.createRadialGradient(32, 32, 0, 32, 32, 20);
+
+mGrad.addColorStop(0.5, `rgba(255, 255, 255, 0.9)`);
+
+// 0% - White Core
+mGrad.addColorStop(0.9, `rgba(255, 255, 255, 0.9)`);
+// 40% - Lunar Blue Mid
+mGrad.addColorStop(0.4, `rgba(100, 176, 247, 0.8)`);
+// 100% - Soft Edge
+mGrad.addColorStop(0.5, `rgba(100, 180, 255, 0.3)`);
+
+mCtx.fillStyle = mGrad;
+mCtx.shadowBlur = 4; // Slight bloom on the outer edge
+mCtx.shadowColor = 'rgba(100, 180, 255, 1)';
+mCtx.fill();
+
+
+// ── 2. The Shadow Bite (The Eraser) ──
+mCtx.globalCompositeOperation = 'destination-out';
+mCtx.beginPath();
+
+// Shift "Eraser" circle to LEFT (x=24) to leave a crescent on the RIGHT
+// Radius 17 gives a nice thickness
+mCtx.arc(24, 32, 17, 0, Math.PI * 2); 
+
+// The eraser doesn't need a gradient, just opacity. 
+// A slight shadowBlur here softens the "Terminator" line (where light meets dark)
+mCtx.fillStyle = '#000000'; 
+mCtx.shadowBlur = 4; 
+mCtx.shadowColor = '#000000'; 
+mCtx.fill();
+
+// Reset
+mCtx.globalCompositeOperation = 'source-over';
 // ── Zodiac Nebula: artist distribution ring on the portal screen ─────────────
 import { isHarpEnabled } from './harp.js';
 
@@ -670,7 +717,7 @@ function tick() {
       path.moveTo(cx + tickInner * cA, cy + tickInner * sA);
       path.lineTo(cx + (tickInner + len) * cA, cy + (tickInner + len) * sA);
     }
-    ctx.strokeStyle = 'rgba(100,160,155,0.35)';
+    ctx.strokeStyle = 'rgba(100, 162, 155, 0.4)';
     ctx.lineWidth = 0.8;
     ctx.stroke(majorPath);
     ctx.lineWidth = 0.4;
@@ -940,57 +987,75 @@ function tick() {
   }
 
   // ── Moon dot ──
-  if (moonDot) {
-    const mt = (performance.now() - moonDot.birth) / 1000;
-    const mPulse = 1 + 0.1 * Math.sin(mt * 0.5);
-    const mAngle = (-(moonDot.deg) - 90 + rot) * Math.PI / 180;
-    const mx = cx + midR * Math.cos(mAngle);
-    const my = cy + midR * Math.sin(mAngle);
+// ── Moon Dot (Offset 3D Style) ──
+// ── Moon Dot (Consolidated Style) ──
+if (moonDot) {
+  const mt = (performance.now() - moonDot.birth) / 1000;
+  const mPulse = 1 + 0.15 * Math.sin(mt * 0.8);
+  
+  const mAngle = (-(moonDot.deg) - 90 + rot) * Math.PI / 180;
+  const mx = cx + midR * Math.cos(mAngle);
+  const my = cy + midR * Math.sin(mAngle);
 
-    const mBallR = isZoomed ? 2.5 : 4;
-    const mGlowR = isZoomed ? 7 : 12;
+  const coreScale = isZoomed ? 0.17 : 0.45; 
+  const mGlowR = isZoomed ? 20 : 50; 
+  const hazeR = mGlowR * mPulse;
+  
+  // Lunar Blue
+  const mr = 100, mg = 180, mb = 255;
 
-    ctx.save();
-    ctx.globalCompositeOperation = 'lighter';
+  // 1. Atmosphere (Centered)
+  ctx.save();
+  ctx.globalCompositeOperation = 'lighter';
+  const mGlow = ctx.createRadialGradient(mx, my, 0, mx, my, hazeR);
+  mGlow.addColorStop(0, `rgba(254, 254, 254, 0.33)`);
+  mGlow.addColorStop(0.3, `rgba(${mr}, ${mg}, ${mb}, 0.5)`);
+  mGlow.addColorStop(0.6, `rgba(${mr}, ${mg}, ${mb}, 0.1)`);
+  mGlow.addColorStop(1, `rgba(${mr}, ${mg}, ${mb}, 0)`);
+  ctx.fillStyle = mGlow;
+  ctx.beginPath();
+  ctx.arc(mx, my, hazeR, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
 
-    const mGlow = ctx.createRadialGradient(mx, my, 0, mx, my, mGlowR * mPulse);
-    mGlow.addColorStop(0, `rgba(200, 210, 230, 0.35)`);
-    mGlow.addColorStop(1, `rgba(200, 210, 230, 0)`);
-    ctx.beginPath();
-    ctx.arc(mx, my, mGlowR * mPulse, 0, Math.PI * 2);
-    ctx.fillStyle = mGlow;
-    ctx.fill();
+  // 2. Shape
+  ctx.save();
+  ctx.globalCompositeOperation = 'source-over'; 
+  ctx.translate(mx, my);
+  ctx.rotate(mAngle + Math.PI / 2); 
+  ctx.scale(coreScale, coreScale);
+  ctx.shadowBlur = 12; 
+  ctx.shadowColor = `rgba(${mr}, ${mg}, ${mb}, 0.8)`;
+  ctx.drawImage(moonCanvas, -32, -32); 
+  ctx.restore();
 
-    const mBall = ctx.createRadialGradient(
-      mx - mBallR * 0.35, my - mBallR * 0.35, mBallR * 0.05,
-      mx, my, mBallR
-    );
-    mBall.addColorStop(0, `rgba(255, 255, 255, 1)`);
-    mBall.addColorStop(0.5, `rgba(200, 210, 230, 0.85)`);
-    mBall.addColorStop(1, `rgba(20, 21, 23, 0)`);
-    ctx.beginPath();
-    ctx.arc(mx, my, mBallR, 0, Math.PI * 2);
-    ctx.fillStyle = mBall;
-    ctx.fill();
-    ctx.restore();
-
+  // 3. Label (Using your exact formula)
+  // Only show if zoomed (or always, if you prefer)
+  if (isZoomed) {
     ctx.save();
     ctx.globalCompositeOperation = 'source-over';
-    if (isZoomed) {
-      ctx.font = '1.8px monospace';
-      ctx.fillStyle = 'rgba(200, 210, 230, 0.7)';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'top';
-      ctx.fillText('\u263D', mx, my + mGlowR * mPulse + 1);
-    } else {
-      ctx.font = '9px monospace';
-      ctx.fillStyle = 'rgba(200, 210, 230, 0.6)';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'top';
-      ctx.fillText('\u263D', mx, my + mGlowR * mPulse + 3);
-    }
+    
+    // Match the artist dot font size
+    ctx.font = '1.3px monospace'; 
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'top';
+    
+    // Use moon color with high alpha (0.9) for readability
+    ctx.fillStyle = `rgba(${mr}, ${mg}, ${mb}, 0.9)`;
+    
+    // FORMULA APPLIED:
+    // We use 'hazeR' as the proxy for 'dot.size' since the moon is bigger
+    // We assume the visual "body" is about half the haze radius
+    const visualBodySize = hazeR * 0.6; 
+    
+    ctx.fillText("Today's Moon", mx, my + visualBodySize * 1.5 + 0.95);
+    
     ctx.restore();
   }
+}
+
+
+
 
   if (isZoomed) ctx.restore(); // final restore for zoom transform
 }

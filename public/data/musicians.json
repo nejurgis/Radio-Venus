@@ -5835,24 +5835,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Hans Knappertsbusch",
-    "birthDate": "1888-03-12",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 21.2,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "zsBsKwv2yPM",
-    "backupVideoIds": []
-  },
-  {
     "name": "Hans Lang",
     "birthDate": "1908-07-05",
     "venus": {

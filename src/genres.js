@@ -10,7 +10,7 @@ export const GENRE_CATEGORIES = [
   { id: 'jazz',       label: 'Jazz / Spiritual' },
   { id: 'classical',  label: 'Classical / Orchestral' },
   { id: 'valentine', label: "Valentine's day special" },
-  // { id: 'moon', label: "Today's Moon" },
+  { id: 'moon', label: "Today's Moon playlist" },
 ];
 
 // ── Subgenre vocabulary (Discogs-derived) ────────────────────────────────────

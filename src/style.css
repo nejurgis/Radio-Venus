@@ -743,7 +743,104 @@ p a:hover {
   100% { transform: scale(1); filter: brightness(1); }
 }
 
+/* ── THE MOON GENRE BUTTON (The Eclipse) ── */
 
+.genre-btn[data-genre="moon"] {
+  /* 1. Base Setup */
+  background: transparent !important;
+  border: none;
+  box-shadow: none !important;
+  position: relative;
+  overflow: hidden; /* Keeps the shadow contained inside the button shape */
+  z-index: 1;
+
+  /* 2. Text Styling (Floating above the eclipse) */
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 15px rgba(100, 180, 255, 0.8);
+  
+  /* 3. Shape */
+  border-radius: 100px; /* Full pill shape */
+}
+
+/* LAYER 1: The Blue Light (The Full Moon) */
+/* This sits at the bottom and glows blue */
+.genre-btn[data-genre="moon"]::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* Fill the button completely */
+  border-radius: 100px; 
+  z-index: -2;
+  
+  /* THE GLOW: Lunar Blue Gradient (Matches viz.js) */
+  background: linear-gradient(
+    105deg, 
+    rgba(255, 255, 255, 0.9) 0%,   /* White Hotspot top-left */
+    rgba(85, 173, 255, 0.984) 40%,  /* Blue Body */
+    rgba(60, 100, 180, 0.9) 100%   /* Deep Blue Shadow */
+  );
+
+  /* THE HAZE: Spilling out */
+  box-shadow: 
+    0 0 30px rgba(60, 130, 240, 1), /* Outer Haze */
+    inset 0 0 10px rgba(255, 255, 255, 1); /* Inner Rim */
+
+  transition: all 0.5s ease;
+}
+
+/* LAYER 2: The Shadow (The Mask) */
+/* This is the dark ellipse that "lands" on the moon */
+.genre-btn[data-genre="moon"]::after {
+  content: "";
+  position: absolute;
+  
+  /* Make the shadow slightly larger to ensure clean edges */
+  top: -20%; bottom: -20%; 
+  left: -20%; right: -20%;
+  
+  background: #000; /* Must match your page background color (Black) */
+  border-radius: 50%; /* Circular mask feels more organic */
+  z-index: -1; 
+  
+  /* Soften the shadow edge for that "Atmosphere" look */
+  box-shadow: 0 0 15px 15px #000; 
+  
+  /* THE ANIMATION: The Eclipse */
+  /* Moves the shadow to reveal/hide the blue light */
+  animation: moon-phase 11s infinite ease-in-out;
+  
+  /* Start position: Offset so we see a crescent */
+  transform: translate(-20%, -20%);
+}
+
+/* Hover Interaction: The Moon Wakes Up */
+.genre-btn[data-genre="moon"]:hover::before {
+  filter: brightness(1.3);
+  box-shadow: 0 0 50px rgba(100, 180, 255, 0.8);
+}
+
+/* On hover, move the shadow away to show more light (Waxing) */
+.genre-btn[data-genre="moon"]:hover::after {
+  transform: translate(30%, 30%) scale(0.9);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* ── ANIMATION KEYFRAMES ── */
+@keyframes moon-phase {
+  0% {
+    /* Shadow covers top-left, revealing bottom-right crescent */
+    transform: translate(-20%, -100%);
+  }
+  50% {
+    /* Shadow moves to center, creating a thin ring or eclipse */
+    transform: translate(-50%, -20%);
+  }
+  100% {
+    /* Returns to start */
+    transform: translate(-20%, -100%);
+  }
+}
 
 
 .genre-row .genre-btn {

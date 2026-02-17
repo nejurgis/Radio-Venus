@@ -684,9 +684,9 @@ function rebuildGenreGrid() {
 
 function startRadio(genreId, genreLabel, subgenreId = null) {
   trackGenreSelect(genreId, subgenreId);
-  const effectiveLong = tunedLongitude != null ? tunedLongitude : venus.longitude;
+  const effectiveLong = tunedLongitude != null ? tunedLongitude : (venus ? venus.longitude : 0);
   const effectiveSign = signFromLongitude(effectiveLong);
-  const effectiveElement = ZODIAC_ELEMENTS[effectiveSign];
+  const effectiveElement = ZODIAC_ELEMENTS[effectiveSign] || 'air';
 
   renderRadioHeader(effectiveSign, genreLabel, subgenreId);
   enableDragRotate(false);
@@ -702,21 +702,41 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
 
   const playlistShareFn = (genreId === 'valentine' || genreId === 'favorites') ? sharePlaylist : undefined;
 
+  // 1. OPTIMIZATION: If clicking the active genre, just re-render and return.
   if (tracks.length > 0 && genreId === playingGenreId && subgenreId === playingSubgenreId) {
     renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()), playlistShareFn);
     return tracks;
   }
 
+  // 2. CALCULATE CANDIDATES (The Fix)
   let candidateTracks;
+
   if (genreId === 'favorites') {
     candidateTracks = matchFavorites(getFavorites(), effectiveLong);
-  } else {
+  } 
+  else if (genreId === 'moon') {
+    // ── MOON LOGIC ──
+    // 1. Calculate REAL-TIME Moon position
+    const now = new Date();
+    const moonData = calculateMoon(now); 
+    
+    // 2. Update header to show "Moon in [Sign]" instead of the user's Venus sign
+    const moonSign = moonData.sign; 
+    const moonDeg = Math.round(moonData.longitude % 30);
+    renderRadioHeader(moonSign, `Moon in ${moonSign} ${moonDeg}°`);
+    
+    // 3. Find the closest artists using your new matcher
+    candidateTracks = matchMoon(moonData.longitude);
+  } 
+  else {
+    // ── STANDARD LOGIC ──
     candidateTracks = match(effectiveSign, genreId, effectiveElement, {
       subgenre: subgenreId,
       userLongitude: effectiveLong,
     });
   }
 
+  // 3. HANDLE EMPTY STATE
   const newLabel = subgenreId ? `${genreLabel} · ${subgenreId}` : genreLabel;
 
   if (candidateTracks.length === 0) {
@@ -724,6 +744,8 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
     return candidateTracks;
   }
   showEmptyState(false);
+
+  // 4. PLAYBACK STATE UPDATE
   originalTrackOrder = null;
   isShuffled = false;
   document.getElementById('btn-shuffle').classList.remove('is-active');
