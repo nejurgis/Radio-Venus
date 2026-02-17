@@ -1,3 +1,5 @@
+import { trackScreenView } from "./analytics";
+
 // ─── CACHED ELEMENTS (The Speed Boost) ──────────────────────────────────────
 let trackSelectCallback = null; // delegated click handler for track list
 

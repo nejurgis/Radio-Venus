@@ -1,3 +1,5 @@
+// src/viz.js
+import { trackNebulaInteraction } from './analytics.js';
 // --- PRE-RENDER MOON STICKER (Gradient + Soft Shadow) ---
 const moonCanvas = document.createElement('canvas');
 moonCanvas.width = 64;  
@@ -262,6 +264,8 @@ export function initNebula(containerId) {
   document.addEventListener('click', (e) => {
     if (!hoveredDot || !clickCallback || zoomSign == null || isHarpEnabled()) return;
     if (e.target.closest('button, a, input, select, textarea, .screen-inner')) return;
+    trackNebulaInteraction('click_artist');
+    
     clickCallback({ name: hoveredDot.name, genres: hoveredDot.genres });
   });
 
@@ -273,6 +277,10 @@ export function initNebula(containerId) {
     dragStartX = x;
     dragLastX = x;
     dragVelocity = 0;
+
+    // ── ANALYTICS ──
+    // Tracks that the user is manually spinning the wheel
+    trackNebulaInteraction('drag_rotate');
   }
 
   function dragMove(x) {

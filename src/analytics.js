@@ -117,3 +117,11 @@ export function trackShuffle(state) {
     state: state ? 'on' : 'off'
   });
 }
+
+export function trackNebulaInteraction(action) {
+  // action: 'drag_rotate', 'click_sign', 'zoom_sign'
+  send('nebula_interaction', {
+    event_category: 'visualization',
+    action: action
+  });
+}
