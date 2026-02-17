@@ -3,7 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Radio Venus</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <!-- Primary SEO -->
+  <title>Radio Venus — The Soundtrack of Your Stars</title>
+  <meta name="description" content="Discover music through your Venus sign. A celestial radio that maps musicians by their astrological signature and tunes to your chart.">
+  <link rel="canonical" href="https://radio-venus.club" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:site_name" content="Radio Venus">
+  <meta property="og:title" content="Radio Venus — The Soundtrack of Your Stars">
+  <meta property="og:description" content="Enter your birthday. Hear what Venus sounds like in your chart.">
+  <meta property="og:image" content="https://radio-venus.club/assets/social-card.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://radio-venus.club">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://radio-venus.club/assets/social-card.jpg">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Radio Venus",
+    "description": "Astrological music discovery — find musicians who share your Venus sign and hear what your chart sounds like.",
+    "url": "https://radio-venus.club",
+    "applicationCategory": "Entertainment",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Person",
+      "name": "Jurgis Lietunovas",
+      "url": "https://jurgis.info"
+    }
+  }
+  </script>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KSY81MM0E6"></script>
   <script>
@@ -12,7 +51,6 @@
     gtag('js', new Date());
     gtag('config', 'G-KSY81MM0E6');
   </script>
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   
   <script type="importmap">
     { "imports": { "astronomy-engine": "/node_modules/astronomy-engine/esm/astronomy.js" } }
@@ -47,6 +85,20 @@
         <button id="btn-enter" class="btn-primary btn-enter" disabled>Enter</button>
       </div>
       <p id="date-error" class="error-msg"></p>
+
+      <article class="portal-about" role="article">
+        <p>This tool is a portal leading to the beautiful patterns that open up when we look at music through the lens of Astrology&mdash;the multi-millennia wisdom of the stars.</p>
+
+        <p>Radio Venus pools together a select and ever-expanding group of musicians by their Venus sign. We calculate exactly where Venus was positioned on the day of their inception*, placing that position relative to the 12 zodiacal images (ζῴδια, as the Greeks call it) to create a rhizomatic celestial map of musical flavor. By tuning into your personal chart, this sky is reconfigured to resonate with your unique frequencies.</p>
+
+        <p>In Astrology, Venus is the energy that brings beauty and harmony into our lives. Its position reveals how we approach aesthetics, what we find valuable, and what we love. While a full reading considers many factors, this tool focuses purely on the Venusian placement—isolating the specific "flavor" a musician brings to the table.</p>
+
+        <p>Enter your birthday to explore your personal sonic constellation, find your favorites, and pluck the strings of fate.𓍯𓂃</p>
+
+        <p class="about-footnote">*For bands/collectives, we use the lead singer's birth date or the release date of their debut album if the birth date cannot be found.</p>
+
+        <p class="about-footnote">Built by <a href="https://jurgis.info" target="_blank" rel="noopener">Jurgis Lietunovas</a>. For astrology readings, visit <a href="https://jurgis.info/astrology" target="_blank" rel="noopener">jurgis.info/astrology</a>.</p>
+      </article>
     </div>
     <button id="btn-info" class="btn-control btn-info" aria-label="About">
       <svg width="18" height="18" viewBox="250 -20 680 1280" fill="currentColor" stroke="none">
@@ -318,6 +370,74 @@
     </div>
     <p class="loading-text">Calculating your Venus placement...</p>
   </div>
+
+  <footer class="venus-index" aria-label="Venus sign music guide">
+    <h2 class="venus-index-title">The Twelve Frequencies of Venus</h2>
+
+    <div class="venus-index-entry" id="venus-aries">
+      <h3>♈ Venus in Aries</h3>
+      <p>Impulsive, raw, pioneering. Venus in Aries musicians move fast and break first — their sound hits before you can think about it. Expect punk urgency, aggressive hooks, and music that starts in the middle of the action. Artists who share this placement cut through noise with sheer force of personality.</p>
+    </div>
+
+    <div class="venus-index-entry" id="venus-taurus">
+      <h3>♉ Venus in Taurus</h3>
+      <p>Lush, sensual, unhurried. Venus is at home in Taurus, and musicians with this placement build sound you can almost touch — rich textures, warm bass, voices like velvet. Their work rewards patience and repeat listening. This is music made for bodies, not just ears.</p>
+    </div>
+
+    <div class="venus-index-entry" id="venus-gemini">
+      <h3>♊ Venus in Gemini</h3>
+      <p>Restless, clever, shape-shifting. Venus in Gemini musicians can't sit still in one genre — they sample everything, talk fast, and make connections nobody else sees. Expect wit in the lyrics, unexpected genre-blending, and an intellectual sparkle that keeps you guessing.</p>
+    </div>
+
+    <div class="venus-index-entry" id="venus-cancer">
+      <h3>♋ Venus in Cancer</h3>
+      <p>Nostalgic, intimate, protective. These musicians make sound that feels like a memory you can't quite place — home recordings, confessional songwriting, melodies that ache. Their beauty lives in vulnerability and the courage to be tender in public.</p>
+    </div>
+
+    <div class="venus-index-entry" id="venus-leo">
+      <h3>♌ Venus in Leo</h3>
+      <p>Dramatic, generous, radiant. Venus in Leo musicians command a stage and make you feel like the show is just for you. Big voices, theatrical arrangements, golden production — their art is an act of self-expression so total it becomes universal.</p>
+    </div>
+
+    <div class="venus-index-entry" id="venus-virgo">
+      <h3>♍ Venus in Virgo</h3>
+      <p>Precise, devoted, understated. These musicians hear details nobody else catches — the perfect hi-hat placement, the lyric revised thirty times until it's inevitable. Their beauty is in craft, not spectacle. Music that reveals itself slowly, rewarding close attention.</p>
+    </div>
+
+    <div class="venus-index-entry" id="venus-libra">
+      <h3>♎ Venus in Libra</h3>
+      <p>Harmonious, elegant, relational. Venus rules Libra, and musicians here are natural aesthetes — every element balanced, every collaboration elevated. Expect beautiful arrangements, sophisticated chord progressions, and an instinct for what sounds right together.</p>
+    </div>
+
+    <div class="venus-index-entry" id="venus-scorpio">
+      <h3>♏ Venus in Scorpio</h3>
+      <p>Intense, underground, transformative. Venus in Scorpio musicians are drawn to the edges — darkwave, industrial, music that confronts what others avoid. Their aesthetic is magnetic precisely because it refuses to be comfortable. Beauty found in depth, obsession, and catharsis.</p>
+    </div>
+
+    <div class="venus-index-entry" id="venus-sagittarius">
+      <h3>♐ Venus in Sagittarius</h3>
+      <p>Expansive, eclectic, philosophical. These musicians borrow freely from every culture and tradition they encounter — world music, fusion, genre-defying experiments driven by genuine curiosity. Their sound has horizon in it, always pointing somewhere you haven't been.</p>
+    </div>
+
+    <div class="venus-index-entry" id="venus-capricorn">
+      <h3>♑ Venus in Capricorn</h3>
+      <p>Structured, austere, enduring. Venus in Capricorn musicians build cathedrals — compositions with architecture, albums that function as complete statements. Expect discipline in the craft, respect for tradition, and a seriousness that ages into timelessness.</p>
+    </div>
+
+    <div class="venus-index-entry" id="venus-aquarius">
+      <h3>♒ Venus in Aquarius</h3>
+      <p>Experimental, detached, futuristic. These musicians hear sounds from tomorrow — electronic pioneers, avant-garde provocateurs, artists who would rather invent a genre than join one. Their beauty is cerebral and strange, and it often takes years for everyone else to catch up.</p>
+    </div>
+
+    <div class="venus-index-entry" id="venus-pisces">
+      <h3>♓ Venus in Pisces</h3>
+      <p>Ethereal, boundless, devotional. Venus is exalted in Pisces, and musicians here dissolve the line between sound and feeling — ambient, shoegaze, sacred music, anything that erases edges. Their art is an act of surrender, and listening to it feels like floating.</p>
+    </div>
+
+    <p class="venus-index-cta">
+      <a href="#screen-portal">Enter your birthday</a> to discover which frequency is yours.
+    </p>
+  </footer>
 
   <script type="module" src="/src/main.js"></script>
 </body>

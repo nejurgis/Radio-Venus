@@ -2060,3 +2060,18 @@ button.is-pressed svg,
 .playlist-curator-credit a:hover {
   text-shadow: 0 0 15px rgba(255, 100, 150, 0.8);
 }
+
+/* ── SEO-only content (in DOM for crawlers, visually hidden) ───────────────── */
+
+.portal-about,
+.venus-index {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
