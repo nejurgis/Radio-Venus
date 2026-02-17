@@ -1,0 +1,42 @@
+# Radio Venus
+
+> An astrological music discovery tool. Enter your birthday, find where Venus was when you were born, and hear music from artists who share your Venus sign placement.
+
+## What this is
+
+Radio Venus maps musicians by their natal Venus position — the astrological placement that governs aesthetic sensibility, beauty, and taste. Users enter their date of birth, the app calculates their Venus sign using astronomical ephemeris data, and returns a curated stream of musicians who share the same placement. Music is served via YouTube embeds.
+
+## How it works
+
+- User inputs date of birth
+- App calculates Venus position (sign, degree, decan) using astronomy-engine
+- Matches against a curated database of musicians with verified birth data
+- User can filter by musical genre/subgenre
+- Returns matched musicians with embedded YouTube playback
+
+## Astrological premise
+
+In natal astrology, Venus signifies what a person finds beautiful, pleasurable, and aesthetically valuable. Each of the 12 zodiac signs gives Venus a distinct aesthetic character:
+
+- Venus in Aries: raw, impulsive, punk energy
+- Venus in Taurus: lush, sensual, textural richness
+- Venus in Gemini: intellectual, genre-blending, witty
+- Venus in Cancer: nostalgic, intimate, confessional
+- Venus in Leo: dramatic, theatrical, radiant
+- Venus in Virgo: precise, craft-oriented, understated
+- Venus in Libra: harmonious, elegant, balanced
+- Venus in Scorpio: intense, underground, transformative
+- Venus in Sagittarius: expansive, world-music, eclectic
+- Venus in Capricorn: structured, austere, timeless
+- Venus in Aquarius: experimental, futuristic, avant-garde
+- Venus in Pisces: ethereal, ambient, devotional
+
+## Creator
+
+Built by Jurgis Lietunovas, a practicing astrologer and former Art Director.
+Website: https://jurgis.info
+Astrology readings: https://jurgis.info/astrology
+
+## URL
+
+https://radio-venus.club
