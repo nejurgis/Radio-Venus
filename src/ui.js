@@ -523,7 +523,7 @@ export function renderArtistIndex(db) {
     const artists = bySign[sign];
     const el = SIGN_ELEMENTS[sign];
     html += `<div class="index-sign-group">`;
-    html += `<h3 class="index-sign-heading">${sign} <span class="index-sign-count">${artists.length}</span></h3>`;
+    html += `<h3 class="index-sign-heading">${sign}</h3>`;
     html += `<div class="index-artist-list">`;
     html += artists.map(a => {
       const deg = Math.round(a.venus?.degree || 0);
