@@ -16,10 +16,10 @@ Genre pick  ──►  Subgenre filter  ──►  Venus similarity sort  ──
                                                                   YouTube Player
 ```
 
-1. **Portal** — User enters their birth date (DD/MM/YYYY). A zodiac nebula ring shows the distribution of all artists as glassy element-colored dots at their ecliptic longitudes, with crisp Rudnick-style sector outlines. Hover over any dot to see the artist name, sign, and Venus degree underneath. As you type, a preview dot glows at your Venus position. A "You" label marks the user's dot.
+1. **Portal** — User enters their birth date (DD/MM/YYYY). A zodiac nebula ring shows the distribution of all artists as glassy element-colored dots at their ecliptic longitudes, with crisp sector outlines. Hover over any dot to see the artist name, sign, and Venus degree underneath. As you type, a preview dot glows at your Venus position. A "You" label marks the user's dot.
 2. **Zoom transition** — On submit, the nebula smoothly zooms into the user's Venus sign over 2.5s with ease-out cubic easing. Rotation interpolates from free-spin to the locked sign position. The portal content fades away as the camera pushes in.
 3. **Reveal** — Venus sign is displayed with degree and element. A red **tuner needle** sits at 12 o'clock on the zodiac ring — drag-rotate the ring to tune to any position, and the displayed Venus text and element color update in real-time. When music is playing, a now-playing marquee scrolls between the Venus text and the genre button (mix-blend-mode: difference against the nebula). Back button triggers a reverse zoom-out animation (1.8s) returning to the full ring.
-4. **Genre** — User picks from 10 genre categories with Rudnick-palette color overlays that pop on hover. Each genre button has a dropdown arrow that reveals subgenre chips on click. The nebula remains zoomed as a background, showing just the 30° wedge of their Venus sign.
+4. **Genre** — User picks from 10 genre categories with color overlays that pop on hover. Each genre button has a dropdown arrow that reveals subgenre chips on click. The nebula remains zoomed as a background, showing just the 30° wedge of their Venus sign.
 5. **Radio** — Matched artists play via a hidden YouTube iframe with custom controls (progress bar, seeker, time display, buffering spinner). Similarity scoring uses the **tuned position** from the reveal screen's needle, not just the natal Venus — rotate to explore different cosmic neighborhoods. The track list stretches to the bottom of the viewport with a fade-out gradient. Each track shows the artist's Venus sign (element-colored) and degree. A shuffle button randomizes the order. The zoomed nebula drifts slowly behind at 8% opacity.
 
 ### Venus calculation
@@ -282,6 +282,48 @@ From the AcousticBrainz Discogs dataset (electronic recordings only):
 | downtempo + trip hop | 490 | triphop cluster |
 | house + techno | 446 | techno cluster |
 
+## Database stats & discovery workflow
+
+Run `node scripts/db-stats.mjs` for a quick dashboard without reading the 15k-line musicians.json:
+
+```bash
+node scripts/db-stats.mjs              # full dashboard (sign/genre distribution, gaps)
+node scripts/db-stats.mjs --gaps       # only underrepresented signs & genres
+node scripts/db-stats.mjs --anchors    # suggest smart-match commands for weak signs
+```
+
+### Current coverage gaps
+
+**Underrepresented Venus signs** (seed artists, target is ~31 each):
+
+| Sign | Seed | Gap |
+|------|------|-----|
+| Sagittarius | 17 | needs ~14 more |
+| Libra | 18 | needs ~13 more |
+| Virgo | 22 | needs ~9 more |
+| Pisces | 22 | needs ~9 more |
+
+**Underrepresented genres**: Jazz (19 seed), Drum & Bass / Jungle (31 seed).
+
+**Stray tags**: `valentine` (16 Wikidata artists), `electronic`, `soul` — unmapped Wikidata genre labels that need cleanup or mapping.
+
+### Discovery workflow
+
+The primary discovery method is **Last.fm similarity graph traversal** via `smart-match.mjs`. This naturally preserves the underground aesthetic because it follows real listener connections rather than dumping entire label rosters.
+
+**Typical session:**
+1. Run `node scripts/db-stats.mjs --anchors` to get suggested commands for weak signs
+2. Pick anchor artists with rich similarity graphs (e.g., Four Tet, Tim Hecker, Flying Lotus)
+3. Run `node scripts/smart-match.mjs "Artist Name" --depth 2`
+4. Verify birth dates with a second source (Gemini/Google search is good for this)
+5. Run `node scripts/build-db.mjs` to rebuild the database
+6. Check `node scripts/db-stats.mjs` to see updated coverage
+
+**Other discovery sources** (manual, used alongside smart-match):
+- Spotify liked songs → find similar via Last.fm
+- Label rosters (Warp, Raster-Noton, PAN, Hyperdub, Editions Mego) → cherry-pick standout artists
+- Direct artist knowledge → add to seed-musicians.json manually
+
 ## Deployment
 
 Pushes to `master` trigger a GitHub Actions workflow (`.github/workflows/deploy.yml`) that builds the project and deploys `dist/` to the `gh-pages` branch via [JamesIves/github-pages-deploy-action](https://github.com/JamesIves/github-pages-deploy-action).
@@ -300,13 +342,13 @@ The `build:db` step regenerates `public/data/musicians.json` (checked into the r
 
 ## Design
 
-Dark atmospheric UI inspired by [David Rudnick](https://davidrudnick.org) and [cosine.club](https://cosine.club):
+Dark atmospheric UI:
 
 - **Background**: `#0a0a0c`, surface: `#242424`
 - **Typography**: IBM Plex Mono, Apple Garamond/EB Garamond (serif), Akzidenz-Grotesk/Archivo (sans)
 - **Element accent colors**: fire = `#c0392b`, earth = `#27ae60`, air = `#d4ac0d`, water = `#2980b9`
-- **Rudnick zodiac palette**: Each genre button has a per-genre color (deep teal, coral, bright gold, etc.) that stays hidden at rest (black background) and pops as a vivid overlay on hover with a matching glow box-shadow
-- **Loading ring**: Rudnick ring SVG with `currentColor` fill, cycling through 12 zodiac palette colors via CSS keyframes (18s cycle)
+- **Zodiac palette**: Each genre button has a per-genre color (deep teal, coral, bright gold, etc.) that stays hidden at rest (black background) and pops as a vivid overlay on hover with a matching glow box-shadow
+- **Loading ring**: Ring SVG with `currentColor` fill, cycling through 12 zodiac palette colors via CSS keyframes (18s cycle)
 
 Screens transition with opacity fades. The zoom animation replaces the loading overlay — submitting a birth date triggers a smooth 2.5s camera push into the zodiac ring.
 
@@ -323,7 +365,7 @@ A Canvas-based visualization (`src/viz.js`) draws all 712 artists as a ring of e
 - **Slow rotation** — 360° in 240 seconds
 - **Under-dot labels** — In zoomed mode, each dot shows the artist name underneath in element color. On hover, the label goes bold white with a second line showing zodiac sign + degree (e.g., "Gemini 14.2°")
 - **"You" label** — The user's pulsing Venus dot has a "You" label beneath it in both full-ring and zoomed modes
-- **Hover detection** — Document-level mousemove hit-testing finds the nearest dot, expands it to 7px white. Interactive elements (inputs, buttons) take priority. Custom 24px crosshair cursor generated as a canvas data URL. Hovering a dot on the genre screen highlights the matching genre button with Rudnick palette colors.
+- **Hover detection** — Document-level mousemove hit-testing finds the nearest dot, expands it to 7px white. Interactive elements (inputs, buttons) take priority. Custom 24px crosshair cursor generated as a canvas data URL. Hovering a dot on the genre screen highlights the matching genre button with palette colors.
 - **Click-to-play** — Clicking a dot on the genre screen navigates to that artist's radio stream
 - **Preview dot** — As the user types their birth date, a soft breathing glow appears at the corresponding Venus position on the ring, giving immediate visual feedback before submitting
 - **HiDPI** — Scaled by `devicePixelRatio` for crisp Retina rendering
@@ -335,10 +377,10 @@ The nebula container lives at body level (outside screens) so it persists across
 ### Genre screen
 
 The genre grid is a 2-column layout (480px max-width) where each cell contains:
-- A `.genre-btn` button — black at rest (`--bg-surface`), Rudnick palette color pop on hover/highlight via `--genre-color-pop` custom properties (0.6-0.75 opacity, white text, glow box-shadow)
+- A `.genre-btn` button — black at rest (`--bg-surface`), palette color pop on hover/highlight via `--genre-color-pop` custom properties (0.6-0.75 opacity, white text, glow box-shadow)
 - A `.subgenre-chips` row of small tags beneath it
 
-**Active chips** (7+ artists) get solid accent fill with inverted text. **Inactive chips** (<7 artists) are dimmed as informational tags. Hover tooltips show the exact artist count. Hovering a nebula dot on the genre screen highlights the corresponding genre button with `.is-highlighted` class (same Rudnick color pop). Clicking a nebula dot navigates directly to that artist's radio stream.
+**Active chips** (7+ artists) get solid accent fill with inverted text. **Inactive chips** (<7 artists) are dimmed as informational tags. Hover tooltips show the exact artist count. Hovering a nebula dot on the genre screen highlights the corresponding genre button with `.is-highlighted` class (same color pop). Clicking a nebula dot navigates directly to that artist's radio stream.
 
 ### Track list
 
@@ -483,3 +525,30 @@ The YouTube IFrame API is currently the only audio backend. It's free, has massi
 - **Preserve raw tags** — Store the original MusicBrainz/Last.fm/Wikidata tags alongside the normalized genres, so future re-categorization doesn't require re-fetching from APIs.
 - **Venus element/modality-based discovery** — The matcher already falls back through sign → opposite sign → same element. Could add modality (cardinal/fixed/mutable) as another axis, or weight matches by astrological aspect (trine, sextile, square).
 - **Finer subgenre assignment for Wikidata artists** — Currently Wikidata artists get subgenres derived from their broad genre categories (e.g., `classical` → `classical`). AcousticBrainz recording-level lookups could provide more precise assignments (e.g., distinguishing `romantic` from `baroque` based on actual recordings).
+
+## SEO & discoverability
+
+The site includes several layers of search engine and AI optimization, all additive — no visible UI changes:
+
+- **Meta tags** — Descriptive `<title>`, `<meta description>`, canonical URL (`radio-venus.club`)
+- **Open Graph / Twitter Cards** — Social sharing previews with title, description, and image path
+- **JSON-LD structured data** — `WebApplication` schema for rich search results
+- **Crawlable about copy** — The about text is duplicated inside `#screen-portal` (visually hidden via `clip`) so search engines index it on the landing page without requiring JS navigation
+- **Venus sign index** — A `<footer>` with descriptions of all 12 Venus sign musical aesthetics, targeting long-tail queries like "Venus in Scorpio music taste." Visually hidden but in the DOM
+- **`robots.txt`** — Allows all crawlers, points to sitemap
+- **`sitemap.xml`** — Single-page sitemap for `radio-venus.club`
+- **`llms.txt`** — Plain text file ([llmstxt.org](https://llmstxt.org) convention) describing the app for AI crawlers — what it is, how it works, all 12 Venus sign aesthetics, and creator info
+
+## Built with Claude
+
+This project was built in close collaboration with [Claude Code](https://claude.ai/claude-code) (Anthropic's AI coding agent, model: Claude Opus). Claude served as a pair programmer throughout the project — from architecture decisions and data pipeline design to genre taxonomy research, Venus similarity scoring, and the SEO implementation. The README itself was co-written.
+
+What Claude helped build:
+- The two-tier Venus similarity scoring system (same-sign vs. cross-sign formulas)
+- Genre taxonomy research — cross-referencing MusicBrainz, Discogs, and AcousticBrainz datasets
+- `build-db.mjs` and `smart-match.mjs` data pipelines (Wikidata SPARQL, Last.fm scraping, YouTube lookups)
+- Backup video ID hunting (`find-backups.mjs`)
+- SEO layer (meta tags, structured data, crawlable content, robots.txt, sitemap, llms.txt)
+- Debugging embed errors, genre mapping edge cases, and astronomy-engine integration
+
+The human (Jurgis) brought the astrological premise, musical curation, visual design direction, and all creative decisions. Claude brought the engineering execution and research throughput.
