@@ -13,6 +13,7 @@ import {
   highlightGenres,
   updateProgress, resetProgress, glideToPosition,
   showBuffering, hideBuffering,
+  renderArtistIndex,
 } from './ui.js';
 import {
   startHeartbeat, stopHeartbeat,
@@ -75,9 +76,16 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
   document.getElementById('btn-back-reveal').addEventListener('click', () => history.back());
   document.getElementById('btn-back-genre').addEventListener('click', () => history.back());
-  document.getElementById('btn-info').addEventListener('click', () => {
+  document.getElementById('btn-info').addEventListener('click', async () => {
     showScreen('about');
     history.pushState({ screen: 'about' }, '', '#about');
+    // DB may still be loading — wait for it if needed
+    let db = getDatabase();
+    if (!db.length) {
+      await loadDatabase();
+      db = getDatabase();
+    }
+    renderArtistIndex(db);
   });
   document.getElementById('btn-back-about').addEventListener('click', () => history.back());
   document.getElementById('btn-lyre').addEventListener('click', () => {
@@ -159,7 +167,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   setupDateInput();
 
   history.replaceState({ screen: 'portal' }, '');
-  if (window.location.hash === '#about') {
+  const cameFromAbout = window.location.hash === '#about';
+  if (cameFromAbout) {
     showScreen('about');
     history.pushState({ screen: 'about' }, '', '#about');
   }
@@ -168,6 +177,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     loadDatabase(),
     loadYouTubeAPI(),
   ]);
+
+  // If user landed on #about, render the index now that DB is loaded
+  if (cameFromAbout) renderArtistIndex(getDatabase());
 
   await initPlayer('yt-player', {
     onEnd: () => {

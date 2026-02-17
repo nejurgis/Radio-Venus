@@ -2061,6 +2061,59 @@ button.is-pressed svg,
   text-shadow: 0 0 15px rgba(255, 100, 150, 0.8);
 }
 
+/* ── Artist Index (About screen) ───────────────────────────────────────────── */
+
+.artist-index {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.index-sign-group {
+  margin-bottom: 1.8rem;
+}
+
+.index-sign-heading {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.index-sign-count {
+  opacity: 0.4;
+  font-size: 0.7rem;
+  margin-left: 0.3em;
+}
+
+.index-artist-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.index-artist {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  color: var(--text-dim);
+  opacity: 0.7;
+  line-height: 1.8;
+  cursor: default;
+}
+
+.index-artist::after {
+  content: ' · ';
+  opacity: 0.3;
+}
+
+.index-artist:last-child::after {
+  content: '';
+}
+
+.index-artist:hover {
+  opacity: 1;
+  color: var(--text-bright);
+}
+
 /* ── SEO-only content (in DOM for crawlers, visually hidden) ───────────────── */
 
 .portal-about,

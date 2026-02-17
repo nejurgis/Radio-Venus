@@ -467,6 +467,75 @@ export function hideBuffering() {
   if (ui.bufferClip) ui.bufferClip.setAttribute('width', 0);
 }
 
+// ─── ARTIST INDEX (About screen) ────────────────────────────────────────────
+
+const SIGN_ORDER = [
+  'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo',
+  'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces',
+];
+const SIGN_GLYPHS = {
+  Aries: '♈', Taurus: '♉', Gemini: '♊', Cancer: '♋', Leo: '♌', Virgo: '♍',
+  Libra: '♎', Scorpio: '♏', Sagittarius: '♐', Capricorn: '♑', Aquarius: '♒', Pisces: '♓',
+};
+
+let artistIndexRendered = false;
+
+export function renderArtistIndex(db) {
+  if (artistIndexRendered) return;
+  const container = document.getElementById('artist-index');
+  if (!container || !db?.length) return;
+
+  // Group by sign
+  const bySign = {};
+  SIGN_ORDER.forEach(s => { bySign[s] = []; });
+  db.forEach(a => {
+    const sign = a.venus?.sign;
+    if (sign && bySign[sign]) bySign[sign].push(a);
+  });
+
+  // Sort each sign alphabetically
+  Object.values(bySign).forEach(arr => arr.sort((a, b) => a.name.localeCompare(b.name)));
+
+  // Update stats total
+  const totalEl = document.getElementById('stats-total');
+  if (totalEl) totalEl.textContent = db.length;
+
+  // Update stats rows
+  const statsRows = document.querySelectorAll('.stats-row');
+  const signCounts = {};
+  SIGN_ORDER.forEach(s => { signCounts[s] = bySign[s].length; });
+  const sorted = [...SIGN_ORDER].sort((a, b) => signCounts[b] - signCounts[a]);
+  statsRows.forEach((row, i) => {
+    if (!sorted[i]) return;
+    const sign = sorted[i];
+    const label = row.querySelector('.stats-label');
+    const value = row.querySelector('.stats-value');
+    if (label) label.textContent = sign;
+    if (value) {
+      value.textContent = signCounts[sign];
+      value.className = `stats-value val-${SIGN_ELEMENTS[sign]}`;
+    }
+  });
+
+  // Build index HTML
+  let html = '';
+  SIGN_ORDER.forEach(sign => {
+    const artists = bySign[sign];
+    const el = SIGN_ELEMENTS[sign];
+    html += `<div class="index-sign-group">`;
+    html += `<h3 class="index-sign-heading">${sign} <span class="index-sign-count">${artists.length}</span></h3>`;
+    html += `<div class="index-artist-list">`;
+    html += artists.map(a => {
+      const deg = Math.round(a.venus?.degree || 0);
+      return `<span class="index-artist" title="${sign} ${deg}°">${a.name}</span>`;
+    }).join('');
+    html += `</div></div>`;
+  });
+
+  container.innerHTML = html;
+  artistIndexRendered = true;
+}
+
 export function showEmptyState(show) {
   if (ui.emptyState) ui.emptyState.hidden = !show;
   if (ui.playerContainer) ui.playerContainer.style.display = show ? 'none' : '';
