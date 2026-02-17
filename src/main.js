@@ -17,7 +17,7 @@ import {
 import {
   startHeartbeat, stopHeartbeat,
   trackSongStart, trackSongComplete, trackSongSkip, trackSongError,
-  trackShare, trackGenreSelect, trackFavorite,
+  trackShare, trackGenreSelect, trackFavorite, trackHarpToggle, trackPlaylistShare,
 } from './analytics.js';
 
 // ── State ───────────────────────────────────────────────────────────────────
@@ -1013,6 +1013,8 @@ document.addEventListener('click', e => {
     setHarpEnabled(on);
     document.getElementById('btn-harp').classList.toggle('is-active', on);
     nudgeWheel(on ? 3 : -4);
+    // TRACKING
+    trackHarpToggle(on ? 'enabled' : 'disabled');
   }
   if (e.target.id === 'btn-share' || e.target.closest('#btn-share')) {
     shareCurrentTrack();
@@ -1088,18 +1090,28 @@ async function sharePlaylist() {
   const base = window.location.origin + window.location.pathname;
 
   let shareUrl, toast;
+  
   if (genreId === 'valentine') {
     shareUrl = `${base}?utm_source=share&utm_medium=clipboard&utm_campaign=valentine#valentine`;
     toast = 'Valentine link copied';
+    
+    // New detailed tracker
+    trackPlaylistShare('valentine', tracks.length);
+    
   } else if (genreId === 'favorites') {
     const names = tracks.map(t => t.name).join(',');
     shareUrl = `${base}?utm_source=share&utm_medium=clipboard&utm_campaign=favorites#favorites=${encodeURIComponent(names)}`;
     toast = 'Favorites link copied';
+    
+    // New detailed tracker
+    trackPlaylistShare('favorites', tracks.length);
+    
   } else {
+    // 🛑 Stops here for 'moon' or generic genres
     return;
   }
 
-  trackShare(genreId, genreId === 'valentine' ? 'valentine_link' : 'favorites_link');
+
   await copyAndToast(shareUrl, toast);
 }
 

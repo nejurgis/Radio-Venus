@@ -88,3 +88,18 @@ export function trackFavorite(artist, action) {
     action, // 'add' or 'remove'
   });
 }
+
+export function trackHarpToggle(state) {
+  send('harpButton_toggle', {
+    event_category: 'ui',
+    state: state, // <--- Use the argument you passed in!
+  });
+}
+
+export function trackPlaylistShare(genre, trackCount) {
+  send('playlist_share', {
+    event_category: 'interaction',
+    genre: genre,      // e.g., 'valentine', 'favorites', 'moon'
+    count: trackCount, // How many tracks were in the shared list?
+  });
+}
