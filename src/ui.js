@@ -86,6 +86,8 @@ export function showScreen(name) {
   if (ui.screens[currentScreen]) ui.screens[currentScreen].classList.remove('active');
   if (ui.screens[name]) ui.screens[name].classList.add('active');
   currentScreen = name;
+
+  trackScreenView(name);
 }
 
 export function showLoading(show) {

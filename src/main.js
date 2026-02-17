@@ -17,7 +17,7 @@ import {
 import {
   startHeartbeat, stopHeartbeat,
   trackSongStart, trackSongComplete, trackSongSkip, trackSongError,
-  trackShare, trackGenreSelect, trackFavorite, trackHarpToggle, trackPlaylistShare,
+  trackShare, trackGenreSelect, trackFavorite, trackHarpToggle, trackPlaylistShare, trackShuffle,
 } from './analytics.js';
 
 // ── State ───────────────────────────────────────────────────────────────────
@@ -330,6 +330,61 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (signIdx >= 0) zoomToSign(signIdx, { duration: 2500 });
       updateNowPlayingButton(false);
     }
+  }
+
+  // ── Handle #moon link (Today's Moon) ──
+  if (window.location.hash === '#moon' && dbResult.status === 'fulfilled') {
+    history.replaceState({ screen: 'portal' }, '', window.location.pathname);
+    
+    // 1. Calculate Real-Time Moon Position
+    const now = new Date();
+    const moonData = calculateMoon(now);
+    const moonSign = moonData.sign; 
+    const moonDeg = Math.round(moonData.longitude % 30);
+    const el = ZODIAC_ELEMENTS[moonSign] || 'water'; // Default to water (moody) if undefined
+
+    // 2. Setup Visuals (Nebula & Theme)
+    setElementTheme(el);
+    renderRadioHeader(moonSign, `Moon in ${moonSign} ${moonDeg}°`);
+    showScreen('radio');
+    showNebula(true);
+
+    const nebulaCont = document.getElementById('nebula-container');
+    if (nebulaCont) {
+      nebulaCont.classList.add('is-dimmed');
+      nebulaCont.classList.add('is-deep-dimmed');
+      nebulaCont.classList.add('is-zoomed');
+    }
+    dimNebula(true);
+    deepDimNebula(true);
+    setZoomDrift(true);
+    history.pushState({ screen: 'radio' }, '');
+
+    // 3. Get Tracks & Render
+    // We pass the calculated longitude to matchMoon
+    tracks = matchMoon(moonData.longitude);
+    playingGenreId = 'moon';
+    activeGenreLabel = "Today's Moon";
+    
+    currentTrackIndex = 0;
+    failedIds.clear();
+    trackVideoIndex.clear();
+    
+    // 4. Start Playback
+    // Pass 'sharePlaylist' here so the share button appears on the shared page too!
+    renderTrackList(tracks, 0, i => playTrack(i), failedIds, new Set(getFavorites()), sharePlaylist);
+
+    if (tracks.length > 0) {
+      updateNowPlaying(tracks[0].name);
+      updateFavoriteButton(isFavorite(tracks[0].name));
+      cueVideo(tracks[0].youtubeVideoId);
+      updatePlayButton(false);
+    }
+
+    // 5. Zoom to the Moon's Sign
+    const signIndex = ZODIAC_SIGNS.indexOf(moonSign);
+    if (signIndex >= 0) zoomToSign(signIndex, { duration: 2500, targetDeg: moonData.longitude });
+    updateNowPlayingButton(false);
   }
 
   // ── Handle shared link (?vid=...&t=...&artist=...) ──
@@ -684,6 +739,14 @@ function rebuildGenreGrid() {
 
 function startRadio(genreId, genreLabel, subgenreId = null) {
   trackGenreSelect(genreId, subgenreId);
+
+  // 1. DEFINE SHARE PERMISSION
+  // This enables the button for Moon, Valentine, and Favorites
+  const playlistShareFn = (genreId === 'valentine' || genreId === 'favorites' || genreId === 'moon') 
+    ? sharePlaylist 
+    : undefined;
+
+  // 2. SETUP CONTEXT
   const effectiveLong = tunedLongitude != null ? tunedLongitude : (venus ? venus.longitude : 0);
   const effectiveSign = signFromLongitude(effectiveLong);
   const effectiveElement = ZODIAC_ELEMENTS[effectiveSign] || 'air';
@@ -700,15 +763,14 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
     history.pushState({ screen: 'radio' }, '');
   }
 
-  const playlistShareFn = (genreId === 'valentine' || genreId === 'favorites') ? sharePlaylist : undefined;
-
-  // 1. OPTIMIZATION: If clicking the active genre, just re-render and return.
+  // 3. OPTIMIZATION: If clicking the active genre, just re-render and return.
   if (tracks.length > 0 && genreId === playingGenreId && subgenreId === playingSubgenreId) {
+    // PASS playlistShareFn HERE
     renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()), playlistShareFn);
     return tracks;
   }
 
-  // 2. CALCULATE CANDIDATES (The Fix)
+  // 4. FIND TRACKS
   let candidateTracks;
 
   if (genreId === 'favorites') {
@@ -716,16 +778,15 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
   } 
   else if (genreId === 'moon') {
     // ── MOON LOGIC ──
-    // 1. Calculate REAL-TIME Moon position
     const now = new Date();
     const moonData = calculateMoon(now); 
     
-    // 2. Update header to show "Moon in [Sign]" instead of the user's Venus sign
+    // Update Header
     const moonSign = moonData.sign; 
     const moonDeg = Math.round(moonData.longitude % 30);
     renderRadioHeader(moonSign, `Moon in ${moonSign} ${moonDeg}°`);
     
-    // 3. Find the closest artists using your new matcher
+    // Find Artists
     candidateTracks = matchMoon(moonData.longitude);
   } 
   else {
@@ -736,7 +797,7 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
     });
   }
 
-  // 3. HANDLE EMPTY STATE
+  // 5. HANDLE RESULTS
   const newLabel = subgenreId ? `${genreLabel} · ${subgenreId}` : genreLabel;
 
   if (candidateTracks.length === 0) {
@@ -745,11 +806,12 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
   }
   showEmptyState(false);
 
-  // 4. PLAYBACK STATE UPDATE
+  // Reset State
   originalTrackOrder = null;
   isShuffled = false;
   document.getElementById('btn-shuffle').classList.remove('is-active');
 
+  // 6. PLAY & RENDER
   if (isPlaying() && hasPlayed) {
     renderTrackList(candidateTracks, -1, (i) => {
       tracks = candidateTracks;
@@ -759,7 +821,7 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
       failedIds.clear();
       trackVideoIndex.clear();
       playTrack(i);
-    }, new Set(), new Set(getFavorites()), playlistShareFn);
+    }, new Set(), new Set(getFavorites()), playlistShareFn); // <--- PASSED HERE
   } else {
     tracks = candidateTracks;
     playingGenreId = genreId;
@@ -767,6 +829,8 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
     activeGenreLabel = newLabel;
     failedIds.clear();
     trackVideoIndex.clear();
+    
+    // <--- PASSED HERE
     renderTrackList(tracks, 0, i => playTrack(i), failedIds, new Set(getFavorites()), playlistShareFn);
     playTrack(0);
   }
@@ -1007,6 +1071,7 @@ document.addEventListener('click', e => {
   }
   if (e.target.id === 'btn-shuffle' || e.target.closest('#btn-shuffle')) {
     shuffleTracks();
+    trackShuffle(isShuffled);
   }
   if (e.target.id === 'btn-harp' || e.target.closest('#btn-harp')) {
     const on = !isHarpEnabled();
@@ -1054,7 +1119,7 @@ async function copyAndToast(url, toast) {
 }
 
 function getPlaylistShareFn() {
-  return (playingGenreId === 'valentine' || playingGenreId === 'favorites') ? sharePlaylist : undefined;
+  return (playingGenreId === 'valentine' || playingGenreId === 'favorites' || playingGenreId === 'moon') ? sharePlaylist : undefined;
 }
 
 // Dashboard share button — always shares the individual song
@@ -1106,8 +1171,13 @@ async function sharePlaylist() {
     // New detailed tracker
     trackPlaylistShare('favorites', tracks.length);
     
+  } else if (genreId === 'moon') {
+    // ── NEW MOON LOGIC ──
+    shareUrl = `${base}?utm_source=share&utm_medium=clipboard&utm_campaign=moon#moon`;
+    toast = 'Moon playlist copied';
+    trackPlaylistShare('moon', tracks.length);
   } else {
-    // 🛑 Stops here for 'moon' or generic genres
+    // 🛑 Stops here or generic genres
     return;
   }
 

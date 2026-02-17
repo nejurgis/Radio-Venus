@@ -103,3 +103,17 @@ export function trackPlaylistShare(genre, trackCount) {
     count: trackCount, // How many tracks were in the shared list?
   });
 }
+
+export function trackScreenView(screenName) {
+  send('screen_view', {
+    event_category: 'navigation',
+    screen_name: screenName
+  });
+}
+
+export function trackShuffle(state) {
+  send('shuffle_toggle', {
+    event_category: 'playback',
+    state: state ? 'on' : 'off'
+  });
+}
