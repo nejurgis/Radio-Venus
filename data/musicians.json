@@ -21,6 +21,48 @@
     ]
   },
   {
+    "name": "500",
+    "birthDate": "1962-12-09",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 12.9,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "techno"
+    ],
+    "subgenres": [
+      "ambient",
+      "techno"
+    ],
+    "youtubeVideoId": "JS75nLLJJG8",
+    "backupVideoIds": []
+  },
+  {
+    "name": "7038634357",
+    "birthDate": "1995-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 5.9,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "industrial",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "industrial",
+      "idm"
+    ],
+    "youtubeVideoId": "8HljIfqeA1E",
+    "backupVideoIds": []
+  },
+  {
     "name": "A Certain Ratio",
     "birthDate": "1977-06-15",
     "venus": {
@@ -40,6 +82,25 @@
       "GY5WUXdF7c0",
       "FDegghwtToc"
     ]
+  },
+  {
+    "name": "A. G. Cook",
+    "birthDate": "1990-08-23",
+    "venus": {
+      "sign": "Leo",
+      "degree": 11.7,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "valentine",
+      "electronic"
+    ],
+    "subgenres": [
+      "electronica"
+    ],
+    "youtubeVideoId": "q2ZasIb0Hsw",
+    "backupVideoIds": []
   },
   {
     "name": "Actress",
@@ -194,6 +255,48 @@
       "0WudK_Ds3qc",
       "s1DNc4kjfYM"
     ]
+  },
+  {
+    "name": "Alessandro Cortini",
+    "birthDate": "1976-05-24",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 26.7,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "industrial"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm",
+      "industrial"
+    ],
+    "youtubeVideoId": "CsVNVky5JUI",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Alex Somers",
+    "birthDate": "1984-03-07",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 21.3,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "1m-hlVeRccA",
+    "backupVideoIds": []
   },
   {
     "name": "Alexander von Zemlinsky",
@@ -393,6 +496,26 @@
     ]
   },
   {
+    "name": "Amiina",
+    "birthDate": "1998-06-15",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 19.3,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "FHC7kPInt8c",
+    "backupVideoIds": []
+  },
+  {
     "name": "Amon Tobin",
     "birthDate": "1972-02-07",
     "venus": {
@@ -503,6 +626,22 @@
       "dCmJ5KmCKMs",
       "y7-osQa9IGQ"
     ]
+  },
+  {
+    "name": "Angel Olsen",
+    "birthDate": "1987-01-22",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 15.2,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "valentine"
+    ],
+    "subgenres": [],
+    "youtubeVideoId": "W0J0m5sU_Ys",
+    "backupVideoIds": []
   },
   {
     "name": "Angel-Ho",
@@ -1186,6 +1325,26 @@
     ]
   },
   {
+    "name": "Avril23",
+    "birthDate": "1993-04-23",
+    "venus": {
+      "sign": "Aries",
+      "degree": 3.8,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "7WkJZSyWwks",
+    "backupVideoIds": []
+  },
+  {
     "name": "Axel Dörner",
     "birthDate": "1964-04-26",
     "venus": {
@@ -1510,6 +1669,27 @@
     ]
   },
   {
+    "name": "Bianca Scout",
+    "birthDate": "1973-09-29",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 18.7,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "triphop"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "dKdaLUuYbqY",
+    "backupVideoIds": []
+  },
+  {
     "name": "Biosphere",
     "birthDate": "1962-05-30",
     "venus": {
@@ -1530,6 +1710,28 @@
       "J08hoCxqaEw",
       "xL3MBMim36E"
     ]
+  },
+  {
+    "name": "Bitchin Bajas",
+    "birthDate": "2010-00-00",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 28.2,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "idm",
+      "ambient",
+      "darkwave"
+    ],
+    "subgenres": [
+      "idm",
+      "ambient",
+      "darkwave"
+    ],
+    "youtubeVideoId": "2Y_ut3rJL0s",
+    "backupVideoIds": []
   },
   {
     "name": "Björk",
@@ -1554,6 +1756,25 @@
       "gWwQrb3-BGY",
       "4P5nmO68XbA"
     ]
+  },
+  {
+    "name": "Black Chamber",
+    "birthDate": "1943-01-25",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 21.4,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "jazz",
+      "triphop"
+    ],
+    "subgenres": [
+      "spiritual-jazz"
+    ],
+    "youtubeVideoId": "SxP_3ov68S8",
+    "backupVideoIds": []
   },
   {
     "name": "Blancmange",
@@ -1598,6 +1819,29 @@
       "Wv3G_nPgR4s",
       "lHSdQ6ZOzQY"
     ]
+  },
+  {
+    "name": "Blue Lake",
+    "birthDate": "1982-08-08",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 22.7,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "idm",
+      "jazz",
+      "ambient",
+      "triphop"
+    ],
+    "subgenres": [
+      "idm",
+      "spiritual-jazz",
+      "ambient"
+    ],
+    "youtubeVideoId": "zG80RCMyCfU",
+    "backupVideoIds": []
   },
   {
     "name": "Boards of Canada",
@@ -2176,6 +2420,42 @@
     ]
   },
   {
+    "name": "Caspian",
+    "birthDate": "2003-00-00",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 1.7,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "idm",
+      "ambient"
+    ],
+    "subgenres": [
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "Azwuqj7JnMI",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Cassandra Jenkins",
+    "birthDate": "1984-01-01",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 0.5,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "valentine"
+    ],
+    "subgenres": [],
+    "youtubeVideoId": "tsEbhrMh0mM",
+    "backupVideoIds": []
+  },
+  {
     "name": "Caterina Cavalieri",
     "birthDate": "1755-03-18",
     "venus": {
@@ -2488,6 +2768,26 @@
     ]
   },
   {
+    "name": "Claire Rousay",
+    "birthDate": "1926-08-10",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 20.7,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "idm",
+      "ambient"
+    ],
+    "subgenres": [
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "D6C1aWoU0gY",
+    "backupVideoIds": []
+  },
+  {
     "name": "Claude Debussy",
     "birthDate": "1862-08-22",
     "venus": {
@@ -2681,6 +2981,50 @@
       "house"
     ],
     "youtubeVideoId": "TKxKPkp_riY",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Croatian Amor",
+    "birthDate": "1989-06-22",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 21.7,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "industrial",
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "industrial",
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "podihyHpTzQ",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Dale Cooper Quartet & The Dictaphones",
+    "birthDate": "1948-02-04",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 21.2,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "jazz",
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "UDwdVKZAgOU",
     "backupVideoIds": []
   },
   {
@@ -3130,6 +3474,28 @@
     ]
   },
   {
+    "name": "Dj Lostboi",
+    "birthDate": "1992-08-13",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 7.7,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "techno"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm",
+      "techno"
+    ],
+    "youtubeVideoId": "nbLQYqHrJR0",
+    "backupVideoIds": []
+  },
+  {
     "name": "DJ Rashad",
     "birthDate": "1979-10-09",
     "venus": {
@@ -3237,6 +3603,26 @@
       "mmCnQDUSO4I",
       "QDW4VJGKLAQ"
     ]
+  },
+  {
+    "name": "Do Make Say Think",
+    "birthDate": "1995-00-00",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 3.4,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "idm",
+      "ambient"
+    ],
+    "subgenres": [
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "MJrxgvzieMo",
+    "backupVideoIds": []
   },
   {
     "name": "Don Cherry",
@@ -3416,6 +3802,32 @@
       "BLwOPYjIjx8",
       "xXMNX5xljZs"
     ]
+  },
+  {
+    "name": "Dylan Henner",
+    "birthDate": "1941-05-24",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 12.2,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "techno",
+      "darkwave",
+      "classical"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm",
+      "techno",
+      "darkwave",
+      "classical"
+    ],
+    "youtubeVideoId": "ucv95vqBlxk",
+    "backupVideoIds": []
   },
   {
     "name": "Dynatron",
@@ -3693,6 +4105,30 @@
     "backupVideoIds": []
   },
   {
+    "name": "Elori Saxl",
+    "birthDate": "1990-06-15",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 18.8,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "jazz",
+      "classical",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "spiritual-jazz",
+      "classical",
+      "idm"
+    ],
+    "youtubeVideoId": "4Yjjc8-dWZY",
+    "backupVideoIds": []
+  },
+  {
     "name": "Elysia Crampton",
     "birthDate": "1985-12-09",
     "venus": {
@@ -3734,6 +4170,32 @@
     "backupVideoIds": []
   },
   {
+    "name": "Emily A. Sprague",
+    "birthDate": "1994-06-15",
+    "venus": {
+      "sign": "Leo",
+      "degree": 0.2,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "techno",
+      "darkwave",
+      "classical"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm",
+      "techno",
+      "darkwave",
+      "classical"
+    ],
+    "youtubeVideoId": "WTPvNYJCuzM",
+    "backupVideoIds": []
+  },
+  {
     "name": "Engelbert Humperdinck",
     "birthDate": "1854-09-01",
     "venus": {
@@ -3749,6 +4211,27 @@
       "classical"
     ],
     "youtubeVideoId": "am1p961nSzc",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Epic45",
+    "birthDate": "1995-00-00",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 3.4,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "artpop",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "NHnHQyq7UbI",
     "backupVideoIds": []
   },
   {
@@ -3985,6 +4468,48 @@
     ]
   },
   {
+    "name": "Ex-Easter Island Head",
+    "birthDate": "1961-06-15",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 8.5,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "classical"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm",
+      "classical"
+    ],
+    "youtubeVideoId": "Cwz9l7gdRhI",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Explosions in the Sky",
+    "birthDate": "1999-00-00",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 15.8,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "TeYBgOTyVLQ",
+    "backupVideoIds": []
+  },
+  {
     "name": "Fad Gadget",
     "birthDate": "1956-09-08",
     "venus": {
@@ -4061,6 +4586,26 @@
       "opera"
     ],
     "youtubeVideoId": "wqf7gBo_pYQ",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Felicia Atkinson",
+    "birthDate": "1981-00-00",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 7.9,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "nJ2zW4AidJw",
     "backupVideoIds": []
   },
   {
@@ -4445,10 +4990,7 @@
       "techno"
     ],
     "youtubeVideoId": "vGeJVHwOZSk",
-    "backupVideoIds": [
-      "iEu37Q0LrPw",
-      "kcn7sSfWRrg"
-    ]
+    "backupVideoIds": []
   },
   {
     "name": "Francesco Araja",
@@ -5554,6 +6096,48 @@
     ]
   },
   {
+    "name": "Gnod",
+    "birthDate": "2006-12-15",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 5.4,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "industrial"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm",
+      "industrial"
+    ],
+    "youtubeVideoId": "ymVdCDt3Zzs",
+    "backupVideoIds": []
+  },
+  {
+    "name": "God Is an Astronaut",
+    "birthDate": "2002-00-00",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 27.5,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "koQYc7HMlMI",
+    "backupVideoIds": []
+  },
+  {
     "name": "Goldfrapp",
     "birthDate": "1966-05-13",
     "venus": {
@@ -5762,6 +6346,28 @@
     ]
   },
   {
+    "name": "Hammock",
+    "birthDate": "2004-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 13.7,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "artpop",
+      "idm",
+      "triphop"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "xB3ZgBjqYqc",
+    "backupVideoIds": []
+  },
+  {
     "name": "Hanno Müller-Brachmann",
     "birthDate": "1970-01-01",
     "venus": {
@@ -5832,6 +6438,25 @@
       "opera"
     ],
     "youtubeVideoId": "t-3pxiUedls",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Hans Knappertsbusch",
+    "birthDate": "1888-03-12",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 21.2,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "opera",
+      "classical"
+    ],
+    "youtubeVideoId": "zsBsKwv2yPM",
     "backupVideoIds": []
   },
   {
@@ -6312,6 +6937,27 @@
     ]
   },
   {
+    "name": "Hollie Kenniff",
+    "birthDate": "1981-10-09",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 0.6,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "artpop"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "897Z5B0ub9s",
+    "backupVideoIds": []
+  },
+  {
     "name": "Holly Herndon",
     "birthDate": "1980-07-26",
     "venus": {
@@ -6496,6 +7142,22 @@
       "contemporary"
     ],
     "youtubeVideoId": "FFPjFjUonX8",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Iko Chérie",
+    "birthDate": "1990-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 6.2,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "valentine"
+    ],
+    "subgenres": [],
+    "youtubeVideoId": "7jOkiDyxShI",
     "backupVideoIds": []
   },
   {
@@ -6803,10 +7465,7 @@
       "ambient"
     ],
     "youtubeVideoId": "FhpIE3uCn2E",
-    "backupVideoIds": [
-      "2chmQiR8R10",
-      "d1aB3g95kmM"
-    ]
+    "backupVideoIds": []
   },
   {
     "name": "Jan Dismas Zelenka",
@@ -7027,6 +7686,26 @@
     ]
   },
   {
+    "name": "Jefre Cantu-Ledesma",
+    "birthDate": "1972-09-09",
+    "venus": {
+      "sign": "Leo",
+      "degree": 1.6,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient",
+      "industrial"
+    ],
+    "subgenres": [
+      "ambient",
+      "industrial"
+    ],
+    "youtubeVideoId": "N_P8S1ryg6U",
+    "backupVideoIds": []
+  },
+  {
     "name": "Jel",
     "birthDate": "1978-05-07",
     "venus": {
@@ -7185,6 +7864,48 @@
       "classical"
     ],
     "youtubeVideoId": "8Te0SgWQ9OE",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Joe Westerlund",
+    "birthDate": "1973-06-15",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 11.9,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "jazz",
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "C4SGk2SQksQ",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Joel Fausto & Illusion Orchestra",
+    "birthDate": "1923-01-28",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 21,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "jazz",
+      "ambient"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "ambient"
+    ],
+    "youtubeVideoId": "Obm4iuZwyxE",
     "backupVideoIds": []
   },
   {
@@ -7614,6 +8335,29 @@
     ]
   },
   {
+    "name": "Jónsi",
+    "birthDate": "1975-04-23",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 11.2,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "classical",
+      "artpop"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm",
+      "classical"
+    ],
+    "youtubeVideoId": "1m-hlVeRccA",
+    "backupVideoIds": []
+  },
+  {
     "name": "Jörn Arnecke",
     "birthDate": "1973-09-28",
     "venus": {
@@ -7755,6 +8499,28 @@
       "classical"
     ],
     "youtubeVideoId": "p-BLASZtz88",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Josiah Steinbrick",
+    "birthDate": "1981-07-13",
+    "venus": {
+      "sign": "Leo",
+      "degree": 16.6,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "idm",
+      "ambient",
+      "jazz"
+    ],
+    "subgenres": [
+      "idm",
+      "ambient",
+      "spiritual-jazz"
+    ],
+    "youtubeVideoId": "9_1AXu9qbxo",
     "backupVideoIds": []
   },
   {
@@ -7962,6 +8728,49 @@
     "backupVideoIds": []
   },
   {
+    "name": "Kaitlyn Aurelia Smith",
+    "birthDate": "1987-00-00",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 5.3,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "artpop"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "rUxM7KrUTOA",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Kali Malone",
+    "birthDate": "1994-00-00",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 26.9,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "classical",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "classical",
+      "idm"
+    ],
+    "youtubeVideoId": "bpZqFa0Qiro",
+    "backupVideoIds": []
+  },
+  {
     "name": "Kane Ikin",
     "birthDate": "2012-09-18",
     "venus": {
@@ -7984,6 +8793,48 @@
       "FQ8_4dyPJ2g",
       "YX6uUB1T_0w"
     ]
+  },
+  {
+    "name": "Kara-Lis Coverdale",
+    "birthDate": "1951-09-22",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 2.2,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "classical"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm",
+      "classical"
+    ],
+    "youtubeVideoId": "oRzExskgXAA",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Kareem Lotfy",
+    "birthDate": "1996-08-12",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 4.6,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "FQr5kKP2vQw",
+    "backupVideoIds": []
   },
   {
     "name": "Karel Weis",
@@ -8148,6 +8999,51 @@
     ]
   },
   {
+    "name": "Kelly Moran",
+    "birthDate": "1988-02-17",
+    "venus": {
+      "sign": "Aries",
+      "degree": 9.4,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "valentine",
+      "classical"
+    ],
+    "subgenres": [
+      "classical"
+    ],
+    "youtubeVideoId": "6XVngfOBBas",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Kiasmos",
+    "birthDate": "2009-06-15",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 9,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "idm",
+      "techno",
+      "darkwave",
+      "classical",
+      "ambient"
+    ],
+    "subgenres": [
+      "idm",
+      "techno",
+      "darkwave",
+      "classical",
+      "ambient"
+    ],
+    "youtubeVideoId": "cxvdImFbNyQ",
+    "backupVideoIds": []
+  },
+  {
     "name": "Kid Spatula",
     "birthDate": "1971-09-26",
     "venus": {
@@ -8188,6 +9084,28 @@
       "trip-hop"
     ],
     "youtubeVideoId": "HI8XhwncEW4",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Klara Lewis",
+    "birthDate": "1935-09-29",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 6.6,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "classical"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm",
+      "classical"
+    ],
+    "youtubeVideoId": "5VWnVagvRIk",
     "backupVideoIds": []
   },
   {
@@ -8327,6 +9245,26 @@
       "b9KfQZ9yelg",
       "1A_PBLprJ0c"
     ]
+  },
+  {
+    "name": "KMRU",
+    "birthDate": "1997-01-10",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 0.3,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "a2Lh4LWp8vg",
+    "backupVideoIds": []
   },
   {
     "name": "Kode9",
@@ -8524,6 +9462,27 @@
       "qDIEhox4g1k",
       "lQERnJKuqmw"
     ]
+  },
+  {
+    "name": "Lawrence English",
+    "birthDate": "1976-01-01",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 30,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "artpop"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "_caB1G0lQik",
+    "backupVideoIds": []
   },
   {
     "name": "Lee Gamble",
@@ -9102,6 +10061,26 @@
     "backupVideoIds": []
   },
   {
+    "name": "Luke Sanger",
+    "birthDate": "1947-04-17",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 20.9,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "Ka9FGYRDkjs",
+    "backupVideoIds": []
+  },
+  {
     "name": "Luke Vibert",
     "birthDate": "1973-01-26",
     "venus": {
@@ -9126,6 +10105,28 @@
       "zORsCXOFFRw",
       "yLavt_v96os"
     ]
+  },
+  {
+    "name": "Luke Wyland",
+    "birthDate": "1976-10-22",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 2.2,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "classical"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm",
+      "classical"
+    ],
+    "youtubeVideoId": "xZyyGxLgTFo",
+    "backupVideoIds": []
   },
   {
     "name": "Lusine ICL",
@@ -9174,6 +10175,26 @@
       "CyV-sOs_V-A",
       "t6zhuFAoC6Y"
     ]
+  },
+  {
+    "name": "M. Sage",
+    "birthDate": "1987-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 5.2,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "Imt21GOQgjY",
+    "backupVideoIds": []
   },
   {
     "name": "Mabe Fratti",
@@ -9279,6 +10300,26 @@
       "CactVeNcCxI",
       "Eha6KgS6pys"
     ]
+  },
+  {
+    "name": "Manet",
+    "birthDate": "1958-06-15",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 16.6,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "jazz",
+      "ambient"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "ambient"
+    ],
+    "youtubeVideoId": "khaglVoJMx8",
+    "backupVideoIds": []
   },
   {
     "name": "Manfred Stahnke",
@@ -9607,6 +10648,27 @@
     "backupVideoIds": []
   },
   {
+    "name": "Mechatok",
+    "birthDate": "1998-03-24",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 17.2,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "idm",
+      "ambient",
+      "dnb"
+    ],
+    "subgenres": [
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "QL_0W1FP0Y0",
+    "backupVideoIds": []
+  },
+  {
     "name": "Mega Drive",
     "birthDate": "1998-06-19",
     "venus": {
@@ -9626,6 +10688,26 @@
       "Uo0ihRd1Ji0",
       "kcPtMyOPgBw"
     ]
+  },
+  {
+    "name": "Merely & Malibu",
+    "birthDate": "1994-11-09",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 6.5,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "Z7LBXOJLMH8",
+    "backupVideoIds": []
   },
   {
     "name": "Merzbow",
@@ -9780,6 +10862,29 @@
       "classical"
     ],
     "youtubeVideoId": "iueg1fR_LDQ",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Milan W.",
+    "birthDate": "1756-01-27",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 29,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "idm",
+      "ambient",
+      "darkwave",
+      "artpop"
+    ],
+    "subgenres": [
+      "idm",
+      "ambient",
+      "darkwave"
+    ],
+    "youtubeVideoId": "QL_0W1FP0Y0",
     "backupVideoIds": []
   },
   {
@@ -9998,6 +11103,29 @@
     "backupVideoIds": []
   },
   {
+    "name": "Mogwai",
+    "birthDate": "1995-00-00",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 3.4,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "industrial",
+      "darkwave",
+      "artpop"
+    ],
+    "subgenres": [
+      "ambient",
+      "industrial",
+      "darkwave"
+    ],
+    "youtubeVideoId": "YYpimokjfYw",
+    "backupVideoIds": []
+  },
+  {
     "name": "Monaco",
     "birthDate": "1995-06-15",
     "venus": {
@@ -10019,6 +11147,25 @@
       "dUYU5RNyiYo",
       "aqOnr8cRv8w"
     ]
+  },
+  {
+    "name": "Mono",
+    "birthDate": "1987-02-05",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 0.4,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "triphop"
+    ],
+    "subgenres": [
+      "ambient"
+    ],
+    "youtubeVideoId": "HKgeb_8Q9hU",
+    "backupVideoIds": []
   },
   {
     "name": "Monolake",
@@ -10083,6 +11230,93 @@
     "backupVideoIds": [
       "rOLN9T9w9kA"
     ]
+  },
+  {
+    "name": "More Eaze",
+    "birthDate": "1948-10-06",
+    "venus": {
+      "sign": "Leo",
+      "degree": 30,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "industrial"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm",
+      "industrial"
+    ],
+    "youtubeVideoId": "FDX7tS1IKn4",
+    "backupVideoIds": []
+  },
+  {
+    "name": "more eaze & claire rousay",
+    "birthDate": "1685-03-21",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 5.7,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "techno"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm",
+      "techno"
+    ],
+    "youtubeVideoId": "eICZeDiPkaE",
+    "backupVideoIds": []
+  },
+  {
+    "name": "more eaze & kaho matsui",
+    "birthDate": "1961-07-26",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 20.9,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "aiBMUWMalm8",
+    "backupVideoIds": []
+  },
+  {
+    "name": "MORI MORI",
+    "birthDate": "1953-12-17",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 14.9,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "idm",
+      "ambient",
+      "industrial",
+      "artpop"
+    ],
+    "subgenres": [
+      "idm",
+      "ambient",
+      "industrial"
+    ],
+    "youtubeVideoId": "K4-DV0sDchM",
+    "backupVideoIds": []
   },
   {
     "name": "Moritz Hauptmann",
@@ -10197,6 +11431,27 @@
     ]
   },
   {
+    "name": "múm",
+    "birthDate": "1997-01-01",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 19.1,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "triphop"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "l5hBkQT3-C8",
+    "backupVideoIds": []
+  },
+  {
     "name": "Murcof",
     "birthDate": "1970-07-16",
     "venus": {
@@ -10241,6 +11496,22 @@
       "Qqi_EZ0DgrA",
       "l_3lOC1arME"
     ]
+  },
+  {
+    "name": "Nathanial Young",
+    "birthDate": "1995-02-14",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 10.9,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "valentine"
+    ],
+    "subgenres": [],
+    "youtubeVideoId": "igZrrKLe81I",
+    "backupVideoIds": []
   },
   {
     "name": "Neil Scrivin",
@@ -10512,6 +11783,31 @@
     ]
   },
   {
+    "name": "Oklou",
+    "birthDate": "1993-04-23",
+    "venus": {
+      "sign": "Aries",
+      "degree": 3.8,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "idm",
+      "artpop",
+      "ambient",
+      "darkwave",
+      "techno"
+    ],
+    "subgenres": [
+      "idm",
+      "ambient",
+      "darkwave",
+      "techno"
+    ],
+    "youtubeVideoId": "Jg9uwVvOy0E",
+    "backupVideoIds": []
+  },
+  {
     "name": "Okzharp and Manthe Ribane",
     "birthDate": "1985-01-01",
     "venus": {
@@ -10658,6 +11954,53 @@
     ]
   },
   {
+    "name": "Oren Ambarchi",
+    "birthDate": "1969-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 26.2,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "classical",
+      "techno",
+      "darkwave"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm",
+      "classical",
+      "techno",
+      "darkwave"
+    ],
+    "youtubeVideoId": "XPyRxhvhJYk",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Organ Tapes",
+    "birthDate": "2003-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 6.5,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "artpop"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "Cfqs_NNq3SU",
+    "backupVideoIds": []
+  },
+  {
     "name": "Ornette Coleman",
     "birthDate": "1930-03-09",
     "venus": {
@@ -10788,6 +12131,22 @@
     "backupVideoIds": []
   },
   {
+    "name": "Ouri",
+    "birthDate": "1992-06-20",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 1.3,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "valentine"
+    ],
+    "subgenres": [],
+    "youtubeVideoId": "QEh0WIY_ZRw",
+    "backupVideoIds": []
+  },
+  {
     "name": "Oval",
     "birthDate": "1964-08-01",
     "venus": {
@@ -10895,6 +12254,26 @@
       "J51wha58y4g",
       "NYY4AGPJJBo"
     ]
+  },
+  {
+    "name": "Patricia Wolf",
+    "birthDate": "1938-04-17",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 14.7,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "lhiCRLqwGF8",
+    "backupVideoIds": []
   },
   {
     "name": "Paul Abraham",
@@ -11143,6 +12522,22 @@
     "backupVideoIds": []
   },
   {
+    "name": "Peter Kardas",
+    "birthDate": "1995-02-14",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 10.9,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "valentine"
+    ],
+    "subgenres": [],
+    "youtubeVideoId": "RmrlJpKlwcc",
+    "backupVideoIds": []
+  },
+  {
     "name": "Péter Korcsmáros",
     "birthDate": "1945-12-28",
     "venus": {
@@ -11282,6 +12677,27 @@
       "XdbdMZqUyx8",
       "fR4vI9Uy6C8"
     ]
+  },
+  {
+    "name": "Pink Must",
+    "birthDate": "1991-06-15",
+    "venus": {
+      "sign": "Leo",
+      "degree": 9.2,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "idm",
+      "ambient",
+      "artpop"
+    ],
+    "subgenres": [
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "UWJ_P-TdEJ0",
+    "backupVideoIds": []
   },
   {
     "name": "PJ Harvey",
@@ -11704,6 +13120,31 @@
     "backupVideoIds": []
   },
   {
+    "name": "quit life",
+    "birthDate": "1996-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 17.1,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "techno",
+      "ambient",
+      "idm",
+      "artpop",
+      "darkwave"
+    ],
+    "subgenres": [
+      "techno",
+      "ambient",
+      "idm",
+      "darkwave"
+    ],
+    "youtubeVideoId": "2zYQ1063LG0",
+    "backupVideoIds": []
+  },
+  {
     "name": "R. Stevie Moore",
     "birthDate": "1952-01-18",
     "venus": {
@@ -11725,6 +13166,26 @@
     ]
   },
   {
+    "name": "Rachika Nayar",
+    "birthDate": "1986-06-15",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 29.7,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "vQbNr0QIf5E",
+    "backupVideoIds": []
+  },
+  {
     "name": "Rafael Kubelík",
     "birthDate": "1914-06-29",
     "venus": {
@@ -11740,6 +13201,31 @@
       "classical"
     ],
     "youtubeVideoId": "fJc2HSnf6nA",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Rafael Toral",
+    "birthDate": "1967-00-00",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 13.1,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "idm",
+      "ambient",
+      "artpop",
+      "industrial",
+      "techno"
+    ],
+    "subgenres": [
+      "idm",
+      "ambient",
+      "industrial",
+      "techno"
+    ],
+    "youtubeVideoId": "JdRh5XQ_Ovc",
     "backupVideoIds": []
   },
   {
@@ -11784,6 +13270,25 @@
     "backupVideoIds": []
   },
   {
+    "name": "Random Forest",
+    "birthDate": "2008-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 26.5,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "triphop"
+    ],
+    "subgenres": [
+      "ambient"
+    ],
+    "youtubeVideoId": "RvXyQcjc9V0",
+    "backupVideoIds": []
+  },
+  {
     "name": "Raoul Gunsbourg",
     "birthDate": "1860-01-06",
     "venus": {
@@ -11799,6 +13304,24 @@
       "classical"
     ],
     "youtubeVideoId": "gQpQgjZRk1U",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Red Sparowes",
+    "birthDate": "2003-00-00",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 1.7,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "idm"
+    ],
+    "youtubeVideoId": "5XWuD6UsM9Y",
     "backupVideoIds": []
   },
   {
@@ -11835,6 +13358,27 @@
       "classical"
     ],
     "youtubeVideoId": "np7kU383Vqo",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Rhian Sheehan",
+    "birthDate": "1953-03-19",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 1.1,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "triphop"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "moClRVoXHK0",
     "backupVideoIds": []
   },
   {
@@ -12366,6 +13910,25 @@
     "backupVideoIds": []
   },
   {
+    "name": "Sam Gendel",
+    "birthDate": "1990-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 6.2,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "valentine",
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz"
+    ],
+    "youtubeVideoId": "eSwjSbgXM78",
+    "backupVideoIds": []
+  },
+  {
     "name": "Samiyam",
     "birthDate": "1985-01-01",
     "venus": {
@@ -12382,6 +13945,67 @@
       "experimental"
     ],
     "youtubeVideoId": "VYJUOvIY1BU",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Samuel Organ",
+    "birthDate": "1940-03-27",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 21.1,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "artpop"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "w_PgO4KQ1WY",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Sarah Davachi",
+    "birthDate": "1987-01-01",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 24.5,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "classical"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm",
+      "classical"
+    ],
+    "youtubeVideoId": "8cttc9Iq0jE",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Saxon Shore",
+    "birthDate": "1946-10-18",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 0.8,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient"
+    ],
+    "subgenres": [
+      "ambient"
+    ],
+    "youtubeVideoId": "ZtI8gBX5d3k",
     "backupVideoIds": []
   },
   {
@@ -12529,6 +14153,22 @@
       "classical"
     ],
     "youtubeVideoId": "qpsZ-fbsCJM",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Semi Trucks",
+    "birthDate": "1995-01-01",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 24.3,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "valentine"
+    ],
+    "subgenres": [],
+    "youtubeVideoId": "JUiUPj0eXn8",
     "backupVideoIds": []
   },
   {
@@ -12840,6 +14480,27 @@
     ]
   },
   {
+    "name": "SKY H1",
+    "birthDate": "1992-07-08",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 23.4,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "dnb"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "1ElwWws6mMY",
+    "backupVideoIds": []
+  },
+  {
     "name": "Slag Boom Van Loon",
     "birthDate": "1971-09-26",
     "venus": {
@@ -12945,6 +14606,43 @@
       "abstract"
     ],
     "youtubeVideoId": "CGnXL0lX44w",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Somewhere off Jazz Street",
+    "birthDate": "1978-11-27",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 7.4,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "jazz",
+      "triphop",
+      "ambient"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "ambient"
+    ],
+    "youtubeVideoId": "GxmqsaugwaM",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Sonic Youth",
+    "birthDate": "1953-04-28",
+    "venus": {
+      "sign": "Aries",
+      "degree": 15.7,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "valentine"
+    ],
+    "subgenres": [],
+    "youtubeVideoId": "tFNnvQLvs7I",
     "backupVideoIds": []
   },
   {
@@ -13075,165 +14773,6 @@
       "9tw2LMnxvW0",
       "jKAA_INzDGo"
     ]
-  },
-  {
-    "name": "Iko Chérie",
-    "birthDate": "1990-01-01",
-    "venus": { "sign": "Capricorn", "degree": 15.0, "decan": 2, "element": "earth" },
-    "genres": ["valentine"],
-    "subgenres": [],
-    "youtubeVideoId": "7jOkiDyxShI",
-    "backupVideoIds": [],
-    "sequenceIndex": 1
-  },
-  {
-    "name": "Nathanial Young",
-    "birthDate": "1995-02-14",
-    "venus": { "sign": "Aquarius", "degree": 10.5, "decan": 1, "element": "air" },
-    "genres": ["valentine"],
-    "subgenres": [],
-    "youtubeVideoId": "igZrrKLe81I",
-    "backupVideoIds": [],
-    "sequenceIndex": 2
-  },
-  {
-    "name": "Ouri",
-    "birthDate": "1992-06-20",
-    "venus": { "sign": "Cancer", "degree": 5.2, "decan": 1, "element": "water" },
-    "genres": ["valentine"],
-    "subgenres": [],
-    "youtubeVideoId": "QEh0WIY_ZRw",
-    "backupVideoIds": [],
-    "sequenceIndex": 3
-  },
-  {
-    "name": "Angel Olsen",
-    "birthDate": "1987-01-22",
-    "venus": { "sign": "Sagittarius", "degree": 18.4, "decan": 2, "element": "fire" },
-    "genres": ["valentine"],
-    "subgenres": [],
-    "youtubeVideoId": "W0J0m5sU_Ys",
-    "backupVideoIds": [],
-    "sequenceIndex": 4
-  },
-  {
-    "name": "Sonic Youth",
-    "birthDate": "1953-04-28",
-    "venus": { "sign": "Aries", "degree": 22.1, "decan": 3, "element": "fire" },
-    "genres": ["valentine"],
-    "subgenres": [],
-    "youtubeVideoId": "tFNnvQLvs7I",
-    "backupVideoIds": [],
-    "sequenceIndex": 5
-  },
-  {
-    "name": "Cassandra Jenkins",
-    "birthDate": "1984-01-01",
-    "venus": { "sign": "Sagittarius", "degree": 25.0, "decan": 3, "element": "fire" },
-    "genres": ["valentine"],
-    "subgenres": [],
-    "youtubeVideoId": "tsEbhrMh0mM",
-    "backupVideoIds": [],
-    "sequenceIndex": 6
-  },
-  {
-    "name": "Sam Gendel",
-    "birthDate": "1990-01-01",
-    "venus": { "sign": "Aquarius", "degree": 5.0, "decan": 1, "element": "air" },
-    "genres": ["valentine", "jazz"],
-    "subgenres": [],
-    "youtubeVideoId": "eSwjSbgXM78",
-    "backupVideoIds": [],
-    "sequenceIndex": 7
-  },
-  {
-    "name": "A. G. Cook",
-    "birthDate": "1990-08-23",
-    "venus": { "sign": "Leo", "degree": 12.8, "decan": 2, "element": "fire" },
-    "genres": ["valentine", "electronic"],
-    "subgenres": [],
-    "youtubeVideoId": "q2ZasIb0Hsw",
-    "backupVideoIds": [],
-    "sequenceIndex": 8
-  },
-  {
-    "name": "James K",
-    "birthDate": "1990-01-01",
-    "venus": { "sign": "Capricorn", "degree": 28.0, "decan": 3, "element": "earth" },
-    "genres": ["valentine", "electronic"],
-    "subgenres": [],
-    "youtubeVideoId": "knViDapTKmA",
-    "backupVideoIds": [],
-    "sequenceIndex": 9
-  },
-  {
-    "name": "Four Tet",
-    "birthDate": "1977-09-23",
-    "venus": { "sign": "Virgo", "degree": 15.5, "decan": 2, "element": "earth" },
-    "genres": ["valentine", "electronic"],
-    "subgenres": [],
-    "youtubeVideoId": "9W8Ei3ZUsEA",
-    "backupVideoIds": [],
-    "sequenceIndex": 10
-  },
-  {
-    "name": "Yves Tumor",
-    "birthDate": "1970-01-01",
-    "venus": { "sign": "Libra", "degree": 10.0, "decan": 1, "element": "air" },
-    "genres": ["valentine", "experimental"],
-    "subgenres": [],
-    "youtubeVideoId": "VMM5In5YT68",
-    "backupVideoIds": [],
-    "sequenceIndex": 11
-  },
-  {
-    "name": "Peter Kardas",
-    "birthDate": "1995-02-14",
-    "venus": { "sign": "Pisces", "degree": 2.0, "decan": 1, "element": "water" },
-    "genres": ["valentine"],
-    "subgenres": [],
-    "youtubeVideoId": "RmrlJpKlwcc",
-    "backupVideoIds": [],
-    "sequenceIndex": 12
-  },
-  {
-    "name": "Kelly Moran",
-    "birthDate": "1988-02-17",
-    "venus": { "sign": "Aries", "degree": 10.0, "decan": 1, "element": "fire" },
-    "genres": ["valentine", "classical"],
-    "subgenres": [],
-    "youtubeVideoId": "6XVngfOBBas",
-    "backupVideoIds": [],
-    "sequenceIndex": 13
-  },{
-    "name": "The Memphis Mustangs",
-    "birthDate": "1970-01-01",
-    "venus": { "sign": "Taurus", "degree": 15.0, "decan": 2, "element": "earth" },
-    "genres": ["valentine", "soul"],
-    "subgenres": [],
-    "youtubeVideoId": "54Lqir2N_Eo",
-    "backupVideoIds": [],
-    "sequenceIndex": 14
-  },
-  {
-    "name": "Semi Trucks",
-    "birthDate": "1995-01-01",
-    "venus": { "sign": "Gemini", "degree": 5.0, "decan": 1, "element": "air" },
-    "genres": ["valentine"],
-    "subgenres": [],
-    "youtubeVideoId": "JUiUPj0eXn8",
-    "backupVideoIds": [],
-    "sequenceIndex": 15
-  },
-  {
-    "name": "Vegyn",
-    "birthDate": "1993-11-23",
-    "venus": { "sign": "Scorpio", "degree": 15.0, "decan": 2, "element": "water" },
-    "genres": ["valentine", "electronic"],
-    "subgenres": [],
-    "youtubeVideoId": "UHiwhFhg-XQ",
-    "backupVideoIds": [],
-    "sequenceIndex": 16
   },
   {
     "name": "Stars of the Lid",
@@ -13434,6 +14973,26 @@
     ]
   },
   {
+    "name": "Suso Saiz",
+    "birthDate": "1957-01-01",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 15.8,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "0eQuMFZOUMY",
+    "backupVideoIds": []
+  },
+  {
     "name": "Susumu Yokota",
     "birthDate": "1961-04-22",
     "venus": {
@@ -13456,6 +15015,48 @@
       "9G748JJ0XMs",
       "BHdF4rTVLWE"
     ]
+  },
+  {
+    "name": "Swami LatePlate",
+    "birthDate": "2007-00-00",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 16.5,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "jazz",
+      "ambient"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "ambient"
+    ],
+    "youtubeVideoId": "xa6l003VGdg",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Szun Waves",
+    "birthDate": "1962-05-30",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 8.9,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "jazz",
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "j06Kag5ZgiQ",
+    "backupVideoIds": []
   },
   {
     "name": "Tamás Kóbor",
@@ -13498,6 +15099,32 @@
       "_fYY5J34eqY",
       "v-1fHC2WKys"
     ]
+  },
+  {
+    "name": "Taylor Deupree",
+    "birthDate": "1971-04-30",
+    "venus": {
+      "sign": "Aries",
+      "degree": 8.2,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "techno",
+      "darkwave",
+      "classical"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm",
+      "techno",
+      "darkwave",
+      "classical"
+    ],
+    "youtubeVideoId": "RSikdZswhoA",
+    "backupVideoIds": []
   },
   {
     "name": "Terence Fixmer",
@@ -13565,6 +15192,47 @@
     "backupVideoIds": []
   },
   {
+    "name": "The Album Leaf",
+    "birthDate": "1998-00-00",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 22.6,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "triphop"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "dM6lFQysxtg",
+    "backupVideoIds": []
+  },
+  {
+    "name": "The American Dollar",
+    "birthDate": "1934-10-09",
+    "venus": {
+      "sign": "Libra",
+      "degree": 5.2,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "IRFPBRDPnz8",
+    "backupVideoIds": []
+  },
+  {
     "name": "The Black Dog",
     "birthDate": "1969-01-01",
     "venus": {
@@ -13627,6 +15295,24 @@
       "latEhwt1uis",
       "n3nPiBai66M"
     ]
+  },
+  {
+    "name": "The End of the Ocean",
+    "birthDate": "2009-00-00",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 21.2,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient"
+    ],
+    "subgenres": [
+      "ambient"
+    ],
+    "youtubeVideoId": "jnHbaQNlgzg",
+    "backupVideoIds": []
   },
   {
     "name": "The Field",
@@ -13748,6 +15434,45 @@
     ]
   },
   {
+    "name": "The Lovecraft Sextet",
+    "birthDate": "2021-00-00",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 11.1,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "jazz",
+      "ambient"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "ambient"
+    ],
+    "youtubeVideoId": "eCfRNDfz8mA",
+    "backupVideoIds": []
+  },
+  {
+    "name": "The Memphis Mustangs",
+    "birthDate": "1970-01-01",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 5.1,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "valentine",
+      "soul"
+    ],
+    "subgenres": [
+      "soul-jazz"
+    ],
+    "youtubeVideoId": "54Lqir2N_Eo",
+    "backupVideoIds": []
+  },
+  {
     "name": "The Mount Fuji Doomjazz Corporation",
     "birthDate": "1984-11-28",
     "venus": {
@@ -13822,6 +15547,24 @@
     ]
   },
   {
+    "name": "The Six Parts Seven",
+    "birthDate": "1995-00-00",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 3.4,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "ambient"
+    ],
+    "subgenres": [
+      "ambient"
+    ],
+    "youtubeVideoId": "utEpovRESfs",
+    "backupVideoIds": []
+  },
+  {
     "name": "The Sugarcubes",
     "birthDate": "1986-00-00",
     "venus": {
@@ -13883,6 +15626,26 @@
       "experimental"
     ],
     "youtubeVideoId": "odeV7H9w60I",
+    "backupVideoIds": []
+  },
+  {
+    "name": "This Will Destroy You",
+    "birthDate": "2005-00-00",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 9.8,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "jBkpgN-01l0",
     "backupVideoIds": []
   },
   {
@@ -13950,6 +15713,28 @@
     "backupVideoIds": []
   },
   {
+    "name": "Tomaga",
+    "birthDate": "2013-02-15",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 16.8,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "idm",
+      "ambient",
+      "industrial"
+    ],
+    "subgenres": [
+      "idm",
+      "ambient",
+      "industrial"
+    ],
+    "youtubeVideoId": "szNVumy5JUA",
+    "backupVideoIds": []
+  },
+  {
     "name": "Tonstartssbandht",
     "birthDate": "2007-08-24",
     "venus": {
@@ -14013,6 +15798,67 @@
       "GL0wZI368XM",
       "Ux2OA10H9Dg"
     ]
+  },
+  {
+    "name": "Trigg & Gusset",
+    "birthDate": "1685-03-21",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 5.7,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "jazz",
+      "ambient"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "ambient"
+    ],
+    "youtubeVideoId": "GOXryhnBCkY",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Tristan Arp",
+    "birthDate": "1950-04-02",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 26.2,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "triphop",
+      "idm",
+      "ambient",
+      "techno"
+    ],
+    "subgenres": [
+      "idm",
+      "ambient",
+      "techno"
+    ],
+    "youtubeVideoId": "ATMGBt53bS4",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Tristeza",
+    "birthDate": "1997-00-00",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 9.2,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "ambient"
+    ],
+    "subgenres": [
+      "ambient"
+    ],
+    "youtubeVideoId": "bDKrCbpXNUo",
+    "backupVideoIds": []
   },
   {
     "name": "Tubeway Army",
@@ -14084,6 +15930,27 @@
     ]
   },
   {
+    "name": "Ulla",
+    "birthDate": "1907-08-14",
+    "venus": {
+      "sign": "Leo",
+      "degree": 11.9,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "triphop"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "kvTvN0e5iz0",
+    "backupVideoIds": []
+  },
+  {
     "name": "Ulrich Schnauss",
     "birthDate": "1977-11-20",
     "venus": {
@@ -14105,6 +15972,29 @@
       "nndUiFBPWpU",
       "heD96yANm4I"
     ]
+  },
+  {
+    "name": "ultra caro",
+    "birthDate": "1990-12-15",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 4,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "darkwave",
+      "idm",
+      "artpop"
+    ],
+    "subgenres": [
+      "ambient",
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "8tpibLEONkA",
+    "backupVideoIds": []
   },
   {
     "name": "Ultravox",
@@ -14264,6 +16154,7 @@
       "element": "earth"
     },
     "genres": [
+      "ambient",
       "classical"
     ],
     "subgenres": [
@@ -14632,6 +16523,26 @@
     "backupVideoIds": []
   },
   {
+    "name": "Whatever The Weather",
+    "birthDate": "1988-07-12",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 15.1,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm"
+    ],
+    "youtubeVideoId": "u0_2h1nP_1U",
+    "backupVideoIds": []
+  },
+  {
     "name": "Why?",
     "birthDate": "1979-04-30",
     "venus": {
@@ -14830,6 +16741,28 @@
       "classical"
     ],
     "youtubeVideoId": "m5HEXdf_lMQ",
+    "backupVideoIds": []
+  },
+  {
+    "name": "yawning portal",
+    "birthDate": "1935-11-25",
+    "venus": {
+      "sign": "Libra",
+      "degree": 15.8,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "techno"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm",
+      "techno"
+    ],
+    "youtubeVideoId": "OhYfyVRZNQ4",
     "backupVideoIds": []
   },
   {
