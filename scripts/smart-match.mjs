@@ -21,6 +21,15 @@ import { fileURLToPath } from 'node:url';
 import https from 'node:https';
 import { categorizeGenres } from '../src/genres.js';
 
+// Load .env (if present) without requiring a package
+const __envPath = join(dirname(fileURLToPath(import.meta.url)), '..', '.env');
+if (existsSync(__envPath)) {
+  for (const line of readFileSync(__envPath, 'utf-8').split('\n')) {
+    const m = line.match(/^\s*([^#][^=]*?)\s*=\s*(.*)\s*$/);
+    if (m && !process.env[m[1]]) process.env[m[1]] = m[2];
+  }
+}
+
 const require = createRequire(import.meta.url);
 const Astronomy = require('astronomy-engine');
 const cheerio = require('cheerio');
