@@ -194,69 +194,6 @@
     ]
   },
   {
-    "name": "Albert Lortzing",
-    "birthDate": "1801-10-23",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 25.3,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "YqxOaZSEz1k",
-    "backupVideoIds": [
-      "jUOcC86FwTU",
-      "ys8nOd6Jeo0"
-    ]
-  },
-  {
-    "name": "Albert Szirmai",
-    "birthDate": "1880-07-02",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 7.7,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "hf9MlMCK5FE",
-    "backupVideoIds": [
-      "kS3bsgmNwwY",
-      "_cS7tFFbv6k"
-    ]
-  },
-  {
-    "name": "Alberto Mazzucato",
-    "birthDate": "1813-07-28",
-    "venus": {
-      "sign": "Leo",
-      "degree": 22.4,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "IQWOQYxPliY",
-    "backupVideoIds": [
-      "0WudK_Ds3qc",
-      "s1DNc4kjfYM"
-    ]
-  },
-  {
     "name": "Alessandro Cortini",
     "birthDate": "1976-05-24",
     "venus": {
@@ -297,90 +234,6 @@
     ],
     "youtubeVideoId": "1m-hlVeRccA",
     "backupVideoIds": []
-  },
-  {
-    "name": "Alexander von Zemlinsky",
-    "birthDate": "1871-10-14",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 25,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "3-yuGOnHsR8",
-    "backupVideoIds": [
-      "WuRADnBvzyg",
-      "J9GII77-_9Y"
-    ]
-  },
-  {
-    "name": "Alfred Grünfeld",
-    "birthDate": "1852-07-04",
-    "venus": {
-      "sign": "Leo",
-      "degree": 6.4,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "G4enSHZyefg",
-    "backupVideoIds": [
-      "NVfpqkQwxl4",
-      "ggoqNQkpnvs"
-    ]
-  },
-  {
-    "name": "Alfred Stelzner",
-    "birthDate": "1852-11-29",
-    "venus": {
-      "sign": "Libra",
-      "degree": 28.6,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "_UGUPah6lH4",
-    "backupVideoIds": [
-      "jx7QBGt6UHo",
-      "4LTleKD4i4Q"
-    ]
-  },
-  {
-    "name": "Alfred Uhl",
-    "birthDate": "1909-06-05",
-    "venus": {
-      "sign": "Gemini",
-      "degree": 24.2,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "-LYTxf9YsM0",
-    "backupVideoIds": [
-      "ieNUgbsip8k",
-      "VYnHaaSeHqQ"
-    ]
   },
   {
     "name": "Alias",
@@ -541,48 +394,6 @@
     ]
   },
   {
-    "name": "András Aczél",
-    "birthDate": "1967-03-14",
-    "venus": {
-      "sign": "Aries",
-      "degree": 22.8,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "9xaPLJO7mH0",
-    "backupVideoIds": [
-      "xXfpIb6G0VA",
-      "4nV_Tm3dDgk"
-    ]
-  },
-  {
-    "name": "André Previn",
-    "birthDate": "1929-04-06",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 6.9,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "vpnnOxsiITM",
-    "backupVideoIds": [
-      "8YDeu2NVvOI",
-      "30KMunfVXFc"
-    ]
-  },
-  {
     "name": "Andrea Bocelli",
     "birthDate": "1958-09-22",
     "venus": {
@@ -663,49 +474,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Angelo Frondoni",
-    "birthDate": "1809-02-26",
-    "venus": {
-      "sign": "Aries",
-      "degree": 23,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera",
-      "classical"
-    ],
-    "youtubeVideoId": "3VDGIxwIgOo",
-    "backupVideoIds": [
-      "sKxKd4cKQa4",
-      "0X7cvpp-Y0g"
-    ]
-  },
-  {
-    "name": "Anja Silja",
-    "birthDate": "1935-04-17",
-    "venus": {
-      "sign": "Gemini",
-      "degree": 1.4,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "mpE0mE3WGKc",
-    "backupVideoIds": [
-      "tBB-lCu1YgE",
-      "jbHaq5nNVU8"
-    ]
-  },
-  {
     "name": "Anna Netrebko",
     "birthDate": "1971-09-18",
     "venus": {
@@ -724,27 +492,6 @@
     "backupVideoIds": [
       "hrm59zqCKEU",
       "duFk5QKFMrg"
-    ]
-  },
-  {
-    "name": "Anna Samuil",
-    "birthDate": "1976-01-01",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 30,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "twIrOCdOlfo",
-    "backupVideoIds": [
-      "0J3VgiG9BRI",
-      "6-Yl16dDkk0"
     ]
   },
   {
@@ -796,27 +543,6 @@
     ]
   },
   {
-    "name": "Anny Konetzni",
-    "birthDate": "1902-02-12",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 26.9,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "FgEyZtQ9Gpg",
-    "backupVideoIds": [
-      "M8rWYYvanPQ",
-      "OCY25nngFgU"
-    ]
-  },
-  {
     "name": "Anthony Braxton",
     "birthDate": "1945-06-04",
     "venus": {
@@ -858,90 +584,6 @@
     "backupVideoIds": [
       "rnG2HskuiZo",
       "x-sxBsqfds0"
-    ]
-  },
-  {
-    "name": "Anton Rubinstein",
-    "birthDate": "1829-11-28",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 21.4,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "DJfxSyRAPJE",
-    "backupVideoIds": [
-      "FNguBz_qDFI",
-      "aI3XepJs1qI"
-    ]
-  },
-  {
-    "name": "Anton Schweitzer",
-    "birthDate": "1735-06-06",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 18.7,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "m33hnPg_86c",
-    "backupVideoIds": [
-      "weM0jWvYAQU",
-      "91zwtFVgGL8"
-    ]
-  },
-  {
-    "name": "Antoni Lliteres",
-    "birthDate": "1673-06-18",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 15.7,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "LB1t2A0mr1c",
-    "backupVideoIds": [
-      "HiE8FVmYzvs",
-      "LBo0mcTJP60"
-    ]
-  },
-  {
-    "name": "Antonín Dvořák",
-    "birthDate": "1841-09-08",
-    "venus": {
-      "sign": "Leo",
-      "degree": 4.8,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "romantic"
-    ],
-    "youtubeVideoId": "jOofzffyDSA",
-    "backupVideoIds": [
-      "GOPsXJoatEI",
-      "uOmaQSqnPfw"
     ]
   },
   {
@@ -1058,48 +700,6 @@
     ]
   },
   {
-    "name": "Armin Schibler",
-    "birthDate": "1920-11-20",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 3.4,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "0gOhKQU6Ff8",
-    "backupVideoIds": [
-      "nm4uhF4s25k",
-      "EvXKoyk46ZA"
-    ]
-  },
-  {
-    "name": "Arnold Bax",
-    "birthDate": "1883-11-08",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 28.2,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "TtZjTEFf1v0",
-    "backupVideoIds": [
-      "aK01lm35IYk",
-      "borgWgn4oQ4"
-    ]
-  },
-  {
     "name": "Arnold Schoenberg",
     "birthDate": "1874-09-13",
     "venus": {
@@ -1144,27 +744,6 @@
     "backupVideoIds": [
       "7U4vkvjSUKE",
       "y3zCi9l0V-Y"
-    ]
-  },
-  {
-    "name": "Arnulf Herrmann",
-    "birthDate": "1968-12-12",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 3,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "8acCBusTdJk",
-    "backupVideoIds": [
-      "JfxBSy9VdjQ",
-      "rVX85hjzCuY"
     ]
   },
   {
@@ -1236,69 +815,6 @@
     "backupVideoIds": [
       "74HD2GqZMUQ",
       "_xTzIxlqeSA"
-    ]
-  },
-  {
-    "name": "Atli Heimir Sveinsson",
-    "birthDate": "1938-09-21",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 13.6,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "7dUQbG2oHGo",
-    "backupVideoIds": [
-      "TB8GHPWfMaU",
-      "3_AcobFF3xM"
-    ]
-  },
-  {
-    "name": "August Enna",
-    "birthDate": "1859-05-13",
-    "venus": {
-      "sign": "Aries",
-      "degree": 16.8,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "ik8LQFO3O7A",
-    "backupVideoIds": [
-      "3kBvh2tAlD0",
-      "elFJ4lHQYFw"
-    ]
-  },
-  {
-    "name": "August Kindermann",
-    "birthDate": "1816-02-06",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 4.2,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "k1cS-oVqAow",
-    "backupVideoIds": [
-      "Vyig9nqpcj0",
-      "ZQKufEFFO3s"
     ]
   },
   {
@@ -1409,27 +925,6 @@
     ]
   },
   {
-    "name": "Barbara Schlick",
-    "birthDate": "1943-07-21",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 10.6,
-      "decan": 2,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "ZLjU5a1CgRs",
-    "backupVideoIds": [
-      "zmuYQNaRYAI",
-      "lRCkt-h_T4Y"
-    ]
-  },
-  {
     "name": "Basic Channel",
     "birthDate": "1961-02-12",
     "venus": {
@@ -1449,49 +944,6 @@
     "backupVideoIds": [
       "ZLr52XxTfCc",
       "Kyd4Ym5KGEA"
-    ]
-  },
-  {
-    "name": "Bedřich Diviš Weber",
-    "birthDate": "1766-10-09",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 23.6,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "LGgoLtI29Eo",
-    "backupVideoIds": [
-      "8WGsXZRkYo0",
-      "e6wPKECqN_Q"
-    ]
-  },
-  {
-    "name": "Bedřich Smetana",
-    "birthDate": "1824-03-02",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 4.4,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera",
-      "classical"
-    ],
-    "youtubeVideoId": "ovBC4AGR2Vg",
-    "backupVideoIds": [
-      "E8X3RL0TDn4",
-      "l6kqu2mk-Kw"
     ]
   },
   {
@@ -1603,69 +1055,6 @@
     "backupVideoIds": [
       "dE3i9Lr12Nw",
       "rjSR1dn7Umk"
-    ]
-  },
-  {
-    "name": "Bernd Aldenhoff",
-    "birthDate": "1903-06-14",
-    "venus": {
-      "sign": "Leo",
-      "degree": 5.9,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "fqWu1evzLhI",
-    "backupVideoIds": [
-      "eFVUz2jNwkk",
-      "Jj-J4KSUO6k"
-    ]
-  },
-  {
-    "name": "Bernd Redmann",
-    "birthDate": "1965-05-10",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 27,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "G343Ol3gMow",
-    "backupVideoIds": [
-      "XMmDMfAmbQs",
-      "2ARl777_mAc"
-    ]
-  },
-  {
-    "name": "Bernd Weikl",
-    "birthDate": "1942-07-29",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 7.5,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "pxroAPVx8zU",
-    "backupVideoIds": [
-      "-P3SiAExHzg",
-      "mpOOFpF54s4"
     ]
   },
   {
@@ -1914,27 +1303,6 @@
     ]
   },
   {
-    "name": "Bohuslav Sedláček",
-    "birthDate": "1928-08-13",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 2.3,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "wNYvKHzbi7Y",
-    "backupVideoIds": [
-      "ndubxFbO_vA",
-      "6Z06gdix4Fo"
-    ]
-  },
-  {
     "name": "Bonobo",
     "birthDate": "1976-03-30",
     "venus": {
@@ -1984,27 +1352,6 @@
     ]
   },
   {
-    "name": "Boris Mokrousov",
-    "birthDate": "1909-02-27",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 23,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "wanhztPV1fk",
-    "backupVideoIds": [
-      "Rk6E9asaDUE",
-      "bdaDlX8NoYU"
-    ]
-  },
-  {
     "name": "Bradley Strider",
     "birthDate": "1971-08-18",
     "venus": {
@@ -2049,25 +1396,6 @@
       "fEw2K7bwU_U",
       "e1CcVFRKzdM"
     ]
-  },
-  {
-    "name": "Bronius Kutavičius",
-    "birthDate": "1932-09-13",
-    "venus": {
-      "sign": "Leo",
-      "degree": 4.6,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "contemporary",
-      "modern classical"
-    ],
-    "youtubeVideoId": "jj_H-GGQNUU",
-    "backupVideoIds": []
   },
   {
     "name": "Burial",
@@ -2182,48 +1510,6 @@
     ]
   },
   {
-    "name": "Carl Blum",
-    "birthDate": "1786-01-01",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 22.2,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "DLMXazTWhhE",
-    "backupVideoIds": [
-      "zmxHatYD7ao",
-      "EA9pxonK96w"
-    ]
-  },
-  {
-    "name": "Carl Christian Agthe",
-    "birthDate": "1762-06-16",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 16,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "mL3uhO-LhGo",
-    "backupVideoIds": [
-      "EYzxx1M0kIY",
-      "WKrwLl4NZ5A"
-    ]
-  },
-  {
     "name": "Carl Craig",
     "birthDate": "1969-05-22",
     "venus": {
@@ -2246,69 +1532,6 @@
     ]
   },
   {
-    "name": "Carl Ditters von Dittersdorf",
-    "birthDate": "1739-11-02",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 9.8,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "7XAPmRyiFYc",
-    "backupVideoIds": [
-      "_SkSgvA8PcU",
-      "B0S7iokakD0"
-    ]
-  },
-  {
-    "name": "Carl Friedrich Weitzmann",
-    "birthDate": "1808-08-10",
-    "venus": {
-      "sign": "Leo",
-      "degree": 19.6,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "Ro-OFUUMgxE",
-    "backupVideoIds": [
-      "kd4WBh3Ca9E",
-      "5pwFMbtTFwk"
-    ]
-  },
-  {
-    "name": "Carl Maria von Weber",
-    "birthDate": "1786-11-01",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 26,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "OQaA3eUf5oY",
-    "backupVideoIds": [
-      "IQA2t2EVbUw",
-      "O8KE2FeU1qc"
-    ]
-  },
-  {
     "name": "Carl Orff",
     "birthDate": "1895-07-10",
     "venus": {
@@ -2327,27 +1550,6 @@
     "backupVideoIds": [
       "5wNzPK84-cE",
       "0ufsiXwJzA4"
-    ]
-  },
-  {
-    "name": "Carl Zeller",
-    "birthDate": "1842-06-19",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 24.9,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "fxQXfxqaZIY",
-    "backupVideoIds": [
-      "AWq_Fb17qu8",
-      "3c_wbohoVpQ"
     ]
   },
   {
@@ -2454,27 +1656,6 @@
     "subgenres": [],
     "youtubeVideoId": "tsEbhrMh0mM",
     "backupVideoIds": []
-  },
-  {
-    "name": "Caterina Cavalieri",
-    "birthDate": "1755-03-18",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 11.4,
-      "decan": 2,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "e_rvQkM0_lU",
-    "backupVideoIds": [
-      "bCrojOcTj3U",
-      "9-sidDuCWoM"
-    ]
   },
   {
     "name": "Caustic Window",
@@ -2681,27 +1862,6 @@
     ]
   },
   {
-    "name": "Christoph Willibald von Gluck",
-    "birthDate": "1714-07-02",
-    "venus": {
-      "sign": "Leo",
-      "degree": 1.6,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "fY0clnGk3WQ",
-    "backupVideoIds": [
-      "mYcpMrJqr3g",
-      "h1n9k4Icu18"
-    ]
-  },
-  {
     "name": "Chrome",
     "birthDate": "1970-06-04",
     "venus": {
@@ -2747,27 +1907,6 @@
     ]
   },
   {
-    "name": "Claire Dux",
-    "birthDate": "1885-08-02",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 4.4,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "F8mKo00aOsw",
-    "backupVideoIds": [
-      "EwSO8u1751M",
-      "P0W1tikF-3k"
-    ]
-  },
-  {
     "name": "Claire Rousay",
     "birthDate": "1926-08-10",
     "venus": {
@@ -2806,48 +1945,6 @@
     "backupVideoIds": [
       "WKU8DJzipW4",
       "rWSqT-7g6gA"
-    ]
-  },
-  {
-    "name": "Claudio Abbado",
-    "birthDate": "1933-06-26",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 22,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "O6Ourmzuxf4",
-    "backupVideoIds": [
-      "TV0NhufgtgI",
-      "PLFog5wjYEs"
-    ]
-  },
-  {
-    "name": "Clemens Krauss",
-    "birthDate": "1893-03-31",
-    "venus": {
-      "sign": "Aries",
-      "degree": 2.7,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "Ab1tezVzzY0",
-    "backupVideoIds": [
-      "4vmSvS_FujI",
-      "k7NHlgqQLgY"
     ]
   },
   {
@@ -2939,27 +2036,6 @@
     "backupVideoIds": [
       "nLDO1XFXDPw",
       "mY3hHQDPkkw"
-    ]
-  },
-  {
-    "name": "Conrado del Campo",
-    "birthDate": "1878-10-28",
-    "venus": {
-      "sign": "Libra",
-      "degree": 25.5,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "Oi-tw1IK93Y",
-    "backupVideoIds": [
-      "iSUHQjCpEcQ",
-      "aLMgz_PJtZo"
     ]
   },
   {
@@ -3069,27 +2145,6 @@
     "backupVideoIds": [
       "q8sVG8HhK-Y",
       "31kf1HIzgZE"
-    ]
-  },
-  {
-    "name": "Daniel François Esprit Auber",
-    "birthDate": "1782-01-29",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 25,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "fOlR2jZ94mg",
-    "backupVideoIds": [
-      "NSFkbikDk0I",
-      "-TDPq-V-nZI"
     ]
   },
   {
@@ -3204,27 +2259,6 @@
     ]
   },
   {
-    "name": "David Daniels",
-    "birthDate": "1966-03-12",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 8.2,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "DKax5-GHC1Y",
-    "backupVideoIds": [
-      "2g2ZxYoqwZ0",
-      "_AdLhuxkwGQ"
-    ]
-  },
-  {
     "name": "Dean Blunt",
     "birthDate": "1984-02-08",
     "venus": {
@@ -3319,27 +2353,6 @@
     ]
   },
   {
-    "name": "Denis ApIvor",
-    "birthDate": "1916-04-14",
-    "venus": {
-      "sign": "Gemini",
-      "degree": 9.5,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "2ZXCWL0IA6c",
-    "backupVideoIds": [
-      "TbJ4kPG_l_U",
-      "oVlV_mm0Kpg"
-    ]
-  },
-  {
     "name": "Depeche Mode",
     "birthDate": "1961-05-09",
     "venus": {
@@ -3409,27 +2422,6 @@
     ]
   },
   {
-    "name": "Didrik Solli-Tangen",
-    "birthDate": "1987-06-11",
-    "venus": {
-      "sign": "Gemini",
-      "degree": 0.3,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "UMI57cPaSD4",
-    "backupVideoIds": [
-      "v5etvo2u1C4",
-      "HUp4V89HyOU"
-    ]
-  },
-  {
     "name": "Digit",
     "birthDate": "1984-01-01",
     "venus": {
@@ -3450,27 +2442,6 @@
     "backupVideoIds": [
       "XMfWLviRKOQ",
       "FCne9_9yCoM"
-    ]
-  },
-  {
-    "name": "Dimitri Terzakis",
-    "birthDate": "1938-03-12",
-    "venus": {
-      "sign": "Aries",
-      "degree": 0.1,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "8UGmwt02aro",
-    "backupVideoIds": [
-      "jSr4MhW3Tgw",
-      "zdZBDXG82OU"
     ]
   },
   {
@@ -3561,28 +2532,6 @@
     ]
   },
   {
-    "name": "Dmitri Kabalevsky",
-    "birthDate": "1904-12-30",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 20.5,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera",
-      "classical"
-    ],
-    "youtubeVideoId": "mk8mcoGPPkw",
-    "backupVideoIds": [
-      "_T6flnBaRhA",
-      "-2-xWIPtjYw"
-    ]
-  },
-  {
     "name": "Dmitri Shostakovich",
     "birthDate": "1906-09-25",
     "venus": {
@@ -3647,28 +2596,6 @@
     ]
   },
   {
-    "name": "Donald Martino",
-    "birthDate": "1931-05-16",
-    "venus": {
-      "sign": "Aries",
-      "degree": 24.5,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "contemporary",
-      "classical"
-    ],
-    "youtubeVideoId": "VCG3XABcoo8",
-    "backupVideoIds": [
-      "HMJhUyL5SIE",
-      "C65wZg6DCTw"
-    ]
-  },
-  {
     "name": "Doon Kanda",
     "birthDate": "1987-06-23",
     "venus": {
@@ -3712,27 +2639,6 @@
     "backupVideoIds": [
       "VA8y609lBSo",
       "R6qx3dESdUE"
-    ]
-  },
-  {
-    "name": "Dorothea Röschmann",
-    "birthDate": "1967-06-17",
-    "venus": {
-      "sign": "Leo",
-      "degree": 10.9,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "0x3TVitaaxc",
-    "backupVideoIds": [
-      "SAQKBmpSd70",
-      "lVU9etX71Cc"
     ]
   },
   {
@@ -3851,27 +2757,6 @@
     ]
   },
   {
-    "name": "E. T. A. Hoffmann",
-    "birthDate": "1776-01-24",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 18.4,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "V77ztPIidbE",
-    "backupVideoIds": [
-      "8JWOZP8QjGY",
-      "y3BJCLtbF-c"
-    ]
-  },
-  {
     "name": "Eartheater",
     "birthDate": "1989-03-16",
     "venus": {
@@ -3937,97 +2822,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Edmund Kretschmer",
-    "birthDate": "1830-08-31",
-    "venus": {
-      "sign": "Leo",
-      "degree": 9.7,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "sHtBcyKE5sI",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Eduard Künneke",
-    "birthDate": "1885-01-27",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 13.7,
-      "decan": 2,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "8vO--YzfAdQ",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Eduard Lassen",
-    "birthDate": "1830-04-13",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 13.2,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "1eEipig3yBs",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Eduardo Brito",
-    "birthDate": "1906-01-22",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 26.1,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "obeHJLurUpQ",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Elbert Vermaak",
-    "birthDate": "1929-01-21",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 17,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "contemporary",
-      "classical"
-    ],
-    "youtubeVideoId": "-N_C-I8WyJE",
-    "backupVideoIds": []
-  },
-  {
     "name": "Electronic",
     "birthDate": "1988-06-15",
     "venus": {
@@ -4066,42 +2860,6 @@
       "classical"
     ],
     "youtubeVideoId": "iMxekT2jiXE",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Elisabeth Schwarzkopf",
-    "birthDate": "1915-12-09",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 8.4,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "mPpQndLh55c",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Ella Adayevskaya",
-    "birthDate": "1846-02-22",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 16.8,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "-nYX1L3SeRU",
     "backupVideoIds": []
   },
   {
@@ -4152,24 +2910,6 @@
     ]
   },
   {
-    "name": "Emilio Serrano y Ruiz",
-    "birthDate": "1850-03-13",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 25.2,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "9uX9GPmlgxQ",
-    "backupVideoIds": []
-  },
-  {
     "name": "Emily A. Sprague",
     "birthDate": "1994-06-15",
     "venus": {
@@ -4193,24 +2933,6 @@
       "classical"
     ],
     "youtubeVideoId": "WTPvNYJCuzM",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Engelbert Humperdinck",
-    "birthDate": "1854-09-01",
-    "venus": {
-      "sign": "Leo",
-      "degree": 12.8,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "am1p961nSzc",
     "backupVideoIds": []
   },
   {
@@ -4299,132 +3021,6 @@
       "nfhza_GLKNg",
       "uFC8hFKfzxE"
     ]
-  },
-  {
-    "name": "Ermanno Wolf-Ferrari",
-    "birthDate": "1876-01-12",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 18.7,
-      "decan": 2,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "KJ1js2VIR_k",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Ernestine Schumann-Heink",
-    "birthDate": "1861-06-15",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 3.7,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "qolApRbgV_w",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Ernő Dohnányi",
-    "birthDate": "1877-07-27",
-    "venus": {
-      "sign": "Leo",
-      "degree": 26.5,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "id3pp-VkAqY",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Ernst Hermann Meyer",
-    "birthDate": "1905-12-08",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 29.5,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "n8WiuALCJa0",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Erwin Schulhoff",
-    "birthDate": "1894-06-08",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 5.7,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "ig5QYpd-UBw",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Eugen d'Albert",
-    "birthDate": "1864-04-10",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 24.8,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "vmEtg2u0RME",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Eugen Suchoň",
-    "birthDate": "1908-09-25",
-    "venus": {
-      "sign": "Leo",
-      "degree": 16.3,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "lfheMGIiET8",
-    "backupVideoIds": []
   },
   {
     "name": "Eugen Thomass",
@@ -4553,42 +3149,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Federico Chueca",
-    "birthDate": "1846-05-05",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 28.7,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "prY0AnKHyhY",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Federico Moreno Torroba",
-    "birthDate": "1891-03-03",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 26.8,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "wqf7gBo_pYQ",
-    "backupVideoIds": []
-  },
-  {
     "name": "Felicia Atkinson",
     "birthDate": "1981-00-00",
     "venus": {
@@ -4606,60 +3166,6 @@
       "idm"
     ],
     "youtubeVideoId": "nJ2zW4AidJw",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Felip Pedrell",
-    "birthDate": "1841-02-19",
-    "venus": {
-      "sign": "Aries",
-      "degree": 16.6,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "be4ERgrxyCc",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Felix Mendelssohn",
-    "birthDate": "1809-02-03",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 27.1,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "TIVwwUGjgkE",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Felix Petyrek",
-    "birthDate": "1892-05-14",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 8.8,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "AFAPuSJgh7o",
     "backupVideoIds": []
   },
   {
@@ -4683,27 +3189,6 @@
     "backupVideoIds": [
       "ES1kbvt5FB8",
       "lWxV7crvONk"
-    ]
-  },
-  {
-    "name": "Fernando del Valle",
-    "birthDate": "1964-02-28",
-    "venus": {
-      "sign": "Aries",
-      "degree": 20.8,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "Hqosv56IotA",
-    "backupVideoIds": [
-      "jDhbQZ7-QmU",
-      "9ZZEDtY6Dxo"
     ]
   },
   {
@@ -4993,60 +3478,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Francesco Araja",
-    "birthDate": "1709-06-25",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 4.3,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "Ft7F0-P3UDg",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Francesco Cavalli",
-    "birthDate": "1602-02-14",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 3.3,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "RnU_COrlJww",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Francis Edward Bache",
-    "birthDate": "1833-09-14",
-    "venus": {
-      "sign": "Leo",
-      "degree": 11.2,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "v7I6nfgg2d8",
-    "backupVideoIds": []
-  },
-  {
     "name": "Francis Monkman",
     "birthDate": "1949-06-09",
     "venus": {
@@ -5070,24 +3501,6 @@
     ]
   },
   {
-    "name": "Francisco Escudero",
-    "birthDate": "1912-08-13",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 0.9,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "kTMth7e-oQc",
-    "backupVideoIds": []
-  },
-  {
     "name": "Franco Battiato",
     "birthDate": "1945-03-23",
     "venus": {
@@ -5103,60 +3516,6 @@
       "classical"
     ],
     "youtubeVideoId": "gcGj4j7ZIQg",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Franco Margola",
-    "birthDate": "1908-10-30",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 25.3,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "Tf1IZdTx-4g",
-    "backupVideoIds": []
-  },
-  {
-    "name": "François Adrien Boieldieu",
-    "birthDate": "1775-12-16",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 9.1,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "OEiSGRFpvWs",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Frank Martin",
-    "birthDate": "1890-09-15",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 8.8,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "fzqVh-4duc8",
     "backupVideoIds": []
   },
   {
@@ -5199,42 +3558,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Franz Poenitz",
-    "birthDate": "1850-08-17",
-    "venus": {
-      "sign": "Libra",
-      "degree": 5.2,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "oUIer9VwH0g",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Franz Schreker",
-    "birthDate": "1878-03-23",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 26.4,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "XxKWG1K29v0",
-    "backupVideoIds": []
-  },
-  {
     "name": "Franz Schubert",
     "birthDate": "1797-01-31",
     "venus": {
@@ -5254,61 +3577,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Franz Strauss",
-    "birthDate": "1822-02-26",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 25.3,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "BL57IKFx52k",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Franz Vincenz Tuček",
-    "birthDate": "1773-02-02",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 13.5,
-      "decan": 2,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera",
-      "classical"
-    ],
-    "youtubeVideoId": "ikbxYDA3DnM",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Fred Raymond",
-    "birthDate": "1900-04-20",
-    "venus": {
-      "sign": "Gemini",
-      "degree": 15.2,
-      "decan": 2,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "MX2zQELQEH8",
-    "backupVideoIds": []
-  },
-  {
     "name": "Frédéric Chopin",
     "birthDate": "1810-03-01",
     "venus": {
@@ -5324,150 +3592,6 @@
       "romantic"
     ],
     "youtubeVideoId": "9E6b3swbnWg",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Friedrich Benda",
-    "birthDate": "1745-07-15",
-    "venus": {
-      "sign": "Gemini",
-      "degree": 14.6,
-      "decan": 2,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "r5_7muP1acA",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Friedrich Cerha",
-    "birthDate": "1926-02-17",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 12.7,
-      "decan": 2,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "UhVkpD9Ojxg",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Friedrich Kuhlau",
-    "birthDate": "1786-09-11",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 1.4,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "2IGRhLX5WUg",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Friedrich von Flotow",
-    "birthDate": "1812-04-27",
-    "venus": {
-      "sign": "Gemini",
-      "degree": 20.5,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "NEA_hV0hfPA",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Friedrich Wilhelm Grund",
-    "birthDate": "1791-10-07",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 2.5,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "xO7RgSMeG3A",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Fritz Kreisler",
-    "birthDate": "1875-02-02",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 27.6,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "8A1lT9k-fEk",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Fritz Stiedry",
-    "birthDate": "1883-10-11",
-    "venus": {
-      "sign": "Libra",
-      "degree": 23.2,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "Ijdf6Fc5L10",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Fritz Wunderlich",
-    "birthDate": "1930-09-26",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 18.2,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "X1qysxLA9OQ",
     "backupVideoIds": []
   },
   {
@@ -5624,60 +3748,6 @@
     ]
   },
   {
-    "name": "Gaston Serpette",
-    "birthDate": "1846-11-04",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 1.5,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "Vbn5Ih2UpuI",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Gennady Gladkov",
-    "birthDate": "1935-02-18",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 20.7,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "4bTB1EXwsKk",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Georg Christoph Wagenseil",
-    "birthDate": "1715-01-29",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 4.8,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "KY7sinuIwmk",
-    "backupVideoIds": []
-  },
-  {
     "name": "Georg Friedrich Haas",
     "birthDate": "1953-08-16",
     "venus": {
@@ -5693,42 +3763,6 @@
       "opera"
     ],
     "youtubeVideoId": "H-h_F50-SA4",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Georg Jarno",
-    "birthDate": "1868-06-03",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 24.9,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "Q-cR7b21ISg",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Georg Wilhelm Rauchenecker",
-    "birthDate": "1844-03-08",
-    "venus": {
-      "sign": "Aries",
-      "degree": 24.8,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "8JfkqGaN3FI",
     "backupVideoIds": []
   },
   {
@@ -5772,24 +3806,6 @@
     ]
   },
   {
-    "name": "George Enesco",
-    "birthDate": "1881-08-19",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 14.5,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "cuU5sbXYAJ0",
-    "backupVideoIds": []
-  },
-  {
     "name": "George Frideric Handel",
     "birthDate": "1685-03-05",
     "venus": {
@@ -5827,96 +3843,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "George Henschel",
-    "birthDate": "1850-02-18",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 26.4,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "4YML_IC5XoA",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Georges Bizet",
-    "birthDate": "1838-10-25",
-    "venus": {
-      "sign": "Libra",
-      "degree": 18.3,
-      "decan": 2,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "cvny0Mssa04",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Gerd Kühr",
-    "birthDate": "1952-12-28",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 20.9,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "LC0lJh5_qss",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Gerhard Wimberger",
-    "birthDate": "1923-08-30",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 3.1,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "CAnEniPP0Co",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Gerhart Münch",
-    "birthDate": "1907-03-23",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 18.9,
-      "decan": 2,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "4ovOM0VOofE",
-    "backupVideoIds": []
-  },
-  {
     "name": "Gesaffelstein",
     "birthDate": "1985-06-13",
     "venus": {
@@ -5942,24 +3868,6 @@
       "_XhLIXjUtFg",
       "Z2KB7y0fdpk"
     ]
-  },
-  {
-    "name": "Giacomo Meyerbeer",
-    "birthDate": "1791-09-05",
-    "venus": {
-      "sign": "Libra",
-      "degree": 25.3,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "9S39JrUcY_c",
-    "backupVideoIds": []
   },
   {
     "name": "Giacomo Puccini",
@@ -6019,24 +3927,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Giovanni Paolo Colonna",
-    "birthDate": "1637-06-16",
-    "venus": {
-      "sign": "Gemini",
-      "degree": 18.4,
-      "decan": 2,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "zmX5tSwdxkA",
-    "backupVideoIds": []
-  },
-  {
     "name": "Giuseppe Verdi",
     "birthDate": "1813-10-10",
     "venus": {
@@ -6053,24 +3943,6 @@
       "opera"
     ],
     "youtubeVideoId": "xoXGrIIBo0o",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Giuseppina Strepponi",
-    "birthDate": "1815-09-08",
-    "venus": {
-      "sign": "Libra",
-      "degree": 23.5,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "9_7A2aex7ik",
     "backupVideoIds": []
   },
   {
@@ -6252,24 +4124,6 @@
     ]
   },
   {
-    "name": "Gundula Janowitz",
-    "birthDate": "1937-08-02",
-    "venus": {
-      "sign": "Gemini",
-      "degree": 27.4,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "ANdPoigJ_qw",
-    "backupVideoIds": []
-  },
-  {
     "name": "Gustav Mahler",
     "birthDate": "1860-07-07",
     "venus": {
@@ -6285,43 +4139,6 @@
       "romantic"
     ],
     "youtubeVideoId": "ypClfhEwwCw",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Gustav Roob",
-    "birthDate": "1879-01-29",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 22.3,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera",
-      "classical"
-    ],
-    "youtubeVideoId": "Jmk5frp6-3Q",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Gustave Kerker",
-    "birthDate": "1857-02-28",
-    "venus": {
-      "sign": "Aries",
-      "degree": 26.3,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "XwihWsfIM3s",
     "backupVideoIds": []
   },
   {
@@ -6368,152 +4185,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Hanno Müller-Brachmann",
-    "birthDate": "1970-01-01",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 5.1,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "PlvDbgVFbWo",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Hans Bronsart von Schellendorff",
-    "birthDate": "1830-02-11",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 24.6,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "Oh2b3BYFxFs",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Hans Erich Apostel",
-    "birthDate": "1901-01-22",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 7.5,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "contemporary",
-      "classical"
-    ],
-    "youtubeVideoId": "FckfYSqA7kQ",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Hans Jelmoli",
-    "birthDate": "1877-01-17",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 0.6,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "t-3pxiUedls",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Hans Knappertsbusch",
-    "birthDate": "1888-03-12",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 21.2,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera",
-      "classical"
-    ],
-    "youtubeVideoId": "zsBsKwv2yPM",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Hans Lang",
-    "birthDate": "1908-07-05",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 14,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "IhhpDyeSbZY",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Hans Pfitzner",
-    "birthDate": "1869-05-05",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 14,
-      "decan": 2,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "4UjC6ebYAA8",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Hans Schmidt-Isserstedt",
-    "birthDate": "1900-05-05",
-    "venus": {
-      "sign": "Gemini",
-      "degree": 29.9,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "c_mDoy05nmE",
-    "backupVideoIds": []
-  },
-  {
     "name": "Hans Werner Henze",
     "birthDate": "1926-07-01",
     "venus": {
@@ -6529,24 +4200,6 @@
       "classical"
     ],
     "youtubeVideoId": "jwKp6hlLg5U",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Hans Zender",
-    "birthDate": "1936-11-22",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 7,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "4_PbPcOLY5Y",
     "backupVideoIds": []
   },
   {
@@ -6614,78 +4267,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Heinrich Berté",
-    "birthDate": "1857-05-08",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 20.8,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "o7_z1Owijrs",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Heinrich Biber",
-    "birthDate": "1644-08-12",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 29.7,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "bh6N3Wi_m5w",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Heinrich Sutermeister",
-    "birthDate": "1910-08-12",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 21.8,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "6klSd79aX_w",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Heinrich Zöllner",
-    "birthDate": "1854-07-04",
-    "venus": {
-      "sign": "Gemini",
-      "degree": 2.9,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "OUGCE7JY0zY",
-    "backupVideoIds": []
-  },
-  {
     "name": "Helena Hauff",
     "birthDate": "1989-03-01",
     "venus": {
@@ -6730,24 +4311,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Henry Hugo Pierson",
-    "birthDate": "1815-04-12",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 17.4,
-      "decan": 2,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "Srju4OnOnzA",
-    "backupVideoIds": []
-  },
-  {
     "name": "Henry Purcell",
     "birthDate": "1659-09-10",
     "venus": {
@@ -6782,115 +4345,6 @@
       "minimalist"
     ],
     "youtubeVideoId": "87HJZBMjw5Y",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Herbert Windt",
-    "birthDate": "1894-09-15",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 3.3,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "SC5vSOkWPr4",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Hermann Goetz",
-    "birthDate": "1840-12-07",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 19.5,
-      "decan": 2,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "w79kfRzao1g",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Hermann Levi",
-    "birthDate": "1839-11-07",
-    "venus": {
-      "sign": "Libra",
-      "degree": 6.6,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera",
-      "classical"
-    ],
-    "youtubeVideoId": "juXlPo_zc2g",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Hermann Schroeder",
-    "birthDate": "1904-03-26",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 8.4,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "Oc5HKECNzbs",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Hermann Zumpe",
-    "birthDate": "1850-04-09",
-    "venus": {
-      "sign": "Aries",
-      "degree": 28.7,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "1zeWGAEZ7YU",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Hilde Güden",
-    "birthDate": "1917-09-15",
-    "venus": {
-      "sign": "Libra",
-      "degree": 28.8,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "vTv1VROkPTw",
     "backupVideoIds": []
   },
   {
@@ -7090,42 +4544,6 @@
     ]
   },
   {
-    "name": "Ignaz Brüll",
-    "birthDate": "1846-11-07",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 5.3,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "JQ0YZTUGCKI",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Ignaz Lachner",
-    "birthDate": "1807-09-11",
-    "venus": {
-      "sign": "Libra",
-      "degree": 26.1,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "lIqlmkRjTh4",
-    "backupVideoIds": []
-  },
-  {
     "name": "Igor Stravinsky",
     "birthDate": "1882-06-17",
     "venus": {
@@ -7181,24 +4599,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Ildebrando D'Arcangelo",
-    "birthDate": "1969-01-01",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 26.2,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "bxi1fDymXUQ",
-    "backupVideoIds": []
-  },
-  {
     "name": "Ill Blu",
     "birthDate": "1988-01-01",
     "venus": {
@@ -7235,173 +4635,6 @@
       "experimental"
     ],
     "youtubeVideoId": "CsewLteZIio",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Inge Borkh",
-    "birthDate": "1917-05-26",
-    "venus": {
-      "sign": "Gemini",
-      "degree": 12.6,
-      "decan": 2,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "isWfAG3xKe8",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Ingeborg Hallstein",
-    "birthDate": "1936-05-23",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 22.1,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "CL2daiPM-ss",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Irene Abendroth",
-    "birthDate": "1872-07-14",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 21.8,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "utHXbTEQLm8",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Isaac Albéniz",
-    "birthDate": "1860-05-29",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 21.9,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "mKSOJjhonO4",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Isabel Bayrakdarian",
-    "birthDate": "1974-02-01",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 28.7,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "talhegnvvko",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Isang Yun",
-    "birthDate": "1917-09-17",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 1.1,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "vCDRcgKzABM",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Itxaro Mentxaka",
-    "birthDate": "1964-01-01",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 10.8,
-      "decan": 2,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "qDh0fVc7_gY",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Ivan Parík",
-    "birthDate": "1936-08-17",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 7.9,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "contemporary",
-      "experimental",
-      "classical"
-    ],
-    "youtubeVideoId": "YBz97nJLej0",
-    "backupVideoIds": [
-      "XSM0rX7R938",
-      "L2J7JO4cS6o"
-    ]
-  },
-  {
-    "name": "Ivan Rebroff",
-    "birthDate": "1931-07-31",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 26.7,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "_GVwHMNwez4",
     "backupVideoIds": []
   },
   {
@@ -7468,43 +4701,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Jan Dismas Zelenka",
-    "birthDate": "1679-10-16",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 3.2,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "_trcQMrq2C0",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Jan Grunt",
-    "birthDate": "1984-03-06",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 20.1,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "contemporary",
-      "classical"
-    ],
-    "youtubeVideoId": "Ka_LhFPJrso",
-    "backupVideoIds": []
-  },
-  {
     "name": "Jan Jelinek",
     "birthDate": "1969-07-29",
     "venus": {
@@ -7527,81 +4723,6 @@
       "suVh3alr9VI",
       "3-9dRLOiGOM"
     ]
-  },
-  {
-    "name": "Ján Móry",
-    "birthDate": "1892-07-10",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 17.5,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera",
-      "classical"
-    ],
-    "youtubeVideoId": "l6kqu2mk-Kw",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Jan Truhlář",
-    "birthDate": "1928-07-06",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 15.5,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "contemporary",
-      "classical"
-    ],
-    "youtubeVideoId": "0kRHCYlD9V4",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Jaromír Podešva",
-    "birthDate": "1927-03-08",
-    "venus": {
-      "sign": "Aries",
-      "degree": 12.3,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "contemporary",
-      "classical"
-    ],
-    "youtubeVideoId": "w0NDqn6n_4k",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Jean Françaix",
-    "birthDate": "1912-05-23",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 20.1,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "fNAHRPWKDEA",
-    "backupVideoIds": []
   },
   {
     "name": "Jean Sibelius",
@@ -7767,24 +4888,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Jiři Strniště",
-    "birthDate": "1914-04-24",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 21.3,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "NbGsHUOoEnc",
-    "backupVideoIds": []
-  },
-  {
     "name": "Jo Johnson",
     "birthDate": "2014-06-02",
     "venus": {
@@ -7806,24 +4909,6 @@
       "npiLTykuDus",
       "2A6FgZ1vH2U"
     ]
-  },
-  {
-    "name": "Joachim Nicolas Eggert",
-    "birthDate": "1779-02-22",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 20.1,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "nar1fbIUcqI",
-    "backupVideoIds": []
   },
   {
     "name": "Joanna Newsom",
@@ -7909,168 +4994,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Johann André",
-    "birthDate": "1741-03-24",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 12.7,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "DSJzz0s0HsA",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Johann Caspar Aiblinger",
-    "birthDate": "1779-02-23",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 20.8,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "NQOscC51POo",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Johann Christian Bach",
-    "birthDate": "1735-09-05",
-    "venus": {
-      "sign": "Libra",
-      "degree": 28.1,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "6JQm5aSjX6g",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Johann Friedrich Agricola",
-    "birthDate": "1720-01-04",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 27.8,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "_Z6-tEipBX0",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Johann Friedrich Fasch",
-    "birthDate": "1688-04-15",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 20,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "o9xVxZcYOis",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Johann Ignaz Walter",
-    "birthDate": "1755-08-31",
-    "venus": {
-      "sign": "Leo",
-      "degree": 22.6,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "oLocUyAEz_k",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Johann Michael Vogl",
-    "birthDate": "1768-08-10",
-    "venus": {
-      "sign": "Leo",
-      "degree": 17.5,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "pO-P2E180pY",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Johann Nepomuk Hummel",
-    "birthDate": "1778-11-14",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 7.9,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "qH9nBvCzozc",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Johann Peter Salomon",
-    "birthDate": "1745-02-20",
-    "venus": {
-      "sign": "Aries",
-      "degree": 14.3,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "l7o2_WuR2-o",
-    "backupVideoIds": []
-  },
-  {
     "name": "Johann Sebastian Bach",
     "birthDate": "1685-03-31",
     "venus": {
@@ -8086,42 +5009,6 @@
       "baroque"
     ],
     "youtubeVideoId": "ho9rZjlsyYY",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Johann von Rist",
-    "birthDate": "1607-03-08",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 19.3,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "PZJ8rjCF3I0",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Johanna Doderer",
-    "birthDate": "1969-09-18",
-    "venus": {
-      "sign": "Leo",
-      "degree": 24.4,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "EXHO9u3IUzo",
     "backupVideoIds": []
   },
   {
@@ -8252,24 +5139,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Jolán Máthé",
-    "birthDate": "1913-06-23",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 16.2,
-      "decan": 2,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "O_CchcIv60g",
-    "backupVideoIds": []
-  },
-  {
     "name": "Jon Hopkins",
     "birthDate": "1979-08-15",
     "venus": {
@@ -8358,150 +5227,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Jörn Arnecke",
-    "birthDate": "1973-09-28",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 17.6,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "PZQ5GnCTKx8",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Josef Bayer",
-    "birthDate": "1852-03-06",
-    "venus": {
-      "sign": "Aries",
-      "degree": 22.9,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "XF4G4U1zLek",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Josef Greindl",
-    "birthDate": "1912-12-23",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 12.7,
-      "decan": 2,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "Sdmjz_WBr1w",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Josef Matthias Hauer",
-    "birthDate": "1883-03-19",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 14.3,
-      "decan": 2,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "FpsibYXqKw4",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Joseph Beer",
-    "birthDate": "1908-05-07",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 1.6,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "1fk0XW9eQFU",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Joseph Schmidt",
-    "birthDate": "1904-03-04",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 11.4,
-      "decan": 2,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "kWKL9Obg9uI",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Joseph Schubert",
-    "birthDate": "1754-12-20",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 1.6,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "MKG_6BqnhpI",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Joseph Weigl",
-    "birthDate": "1766-03-28",
-    "venus": {
-      "sign": "Aries",
-      "degree": 3.4,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "p-BLASZtz88",
-    "backupVideoIds": []
-  },
-  {
     "name": "Josiah Steinbrick",
     "birthDate": "1981-07-13",
     "venus": {
@@ -8547,44 +5272,6 @@
     ]
   },
   {
-    "name": "Jozef Grešák",
-    "birthDate": "1907-12-30",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 3.9,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "contemporary",
-      "opera",
-      "classical"
-    ],
-    "youtubeVideoId": "8rcVFeOXSHI",
-    "backupVideoIds": []
-  },
-  {
-    "name": "József Györgyfi",
-    "birthDate": "1939-03-25",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 23.1,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "nga8TIEvgAs",
-    "backupVideoIds": []
-  },
-  {
     "name": "Jules Massenet",
     "birthDate": "1842-05-12",
     "venus": {
@@ -8628,61 +5315,6 @@
     ]
   },
   {
-    "name": "Júlia Vajda",
-    "birthDate": "1957-02-16",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 13.3,
-      "decan": 2,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "pOKtvqW9zt0",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Julius Kalaš",
-    "birthDate": "1902-08-18",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 28.5,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera",
-      "classical"
-    ],
-    "youtubeVideoId": "DByv9KRsxr0",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Julius Rietz",
-    "birthDate": "1812-12-28",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 1,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "PQpb4ItrEmE",
-    "backupVideoIds": []
-  },
-  {
     "name": "Juraj Pospíšil",
     "birthDate": "1931-01-14",
     "venus": {
@@ -8708,24 +5340,6 @@
       "G-9OU14gg_M",
       "SNINKa2XpXw"
     ]
-  },
-  {
-    "name": "Jussi Björling",
-    "birthDate": "1911-02-05",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 2.5,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "jFkGHus4-bM",
-    "backupVideoIds": []
   },
   {
     "name": "Kaitlyn Aurelia Smith",
@@ -8834,99 +5448,6 @@
       "idm"
     ],
     "youtubeVideoId": "FQr5kKP2vQw",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Karel Weis",
-    "birthDate": "1862-02-12",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 14.2,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera",
-      "classical"
-    ],
-    "youtubeVideoId": "lV0ZsPFQEAM",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Karl Adolf Lorenz",
-    "birthDate": "1837-01-01",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 7.7,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "SUvi1Ck0EAw",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Karl Doppler",
-    "birthDate": "1825-09-12",
-    "venus": {
-      "sign": "Leo",
-      "degree": 8.4,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "1HShStN3ZvU",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Karl Michael Ziehrer",
-    "birthDate": "1843-05-02",
-    "venus": {
-      "sign": "Aries",
-      "degree": 2.7,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "d-2WSPl10Tk",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Karl Rankl",
-    "birthDate": "1898-10-01",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 24.4,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "contemporary",
-      "opera",
-      "classical"
-    ],
-    "youtubeVideoId": "4JaQnN6Ye9c",
     "backupVideoIds": []
   },
   {
@@ -9109,60 +5630,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Klaus Ager",
-    "birthDate": "1946-05-10",
-    "venus": {
-      "sign": "Gemini",
-      "degree": 13.5,
-      "decan": 2,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "EfdxqxiCt4A",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Klaus Florian Vogt",
-    "birthDate": "1970-01-01",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 5.1,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "gsYQnqNdg2o",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Klaus Huber",
-    "birthDate": "1924-11-30",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 3.7,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "G6lU3vJw1gk",
-    "backupVideoIds": []
-  },
-  {
     "name": "Klaus Nomi",
     "birthDate": "1944-01-24",
     "venus": {
@@ -9288,42 +5755,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Korla Awgust Kocor",
-    "birthDate": "1822-12-03",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 5.9,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "GdU4ayO9rOk",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Kornélia Hollósy",
-    "birthDate": "1827-04-13",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 9.8,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "1xk67p3FfiE",
-    "backupVideoIds": []
-  },
-  {
     "name": "Kraftwerk",
     "birthDate": "1946-08-19",
     "venus": {
@@ -9369,42 +5800,6 @@
     ]
   },
   {
-    "name": "Kurt Rydl",
-    "birthDate": "1947-10-08",
-    "venus": {
-      "sign": "Libra",
-      "degree": 23.7,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "1DYFFKfDK1k",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Kurt Schwertsik",
-    "birthDate": "1935-06-25",
-    "venus": {
-      "sign": "Leo",
-      "degree": 18.3,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "WqsDn6W6ha0",
-    "backupVideoIds": []
-  },
-  {
     "name": "Kurt Weill",
     "birthDate": "1900-03-02",
     "venus": {
@@ -9420,24 +5815,6 @@
       "classical"
     ],
     "youtubeVideoId": "icY-uYhQch0",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Laci Boldemann",
-    "birthDate": "1921-04-24",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 0.9,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "SIzCR0qmux8",
     "backupVideoIds": []
   },
   {
@@ -9511,60 +5888,6 @@
     ]
   },
   {
-    "name": "Leo Blech",
-    "birthDate": "1871-04-21",
-    "venus": {
-      "sign": "Gemini",
-      "degree": 2.7,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "nosp8FYPD4M",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Leo Fall",
-    "birthDate": "1873-02-02",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 29.1,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "4fddGrDV2gw",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Leo Slezak",
-    "birthDate": "1873-08-18",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 12.9,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "pLeKMwWT6mI",
-    "backupVideoIds": []
-  },
-  {
     "name": "Leonard Bernstein",
     "birthDate": "1918-08-25",
     "venus": {
@@ -9580,42 +5903,6 @@
       "classical"
     ],
     "youtubeVideoId": "Gt2zubHcER4",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Leonardo Vinci",
-    "birthDate": "1690-01-01",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 15.6,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "pAL6sGxOWEs",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Leonie Rysanek",
-    "birthDate": "1926-11-14",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 19.6,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "xxiOWST6a30",
     "backupVideoIds": []
   },
   {
@@ -9641,24 +5928,6 @@
       "RpZVPSCv79U",
       "wwe-XoV2vH8"
     ]
-  },
-  {
-    "name": "Lilli Lehmann",
-    "birthDate": "1848-11-24",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 4.1,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "Tgvj2pbnfKo",
-    "backupVideoIds": []
   },
   {
     "name": "Lino Capra Vaccina",
@@ -9703,24 +5972,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Lorin Maazel",
-    "birthDate": "1930-03-06",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 22,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "xGX7c8tNid4",
-    "backupVideoIds": []
-  },
-  {
     "name": "Loscil",
     "birthDate": "1974-05-13",
     "venus": {
@@ -9741,42 +5992,6 @@
       "E03ctukZ2eY",
       "86K_KPnNiNw"
     ]
-  },
-  {
-    "name": "Lotte Lehmann",
-    "birthDate": "1888-02-27",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 4.1,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "Km0jc7H0j-A",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Louis Spohr",
-    "birthDate": "1784-04-05",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 13.8,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "Z9MY3BTyeQE",
-    "backupVideoIds": []
   },
   {
     "name": "Love and Rockets",
@@ -9932,24 +6147,6 @@
     ]
   },
   {
-    "name": "Ludvík Podéšť",
-    "birthDate": "1921-12-19",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 14.7,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "TGx8sp27jJE",
-    "backupVideoIds": []
-  },
-  {
     "name": "Ludwig van Beethoven",
     "birthDate": "1770-12-17",
     "venus": {
@@ -9966,98 +6163,6 @@
       "romantic"
     ],
     "youtubeVideoId": "W-fFHeTX70Q",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Ludwig Zenk",
-    "birthDate": "1900-11-18",
-    "venus": {
-      "sign": "Libra",
-      "degree": 17.4,
-      "decan": 2,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "contemporary",
-      "classical"
-    ],
-    "youtubeVideoId": "6JQm5aSjX6g",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Luigi Cherubini",
-    "birthDate": "1760-09-08",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 22.7,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "3CmERSr11rI",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Luigi Dallapiccola",
-    "birthDate": "1904-02-03",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 4.9,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "0Lxv_7nGU-Q",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Luis Mariano",
-    "birthDate": "1914-08-13",
-    "venus": {
-      "sign": "Libra",
-      "degree": 3.1,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "Bq0l50E6wkA",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Lukáš Matoušek",
-    "birthDate": "1943-05-29",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 20.2,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "contemporary",
-      "classical"
-    ],
-    "youtubeVideoId": "A39MVbyQIOo",
     "backupVideoIds": []
   },
   {
@@ -10219,24 +6324,6 @@
     ]
   },
   {
-    "name": "Mack Harrell",
-    "birthDate": "1909-10-08",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 25.4,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "1HMXHDN_mzo",
-    "backupVideoIds": []
-  },
-  {
     "name": "Madonna",
     "birthDate": "1958-08-16",
     "venus": {
@@ -10322,78 +6409,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Manfred Stahnke",
-    "birthDate": "1951-10-30",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 20.5,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "SAZXTRrEXgM",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Marek Kopelent",
-    "birthDate": "1932-04-28",
-    "venus": {
-      "sign": "Gemini",
-      "degree": 23.3,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "contemporary"
-    ],
-    "youtubeVideoId": "RhcFiU_IF7s",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Maria Antonia Walpurgis of Bavaria",
-    "birthDate": "1724-07-18",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 6.2,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "u0RogpXMHDA",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Maria Jeritza",
-    "birthDate": "1887-10-06",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 21.1,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "yxAU_8oflTQ",
-    "backupVideoIds": []
-  },
-  {
     "name": "Maria Meneghini Callas",
     "birthDate": "1923-12-02",
     "venus": {
@@ -10409,25 +6424,6 @@
       "classical"
     ],
     "youtubeVideoId": "s-TwMfgaDC8",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Marianna Laba",
-    "birthDate": "1968-09-07",
-    "venus": {
-      "sign": "Libra",
-      "degree": 6.4,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "baroque",
-      "classical"
-    ],
-    "youtubeVideoId": "B8hhMZP1XRE",
     "backupVideoIds": []
   },
   {
@@ -10539,42 +6535,6 @@
     ]
   },
   {
-    "name": "Mathilde Kralik",
-    "birthDate": "1857-12-03",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 20.5,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "daspXiHKuCE",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Matthias Pintscher",
-    "birthDate": "1971-01-29",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 22.3,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "czYHUbQfzKg",
-    "backupVideoIds": []
-  },
-  {
     "name": "Maurice Ravel",
     "birthDate": "1875-03-07",
     "venus": {
@@ -10590,42 +6550,6 @@
       "impressionist"
     ],
     "youtubeVideoId": "cJOW2caFNwE",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Max Bruch",
-    "birthDate": "1838-01-06",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 2.3,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "bfZMmgIvc8g",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Max Maretzek",
-    "birthDate": "1821-06-28",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 16.3,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "s9agfLVCx4M",
     "backupVideoIds": []
   },
   {
@@ -10752,42 +6676,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Michael Jarrell",
-    "birthDate": "1958-10-08",
-    "venus": {
-      "sign": "Libra",
-      "degree": 6,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "Tc_iqRdGCBo",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Michael Umlauf",
-    "birthDate": "1781-08-09",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 5.7,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "PPkSvmzpfH8",
-    "backupVideoIds": []
-  },
-  {
     "name": "Midori Takada",
     "birthDate": "1951-12-21",
     "venus": {
@@ -10809,42 +6697,6 @@
       "F6lA0JV7wBo",
       "fAwCbjfMXY0"
     ]
-  },
-  {
-    "name": "Miguel Marqués",
-    "birthDate": "1843-05-20",
-    "venus": {
-      "sign": "Aries",
-      "degree": 23.9,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "GGxXXe2D51A",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Mihai Timofti",
-    "birthDate": "1948-09-19",
-    "venus": {
-      "sign": "Leo",
-      "degree": 11.3,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "K52HeexvV6A",
-    "backupVideoIds": []
   },
   {
     "name": "Mikis Theodorakis",
@@ -10910,61 +6762,6 @@
       "wcaObFbTbBI",
       "AKwS7tpDoVs"
     ]
-  },
-  {
-    "name": "Milka Ternina",
-    "birthDate": "1863-12-19",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 10.7,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "n3B74Gfn3d4",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Miloslav Machek",
-    "birthDate": "1923-11-09",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 1.6,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "DiO-yKm_D9E",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Miroslav Pelikán",
-    "birthDate": "1922-02-20",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 3.8,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "contemporary",
-      "classical"
-    ],
-    "youtubeVideoId": "PinWDG94exg",
-    "backupVideoIds": []
   },
   {
     "name": "Miss Kittin",
@@ -11319,24 +7116,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Moritz Hauptmann",
-    "birthDate": "1792-10-13",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 8.9,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "frJYYXQ0xCc",
-    "backupVideoIds": []
-  },
-  {
     "name": "Mort Garson",
     "birthDate": "1924-07-20",
     "venus": {
@@ -11648,25 +7427,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Nikos Skalkottas",
-    "birthDate": "1904-03-08",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 16.3,
-      "decan": 2,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "contemporary",
-      "classical"
-    ],
-    "youtubeVideoId": "KqF-RZ0GDno",
-    "backupVideoIds": []
-  },
-  {
     "name": "Nils Frahm",
     "birthDate": "1982-09-20",
     "venus": {
@@ -11715,25 +7475,6 @@
       "mx-bm2yz7ys",
       "h0l-Fk3Wf8k"
     ]
-  },
-  {
-    "name": "Norbert von Hannenheim",
-    "birthDate": "1898-05-15",
-    "venus": {
-      "sign": "Gemini",
-      "degree": 16.9,
-      "decan": 2,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "contemporary",
-      "classical"
-    ],
-    "youtubeVideoId": "RdBSfy7zi8o",
-    "backupVideoIds": []
   },
   {
     "name": "Odd Nosdam",
@@ -11848,24 +7589,6 @@
     "backupVideoIds": [
       "ejaaxLeUQd4"
     ]
-  },
-  {
-    "name": "Olga Borodina",
-    "birthDate": "1963-07-29",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 27,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "FoXCPMvYhH4",
-    "backupVideoIds": []
   },
   {
     "name": "Olivier Messiaen",
@@ -12022,115 +7745,6 @@
     ]
   },
   {
-    "name": "Oscar Feltsman",
-    "birthDate": "1921-02-18",
-    "venus": {
-      "sign": "Aries",
-      "degree": 15.8,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "xYQ4n3t_DA8",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Oscar Straus",
-    "birthDate": "1870-03-06",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 29,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "BL57IKFx52k",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Oskar Nedbal",
-    "birthDate": "1874-03-26",
-    "venus": {
-      "sign": "Aries",
-      "degree": 13.4,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera",
-      "classical"
-    ],
-    "youtubeVideoId": "-tHzNLe8T9g",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Otto Ackermann",
-    "birthDate": "1909-10-18",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 7.1,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "ivmPuK19PX0",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Otto Edelmann",
-    "birthDate": "1917-02-05",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 26.3,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "MDKJgiJn2TU",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Otto Nicolai",
-    "birthDate": "1810-06-09",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 10.2,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "MflDTJSOYcI",
-    "backupVideoIds": []
-  },
-  {
     "name": "Ouri",
     "birthDate": "1992-06-20",
     "venus": {
@@ -12189,24 +7803,6 @@
       "TrsAaX1u4HU",
       "CGBJVlY_yAY"
     ]
-  },
-  {
-    "name": "Pablo Hertogs",
-    "birthDate": "1907-01-01",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 2.1,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "gGCJOTvECVQ",
-    "backupVideoIds": []
   },
   {
     "name": "Pan Sonic",
@@ -12276,42 +7872,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Paul Abraham",
-    "birthDate": "1892-11-02",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 29,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "7QTCNuaVz8E",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Paul Burkhard",
-    "birthDate": "1911-12-21",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 13.5,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "GGKccXd4PbA",
-    "backupVideoIds": []
-  },
-  {
     "name": "Paul Hindemith",
     "birthDate": "1895-11-16",
     "venus": {
@@ -12327,79 +7887,6 @@
       "classical"
     ],
     "youtubeVideoId": "-HFiO1B_qoc",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Paul Pisk",
-    "birthDate": "1893-05-16",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 29.5,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "contemporary",
-      "classical"
-    ],
-    "youtubeVideoId": "REITJtXHzy8",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Paul von Klenau",
-    "birthDate": "1883-02-11",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 5.8,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "wNK_lDodCs4",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Paul Wranitzky",
-    "birthDate": "1756-12-30",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 0.7,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "oR0i6z7jc1U",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Pauline Viardot",
-    "birthDate": "1821-07-18",
-    "venus": {
-      "sign": "Leo",
-      "degree": 10.8,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "gFQ1WQ6W_v4",
     "backupVideoIds": []
   },
   {
@@ -12486,42 +7973,6 @@
     ]
   },
   {
-    "name": "Peter Anders",
-    "birthDate": "1908-07-01",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 16.5,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "DMq-e8BVwJU",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Peter Cornelius",
-    "birthDate": "1824-12-24",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 9.1,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "yp45BsayXQU",
-    "backupVideoIds": []
-  },
-  {
     "name": "Peter Kardas",
     "birthDate": "1995-02-14",
     "venus": {
@@ -12535,24 +7986,6 @@
     ],
     "subgenres": [],
     "youtubeVideoId": "RmrlJpKlwcc",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Péter Korcsmáros",
-    "birthDate": "1945-12-28",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 28,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "7_WWz2DSnT8",
     "backupVideoIds": []
   },
   {
@@ -12571,43 +8004,6 @@
       "classical"
     ],
     "youtubeVideoId": "t3PS8WL7E2c",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Peter Schreier",
-    "birthDate": "1935-07-29",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 16.4,
-      "decan": 2,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "k9vDOnQaPz4",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Petr Pokorný",
-    "birthDate": "1932-11-16",
-    "venus": {
-      "sign": "Libra",
-      "degree": 17.2,
-      "decan": 2,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "contemporary",
-      "classical"
-    ],
-    "youtubeVideoId": "aJmjzXf7H7E",
     "backupVideoIds": []
   },
   {
@@ -12833,24 +8229,6 @@
     ]
   },
   {
-    "name": "Pongrác Kacsóh",
-    "birthDate": "1873-12-15",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 6.9,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "DmO2AYRlSkw",
-    "backupVideoIds": []
-  },
-  {
     "name": "Popol Vuh",
     "birthDate": "1944-06-06",
     "venus": {
@@ -13028,98 +8406,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Q116059487",
-    "birthDate": "1938-12-03",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 20.7,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera",
-      "classical"
-    ],
-    "youtubeVideoId": "YrtxU794fCA",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Q120268667",
-    "birthDate": "1907-03-09",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 3,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "1Xv6fUVzc-k",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Q135983767",
-    "birthDate": "1992-01-01",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 1,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera",
-      "classical"
-    ],
-    "youtubeVideoId": "tdiZ_qcx-CY",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Q153469",
-    "birthDate": "1933-11-23",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 18,
-      "decan": 2,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "uS4VSIwE79g",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Q191917",
-    "birthDate": "1870-04-30",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 23.9,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "iBD6fC55aC8",
-    "backupVideoIds": []
-  },
-  {
     "name": "quit life",
     "birthDate": "1996-06-15",
     "venus": {
@@ -13186,24 +8472,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Rafael Kubelík",
-    "birthDate": "1914-06-29",
-    "venus": {
-      "sign": "Leo",
-      "degree": 11.1,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "fJc2HSnf6nA",
-    "backupVideoIds": []
-  },
-  {
     "name": "Rafael Toral",
     "birthDate": "1967-00-00",
     "venus": {
@@ -13252,24 +8520,6 @@
     ]
   },
   {
-    "name": "Rainer Trost",
-    "birthDate": "1966-01-01",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 13.5,
-      "decan": 2,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "Li22zCd8m2A",
-    "backupVideoIds": []
-  },
-  {
     "name": "Random Forest",
     "birthDate": "2008-06-15",
     "venus": {
@@ -13289,24 +8539,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Raoul Gunsbourg",
-    "birthDate": "1860-01-06",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 10,
-      "decan": 2,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "gQpQgjZRk1U",
-    "backupVideoIds": []
-  },
-  {
     "name": "Red Sparowes",
     "birthDate": "2003-00-00",
     "venus": {
@@ -13322,42 +8554,6 @@
       "idm"
     ],
     "youtubeVideoId": "5XWuD6UsM9Y",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Remigiusz Kuźmiński",
-    "birthDate": "1981-05-01",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 17.3,
-      "decan": 2,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "p0aLMsh4mvU",
-    "backupVideoIds": []
-  },
-  {
-    "name": "René Pape",
-    "birthDate": "1964-09-04",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 26.2,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "np7kU383Vqo",
     "backupVideoIds": []
   },
   {
@@ -13404,24 +8600,6 @@
     ]
   },
   {
-    "name": "Richard Fall",
-    "birthDate": "1882-04-03",
-    "venus": {
-      "sign": "Aries",
-      "degree": 24,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "SHWe0cO0kAU",
-    "backupVideoIds": []
-  },
-  {
     "name": "Richard H. Kirk",
     "birthDate": "1956-03-21",
     "venus": {
@@ -13447,42 +8625,6 @@
       "dEqs0N7SuuU",
       "rWBIFlf8vJ4"
     ]
-  },
-  {
-    "name": "Richard Kleinmichel",
-    "birthDate": "1846-12-31",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 13.2,
-      "decan": 2,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "yCzcTHZa4K8",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Richard Mohaupt",
-    "birthDate": "1904-09-14",
-    "venus": {
-      "sign": "Libra",
-      "degree": 9.8,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "P-aVjTohud0",
-    "backupVideoIds": []
   },
   {
     "name": "Richard Skelton",
@@ -13522,24 +8664,6 @@
       "classical"
     ],
     "youtubeVideoId": "TtDHGQqsZDE",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Richard Tauber",
-    "birthDate": "1891-05-16",
-    "venus": {
-      "sign": "Aries",
-      "degree": 22.7,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "pSZREZpM22Y",
     "backupVideoIds": []
   },
   {
@@ -13585,24 +8709,6 @@
     ]
   },
   {
-    "name": "Rita Montaner",
-    "birthDate": "1900-05-22",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 13.8,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "g02ty--ygis",
-    "backupVideoIds": []
-  },
-  {
     "name": "Rival Consoles",
     "birthDate": "1985-11-10",
     "venus": {
@@ -13624,42 +8730,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Robert Erickson",
-    "birthDate": "1917-03-07",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 3.7,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "contemporary"
-    ],
-    "youtubeVideoId": "OprWd5HddnU",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Robert Fuchs",
-    "birthDate": "1847-02-15",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 10.9,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "xkyJgChXnRs",
-    "backupVideoIds": []
-  },
-  {
     "name": "Robert Schumann",
     "birthDate": "1810-06-08",
     "venus": {
@@ -13675,42 +8745,6 @@
       "romantic"
     ],
     "youtubeVideoId": "ck1wDRMoCPM",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Robert Stolz",
-    "birthDate": "1880-08-25",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 14.3,
-      "decan": 2,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "n6jqaB6dSlQ",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Roland-Manuel",
-    "birthDate": "1891-03-22",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 18.1,
-      "decan": 2,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "yAi3kMGCpgQ",
     "backupVideoIds": []
   },
   {
@@ -13734,96 +8768,6 @@
       "cwI0gbGEyuI",
       "MfY9ev1kdII"
     ]
-  },
-  {
-    "name": "Rózsa Szabó",
-    "birthDate": "1932-03-17",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 9.6,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "x6WiM05RBCc",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Rudolf Friml",
-    "birthDate": "1879-12-02",
-    "venus": {
-      "sign": "Libra",
-      "degree": 23.2,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "ggI_KzPrq0Q",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Rudolf Mayer",
-    "birthDate": "1902-11-22",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 27.6,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "contemporary"
-    ],
-    "youtubeVideoId": "eWt9pmDCVYA",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Rued Langgaard",
-    "birthDate": "1893-07-28",
-    "venus": {
-      "sign": "Leo",
-      "degree": 29,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "lcNDSQTemGw",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Ruth Zechlin",
-    "birthDate": "1926-06-22",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 22.6,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "r9GVRBHryyU",
-    "backupVideoIds": []
   },
   {
     "name": "Ryoji Ikeda",
@@ -13872,42 +8816,6 @@
       "BGqMIe69KUI",
       "5lQ1w0ZCQGE"
     ]
-  },
-  {
-    "name": "Sabine Kalter",
-    "birthDate": "1889-03-28",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 16.4,
-      "decan": 2,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "MKG_6BqnhpI",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Salvador Bacarisse",
-    "birthDate": "1898-09-12",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 5.9,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "Yrdyhx-nA_g",
-    "backupVideoIds": []
   },
   {
     "name": "Sam Gendel",
@@ -14055,24 +8963,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Sebastián Durón",
-    "birthDate": "1660-01-01",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 19.7,
-      "decan": 2,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "1tAfNCh_-1M",
-    "backupVideoIds": []
-  },
-  {
     "name": "Secreto Metro",
     "birthDate": "1986-01-01",
     "venus": {
@@ -14138,24 +9028,6 @@
     ]
   },
   {
-    "name": "Selma Kurz",
-    "birthDate": "1874-10-15",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 7.4,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "qpsZ-fbsCJM",
-    "backupVideoIds": []
-  },
-  {
     "name": "Semi Trucks",
     "birthDate": "1995-01-01",
     "venus": {
@@ -14169,24 +9041,6 @@
     ],
     "subgenres": [],
     "youtubeVideoId": "JUiUPj0eXn8",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Serafim Tulikov",
-    "birthDate": "1914-07-07",
-    "venus": {
-      "sign": "Leo",
-      "degree": 20.5,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "wcP_B5LnJOI",
     "backupVideoIds": []
   },
   {
@@ -14223,24 +9077,6 @@
       "romantic"
     ],
     "youtubeVideoId": "rEGOihjqO9w",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Setrag Vartian",
-    "birthDate": "1900-11-05",
-    "venus": {
-      "sign": "Libra",
-      "degree": 1.9,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "iEZtXnUvoLE",
     "backupVideoIds": []
   },
   {
@@ -14332,42 +9168,6 @@
       "techno"
     ],
     "youtubeVideoId": "-DrlW5w5cpc",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Siegfried Tiefensee",
-    "birthDate": "1922-10-20",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 5.8,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "wXh5JprKqiU",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Siegfried Wagner",
-    "birthDate": "1869-06-06",
-    "venus": {
-      "sign": "Gemini",
-      "degree": 23.3,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "wXh5JprKqiU",
     "backupVideoIds": []
   },
   {
@@ -15059,24 +9859,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Tamás Kóbor",
-    "birthDate": "1979-07-24",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 22.2,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "2pokLgLHBaM",
-    "backupVideoIds": []
-  },
-  {
     "name": "Tangerine Dream",
     "birthDate": "1944-01-29",
     "venus": {
@@ -15695,24 +10477,6 @@
     ]
   },
   {
-    "name": "Tola Mankiewiczówna",
-    "birthDate": "1900-05-08",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 2.6,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "oKnfR83QyKM",
-    "backupVideoIds": []
-  },
-  {
     "name": "Tomaga",
     "birthDate": "2013-02-15",
     "venus": {
@@ -16085,24 +10849,6 @@
     ]
   },
   {
-    "name": "Ursula Schröder-Feinen",
-    "birthDate": "1936-07-21",
-    "venus": {
-      "sign": "Leo",
-      "degree": 4.6,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "hSUqZWP5IQc",
-    "backupVideoIds": []
-  },
-  {
     "name": "user18081971",
     "birthDate": "1971-08-18",
     "venus": {
@@ -16127,24 +10873,6 @@
     ]
   },
   {
-    "name": "Vadym Shvydkyi",
-    "birthDate": "1975-09-29",
-    "venus": {
-      "sign": "Leo",
-      "degree": 27.8,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "YBC3c__NXdc",
-    "backupVideoIds": []
-  },
-  {
     "name": "Vangelis",
     "birthDate": "1943-03-29",
     "venus": {
@@ -16167,24 +10895,6 @@
       "RScZrvTebeA",
       "3kK_HGNOo9A"
     ]
-  },
-  {
-    "name": "Vano Muradeli",
-    "birthDate": "1908-04-06",
-    "venus": {
-      "sign": "Gemini",
-      "degree": 0.7,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "B_6JROiEymY",
-    "backupVideoIds": []
   },
   {
     "name": "Vegyn",
@@ -16228,60 +10938,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Vera Schwarz",
-    "birthDate": "1888-07-10",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 18.2,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "Km3cEQhAGxo",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Victor Jacobi",
-    "birthDate": "1883-10-22",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 7,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "dXJgMfsNy1E",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Viktor Ullmann",
-    "birthDate": "1898-01-01",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 0.3,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "zTmyka4CiGA",
-    "backupVideoIds": []
-  },
-  {
     "name": "Visage",
     "birthDate": "1978-06-15",
     "venus": {
@@ -16320,24 +10976,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Vittorio Gnecchi",
-    "birthDate": "1876-07-17",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 20.3,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "RwAVBvsJ-7A",
-    "backupVideoIds": []
-  },
-  {
     "name": "Vladislav Delay",
     "birthDate": "1976-10-23",
     "venus": {
@@ -16355,24 +10993,6 @@
       "experimental"
     ],
     "youtubeVideoId": "2rOmE6zIrno",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Volker David Kirchner",
-    "birthDate": "1942-06-25",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 27.2,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "0p5vNxJZVMg",
     "backupVideoIds": []
   },
   {
@@ -16399,60 +11019,6 @@
     ]
   },
   {
-    "name": "Waldemar von Baußnern",
-    "birthDate": "1866-11-29",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 25.7,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "Tn5oPX9qbKU",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Walter Kollo",
-    "birthDate": "1878-01-28",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 10.4,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "iU4FhcJ-xJ8",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Waltraud Meier",
-    "birthDate": "1956-01-09",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 20,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "CCm9q2Sjx18",
-    "backupVideoIds": []
-  },
-  {
     "name": "Waveshaper",
     "birthDate": "1984-09-26",
     "venus": {
@@ -16468,42 +11034,6 @@
       "darkwave"
     ],
     "youtubeVideoId": "TBrR-IsYP0I",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Werner Enders",
-    "birthDate": "1924-03-11",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 2.3,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "pm5trrWB_3U",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Werner Wolf Glaser",
-    "birthDate": "1910-04-14",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 7.8,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "QkrZJ_TSln4",
     "backupVideoIds": []
   },
   {
@@ -16562,60 +11092,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Wilhelm Killmayer",
-    "birthDate": "1927-08-21",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 25,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "pyFzjqXksdE",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Wilhelm Taubert",
-    "birthDate": "1811-03-23",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 15.9,
-      "decan": 2,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "laUUELwB6r0",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Wilhelmine Schröder-Devrient",
-    "birthDate": "1804-12-06",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 3.8,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "HPLA-eCDjOM",
-    "backupVideoIds": []
-  },
-  {
     "name": "William Basinski",
     "birthDate": "1958-06-25",
     "venus": {
@@ -16636,24 +11112,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Winfried Zillig",
-    "birthDate": "1905-04-01",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 14.3,
-      "decan": 2,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "6goVIIua3eI",
-    "backupVideoIds": []
-  },
-  {
     "name": "Wolfgang Amadeus Mozart",
     "birthDate": "1756-01-27",
     "venus": {
@@ -16669,78 +11127,6 @@
       "classical"
     ],
     "youtubeVideoId": "Rb0UmrCXxVA",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Wolfgang Anheisser",
-    "birthDate": "1929-12-01",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 22.7,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "5bReJtTkhPU",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Wolfgang Rihm",
-    "birthDate": "1952-03-13",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 26.2,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "Qu-lado4QRg",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Wolfgang von Schweinitz",
-    "birthDate": "1953-02-07",
-    "venus": {
-      "sign": "Aries",
-      "degree": 5.2,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "uxbi3VO5T_s",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Wolfgang Windgassen",
-    "birthDate": "1914-06-26",
-    "venus": {
-      "sign": "Leo",
-      "degree": 7.5,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "m5HEXdf_lMQ",
     "backupVideoIds": []
   },
   {
@@ -16788,42 +11174,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "York Höller",
-    "birthDate": "1944-01-11",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 9.9,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "gT3hrbz6biE",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Yuriy Vedeneev",
-    "birthDate": "1945-02-03",
-    "venus": {
-      "sign": "Aries",
-      "degree": 1.2,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "opera"
-    ],
-    "youtubeVideoId": "LaapMqTI5bM",
-    "backupVideoIds": []
-  },
-  {
     "name": "Yves Tumor",
     "birthDate": "2016-09-22",
     "venus": {
@@ -16840,63 +11190,6 @@
       "art-rock"
     ],
     "youtubeVideoId": "LJ4o9ppV4yg",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Zdeněk Fibich",
-    "birthDate": "1850-12-21",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 21.6,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "a0AhxPtKvmk",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Zdeněk Pololáník",
-    "birthDate": "1935-10-25",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 17.3,
-      "decan": 2,
-      "element": "earth"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "contemporary",
-      "classical"
-    ],
-    "youtubeVideoId": "xsusVuVJ_sE",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Zdeněk Zahradník",
-    "birthDate": "1936-06-03",
-    "venus": {
-      "sign": "Gemini",
-      "degree": 5.6,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "contemporary",
-      "opera",
-      "classical"
-    ],
-    "youtubeVideoId": "CSsbirtv3Nc",
     "backupVideoIds": []
   },
   {
