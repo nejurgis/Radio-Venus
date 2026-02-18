@@ -306,6 +306,8 @@ sqlite3 scripts/musicians.db "SELECT venus_sign, count(*) as n FROM musicians GR
 
 The primary discovery method is **Last.fm similarity graph traversal** via `smart-match.mjs`. This naturally preserves the underground aesthetic because it follows real listener connections rather than dumping entire label rosters.
 
+**Everynoise fallback** (`--everynoise` flag): When Last.fm has no similarity graph for an artist (too niche / not indexed), the pipeline launches a headless Playwright browser, scrapes [everynoise.com](https://everynoise.com) for the "fans also like" list (Glenn McDonald's curated dataset), and uses those as the seed artist pool. Everynoise genres (e.g., `gaian doom`, `gothenburg indie`) are also used as a last-resort genre fallback for discovered artists that would otherwise be dropped for lack of genre data. One shared browser instance is reused across all scrapes in a run, then closed cleanly.
+
 **Birth date discovery — 5-tier chain (Wikidata → MusicBrainz → Wikipedia → RateYourMusic):**
 Each discovered artist's birth date is resolved in priority order. MusicBrainz returns a MusicBrainz ID (MBID) alongside the date, which is stored in the seed entry and used for deduplication — catching alias/rename cases (e.g. "Clark" vs "Chris Clark") that name matching alone would miss. Artists with a birth year before 1940 are rejected as implausible for non-classical contexts (MusicBrainz occasionally returns the wrong person). The RateYourMusic fallback catches underground artists who have no Wikidata or Wikipedia entries.
 
@@ -314,7 +316,7 @@ Each discovered artist's birth date is resolved in priority order. MusicBrainz r
 **Typical session:**
 1. Run `node scripts/db-stats.mjs --anchors` to get suggested commands for weak signs
 2. Pick anchor artists with rich similarity graphs (e.g., Four Tet, Tim Hecker, Flying Lotus)
-3. Run `node scripts/smart-match.mjs "Artist Name" --depth 2 --filter`
+3. Run `node scripts/smart-match.mjs "Artist Name" --depth 2 --filter` (add `--everynoise` for artists with no Last.fm graph)
 4. Verify birth dates with a second source (Gemini/Google search is good for this)
 5. Run `node scripts/build-db.mjs` to rebuild the database
 6. Check `node scripts/db-stats.mjs` to see updated coverage
@@ -398,6 +400,7 @@ Each track displays: artist name (left, truncated with ellipsis if long), Venus 
 | [astronomy-engine](https://github.com/cosinekitty/astronomy) | Venus position calculation (ecliptic longitude → sign/degree/decan) | Client + build |
 | [yt-search](https://github.com/nicholasgasior/yt-search) | YouTube video ID lookup | Build only (dev dep) |
 | [cheerio](https://cheerio.js.org) | HTML parsing for Last.fm scraping (smart-match) | Build only (dev dep) |
+| [playwright](https://playwright.dev) | Headless browser for everynoise.com scraping (`--everynoise` flag) | Build only (dev dep) |
 | [vite](https://vitejs.dev) | Dev server + bundler | Dev only |
 
 ## Keyboard shortcuts

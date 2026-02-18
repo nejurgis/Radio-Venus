@@ -228,6 +228,88 @@ async function getMusicBrainzGenres(artistName, mbid = null) {
   }
 }
 
+// ── Everynoise: genre + similarity (Playwright headless, opt-in) ─────────────
+// Enabled via --everynoise flag. Uses a single shared browser instance.
+// Genres scraped from research.cgi, similar artists from artistprofile.cgi.
+
+let _browser = null;
+
+async function getPlaywrightBrowser() {
+  if (_browser) return _browser;
+  try {
+    const { chromium } = (await import('playwright'));
+    _browser = await chromium.launch({ headless: true });
+    return _browser;
+  } catch (e) {
+    console.error(`  Playwright unavailable: ${e.message}`);
+    console.error('  Install with: npx playwright install chromium');
+    return null;
+  }
+}
+
+async function closePlaywright() {
+  if (!_browser) return;
+  // Give the browser 5s to close gracefully; if it hangs, kill the process anyway
+  const timeout = setTimeout(() => process.exit(0), 5000);
+  try { await _browser.close(); } catch { /* ignore */ }
+  clearTimeout(timeout);
+  _browser = null;
+}
+
+async function getEverynoiseData(artistName) {
+  const browser = await getPlaywrightBrowser();
+  if (!browser) return { genres: [], similar: [] };
+
+  let page;
+  try {
+    page = await browser.newPage();
+    await page.setExtraHTTPHeaders({
+      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    });
+
+    // Research page: genres for a specific artist
+    const resUrl = `https://everynoise.com/research.cgi?name=${encodeURIComponent(artistName)}&mode=artist`;
+    await page.goto(resUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
+    await page.waitForTimeout(8000); // JS-rendered — needs time to load
+
+    // #exact is a sibling setname div — the actual box is in #exact + div
+    const genres = await page.$$eval(
+      '#exact + div .note a[href*="mode=genre"]',
+      els => els.map(el => el.textContent.trim()).filter(Boolean),
+    ).catch(() => []);
+
+    // Profile link → artist profile page with "fans also like" section
+    const profileHref = await page.$eval(
+      '#exact + div .artistname a[href^="artistprofile.cgi"]',
+      el => el.getAttribute('href'),
+    ).catch(() => null);
+
+    let similar = [];
+    if (profileHref) {
+      await page.goto(`https://everynoise.com/${profileHref}`, {
+        waitUntil: 'domcontentloaded', timeout: 30000,
+      });
+      await page.waitForTimeout(5000);
+
+      // "fans also like" names are in .falname a within #falcell
+      similar = await page.$$eval(
+        '#falcell .falname a',
+        els => els.map(el => el.textContent.trim()).filter(Boolean),
+      ).catch(() => []);
+    }
+
+    if (genres.length) console.log(`    Everynoise genres: [${genres.join(', ')}]`);
+    if (similar.length) console.log(`    Everynoise similar: ${similar.length} artists`);
+
+    return { genres, similar };
+  } catch (e) {
+    console.log(`    Everynoise error for "${artistName}": ${e.message}`);
+    return { genres: [], similar: [] };
+  } finally {
+    if (page) await page.close().catch(() => {});
+  }
+}
+
 // ── Manual overrides (for artists invisible to all databases) ────────────────
 
 const OVERRIDES_PATH = join(__dirname, 'manual-overrides.json');
@@ -574,19 +656,21 @@ async function main() {
   const args = process.argv.slice(2);
   const dryRun = args.includes('--dry-run');
   const useFilter = args.includes('--filter');
+  const useEverynoise = args.includes('--everynoise');
   const depthFlag = args.indexOf('--depth');
   const depth = depthFlag >= 0 ? parseInt(args[depthFlag + 1]) || 1 : 1;
   const seedArtists = args.filter(a => !a.startsWith('--') && (depthFlag < 0 || args.indexOf(a) !== depthFlag + 1));
 
   if (seedArtists.length === 0) {
-    console.log('Usage: node scripts/smart-match.mjs <Artist Name> [--dry-run] [--depth N] [--filter]');
+    console.log('Usage: node scripts/smart-match.mjs <Artist Name> [--dry-run] [--depth N] [--filter] [--everynoise]');
     console.log('');
     console.log('Examples:');
     console.log('  node scripts/smart-match.mjs "Boards of Canada"');
     console.log('  node scripts/smart-match.mjs "Basic Channel" --dry-run');
     console.log('  node scripts/smart-match.mjs "Aphex Twin" --depth 2');
-    console.log('  node scripts/smart-match.mjs "Tim Hecker" --filter        # Groq vibe check');
-    console.log('  node scripts/smart-match.mjs "Burial" --depth 2 --filter  # combine');
+    console.log('  node scripts/smart-match.mjs "Tim Hecker" --filter           # Groq vibe check');
+    console.log('  node scripts/smart-match.mjs "Burial" --depth 2 --filter     # combine');
+    console.log('  node scripts/smart-match.mjs "Anna von Hausswolff" --everynoise  # everynoise fallback');
     process.exit(0);
   }
 
@@ -610,9 +694,20 @@ async function main() {
       processed.add(artist.toLowerCase());
 
       console.log(`\nFinding artists similar to "${artist}"...`);
-      const similar = await getSimilarArtists(artist);
+      let similar = await getSimilarArtists(artist);
       console.log(`  Found ${similar.length} similar artists on Last.fm`);
       await delay(500); // Be polite to Last.fm
+
+      // Everynoise fallback: when Last.fm has no similarity graph for this artist
+      let evnSeedData = { genres: [], similar: [] };
+      if (useEverynoise && similar.length === 0) {
+        console.log(`  Last.fm graph empty — trying Everynoise...`);
+        evnSeedData = await getEverynoiseData(artist);
+        if (evnSeedData.similar.length > 0) {
+          console.log(`  Using ${evnSeedData.similar.length} Everynoise similar artists as fallback`);
+          similar = evnSeedData.similar;
+        }
+      }
 
       for (const name of similar) {
         const key = name.toLowerCase();
@@ -663,6 +758,16 @@ async function main() {
           genres = categorizeGenres(rawTags);
           if (mbGenres.length) console.log(`    MusicBrainz genres: [${mbGenres.slice(0, 6).join(', ')}]`);
         }
+        // Everynoise genre fallback — only called for artists that would otherwise be dropped
+        if (genres.length === 0 && useEverynoise) {
+          console.log(`    No genres from LFM/MB — trying Everynoise...`);
+          const evn = await getEverynoiseData(name);
+          if (evn.genres.length) {
+            rawTags = [...new Set([...rawTags, ...evn.genres])];
+            genres = categorizeGenres(rawTags);
+          }
+        }
+
         if (genres.length === 0) {
           console.log(`  - ${name} (${birthDate}): no matching genres`);
           continue;
@@ -686,6 +791,7 @@ async function main() {
 
   if (discovered.length === 0) {
     console.log('No new artists to add.');
+    await closePlaywright();
     return;
   }
 
@@ -709,11 +815,13 @@ async function main() {
   if (dryRun) {
     console.log('\n--dry-run: Not writing to seed file.');
     console.log('Remove --dry-run to save these artists.');
+    await closePlaywright();
     return;
   }
 
   if (toAdd.length === 0) {
     console.log('\nNo artists passed the filter. Nothing written.');
+    await closePlaywright();
     return;
   }
 
@@ -725,9 +833,12 @@ async function main() {
   writeFileSync(SEED_PATH, JSON.stringify(seed, null, 2));
   console.log(`\nWrote ${seed.length} total artists to ${SEED_PATH}`);
   console.log('Run "node scripts/build-db.mjs" to fetch YouTube links and rebuild the database.');
+
+  await closePlaywright();
 }
 
-main().catch(err => {
+main().catch(async err => {
   console.error('Smart match failed:', err);
+  await closePlaywright();
   process.exit(1);
 });
