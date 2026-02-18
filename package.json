@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "build:db": "node scripts/build-db.mjs",
+    "db:import": "node scripts/db-import.mjs",
+    "db:stats": "node scripts/db-stats.mjs",
     "preview": "vite preview",
     "deploy": "vite build && npx gh-pages -d dist"
   },
@@ -15,6 +17,7 @@
     "yt-search": "^2.13.1"
   },
   "devDependencies": {
+    "better-sqlite3": "^12.6.2",
     "vite": "^6.0.0"
   }
 }

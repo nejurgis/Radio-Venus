@@ -9,6 +9,7 @@ import { categorizeGenres, categorizeSubgenres } from '../src/genres.js';
 const require = createRequire(import.meta.url);
 const Astronomy = require('astronomy-engine');
 const ytSearch = require('yt-search');
+const Database = require('better-sqlite3');
 
 function httpGet(url) {
   return new Promise((resolve, reject) => {
@@ -265,10 +266,51 @@ async function main() {
   // Sort by name
   musicians.sort((a, b) => a.name.localeCompare(b.name));
 
-  // Write output
+  // Write JSON (browser + git)
   writeFileSync(outPath, JSON.stringify(musicians, null, 2));
-
   console.log(`\nWrote ${musicians.length} musicians to ${outPath}`);
+
+  // Write SQLite (management layer)
+  const seedPath2 = seedPath; // already defined above
+  const seedNames = new Set(JSON.parse(readFileSync(seedPath2, 'utf-8')).map(a => a.name.toLowerCase()));
+  const dbPath = join(__dirname, 'musicians.db');
+  const sqldb = new Database(dbPath);
+  sqldb.pragma('journal_mode = WAL');
+  sqldb.exec(`
+    CREATE TABLE IF NOT EXISTS musicians (
+      name TEXT PRIMARY KEY, birth_date TEXT,
+      venus_sign TEXT, venus_degree REAL, venus_decan INTEGER, venus_element TEXT,
+      youtube_id TEXT,
+      backup_ids TEXT NOT NULL DEFAULT '[]',
+      genres TEXT NOT NULL DEFAULT '[]',
+      subgenres TEXT NOT NULL DEFAULT '[]',
+      is_seed INTEGER NOT NULL DEFAULT 0
+    );
+    CREATE INDEX IF NOT EXISTS idx_venus_sign ON musicians(venus_sign);
+    CREATE INDEX IF NOT EXISTS idx_youtube_id ON musicians(youtube_id);
+  `);
+  const upsert = sqldb.prepare(`
+    INSERT INTO musicians (name,birth_date,venus_sign,venus_degree,venus_decan,venus_element,youtube_id,backup_ids,genres,subgenres,is_seed)
+    VALUES (@name,@birth_date,@venus_sign,@venus_degree,@venus_decan,@venus_element,@youtube_id,@backup_ids,@genres,@subgenres,@is_seed)
+    ON CONFLICT(name) DO UPDATE SET
+      birth_date=excluded.birth_date, venus_sign=excluded.venus_sign, venus_degree=excluded.venus_degree,
+      venus_decan=excluded.venus_decan, venus_element=excluded.venus_element, youtube_id=excluded.youtube_id,
+      backup_ids=excluded.backup_ids, genres=excluded.genres, subgenres=excluded.subgenres, is_seed=excluded.is_seed
+  `);
+  sqldb.transaction(rows => {
+    for (const a of rows) upsert.run({
+      name: a.name, birth_date: a.birthDate ?? null,
+      venus_sign: a.venus?.sign ?? null, venus_degree: a.venus?.degree ?? null,
+      venus_decan: a.venus?.decan ?? null, venus_element: a.venus?.element ?? null,
+      youtube_id: a.youtubeVideoId ?? null,
+      backup_ids: JSON.stringify(a.backupVideoIds ?? []),
+      genres: JSON.stringify(a.genres ?? []),
+      subgenres: JSON.stringify(a.subgenres ?? []),
+      is_seed: seedNames.has(a.name.toLowerCase()) ? 1 : 0,
+    });
+  })(musicians);
+  sqldb.close();
+  console.log(`Wrote musicians.db (${musicians.length} rows)`);
 
   // Print distribution
   const signCounts = {};

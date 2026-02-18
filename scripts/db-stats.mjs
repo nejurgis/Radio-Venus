@@ -7,25 +7,32 @@
 //   node scripts/db-stats.mjs --anchors    # suggest smart-match anchors for weak signs
 //
 import { createRequire } from 'node:module';
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const require = createRequire(import.meta.url);
+const Database = require('better-sqlite3');
 const Astronomy = require('astronomy-engine');
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const DB_PATH = join(__dirname, '..', 'public', 'data', 'musicians.json');
+const DB_PATH   = join(__dirname, 'musicians.db');
 const SEED_PATH = join(__dirname, 'seed-musicians.json');
 
-const db = JSON.parse(readFileSync(DB_PATH, 'utf-8'));
+if (!existsSync(DB_PATH)) {
+  console.error('musicians.db not found. Run: node scripts/db-import.mjs');
+  process.exit(1);
+}
+
+const db   = new Database(DB_PATH, { readonly: true });
 const seed = JSON.parse(readFileSync(SEED_PATH, 'utf-8'));
-const seedNames = new Set(seed.map(a => a.name));
 
 const SIGNS = [
   'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo',
   'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces',
 ];
+
+// ── Enrich seed with Venus signs (small file, cheap) ────────────────────────
 
 function calcVenusSign(dateStr) {
   try {
@@ -37,7 +44,6 @@ function calcVenusSign(dateStr) {
   } catch { return null; }
 }
 
-// Enrich seed with computed Venus signs
 seed.forEach(a => {
   if (!a.venus?.sign && a.birthDate) {
     const sign = calcVenusSign(a.birthDate);
@@ -45,62 +51,69 @@ seed.forEach(a => {
   }
 });
 
-const args = process.argv.slice(2);
-const showGaps = args.includes('--gaps');
+const args       = process.argv.slice(2);
+const showGaps   = args.includes('--gaps');
 const showAnchors = args.includes('--anchors');
-const showAll = !showGaps && !showAnchors;
+const showAll    = !showGaps && !showAnchors;
 
-// ── Count by sign ───────────────────────────────────────────────────────────
+// ── SQL queries ──────────────────────────────────────────────────────────────
 
-const bySign = {};
+const totalDb   = db.prepare('SELECT count(*) as n FROM musicians').get().n;
+const totalSeed = db.prepare('SELECT count(*) as n FROM musicians WHERE is_seed = 1').get().n;
+const hasVideo  = db.prepare('SELECT count(*) as n FROM musicians WHERE youtube_id IS NOT NULL').get().n;
+const hasBackup = db.prepare("SELECT count(*) as n FROM musicians WHERE json_array_length(backup_ids) > 0").get().n;
+
+// Sign distribution (total)
+const signRows = db.prepare(`
+  SELECT venus_sign, count(*) as cnt
+  FROM musicians WHERE venus_sign IS NOT NULL
+  GROUP BY venus_sign
+`).all();
+const bySign = Object.fromEntries(signRows.map(r => [r.venus_sign, r.cnt]));
+SIGNS.forEach(s => { bySign[s] = bySign[s] ?? 0; });
+
+// Sign distribution (seed only — still read from seed file since it's small)
 const bySignSeed = {};
-const bySignGenre = {}; // sign → genre → count (seed only)
-SIGNS.forEach(s => { bySign[s] = 0; bySignSeed[s] = 0; bySignGenre[s] = {}; });
-
-db.forEach(a => {
-  const sign = a.venus?.sign;
-  if (sign) bySign[sign]++;
-});
-
+const bySignGenre = {};
+SIGNS.forEach(s => { bySignSeed[s] = 0; bySignGenre[s] = {}; });
 seed.forEach(a => {
   const sign = a.venus?.sign;
   if (sign) {
-    bySignSeed[sign]++;
+    bySignSeed[sign] = (bySignSeed[sign] ?? 0) + 1;
     (a.genres || []).forEach(g => {
-      bySignGenre[sign][g] = (bySignGenre[sign][g] || 0) + 1;
+      bySignGenre[sign][g] = (bySignGenre[sign][g] ?? 0) + 1;
     });
   }
 });
 
-// ── Count by genre ──────────────────────────────────────────────────────────
+// Genre distribution (total)
+const genreRows = db.prepare(`
+  SELECT g.value as genre, count(*) as cnt
+  FROM musicians, json_each(musicians.genres) AS g
+  GROUP BY g.value ORDER BY cnt DESC
+`).all();
+const byGenre = Object.fromEntries(genreRows.map(r => [r.genre, r.cnt]));
 
-const GENRE_LABELS = {
-  ambient: 'Ambient / Drone',
-  techno: 'Techno / House',
-  idm: 'IDM / Experimental',
-  industrial: 'Industrial / Noise',
-  darkwave: 'Synthwave / Darkwave',
-  triphop: 'Trip-Hop / Downtempo',
-  dnb: 'Drum & Bass / Jungle',
-  classical: 'Classical / Orchestral',
-  artpop: 'Art Pop',
-  jazz: 'Jazz',
-};
-
-const byGenre = {};
+// Genre distribution (seed)
 const byGenreSeed = {};
-Object.keys(GENRE_LABELS).forEach(g => { byGenre[g] = 0; byGenreSeed[g] = 0; });
-
-db.forEach(a => (a.genres || []).forEach(g => { byGenre[g] = (byGenre[g] || 0) + 1; }));
-seed.forEach(a => (a.genres || []).forEach(g => { byGenreSeed[g] = (byGenreSeed[g] || 0) + 1; }));
-
-// ── YouTube coverage ────────────────────────────────────────────────────────
-
-const hasVideo = db.filter(a => a.youtubeVideoId).length;
-const hasBackup = db.filter(a => a.backupVideoIds?.length > 0).length;
-const noBackupSeed = seed.filter(a => !a.backupVideoIds?.length).map(a => a.name);
+seed.forEach(a => (a.genres || []).forEach(g => {
+  byGenreSeed[g] = (byGenreSeed[g] ?? 0) + 1;
+}));
 
 // ── Output ──────────────────────────────────────────────────────────────────
+
+const GENRE_LABELS = {
+  ambient:   'Ambient / Drone',
+  techno:    'Techno / House',
+  idm:       'IDM / Experimental',
+  industrial:'Industrial / Noise',
+  darkwave:  'Synthwave / Darkwave',
+  triphop:   'Trip-Hop / Downtempo',
+  dnb:       'Drum & Bass / Jungle',
+  classical: 'Classical / Orchestral',
+  artpop:    'Art Pop',
+  jazz:      'Jazz',
+};
 
 function bar(val, max, width = 30) {
   const filled = Math.round((val / max) * width);
@@ -108,10 +121,7 @@ function bar(val, max, width = 30) {
 }
 
 if (showAll || showGaps) {
-  const totalDb = db.length;
-  const totalSeed = seed.length;
   const totalWikidata = totalDb - totalSeed;
-
   console.log(`\n  ╔══════════════════════════════════════════════════╗`);
   console.log(`  ║  RADIO VENUS DATABASE  ·  ${totalDb} musicians            ║`);
   console.log(`  ║  Seed: ${totalSeed}  ·  Wikidata: ${totalWikidata}  ·  Videos: ${hasVideo}/${totalDb}   ║`);
@@ -120,54 +130,42 @@ if (showAll || showGaps) {
 }
 
 if (showAll) {
-  // Sign distribution
   const maxSign = Math.max(...Object.values(bySign));
   console.log('  VENUS SIGN DISTRIBUTION (total / seed)');
   console.log('  ' + '─'.repeat(58));
   SIGNS.forEach(sign => {
-    const total = bySign[sign];
-    const seedCount = bySignSeed[sign];
-    const pct = ((seedCount / seed.length) * 100).toFixed(1);
-    const label = `  ${sign.padEnd(12)} ${bar(total, maxSign, 25)} ${String(total).padStart(3)} (${String(seedCount).padStart(3)} seed · ${pct}%)`;
-    console.log(label);
+    const total     = bySign[sign] ?? 0;
+    const seedCount = bySignSeed[sign] ?? 0;
+    const pct       = ((seedCount / seed.length) * 100).toFixed(1);
+    console.log(`  ${sign.padEnd(12)} ${bar(total, maxSign, 25)} ${String(total).padStart(3)} (${String(seedCount).padStart(3)} seed · ${pct}%)`);
   });
 
-  // Genre distribution
   console.log('\n  GENRE DISTRIBUTION (total / seed)');
   console.log('  ' + '─'.repeat(58));
   const maxGenre = Math.max(...Object.values(byGenre));
-  Object.entries(byGenre)
-    .sort((a, b) => b[1] - a[1])
-    .forEach(([g, total]) => {
-      const seedCount = byGenreSeed[g] || 0;
-      const label = `  ${(GENRE_LABELS[g] || g).padEnd(22)} ${bar(total, maxGenre, 20)} ${String(total).padStart(3)} (${String(seedCount).padStart(3)} seed)`;
-      console.log(label);
-    });
+  Object.entries(byGenre).sort((a, b) => b[1] - a[1]).forEach(([g, total]) => {
+    const seedCount = byGenreSeed[g] ?? 0;
+    console.log(`  ${(GENRE_LABELS[g] || g).padEnd(22)} ${bar(total, maxGenre, 20)} ${String(total).padStart(3)} (${String(seedCount).padStart(3)} seed)`);
+  });
 }
 
 if (showAll || showGaps) {
-  // Gaps: sign × genre matrix for seed artists
   const avgPerSign = seed.length / 12;
-  const weakSigns = SIGNS.filter(s => bySignSeed[s] < avgPerSign * 0.75);
+  const weakSigns  = SIGNS.filter(s => (bySignSeed[s] ?? 0) < avgPerSign * 0.75);
 
   if (weakSigns.length) {
     console.log('\n  ⚠  UNDERREPRESENTED SIGNS (seed < 75% of average)');
     console.log('  ' + '─'.repeat(58));
-    weakSigns
-      .sort((a, b) => bySignSeed[a] - bySignSeed[b])
-      .forEach(sign => {
-        const genres = bySignGenre[sign];
-        const genreStr = Object.entries(genres)
-          .sort((a, b) => b[1] - a[1])
-          .map(([g, c]) => `${g}:${c}`)
-          .join('  ');
-        console.log(`  ${sign.padEnd(12)} ${bySignSeed[sign]} seed artists  │  ${genreStr}`);
-      });
+    weakSigns.sort((a, b) => (bySignSeed[a] ?? 0) - (bySignSeed[b] ?? 0)).forEach(sign => {
+      const genreStr = Object.entries(bySignGenre[sign] ?? {})
+        .sort((a, b) => b[1] - a[1])
+        .map(([g, c]) => `${g}:${c}`).join('  ');
+      console.log(`  ${sign.padEnd(12)} ${bySignSeed[sign] ?? 0} seed artists  │  ${genreStr}`);
+    });
   }
 
-  // Genre gaps
   const avgPerGenre = Object.values(byGenreSeed).reduce((a, b) => a + b, 0) / Object.keys(byGenreSeed).length;
-  const weakGenres = Object.entries(byGenreSeed)
+  const weakGenres  = Object.entries(byGenreSeed)
     .filter(([, c]) => c < avgPerGenre * 0.5)
     .sort((a, b) => a[1] - b[1]);
 
@@ -181,28 +179,22 @@ if (showAll || showGaps) {
 }
 
 if (showAnchors) {
-  // Find seed artists in underrepresented signs — good smart-match anchors
   const avgPerSign = seed.length / 12;
-  const weakSigns = SIGNS.filter(s => bySignSeed[s] < avgPerSign * 0.75);
+  const weakSigns  = SIGNS.filter(s => (bySignSeed[s] ?? 0) < avgPerSign * 0.75);
 
   console.log('\n  SMART-MATCH ANCHORS FOR UNDERREPRESENTED SIGNS');
   console.log('  Run these to expand weak Venus sign coverage via Last.fm similarity:\n');
 
-  weakSigns
-    .sort((a, b) => bySignSeed[a] - bySignSeed[b])
-    .forEach(sign => {
-      const anchors = seed
-        .filter(a => a.venus?.sign === sign)
-        .filter(a => !['classical'].some(g => a.genres?.includes(g) && a.genres.length === 1))
-        .slice(0, 8);
-
-      console.log(`  ♀ ${sign} (${bySignSeed[sign]} seed artists)`);
-      anchors.forEach(a => {
-        const genres = (a.genres || []).join(', ');
-        console.log(`    node scripts/smart-match.mjs "${a.name}" --depth 2`);
-      });
-      console.log();
-    });
+  weakSigns.sort((a, b) => (bySignSeed[a] ?? 0) - (bySignSeed[b] ?? 0)).forEach(sign => {
+    const anchors = seed
+      .filter(a => a.venus?.sign === sign)
+      .filter(a => !(['classical'].every(g => a.genres?.includes(g)) && a.genres?.length === 1))
+      .slice(0, 8);
+    console.log(`  ♀ ${sign} (${bySignSeed[sign] ?? 0} seed artists)`);
+    anchors.forEach(a => console.log(`    node scripts/smart-match.mjs "${a.name}" --depth 2`));
+    console.log();
+  });
 }
 
 console.log();
+db.close();
