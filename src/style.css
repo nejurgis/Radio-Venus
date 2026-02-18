@@ -284,7 +284,7 @@ html, body {
 }
 
 .about-content {
-  max-width: 520px;
+  max-width: 610px;
   margin: 0 auto;
   padding: 3rem 1.5rem 4rem;
   text-align: left;
@@ -2069,13 +2069,13 @@ button.is-pressed svg,
 }
 
 .index-sign-group {
-  margin-bottom: 1.8rem;
+  margin-bottom: 0.7rem;
 }
 
 .index-sign-heading {
   font-size: 0.85rem;
   letter-spacing: 0.1em;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0rem;
   font-weight: 400;
 }
 
@@ -2093,16 +2093,17 @@ button.is-pressed svg,
 
 .index-artist {
   font-family: var(--font-mono);
-  font-size: 0.55rem;
+  font-size: 0.5rem;
   color: var(--text-dim);
-  opacity: 0.7;
-  line-height: 1.8;
+  opacity: 0.6;
+  line-height: 1.01;
   cursor: default;
+  font-weight: 500;
 }
 
 .index-artist::after {
-  content: ' · ';
-  opacity: 0.3;
+  content: ' ·  ';
+  opacity: 0.35;
 }
 
 .index-artist:last-child::after {
