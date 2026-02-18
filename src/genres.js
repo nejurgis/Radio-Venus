@@ -7,6 +7,7 @@ export const GENRE_CATEGORIES = [
   { id: 'triphop',    label: 'Trip-Hop / Downtempo' },
   { id: 'dnb',        label: 'Drum & Bass / Jungle' },
   { id: 'artpop',     label: 'Art Pop / Avant-Garde' },
+  { id: 'folk',       label: 'Folk / Neofolk' },
   { id: 'jazz',       label: 'Jazz / Spiritual' },
   { id: 'classical',  label: 'Classical / Orchestral' },
   { id: 'valentine', label: "Valentine's day special" },
@@ -26,6 +27,7 @@ export const SUBGENRES = {
   darkwave:   ['darkwave', 'synth-pop', 'new-wave', 'coldwave', 'synthwave', 'darksynth', 'krautrock'],
   dnb:        ['drum-n-bass', 'jungle', 'breakbeat', 'breakcore', 'dubstep', 'grime', 'uk-garage', 'future-garage', 'footwork'],
   artpop:     ['art-pop', 'avant-garde-pop', 'baroque-pop', 'chamber-pop', 'experimental-pop', 'art-rock', 'glam'],
+  folk:       ['neofolk', 'dark-folk', 'freak-folk', 'psychedelic-folk', 'chamber-folk', 'gothic-country', 'folk-rock', 'ambient-folk'],
   jazz:       ['spiritual-jazz', 'dark-jazz', 'doom-jazz', 'free-jazz', 'modal-jazz', 'jazz-fusion', 'soul-jazz', 'cosmic-jazz', 'ambient-jazz'],
   classical:  ['classical', 'baroque', 'romantic', 'contemporary', 'neo-classical', 'impressionist', 'modern-classical', 'opera', 'minimalist'],
 };
@@ -166,6 +168,29 @@ const GENRE_MAP = {
   'shoegaze': ['artpop'],
   'avant-garde': ['artpop'],
 
+  // ── Folk / Neofolk ──
+  'folk': ['folk'],
+  'folk music': ['folk'],
+  'folk rock': ['folk'],
+  'indie folk': ['folk'],
+  'contemporary folk': ['folk'],
+  'neofolk': ['folk', 'darkwave'],
+  'neo-folk': ['folk', 'darkwave'],
+  'dark folk': ['folk', 'darkwave'],
+  'gothic country': ['folk', 'darkwave'],
+  'avant-folk': ['folk', 'darkwave'],
+  'freak folk': ['folk'],
+  'new weird america': ['folk'],
+  'psychedelic folk': ['folk'],
+  'acid folk': ['folk'],
+  'free folk': ['folk'],
+  'anti-folk': ['folk'],
+  'nu folk': ['folk'],
+  'chamber folk': ['folk'],
+  'ambient folk': ['folk', 'ambient'],
+  'pastoral': ['folk', 'ambient'],
+  'gaian doom': ['folk', 'industrial'],
+
   // ── Jazz / Spiritual ──
   'jazz': ['jazz'],
   'spiritual jazz': ['jazz'],
@@ -303,6 +328,17 @@ const SUBGENRE_MAP = {
   'dream pop': 'art-pop', 'shoegaze': 'art-pop',
   'ethereal wave': 'art-pop',
   'avant-garde': 'avant-garde-pop',
+
+  // folk
+  'folk': 'folk-rock', 'folk music': 'folk-rock', 'folk rock': 'folk-rock', 'indie folk': 'folk-rock',
+  'contemporary folk': 'folk-rock', 'nu folk': 'folk-rock',
+  'neofolk': 'neofolk', 'neo-folk': 'neofolk', 'avant-folk': 'dark-folk',
+  'dark folk': 'dark-folk', 'gothic country': 'gothic-country',
+  'freak folk': 'freak-folk', 'new weird america': 'freak-folk', 'anti-folk': 'freak-folk', 'free folk': 'freak-folk',
+  'psychedelic folk': 'psychedelic-folk', 'acid folk': 'psychedelic-folk',
+  'chamber folk': 'chamber-folk',
+  'ambient folk': 'ambient-folk', 'pastoral': 'ambient-folk',
+  'gaian doom': 'dark-folk',
 
   // jazz
   'jazz': 'spiritual-jazz',
