@@ -611,6 +611,7 @@ p a:hover {
 /* Rudnick zodiac palette per genre — black at rest, color pops on hover */
 [data-genre="ambient"]    { --genre-color-pop: rgba(11, 83, 119, 0.7); }
 [data-genre="techno"]     { --genre-color-pop: rgba(227, 106, 95, 0.65); }
+[data-genre="electronica"] { --genre-color-pop: rgba(35, 155, 175, 0.6); }
 [data-genre="idm"]        { --genre-color-pop: rgba(213, 165, 48, 0.6); }
 [data-genre="industrial"] { --genre-color-pop: rgba(21, 1, 90, 0.75); }
 [data-genre="darkwave"]   { --genre-color-pop: rgba(168, 100, 160, 0.65); }

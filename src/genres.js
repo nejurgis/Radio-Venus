@@ -1,6 +1,7 @@
 export const GENRE_CATEGORIES = [
   { id: 'ambient',    label: 'Ambient / Drone' },
   { id: 'techno',     label: 'Techno / House' },
+  { id: 'electronica', label: 'Electronica' },
   { id: 'idm',        label: 'IDM / Experimental' },
   { id: 'industrial', label: 'Industrial / Noise' },
   { id: 'darkwave',   label: 'Synthwave / Darkwave' },
@@ -20,7 +21,8 @@ export const GENRE_CATEGORIES = [
 
 export const SUBGENRES = {
   ambient:    ['ambient', 'dark-ambient', 'drone', 'berlin-school', 'new-age', 'space-ambient'],
-  idm:        ['idm', 'experimental', 'abstract', 'glitch', 'leftfield', 'electronica', 'folktronica'],
+  electronica: ['indietronica', 'chillwave', 'lo-fi', 'microhouse', 'folktronica', 'glitch-pop', 'nu-disco'],
+  idm:        ['idm', 'experimental', 'abstract', 'glitch', 'leftfield'],
   techno:     ['techno', 'house', 'deep-house', 'minimal', 'dub-techno', 'tech-house', 'acid', 'electro', 'trance', 'progressive-house'],
   triphop:    ['trip-hop', 'downtempo', 'dub', 'future-jazz', 'chillout', 'broken-beat', 'nu-jazz'],
   industrial: ['industrial', 'noise', 'ebm', 'power-electronics', 'rhythmic-noise', 'harsh-noise'],
@@ -39,10 +41,21 @@ export const SUBGENRES = {
 
 const GENRE_MAP = {
   // ── Electronic (catch-all) ──
-  'electronic music': ['idm'],
-  'electronic': ['idm'],
-  'electronica': ['idm'],
-  'progressive electronic': ['idm'],
+  'electronic music': ['electronica', 'idm'],
+  'electronic': ['electronica'],
+  'electronica': ['electronica'],
+  'progressive electronic': ['electronica', 'idm'],
+  'indietronica': ['electronica'],
+  'indie electronic': ['electronica'],
+  'alternative electronic': ['electronica'],
+  'chillwave': ['electronica'],
+  'lo-fi': ['electronica'],
+  'lo-fi hip hop': ['electronica', 'triphop'],
+  'microhouse': ['electronica', 'techno'],
+  'filter house': ['electronica', 'techno'],
+  'nu-disco': ['electronica', 'techno'],
+  'wonky': ['electronica', 'idm'],
+  'glitch pop': ['electronica', 'idm'],
 
   // ── Techno / House ──
   'techno': ['techno'],
@@ -87,7 +100,7 @@ const GENRE_MAP = {
   'electroacoustic': ['idm'],
   'musique concrète': ['idm'],
   'leftfield': ['idm'],
-  'folktronica': ['idm'],
+  'folktronica': ['electronica', 'folk'],
   'deconstructed club': ['idm'],
   'hyperpop': ['idm'],
   'vaporwave': ['idm'],
@@ -254,7 +267,12 @@ const SUBGENRE_MAP = {
   'glitch': 'glitch',
   'electroacoustic': 'experimental', 'musique concrète': 'experimental',
   'leftfield': 'leftfield',
-  'electronica': 'electronica', 'electronic': 'electronica', 'electronic music': 'electronica',
+  'electronica': 'indietronica', 'electronic': 'indietronica', 'electronic music': 'indietronica',
+  'indietronica': 'indietronica', 'indie electronic': 'indietronica', 'alternative electronic': 'indietronica',
+  'chillwave': 'chillwave', 'lo-fi': 'lo-fi', 'lo-fi hip hop': 'lo-fi',
+  'microhouse': 'microhouse', 'filter house': 'microhouse',
+  'nu-disco': 'nu-disco',
+  'wonky': 'glitch-pop', 'glitch pop': 'glitch-pop',
   'folktronica': 'folktronica',
   'deconstructed club': 'experimental',
   'hyperpop': 'experimental',
