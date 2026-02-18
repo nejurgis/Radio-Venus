@@ -77,7 +77,7 @@ export function match(venusSign, genre, element, { subgenre = null, userLongitud
   // If the genre is 'valentine', ignore astrology and sort by the specific sequence index.
   if (genre === 'valentine') {
     return db.filter(m => m.genres.includes('valentine'))
-             .sort((a, b) => (a.sequenceIndex || 999) - (b.sequenceIndex || 999));
+             .sort((a, b) => (a.sequenceIndex ?? 999) - (b.sequenceIndex ?? 999));
   }
 
   // ── STANDARD LOGIC (The rest of your code) ──
