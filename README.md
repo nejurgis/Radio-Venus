@@ -129,12 +129,33 @@ Radio-Venus/
 9. Outputs `public/data/musicians.json`
 
 **Discovery** (Node.js, `scripts/smart-match.mjs`):
-- Takes a seed artist name, scrapes Last.fm's "similar artists" page
-- Cross-references Wikidata/MusicBrainz/Wikipedia for birth dates (4-tier fallback)
-- **Entity disambiguation**: Wikidata lookups validate that matched entities are actually musicians (P106 occupation check: musician, singer, composer, producer, DJ, electronic musician) or musical groups (P31 instance-of check). Rejects non-musical entities, year < 1600, and future dates. MusicBrainz prefers `Person` type over `Group` and applies the same year sanity check.
-- Gets genre tags from Last.fm, maps through `categorizeGenres()`
-- Appends discovered artists to `seed-musicians.json`
-- Supports BFS depth (e.g., `--depth 2` follows similarity chains)
+
+```
+Seed artist
+    ↓
+Last.fm "similar artists"  ──┐  different signals:
+Everynoise "fans also like" ──┤  scrobble co-listening vs Spotify data
+                              ↓  merged + deduplicated candidate pool
+           For each candidate:
+                ↓
+     Birth date  →  Wikidata → MusicBrainz → Wikipedia → RateYourMusic
+                ↓
+     Pre-1940 sanity check  +  MBID deduplication
+                ↓
+     Genre tags: MusicBrainz votes + Last.fm tags → categorizeGenres()
+     (Everynoise genres as last resort if pool still empty)
+                ↓
+     [--filter]  Groq vibe check — raw tags sent for aesthetic judgment
+                ↓
+     Append to seed-musicians.json
+```
+
+- **Everynoise** (always-on): headless Playwright scrapes `research.cgi` for genres and `artistprofile.cgi` for "fans also like" — typically adds ~15 artists not on Last.fm per run. One shared browser instance per run.
+- **Entity disambiguation**: Wikidata validates P106 occupation (musician/singer/composer/producer/DJ) or P31 instance-of (musical group). MusicBrainz prefers `Person` over `Group`. Both reject year < 1600 or future dates.
+- **MBID deduplication**: MusicBrainz ID stored on entry; catches rename/alias cases (e.g. "Clark" vs "Chris Clark") that name-matching alone misses.
+- **Pre-1940 rejection**: birth years < 1940 flagged as implausible for non-classical contexts — MusicBrainz often returns the wrong person for common names.
+- **Groq filter** (`--filter`): raw Last.fm tags (not normalized categories) sent to `llama-3.3-70b` at temperature 0.2 for aesthetic fit judgment against the Radio Venus reference aesthetic.
+- Supports BFS depth (`--depth 2` follows similarity chains two levels deep)
 
 **Runtime** (browser):
 1. `main.js` loads `musicians.json` + YouTube IFrame API in parallel; `viz.js` initializes the zodiac nebula ring
@@ -304,22 +325,24 @@ sqlite3 scripts/musicians.db "SELECT venus_sign, count(*) as n FROM musicians GR
 
 ### Discovery workflow
 
-The primary discovery method is **Last.fm similarity graph traversal** via `smart-match.mjs`. This naturally preserves the underground aesthetic because it follows real listener connections rather than dumping entire label rosters.
+`smart-match.mjs` traverses social similarity graphs to find new artists while preserving the underground aesthetic — it follows real listener connections rather than dumping label rosters.
 
-**Everynoise enrichment** (always-on): The pipeline launches a headless Playwright browser and scrapes [everynoise.com](https://everynoise.com) (Glenn McDonald's curated dataset) for the "fans also like" list, then **merges it with Last.fm** — deduplicated. Both graphs use different signals (scrobble co-listening vs Spotify listening data) so they surface meaningfully different artists, and the combined pool is almost always non-empty even for very niche artists. In testing, David Casper: Last.fm returned 10 artists, Everynoise returned 20, overlap was only 5 — giving a combined pool of 25. Everynoise genres (e.g., `gaian doom`, `gothenburg indie`) are also used as a last-resort genre fallback for discovered artists that would otherwise be dropped. One shared browser instance is reused across all scrapes in a run, then closed cleanly.
-
-**Birth date discovery — 5-tier chain (Wikidata → MusicBrainz → Wikipedia → RateYourMusic):**
-Each discovered artist's birth date is resolved in priority order. MusicBrainz returns a MusicBrainz ID (MBID) alongside the date, which is stored in the seed entry and used for deduplication — catching alias/rename cases (e.g. "Clark" vs "Chris Clark") that name matching alone would miss. Artists with a birth year before 1940 are rejected as implausible for non-classical contexts (MusicBrainz occasionally returns the wrong person). The RateYourMusic fallback catches underground artists who have no Wikidata or Wikipedia entries.
-
-**Groq vibe filter (`--filter`):** Raw Last.fm tags (e.g. `electronic, ambient, drone, experimental`) are sent to Groq instead of coarse normalized categories, giving the model more signal to judge aesthetic fit. Temperature is kept at 0.2 to reduce flip-flopping.
+**Why two sources?** Last.fm and Everynoise use different signals. Last.fm tracks scrobble co-listening; Everynoise uses Spotify play data curated by Glenn McDonald. Overlap is typically only ~25% — so merging both roughly doubles the candidate pool. For very niche artists (e.g. Tonstartssbandht), Last.fm returns 0 but Everynoise returns 20.
 
 **Typical session:**
-1. Run `node scripts/db-stats.mjs --anchors` to get suggested commands for weak signs
-2. Pick anchor artists with rich similarity graphs (e.g., Four Tet, Tim Hecker, Flying Lotus)
-3. Run `node scripts/smart-match.mjs "Artist Name" --filter` (depth 1 with everynoise always returns results)
-4. Verify birth dates with a second source (Gemini/Google search is good for this)
-5. Run `node scripts/build-db.mjs` to rebuild the database
-6. Check `node scripts/db-stats.mjs` to see updated coverage
+1. `node scripts/db-stats.mjs --anchors` — find underrepresented Venus signs
+2. Pick a seed artist with a strong graph (Four Tet, Tim Hecker, Grace Ives, Anna von Hausswolff…)
+3. `node scripts/smart-match.mjs "Artist Name" --filter` — discover, filter, save
+4. Spot-check a few birth dates (Wikidata/Google — MusicBrainz occasionally returns the wrong person)
+5. `node scripts/build-db.mjs` — fetch YouTube IDs and rebuild `musicians.json`
+6. `node scripts/db-stats.mjs` — verify coverage improved
+
+**Flags:**
+```
+--filter    Groq vibe check before saving (recommended)
+--depth 2   BFS two levels deep — much slower, use sparingly
+--dry-run   Preview without writing
+```
 
 **Other discovery sources** (manual, used alongside smart-match):
 - Spotify liked songs → find similar via Last.fm
