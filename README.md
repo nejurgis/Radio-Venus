@@ -306,10 +306,15 @@ sqlite3 scripts/musicians.db "SELECT venus_sign, count(*) as n FROM musicians GR
 
 The primary discovery method is **Last.fm similarity graph traversal** via `smart-match.mjs`. This naturally preserves the underground aesthetic because it follows real listener connections rather than dumping entire label rosters.
 
+**Birth date discovery — 5-tier chain (Wikidata → MusicBrainz → Wikipedia → RateYourMusic):**
+Each discovered artist's birth date is resolved in priority order. MusicBrainz returns a MusicBrainz ID (MBID) alongside the date, which is stored in the seed entry and used for deduplication — catching alias/rename cases (e.g. "Clark" vs "Chris Clark") that name matching alone would miss. Artists with a birth year before 1940 are rejected as implausible for non-classical contexts (MusicBrainz occasionally returns the wrong person). The RateYourMusic fallback catches underground artists who have no Wikidata or Wikipedia entries.
+
+**Groq vibe filter (`--filter`):** Raw Last.fm tags (e.g. `electronic, ambient, drone, experimental`) are sent to Groq instead of coarse normalized categories, giving the model more signal to judge aesthetic fit. Temperature is kept at 0.2 to reduce flip-flopping.
+
 **Typical session:**
 1. Run `node scripts/db-stats.mjs --anchors` to get suggested commands for weak signs
 2. Pick anchor artists with rich similarity graphs (e.g., Four Tet, Tim Hecker, Flying Lotus)
-3. Run `node scripts/smart-match.mjs "Artist Name" --depth 2`
+3. Run `node scripts/smart-match.mjs "Artist Name" --depth 2 --filter`
 4. Verify birth dates with a second source (Gemini/Google search is good for this)
 5. Run `node scripts/build-db.mjs` to rebuild the database
 6. Check `node scripts/db-stats.mjs` to see updated coverage

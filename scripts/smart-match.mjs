@@ -100,6 +100,28 @@ function fetchJSON(url) {
   });
 }
 
+// Browser-UA fetch — needed for sites with bot detection (e.g. RateYourMusic)
+// Returns null on any error or non-200, never rejects.
+function fetchTextBrowser(url) {
+  return new Promise((resolve) => {
+    https.get(url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9',
+      },
+    }, res => {
+      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        return fetchTextBrowser(res.headers.location).then(resolve, () => resolve(null));
+      }
+      if (res.statusCode !== 200) return resolve(null);
+      let data = '';
+      res.on('data', c => data += c);
+      res.on('end', () => resolve(data));
+    }).on('error', () => resolve(null));
+  });
+}
+
 function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 function postJSON(hostname, path, body, headers = {}) {
@@ -186,7 +208,62 @@ function loadOverrides() {
   catch { return {}; }
 }
 
-// ── Birth date discovery (4-tier) ───────────────────────────────────────────
+// ── Birth date discovery (5-tier) ───────────────────────────────────────────
+
+async function getRymBirthDate(artistName) {
+  // Convert artist name to RYM URL slug (best-effort — works for ~90% of names)
+  const slug = artistName
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // strip diacritics (é→e, ü→u, etc.)
+    .replace(/[^a-z0-9\s-]/g, '')   // remove special chars, keep hyphens
+    .trim()
+    .replace(/\s+/g, '_');
+
+  if (!slug) return null;
+
+  const url = `https://rateyourmusic.com/artist/${slug}`;
+  const html = await fetchTextBrowser(url);
+  if (!html) return null;
+
+  // Abort if we got a Cloudflare challenge page
+  if (html.includes('cf-browser-verification') || html.includes('Checking your browser') || html.includes('cf_chl_')) {
+    return null;
+  }
+
+  // RYM renders artist info as key/value pairs in the page text.
+  // We search the raw text for "Born" followed by a recognisable date.
+  const doc = cheerio.load(html);
+  const pageText = doc('body').text();
+
+  // "01 January 1970" or "January 1, 1970"
+  const mDmy = pageText.match(/[Bb]orn[:\s]+(\d{1,2})\s+([A-Z][a-z]+)\s+(\d{4})/);
+  if (mDmy) {
+    const [, d, month, y] = mDmy;
+    const parsed = new Date(`${month} ${d}, ${y}`);
+    if (!isNaN(parsed)) return parsed.toISOString().slice(0, 10);
+  }
+
+  const mMdy = pageText.match(/[Bb]orn[:\s]+([A-Z][a-z]+)\s+(\d{1,2}),?\s+(\d{4})/);
+  if (mMdy) {
+    const [, month, d, y] = mMdy;
+    const parsed = new Date(`${month} ${d}, ${y}`);
+    if (!isNaN(parsed)) return parsed.toISOString().slice(0, 10);
+  }
+
+  // ISO date near "Born"
+  const mIso = pageText.match(/[Bb]orn[:\s]+(\d{4}-\d{2}-\d{2})/);
+  if (mIso) return mIso[1];
+
+  // Year only — use mid-year as approximation
+  const mYear = pageText.match(/[Bb]orn[:\s]+(\d{4})\b/);
+  if (mYear) {
+    const year = parseInt(mYear[1]);
+    if (year >= 1900 && year <= new Date().getFullYear()) return `${year}-06-15`;
+  }
+
+  return null;
+}
 
 async function getBirthDate(artistName) {
   // Strategy 0: Manual overrides (highest priority)
@@ -194,22 +271,27 @@ async function getBirthDate(artistName) {
   const override = overrides[artistName] || overrides[artistName.toLowerCase()];
   if (override?.birthDate) {
     console.log(`    Found in manual-overrides.json`);
-    return override.birthDate;
+    return { date: override.birthDate, mbid: null };
   }
 
   // Strategy 1: Wikidata (structured, fast)
   let date = await getWikidataBirthDate(artistName);
-  if (date) return date;
+  if (date) return { date, mbid: null };
 
   // Strategy 2: MusicBrainz (best for underground/electronic artists)
   console.log(`    Wikidata miss, trying MusicBrainz...`);
-  date = await getMusicBrainzBirthDate(artistName);
-  if (date) return date;
+  const mbResult = await getMusicBrainzBirthDate(artistName);
+  if (mbResult) return mbResult; // already { date, mbid }
 
-  // Strategy 3: Wikipedia infobox deep scrape (final fallback)
+  // Strategy 3: Wikipedia infobox deep scrape
   console.log(`    MusicBrainz miss, trying Wikipedia...`);
   date = await getWikipediaBirthDate(artistName);
-  if (date) return date;
+  if (date) return { date, mbid: null };
+
+  // Strategy 4: RateYourMusic artist page (best for underground/niche artists)
+  console.log(`    Wikipedia miss, trying RateYourMusic...`);
+  date = await getRymBirthDate(artistName);
+  if (date) return { date, mbid: null };
 
   return null;
 }
@@ -237,7 +319,7 @@ async function getMusicBrainzBirthDate(artistName) {
       const year = parseInt(dateStr.split('-')[0]);
       if (year < 1600 || year > new Date().getFullYear()) return null;
 
-      return dateStr;
+      return { date: dateStr, mbid: match.id };
     }
   } catch { return null; }
   return null;
@@ -389,7 +471,10 @@ async function groqVibeFilter(artists) {
 
     const list = batch.map((a, j) => {
       const venus = calculateVenus(a.birthDate);
-      return `${j + 1}. ${a.name} (genres: ${a.genres.join(', ')}, Venus in ${venus})`;
+      const tagInfo = a.rawTags?.length
+        ? `Last.fm tags: ${a.rawTags.join(', ')}`
+        : `genres: ${a.genres.join(', ')}`;
+      return `${j + 1}. ${a.name} (${tagInfo}, Venus in ${venus})`;
     }).join('\n');
 
     const userPrompt = `${GROQ_AESTHETIC}\n\nEvaluate these artists for Radio Venus. For each, decide: does this artist genuinely fit the aesthetic?\n\n${list}\n\nReply ONLY with valid JSON: {"results": [{"name": "exact name as given", "keep": true, "reason": "one sentence"}]}`;
@@ -479,6 +564,7 @@ async function main() {
   const seed = JSON.parse(readFileSync(SEED_PATH, 'utf-8'));
   const db = existsSync(DB_PATH) ? JSON.parse(readFileSync(DB_PATH, 'utf-8')) : [];
   const knownNames = new Set([...seed, ...db].map(a => a.name.toLowerCase()));
+  const knownMbids = new Set([...seed, ...db].filter(a => a.mbid).map(a => a.mbid));
 
   const discovered = [];
   const processed = new Set();
@@ -504,12 +590,28 @@ async function main() {
           continue;
         }
 
-        // Get birth date (Wikidata -> Wikipedia fallback)
-        const birthDate = await getBirthDate(name);
+        // Get birth date (Wikidata -> MusicBrainz -> Wikipedia fallback)
+        const birthResult = await getBirthDate(name);
         await delay(300);
 
-        if (!birthDate) {
+        if (!birthResult) {
           console.log(`  - ${name}: no birth date found on Wikidata or Wikipedia`);
+          continue;
+        }
+
+        const { date: birthDate, mbid } = birthResult;
+
+        // Sanity check: reject implausibly old birth years (MusicBrainz often returns wrong person)
+        const year = parseInt(birthDate.split('-')[0]);
+        if (year < 1940) {
+          console.log(`  - ${name} (${birthDate}): implausible birth year — skipping`);
+          continue;
+        }
+
+        // MBID deduplication (catches rename/alias cases like Clark vs Chris Clark)
+        if (mbid && knownMbids.has(mbid)) {
+          console.log(`  - ${name}: MBID already in DB — skipping duplicate`);
+          knownNames.add(key);
           continue;
         }
 
@@ -517,12 +619,13 @@ async function main() {
         const overrides = loadOverrides();
         const ov = overrides[name] || overrides[name.toLowerCase()];
         let genres;
+        let rawTags = [];
         if (ov?.genres?.length) {
           genres = ov.genres;
         } else {
-          const tags = await getLastfmTags(name);
+          rawTags = await getLastfmTags(name);
           await delay(300);
-          genres = categorizeGenres(tags);
+          genres = categorizeGenres(rawTags);
         }
         if (genres.length === 0) {
           console.log(`  - ${name} (${birthDate}): no matching genres`);
@@ -532,8 +635,9 @@ async function main() {
         const venus = calculateVenus(birthDate);
         console.log(`  + ${name} — born ${birthDate} — Venus in ${venus} — [${genres.join(', ')}]`);
 
-        discovered.push({ name, birthDate, genres });
+        discovered.push({ name, birthDate, ...(mbid ? { mbid } : {}), rawTags, genres });
         knownNames.add(key);
+        if (mbid) knownMbids.add(mbid);
         nextQueue.push(name); // For depth > 1
       }
     }
@@ -577,9 +681,10 @@ async function main() {
     return;
   }
 
-  // Add to seed
+  // Add to seed (strip rawTags — runtime-only, not persisted)
   for (const a of toAdd) {
-    seed.push(a);
+    const { rawTags, ...entry } = a;
+    seed.push(entry);
   }
   writeFileSync(SEED_PATH, JSON.stringify(seed, null, 2));
   console.log(`\nWrote ${seed.length} total artists to ${SEED_PATH}`);
