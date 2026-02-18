@@ -142,8 +142,7 @@ Everynoise "fans also like" ──┤  scrobble co-listening vs Spotify data
                 ↓
      Pre-1940 sanity check  +  MBID deduplication
                 ↓
-     Genre tags: Last.fm tags → categorizeGenres()
-     (Everynoise genres as fallback if pool still empty)
+     Genre tags: Everynoise (primary) → Last.fm tags (fallback) → categorizeGenres()
                 ↓
      [--filter]  Groq vibe check — raw tags sent for aesthetic judgment
                 ↓
@@ -327,7 +326,9 @@ sqlite3 scripts/musicians.db "SELECT venus_sign, count(*) as n FROM musicians GR
 
 `smart-match.mjs` traverses social similarity graphs to find new artists while preserving the underground aesthetic — it follows real listener connections rather than dumping label rosters.
 
-**Why two sources?** Last.fm and Everynoise use different signals. Last.fm tracks scrobble co-listening; Everynoise uses Spotify play data curated by Glenn McDonald. Overlap is typically only ~25% — so merging both roughly doubles the candidate pool. For very niche artists (e.g. Tonstartssbandht), Last.fm returns 0 but Everynoise returns 20.
+**Why two sources for discovery?** Last.fm and Everynoise use different signals. Last.fm tracks scrobble co-listening; Everynoise uses Spotify play data curated by Glenn McDonald. Overlap is typically only ~25% — so merging both roughly doubles the candidate pool. For very niche artists (e.g. Tonstartssbandht), Last.fm returns 0 but Everynoise returns 20.
+
+**Genre tagging uses Everynoise only** — Last.fm folksonomy tags are noisy and inconsistent (community-voted, often too broad). Everynoise is the same source used for verification, so new artists enter the DB already consistent with the ground truth. Last.fm tags are kept as a fallback for artists not on Everynoise, and for the Groq aesthetic filter (raw tags rather than normalized categories).
 
 **Typical session:**
 1. `node scripts/db-stats.mjs --anchors` — find underrepresented Venus signs

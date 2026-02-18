@@ -253,7 +253,7 @@ async function closePlaywright() {
   _browser = null;
 }
 
-async function getEverynoiseData(artistName) {
+async function getEverynoiseData(artistName, { genreOnly = false } = {}) {
   const browser = await getPlaywrightBrowser();
   if (!browser) return { genres: [], similar: [] };
 
@@ -275,6 +275,11 @@ async function getEverynoiseData(artistName) {
       els => els.map(el => el.textContent.trim()).filter(Boolean),
     ).catch(() => []);
 
+    if (genres.length) console.log(`    Everynoise genres: [${genres.join(', ')}]`);
+
+    // Skip artistprofile page when only genres are needed (saves ~5s per artist)
+    if (genreOnly) return { genres, similar: [] };
+
     // Profile link → artist profile page with "fans also like" section
     const profileHref = await page.$eval(
       '#exact + div .artistname a[href^="artistprofile.cgi"]',
@@ -295,7 +300,6 @@ async function getEverynoiseData(artistName) {
       ).catch(() => []);
     }
 
-    if (genres.length) console.log(`    Everynoise genres: [${genres.join(', ')}]`);
     if (similar.length) console.log(`    Everynoise similar: ${similar.length} artists`);
 
     return { genres, similar };
@@ -739,7 +743,7 @@ async function main() {
           continue;
         }
 
-        // Get genres: override > Last.fm tags + Spotify genres
+        // Get genres: override > Everynoise (primary) > Last.fm tags (fallback)
         const overrides = loadOverrides();
         const ov = overrides[name] || overrides[name.toLowerCase()];
         let genres;
@@ -747,16 +751,17 @@ async function main() {
         if (ov?.genres?.length) {
           genres = ov.genres;
         } else {
-            rawTags = await getLastfmTags(name);
-          await delay(300);
-          genres = categorizeGenres(rawTags);
-        }
-        // Everynoise genre fallback — only called for artists that would otherwise be dropped
-        if (genres.length === 0) {
-          console.log(`    No genres from Last.fm — trying Everynoise...`);
-          const evn = await getEverynoiseData(name);
+          // Primary: Everynoise — curated, consistent with verification pipeline
+          const evn = await getEverynoiseData(name, { genreOnly: true });
           if (evn.genres.length) {
-            rawTags = [...new Set([...rawTags, ...evn.genres])];
+            rawTags = evn.genres;
+            genres = categorizeGenres(rawTags);
+          }
+          // Fallback: Last.fm tags — for artists not on Everynoise
+          if (genres.length === 0) {
+            console.log(`    No genres from Everynoise — trying Last.fm...`);
+            rawTags = await getLastfmTags(name);
+            await delay(300);
             genres = categorizeGenres(rawTags);
           }
         }
