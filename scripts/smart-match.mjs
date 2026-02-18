@@ -198,6 +198,36 @@ async function getLastfmTags(artistName) {
   }
 }
 
+// ── MusicBrainz: genre tags via MBID ────────────────────────────────────────
+// Uses the MBID already fetched during birth date lookup for zero extra requests
+// when available. Falls back to a name search when MBID is not known.
+
+async function getMusicBrainzGenres(artistName, mbid = null) {
+  try {
+    let url;
+    if (mbid) {
+      // Direct lookup — precise, no ambiguity
+      url = `https://musicbrainz.org/ws/2/artist/${mbid}?inc=genres&fmt=json`;
+    } else {
+      // Search by name, take top Person/Group match
+      const search = await fetchJSON(
+        `https://musicbrainz.org/ws/2/artist/?query=artist:${encodeURIComponent(artistName)}&fmt=json`
+      );
+      const match = search.artists?.find(a => a.type === 'Person' || a.type === 'Group');
+      if (!match) return [];
+      url = `https://musicbrainz.org/ws/2/artist/${match.id}?inc=genres&fmt=json`;
+      await delay(1000); // MB rate limit: 1 req/sec
+    }
+    const data = await fetchJSON(url);
+    // genres sorted by vote count descending
+    return (data.genres ?? [])
+      .sort((a, b) => (b.count ?? 0) - (a.count ?? 0))
+      .map(g => g.name);
+  } catch {
+    return [];
+  }
+}
+
 // ── Manual overrides (for artists invisible to all databases) ────────────────
 
 const OVERRIDES_PATH = join(__dirname, 'manual-overrides.json');
@@ -615,7 +645,7 @@ async function main() {
           continue;
         }
 
-        // Get genres: override > Last.fm tags
+        // Get genres: override > Last.fm tags + Spotify genres
         const overrides = loadOverrides();
         const ov = overrides[name] || overrides[name.toLowerCase()];
         let genres;
@@ -623,9 +653,15 @@ async function main() {
         if (ov?.genres?.length) {
           genres = ov.genres;
         } else {
-          rawTags = await getLastfmTags(name);
+          const [lfmTags, mbGenres] = await Promise.all([
+            getLastfmTags(name),
+            getMusicBrainzGenres(name, mbid), // mbid already fetched — zero extra req when available
+          ]);
           await delay(300);
+          // Merge: MB genres (vote-ranked) + Last.fm tags, MB first for precision
+          rawTags = [...new Set([...mbGenres, ...lfmTags])];
           genres = categorizeGenres(rawTags);
+          if (mbGenres.length) console.log(`    MusicBrainz genres: [${mbGenres.slice(0, 6).join(', ')}]`);
         }
         if (genres.length === 0) {
           console.log(`  - ${name} (${birthDate}): no matching genres`);
