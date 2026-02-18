@@ -100,7 +100,8 @@
       "electronica"
     ],
     "youtubeVideoId": "q2ZasIb0Hsw",
-    "backupVideoIds": []
+    "backupVideoIds": [],
+    "sequenceIndex": 7
   },
   {
     "name": "Actress",
@@ -452,7 +453,8 @@
     ],
     "subgenres": [],
     "youtubeVideoId": "W0J0m5sU_Ys",
-    "backupVideoIds": []
+    "backupVideoIds": [],
+    "sequenceIndex": 3
   },
   {
     "name": "Angel-Ho",
@@ -1655,7 +1657,8 @@
     ],
     "subgenres": [],
     "youtubeVideoId": "tsEbhrMh0mM",
-    "backupVideoIds": []
+    "backupVideoIds": [],
+    "sequenceIndex": 5
   },
   {
     "name": "Caustic Window",
@@ -3466,6 +3469,7 @@
       "element": "air"
     },
     "genres": [
+      "valentine",
       "techno",
       "idm"
     ],
@@ -3475,7 +3479,8 @@
       "techno"
     ],
     "youtubeVideoId": "vGeJVHwOZSk",
-    "backupVideoIds": []
+    "backupVideoIds": [],
+    "sequenceIndex": 9
   },
   {
     "name": "Francis Monkman",
@@ -4576,7 +4581,8 @@
     ],
     "subgenres": [],
     "youtubeVideoId": "7jOkiDyxShI",
-    "backupVideoIds": []
+    "backupVideoIds": [],
+    "sequenceIndex": 0
   },
   {
     "name": "Ikonika",
@@ -4689,6 +4695,7 @@
       "element": "earth"
     },
     "genres": [
+      "valentine",
       "idm",
       "ambient",
       "triphop"
@@ -4698,7 +4705,8 @@
       "ambient"
     ],
     "youtubeVideoId": "FhpIE3uCn2E",
-    "backupVideoIds": []
+    "backupVideoIds": [],
+    "sequenceIndex": 8
   },
   {
     "name": "Jan Jelinek",
@@ -5536,7 +5544,8 @@
       "classical"
     ],
     "youtubeVideoId": "6XVngfOBBas",
-    "backupVideoIds": []
+    "backupVideoIds": [],
+    "sequenceIndex": 12
   },
   {
     "name": "Kiasmos",
@@ -7290,7 +7299,8 @@
     ],
     "subgenres": [],
     "youtubeVideoId": "igZrrKLe81I",
-    "backupVideoIds": []
+    "backupVideoIds": [],
+    "sequenceIndex": 1
   },
   {
     "name": "Neil Scrivin",
@@ -7758,7 +7768,8 @@
     ],
     "subgenres": [],
     "youtubeVideoId": "QEh0WIY_ZRw",
-    "backupVideoIds": []
+    "backupVideoIds": [],
+    "sequenceIndex": 2
   },
   {
     "name": "Oval",
@@ -7986,7 +7997,8 @@
     ],
     "subgenres": [],
     "youtubeVideoId": "RmrlJpKlwcc",
-    "backupVideoIds": []
+    "backupVideoIds": [],
+    "sequenceIndex": 11
   },
   {
     "name": "Peter Maxwell Davies",
@@ -8834,7 +8846,8 @@
       "spiritual-jazz"
     ],
     "youtubeVideoId": "eSwjSbgXM78",
-    "backupVideoIds": []
+    "backupVideoIds": [],
+    "sequenceIndex": 6
   },
   {
     "name": "Samiyam",
@@ -9041,7 +9054,8 @@
     ],
     "subgenres": [],
     "youtubeVideoId": "JUiUPj0eXn8",
-    "backupVideoIds": []
+    "backupVideoIds": [],
+    "sequenceIndex": 14
   },
   {
     "name": "Sergei Prokofiev",
@@ -9443,7 +9457,8 @@
     ],
     "subgenres": [],
     "youtubeVideoId": "tFNnvQLvs7I",
-    "backupVideoIds": []
+    "backupVideoIds": [],
+    "sequenceIndex": 4
   },
   {
     "name": "Sonny Sharrock",
@@ -10252,7 +10267,8 @@
       "soul-jazz"
     ],
     "youtubeVideoId": "54Lqir2N_Eo",
-    "backupVideoIds": []
+    "backupVideoIds": [],
+    "sequenceIndex": 13
   },
   {
     "name": "The Mount Fuji Doomjazz Corporation",
@@ -10906,6 +10922,7 @@
       "element": "air"
     },
     "genres": [
+      "valentine",
       "idm",
       "ambient",
       "triphop"
@@ -10915,7 +10932,8 @@
       "ambient"
     ],
     "youtubeVideoId": "Fi3tuTLa1C0",
-    "backupVideoIds": []
+    "backupVideoIds": [],
+    "sequenceIndex": 15
   },
   {
     "name": "Venetian Snares",
@@ -11183,6 +11201,7 @@
       "element": "air"
     },
     "genres": [
+      "valentine",
       "artpop"
     ],
     "subgenres": [
@@ -11190,7 +11209,8 @@
       "art-rock"
     ],
     "youtubeVideoId": "LJ4o9ppV4yg",
-    "backupVideoIds": []
+    "backupVideoIds": [],
+    "sequenceIndex": 10
   },
   {
     "name": "Zomby",
