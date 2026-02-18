@@ -362,6 +362,9 @@ Tracks manual additions and discovery runs — who was added, when, and what pro
 | 2026-02-18 | Roly Porter, Abul Mogard, Blanck Mass, Emptyset (4 total) | `smart-match "Ben Frost" --depth 1 --filter` |
 | 2026-02-18 | Chelsea Wolfe, Emma Ruth Rundle, Shannon Wright, Esben and the Witch, Midwife, Big Brave, Cate Le Bon, Elysian Fields, My Brightest Diamond, Nina Nastasia, + 9 more (19 total) | `smart-match "Marissa Nadler" --depth 2 --filter` (proxy for Anna von Hausswolff orbit — Last.fm has no graph for Anna) |
 | 2026-02-18 | Slowdive, Dead Can Dance, This Mortal Coil, my bloody valentine, Mazzy Star, Hope Sandoval & The Warm Inventions, Julee Cruise, Robin Guthrie, Cranes, Lycia, Claire Voyant, Black Tape for a Blue Girl, Bel Canto, His Name Is Alive, Pale Saints, An April March, Love Spirals Downwards, Kitchens of Distinction, Soul Whirling Somewhere, + 18 more (37 total) | `smart-match "Cocteau Twins" --depth 2 --filter` |
+| 2026-02-18 | Grace Ives | Manual — born 1995-04-03, Venus Aries 9.4° |
+| 2026-02-18 | Avey Tare, Dirty Beaches, Animal Collective, John Maus, The Cleaners From Venus, Exploded View, Anika, Ought, Deakin, Preoccupations (10 total) | `smart-match "Tonstartssbandht" --filter` |
+| 2026-02-18 | Dora Jar, Empress Of, Tirzah, Okay Kaya, Issy Wood, Sudan Archives, Jockstrap, U.S. Girls, Caroline Polachek (9 total) | `smart-match "Grace Ives" --filter` |
 
 ## Deployment
 

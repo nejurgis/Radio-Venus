@@ -551,6 +551,62 @@
     "backupVideoIds": []
   },
   {
+    "name": "Anika",
+    "birthDate": "1987-02-06",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 1.5,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "triphop",
+      "electronica",
+      "darkwave",
+      "artpop",
+      "idm",
+      "dnb"
+    ],
+    "subgenres": [
+      "indietronica",
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "PQXYB6cOXw8",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Animal Collective",
+    "birthDate": "1999-00-00",
+    "venus": {
+      "sign": "Leo",
+      "degree": 22.8,
+      "decan": 3,
+      "element": "fire",
+      "dateApprox": true
+    },
+    "genres": [
+      "folk",
+      "idm",
+      "indiepop",
+      "artpop",
+      "darkwave",
+      "electronica",
+      "industrial",
+      "ambient"
+    ],
+    "subgenres": [
+      "folk-rock",
+      "idm",
+      "darkwave",
+      "indietronica",
+      "industrial",
+      "ambient"
+    ],
+    "youtubeVideoId": "AHAX1ngUfno",
+    "backupVideoIds": []
+  },
+  {
     "name": "Ann Annie",
     "birthDate": "1977-11-21",
     "venus": {
@@ -957,6 +1013,30 @@
       "ambient"
     ],
     "youtubeVideoId": "qg-8vQB1Gyc",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Avey Tare",
+    "birthDate": "1979-04-24",
+    "venus": {
+      "sign": "Aries",
+      "degree": 1.6,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "idm",
+      "indiepop",
+      "artpop",
+      "folk",
+      "electronica"
+    ],
+    "subgenres": [
+      "idm",
+      "folk-rock",
+      "indietronica"
+    ],
+    "youtubeVideoId": "2PCsy7lzdb8",
     "backupVideoIds": []
   },
   {
@@ -1705,6 +1785,35 @@
       "jLlB69DmY_I",
       "_DOhpMB_Krk"
     ]
+  },
+  {
+    "name": "Caroline Polachek",
+    "birthDate": "1985-06-20",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 13.5,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "artpop",
+      "electronica",
+      "idm",
+      "darkwave",
+      "indiepop",
+      "triphop",
+      "ambient",
+      "techno"
+    ],
+    "subgenres": [
+      "indietronica",
+      "idm",
+      "darkwave",
+      "ambient",
+      "techno"
+    ],
+    "youtubeVideoId": "KgGnaiSeWtQ",
+    "backupVideoIds": []
   },
   {
     "name": "Carpenter Brut",
@@ -2612,6 +2721,32 @@
     "backupVideoIds": []
   },
   {
+    "name": "Deakin",
+    "birthDate": "1952-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 21.7,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "indiepop",
+      "artpop",
+      "folk",
+      "idm",
+      "jazz"
+    ],
+    "subgenres": [
+      "ambient",
+      "folk-rock",
+      "idm",
+      "spiritual-jazz"
+    ],
+    "youtubeVideoId": "smyiQfSTwtc",
+    "backupVideoIds": []
+  },
+  {
     "name": "Dean Blunt",
     "birthDate": "1984-02-08",
     "venus": {
@@ -2820,6 +2955,36 @@
       "XMfWLviRKOQ",
       "FCne9_9yCoM"
     ]
+  },
+  {
+    "name": "Dirty Beaches",
+    "birthDate": "1980-09-04",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 26.6,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "electronica",
+      "indiepop",
+      "artpop",
+      "folk",
+      "industrial",
+      "darkwave"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm",
+      "indietronica",
+      "folk-rock",
+      "industrial",
+      "darkwave"
+    ],
+    "youtubeVideoId": "3eeeWPe5szo",
+    "backupVideoIds": []
   },
   {
     "name": "Dj Lostboi",
@@ -3061,6 +3226,32 @@
       "VA8y609lBSo",
       "R6qx3dESdUE"
     ]
+  },
+  {
+    "name": "Dora Jar",
+    "birthDate": "1996-10-12",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 9.7,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "artpop",
+      "indiepop",
+      "darkwave",
+      "electronica",
+      "folk",
+      "idm"
+    ],
+    "subgenres": [
+      "darkwave",
+      "indietronica",
+      "folk-rock",
+      "idm"
+    ],
+    "youtubeVideoId": "i8Jf4JAnMJk",
+    "backupVideoIds": []
   },
   {
     "name": "Dorothy Ashby",
@@ -3425,6 +3616,35 @@
     "backupVideoIds": []
   },
   {
+    "name": "Empress Of",
+    "birthDate": "2000-00-00",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 15.5,
+      "decan": 2,
+      "element": "water",
+      "dateApprox": true
+    },
+    "genres": [
+      "jazz",
+      "electronica",
+      "idm",
+      "darkwave",
+      "indiepop",
+      "artpop",
+      "techno"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "indietronica",
+      "idm",
+      "darkwave",
+      "techno"
+    ],
+    "youtubeVideoId": "jsgLcx2OM6I",
+    "backupVideoIds": []
+  },
+  {
     "name": "Emptyset",
     "birthDate": "2005-06-15",
     "venus": {
@@ -3644,6 +3864,30 @@
       "classical"
     ],
     "youtubeVideoId": "Cwz9l7gdRhI",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Exploded View",
+    "birthDate": "2004-05-28",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 23.9,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave",
+      "idm",
+      "indiepop",
+      "artpop",
+      "folk"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm",
+      "folk-rock"
+    ],
+    "youtubeVideoId": "P2cXUJ3UwWE",
     "backupVideoIds": []
   },
   {
@@ -5246,6 +5490,36 @@
     "backupVideoIds": []
   },
   {
+    "name": "Issy Wood",
+    "birthDate": "1947-06-01",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 15,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "industrial",
+      "darkwave",
+      "indiepop",
+      "artpop",
+      "folk",
+      "electronica",
+      "idm",
+      "ambient"
+    ],
+    "subgenres": [
+      "industrial",
+      "darkwave",
+      "folk-rock",
+      "indietronica",
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "SkW5h-zF2tM",
+    "backupVideoIds": []
+  },
+  {
     "name": "James Ferraro",
     "birthDate": "1986-11-07",
     "venus": {
@@ -5526,6 +5800,31 @@
     ]
   },
   {
+    "name": "Jockstrap",
+    "birthDate": "2018-00-00",
+    "venus": {
+      "sign": "Leo",
+      "degree": 20.3,
+      "decan": 3,
+      "element": "fire",
+      "dateApprox": true
+    },
+    "genres": [
+      "artpop",
+      "electronica",
+      "idm",
+      "industrial",
+      "indiepop"
+    ],
+    "subgenres": [
+      "indietronica",
+      "idm",
+      "industrial"
+    ],
+    "youtubeVideoId": "Kz2ndSGLMeI",
+    "backupVideoIds": []
+  },
+  {
     "name": "Joe Westerlund",
     "birthDate": "1973-06-15",
     "venus": {
@@ -5691,6 +5990,32 @@
       "mIYPCxdkIzw",
       "qRA6THTrwx8"
     ]
+  },
+  {
+    "name": "John Maus",
+    "birthDate": "1980-02-23",
+    "venus": {
+      "sign": "Aries",
+      "degree": 15.9,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "electronica",
+      "darkwave",
+      "idm",
+      "artpop",
+      "indiepop",
+      "folk"
+    ],
+    "subgenres": [
+      "indietronica",
+      "darkwave",
+      "idm",
+      "folk-rock"
+    ],
+    "youtubeVideoId": "K1F6zXmOFdA",
+    "backupVideoIds": []
   },
   {
     "name": "Joker",
@@ -8351,6 +8676,31 @@
     ]
   },
   {
+    "name": "Okay Kaya",
+    "birthDate": "1990-00-00",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 7.7,
+      "decan": 1,
+      "element": "air",
+      "dateApprox": true
+    },
+    "genres": [
+      "electronica",
+      "indiepop",
+      "folk",
+      "triphop",
+      "idm"
+    ],
+    "subgenres": [
+      "indietronica",
+      "folk-rock",
+      "idm"
+    ],
+    "youtubeVideoId": "Q9ls6VmrLLY",
+    "backupVideoIds": []
+  },
+  {
     "name": "Oklou",
     "birthDate": "1993-04-23",
     "venus": {
@@ -8572,6 +8922,32 @@
       "sptbvO_svl0",
       "yfufyQZ1GjA"
     ]
+  },
+  {
+    "name": "Ought",
+    "birthDate": "2011-01-01",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 24,
+      "decan": 3,
+      "element": "water",
+      "dateApprox": true
+    },
+    "genres": [
+      "industrial",
+      "darkwave",
+      "indiepop",
+      "electronica",
+      "folk"
+    ],
+    "subgenres": [
+      "industrial",
+      "darkwave",
+      "indietronica",
+      "folk-rock"
+    ],
+    "youtubeVideoId": "eSna2APlZ4I",
+    "backupVideoIds": []
   },
   {
     "name": "Ouri",
@@ -9155,6 +9531,30 @@
       "MnURWFxwmk0",
       "kjEDX-2M7Qk"
     ]
+  },
+  {
+    "name": "Preoccupations",
+    "birthDate": "2012-00-00",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 7.8,
+      "decan": 1,
+      "element": "air",
+      "dateApprox": true
+    },
+    "genres": [
+      "darkwave",
+      "artpop",
+      "idm",
+      "industrial"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm",
+      "industrial"
+    ],
+    "youtubeVideoId": "_P6qqceGQlM",
+    "backupVideoIds": []
   },
   {
     "name": "Pressure",
@@ -10907,6 +11307,32 @@
     "backupVideoIds": []
   },
   {
+    "name": "Sudan Archives",
+    "birthDate": "2000-00-00",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 15.5,
+      "decan": 2,
+      "element": "water",
+      "dateApprox": true
+    },
+    "genres": [
+      "jazz",
+      "folk",
+      "techno",
+      "idm",
+      "artpop"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "folk-rock",
+      "techno",
+      "idm"
+    ],
+    "youtubeVideoId": "Z9wvNed0oT4",
+    "backupVideoIds": []
+  },
+  {
     "name": "Sun Ra",
     "birthDate": "1914-05-22",
     "venus": {
@@ -11285,6 +11711,27 @@
       "noise"
     ],
     "youtubeVideoId": "bjx1HVch8Xw",
+    "backupVideoIds": []
+  },
+  {
+    "name": "The Cleaners From Venus",
+    "birthDate": "1992-10-22",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 3.4,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "electronica",
+      "artpop",
+      "darkwave"
+    ],
+    "subgenres": [
+      "indietronica",
+      "darkwave"
+    ],
+    "youtubeVideoId": "JnN6Ekusr3A",
     "backupVideoIds": []
   },
   {
@@ -11779,6 +12226,31 @@
     "backupVideoIds": []
   },
   {
+    "name": "Tirzah",
+    "birthDate": "1954-06-15",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 27.4,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "electronica",
+      "idm",
+      "darkwave",
+      "indiepop",
+      "artpop",
+      "dnb"
+    ],
+    "subgenres": [
+      "indietronica",
+      "idm",
+      "darkwave"
+    ],
+    "youtubeVideoId": "nCCSAa8n24k",
+    "backupVideoIds": []
+  },
+  {
     "name": "Tomaga",
     "birthDate": "2013-02-15",
     "venus": {
@@ -11815,7 +12287,7 @@
     "subgenres": [
       "art-rock"
     ],
-    "youtubeVideoId": "nod00ZZVZ0M",
+    "youtubeVideoId": "sILF_IlO-8w",
     "backupVideoIds": [
       "61FfMYvaUIg",
       "ShFgaFyyzSw"
@@ -12015,6 +12487,34 @@
       "d9j-rEWa96Y",
       "TSEY5VitoLo"
     ]
+  },
+  {
+    "name": "U.S. Girls",
+    "birthDate": "1985-06-15",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 8.6,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "idm",
+      "indiepop",
+      "artpop",
+      "folk",
+      "industrial",
+      "electronica",
+      "darkwave"
+    ],
+    "subgenres": [
+      "idm",
+      "folk-rock",
+      "industrial",
+      "indietronica",
+      "darkwave"
+    ],
+    "youtubeVideoId": "4IHTRpBWtQs",
+    "backupVideoIds": []
   },
   {
     "name": "Ulla",
@@ -12659,6 +13159,25 @@
       "breakbeat"
     ],
     "youtubeVideoId": "XHtbU-lHb-s",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Grace Ives",
+    "birthDate": "1995-04-03",
+    "venus": {
+      "sign": "Aries",
+      "degree": 9.4,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "indiepop",
+      "artpop"
+    ],
+    "subgenres": [
+      "bedroom-pop"
+    ],
+    "youtubeVideoId": "_MzXQ9Xj3qQ",
     "backupVideoIds": []
   }
 ]

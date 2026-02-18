@@ -2091,6 +2091,7 @@ button.is-pressed svg,
 .index-artist-list {
   display: flex;
   flex-wrap: wrap;
+  text-transform: uppercase;
   gap: 0;
 }
 

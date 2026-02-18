@@ -5608,7 +5608,7 @@
     "subgenres": [
       "art-rock"
     ],
-    "youtubeId": "5vv2se_K_J0"
+    "youtubeId": "sILF_IlO-8w"
   },
   {
     "name": "Tori Amos",
@@ -6254,5 +6254,251 @@
     "genres": [
       "idm"
     ]
+  },
+  {
+    "name": "Dora Jar",
+    "birthDate": "1996-10-12",
+    "genres": [
+      "artpop",
+      "indiepop",
+      "darkwave",
+      "electronica",
+      "folk",
+      "idm"
+    ]
+  },
+  {
+    "name": "Empress Of",
+    "birthDate": "2000-00-00",
+    "genres": [
+      "jazz",
+      "electronica",
+      "idm",
+      "darkwave",
+      "indiepop",
+      "artpop",
+      "techno"
+    ]
+  },
+  {
+    "name": "Tirzah",
+    "birthDate": "1954-06-15",
+    "mbid": "e2a65942-78d1-4eb4-b7e1-9a8021881fca",
+    "genres": [
+      "electronica",
+      "idm",
+      "darkwave",
+      "indiepop",
+      "artpop",
+      "dnb"
+    ]
+  },
+  {
+    "name": "Okay Kaya",
+    "birthDate": "1990-00-00",
+    "genres": [
+      "electronica",
+      "indiepop",
+      "folk",
+      "triphop",
+      "idm"
+    ]
+  },
+  {
+    "name": "Issy Wood",
+    "birthDate": "1947-06-01",
+    "mbid": "92ed8183-8f22-42b2-af4e-d44137610fa0",
+    "genres": [
+      "industrial",
+      "darkwave",
+      "indiepop",
+      "artpop",
+      "folk",
+      "electronica",
+      "idm",
+      "ambient"
+    ]
+  },
+  {
+    "name": "Sudan Archives",
+    "birthDate": "2000-00-00",
+    "genres": [
+      "jazz",
+      "folk",
+      "techno",
+      "idm",
+      "artpop"
+    ]
+  },
+  {
+    "name": "Jockstrap",
+    "birthDate": "2018-00-00",
+    "genres": [
+      "artpop",
+      "electronica",
+      "idm",
+      "industrial",
+      "indiepop"
+    ]
+  },
+  {
+    "name": "U.S. Girls",
+    "birthDate": "1985-06-15",
+    "mbid": "036912f5-c717-498d-8958-6058de17bb70",
+    "genres": [
+      "idm",
+      "indiepop",
+      "artpop",
+      "folk",
+      "industrial",
+      "electronica",
+      "darkwave"
+    ]
+  },
+  {
+    "name": "Caroline Polachek",
+    "birthDate": "1985-06-20",
+    "genres": [
+      "artpop",
+      "electronica",
+      "idm",
+      "darkwave",
+      "indiepop",
+      "triphop",
+      "ambient",
+      "techno"
+    ]
+  },
+  {
+    "name": "Avey Tare",
+    "birthDate": "1979-04-24",
+    "genres": [
+      "idm",
+      "indiepop",
+      "artpop",
+      "folk",
+      "electronica"
+    ]
+  },
+  {
+    "name": "Dirty Beaches",
+    "birthDate": "1980-09-04",
+    "genres": [
+      "ambient",
+      "idm",
+      "electronica",
+      "indiepop",
+      "artpop",
+      "folk",
+      "industrial",
+      "darkwave"
+    ]
+  },
+  {
+    "name": "Animal Collective",
+    "birthDate": "1999-00-00",
+    "genres": [
+      "folk",
+      "idm",
+      "indiepop",
+      "artpop",
+      "darkwave",
+      "electronica",
+      "industrial",
+      "ambient"
+    ]
+  },
+  {
+    "name": "John Maus",
+    "birthDate": "1980-02-23",
+    "genres": [
+      "electronica",
+      "darkwave",
+      "idm",
+      "artpop",
+      "indiepop",
+      "folk"
+    ]
+  },
+  {
+    "name": "The Cleaners From Venus",
+    "birthDate": "1992-10-22",
+    "mbid": "7dda4007-ea55-4cf3-a4e3-24aa23dd8db9",
+    "genres": [
+      "electronica",
+      "artpop",
+      "darkwave"
+    ]
+  },
+  {
+    "name": "Exploded View",
+    "birthDate": "2004-05-28",
+    "mbid": "543e0a66-ab78-40fc-988a-e5abcb09debf",
+    "genres": [
+      "darkwave",
+      "idm",
+      "indiepop",
+      "artpop",
+      "folk"
+    ]
+  },
+  {
+    "name": "Anika",
+    "birthDate": "1987-02-06",
+    "mbid": "15c0e62b-3e46-4666-845d-d6c86bd44774",
+    "genres": [
+      "triphop",
+      "electronica",
+      "darkwave",
+      "artpop",
+      "idm",
+      "dnb"
+    ]
+  },
+  {
+    "name": "Ought",
+    "birthDate": "2011-01-01",
+    "genres": [
+      "industrial",
+      "darkwave",
+      "indiepop",
+      "electronica",
+      "folk"
+    ]
+  },
+  {
+    "name": "Deakin",
+    "birthDate": "1952-06-15",
+    "mbid": "e1fef17a-273f-4ff2-9858-37389843f91c",
+    "genres": [
+      "ambient",
+      "indiepop",
+      "artpop",
+      "folk",
+      "idm",
+      "jazz"
+    ]
+  },
+  {
+    "name": "Preoccupations",
+    "birthDate": "2012-00-00",
+    "genres": [
+      "darkwave",
+      "artpop",
+      "idm",
+      "industrial"
+    ]
+  },
+  {
+    "name": "Grace Ives",
+    "genres": [
+      "indiepop",
+      "artpop"
+    ],
+    "subgenres": [
+      "bedroom-pop"
+    ],
+    "youtubeId": "_MzXQ9Xj3qQ",
+    "birthDate": "1995-04-03"
   }
 ]

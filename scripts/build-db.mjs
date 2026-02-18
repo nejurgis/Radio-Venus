@@ -183,6 +183,8 @@ async function main() {
   for (const s of seed) {
     const key = s.name.toLowerCase();
     const cached = byName.get(key);
+    // Normalize legacy seed field name
+    if (s.youtubeId && !s.youtubeVideoId) s.youtubeVideoId = s.youtubeId;
     // Preserve YouTube ID + backups from cache if seed doesn't have them
     if (cached && cached.youtubeVideoId && !s.youtubeVideoId) {
       s.youtubeVideoId = cached.youtubeVideoId;
