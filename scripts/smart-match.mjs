@@ -585,7 +585,7 @@ async function groqVibeFilter(artists) {
     const list = batch.map((a, j) => {
       const venus = calculateVenus(a.birthDate);
       const tagInfo = a.rawTags?.length
-        ? `Last.fm tags: ${a.rawTags.join(', ')}`
+        ? `genres: ${a.rawTags.join(', ')}`
         : `genres: ${a.genres.join(', ')}`;
       return `${j + 1}. ${a.name} (${tagInfo}, Venus in ${venus})`;
     }).join('\n');
