@@ -1,0 +1,3629 @@
+{
+  "meta": {
+    "date": "2026-02-18T20:55:39.422Z",
+    "filterGenre": "darkwave",
+    "total": 142
+  },
+  "ok": [
+    {
+      "name": "A Certain Ratio",
+      "stored": [
+        "darkwave"
+      ],
+      "enRaw": [
+        "uk post-punk",
+        "dance rock",
+        "sophisti-pop"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Blancmange",
+      "stored": [
+        "darkwave"
+      ],
+      "enRaw": [
+        "synthpop",
+        "new romantic"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Carpenter Brut",
+      "stored": [
+        "darkwave"
+      ],
+      "enRaw": [
+        "cyberpunk",
+        "darksynth",
+        "synthwave"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Dan Terminus",
+      "stored": [
+        "darkwave"
+      ],
+      "enRaw": [
+        "cyberpunk",
+        "darksynth",
+        "synthwave"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Dynatron",
+      "stored": [
+        "darkwave"
+      ],
+      "enRaw": [
+        "synthwave",
+        "spacewave"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Electronic",
+      "stored": [
+        "darkwave"
+      ],
+      "enRaw": [
+        "madchester",
+        "dance rock",
+        "synthpop",
+        "britpop",
+        "new romantic"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Gary Numan",
+      "stored": [
+        "darkwave"
+      ],
+      "enRaw": [
+        "new wave",
+        "synthpop",
+        "new romantic",
+        "permanent wave"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Hollywood Burns",
+      "stored": [
+        "darkwave"
+      ],
+      "enRaw": [
+        "darksynth",
+        "synthwave"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Magic Sword",
+      "stored": [
+        "darkwave"
+      ],
+      "enRaw": [
+        "synthwave"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Mega Drive",
+      "stored": [
+        "darkwave"
+      ],
+      "enRaw": [
+        "cyberpunk",
+        "darksynth",
+        "synthwave"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Miss Kittin",
+      "stored": [
+        "darkwave",
+        "electronica",
+        "techno"
+      ],
+      "enRaw": [
+        "french techno",
+        "electroclash",
+        "alternative dance",
+        "electra",
+        "electronica",
+        "neo-synthpop"
+      ],
+      "enCategories": [
+        "techno",
+        "electronica",
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "New Order",
+      "stored": [
+        "darkwave"
+      ],
+      "enRaw": [
+        "dance rock",
+        "permanent wave",
+        "new wave",
+        "madchester",
+        "post-punk",
+        "synthpop",
+        "uk post-punk",
+        "alternative rock",
+        "new romantic"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Nitzer Ebb",
+      "stored": [
+        "darkwave",
+        "industrial"
+      ],
+      "enRaw": [
+        "ebm",
+        "industrial rock",
+        "industrial",
+        "new beat",
+        "british industrial",
+        "old school ebm",
+        "electro-industrial",
+        "industrial metal"
+      ],
+      "enCategories": [
+        "industrial",
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Perturbator",
+      "stored": [
+        "darkwave"
+      ],
+      "enRaw": [
+        "cyberpunk",
+        "darksynth",
+        "synthwave"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Section 25",
+      "stored": [
+        "darkwave"
+      ],
+      "enRaw": [
+        "uk post-punk"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Silicon Teens",
+      "stored": [
+        "darkwave"
+      ],
+      "enRaw": [
+        "synthpop"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Soft Cell",
+      "stored": [
+        "darkwave"
+      ],
+      "enRaw": [
+        "new romantic",
+        "new wave",
+        "synthpop",
+        "new wave pop"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Strange Boutique",
+      "stored": [
+        "darkwave",
+        "artpop"
+      ],
+      "enRaw": [
+        "ethereal wave",
+        "modern goth"
+      ],
+      "enCategories": [
+        "artpop",
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Tangerine Dream",
+      "stored": [
+        "ambient",
+        "darkwave"
+      ],
+      "enRaw": [
+        "synthesizer",
+        "german prog",
+        "berlin school",
+        "krautrock",
+        "progressive rock"
+      ],
+      "enCategories": [
+        "ambient",
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "The Cleaners From Venus",
+      "stored": [
+        "electronica",
+        "artpop",
+        "darkwave"
+      ],
+      "enRaw": [
+        "lo-fi",
+        "no wave",
+        "experimental pop",
+        "uk post-punk"
+      ],
+      "enCategories": [
+        "electronica",
+        "artpop",
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "This Ascension",
+      "stored": [
+        "artpop",
+        "darkwave"
+      ],
+      "enRaw": [
+        "ethereal wave",
+        "dark wave",
+        "gothic rock"
+      ],
+      "enCategories": [
+        "artpop",
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Tubeway Army",
+      "stored": [
+        "darkwave"
+      ],
+      "enRaw": [
+        "early synthpop",
+        "zolo",
+        "new wave",
+        "uk post-punk",
+        "new romantic"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Ultravox",
+      "stored": [
+        "darkwave"
+      ],
+      "enRaw": [
+        "new romantic",
+        "new wave",
+        "synthpop",
+        "zolo",
+        "new wave pop"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Visage",
+      "stored": [
+        "darkwave"
+      ],
+      "enRaw": [
+        "early synthpop",
+        "synthpop",
+        "new romantic"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Waveshaper",
+      "stored": [
+        "darkwave"
+      ],
+      "enRaw": [
+        "spacewave",
+        "synthwave"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": []
+    }
+  ],
+  "missing": [
+    {
+      "name": "Alice Glass",
+      "stored": [
+        "idm",
+        "darkwave",
+        "industrial"
+      ],
+      "enRaw": [
+        "dark pop",
+        "escape room",
+        "witch house"
+      ],
+      "enCategories": [
+        "techno"
+      ],
+      "missingFromStored": [
+        "techno"
+      ],
+      "notSupportedByEN": [
+        "idm",
+        "darkwave",
+        "industrial"
+      ]
+    },
+    {
+      "name": "Anika",
+      "stored": [
+        "triphop",
+        "electronica",
+        "darkwave",
+        "artpop",
+        "idm",
+        "dnb"
+      ],
+      "enRaw": [
+        "experimental pop",
+        "bristol indie",
+        "new weird america"
+      ],
+      "enCategories": [
+        "artpop",
+        "folk"
+      ],
+      "missingFromStored": [
+        "folk"
+      ],
+      "notSupportedByEN": [
+        "triphop",
+        "electronica",
+        "darkwave",
+        "idm",
+        "dnb"
+      ]
+    },
+    {
+      "name": "Anna von Hausswolff",
+      "stored": [
+        "ambient",
+        "classical",
+        "darkwave"
+      ],
+      "enRaw": [
+        "gothenburg indie",
+        "dark pop",
+        "gaian doom",
+        "spectra"
+      ],
+      "enCategories": [
+        "folk",
+        "industrial"
+      ],
+      "missingFromStored": [
+        "folk",
+        "industrial"
+      ],
+      "notSupportedByEN": [
+        "ambient",
+        "classical",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Autumn's Grey Solace",
+      "stored": [
+        "artpop",
+        "darkwave",
+        "ambient"
+      ],
+      "enRaw": [
+        "ethereal wave",
+        "dream pop"
+      ],
+      "enCategories": [
+        "artpop",
+        "darkwave",
+        "indiepop"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "ambient"
+      ]
+    },
+    {
+      "name": "Bitchin Bajas",
+      "stored": [
+        "idm",
+        "ambient",
+        "darkwave"
+      ],
+      "enRaw": [
+        "abstractro",
+        "pastoral"
+      ],
+      "enCategories": [
+        "folk",
+        "ambient"
+      ],
+      "missingFromStored": [
+        "folk"
+      ],
+      "notSupportedByEN": [
+        "idm",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Blanck Mass",
+      "stored": [
+        "ambient",
+        "idm",
+        "industrial",
+        "darkwave"
+      ],
+      "enRaw": [
+        "abstractro",
+        "uk experimental electronic",
+        "fluxwork",
+        "hauntology",
+        "mandible"
+      ],
+      "enCategories": [
+        "electronica",
+        "techno",
+        "idm"
+      ],
+      "missingFromStored": [
+        "electronica",
+        "techno"
+      ],
+      "notSupportedByEN": [
+        "ambient",
+        "industrial",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Cabaret Voltaire",
+      "stored": [
+        "industrial",
+        "darkwave"
+      ],
+      "enRaw": [
+        "proto-techno",
+        "industrial",
+        "experimental",
+        "british industrial",
+        "british experimental",
+        "experimental rock",
+        "bleep techno",
+        "uk post-punk",
+        "post-punk",
+        "industrial rock",
+        "synthpop"
+      ],
+      "enCategories": [
+        "techno",
+        "industrial",
+        "idm",
+        "darkwave"
+      ],
+      "missingFromStored": [
+        "techno",
+        "idm"
+      ],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Cecile Believe",
+      "stored": [
+        "artpop",
+        "darkwave"
+      ],
+      "enRaw": [
+        "escape room",
+        "hyperpop"
+      ],
+      "enCategories": [
+        "idm"
+      ],
+      "missingFromStored": [
+        "idm"
+      ],
+      "notSupportedByEN": [
+        "artpop",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Charli xcx",
+      "stored": [
+        "artpop",
+        "darkwave"
+      ],
+      "enRaw": [
+        "uk pop",
+        "pop",
+        "candy pop",
+        "art pop",
+        "metropopolis"
+      ],
+      "enCategories": [
+        "electronica",
+        "idm",
+        "darkwave",
+        "indiepop",
+        "artpop"
+      ],
+      "missingFromStored": [
+        "electronica",
+        "idm",
+        "indiepop"
+      ],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Chelsea Wolfe",
+      "stored": [
+        "idm",
+        "darkwave",
+        "artpop"
+      ],
+      "enRaw": [
+        "dark pop",
+        "sacramento indie",
+        "doomgaze",
+        "gaian doom"
+      ],
+      "enCategories": [
+        "folk",
+        "industrial"
+      ],
+      "missingFromStored": [
+        "folk",
+        "industrial"
+      ],
+      "notSupportedByEN": [
+        "idm",
+        "darkwave",
+        "artpop"
+      ]
+    },
+    {
+      "name": "Chrome",
+      "stored": [
+        "industrial",
+        "darkwave"
+      ],
+      "enRaw": [
+        "synth punk",
+        "post-punk",
+        "experimental rock",
+        "industrial",
+        "experimental",
+        "industrial rock",
+        "noise rock",
+        "britcore"
+      ],
+      "enCategories": [
+        "darkwave",
+        "idm",
+        "industrial"
+      ],
+      "missingFromStored": [
+        "idm"
+      ],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Cocteau Twins",
+      "stored": [
+        "darkwave",
+        "ambient"
+      ],
+      "enRaw": [
+        "dream pop",
+        "melancholia",
+        "scottish indie",
+        "shoegaze",
+        "ethereal wave",
+        "art pop",
+        "synthpop",
+        "alternative rock",
+        "scottish shoegaze"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop",
+        "darkwave"
+      ],
+      "missingFromStored": [
+        "indiepop",
+        "artpop"
+      ],
+      "notSupportedByEN": [
+        "ambient"
+      ]
+    },
+    {
+      "name": "Cranes",
+      "stored": [
+        "artpop",
+        "darkwave"
+      ],
+      "enRaw": [
+        "dream pop",
+        "ethereal wave",
+        "shoegaze"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop",
+        "darkwave"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Darkstar",
+      "stored": [
+        "darkwave",
+        "idm"
+      ],
+      "enRaw": [
+        "wonky"
+      ],
+      "enCategories": [
+        "electronica",
+        "idm"
+      ],
+      "missingFromStored": [
+        "electronica"
+      ],
+      "notSupportedByEN": [
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Depeche Mode",
+      "stored": [
+        "darkwave"
+      ],
+      "enRaw": [
+        "dance rock",
+        "permanent wave",
+        "new wave",
+        "synthpop",
+        "new romantic",
+        "rock"
+      ],
+      "enCategories": [
+        "darkwave",
+        "industrial",
+        "indiepop",
+        "artpop",
+        "folk"
+      ],
+      "missingFromStored": [
+        "industrial",
+        "indiepop",
+        "artpop",
+        "folk"
+      ],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Dif Juz",
+      "stored": [
+        "darkwave",
+        "artpop",
+        "industrial"
+      ],
+      "enRaw": [
+        "dream pop"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "darkwave",
+        "industrial"
+      ]
+    },
+    {
+      "name": "Duran Duran",
+      "stored": [
+        "darkwave",
+        "artpop"
+      ],
+      "enRaw": [
+        "dance rock",
+        "new wave",
+        "new romantic",
+        "synthpop",
+        "new wave pop",
+        "rock",
+        "album rock",
+        "soft rock"
+      ],
+      "enCategories": [
+        "darkwave",
+        "industrial",
+        "indiepop",
+        "artpop",
+        "folk"
+      ],
+      "missingFromStored": [
+        "industrial",
+        "indiepop",
+        "folk"
+      ],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Esben and the Witch",
+      "stored": [
+        "darkwave",
+        "idm",
+        "artpop"
+      ],
+      "enRaw": [
+        "gaian doom",
+        "brighton indie"
+      ],
+      "enCategories": [
+        "folk",
+        "industrial"
+      ],
+      "missingFromStored": [
+        "folk",
+        "industrial"
+      ],
+      "notSupportedByEN": [
+        "darkwave",
+        "idm",
+        "artpop"
+      ]
+    },
+    {
+      "name": "Fad Gadget",
+      "stored": [
+        "darkwave",
+        "industrial"
+      ],
+      "enRaw": [
+        "proto-techno",
+        "british industrial",
+        "uk post-punk",
+        "synthpop",
+        "minimal wave"
+      ],
+      "enCategories": [
+        "techno",
+        "industrial",
+        "darkwave"
+      ],
+      "missingFromStored": [
+        "techno"
+      ],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Fontaines D.C.",
+      "stored": [
+        "darkwave"
+      ],
+      "enRaw": [
+        "irish indie rock",
+        "irish post-punk",
+        "crank wave"
+      ],
+      "enCategories": [
+        "indiepop",
+        "darkwave"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Front 242",
+      "stored": [
+        "industrial",
+        "darkwave"
+      ],
+      "enRaw": [
+        "industrial rock",
+        "new beat",
+        "proto-techno",
+        "industrial",
+        "ebm",
+        "belgian new wave",
+        "electro-industrial",
+        "industrial metal"
+      ],
+      "enCategories": [
+        "industrial",
+        "techno",
+        "darkwave"
+      ],
+      "missingFromStored": [
+        "techno"
+      ],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "George Clanton",
+      "stored": [
+        "artpop",
+        "darkwave"
+      ],
+      "enRaw": [
+        "hypnagogic pop",
+        "vaporwave"
+      ],
+      "enCategories": [
+        "idm"
+      ],
+      "missingFromStored": [
+        "idm"
+      ],
+      "notSupportedByEN": [
+        "artpop",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Goldfrapp",
+      "stored": [
+        "darkwave",
+        "triphop"
+      ],
+      "enRaw": [
+        "neo-synthpop",
+        "art pop",
+        "trip hop",
+        "alternative dance",
+        "electronica",
+        "indietronica"
+      ],
+      "enCategories": [
+        "darkwave",
+        "artpop",
+        "triphop",
+        "electronica"
+      ],
+      "missingFromStored": [
+        "artpop",
+        "electronica"
+      ],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Grimes",
+      "stored": [
+        "darkwave",
+        "idm"
+      ],
+      "enRaw": [
+        "canadian electropop",
+        "art pop",
+        "metropopolis",
+        "indietronica",
+        "grave wave",
+        "neo-synthpop"
+      ],
+      "enCategories": [
+        "techno",
+        "artpop",
+        "electronica",
+        "darkwave"
+      ],
+      "missingFromStored": [
+        "techno",
+        "artpop",
+        "electronica"
+      ],
+      "notSupportedByEN": [
+        "idm"
+      ]
+    },
+    {
+      "name": "His Name Is Alive",
+      "stored": [
+        "artpop",
+        "idm",
+        "darkwave"
+      ],
+      "enRaw": [
+        "dream pop",
+        "shoegaze"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "idm",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Isabel's Dream",
+      "stored": [
+        "artpop",
+        "ambient",
+        "darkwave",
+        "idm"
+      ],
+      "enRaw": [
+        "indie shoegaze"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "ambient",
+        "darkwave",
+        "idm"
+      ]
+    },
+    {
+      "name": "Jean-Michel Jarre",
+      "stored": [
+        "ambient",
+        "darkwave"
+      ],
+      "enRaw": [
+        "synthesizer",
+        "vintage french electronic",
+        "laboratorio"
+      ],
+      "enCategories": [
+        "electronica",
+        "techno",
+        "classical"
+      ],
+      "missingFromStored": [
+        "electronica",
+        "techno",
+        "classical"
+      ],
+      "notSupportedByEN": [
+        "ambient",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Jessy Lanza",
+      "stored": [
+        "darkwave",
+        "artpop"
+      ],
+      "enRaw": [
+        "canadian electropop",
+        "experimental r&b",
+        "electra",
+        "art pop",
+        "hamilton on indie",
+        "spectra"
+      ],
+      "enCategories": [
+        "techno",
+        "idm",
+        "artpop"
+      ],
+      "missingFromStored": [
+        "techno",
+        "idm"
+      ],
+      "notSupportedByEN": [
+        "darkwave"
+      ]
+    },
+    {
+      "name": "John Foxx",
+      "stored": [
+        "darkwave",
+        "ambient"
+      ],
+      "enRaw": [
+        "solo wave",
+        "laboratorio",
+        "synthpop",
+        "ambient"
+      ],
+      "enCategories": [
+        "classical",
+        "darkwave",
+        "ambient"
+      ],
+      "missingFromStored": [
+        "classical"
+      ],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Joy Division",
+      "stored": [
+        "darkwave",
+        "industrial"
+      ],
+      "enRaw": [
+        "alternative rock",
+        "madchester",
+        "post-punk",
+        "new wave",
+        "uk post-punk",
+        "rock",
+        "indie rock",
+        "punk"
+      ],
+      "enCategories": [
+        "darkwave",
+        "industrial",
+        "indiepop",
+        "artpop",
+        "folk"
+      ],
+      "missingFromStored": [
+        "indiepop",
+        "artpop",
+        "folk"
+      ],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Julee Cruise",
+      "stored": [
+        "artpop",
+        "darkwave",
+        "triphop",
+        "ambient"
+      ],
+      "enRaw": [
+        "dream pop"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "darkwave",
+        "triphop",
+        "ambient"
+      ]
+    },
+    {
+      "name": "Kraftwerk",
+      "stored": [
+        "techno",
+        "darkwave"
+      ],
+      "enRaw": [
+        "early synthpop",
+        "dusseldorf electronic",
+        "proto-techno",
+        "electro",
+        "synthpop",
+        "new wave"
+      ],
+      "enCategories": [
+        "darkwave",
+        "electronica",
+        "techno"
+      ],
+      "missingFromStored": [
+        "electronica"
+      ],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Love Spirals Downwards",
+      "stored": [
+        "artpop",
+        "darkwave",
+        "ambient",
+        "triphop"
+      ],
+      "enRaw": [
+        "ethereal wave",
+        "dream pop",
+        "dark wave",
+        "shoegaze"
+      ],
+      "enCategories": [
+        "artpop",
+        "darkwave",
+        "indiepop"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "ambient",
+        "triphop"
+      ]
+    },
+    {
+      "name": "Lycia",
+      "stored": [
+        "darkwave",
+        "artpop",
+        "ambient"
+      ],
+      "enRaw": [
+        "dark wave",
+        "ethereal wave",
+        "neoclassical darkwave",
+        "modern goth",
+        "gothic rock"
+      ],
+      "enCategories": [
+        "darkwave",
+        "artpop",
+        "classical"
+      ],
+      "missingFromStored": [
+        "classical"
+      ],
+      "notSupportedByEN": [
+        "ambient"
+      ]
+    },
+    {
+      "name": "Malcolm Ironton",
+      "stored": [
+        "darkwave",
+        "classical"
+      ],
+      "enRaw": [
+        "rebel blues",
+        "orchestral performance",
+        "classical performance",
+        "baltic classical",
+        "american classical piano",
+        "classical piano",
+        "british contemporary classical",
+        "american classical piano",
+        "violin",
+        "classical performance",
+        "ambient dub techno",
+        "electroacoustic composition",
+        "acousmatic",
+        "american contemporary classical",
+        "anglican liturgy",
+        "light music",
+        "classic soundtrack",
+        "wind symphony",
+        "concert band",
+        "contemporary classical",
+        "early modern classical",
+        "historical keyboard",
+        "american classical piano",
+        "historically informed performance",
+        "british classical piano",
+        "experimental synth",
+        "art song",
+        "australian classical",
+        "art song"
+      ],
+      "enCategories": [
+        "classical",
+        "techno",
+        "ambient",
+        "triphop",
+        "idm"
+      ],
+      "missingFromStored": [
+        "techno",
+        "ambient",
+        "triphop",
+        "idm"
+      ],
+      "notSupportedByEN": [
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Medicine",
+      "stored": [
+        "artpop",
+        "industrial",
+        "darkwave"
+      ],
+      "enRaw": [
+        "rock kapak",
+        "shoegaze",
+        "nu gaze"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "industrial",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Mogwai",
+      "stored": [
+        "ambient",
+        "industrial",
+        "darkwave",
+        "artpop"
+      ],
+      "enRaw": [
+        "cosmic post-rock",
+        "post-rock",
+        "british post-rock",
+        "scottish rock",
+        "dream pop",
+        "indie rock",
+        "instrumental post-rock",
+        "compositional ambient",
+        "electronica"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop",
+        "ambient",
+        "electronica"
+      ],
+      "missingFromStored": [
+        "indiepop",
+        "electronica"
+      ],
+      "notSupportedByEN": [
+        "industrial",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Preoccupations",
+      "stored": [
+        "darkwave",
+        "artpop",
+        "idm",
+        "industrial"
+      ],
+      "enRaw": [
+        "canadian post-punk",
+        "garage psych",
+        "calgary indie",
+        "noise rock",
+        "canadian punk",
+        "canadian indie",
+        "nu gaze",
+        "crank wave",
+        "neo-psychedelic",
+        "shoegaze",
+        "indie punk",
+        "indie rock"
+      ],
+      "enCategories": [
+        "darkwave",
+        "industrial",
+        "indiepop",
+        "artpop"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "idm"
+      ]
+    },
+    {
+      "name": "Robin Guthrie",
+      "stored": [
+        "ambient",
+        "artpop",
+        "darkwave"
+      ],
+      "enRaw": [
+        "solo wave",
+        "dream pop"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "ambient",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Schwefelgelb",
+      "stored": [
+        "industrial",
+        "darkwave",
+        "techno"
+      ],
+      "enRaw": [
+        "experimental techno",
+        "german ebm",
+        "modern ebm"
+      ],
+      "enCategories": [
+        "techno",
+        "idm",
+        "industrial",
+        "darkwave"
+      ],
+      "missingFromStored": [
+        "idm"
+      ],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Severed Heads",
+      "stored": [
+        "industrial",
+        "idm",
+        "darkwave"
+      ],
+      "enRaw": [
+        "industrial",
+        "experimental",
+        "ambient industrial",
+        "no wave",
+        "industrial rock",
+        "minimal wave"
+      ],
+      "enCategories": [
+        "industrial",
+        "idm",
+        "ambient",
+        "darkwave"
+      ],
+      "missingFromStored": [
+        "ambient"
+      ],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Siouxsie and the Banshees",
+      "stored": [
+        "darkwave"
+      ],
+      "enRaw": [
+        "post-punk",
+        "new wave",
+        "uk post-punk",
+        "dream pop",
+        "alternative rock",
+        "new romantic",
+        "punk"
+      ],
+      "enCategories": [
+        "darkwave",
+        "indiepop",
+        "artpop"
+      ],
+      "missingFromStored": [
+        "indiepop",
+        "artpop"
+      ],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "Slowdive",
+      "stored": [
+        "artpop",
+        "ambient",
+        "darkwave"
+      ],
+      "enRaw": [
+        "dream pop",
+        "reading indie",
+        "shoegaze",
+        "nu gaze",
+        "alternative rock"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "ambient",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Sneaker Pimps",
+      "stored": [
+        "triphop",
+        "darkwave"
+      ],
+      "enRaw": [
+        "trip hop",
+        "electronica"
+      ],
+      "enCategories": [
+        "triphop",
+        "electronica"
+      ],
+      "missingFromStored": [
+        "electronica"
+      ],
+      "notSupportedByEN": [
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Starflyer 59",
+      "stored": [
+        "artpop",
+        "industrial",
+        "darkwave"
+      ],
+      "enRaw": [
+        "spacegrunge",
+        "dream pop",
+        "shoegaze",
+        "american shoegaze",
+        "nu gaze"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "industrial",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Swervedriver",
+      "stored": [
+        "artpop",
+        "industrial",
+        "darkwave"
+      ],
+      "enRaw": [
+        "shoegaze",
+        "spacegrunge",
+        "grungegaze",
+        "nu gaze"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "industrial",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Terence Fixmer",
+      "stored": [
+        "darkwave",
+        "industrial",
+        "techno"
+      ],
+      "enRaw": [
+        "french techno",
+        "techno",
+        "minimal dub",
+        "modern ebm"
+      ],
+      "enCategories": [
+        "techno",
+        "triphop",
+        "industrial",
+        "darkwave"
+      ],
+      "missingFromStored": [
+        "triphop"
+      ],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "The Cure",
+      "stored": [
+        "darkwave"
+      ],
+      "enRaw": [
+        "permanent wave",
+        "rock",
+        "new wave",
+        "uk post-punk"
+      ],
+      "enCategories": [
+        "industrial",
+        "darkwave",
+        "indiepop",
+        "artpop",
+        "folk"
+      ],
+      "missingFromStored": [
+        "industrial",
+        "indiepop",
+        "artpop",
+        "folk"
+      ],
+      "notSupportedByEN": []
+    },
+    {
+      "name": "This Mortal Coil",
+      "stored": [
+        "artpop",
+        "darkwave",
+        "ambient"
+      ],
+      "enRaw": [
+        "dream pop",
+        "melancholia",
+        "ethereal wave",
+        "uk post-punk"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop",
+        "darkwave"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "ambient"
+      ]
+    },
+    {
+      "name": "UNKLE",
+      "stored": [
+        "triphop",
+        "darkwave"
+      ],
+      "enRaw": [
+        "electronica",
+        "trip hop"
+      ],
+      "enCategories": [
+        "electronica",
+        "triphop"
+      ],
+      "missingFromStored": [
+        "electronica"
+      ],
+      "notSupportedByEN": [
+        "darkwave"
+      ]
+    }
+  ],
+  "extra": [
+    {
+      "name": "Alice Glass",
+      "stored": [
+        "idm",
+        "darkwave",
+        "industrial"
+      ],
+      "enRaw": [
+        "dark pop",
+        "escape room",
+        "witch house"
+      ],
+      "enCategories": [
+        "techno"
+      ],
+      "missingFromStored": [
+        "techno"
+      ],
+      "notSupportedByEN": [
+        "idm",
+        "darkwave",
+        "industrial"
+      ]
+    },
+    {
+      "name": "Anika",
+      "stored": [
+        "triphop",
+        "electronica",
+        "darkwave",
+        "artpop",
+        "idm",
+        "dnb"
+      ],
+      "enRaw": [
+        "experimental pop",
+        "bristol indie",
+        "new weird america"
+      ],
+      "enCategories": [
+        "artpop",
+        "folk"
+      ],
+      "missingFromStored": [
+        "folk"
+      ],
+      "notSupportedByEN": [
+        "triphop",
+        "electronica",
+        "darkwave",
+        "idm",
+        "dnb"
+      ]
+    },
+    {
+      "name": "Animal Collective",
+      "stored": [
+        "folk",
+        "idm",
+        "indiepop",
+        "artpop",
+        "darkwave",
+        "electronica",
+        "industrial",
+        "ambient"
+      ],
+      "enRaw": [
+        "experimental pop",
+        "baltimore indie",
+        "indie rock",
+        "freak folk",
+        "art pop",
+        "chillwave",
+        "noise pop",
+        "dance-punk",
+        "dream pop",
+        "alternative dance",
+        "alternative rock",
+        "neo-synthpop"
+      ],
+      "enCategories": [
+        "artpop",
+        "indiepop",
+        "folk",
+        "electronica",
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "idm",
+        "industrial",
+        "ambient"
+      ]
+    },
+    {
+      "name": "Anna von Hausswolff",
+      "stored": [
+        "ambient",
+        "classical",
+        "darkwave"
+      ],
+      "enRaw": [
+        "gothenburg indie",
+        "dark pop",
+        "gaian doom",
+        "spectra"
+      ],
+      "enCategories": [
+        "folk",
+        "industrial"
+      ],
+      "missingFromStored": [
+        "folk",
+        "industrial"
+      ],
+      "notSupportedByEN": [
+        "ambient",
+        "classical",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Autumn's Grey Solace",
+      "stored": [
+        "artpop",
+        "darkwave",
+        "ambient"
+      ],
+      "enRaw": [
+        "ethereal wave",
+        "dream pop"
+      ],
+      "enCategories": [
+        "artpop",
+        "darkwave",
+        "indiepop"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "ambient"
+      ]
+    },
+    {
+      "name": "Bitchin Bajas",
+      "stored": [
+        "idm",
+        "ambient",
+        "darkwave"
+      ],
+      "enRaw": [
+        "abstractro",
+        "pastoral"
+      ],
+      "enCategories": [
+        "folk",
+        "ambient"
+      ],
+      "missingFromStored": [
+        "folk"
+      ],
+      "notSupportedByEN": [
+        "idm",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Blanck Mass",
+      "stored": [
+        "ambient",
+        "idm",
+        "industrial",
+        "darkwave"
+      ],
+      "enRaw": [
+        "abstractro",
+        "uk experimental electronic",
+        "fluxwork",
+        "hauntology",
+        "mandible"
+      ],
+      "enCategories": [
+        "electronica",
+        "techno",
+        "idm"
+      ],
+      "missingFromStored": [
+        "electronica",
+        "techno"
+      ],
+      "notSupportedByEN": [
+        "ambient",
+        "industrial",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Cate Le Bon",
+      "stored": [
+        "idm",
+        "industrial",
+        "darkwave",
+        "artpop"
+      ],
+      "enRaw": [
+        "chamber psych",
+        "welsh indie",
+        "art pop",
+        "chamber pop"
+      ],
+      "enCategories": [
+        "artpop"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "idm",
+        "industrial",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Cecile Believe",
+      "stored": [
+        "artpop",
+        "darkwave"
+      ],
+      "enRaw": [
+        "escape room",
+        "hyperpop"
+      ],
+      "enCategories": [
+        "idm"
+      ],
+      "missingFromStored": [
+        "idm"
+      ],
+      "notSupportedByEN": [
+        "artpop",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Chelsea Wolfe",
+      "stored": [
+        "idm",
+        "darkwave",
+        "artpop"
+      ],
+      "enRaw": [
+        "dark pop",
+        "sacramento indie",
+        "doomgaze",
+        "gaian doom"
+      ],
+      "enCategories": [
+        "folk",
+        "industrial"
+      ],
+      "missingFromStored": [
+        "folk",
+        "industrial"
+      ],
+      "notSupportedByEN": [
+        "idm",
+        "darkwave",
+        "artpop"
+      ]
+    },
+    {
+      "name": "Claire Voyant",
+      "stored": [
+        "darkwave",
+        "artpop",
+        "idm"
+      ],
+      "enRaw": [
+        "ethereal wave",
+        "dark wave"
+      ],
+      "enCategories": [
+        "artpop",
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "idm"
+      ]
+    },
+    {
+      "name": "Clock DVA",
+      "stored": [
+        "industrial",
+        "darkwave"
+      ],
+      "enRaw": [
+        "industrial",
+        "british industrial",
+        "cyberpunk"
+      ],
+      "enCategories": [
+        "industrial"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Cocteau Twins",
+      "stored": [
+        "darkwave",
+        "ambient"
+      ],
+      "enRaw": [
+        "dream pop",
+        "melancholia",
+        "scottish indie",
+        "shoegaze",
+        "ethereal wave",
+        "art pop",
+        "synthpop",
+        "alternative rock",
+        "scottish shoegaze"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop",
+        "darkwave"
+      ],
+      "missingFromStored": [
+        "indiepop",
+        "artpop"
+      ],
+      "notSupportedByEN": [
+        "ambient"
+      ]
+    },
+    {
+      "name": "Darkstar",
+      "stored": [
+        "darkwave",
+        "idm"
+      ],
+      "enRaw": [
+        "wonky"
+      ],
+      "enCategories": [
+        "electronica",
+        "idm"
+      ],
+      "missingFromStored": [
+        "electronica"
+      ],
+      "notSupportedByEN": [
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Dead Can Dance",
+      "stored": [
+        "artpop",
+        "darkwave",
+        "ambient",
+        "classical"
+      ],
+      "enRaw": [
+        "ethereal wave",
+        "neoclassical darkwave"
+      ],
+      "enCategories": [
+        "artpop",
+        "darkwave",
+        "classical"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "ambient"
+      ]
+    },
+    {
+      "name": "Dif Juz",
+      "stored": [
+        "darkwave",
+        "artpop",
+        "industrial"
+      ],
+      "enRaw": [
+        "dream pop"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "darkwave",
+        "industrial"
+      ]
+    },
+    {
+      "name": "Dirty Beaches",
+      "stored": [
+        "ambient",
+        "idm",
+        "electronica",
+        "indiepop",
+        "artpop",
+        "folk",
+        "industrial",
+        "darkwave"
+      ],
+      "enRaw": [
+        "one-person band",
+        "hypnagogic pop",
+        "quebec indie",
+        "experimental pop",
+        "noise pop"
+      ],
+      "enCategories": [
+        "artpop",
+        "indiepop"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "ambient",
+        "idm",
+        "electronica",
+        "folk",
+        "industrial",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Dora Jar",
+      "stored": [
+        "artpop",
+        "indiepop",
+        "darkwave",
+        "electronica",
+        "folk",
+        "idm"
+      ],
+      "enRaw": [
+        "indie pop"
+      ],
+      "enCategories": [
+        "indiepop"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "artpop",
+        "darkwave",
+        "electronica",
+        "folk",
+        "idm"
+      ]
+    },
+    {
+      "name": "Erasure",
+      "stored": [
+        "darkwave",
+        "artpop"
+      ],
+      "enRaw": [
+        "new romantic",
+        "synthpop",
+        "new wave pop",
+        "new wave"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "artpop"
+      ]
+    },
+    {
+      "name": "Esben and the Witch",
+      "stored": [
+        "darkwave",
+        "idm",
+        "artpop"
+      ],
+      "enRaw": [
+        "gaian doom",
+        "brighton indie"
+      ],
+      "enCategories": [
+        "folk",
+        "industrial"
+      ],
+      "missingFromStored": [
+        "folk",
+        "industrial"
+      ],
+      "notSupportedByEN": [
+        "darkwave",
+        "idm",
+        "artpop"
+      ]
+    },
+    {
+      "name": "Exploded View",
+      "stored": [
+        "darkwave",
+        "idm",
+        "indiepop",
+        "artpop",
+        "folk"
+      ],
+      "enRaw": [
+        "neo-kraut",
+        "german shoegaze",
+        "experimental pop"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "darkwave",
+        "idm",
+        "folk"
+      ]
+    },
+    {
+      "name": "George Clanton",
+      "stored": [
+        "artpop",
+        "darkwave"
+      ],
+      "enRaw": [
+        "hypnagogic pop",
+        "vaporwave"
+      ],
+      "enCategories": [
+        "idm"
+      ],
+      "missingFromStored": [
+        "idm"
+      ],
+      "notSupportedByEN": [
+        "artpop",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Grimes",
+      "stored": [
+        "darkwave",
+        "idm"
+      ],
+      "enRaw": [
+        "canadian electropop",
+        "art pop",
+        "metropopolis",
+        "indietronica",
+        "grave wave",
+        "neo-synthpop"
+      ],
+      "enCategories": [
+        "techno",
+        "artpop",
+        "electronica",
+        "darkwave"
+      ],
+      "missingFromStored": [
+        "techno",
+        "artpop",
+        "electronica"
+      ],
+      "notSupportedByEN": [
+        "idm"
+      ]
+    },
+    {
+      "name": "Heaven 17",
+      "stored": [
+        "darkwave",
+        "artpop"
+      ],
+      "enRaw": [
+        "sophisti-pop",
+        "new romantic",
+        "synthpop",
+        "new wave pop"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "artpop"
+      ]
+    },
+    {
+      "name": "His Name Is Alive",
+      "stored": [
+        "artpop",
+        "idm",
+        "darkwave"
+      ],
+      "enRaw": [
+        "dream pop",
+        "shoegaze"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "idm",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Isabel's Dream",
+      "stored": [
+        "artpop",
+        "ambient",
+        "darkwave",
+        "idm"
+      ],
+      "enRaw": [
+        "indie shoegaze"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "ambient",
+        "darkwave",
+        "idm"
+      ]
+    },
+    {
+      "name": "Issy Wood",
+      "stored": [
+        "industrial",
+        "darkwave",
+        "indiepop",
+        "artpop",
+        "folk",
+        "electronica",
+        "idm",
+        "ambient"
+      ],
+      "enRaw": [
+        "experimental pop"
+      ],
+      "enCategories": [
+        "artpop"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "industrial",
+        "darkwave",
+        "indiepop",
+        "folk",
+        "electronica",
+        "idm",
+        "ambient"
+      ]
+    },
+    {
+      "name": "Jean-Michel Jarre",
+      "stored": [
+        "ambient",
+        "darkwave"
+      ],
+      "enRaw": [
+        "synthesizer",
+        "vintage french electronic",
+        "laboratorio"
+      ],
+      "enCategories": [
+        "electronica",
+        "techno",
+        "classical"
+      ],
+      "missingFromStored": [
+        "electronica",
+        "techno",
+        "classical"
+      ],
+      "notSupportedByEN": [
+        "ambient",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Jessy Lanza",
+      "stored": [
+        "darkwave",
+        "artpop"
+      ],
+      "enRaw": [
+        "canadian electropop",
+        "experimental r&b",
+        "electra",
+        "art pop",
+        "hamilton on indie",
+        "spectra"
+      ],
+      "enCategories": [
+        "techno",
+        "idm",
+        "artpop"
+      ],
+      "missingFromStored": [
+        "techno",
+        "idm"
+      ],
+      "notSupportedByEN": [
+        "darkwave"
+      ]
+    },
+    {
+      "name": "John Maus",
+      "stored": [
+        "electronica",
+        "darkwave",
+        "idm",
+        "artpop",
+        "indiepop",
+        "folk"
+      ],
+      "enRaw": [
+        "hypnagogic pop",
+        "experimental pop",
+        "baroque pop",
+        "grave wave",
+        "art pop",
+        "noise pop"
+      ],
+      "enCategories": [
+        "artpop",
+        "indiepop"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "electronica",
+        "darkwave",
+        "idm",
+        "folk"
+      ]
+    },
+    {
+      "name": "Julee Cruise",
+      "stored": [
+        "artpop",
+        "darkwave",
+        "triphop",
+        "ambient"
+      ],
+      "enRaw": [
+        "dream pop"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "darkwave",
+        "triphop",
+        "ambient"
+      ]
+    },
+    {
+      "name": "Love and Rockets",
+      "stored": [
+        "darkwave",
+        "industrial"
+      ],
+      "enRaw": [
+        "new wave",
+        "post-punk",
+        "uk post-punk",
+        "gothic rock",
+        "new romantic"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "industrial"
+      ]
+    },
+    {
+      "name": "Love Spirals Downwards",
+      "stored": [
+        "artpop",
+        "darkwave",
+        "ambient",
+        "triphop"
+      ],
+      "enRaw": [
+        "ethereal wave",
+        "dream pop",
+        "dark wave",
+        "shoegaze"
+      ],
+      "enCategories": [
+        "artpop",
+        "darkwave",
+        "indiepop"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "ambient",
+        "triphop"
+      ]
+    },
+    {
+      "name": "Lycia",
+      "stored": [
+        "darkwave",
+        "artpop",
+        "ambient"
+      ],
+      "enRaw": [
+        "dark wave",
+        "ethereal wave",
+        "neoclassical darkwave",
+        "modern goth",
+        "gothic rock"
+      ],
+      "enCategories": [
+        "darkwave",
+        "artpop",
+        "classical"
+      ],
+      "missingFromStored": [
+        "classical"
+      ],
+      "notSupportedByEN": [
+        "ambient"
+      ]
+    },
+    {
+      "name": "Malcolm Ironton",
+      "stored": [
+        "darkwave",
+        "classical"
+      ],
+      "enRaw": [
+        "rebel blues",
+        "orchestral performance",
+        "classical performance",
+        "baltic classical",
+        "american classical piano",
+        "classical piano",
+        "british contemporary classical",
+        "american classical piano",
+        "violin",
+        "classical performance",
+        "ambient dub techno",
+        "electroacoustic composition",
+        "acousmatic",
+        "american contemporary classical",
+        "anglican liturgy",
+        "light music",
+        "classic soundtrack",
+        "wind symphony",
+        "concert band",
+        "contemporary classical",
+        "early modern classical",
+        "historical keyboard",
+        "american classical piano",
+        "historically informed performance",
+        "british classical piano",
+        "experimental synth",
+        "art song",
+        "australian classical",
+        "art song"
+      ],
+      "enCategories": [
+        "classical",
+        "techno",
+        "ambient",
+        "triphop",
+        "idm"
+      ],
+      "missingFromStored": [
+        "techno",
+        "ambient",
+        "triphop",
+        "idm"
+      ],
+      "notSupportedByEN": [
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Medicine",
+      "stored": [
+        "artpop",
+        "industrial",
+        "darkwave"
+      ],
+      "enRaw": [
+        "rock kapak",
+        "shoegaze",
+        "nu gaze"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "industrial",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Milan W.",
+      "stored": [
+        "idm",
+        "ambient",
+        "darkwave",
+        "artpop"
+      ],
+      "enRaw": [
+        "belgian experimental"
+      ],
+      "enCategories": [
+        "idm"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "ambient",
+        "darkwave",
+        "artpop"
+      ]
+    },
+    {
+      "name": "Mogwai",
+      "stored": [
+        "ambient",
+        "industrial",
+        "darkwave",
+        "artpop"
+      ],
+      "enRaw": [
+        "cosmic post-rock",
+        "post-rock",
+        "british post-rock",
+        "scottish rock",
+        "dream pop",
+        "indie rock",
+        "instrumental post-rock",
+        "compositional ambient",
+        "electronica"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop",
+        "ambient",
+        "electronica"
+      ],
+      "missingFromStored": [
+        "indiepop",
+        "electronica"
+      ],
+      "notSupportedByEN": [
+        "industrial",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Ought",
+      "stored": [
+        "industrial",
+        "darkwave",
+        "indiepop",
+        "electronica",
+        "folk"
+      ],
+      "enRaw": [
+        "canadian post-punk",
+        "garage psych",
+        "art punk",
+        "quebec indie",
+        "noise pop",
+        "crank wave",
+        "noise rock"
+      ],
+      "enCategories": [
+        "darkwave",
+        "indiepop",
+        "industrial"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "electronica",
+        "folk"
+      ]
+    },
+    {
+      "name": "Pet Shop Boys",
+      "stored": [
+        "darkwave",
+        "artpop"
+      ],
+      "enRaw": [
+        "dance rock",
+        "new romantic",
+        "new wave",
+        "synthpop",
+        "permanent wave",
+        "new wave pop"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "artpop"
+      ]
+    },
+    {
+      "name": "PJ Harvey",
+      "stored": [
+        "artpop",
+        "darkwave"
+      ],
+      "enRaw": [
+        "melancholia",
+        "art pop",
+        "permanent wave",
+        "alternative rock",
+        "piano rock",
+        "singer-songwriter"
+      ],
+      "enCategories": [
+        "artpop"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Popol Vuh",
+      "stored": [
+        "ambient",
+        "darkwave"
+      ],
+      "enRaw": [
+        "krautrock",
+        "space rock"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "ambient"
+      ]
+    },
+    {
+      "name": "Preoccupations",
+      "stored": [
+        "darkwave",
+        "artpop",
+        "idm",
+        "industrial"
+      ],
+      "enRaw": [
+        "canadian post-punk",
+        "garage psych",
+        "calgary indie",
+        "noise rock",
+        "canadian punk",
+        "canadian indie",
+        "nu gaze",
+        "crank wave",
+        "neo-psychedelic",
+        "shoegaze",
+        "indie punk",
+        "indie rock"
+      ],
+      "enCategories": [
+        "darkwave",
+        "industrial",
+        "indiepop",
+        "artpop"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "idm"
+      ]
+    },
+    {
+      "name": "Robin Guthrie",
+      "stored": [
+        "ambient",
+        "artpop",
+        "darkwave"
+      ],
+      "enRaw": [
+        "solo wave",
+        "dream pop"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "ambient",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Sky Ferreira",
+      "stored": [
+        "artpop",
+        "darkwave"
+      ],
+      "enRaw": [
+        "metropopolis",
+        "la indie",
+        "candy pop",
+        "neo-synthpop"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "artpop"
+      ]
+    },
+    {
+      "name": "Slowdive",
+      "stored": [
+        "artpop",
+        "ambient",
+        "darkwave"
+      ],
+      "enRaw": [
+        "dream pop",
+        "reading indie",
+        "shoegaze",
+        "nu gaze",
+        "alternative rock"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "ambient",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Sneaker Pimps",
+      "stored": [
+        "triphop",
+        "darkwave"
+      ],
+      "enRaw": [
+        "trip hop",
+        "electronica"
+      ],
+      "enCategories": [
+        "triphop",
+        "electronica"
+      ],
+      "missingFromStored": [
+        "electronica"
+      ],
+      "notSupportedByEN": [
+        "darkwave"
+      ]
+    },
+    {
+      "name": "SPELLLING",
+      "stored": [
+        "artpop",
+        "darkwave"
+      ],
+      "enRaw": [
+        "oakland indie",
+        "escape room",
+        "art pop"
+      ],
+      "enCategories": [
+        "artpop"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Starflyer 59",
+      "stored": [
+        "artpop",
+        "industrial",
+        "darkwave"
+      ],
+      "enRaw": [
+        "spacegrunge",
+        "dream pop",
+        "shoegaze",
+        "american shoegaze",
+        "nu gaze"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "industrial",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "Swervedriver",
+      "stored": [
+        "artpop",
+        "industrial",
+        "darkwave"
+      ],
+      "enRaw": [
+        "shoegaze",
+        "spacegrunge",
+        "grungegaze",
+        "nu gaze"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "industrial",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "The Human League",
+      "stored": [
+        "darkwave",
+        "artpop"
+      ],
+      "enRaw": [
+        "new wave",
+        "new romantic",
+        "synthpop",
+        "new wave pop",
+        "sophisti-pop",
+        "permanent wave"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "artpop"
+      ]
+    },
+    {
+      "name": "The Normal",
+      "stored": [
+        "idm",
+        "darkwave",
+        "industrial"
+      ],
+      "enRaw": [
+        "uk post-punk",
+        "synthpop"
+      ],
+      "enCategories": [
+        "darkwave"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "idm",
+        "industrial"
+      ]
+    },
+    {
+      "name": "This Mortal Coil",
+      "stored": [
+        "artpop",
+        "darkwave",
+        "ambient"
+      ],
+      "enRaw": [
+        "dream pop",
+        "melancholia",
+        "ethereal wave",
+        "uk post-punk"
+      ],
+      "enCategories": [
+        "indiepop",
+        "artpop",
+        "darkwave"
+      ],
+      "missingFromStored": [
+        "indiepop"
+      ],
+      "notSupportedByEN": [
+        "ambient"
+      ]
+    },
+    {
+      "name": "Tim Story",
+      "stored": [
+        "ambient",
+        "artpop",
+        "darkwave",
+        "classical"
+      ],
+      "enRaw": [
+        "new age"
+      ],
+      "enCategories": [
+        "ambient"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "artpop",
+        "darkwave",
+        "classical"
+      ]
+    },
+    {
+      "name": "Tirzah",
+      "stored": [
+        "electronica",
+        "idm",
+        "darkwave",
+        "indiepop",
+        "artpop",
+        "dnb"
+      ],
+      "enRaw": [
+        "escape room",
+        "experimental pop",
+        "electra",
+        "art pop",
+        "spectra",
+        "uk contemporary r&b",
+        "alternative r&b"
+      ],
+      "enCategories": [
+        "artpop"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "electronica",
+        "idm",
+        "darkwave",
+        "indiepop",
+        "dnb"
+      ]
+    },
+    {
+      "name": "U.S. Girls",
+      "stored": [
+        "idm",
+        "indiepop",
+        "artpop",
+        "folk",
+        "industrial",
+        "electronica",
+        "darkwave"
+      ],
+      "enRaw": [
+        "experimental pop",
+        "art pop",
+        "chamber psych"
+      ],
+      "enCategories": [
+        "artpop"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "idm",
+        "indiepop",
+        "folk",
+        "industrial",
+        "electronica",
+        "darkwave"
+      ]
+    },
+    {
+      "name": "ultra caro",
+      "stored": [
+        "ambient",
+        "darkwave",
+        "idm",
+        "artpop"
+      ],
+      "enRaw": [
+        "bubblegum bass",
+        "hyperpop"
+      ],
+      "enCategories": [
+        "idm"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "ambient",
+        "darkwave",
+        "artpop"
+      ]
+    },
+    {
+      "name": "UNKLE",
+      "stored": [
+        "triphop",
+        "darkwave"
+      ],
+      "enRaw": [
+        "electronica",
+        "trip hop"
+      ],
+      "enCategories": [
+        "electronica",
+        "triphop"
+      ],
+      "missingFromStored": [
+        "electronica"
+      ],
+      "notSupportedByEN": [
+        "darkwave"
+      ]
+    },
+    {
+      "name": "yeule",
+      "stored": [
+        "idm",
+        "ambient",
+        "darkwave"
+      ],
+      "enRaw": [
+        "ambient pop",
+        "hyper-rock"
+      ],
+      "enCategories": [
+        "ambient"
+      ],
+      "missingFromStored": [],
+      "notSupportedByEN": [
+        "idm",
+        "darkwave"
+      ]
+    }
+  ],
+  "notFound": [
+    {
+      "name": "An April March",
+      "stored": [
+        "artpop",
+        "darkwave"
+      ],
+      "reason": "wrong match (geo tags: lithuanian pop, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian electronic, lithuanian rock, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian jazz, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian folk, lithuanian pop, lithuanian metal, latvian folk, lithuanian metal, lithuanian trap, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian hip hop, lithuanian electronic, lithuanian pop, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian rock, lithuanian rock, latvian folk, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian folk, lithuanian indie, lithuanian hip hop, lithuanian rock, lithuanian metal, lithuanian rock, lithuanian indie, lithuanian pop, korean metal, lithuanian electronic, lithuanian metal, lithuanian pop, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian folk, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian electronic, lithuanian indie, lithuanian trap, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian folk, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian rock, lithuanian indie, lithuanian folk, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, latvian folk, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian rock, lithuanian indie, lithuanian indie, lithuanian folk, lithuanian pop, lithuanian folk, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian hip hop, lithuanian indie, lithuanian pop, lithuanian electronic, lithuanian rock, lithuanian pop, latvian hip hop, lithuanian electronic, lithuanian pop, lithuanian indie, lithuanian metal, lithuanian indie, lithuanian folk, lithuanian electronic, lithuanian jazz, lithuanian electronic, lithuanian electronic, lithuanian metal, lithuanian pop, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian folk, lithuanian metal, lithuanian electronic, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian metal, lithuanian jazz, lithuanian rock, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian folk, lithuanian rock, lithuanian pop, lithuanian jazz, lithuanian electronic, lithuanian hip hop, lithuanian trap, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian folk, lithuanian metal, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian folk, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian folk, lithuanian pop, lithuanian indie, lithuanian folk, lithuanian rock, lithuanian jazz, lithuanian indie, lithuanian metal, lithuanian rock, lithuanian rock, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian metal, lithuanian indie, lithuanian pop, polish reggae, lithuanian indie, lithuanian jazz, lithuanian rock, lithuanian metal, lithuanian hip hop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian metal, lithuanian indie, lithuanian folk, lithuanian metal, lithuanian electronic, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian edm, lithuanian electronic, lithuanian folk, lithuanian jazz, lithuanian electronic, lithuanian electronic, lithuanian indie, lithuanian electronic, lithuanian folk, lithuanian electronic, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian electronic, lithuanian folk, lithuanian rock, lithuanian rock, lithuanian hip hop, lithuanian pop, lithuanian pop)"
+    },
+    {
+      "name": "Annie Hogan",
+      "stored": [
+        "darkwave",
+        "classical"
+      ],
+      "reason": "wrong match (geo tags: lithuanian hip hop, lithuanian electronic, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian pop, nordic folk, norwegian pop, lithuanian rock, lithuanian pop, lithuanian electronic, lithuanian indie, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian pop, lithuanian trap, lithuanian rock, lithuanian pop, lithuanian rock, lithuanian indie, lithuanian jazz, lithuanian electronic, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian trap, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian edm, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian rock, lithuanian indie, lithuanian trap, lithuanian electronic, lithuanian jazz, norwegian jazz, lithuanian electronic, lithuanian electronic, lithuanian metal, lithuanian pop, lithuanian rock, lithuanian folk, lithuanian electronic, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian indie, lithuanian folk, lithuanian indie, lithuanian folk, lithuanian metal, lithuanian pop, lithuanian rock, lithuanian rock, lithuanian indie, lithuanian jazz, lithuanian indie, lithuanian folk, lithuanian electronic, lithuanian pop, lithuanian electronic, lithuanian pop)"
+    },
+    {
+      "name": "Bar Italia",
+      "stored": [
+        "darkwave",
+        "artpop"
+      ],
+      "reason": "wrong match (geo tags: lithuanian pop, lithuanian pop, lithuanian pop, lithuanian trap, lithuanian hip hop, lithuanian indie, lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian rock, lithuanian edm, lithuanian jazz, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian folk, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian hip hop, lithuanian electronic, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian rock, lithuanian rock, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian jazz, lithuanian pop, lithuanian electronic, lithuanian rock, lithuanian electronic, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian trap, lithuanian pop, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian electronic, lithuanian folk, lithuanian pop, lithuanian rock, lithuanian trap, lithuanian rock, lithuanian pop, lithuanian folk, lithuanian pop, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian hip hop, czech contemporary classical, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian edm, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian rock, lithuanian indie, lithuanian indie, lithuanian folk, lithuanian pop, lithuanian trap, lithuanian folk, lithuanian pop, lithuanian folk, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian hip hop, lithuanian electronic, lithuanian indie, lithuanian trap, lithuanian pop, lithuanian electronic, lithuanian rock, lithuanian electronic, lithuanian electronic, lithuanian pop, lithuanian edm, lithuanian pop, lithuanian indie, lithuanian metal, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian electronic, lithuanian electronic, lithuanian indie, lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian folk, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian rock, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian folk, lithuanian rock, lithuanian pop, lithuanian jazz, lithuanian electronic, lithuanian hip hop, lithuanian trap, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian folk, lithuanian pop, lithuanian metal, lithuanian rock, lithuanian rock, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian rock, lithuanian pop, korean classical piano, korean classical performance, lithuanian indie, lithuanian metal, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian jazz, lithuanian rock, lithuanian metal, lithuanian indie, lithuanian pop, lithuanian folk, lithuanian electronic, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian indie, lithuanian electronic, lithuanian pop, lithuanian pop, japanese classical performance, lithuanian electronic, lithuanian folk, lithuanian rock, lithuanian rock, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop)"
+    },
+    {
+      "name": "Bel Canto",
+      "stored": [
+        "artpop",
+        "darkwave",
+        "idm",
+        "ambient"
+      ],
+      "reason": "wrong match (geo tags: lithuanian hip hop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian electronic, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian electronic, lithuanian folk, lithuanian pop, lithuanian electronic, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian pop, lithuanian pop, latvian electronic, lithuanian rock, lithuanian pop, lithuanian rock, lithuanian indie, lithuanian indie, lithuanian edm, lithuanian electronic, lithuanian edm, lithuanian edm, lithuanian pop, lithuanian jazz, lithuanian electronic, lithuanian electronic, lithuanian metal, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian folk, lithuanian hip hop, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian indie, lithuanian trap, lithuanian electronic, lithuanian folk, ukrainian viral pop, lithuanian folk, lithuanian indie, polish choir, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian electronic, latvian hip hop, lithuanian pop, lithuanian folk, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian trap, lithuanian rock, lithuanian pop, lithuanian electronic, lithuanian electronic, lithuanian pop, lithuanian edm, lithuanian pop, lithuanian indie, lithuanian metal, lithuanian hip hop, lithuanian indie, lithuanian folk, lithuanian electronic, lithuanian electronic, lithuanian edm, lithuanian pop, lithuanian electronic, lithuanian folk, lithuanian electronic, lithuanian indie, lithuanian metal, lithuanian electronic, lithuanian electronic, lithuanian folk, lithuanian rock, lithuanian pop, lithuanian jazz, lithuanian electronic, lithuanian electronic, lithuanian folk, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian folk, lithuanian hip hop, lithuanian pop, lithuanian jazz, lithuanian indie, lithuanian indie, lithuanian rock, lithuanian rock, lithuanian indie, lithuanian pop, lithuanian pop, polish reggae, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian edm, lithuanian electronic, lithuanian folk, lithuanian jazz, lithuanian pop, lithuanian electronic, lithuanian indie, lithuanian electronic, lithuanian electronic, lithuanian trap, lithuanian electronic, lithuanian rock, lithuanian hip hop, lithuanian pop, lithuanian pop)"
+    },
+    {
+      "name": "Black Tape for a Blue Girl",
+      "stored": [
+        "darkwave",
+        "artpop",
+        "ambient",
+        "classical"
+      ],
+      "reason": "wrong match (geo tags: latvian indie, norwegian prog, lithuanian indie, lithuanian pop, lithuanian electronic, lithuanian rock, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian metal, latvian rock, lithuanian electronic, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian rock, ukrainian post-punk, lithuanian rock, slovenian electronic, lithuanian electronic, finnish experimental, lithuanian indie, lithuanian metal, lithuanian indie, lithuanian indie, lithuanian indie, lithuanian metal, lithuanian jazz, lithuanian electronic, ukrainian jazz, lithuanian indie, lithuanian electronic, lithuanian indie, lithuanian metal, lithuanian hip hop, lithuanian metal, latvian indie, lithuanian metal, lithuanian hip hop, lithuanian trap, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian rock, lithuanian pop, japanese experimental, lithuanian electronic, ukrainian post-punk, lithuanian electronic, lithuanian folk, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian rock, lithuanian folk, lithuanian pop, lithuanian indie, danish alternative rock, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian metal, lithuanian indie, polish post-punk, lithuanian indie, lithuanian indie, japanese prog, japanese psychedelic rock, lithuanian folk, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian pop, polish black metal, lithuanian hip hop, lithuanian indie, lithuanian hip hop, lithuanian metal, lithuanian pop, lithuanian electronic, lithuanian rock, lithuanian indie, lithuanian metal, lithuanian folk, lithuanian jazz, lithuanian indie, lithuanian electronic, ukrainian experimental, lithuanian electronic, lithuanian metal, lithuanian indie, finnish indie, lithuanian rock, latvian indie, lithuanian hip hop, lithuanian pop, ukrainian indie, ukrainian pop, lithuanian electronic, lithuanian indie, lithuanian metal, slovenian indie, lithuanian rock, lithuanian electronic, latvian rock, lithuanian hip hop, lithuanian pop, lithuanian jazz, lithuanian electronic, lithuanian electronic, lithuanian folk, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian indie, nordic post-rock, lithuanian jazz, lithuanian indie, lithuanian indie, lithuanian rock, lithuanian rock, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian rock, lithuanian trap, lithuanian pop, lithuanian indie, lithuanian metal, polish reggae, japanese prog, nordic post-rock, lithuanian indie, ukrainian post-punk, lithuanian indie, lithuanian indie, lithuanian metal, lithuanian indie, lithuanian metal, lithuanian electronic, lithuanian electronic, lithuanian electronic, lithuanian pop, lithuanian electronic, lithuanian indie, lithuanian electronic, lithuanian folk, lithuanian electronic, lithuanian indie, lithuanian electronic, ukrainian ambient)"
+    },
+    {
+      "name": "Blood Diamonds",
+      "stored": [
+        "idm",
+        "darkwave"
+      ],
+      "reason": "wrong match (geo tags: lithuanian trap, lithuanian hip hop, lithuanian rock, lithuanian pop, lithuanian trap, lithuanian hip hop, lithuanian hip hop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian hip hop, lithuanian rock, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian trap, lithuanian hip hop, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian trap, lithuanian trap, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian hip hop, lithuanian electronic, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian rock, lithuanian rock, lithuanian trap, lithuanian trap, lithuanian indie, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian hip hop, lithuanian rock, lithuanian metal, lithuanian trap, lithuanian rock, lithuanian trap, lithuanian metal, lithuanian hip hop, lithuanian pop, lithuanian trap, lithuanian hip hop, lithuanian trap, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian trap, lithuanian indie, lithuanian hip hop, lithuanian pop, lithuanian electronic, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian folk, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian rock, lithuanian trap, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian hip hop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian metal, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian folk, lithuanian trap, lithuanian folk, lithuanian indie, lithuanian trap, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian trap, lithuanian hip hop, lithuanian indie, lithuanian trap, lithuanian rock, lithuanian hip hop, lithuanian indie, lithuanian trap, lithuanian pop, lithuanian trap, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian indie, lithuanian metal, lithuanian hip hop, lithuanian hip hop, lithuanian pop, lithuanian indie, lithuanian hip hop, lithuanian electronic, lithuanian pop, lithuanian indie, lithuanian electronic, lithuanian metal, lithuanian pop, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian metal, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian trap, lithuanian trap, lithuanian indie, lithuanian metal, lithuanian pop, lithuanian rock, lithuanian trap, lithuanian trap, lithuanian trap, lithuanian pop, lithuanian edm, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian pop, lithuanian metal, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian folk, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian folk, lithuanian hip hop, lithuanian pop, lithuanian rock, lithuanian jazz, lithuanian indie, lithuanian indie, lithuanian metal, lithuanian rock, lithuanian rock, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian hip hop, lithuanian rock, lithuanian trap, lithuanian pop, lithuanian indie, lithuanian metal, lithuanian pop, lithuanian indie, lithuanian jazz, lithuanian rock, lithuanian metal, lithuanian indie, lithuanian pop, lithuanian hip hop, lithuanian folk, lithuanian metal, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian folk, lithuanian jazz, lithuanian pop, lithuanian electronic, lithuanian indie, lithuanian electronic, lithuanian pop, lithuanian hip hop, lithuanian trap, lithuanian hip hop, lithuanian trap, lithuanian indie, lithuanian metal, lithuanian pop, lithuanian electronic, lithuanian folk, lithuanian rock, lithuanian rock, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian pop)"
+    },
+    {
+      "name": "Camouflage",
+      "stored": [
+        "darkwave"
+      ],
+      "reason": "wrong match (geo tags: swedish post-punk)"
+    },
+    {
+      "name": "Dave Gahan",
+      "stored": [
+        "darkwave",
+        "artpop"
+      ],
+      "reason": "no genre overlap",
+      "enRaw": [
+        "alternative dance"
+      ]
+    },
+    {
+      "name": "Death in Vegas",
+      "stored": [
+        "darkwave",
+        "triphop",
+        "techno"
+      ],
+      "reason": "wrong match (geo tags: lithuanian rock, lithuanian indie, lithuanian pop, lithuanian electronic, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian trap, lithuanian hip hop, lithuanian indie, lithuanian pop, lithuanian metal, lithuanian electronic, slovenian metal, lithuanian metal, lithuanian trap, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian metal, lithuanian indie, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian metal, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian rock, lithuanian indie, lithuanian electronic, lithuanian indie, lithuanian metal, lithuanian hip hop, lithuanian pop, lithuanian metal, lithuanian trap, lithuanian metal, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian electronic, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian folk, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian rock, lithuanian trap, lithuanian folk, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian metal, lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian rock, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian trap, lithuanian folk, lithuanian indie, lithuanian trap, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian trap, lithuanian rock, lithuanian hip hop, lithuanian metal, lithuanian indie, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian hip hop, lithuanian indie, lithuanian metal, lithuanian pop, lithuanian indie, lithuanian hip hop, lithuanian electronic, lithuanian pop, lithuanian indie, lithuanian jazz, lithuanian indie, lithuanian electronic, lithuanian electronic, lithuanian metal, lithuanian rock, lithuanian electronic, lithuanian folk, lithuanian metal, latvian metal, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian metal, lithuanian jazz, lithuanian metal, lithuanian rock, lithuanian electronic, lithuanian electronic, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian jazz, lithuanian electronic, lithuanian electronic, lithuanian pop, lithuanian metal, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian folk, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian rock, lithuanian folk, lithuanian hip hop, lithuanian pop, lithuanian jazz, lithuanian indie, lithuanian indie, lithuanian metal, lithuanian rock, lithuanian rock, lithuanian rock, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian electronic, lithuanian indie, lithuanian metal, polish reggae, lithuanian indie, lithuanian rock, lithuanian metal, lithuanian indie, lithuanian pop, lithuanian metal, lithuanian indie, lithuanian folk, lithuanian metal, lithuanian electronic, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian electronic, lithuanian pop, lithuanian edm, lithuanian electronic, lithuanian pop, lithuanian electronic, lithuanian electronic, lithuanian indie, lithuanian electronic, lithuanian electronic, lithuanian electronic, lithuanian trap, lithuanian indie, lithuanian pop, lithuanian electronic, lithuanian folk, lithuanian rock, lithuanian rock, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian pop)"
+    },
+    {
+      "name": "Digit",
+      "stored": [
+        "darkwave",
+        "idm"
+      ],
+      "reason": "wrong match (geo tags: lithuanian pop, lithuanian trap, lithuanian hip hop, lithuanian pop, lithuanian hip hop, lithuanian electronic, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian trap, lithuanian pop, lithuanian hip hop, lithuanian electronic, lithuanian trap, lithuanian trap, lithuanian trap, lithuanian trap, lithuanian indie, lithuanian folk, lithuanian hip hop, icelandic electronic, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian metal, lithuanian trap, lithuanian electronic, lithuanian edm, lithuanian electronic, lithuanian indie, lithuanian rock, lithuanian trap, lithuanian metal, lithuanian trap, lithuanian indie, lithuanian electronic, lithuanian trap, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian hip hop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian trap, lithuanian hip hop, lithuanian pop, lithuanian indie, lithuanian jazz, lithuanian indie, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian trap, lithuanian hip hop, lithuanian indie, lithuanian trap, lithuanian pop, lithuanian trap, lithuanian pop, lithuanian pop, serbian electronic, lithuanian trap, lithuanian electronic, lithuanian electronic, lithuanian rock, korean underground rap, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian trap, lithuanian trap, lithuanian trap, lithuanian pop, lithuanian hip hop, lithuanian trap, lithuanian pop, lithuanian electronic, lithuanian folk, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian hip hop, lithuanian rock, lithuanian indie, lithuanian hip hop, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian jazz, lithuanian hip hop, lithuanian pop, lithuanian hip hop, lithuanian hip hop, lithuanian metal, lithuanian electronic, lithuanian electronic, lithuanian pop, lithuanian trap, lithuanian hip hop, lithuanian trap, lithuanian pop, lithuanian pop, lithuanian pop)"
+    },
+    {
+      "name": "Domenique Dumont",
+      "stored": [
+        "idm",
+        "ambient",
+        "darkwave",
+        "triphop"
+      ],
+      "reason": "no genre overlap",
+      "enRaw": [
+        "fluxwork",
+        "fourth world"
+      ]
+    },
+    {
+      "name": "Elysian Fields",
+      "stored": [
+        "triphop",
+        "industrial",
+        "darkwave",
+        "artpop"
+      ],
+      "reason": "wrong match (geo tags: lithuanian pop, ukrainian experimental, ukrainian ambient, lithuanian indie, lithuanian pop, lithuanian electronic, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian pop, latvian electronic, lithuanian indie, lithuanian folk, lithuanian pop, lithuanian electronic, lithuanian metal, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian rock, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian folk, lithuanian electronic, lithuanian edm, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian jazz, lithuanian trap, lithuanian edm, lithuanian electronic, lithuanian indie, lithuanian electronic, lithuanian pop, lithuanian indie, lithuanian trap, lithuanian metal, lithuanian hip hop, latvian indie, lithuanian pop, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian electronic, lithuanian electronic, lithuanian folk, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian trap, lithuanian folk, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian electronic, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian rock, lithuanian hip hop, lithuanian indie, lithuanian indie, lithuanian folk, lithuanian folk, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian hip hop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian edm, lithuanian pop, lithuanian indie, lithuanian metal, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian jazz, lithuanian indie, lithuanian electronic, lithuanian electronic, lithuanian metal, lithuanian pop, lithuanian rock, lithuanian electronic, lithuanian folk, lithuanian pop, lithuanian indie, lithuanian jazz, lithuanian pop, lithuanian rock, lithuanian electronic, lithuanian electronic, lithuanian folk, lithuanian rock, lithuanian pop, lithuanian jazz, lithuanian electronic, lithuanian electronic, lithuanian folk, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian folk, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian folk, lithuanian pop, lithuanian folk, lithuanian rock, lithuanian pop, lithuanian jazz, lithuanian indie, lithuanian indie, lithuanian metal, lithuanian rock, lithuanian rock, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian rock, lithuanian pop, lithuanian metal, lithuanian indie, polish reggae, lithuanian indie, lithuanian jazz, lithuanian rock, lithuanian indie, lithuanian metal, lithuanian indie, lithuanian folk, lithuanian metal, lithuanian electronic, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian folk, lithuanian jazz, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian electronic, lithuanian indie, lithuanian electronic, lithuanian electronic, lithuanian indie, lithuanian electronic, lithuanian rock, lithuanian hip hop, lithuanian pop, lithuanian pop)"
+    },
+    {
+      "name": "Francis Monkman",
+      "stored": [
+        "classical",
+        "darkwave"
+      ],
+      "reason": "no genre overlap",
+      "enRaw": [
+        "spytrack"
+      ]
+    },
+    {
+      "name": "Frank Tovey",
+      "stored": [
+        "darkwave"
+      ],
+      "reason": "wrong match (geo tags: lithuanian pop, lithuanian indie, lithuanian pop, lithuanian hip hop, lithuanian electronic, lithuanian rock, lithuanian rock, lithuanian folk, lithuanian pop, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian jazz, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian folk, lithuanian metal, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian rock, lithuanian rock, lithuanian rock, lithuanian indie, lithuanian pop, lithuanian jazz, lithuanian jazz, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian trap, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian trap, lithuanian metal, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian trap, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian electronic, lithuanian trap, lithuanian electronic, lithuanian folk, lithuanian pop, lithuanian electronic, lithuanian rock, lithuanian trap, lithuanian folk, lithuanian pop, lithuanian indie, ukrainian jazz, ukrainian jazz, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, finnish jazz, lithuanian indie, lithuanian pop, lithuanian metal, lithuanian pop, lithuanian indie, lithuanian jazz, lithuanian pop, lithuanian indie, lithuanian edm, lithuanian trap, lithuanian folk, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian jazz, lithuanian indie, lithuanian electronic, lithuanian electronic, lithuanian indie, lithuanian rock, latvian electronic, lithuanian pop, latvian indie, lithuanian folk, lithuanian electronic, lithuanian indie, lithuanian jazz, lithuanian electronic, lithuanian electronic, lithuanian rock, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian folk, ukrainian jazz, lithuanian metal, ukrainian jazz, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian rock, lithuanian folk, lithuanian indie, lithuanian folk, lithuanian hip hop, lithuanian pop, lithuanian jazz, lithuanian indie, lithuanian hip hop, lithuanian metal, lithuanian rock, lithuanian rock, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian hip hop, lithuanian pop, polish reggae, lithuanian jazz, lithuanian hip hop, lithuanian pop, lithuanian folk, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian edm, lithuanian electronic, lithuanian folk, lithuanian jazz, lithuanian folk, lithuanian electronic, lithuanian trap, lithuanian hip hop, lithuanian pop, lithuanian electronic, lithuanian folk, lithuanian rock, lithuanian rock, lithuanian hip hop, lithuanian pop, lithuanian pop)"
+    },
+    {
+      "name": "Gesaffelstein",
+      "stored": [
+        "techno",
+        "idm",
+        "darkwave",
+        "industrial"
+      ],
+      "reason": "no genre overlap",
+      "enRaw": [
+        "dark clubbing"
+      ]
+    },
+    {
+      "name": "Grimes & i_o",
+      "stored": [
+        "darkwave",
+        "techno"
+      ],
+      "reason": "wrong match (geo tags: lithuanian trap, lithuanian hip hop, lithuanian rock, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian metal, lithuanian electronic, lithuanian metal, icelandic electronic, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian trap, lithuanian rock, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian metal, lithuanian jazz, lithuanian electronic, lithuanian electronic, lithuanian electronic, lithuanian hip hop, lithuanian pop, lithuanian trap, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian folk, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian rock, estonian hip hop, lithuanian pop, lithuanian trap, lithuanian folk, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian hip hop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian edm, lithuanian pop, lithuanian indie, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian folk, lithuanian pop, lithuanian folk, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian hip hop, lithuanian trap, lithuanian pop, lithuanian electronic, lithuanian electronic, lithuanian electronic, lithuanian pop, lithuanian edm, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian indie, lithuanian trap, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian rock, latvian electronic, lithuanian electronic, finnish experimental, lithuanian metal, lithuanian pop, lithuanian electronic, lithuanian indie, lithuanian metal, lithuanian jazz, lithuanian pop, lithuanian electronic, lithuanian electronic, lithuanian rock, lithuanian pop, lithuanian hip hop, lithuanian trap, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian metal, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian folk, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian jazz, lithuanian indie, lithuanian indie, lithuanian rock, lithuanian rock, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian hip hop, lithuanian pop, lithuanian indie, lithuanian rock, lithuanian indie, lithuanian pop, lithuanian metal, lithuanian electronic, lithuanian electronic, lithuanian electronic, lithuanian electronic, lithuanian pop, lithuanian edm, lithuanian electronic, lithuanian electronic, lithuanian electronic, lithuanian indie, lithuanian electronic, lithuanian folk, lithuanian electronic, lithuanian indie, lithuanian electronic)"
+    },
+    {
+      "name": "Harold Budd, Simon Raymonde, Robin Guthrie & Elizabeth Fraser",
+      "stored": [
+        "artpop",
+        "ambient",
+        "darkwave"
+      ],
+      "reason": "wrong match (geo tags: lithuanian indie, lithuanian pop, lithuanian electronic, lithuanian rock, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian folk, lithuanian pop, lithuanian metal, lithuanian pop, lithuanian rock, lithuanian electronic, lithuanian metal, lithuanian rock, lithuanian pop, lithuanian electronic, lithuanian electronic, lithuanian folk, lithuanian pop, lithuanian rock, latvian pop, lithuanian indie, lithuanian folk, lithuanian pop, latvian indie, latvian pop, lithuanian indie, lithuanian indie, lithuanian indie, lithuanian jazz, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian folk, lithuanian indie, lithuanian indie, lithuanian jazz, lithuanian indie, lithuanian jazz, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian folk, lithuanian indie, lithuanian jazz, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian folk, lithuanian folk, lithuanian jazz, lithuanian folk, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian rock, lithuanian hip hop, lithuanian pop)"
+    },
+    {
+      "name": "Harold Budd/Brian Eno",
+      "stored": [
+        "ambient",
+        "idm",
+        "techno",
+        "darkwave",
+        "classical"
+      ],
+      "reason": "wrong match (geo tags: lithuanian pop, ukrainian experimental, ukrainian ambient, lithuanian indie, lithuanian pop, lithuanian electronic, japanese experimental, lithuanian jazz, lithuanian electronic, lithuanian electronic, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian indie, japanese idm, japanese experimental, norwegian experimental, ukrainian jazz, lithuanian jazz, lithuanian electronic, ukrainian experimental, ukrainian ambient, nordic ambient, lithuanian electronic, swedish experimental, lithuanian metal, nordic ambient, lithuanian rock, lithuanian pop, japanese experimental, lithuanian electronic, polish electronica, lithuanian electronic, lithuanian folk, lithuanian rock, nordic ambient, japanese experimental, japanese house, japanese piano, japanese soundtrack, japanese psychedelic, japanese folk, japanese singer-songwriter, japanese piano, lithuanian indie, lithuanian electronic, lithuanian indie, ukrainian ambient, lithuanian indie, lithuanian pop, japanese jazz, japanese traditional, lithuanian indie, lithuanian indie, lithuanian electronic, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian indie, finnish electronic, polish experimental electronic, classic japanese jazz, lithuanian electronic, japanese piano, lithuanian electronic, lithuanian folk, japanese psychedelic, japanese jazz, norwegian techno, lithuanian jazz, lithuanian electronic, latvian electronic, lithuanian folk, danish experimental, lithuanian electronic, lithuanian indie, lithuanian jazz, lithuanian electronic, ukrainian ambient, polish ambient, polish experimental electronic, lithuanian jazz, lithuanian electronic, lithuanian electronic, lithuanian indie, lithuanian indie, lithuanian pop, japanese jazz, japanese piano, lithuanian folk, lithuanian indie, danish experimental, lithuanian jazz, lithuanian indie, lithuanian rock, lithuanian rock, swedish techno, lithuanian pop, japanese electronic, japanese idm, norwegian experimental, nordic ambient, japanese piano, japanese piano, japanese experimental, japanese classical performance, japanese piano, lithuanian indie, lithuanian indie, lithuanian electronic, lithuanian electronic, lithuanian electronic, lithuanian electronic, lithuanian electronic, icelandic electronic, japanese electronic, japanese idm, japanese experimental, lithuanian electronic, polish experimental electronic, classic japanese jazz)"
+    },
+    {
+      "name": "John Carpenter",
+      "stored": [
+        "darkwave",
+        "ambient"
+      ],
+      "reason": "no genre overlap",
+      "enRaw": [
+        "horror synth"
+      ]
+    },
+    {
+      "name": "Kiasmos",
+      "stored": [
+        "idm",
+        "techno",
+        "darkwave",
+        "classical",
+        "ambient"
+      ],
+      "reason": "wrong match (geo tags: icelandic electronic)"
+    },
+    {
+      "name": "Kitchens of Distinction",
+      "stored": [
+        "artpop",
+        "darkwave"
+      ],
+      "reason": "wrong match (geo tags: lithuanian trap, lithuanian hip hop, lithuanian rock, lithuanian trap, lithuanian hip hop, lithuanian indie, lithuanian pop, lithuanian hip hop, lithuanian electronic, lithuanian rock, lithuanian rock, lithuanian folk, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian jazz, lithuanian pop, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian folk, lithuanian pop, lithuanian metal, lithuanian electronic, lithuanian pop, lithuanian metal, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian trap, lithuanian trap, lithuanian rock, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian metal, finnish experimental, lithuanian indie, lithuanian folk, lithuanian indie, lithuanian indie, lithuanian hip hop, lithuanian rock, lithuanian metal, lithuanian trap, lithuanian jazz, lithuanian jazz, lithuanian electronic, lithuanian rock, lithuanian electronic, lithuanian edm, lithuanian electronic, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian electronic, lithuanian metal, lithuanian hip hop, lithuanian metal, lithuanian metal, lithuanian pop, lithuanian indie, lithuanian hip hop, lithuanian trap, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian folk, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian electronic, lithuanian trap, lithuanian indie, lithuanian electronic, lithuanian trap, lithuanian pop, lithuanian pop, lithuanian rock, lithuanian trap, lithuanian indie, lithuanian folk, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian metal, lithuanian pop, lithuanian indie, lithuanian trap, lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian jazz, lithuanian pop, lithuanian rock, lithuanian hip hop, lithuanian indie, lithuanian indie, ukrainian choir, lithuanian folk, swedish post-punk, finnish techno, lithuanian electronic, lithuanian pop, lithuanian trap, lithuanian folk, lithuanian pop, lithuanian folk, lithuanian indie, lithuanian trap, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian hip hop, lithuanian indie, lithuanian hip hop, lithuanian trap, lithuanian rock, swedish experimental, lithuanian pop, ukrainian experimental, lithuanian hip hop, lithuanian indie, lithuanian metal, lithuanian hip hop, lithuanian indie, lithuanian hip hop, lithuanian hip hop, lithuanian pop, lithuanian jazz, lithuanian indie, lithuanian electronic, lithuanian electronic, lithuanian metal, lithuanian indie, lithuanian pop, lithuanian rock, japanese idm, lithuanian folk, lithuanian electronic, lithuanian indie, lithuanian metal, lithuanian jazz, lithuanian metal, lithuanian folk, lithuanian jazz, lithuanian electronic, lithuanian folk, lithuanian pop, ukrainian jazz, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian rock, lithuanian indie, lithuanian folk, lithuanian rock, lithuanian pop, lithuanian jazz, lithuanian indie, lithuanian hip hop, lithuanian indie, lithuanian metal, lithuanian rock, lithuanian rock, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian rock, lithuanian pop, lithuanian metal, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian jazz, lithuanian indie, lithuanian metal, lithuanian indie, lithuanian folk, lithuanian metal, lithuanian electronic, lithuanian electronic, lithuanian pop, lithuanian folk, lithuanian jazz, lithuanian electronic, lithuanian pop, lithuanian pop, lithuanian pop, ukrainian jazz, lithuanian electronic, lithuanian rock, lithuanian hip hop, lithuanian pop)"
+    },
+    {
+      "name": "Marissa Nadler & Stephen Brodsky",
+      "stored": [
+        "idm",
+        "ambient",
+        "artpop",
+        "darkwave"
+      ],
+      "reason": "wrong match (geo tags: lithuanian pop, lithuanian electronic, latvian pop, lithuanian pop, lithuanian jazz, lithuanian electronic, lithuanian folk, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian electronic, lithuanian edm, lithuanian indie, lithuanian pop, lithuanian jazz, lithuanian jazz, lithuanian pop, lithuanian electronic, lithuanian electronic, lithuanian edm, lithuanian electronic, lithuanian electronic, lithuanian pop, lithuanian electronic, lithuanian electronic, lithuanian pop, lithuanian pop, ukrainian contemporary classical, ukrainian classical, lithuanian electronic, lithuanian folk, ukrainian viral pop, lithuanian electronic, lithuanian rock, lithuanian folk, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian folk, lithuanian indie, classic latvian pop, latvian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian electronic, lithuanian electronic, lithuanian electronic, lithuanian edm, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian jazz, norwegian jazz, lithuanian electronic, lithuanian pop, latvian electronic, lithuanian electronic, ukrainian indie, ukrainian pop, lithuanian electronic, lithuanian jazz, lithuanian electronic, lithuanian electronic, polish ambient, polish experimental electronic, lithuanian pop, lithuanian edm, lithuanian jazz, lithuanian electronic, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian folk, lithuanian folk, lithuanian jazz, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian pop, norwegian experimental, lithuanian pop, lithuanian indie, lithuanian jazz, lithuanian indie, ukrainian techno, lithuanian pop, lithuanian electronic, lithuanian electronic, lithuanian electronic, lithuanian electronic, lithuanian rock, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian pop)"
+    },
+    {
+      "name": "Martin L. Gore",
+      "stored": [
+        "darkwave",
+        "ambient"
+      ],
+      "reason": "wrong match (geo tags: lithuanian indie, lithuanian pop, lithuanian electronic, lithuanian rock, lithuanian pop, lithuanian jazz, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian folk, lithuanian pop, lithuanian metal, lithuanian metal, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian indie, lithuanian metal, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian metal, lithuanian jazz, lithuanian jazz, lithuanian electronic, lithuanian rock, lithuanian electronic, lithuanian metal, lithuanian pop, lithuanian metal, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian electronic, lithuanian pop, lithuanian electronic, lithuanian folk, lithuanian pop, lithuanian electronic, lithuanian rock, lithuanian indie, lithuanian indie, ukrainian jazz, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian metal, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, norwegian experimental, lithuanian folk, lithuanian electronic, lithuanian pop, lithuanian folk, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian metal, lithuanian electronic, lithuanian rock, latvian metal, norwegian experimental, finnish techno, swedish experimental, danish contemporary classical, nordic contemporary classical, swedish techno, lithuanian pop, ukrainian experimental, lithuanian indie, lithuanian metal, lithuanian folk, lithuanian indie, lithuanian jazz, lithuanian indie, latvian pop, lithuanian electronic, lithuanian electronic, lithuanian indie, lithuanian rock, lithuanian indie, lithuanian metal, lithuanian folk, lithuanian rock, lithuanian pop, lithuanian electronic, lithuanian folk, lithuanian metal, lithuanian indie, lithuanian pop, lithuanian folk, lithuanian pop, lithuanian pop, lithuanian folk, lithuanian indie, lithuanian folk, lithuanian jazz, lithuanian indie, lithuanian metal, lithuanian rock, lithuanian rock, lithuanian rock, lithuanian pop, lithuanian electronic, lithuanian indie, lithuanian metal, lithuanian indie, lithuanian folk, lithuanian metal, lithuanian electronic, lithuanian pop, lithuanian electronic, lithuanian electronic, lithuanian pop, lithuanian edm, lithuanian electronic, lithuanian indie, lithuanian electronic, lithuanian electronic, lithuanian rock, lithuanian hip hop, lithuanian pop)"
+    },
+    {
+      "name": "Monaco",
+      "stored": [
+        "darkwave",
+        "artpop"
+      ],
+      "reason": "no genre overlap",
+      "enRaw": [
+        "madchester",
+        "britpop"
+      ]
+    },
+    {
+      "name": "Neil Scrivin",
+      "stored": [
+        "ambient",
+        "darkwave"
+      ],
+      "reason": "wrong match (geo tags: danish jazz, danish modern jazz, danish contemporary classical, danish jazz, danish pop rock)"
+    },
+    {
+      "name": "Oklou",
+      "stored": [
+        "idm",
+        "artpop",
+        "ambient",
+        "darkwave",
+        "techno"
+      ],
+      "reason": "no genre overlap",
+      "enRaw": [
+        "escape room",
+        "alternative r&b"
+      ]
+    },
+    {
+      "name": "Orchestral Manoeuvres in the Dark",
+      "stored": [
+        "darkwave",
+        "artpop"
+      ],
+      "reason": "wrong match (geo tags: lithuanian rock, lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian electronic, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian folk, lithuanian pop, lithuanian electronic, lithuanian metal, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian pop, lithuanian rock, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian edm, lithuanian electronic, lithuanian edm, lithuanian rock, lithuanian pop, lithuanian metal, lithuanian jazz, lithuanian electronic, lithuanian electronic, lithuanian edm, lithuanian electronic, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian electronic, lithuanian folk, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian rock, lithuanian trap, lithuanian indie, lithuanian folk, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian metal, lithuanian pop, lithuanian edm, lithuanian pop, lithuanian indie, lithuanian rock, lithuanian pop, croatian pop, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian rock, lithuanian indie, lithuanian indie, lithuanian folk, lithuanian folk, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian hip hop, lithuanian indie, lithuanian rock, lithuanian hip hop, lithuanian indie, lithuanian pop, lithuanian electronic, lithuanian rock, lithuanian electronic, lithuanian electronic, lithuanian pop, lithuanian edm, lithuanian pop, lithuanian indie, lithuanian metal, lithuanian pop, lithuanian indie, lithuanian folk, lithuanian electronic, lithuanian pop, lithuanian indie, lithuanian jazz, lithuanian indie, lithuanian electronic, lithuanian pop, lithuanian electronic, lithuanian electronic, lithuanian metal, lithuanian pop, lithuanian indie, lithuanian rock, lithuanian folk, lithuanian hip hop, lithuanian pop, ukrainian indie, ukrainian pop, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian indie, lithuanian metal, lithuanian pop, lithuanian rock, lithuanian electronic, lithuanian electronic, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian edm, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian jazz, lithuanian electronic, lithuanian hip hop, lithuanian trap, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian folk, lithuanian metal, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian folk, lithuanian pop, lithuanian indie, lithuanian folk, lithuanian hip hop, lithuanian pop, lithuanian rock, lithuanian jazz, lithuanian indie, lithuanian indie, lithuanian rock, lithuanian rock, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian metal, lithuanian pop, lithuanian indie, polish reggae, lithuanian indie, lithuanian jazz, lithuanian rock, lithuanian indie, lithuanian pop, lithuanian metal, lithuanian electronic, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian edm, lithuanian electronic, lithuanian electronic, lithuanian electronic, lithuanian indie, lithuanian electronic, lithuanian electronic, lithuanian indie, lithuanian electronic, lithuanian rock, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian pop)"
+    },
+    {
+      "name": "Primal Scream",
+      "stored": [
+        "darkwave",
+        "triphop"
+      ],
+      "reason": "no genre overlap",
+      "enRaw": [
+        "dance rock",
+        "scottish indie",
+        "britpop",
+        "alternative rock"
+      ]
+    },
+    {
+      "name": "Public Memory",
+      "stored": [
+        "darkwave",
+        "idm",
+        "triphop",
+        "ambient"
+      ],
+      "reason": "no genre overlap",
+      "enRaw": [
+        "grave wave"
+      ]
+    },
+    {
+      "name": "quit life",
+      "stored": [
+        "techno",
+        "ambient",
+        "idm",
+        "artpop",
+        "darkwave"
+      ],
+      "reason": "wrong match (geo tags: lithuanian pop, lithuanian pop, lithuanian pop, lithuanian trap, lithuanian hip hop, lithuanian rock, lithuanian trap, lithuanian trap, lithuanian hip hop, lithuanian hip hop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian hip hop, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian metal, lithuanian trap, lithuanian indie, lithuanian pop, lithuanian electronic, lithuanian trap, lithuanian trap, lithuanian trap, lithuanian indie, lithuanian metal, lithuanian indie, lithuanian indie, lithuanian hip hop, lithuanian trap, lithuanian hip hop, lithuanian trap, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian trap, lithuanian metal, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian trap, lithuanian metal, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian trap, lithuanian indie, lithuanian hip hop, lithuanian pop, lithuanian electronic, lithuanian trap, lithuanian hip hop, lithuanian pop, lithuanian trap, lithuanian pop, lithuanian electronic, lithuanian folk, lithuanian pop, lithuanian rock, lithuanian trap, lithuanian folk, lithuanian pop, lithuanian indie, danish hardcore, lithuanian pop, lithuanian indie, lithuanian hip hop, lithuanian pop, lithuanian hip hop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian edm, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian trap, lithuanian trap, lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian trap, lithuanian indie, lithuanian trap, lithuanian hip hop, lithuanian pop, lithuanian hip hop, lithuanian indie, lithuanian trap, lithuanian hip hop, lithuanian trap, lithuanian pop, lithuanian trap, lithuanian pop, lithuanian pop, lithuanian hip hop, lithuanian indie, lithuanian metal, lithuanian pop, lithuanian indie, lithuanian hip hop, lithuanian pop, lithuanian electronic, lithuanian electronic, lithuanian metal, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian edm, lithuanian trap, lithuanian hip hop, lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian trap, lithuanian trap, lithuanian pop, lithuanian indie, lithuanian metal, lithuanian metal, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian trap, lithuanian trap, lithuanian hip hop, lithuanian pop, lithuanian trap, lithuanian hip hop, lithuanian pop, lithuanian hip hop, lithuanian trap, lithuanian pop, lithuanian pop, lithuanian folk, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian rock, lithuanian hip hop, lithuanian indie, lithuanian rock, lithuanian rock, lithuanian indie, lithuanian hip hop, lithuanian trap, lithuanian pop, lithuanian metal, lithuanian trap, lithuanian trap, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian metal, lithuanian indie, lithuanian hip hop, lithuanian hip hop, lithuanian metal, lithuanian pop, lithuanian electronic, lithuanian electronic, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian electronic, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian pop)"
+    },
+    {
+      "name": "Robin Guthrie & Harold Budd",
+      "stored": [
+        "ambient",
+        "artpop",
+        "darkwave",
+        "idm",
+        "techno",
+        "classical"
+      ],
+      "reason": "wrong match (geo tags: lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian indie, lithuanian pop, norwegian folk, nordic folk, lithuanian rock, lithuanian rock, lithuanian folk, lithuanian pop, japanese jazz, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian indie, icelandic classical, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian electronic, lithuanian indie, lithuanian electronic, lithuanian edm, slovak pop, lithuanian rock, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian hip hop, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian rock, lithuanian rock, lithuanian pop, lithuanian pop, polish experimental, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, finnish electro, nordic soundtrack, lithuanian indie, lithuanian pop, lithuanian pop, norwegian contemporary jazz, lithuanian folk, lithuanian pop, lithuanian trap, lithuanian folk, ukrainian jazz, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian hip hop, norwegian jazz, lithuanian electronic, estonian pop, lithuanian indie, lithuanian metal, japanese psychedelic, lithuanian indie, lithuanian electronic, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian electronic, lithuanian pop, lithuanian folk, ukrainian jazz, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian folk, lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian rock, lithuanian rock, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian metal, lithuanian indie, lithuanian jazz, lithuanian rock, lithuanian indie, lithuanian folk, lithuanian folk, lithuanian jazz, lithuanian electronic, lithuanian folk, lithuanian pop, lithuanian pop, lithuanian electronic, lithuanian rock, lithuanian hip hop, lithuanian pop, lithuanian pop)"
+    },
+    {
+      "name": "S.G. Goodman",
+      "stored": [
+        "idm",
+        "industrial",
+        "darkwave",
+        "artpop"
+      ],
+      "reason": "no genre overlap",
+      "enRaw": [
+        "kentucky roots"
+      ]
+    },
+    {
+      "name": "Secreto Metro",
+      "stored": [
+        "darkwave"
+      ],
+      "reason": "wrong match (geo tags: lithuanian pop, lithuanian trap, lithuanian hip hop, lithuanian trap, lithuanian hip hop, lithuanian pop, lithuanian electronic, lithuanian jazz, lithuanian electronic, lithuanian trap, lithuanian pop, lithuanian trap, lithuanian trap, lithuanian electronic, lithuanian pop, lithuanian hip hop, lithuanian indie, lithuanian trap, lithuanian electronic, lithuanian trap, lithuanian hip hop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian trap, lithuanian indie, lithuanian hip hop, lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian hip hop, lithuanian hip hop, lithuanian indie, latvian hip hop, lithuanian trap, lithuanian folk, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian hip hop, lithuanian trap, lithuanian pop, lithuanian electronic, lithuanian electronic, lithuanian electronic, lithuanian pop, lithuanian hip hop, lithuanian hip hop, lithuanian hip hop, lithuanian pop, lithuanian folk, lithuanian hip hop, lithuanian hip hop, lithuanian electronic, classic latvian pop, lithuanian hip hop, lithuanian trap, lithuanian edm, lithuanian trap, lithuanian hip hop, lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian trap, lithuanian jazz, lithuanian electronic, lithuanian hip hop, lithuanian pop, lithuanian pop, lithuanian edm, lithuanian pop, lithuanian jazz, lithuanian electronic, lithuanian hip hop, lithuanian trap, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian folk, lithuanian pop, lithuanian folk, lithuanian hip hop, lithuanian pop, lithuanian rock, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian hip hop, polish reggae, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian electronic, lithuanian edm, lithuanian electronic, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian electronic, lithuanian pop)"
+    },
+    {
+      "name": "Shannon Wright",
+      "stored": [
+        "idm",
+        "industrial",
+        "darkwave",
+        "artpop",
+        "classical"
+      ],
+      "reason": "no genre overlap",
+      "enRaw": [
+        "melancholia"
+      ]
+    },
+    {
+      "name": "Soul Whirling Somewhere",
+      "stored": [
+        "artpop",
+        "darkwave",
+        "ambient"
+      ],
+      "reason": "wrong match (geo tags: lithuanian pop, lithuanian rock, lithuanian indie, lithuanian pop, lithuanian electronic, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian indie, lithuanian electronic, lithuanian folk, lithuanian pop, lithuanian metal, lithuanian electronic, lithuanian metal, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian hip hop, lithuanian electronic, lithuanian pop, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian rock, lithuanian electronic, lithuanian indie, lithuanian metal, lithuanian indie, lithuanian pop, lithuanian folk, lithuanian indie, lithuanian pop, lithuanian metal, lithuanian jazz, lithuanian jazz, lithuanian electronic, lithuanian electronic, lithuanian electronic, lithuanian metal, lithuanian pop, lithuanian metal, latvian indie, lithuanian indie, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian electronic, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian trap, lithuanian electronic, lithuanian folk, lithuanian pop, lithuanian electronic, lithuanian rock, lithuanian folk, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian metal, lithuanian pop, lithuanian edm, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian hip hop, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian folk, lithuanian electronic, lithuanian indie, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian rock, lithuanian hip hop, lithuanian indie, lithuanian pop, lithuanian electronic, lithuanian rock, lithuanian electronic, lithuanian electronic, lithuanian edm, lithuanian pop, ukrainian electronic, lithuanian indie, lithuanian metal, lithuanian pop, lithuanian indie, lithuanian folk, lithuanian indie, lithuanian jazz, lithuanian indie, lithuanian electronic, lithuanian electronic, lithuanian metal, lithuanian edm, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian electronic, lithuanian folk, lithuanian electronic, lithuanian indie, lithuanian metal, lithuanian jazz, lithuanian rock, lithuanian electronic, lithuanian electronic, ukrainian experimental, lithuanian folk, lithuanian rock, lithuanian pop, lithuanian jazz, lithuanian electronic, lithuanian electronic, lithuanian folk, lithuanian metal, lithuanian indie, lithuanian pop, lithuanian indie, lithuanian pop, lithuanian folk, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian folk, lithuanian indie, lithuanian folk, lithuanian rock, lithuanian pop, lithuanian jazz, lithuanian indie, lithuanian hip hop, lithuanian indie, lithuanian metal, lithuanian rock, lithuanian rock, latvian electronic, lithuanian indie, lithuanian pop, lithuanian rock, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian indie, polish reggae, lithuanian indie, lithuanian jazz, lithuanian rock, lithuanian indie, lithuanian folk, lithuanian metal, lithuanian electronic, lithuanian pop, lithuanian electronic, lithuanian electronic, lithuanian pop, lithuanian edm, lithuanian electronic, lithuanian folk, lithuanian jazz, lithuanian electronic, lithuanian electronic, lithuanian indie, lithuanian electronic, lithuanian folk, lithuanian electronic, lithuanian pop, lithuanian electronic, lithuanian electronic, lithuanian folk, lithuanian rock, lithuanian rock, lithuanian hip hop, lithuanian pop, polish experimental electronic, lithuanian pop)"
+    },
+    {
+      "name": "Steve Everitt",
+      "stored": [
+        "ambient",
+        "darkwave"
+      ],
+      "reason": "wrong match (geo tags: lithuanian pop, lithuanian rock, lithuanian indie, lithuanian pop, latvian indie, lithuanian indie, lithuanian folk, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian pop, lithuanian indie, lithuanian electronic, lithuanian folk, lithuanian indie, lithuanian jazz, lithuanian rock, lithuanian pop, lithuanian jazz, lithuanian electronic, lithuanian electronic, lithuanian indie, lithuanian rock, polish reggae, lithuanian electronic, lithuanian indie, lithuanian pop, lithuanian pop, lithuanian edm, lithuanian electronic, lithuanian electronic, lithuanian electronic, lithuanian electronic, lithuanian rock, lithuanian hip hop, lithuanian pop)"
+    },
+    {
+      "name": "Stringtronics",
+      "stored": [
+        "darkwave",
+        "idm"
+      ],
+      "reason": "no genre overlap",
+      "enRaw": [
+        "library music"
+      ]
+    },
+    {
+      "name": "The Sugarcubes",
+      "stored": [
+        "darkwave",
+        "artpop"
+      ],
+      "reason": "wrong match (geo tags: icelandic post-punk, icelandic pop)"
+    },
+    {
+      "name": "Trance to the Sun",
+      "stored": [
+        "darkwave",
+        "artpop"
+      ],
+      "reason": "wrong match (geo tags: lithuanian metal, ukrainian edm, ukrainian electronic, ukrainian electronic, lithuanian pop, ukrainian edm, lithuanian electronic, lithuanian electronic, lithuanian folk, lithuanian electronic, lithuanian indie, finnish edm, lithuanian edm, lithuanian electronic, lithuanian metal, lithuanian electronic, ukrainian edm, ukrainian ambient, swedish experimental, lithuanian pop, finnish edm, finnish edm, classic swedish pop, lithuanian electronic, slovenian electronic)"
+    },
+    {
+      "name": "Vit Fana",
+      "stored": [
+        "darkwave",
+        "idm"
+      ],
+      "reason": "wrong match (geo tags: swedish experimental)"
+    }
+  ]
+}

@@ -129,9 +129,8 @@
     "name": "Alice Glass",
     "birthDate": "1988-08-23",
     "genres": [
-      "idm",
       "darkwave",
-      "industrial"
+      "techno"
     ],
     "youtubeVideoId": "p2WyFrFi-CI"
   },
@@ -250,9 +249,10 @@
     "name": "Anna von Hausswolff",
     "birthDate": "1986-09-06",
     "genres": [
-      "ambient",
       "classical",
-      "darkwave"
+      "darkwave",
+      "folk",
+      "industrial"
     ],
     "youtubeVideoId": "0_Db7LevbnI"
   },
@@ -435,7 +435,7 @@
     "genres": [
       "artpop",
       "darkwave",
-      "ambient"
+      "indiepop"
     ]
   },
   {
@@ -570,9 +570,8 @@
     "name": "Bitchin Bajas",
     "birthDate": "2010-00-00",
     "genres": [
-      "idm",
       "ambient",
-      "darkwave"
+      "folk"
     ]
   },
   {
@@ -867,8 +866,7 @@
     "name": "Cecile Believe",
     "birthDate": "1985-02-15",
     "genres": [
-      "artpop",
-      "darkwave"
+      "idm"
     ],
     "youtubeVideoId": "bZdCdpvofqQ"
   },
@@ -967,9 +965,8 @@
     "name": "Claire Voyant",
     "birthDate": "1995-01-01",
     "genres": [
-      "darkwave",
       "artpop",
-      "idm"
+      "darkwave"
     ]
   },
   {
@@ -995,8 +992,7 @@
     "name": "Clock DVA",
     "birthDate": "1978-06-15",
     "genres": [
-      "industrial",
-      "darkwave"
+      "industrial"
     ],
     "youtubeVideoId": "tMGFI6vfjcE"
   },
@@ -1017,8 +1013,9 @@
     "name": "Cocteau Twins",
     "birthDate": "1963-08-29",
     "genres": [
+      "artpop",
       "darkwave",
-      "ambient"
+      "indiepop"
     ],
     "subgenres": [
       "darkwave",
@@ -1126,7 +1123,7 @@
     "name": "Darkstar",
     "birthDate": "1985-01-01",
     "genres": [
-      "darkwave",
+      "electronica",
       "idm"
     ],
     "subgenres": [
@@ -1193,9 +1190,8 @@
     "birthDate": "1981-00-00",
     "genres": [
       "artpop",
-      "darkwave",
-      "ambient",
-      "classical"
+      "classical",
+      "darkwave"
     ]
   },
   {
@@ -1299,9 +1295,8 @@
     "name": "Dif Juz",
     "birthDate": "1980-00-00",
     "genres": [
-      "darkwave",
       "artpop",
-      "industrial"
+      "indiepop"
     ]
   },
   {
@@ -1580,8 +1575,7 @@
     "name": "Erasure",
     "birthDate": "1985-06-15",
     "genres": [
-      "darkwave",
-      "artpop"
+      "darkwave"
     ],
     "subgenres": [
       "synth-pop"
@@ -2009,8 +2003,7 @@
     "name": "George Clanton",
     "birthDate": "1988-01-12",
     "genres": [
-      "artpop",
-      "darkwave"
+      "idm"
     ],
     "youtubeVideoId": "ksk5mthTR_c"
   },
@@ -2121,8 +2114,10 @@
     "name": "Grimes",
     "birthDate": "1988-03-17",
     "genres": [
+      "artpop",
       "darkwave",
-      "idm"
+      "electronica",
+      "techno"
     ],
     "youtubeVideoId": "1FH-q0I1fJY",
     "subgenres": [
@@ -2225,8 +2220,7 @@
     "name": "Heaven 17",
     "birthDate": "1980-06-15",
     "genres": [
-      "darkwave",
-      "artpop"
+      "darkwave"
     ],
     "subgenres": [
       "synth-pop",
@@ -2305,8 +2299,7 @@
     "birthDate": "1985-00-00",
     "genres": [
       "artpop",
-      "idm",
-      "darkwave"
+      "indiepop"
     ]
   },
   {
@@ -2462,9 +2455,7 @@
     "birthDate": "1977-09-20",
     "genres": [
       "artpop",
-      "ambient",
-      "darkwave",
-      "idm"
+      "indiepop"
     ]
   },
   {
@@ -2524,8 +2515,9 @@
     "name": "Jean-Michel Jarre",
     "birthDate": "1948-08-24",
     "genres": [
-      "ambient",
-      "darkwave"
+      "classical",
+      "electronica",
+      "techno"
     ],
     "subgenres": [
       "berlin-school",
@@ -2583,8 +2575,9 @@
     "name": "Jessy Lanza",
     "birthDate": "1985-09-03",
     "genres": [
-      "darkwave",
-      "artpop"
+      "artpop",
+      "idm",
+      "techno"
     ],
     "subgenres": [
       "synth-pop"
@@ -2813,10 +2806,9 @@
     "name": "Julee Cruise",
     "birthDate": "1956-12-01",
     "genres": [
+      "ambient",
       "artpop",
-      "darkwave",
-      "triphop",
-      "ambient"
+      "indiepop"
     ]
   },
   {
@@ -3162,8 +3154,7 @@
     "name": "Love and Rockets",
     "birthDate": "1985-06-15",
     "genres": [
-      "darkwave",
-      "industrial"
+      "darkwave"
     ],
     "youtubeVideoId": "-L41MhFPU9s"
   },
@@ -3184,10 +3175,10 @@
     "name": "Love Spirals Downwards",
     "birthDate": "1991-00-00",
     "genres": [
+      "ambient",
       "artpop",
       "darkwave",
-      "ambient",
-      "triphop"
+      "indiepop"
     ]
   },
   {
@@ -3323,9 +3314,9 @@
     "name": "Lycia",
     "birthDate": "1988-05-15",
     "genres": [
-      "darkwave",
       "artpop",
-      "ambient"
+      "classical",
+      "darkwave"
     ]
   },
   {
@@ -3369,8 +3360,11 @@
     "name": "Malcolm Ironton",
     "birthDate": "1946-06-15",
     "genres": [
-      "darkwave",
-      "classical"
+      "ambient",
+      "classical",
+      "idm",
+      "techno",
+      "triphop"
     ],
     "subgenres": [
       "synthwave"
@@ -3491,8 +3485,7 @@
     "birthDate": "1943-06-15",
     "genres": [
       "artpop",
-      "industrial",
-      "darkwave"
+      "indiepop"
     ]
   },
   {
@@ -3561,10 +3554,7 @@
     "name": "Milan W.",
     "birthDate": "1756-01-27",
     "genres": [
-      "idm",
-      "ambient",
-      "darkwave",
-      "artpop"
+      "idm"
     ]
   },
   {
@@ -3640,9 +3630,9 @@
     "birthDate": "1995-00-00",
     "genres": [
       "ambient",
-      "industrial",
-      "darkwave",
-      "artpop"
+      "artpop",
+      "electronica",
+      "indiepop"
     ]
   },
   {
@@ -4175,8 +4165,7 @@
     "name": "Pet Shop Boys",
     "birthDate": "1981-08-19",
     "genres": [
-      "darkwave",
-      "artpop"
+      "darkwave"
     ],
     "subgenres": [
       "synth-pop"
@@ -4241,8 +4230,7 @@
     "name": "PJ Harvey",
     "birthDate": "1969-10-09",
     "genres": [
-      "artpop",
-      "darkwave"
+      "artpop"
     ],
     "youtubeVideoId": "mxZtKK5TzdI"
   },
@@ -4303,7 +4291,6 @@
     "name": "Popol Vuh",
     "birthDate": "1944-06-06",
     "genres": [
-      "ambient",
       "darkwave"
     ],
     "subgenres": [
@@ -4572,9 +4559,8 @@
     "name": "Robin Guthrie",
     "birthDate": "1962-01-04",
     "genres": [
-      "ambient",
       "artpop",
-      "darkwave"
+      "indiepop"
     ]
   },
   {
@@ -4862,7 +4848,6 @@
     "name": "Sky Ferreira",
     "birthDate": "1992-07-08",
     "genres": [
-      "artpop",
       "darkwave"
     ],
     "subgenres": [
@@ -4907,8 +4892,7 @@
     "birthDate": "1989-00-00",
     "genres": [
       "artpop",
-      "ambient",
-      "darkwave"
+      "indiepop"
     ]
   },
   {
@@ -4927,8 +4911,8 @@
     "name": "Sneaker Pimps",
     "birthDate": "1974-07-20",
     "genres": [
-      "triphop",
-      "darkwave"
+      "electronica",
+      "triphop"
     ],
     "subgenres": [
       "trip-hop",
@@ -5018,8 +5002,7 @@
     "name": "SPELLLING",
     "birthDate": "1991-05-18",
     "genres": [
-      "artpop",
-      "darkwave"
+      "artpop"
     ],
     "youtubeVideoId": "rdf62fcwmeA"
   },
@@ -5050,8 +5033,7 @@
     "birthDate": "1993-00-00",
     "genres": [
       "artpop",
-      "industrial",
-      "darkwave"
+      "indiepop"
     ]
   },
   {
@@ -5236,8 +5218,7 @@
     "birthDate": "1989-00-00",
     "genres": [
       "artpop",
-      "industrial",
-      "darkwave"
+      "indiepop"
     ]
   },
   {
@@ -5409,8 +5390,7 @@
     "name": "The Human League",
     "birthDate": "1977-06-15",
     "genres": [
-      "darkwave",
-      "artpop"
+      "darkwave"
     ],
     "youtubeVideoId": "ua9TsN-c7dw"
   },
@@ -5447,9 +5427,7 @@
     "name": "The Normal",
     "birthDate": "1951-02-14",
     "genres": [
-      "idm",
-      "darkwave",
-      "industrial"
+      "darkwave"
     ],
     "youtubeVideoId": "5-Yyifc6NgI"
   },
@@ -5525,7 +5503,7 @@
     "genres": [
       "artpop",
       "darkwave",
-      "ambient"
+      "indiepop"
     ]
   },
   {
@@ -5567,8 +5545,6 @@
     "birthDate": "1957-06-15",
     "genres": [
       "ambient",
-      "artpop",
-      "darkwave",
       "classical"
     ]
   },
@@ -5706,10 +5682,7 @@
     "name": "ultra caro",
     "birthDate": "1990-12-15",
     "genres": [
-      "ambient",
-      "darkwave",
-      "idm",
-      "artpop"
+      "idm"
     ]
   },
   {
@@ -5748,8 +5721,8 @@
     "name": "UNKLE",
     "birthDate": "1974-02-21",
     "genres": [
-      "triphop",
-      "darkwave"
+      "electronica",
+      "triphop"
     ],
     "youtubeVideoId": "8BbZwXn-oV0",
     "subgenres": [
@@ -5968,9 +5941,7 @@
     "name": "yeule",
     "birthDate": "1997-12-16",
     "genres": [
-      "idm",
-      "ambient",
-      "darkwave"
+      "ambient"
     ],
     "youtubeVideoId": "FQMarD0iTII"
   },
@@ -6050,10 +6021,10 @@
     "name": "Blanck Mass",
     "birthDate": "2010-06-15",
     "genres": [
-      "ambient",
+      "electronica",
       "idm",
       "industrial",
-      "darkwave"
+      "techno"
     ]
   },
   {
@@ -6080,9 +6051,9 @@
     "name": "Chelsea Wolfe",
     "birthDate": "1983-11-14",
     "genres": [
-      "idm",
       "darkwave",
-      "artpop"
+      "folk",
+      "industrial"
     ]
   },
   {
@@ -6137,8 +6108,8 @@
     "birthDate": "2008-00-00",
     "genres": [
       "darkwave",
-      "idm",
-      "artpop"
+      "folk",
+      "industrial"
     ]
   },
   {
@@ -6186,9 +6157,6 @@
     "name": "Cate Le Bon",
     "birthDate": "1983-03-04",
     "genres": [
-      "idm",
-      "industrial",
-      "darkwave",
       "artpop"
     ]
   },
@@ -6238,12 +6206,7 @@
     "name": "Dora Jar",
     "birthDate": "1996-10-12",
     "genres": [
-      "artpop",
-      "indiepop",
-      "darkwave",
-      "electronica",
-      "folk",
-      "idm"
+      "indiepop"
     ]
   },
   {
@@ -6259,12 +6222,7 @@
     "birthDate": "1954-06-15",
     "mbid": "e2a65942-78d1-4eb4-b7e1-9a8021881fca",
     "genres": [
-      "electronica",
-      "idm",
-      "darkwave",
-      "indiepop",
-      "artpop",
-      "dnb"
+      "artpop"
     ]
   },
   {
@@ -6283,14 +6241,7 @@
     "birthDate": "1947-06-01",
     "mbid": "92ed8183-8f22-42b2-af4e-d44137610fa0",
     "genres": [
-      "industrial",
-      "darkwave",
-      "indiepop",
-      "artpop",
-      "folk",
-      "electronica",
-      "idm",
-      "ambient"
+      "artpop"
     ]
   },
   {
@@ -6317,13 +6268,7 @@
     "birthDate": "1985-06-15",
     "mbid": "036912f5-c717-498d-8958-6058de17bb70",
     "genres": [
-      "idm",
-      "indiepop",
-      "artpop",
-      "folk",
-      "industrial",
-      "electronica",
-      "darkwave"
+      "artpop"
     ]
   },
   {
@@ -6350,40 +6295,27 @@
     "name": "Dirty Beaches",
     "birthDate": "1980-09-04",
     "genres": [
-      "ambient",
-      "idm",
-      "electronica",
-      "indiepop",
       "artpop",
-      "folk",
-      "industrial",
-      "darkwave"
+      "indiepop"
     ]
   },
   {
     "name": "Animal Collective",
     "birthDate": "1999-00-00",
     "genres": [
-      "folk",
-      "idm",
-      "indiepop",
       "artpop",
       "darkwave",
       "electronica",
-      "industrial",
-      "ambient"
+      "folk",
+      "indiepop"
     ]
   },
   {
     "name": "John Maus",
     "birthDate": "1980-02-23",
     "genres": [
-      "electronica",
-      "darkwave",
-      "idm",
       "artpop",
-      "indiepop",
-      "folk"
+      "indiepop"
     ]
   },
   {
@@ -6401,11 +6333,8 @@
     "birthDate": "2004-05-28",
     "mbid": "543e0a66-ab78-40fc-988a-e5abcb09debf",
     "genres": [
-      "darkwave",
-      "idm",
-      "indiepop",
       "artpop",
-      "folk"
+      "indiepop"
     ]
   },
   {
@@ -6413,23 +6342,18 @@
     "birthDate": "1987-02-06",
     "mbid": "15c0e62b-3e46-4666-845d-d6c86bd44774",
     "genres": [
-      "triphop",
-      "electronica",
-      "darkwave",
       "artpop",
-      "idm",
-      "dnb"
+      "folk",
+      "indiepop"
     ]
   },
   {
     "name": "Ought",
     "birthDate": "2011-01-01",
     "genres": [
-      "industrial",
       "darkwave",
       "indiepop",
-      "electronica",
-      "folk"
+      "industrial"
     ]
   },
   {
@@ -6449,9 +6373,9 @@
     "name": "Preoccupations",
     "birthDate": "2012-00-00",
     "genres": [
-      "darkwave",
       "artpop",
-      "idm",
+      "darkwave",
+      "indiepop",
       "industrial"
     ]
   },
