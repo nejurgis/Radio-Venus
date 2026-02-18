@@ -10922,7 +10922,6 @@
       "element": "air"
     },
     "genres": [
-      "valentine",
       "idm",
       "ambient",
       "triphop"
@@ -10932,6 +10931,22 @@
       "ambient"
     ],
     "youtubeVideoId": "Fi3tuTLa1C0",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Vegyn",
+    "birthDate": "1993-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 27.2,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "valentine"
+    ],
+    "subgenres": [],
+    "youtubeVideoId": "UHiwhFhg-XQ",
     "backupVideoIds": [],
     "sequenceIndex": 15
   },
