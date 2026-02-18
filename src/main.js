@@ -8,7 +8,7 @@ import { loadYouTubeAPI, initPlayer, loadVideo, cueVideo, togglePlay, isPlaying,
 import {
   initScreens, showScreen, setElementTheme,
   renderReveal, renderGenreGrid, renderRadioHeader,
-  renderTrackList, updateNowPlaying, setNowPlayingPaused, updatePlayButton, updateFavoriteButton, showEmptyState,
+  renderTrackList, setActiveTrack, updateNowPlaying, setNowPlayingPaused, updatePlayButton, updateFavoriteButton, showEmptyState,
   markTrackFailed,
   highlightGenres,
   updateProgress, resetProgress, glideToPosition,
@@ -954,11 +954,8 @@ function playTrack(index) {
   startLoadingProgress();
   updateNowPlaying('Loading...');
   updateFavoriteButton(isFavorite(track.name));
-  renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()), getPlaylistShareFn());
+  setActiveTrack(currentTrackIndex);
   updatePlayButton('buffering');
-
-  const activeItem = document.querySelector('#track-list .track-item.active');
-  if (activeItem) activeItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
 function skipToNextPlayable() {

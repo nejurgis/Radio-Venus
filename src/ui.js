@@ -75,6 +75,7 @@ export function initScreens() {
 
   // Delegated click handler for track list (single listener instead of per-track)
   ui.trackList.addEventListener('click', e => {
+    if (e.target.closest('.star-toggle')) return; // fav star — don't select track
     const item = e.target.closest('.track-item');
     if (!item || item.classList.contains('is-failed')) return;
     const idx = parseInt(item.dataset.index, 10);
@@ -243,36 +244,24 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
   }
 
   // 2. Standard Track Rendering
-  const fragment = document.createDocumentFragment();
-  tracks.forEach((track, i) => {
-    // ... (rest of your track rendering logic is fine) ...
+  // No per-item listeners — delegated handler on #track-list covers all clicks
+  const makeItem = (track, i) => {
     const failed = failedIds.has(i);
     const isFav = favSet.has(track.name);
-    
     const item = document.createElement('div');
     item.className = 'track-item'
       + (i === currentIndex ? ' active' : '')
       + (failed ? ' is-failed' : '')
       + (isFav ? ' is-favorited' : '');
-    
     item.dataset.index = i;
-    
     const simHtml = track.similarity != null
       ? `<span class="track-similarity">${track.similarity}%</span>` : '';
-      
     const deg = (track.venus && track.venus.degree != null) ? ` ${Math.round(track.venus.degree * 10) / 10}°` : '';
     const sign = (track.venus && track.venus.sign) ? track.venus.sign : '';
     const el = (track.venus && SIGN_ELEMENTS[track.venus.sign]) || 'air';
-    
-    const favHtml = `
-      <div class="track-fav-container">
-        <div class="star-toggle active" style="width:12px; height:12px;"></div>
-      </div>
-    `;
-    
     item.innerHTML = `
       <span class="track-name" style="display: flex; align-items: center;">
-        ${favHtml}
+        <div class="track-fav-container"><div class="star-toggle active" style="width:12px; height:12px;"></div></div>
         ${track.name}${failed ? ' <span class="track-restricted">restricted</span>' : ''}
       </span>
       <span class="track-meta">
@@ -280,15 +269,37 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
         <span class="track-item-sign" style="color:var(--${el})">${sign}${deg}</span>
       </span>
     `;
-    item.addEventListener('click', (e) => {
-        if (e.target.closest('.star-toggle')) return; 
-        onSelect(i);
-    });
+    return item;
+  };
 
-    fragment.appendChild(item);
-  });
-  
-  ui.trackList.appendChild(fragment);
+  // Render first 80 immediately, lazy-load the rest to avoid blocking the main thread
+  const BATCH = 80;
+  const firstFrag = document.createDocumentFragment();
+  tracks.slice(0, BATCH).forEach((track, i) => firstFrag.appendChild(makeItem(track, i)));
+  ui.trackList.appendChild(firstFrag);
+
+  if (tracks.length > BATCH) {
+    const appendRest = (start) => {
+      if (!ui.trackList || start >= tracks.length) return;
+      const frag = document.createDocumentFragment();
+      tracks.slice(start, start + BATCH).forEach((track, i) => frag.appendChild(makeItem(track, start + i)));
+      ui.trackList.appendChild(frag);
+      setTimeout(() => appendRest(start + BATCH), 0);
+    };
+    setTimeout(() => appendRest(BATCH), 0);
+  }
+}
+
+// Lightweight active-track update — avoids full list re-render on every track skip
+export function setActiveTrack(index) {
+  if (!ui.trackList) return;
+  const prev = ui.trackList.querySelector('.track-item.active');
+  if (prev) prev.classList.remove('active');
+  const next = ui.trackList.querySelector(`[data-index="${index}"]`);
+  if (next) {
+    next.classList.add('active');
+    next.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
 }
 
 export function markTrackFailed(index) {
