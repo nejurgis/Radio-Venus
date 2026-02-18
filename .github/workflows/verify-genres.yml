@@ -1,0 +1,58 @@
+name: Verify Genres
+
+on:
+  workflow_dispatch:
+    inputs:
+      genre:
+        description: 'Single genre to check — leave blank to run all unchecked genres in parallel'
+        required: false
+        default: ''
+
+jobs:
+  # ── Single genre (when input provided) ───────────────────────────────────────
+  verify-single:
+    if: ${{ inputs.genre != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm install
+      - run: npx playwright install chromium --with-deps
+      - name: Run verification
+        run: node scripts/verify-genres.mjs --seed --genre=${{ inputs.genre }} --output=scripts/genre-report.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: genre-report-${{ inputs.genre }}-${{ github.run_number }}
+          path: scripts/genre-report.json
+          retention-days: 30
+
+  # ── All unchecked genres in parallel (default) ────────────────────────────────
+  verify-all:
+    if: ${{ inputs.genre == '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        genre: [idm, classical, artpop, triphop, industrial, electronica, jazz, dnb, indiepop, folk]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm install
+      - run: npx playwright install chromium --with-deps
+      - name: Run verification for ${{ matrix.genre }}
+        run: node scripts/verify-genres.mjs --seed --genre=${{ matrix.genre }} --output=scripts/genre-report-${{ matrix.genre }}.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: genre-report-${{ matrix.genre }}-${{ github.run_number }}
+          path: scripts/genre-report-${{ matrix.genre }}.json
+          retention-days: 30

@@ -10,6 +10,7 @@
 //   node scripts/verify-genres.mjs --limit=50         # cap run
 //   node scripts/verify-genres.mjs --skip=50          # resume after N
 //   node scripts/verify-genres.mjs --output=my.json   # custom report file
+//   node scripts/verify-genres.mjs --seed             # read seed-musicians.json instead of built musicians.json
 //
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -26,9 +27,13 @@ const filterGenre = getArg('genre');
 const limit       = parseInt(getArg('limit') || '0');
 const skip        = parseInt(getArg('skip')  || '0');
 const outputFile  = getArg('output') || join(__dirname, 'genre-report.json');
+const useSeed     = args.includes('--seed');
 
 // ── Load DB ───────────────────────────────────────────────────────────────────
-const db = JSON.parse(readFileSync(join(__dirname, '../public/data/musicians.json'), 'utf-8'));
+const dbPath = useSeed
+  ? join(__dirname, 'seed-musicians.json')
+  : join(__dirname, '../public/data/musicians.json');
+const db = JSON.parse(readFileSync(dbPath, 'utf-8'));
 
 let artists = db.filter(a => a.genres?.length);
 if (filterGenre) artists = artists.filter(a => a.genres.includes(filterGenre));
