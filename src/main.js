@@ -459,11 +459,6 @@ document.addEventListener('DOMContentLoaded', async () => {
           updateNowPlaying(sharedArtist);
           updateFavoriteButton(isFavorite(sharedArtist));
 
-          requestAnimationFrame(() => {
-            const activeItem = document.querySelector('#track-list .track-item.active');
-            if (activeItem) activeItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          });
-
           pendingSeekTime = sharedTime;
           cueVideo(sharedVid);
           updatePlayButton(false);

@@ -284,6 +284,11 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
       const frag = document.createDocumentFragment();
       tracks.slice(start, start + BATCH).forEach((track, i) => frag.appendChild(makeItem(track, start + i)));
       ui.trackList.appendChild(frag);
+      // Scroll active item into view the moment its chunk lands in the DOM
+      if (currentIndex >= start && currentIndex < start + BATCH) {
+        const active = ui.trackList.querySelector('.track-item.active');
+        if (active) active.scrollIntoView({ behavior: 'instant', block: 'center' });
+      }
       setTimeout(() => appendRest(start + BATCH), 0);
     };
     setTimeout(() => appendRest(BATCH), 0);
