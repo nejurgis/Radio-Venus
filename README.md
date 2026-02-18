@@ -142,8 +142,8 @@ Everynoise "fans also like" ──┤  scrobble co-listening vs Spotify data
                 ↓
      Pre-1940 sanity check  +  MBID deduplication
                 ↓
-     Genre tags: MusicBrainz votes + Last.fm tags → categorizeGenres()
-     (Everynoise genres as last resort if pool still empty)
+     Genre tags: Last.fm tags → categorizeGenres()
+     (Everynoise genres as fallback if pool still empty)
                 ↓
      [--filter]  Groq vibe check — raw tags sent for aesthetic judgment
                 ↓
@@ -223,7 +223,7 @@ Radio Venus uses a two-level genre system: **10 top-level categories** for prima
 
 The genre taxonomy was built by cross-referencing four sources:
 
-1. **MusicBrainz** — 2,000 official curated genres with user-voted popularity counts. Queried via the [MusicBrainz API](https://musicbrainz.org/doc/MusicBrainz_API) (`inc=genres+tags`) for all seed artists to identify unmapped tags.
+1. **MusicBrainz** — 2,000 official curated genres with user-voted popularity counts. Used to build the initial `GENRE_MAP` tag vocabulary. No longer queried at runtime for genre tagging — community votes introduced too much noise compared to Everynoise. Still used for birth date lookup (`getMusicBrainzBirthDate`) as a fallback after Wikidata.
 
 2. **Discogs** — 15 top-level genres and ~300 styles (81 electronic). Analyzed via the [AcousticBrainz Genre Dataset](https://mtg.github.io/acousticbrainz-genre-dataset/) (Zenodo), which contains Discogs genre annotations for 905K recordings across 118K release groups. Co-occurrence analysis of electronic subgenres confirmed the 10-category clustering.
 

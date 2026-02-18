@@ -747,19 +747,13 @@ async function main() {
         if (ov?.genres?.length) {
           genres = ov.genres;
         } else {
-          const [lfmTags, mbGenres] = await Promise.all([
-            getLastfmTags(name),
-            getMusicBrainzGenres(name, mbid), // mbid already fetched — zero extra req when available
-          ]);
+            rawTags = await getLastfmTags(name);
           await delay(300);
-          // Merge: MB genres (vote-ranked) + Last.fm tags, MB first for precision
-          rawTags = [...new Set([...mbGenres, ...lfmTags])];
           genres = categorizeGenres(rawTags);
-          if (mbGenres.length) console.log(`    MusicBrainz genres: [${mbGenres.slice(0, 6).join(', ')}]`);
         }
         // Everynoise genre fallback — only called for artists that would otherwise be dropped
         if (genres.length === 0) {
-          console.log(`    No genres from LFM/MB — trying Everynoise...`);
+          console.log(`    No genres from Last.fm — trying Everynoise...`);
           const evn = await getEverynoiseData(name);
           if (evn.genres.length) {
             rawTags = [...new Set([...rawTags, ...evn.genres])];
