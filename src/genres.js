@@ -8,6 +8,7 @@ export const GENRE_CATEGORIES = [
   { id: 'triphop',    label: 'Trip-Hop / Downtempo' },
   { id: 'dnb',        label: 'Drum & Bass / Jungle' },
   { id: 'indiepop',   label: 'Indie / Experimental' },
+  { id: 'altrock',    label: 'Alt Rock / Post-Punk' },
   { id: 'artpop',     label: 'Art Pop / Avant-Garde' },
   { id: 'folk',       label: 'Folk / Neofolk' },
   { id: 'jazz',       label: 'Jazz / Spiritual' },
@@ -30,6 +31,7 @@ export const SUBGENRES = {
   darkwave:   ['darkwave', 'synth-pop', 'new-wave', 'coldwave', 'synthwave', 'darksynth', 'krautrock'],
   dnb:        ['drum-n-bass', 'jungle', 'breakbeat', 'breakcore', 'dubstep', 'grime', 'uk-garage', 'future-garage', 'footwork'],
   indiepop:   ['indie-pop', 'bedroom-pop', 'noise-pop', 'psych-pop', 'lo-fi-indie', 'jangle-pop', 'twee-pop'],
+  altrock:    ['post-punk', 'britpop', 'shoegaze', 'post-rock', 'noise-rock', 'madchester', 'alternative-rock', 'indie-rock'],
   artpop:     ['art-pop', 'avant-garde-pop', 'baroque-pop', 'chamber-pop', 'experimental-pop', 'art-rock', 'glam'],
   folk:       ['neofolk', 'dark-folk', 'freak-folk', 'psychedelic-folk', 'chamber-folk', 'gothic-country', 'folk-rock', 'ambient-folk'],
   jazz:       ['spiritual-jazz', 'dark-jazz', 'doom-jazz', 'free-jazz', 'modal-jazz', 'jazz-fusion', 'soul-jazz', 'cosmic-jazz', 'ambient-jazz'],
@@ -186,6 +188,21 @@ const GENRE_MAP = {
   'sadcore': ['indiepop', 'artpop'],
   'slowcore': ['indiepop'],
 
+  // ── Alt Rock / Post-Punk ──
+  'alternative rock': ['altrock'],
+  'alt-rock': ['altrock'],
+  'britpop': ['altrock'],
+  'madchester': ['altrock', 'electronica'],
+  'post-punk revival': ['altrock'],
+  'post-rock': ['altrock', 'ambient'],
+  'shoegaze': ['altrock', 'indiepop'],
+  'noise rock': ['altrock', 'industrial'],
+  'grunge': ['altrock'],
+  'alternative dance': ['altrock', 'electronica'],
+  'scottish indie': ['altrock'],
+  'irish indie': ['altrock'],
+  'dance rock': ['altrock', 'electronica'],
+
   // ── Art Pop / Avant-Garde ──
   'art pop': ['artpop'],
   'art-pop': ['artpop'],
@@ -197,7 +214,6 @@ const GENRE_MAP = {
   'glam rock': ['artpop'],
   'dream pop': ['indiepop', 'artpop'],
   'ethereal wave': ['artpop', 'darkwave'],
-  'shoegaze': ['indiepop', 'artpop'],
   'avant-garde': ['artpop'],
 
   // ── Folk / Neofolk ──

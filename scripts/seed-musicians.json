@@ -1518,7 +1518,8 @@
     "name": "Electronic",
     "birthDate": "1988-06-15",
     "genres": [
-      "darkwave"
+      "altrock",
+      "electronica"
     ],
     "youtubeVideoId": "_7sVSSb2mU4"
   },
@@ -1818,7 +1819,7 @@
     "name": "Fontaines D.C.",
     "birthDate": "1997-07-01",
     "genres": [
-      "darkwave"
+      "altrock"
     ],
     "subgenres": [
       "new-wave",
@@ -3629,10 +3630,9 @@
     "name": "Mogwai",
     "birthDate": "1995-00-00",
     "genres": [
+      "altrock",
       "ambient",
-      "artpop",
-      "electronica",
-      "indiepop"
+      "electronica"
     ]
   },
   {
@@ -4230,6 +4230,7 @@
     "name": "PJ Harvey",
     "birthDate": "1969-10-09",
     "genres": [
+      "altrock",
       "artpop"
     ],
     "youtubeVideoId": "mxZtKK5TzdI"
@@ -4358,7 +4359,7 @@
     "name": "Primal Scream",
     "birthDate": "1961-06-22",
     "genres": [
-      "darkwave",
+      "altrock",
       "triphop"
     ],
     "subgenres": [
@@ -5217,7 +5218,7 @@
     "name": "Swervedriver",
     "birthDate": "1989-00-00",
     "genres": [
-      "artpop",
+      "altrock",
       "indiepop"
     ]
   },
@@ -6351,9 +6352,7 @@
     "name": "Ought",
     "birthDate": "2011-01-01",
     "genres": [
-      "darkwave",
-      "indiepop",
-      "industrial"
+      "altrock"
     ]
   },
   {
@@ -6373,9 +6372,7 @@
     "name": "Preoccupations",
     "birthDate": "2012-00-00",
     "genres": [
-      "artpop",
-      "darkwave",
-      "indiepop",
+      "altrock",
       "industrial"
     ]
   },
