@@ -249,10 +249,7 @@ async function getPlaywrightBrowser() {
 
 async function closePlaywright() {
   if (!_browser) return;
-  // Give the browser 5s to close gracefully; if it hangs, kill the process anyway
-  const timeout = setTimeout(() => process.exit(0), 5000);
-  try { await _browser.close(); } catch { /* ignore */ }
-  clearTimeout(timeout);
+  _browser.close().catch(() => {}); // fire-and-forget; Chromium may linger
   _browser = null;
 }
 
@@ -698,14 +695,18 @@ async function main() {
       console.log(`  Found ${similar.length} similar artists on Last.fm`);
       await delay(500); // Be polite to Last.fm
 
-      // Everynoise fallback: when Last.fm has no similarity graph for this artist
-      let evnSeedData = { genres: [], similar: [] };
-      if (useEverynoise && similar.length === 0) {
-        console.log(`  Last.fm graph empty — trying Everynoise...`);
-        evnSeedData = await getEverynoiseData(artist);
+      // Everynoise: always merge with Last.fm when --everynoise is passed
+      if (useEverynoise) {
+        const evnSeedData = await getEverynoiseData(artist);
         if (evnSeedData.similar.length > 0) {
-          console.log(`  Using ${evnSeedData.similar.length} Everynoise similar artists as fallback`);
-          similar = evnSeedData.similar;
+          const existingLower = new Set(similar.map(n => n.toLowerCase()));
+          const newFromEvn = evnSeedData.similar.filter(n => !existingLower.has(n.toLowerCase()));
+          if (newFromEvn.length > 0) {
+            console.log(`  Everynoise adds ${newFromEvn.length} unique artists (total pool: ${similar.length + newFromEvn.length})`);
+            similar = [...similar, ...newFromEvn];
+          } else {
+            console.log(`  Everynoise found ${evnSeedData.similar.length} artists — all already in Last.fm list`);
+          }
         }
       }
 
@@ -837,8 +838,10 @@ async function main() {
   await closePlaywright();
 }
 
-main().catch(async err => {
-  console.error('Smart match failed:', err);
-  await closePlaywright();
-  process.exit(1);
-});
+main()
+  .then(() => process.exit(0))
+  .catch(async err => {
+    console.error('Smart match failed:', err);
+    await closePlaywright();
+    process.exit(1);
+  });
