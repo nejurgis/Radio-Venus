@@ -255,7 +255,7 @@ async function closePlaywright() {
 
 async function getEverynoiseData(artistName, { genreOnly = false } = {}) {
   const browser = await getPlaywrightBrowser();
-  if (!browser) return { genres: [], similar: [] };
+  if (!browser) return { genres: [], tags: [], similar: [] };
 
   let page;
   try {
@@ -270,15 +270,27 @@ async function getEverynoiseData(artistName, { genreOnly = false } = {}) {
     await page.waitForTimeout(8000); // JS-rendered — needs time to load
 
     // #exact is a sibling setname div — the actual box is in #exact + div
+    // Linked genre categories (e.g. "dream pop", "shoegaze")
     const genres = await page.$$eval(
       '#exact + div .note a[href*="mode=genre"]',
       els => els.map(el => el.textContent.trim()).filter(Boolean),
     ).catch(() => []);
 
+    // Spotify micro-genre hashtags (e.g. "#idm, #ambient, #trip hop, #downtempo")
+    // These are more granular and map better to GENRE_MAP for categorization
+    const tagsRaw = await page.$eval(
+      '#exact + div span[title="Spotify genre-ish tags"]',
+      el => el.textContent.trim(),
+    ).catch(() => '');
+    const tags = tagsRaw
+      ? tagsRaw.split(',').map(t => t.trim().replace(/^#/, '')).filter(Boolean)
+      : [];
+
     if (genres.length) console.log(`    Everynoise genres: [${genres.join(', ')}]`);
+    if (tags.length)   console.log(`    Everynoise tags:   [${tags.join(', ')}]`);
 
     // Skip artistprofile page when only genres are needed (saves ~5s per artist)
-    if (genreOnly) return { genres, similar: [] };
+    if (genreOnly) return { genres, tags, similar: [] };
 
     // Profile link → artist profile page with "fans also like" section
     const profileHref = await page.$eval(
@@ -302,10 +314,10 @@ async function getEverynoiseData(artistName, { genreOnly = false } = {}) {
 
     if (similar.length) console.log(`    Everynoise similar: ${similar.length} artists`);
 
-    return { genres, similar };
+    return { genres, tags, similar };
   } catch (e) {
     console.log(`    Everynoise error for "${artistName}": ${e.message}`);
-    return { genres: [], similar: [] };
+    return { genres: [], tags: [], similar: [] };
   } finally {
     if (page) await page.close().catch(() => {});
   }
@@ -751,10 +763,11 @@ async function main() {
         if (ov?.genres?.length) {
           genres = ov.genres;
         } else {
-          // Primary: Everynoise — curated, consistent with verification pipeline
+          // Primary: Everynoise — consistent with verification pipeline
+          // Use hashtag micro-tags for categorizeGenres (more granular than linked genres)
           const evn = await getEverynoiseData(name, { genreOnly: true });
-          if (evn.genres.length) {
-            rawTags = evn.genres;
+          if (evn.tags.length || evn.genres.length) {
+            rawTags = evn.tags.length ? evn.tags : evn.genres;
             genres = categorizeGenres(rawTags);
           }
           // Fallback: Last.fm tags — for artists not on Everynoise
