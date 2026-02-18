@@ -4919,6 +4919,27 @@
     ]
   },
   {
+    "name": "Joanna Brouk",
+    "birthDate": "1949-02-20",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 17.6,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "classical"
+    ],
+    "subgenres": [
+      "ambient",
+      "new-age",
+      "minimalist"
+    ],
+    "youtubeVideoId": "1Q6or2vtpKM",
+    "backupVideoIds": []
+  },
+  {
     "name": "Joanna Newsom",
     "birthDate": "1982-01-18",
     "venus": {
