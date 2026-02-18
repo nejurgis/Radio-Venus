@@ -306,7 +306,7 @@ sqlite3 scripts/musicians.db "SELECT venus_sign, count(*) as n FROM musicians GR
 
 The primary discovery method is **Last.fm similarity graph traversal** via `smart-match.mjs`. This naturally preserves the underground aesthetic because it follows real listener connections rather than dumping entire label rosters.
 
-**Everynoise enrichment** (`--everynoise` flag): The pipeline launches a headless Playwright browser and scrapes [everynoise.com](https://everynoise.com) (Glenn McDonald's curated dataset) for the "fans also like" list, then **merges it with Last.fm** — deduplicated. Both graphs use different signals (scrobble co-listening vs Spotify listening data) so they surface meaningfully different artists. In testing, David Casper: Last.fm returned 10 artists, Everynoise returned 20, overlap was only 5 — giving a combined pool of 25. Everynoise genres (e.g., `gaian doom`, `gothenburg indie`) are also used as a last-resort genre fallback for discovered artists that would otherwise be dropped. One shared browser instance is reused across all scrapes in a run, then closed cleanly.
+**Everynoise enrichment** (always-on): The pipeline launches a headless Playwright browser and scrapes [everynoise.com](https://everynoise.com) (Glenn McDonald's curated dataset) for the "fans also like" list, then **merges it with Last.fm** — deduplicated. Both graphs use different signals (scrobble co-listening vs Spotify listening data) so they surface meaningfully different artists, and the combined pool is almost always non-empty even for very niche artists. In testing, David Casper: Last.fm returned 10 artists, Everynoise returned 20, overlap was only 5 — giving a combined pool of 25. Everynoise genres (e.g., `gaian doom`, `gothenburg indie`) are also used as a last-resort genre fallback for discovered artists that would otherwise be dropped. One shared browser instance is reused across all scrapes in a run, then closed cleanly.
 
 **Birth date discovery — 5-tier chain (Wikidata → MusicBrainz → Wikipedia → RateYourMusic):**
 Each discovered artist's birth date is resolved in priority order. MusicBrainz returns a MusicBrainz ID (MBID) alongside the date, which is stored in the seed entry and used for deduplication — catching alias/rename cases (e.g. "Clark" vs "Chris Clark") that name matching alone would miss. Artists with a birth year before 1940 are rejected as implausible for non-classical contexts (MusicBrainz occasionally returns the wrong person). The RateYourMusic fallback catches underground artists who have no Wikidata or Wikipedia entries.
@@ -316,7 +316,7 @@ Each discovered artist's birth date is resolved in priority order. MusicBrainz r
 **Typical session:**
 1. Run `node scripts/db-stats.mjs --anchors` to get suggested commands for weak signs
 2. Pick anchor artists with rich similarity graphs (e.g., Four Tet, Tim Hecker, Flying Lotus)
-3. Run `node scripts/smart-match.mjs "Artist Name" --depth 2 --filter` (add `--everynoise` for artists with no Last.fm graph)
+3. Run `node scripts/smart-match.mjs "Artist Name" --filter` (depth 1 with everynoise always returns results)
 4. Verify birth dates with a second source (Gemini/Google search is good for this)
 5. Run `node scripts/build-db.mjs` to rebuild the database
 6. Check `node scripts/db-stats.mjs` to see updated coverage

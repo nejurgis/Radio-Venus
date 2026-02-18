@@ -653,21 +653,19 @@ async function main() {
   const args = process.argv.slice(2);
   const dryRun = args.includes('--dry-run');
   const useFilter = args.includes('--filter');
-  const useEverynoise = args.includes('--everynoise');
   const depthFlag = args.indexOf('--depth');
   const depth = depthFlag >= 0 ? parseInt(args[depthFlag + 1]) || 1 : 1;
   const seedArtists = args.filter(a => !a.startsWith('--') && (depthFlag < 0 || args.indexOf(a) !== depthFlag + 1));
 
   if (seedArtists.length === 0) {
-    console.log('Usage: node scripts/smart-match.mjs <Artist Name> [--dry-run] [--depth N] [--filter] [--everynoise]');
+    console.log('Usage: node scripts/smart-match.mjs <Artist Name> [--dry-run] [--depth N] [--filter]');
     console.log('');
     console.log('Examples:');
     console.log('  node scripts/smart-match.mjs "Boards of Canada"');
     console.log('  node scripts/smart-match.mjs "Basic Channel" --dry-run');
     console.log('  node scripts/smart-match.mjs "Aphex Twin" --depth 2');
-    console.log('  node scripts/smart-match.mjs "Tim Hecker" --filter           # Groq vibe check');
-    console.log('  node scripts/smart-match.mjs "Burial" --depth 2 --filter     # combine');
-    console.log('  node scripts/smart-match.mjs "Anna von Hausswolff" --everynoise  # everynoise fallback');
+    console.log('  node scripts/smart-match.mjs "Tim Hecker" --filter       # Groq vibe check');
+    console.log('  node scripts/smart-match.mjs "Burial" --depth 2 --filter # combine');
     process.exit(0);
   }
 
@@ -695,8 +693,8 @@ async function main() {
       console.log(`  Found ${similar.length} similar artists on Last.fm`);
       await delay(500); // Be polite to Last.fm
 
-      // Everynoise: always merge with Last.fm when --everynoise is passed
-      if (useEverynoise) {
+      // Everynoise: always merge with Last.fm
+      {
         const evnSeedData = await getEverynoiseData(artist);
         if (evnSeedData.similar.length > 0) {
           const existingLower = new Set(similar.map(n => n.toLowerCase()));
@@ -760,7 +758,7 @@ async function main() {
           if (mbGenres.length) console.log(`    MusicBrainz genres: [${mbGenres.slice(0, 6).join(', ')}]`);
         }
         // Everynoise genre fallback — only called for artists that would otherwise be dropped
-        if (genres.length === 0 && useEverynoise) {
+        if (genres.length === 0) {
           console.log(`    No genres from LFM/MB — trying Everynoise...`);
           const evn = await getEverynoiseData(name);
           if (evn.genres.length) {
