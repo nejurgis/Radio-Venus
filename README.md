@@ -319,6 +319,16 @@ The primary discovery method is **Last.fm similarity graph traversal** via `smar
 - Label rosters (Warp, Raster-Noton, PAN, Hyperdub, Editions Mego) → cherry-pick standout artists
 - Direct artist knowledge → add to seed-musicians.json manually
 
+## Roster log
+
+Tracks manual additions and discovery runs — who was added, when, and what prompted it.
+
+| Date | Artist(s) | Source / anchor |
+|------|-----------|-----------------|
+| 2026-02-18 | Joanna Brouk | Manual — direct knowledge, born 1949-02-20, Venus Aquarius 17.6° |
+| 2026-02-18 | Laraaji, Suzanne Ciani, Laurie Spiegel, Steve Roach, Pauline Anna Strom, Fripp & Eno, Colleen, Ana Roxanne, Emerald Web, Ariel Kalma, Satoshi Ashikawa, Chihei Hatakeyama, Jonny Nash, + 24 more (37 total) | `smart-match "Joanna Brouk" --depth 2 --filter` |
+| 2026-02-18 | David Casper | Manual — Gemini suggestion, Pacific NW sound sculptor, born 1953-09-25, Venus Virgo 1.6° |
+
 ## Deployment
 
 Pushes to `master` trigger a GitHub Actions workflow (`.github/workflows/deploy.yml`) that builds the project and deploys `dist/` to the `gh-pages` branch via [JamesIves/github-pages-deploy-action](https://github.com/JamesIves/github-pages-deploy-action).
