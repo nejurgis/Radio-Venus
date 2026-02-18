@@ -2252,13 +2252,12 @@
   },
   {
     "name": "David Casper",
-    "birthDate": "1953-01-01",
+    "birthDate": "1953-09-25",
     "venus": {
-      "sign": "Aquarius",
-      "degree": 25.5,
-      "decan": 3,
-      "element": "air",
-      "dateApprox": true
+      "sign": "Virgo",
+      "degree": 1.6,
+      "decan": 1,
+      "element": "earth"
     },
     "genres": [
       "ambient"
