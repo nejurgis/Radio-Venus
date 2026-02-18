@@ -349,6 +349,28 @@ sqlite3 scripts/musicians.db "SELECT venus_sign, count(*) as n FROM musicians GR
 - Label rosters (Warp, Raster-Noton, PAN, Hyperdub, Editions Mego) → cherry-pick standout artists
 - Direct artist knowledge → add to seed-musicians.json manually
 
+## Genre verification status
+
+Cross-checked against [Everynoise](https://everynoise.com) via `scripts/verify-genres.mjs`.
+Corrections applied via one-time patch scripts in `scripts/`.
+
+| Genre | Artists | Status | Patch |
+|-------|---------|--------|-------|
+| techno | 103 | ✅ verified 2026-02-18 | patch-techno-genres.mjs |
+| darkwave | 100 | ✅ verified 2026-02-18 | patch-darkwave-genres.mjs |
+| ambient | 214 | ✅ verified 2026-02-18 | patch-ambient-genres.mjs |
+| altrock | 10 | ✅ verified 2026-02-18 (new genre, hand-curated) | patch-altrock-genres.mjs |
+| idm | 242 | ⬜ not yet checked | — |
+| classical | 91 | ⬜ not yet checked | — |
+| artpop | 111 | ⬜ not yet checked | — |
+| triphop | 60 | ⬜ not yet checked | — |
+| industrial | 54 | ⬜ not yet checked | — |
+| electronica | 46 | ⬜ not yet checked | — |
+| jazz | 42 | ⬜ not yet checked | — |
+| dnb | 40 | ⬜ not yet checked | — |
+| indiepop | 28 | ⬜ not yet checked | — |
+| folk | 20 | ⬜ not yet checked | — |
+
 ## Roster log
 
 Tracks manual additions and discovery runs — who was added, when, and what prompted it.
