@@ -302,6 +302,22 @@
     ]
   },
   {
+    "name": "Alison's Halo",
+    "birthDate": "1985-06-03",
+    "venus": {
+      "sign": "Aries",
+      "degree": 27.4,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "artpop"
+    ],
+    "subgenres": [],
+    "youtubeVideoId": "0iX9bjlvfCg",
+    "backupVideoIds": []
+  },
+  {
     "name": "Alva Noto",
     "birthDate": "1965-09-18",
     "venus": {
@@ -392,6 +408,26 @@
       "NJI4WnhbLUc",
       "jP0A9mzR3pM"
     ]
+  },
+  {
+    "name": "An April March",
+    "birthDate": "1989-00-00",
+    "venus": {
+      "sign": "Leo",
+      "degree": 2.7,
+      "decan": 1,
+      "element": "fire",
+      "dateApprox": true
+    },
+    "genres": [
+      "artpop",
+      "darkwave"
+    ],
+    "subgenres": [
+      "darkwave"
+    ],
+    "youtubeVideoId": "Qyea7uPJgaU",
+    "backupVideoIds": []
   },
   {
     "name": "Ana Roxanne",
@@ -862,6 +898,27 @@
     ]
   },
   {
+    "name": "Autumn's Grey Solace",
+    "birthDate": "2008-04-03",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 26.6,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "artpop",
+      "darkwave",
+      "ambient"
+    ],
+    "subgenres": [
+      "darkwave",
+      "ambient"
+    ],
+    "youtubeVideoId": "qg-8vQB1Gyc",
+    "backupVideoIds": []
+  },
+  {
     "name": "Avril23",
     "birthDate": "1993-04-23",
     "venus": {
@@ -967,6 +1024,30 @@
       "ZLr52XxTfCc",
       "Kyd4Ym5KGEA"
     ]
+  },
+  {
+    "name": "Bel Canto",
+    "birthDate": "1985-00-00",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 24.9,
+      "decan": 3,
+      "element": "earth",
+      "dateApprox": true
+    },
+    "genres": [
+      "artpop",
+      "darkwave",
+      "idm",
+      "ambient"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "xhrRjcpWiXE",
+    "backupVideoIds": []
   },
   {
     "name": "Béla Bartók",
@@ -1165,6 +1246,30 @@
       "spiritual-jazz"
     ],
     "youtubeVideoId": "SxP_3ov68S8",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Black Tape for a Blue Girl",
+    "birthDate": "1986-00-00",
+    "venus": {
+      "sign": "Leo",
+      "degree": 18.3,
+      "decan": 2,
+      "element": "fire",
+      "dateApprox": true
+    },
+    "genres": [
+      "darkwave",
+      "artpop",
+      "ambient",
+      "classical"
+    ],
+    "subgenres": [
+      "darkwave",
+      "ambient",
+      "classical"
+    ],
+    "youtubeVideoId": "jt2FOmlG_Cg",
     "backupVideoIds": []
   },
   {
@@ -1875,6 +1980,50 @@
     "backupVideoIds": []
   },
   {
+    "name": "Claire Voyant",
+    "birthDate": "1995-01-01",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 24.3,
+      "decan": 3,
+      "element": "water",
+      "dateApprox": true
+    },
+    "genres": [
+      "darkwave",
+      "artpop",
+      "idm"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "pe464FHVma8",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Clark",
+    "birthDate": "1979-06-25",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 16.7,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "idm",
+      "techno",
+      "ambient"
+    ],
+    "subgenres": [
+      "idm",
+      "techno",
+      "ambient"
+    ],
+    "youtubeVideoId": "_jAQuTwYMyY",
+    "backupVideoIds": []
+  },
+  {
     "name": "Claude Debussy",
     "birthDate": "1862-08-22",
     "venus": {
@@ -2047,6 +2196,26 @@
       "house"
     ],
     "youtubeVideoId": "TKxKPkp_riY",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Cranes",
+    "birthDate": "1986-00-00",
+    "venus": {
+      "sign": "Leo",
+      "degree": 18.3,
+      "decan": 2,
+      "element": "fire",
+      "dateApprox": true
+    },
+    "genres": [
+      "artpop",
+      "darkwave"
+    ],
+    "subgenres": [
+      "darkwave"
+    ],
+    "youtubeVideoId": "QR2HE0YyYOs",
     "backupVideoIds": []
   },
   {
@@ -2269,6 +2438,30 @@
     "backupVideoIds": []
   },
   {
+    "name": "Dead Can Dance",
+    "birthDate": "1981-00-00",
+    "venus": {
+      "sign": "Leo",
+      "degree": 2,
+      "decan": 1,
+      "element": "fire",
+      "dateApprox": true
+    },
+    "genres": [
+      "artpop",
+      "darkwave",
+      "ambient",
+      "classical"
+    ],
+    "subgenres": [
+      "darkwave",
+      "ambient",
+      "classical"
+    ],
+    "youtubeVideoId": "taZjS_oCj3o",
+    "backupVideoIds": []
+  },
+  {
     "name": "Dean Blunt",
     "birthDate": "1984-02-08",
     "venus": {
@@ -2431,6 +2624,28 @@
       "Cq2Q9lP5Yj0",
       "7arQH6ldri8"
     ]
+  },
+  {
+    "name": "Dif Juz",
+    "birthDate": "1980-00-00",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 16.6,
+      "decan": 2,
+      "element": "air",
+      "dateApprox": true
+    },
+    "genres": [
+      "darkwave",
+      "artpop",
+      "industrial"
+    ],
+    "subgenres": [
+      "darkwave",
+      "industrial"
+    ],
+    "youtubeVideoId": "KsUJKPhd7BE",
+    "backupVideoIds": []
   },
   {
     "name": "Digit",
@@ -2741,6 +2956,26 @@
       "96uwZYLjNu8",
       "SaU1Nh4MkSU"
     ]
+  },
+  {
+    "name": "Drop Nineteens",
+    "birthDate": "1991-00-00",
+    "venus": {
+      "sign": "Leo",
+      "degree": 23.2,
+      "decan": 3,
+      "element": "fire",
+      "dateApprox": true
+    },
+    "genres": [
+      "artpop",
+      "industrial"
+    ],
+    "subgenres": [
+      "industrial"
+    ],
+    "youtubeVideoId": "zeu2tI-tqvs",
+    "backupVideoIds": []
   },
   {
     "name": "Duran Duran",
@@ -3386,6 +3621,46 @@
       "eJyCGK02OUA",
       "iHVxIjpycNc"
     ]
+  },
+  {
+    "name": "flat7",
+    "birthDate": "2005-06-15",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 14.5,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "artpop",
+      "ambient"
+    ],
+    "subgenres": [
+      "ambient"
+    ],
+    "youtubeVideoId": "QR2HE0YyYOs",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Fleeting Joys",
+    "birthDate": "1992-08-06",
+    "venus": {
+      "sign": "Leo",
+      "degree": 29.1,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "artpop",
+      "ambient",
+      "industrial"
+    ],
+    "subgenres": [
+      "ambient",
+      "industrial"
+    ],
+    "youtubeVideoId": "fzVyvrtn76Y",
+    "backupVideoIds": []
   },
   {
     "name": "Fleetwood Mac",
@@ -4171,6 +4446,27 @@
     ]
   },
   {
+    "name": "Harold Budd, Simon Raymonde, Robin Guthrie & Elizabeth Fraser",
+    "birthDate": "1962-01-04",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 8.2,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "artpop",
+      "ambient",
+      "darkwave"
+    ],
+    "subgenres": [
+      "ambient",
+      "darkwave"
+    ],
+    "youtubeVideoId": "-Hxm5DphtOE",
+    "backupVideoIds": []
+  },
+  {
     "name": "Harold Budd/Brian Eno",
     "birthDate": "1948-05-15",
     "venus": {
@@ -4326,6 +4622,28 @@
     ]
   },
   {
+    "name": "His Name Is Alive",
+    "birthDate": "1985-00-00",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 24.9,
+      "decan": 3,
+      "element": "earth",
+      "dateApprox": true
+    },
+    "genres": [
+      "artpop",
+      "idm",
+      "darkwave"
+    ],
+    "subgenres": [
+      "idm",
+      "darkwave"
+    ],
+    "youtubeVideoId": "QR2HE0YyYOs",
+    "backupVideoIds": []
+  },
+  {
     "name": "Hollie Kenniff",
     "birthDate": "1981-10-09",
     "venus": {
@@ -4389,6 +4707,26 @@
       "B1D0xyLfG2M",
       "g7l9S_NMA1k"
     ]
+  },
+  {
+    "name": "Hope Sandoval & The Warm Inventions",
+    "birthDate": "2001-00-00",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 25.5,
+      "decan": 3,
+      "element": "earth",
+      "dateApprox": true
+    },
+    "genres": [
+      "artpop",
+      "idm"
+    ],
+    "subgenres": [
+      "idm"
+    ],
+    "youtubeVideoId": "ldCtRxALvyY",
+    "backupVideoIds": []
   },
   {
     "name": "Howlround",
@@ -4598,6 +4936,29 @@
       "experimental"
     ],
     "youtubeVideoId": "CsewLteZIio",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Isabel's Dream",
+    "birthDate": "1977-09-20",
+    "venus": {
+      "sign": "Leo",
+      "degree": 27.4,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "artpop",
+      "ambient",
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "oDkZiYRK9bY",
     "backupVideoIds": []
   },
   {
@@ -5226,6 +5587,28 @@
     ]
   },
   {
+    "name": "Julee Cruise",
+    "birthDate": "1956-12-01",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 7.3,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "artpop",
+      "darkwave",
+      "triphop",
+      "ambient"
+    ],
+    "subgenres": [
+      "darkwave",
+      "ambient"
+    ],
+    "youtubeVideoId": "spu0pJSBvHE",
+    "backupVideoIds": []
+  },
+  {
     "name": "Julia Holter",
     "birthDate": "1984-12-18",
     "venus": {
@@ -5542,6 +5925,26 @@
       "trip-hop"
     ],
     "youtubeVideoId": "HI8XhwncEW4",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Kitchens of Distinction",
+    "birthDate": "1986-00-00",
+    "venus": {
+      "sign": "Leo",
+      "degree": 18.3,
+      "decan": 2,
+      "element": "fire",
+      "dateApprox": true
+    },
+    "genres": [
+      "artpop",
+      "darkwave"
+    ],
+    "subgenres": [
+      "darkwave"
+    ],
+    "youtubeVideoId": "wlSYIVatrPk",
     "backupVideoIds": []
   },
   {
@@ -5973,6 +6376,29 @@
     ]
   },
   {
+    "name": "Love Spirals Downwards",
+    "birthDate": "1991-00-00",
+    "venus": {
+      "sign": "Leo",
+      "degree": 23.2,
+      "decan": 3,
+      "element": "fire",
+      "dateApprox": true
+    },
+    "genres": [
+      "artpop",
+      "darkwave",
+      "ambient",
+      "triphop"
+    ],
+    "subgenres": [
+      "darkwave",
+      "ambient"
+    ],
+    "youtubeVideoId": "feJI6oE_fBU",
+    "backupVideoIds": []
+  },
+  {
     "name": "Lowering",
     "birthDate": "1982-10-01",
     "venus": {
@@ -5990,6 +6416,25 @@
       "ambient"
     ],
     "youtubeVideoId": "Q1eRJi6-C3o",
+    "backupVideoIds": []
+  },
+  {
+    "name": "LSD and the Search for God",
+    "birthDate": "1989-08-17",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 29.3,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "artpop",
+      "idm"
+    ],
+    "subgenres": [
+      "idm"
+    ],
+    "youtubeVideoId": "iRdKlYi3K6g",
     "backupVideoIds": []
   },
   {
@@ -6198,6 +6643,27 @@
       "CyV-sOs_V-A",
       "t6zhuFAoC6Y"
     ]
+  },
+  {
+    "name": "Lycia",
+    "birthDate": "1988-05-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 29.5,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave",
+      "artpop",
+      "ambient"
+    ],
+    "subgenres": [
+      "darkwave",
+      "ambient"
+    ],
+    "youtubeVideoId": "de_FBh2xU8o",
+    "backupVideoIds": []
   },
   {
     "name": "M. Sage",
@@ -6474,6 +6940,26 @@
     "backupVideoIds": []
   },
   {
+    "name": "Mazzy Star",
+    "birthDate": "1989-00-00",
+    "venus": {
+      "sign": "Leo",
+      "degree": 2.7,
+      "decan": 1,
+      "element": "fire",
+      "dateApprox": true
+    },
+    "genres": [
+      "artpop",
+      "idm"
+    ],
+    "subgenres": [
+      "idm"
+    ],
+    "youtubeVideoId": "ImKY6TZEyrI",
+    "backupVideoIds": []
+  },
+  {
     "name": "Mechatok",
     "birthDate": "1998-03-24",
     "venus": {
@@ -6492,6 +6978,27 @@
       "ambient"
     ],
     "youtubeVideoId": "QL_0W1FP0Y0",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Medicine",
+    "birthDate": "1943-06-15",
+    "venus": {
+      "sign": "Leo",
+      "degree": 8.4,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "artpop",
+      "industrial",
+      "darkwave"
+    ],
+    "subgenres": [
+      "industrial",
+      "darkwave"
+    ],
+    "youtubeVideoId": "QR2HE0YyYOs",
     "backupVideoIds": []
   },
   {
@@ -6812,6 +7319,26 @@
     "backupVideoIds": []
   },
   {
+    "name": "Mojave 3",
+    "birthDate": "1995-00-00",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 25.4,
+      "decan": 3,
+      "element": "air",
+      "dateApprox": true
+    },
+    "genres": [
+      "artpop",
+      "idm"
+    ],
+    "subgenres": [
+      "idm"
+    ],
+    "youtubeVideoId": "QR2HE0YyYOs",
+    "backupVideoIds": []
+  },
+  {
     "name": "Monaco",
     "birthDate": "1995-06-15",
     "venus": {
@@ -7124,6 +7651,26 @@
       "a5dKlCTcwAQ",
       "66-6kvJUiVw"
     ]
+  },
+  {
+    "name": "my bloody valentine",
+    "birthDate": "1983-00-00",
+    "venus": {
+      "sign": "Leo",
+      "degree": 23.5,
+      "decan": 3,
+      "element": "fire",
+      "dateApprox": true
+    },
+    "genres": [
+      "artpop",
+      "industrial"
+    ],
+    "subgenres": [
+      "industrial"
+    ],
+    "youtubeVideoId": "HzRJUMNdVsg",
+    "backupVideoIds": []
   },
   {
     "name": "Nala Sinephro",
@@ -7680,6 +8227,26 @@
       "TrsAaX1u4HU",
       "CGBJVlY_yAY"
     ]
+  },
+  {
+    "name": "Pale Saints",
+    "birthDate": "1987-00-00",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 24.7,
+      "decan": 3,
+      "element": "air",
+      "dateApprox": true
+    },
+    "genres": [
+      "artpop",
+      "industrial"
+    ],
+    "subgenres": [
+      "industrial"
+    ],
+    "youtubeVideoId": "ptmpULKngT8",
+    "backupVideoIds": []
   },
   {
     "name": "Pan Sonic",
@@ -8600,6 +9167,74 @@
     "backupVideoIds": []
   },
   {
+    "name": "Robin Guthrie",
+    "birthDate": "1962-01-04",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 8.2,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "artpop",
+      "darkwave"
+    ],
+    "subgenres": [
+      "ambient",
+      "darkwave"
+    ],
+    "youtubeVideoId": "zZSXtTnfE1Y",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Robin Guthrie & Harold Budd",
+    "birthDate": "1936-05-24",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 23.4,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "artpop",
+      "darkwave",
+      "idm",
+      "techno",
+      "classical"
+    ],
+    "subgenres": [
+      "ambient",
+      "darkwave",
+      "idm",
+      "techno",
+      "classical"
+    ],
+    "youtubeVideoId": "iX-4PTkgETQ",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Rocketship",
+    "birthDate": "1993-00-00",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 25.2,
+      "decan": 3,
+      "element": "earth",
+      "dateApprox": true
+    },
+    "genres": [
+      "artpop",
+      "industrial"
+    ],
+    "subgenres": [
+      "industrial"
+    ],
+    "youtubeVideoId": "QR2HE0YyYOs",
+    "backupVideoIds": []
+  },
+  {
     "name": "Roni Size",
     "birthDate": "1969-10-29",
     "venus": {
@@ -9246,6 +9881,28 @@
     "backupVideoIds": []
   },
   {
+    "name": "Slowdive",
+    "birthDate": "1989-00-00",
+    "venus": {
+      "sign": "Leo",
+      "degree": 2.7,
+      "decan": 1,
+      "element": "fire",
+      "dateApprox": true
+    },
+    "genres": [
+      "artpop",
+      "ambient",
+      "darkwave"
+    ],
+    "subgenres": [
+      "ambient",
+      "darkwave"
+    ],
+    "youtubeVideoId": "mRCnLLDar0E",
+    "backupVideoIds": []
+  },
+  {
     "name": "Sluagh Ghairm",
     "birthDate": "1983-06-01",
     "venus": {
@@ -9411,6 +10068,27 @@
     ]
   },
   {
+    "name": "Soul Whirling Somewhere",
+    "birthDate": "2015-04-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 4.5,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "artpop",
+      "darkwave",
+      "ambient"
+    ],
+    "subgenres": [
+      "darkwave",
+      "ambient"
+    ],
+    "youtubeVideoId": "iMwTqYw5pLE",
+    "backupVideoIds": []
+  },
+  {
     "name": "Spaceape",
     "birthDate": "1970-06-17",
     "venus": {
@@ -9494,6 +10172,28 @@
       "9tw2LMnxvW0",
       "jKAA_INzDGo"
     ]
+  },
+  {
+    "name": "Starflyer 59",
+    "birthDate": "1993-00-00",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 25.2,
+      "decan": 3,
+      "element": "earth",
+      "dateApprox": true
+    },
+    "genres": [
+      "artpop",
+      "industrial",
+      "darkwave"
+    ],
+    "subgenres": [
+      "industrial",
+      "darkwave"
+    ],
+    "youtubeVideoId": "QR2HE0YyYOs",
+    "backupVideoIds": []
   },
   {
     "name": "Stars of the Lid",
@@ -9644,6 +10344,25 @@
       "ambient"
     ],
     "youtubeVideoId": "3n5JV0Wddw8",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Strange Boutique",
+    "birthDate": "1987-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 5.2,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave",
+      "artpop"
+    ],
+    "subgenres": [
+      "darkwave"
+    ],
+    "youtubeVideoId": "_icg-SWlklY",
     "backupVideoIds": []
   },
   {
@@ -9821,6 +10540,28 @@
       "ambient"
     ],
     "youtubeVideoId": "xa6l003VGdg",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Swervedriver",
+    "birthDate": "1989-00-00",
+    "venus": {
+      "sign": "Leo",
+      "degree": 2.7,
+      "decan": 1,
+      "element": "fire",
+      "dateApprox": true
+    },
+    "genres": [
+      "artpop",
+      "industrial",
+      "darkwave"
+    ],
+    "subgenres": [
+      "industrial",
+      "darkwave"
+    ],
+    "youtubeVideoId": "QR2HE0YyYOs",
     "backupVideoIds": []
   },
   {
@@ -10407,6 +11148,48 @@
     "backupVideoIds": []
   },
   {
+    "name": "This Ascension",
+    "birthDate": "1988-00-00",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 14.1,
+      "decan": 2,
+      "element": "air",
+      "dateApprox": true
+    },
+    "genres": [
+      "artpop",
+      "darkwave"
+    ],
+    "subgenres": [
+      "darkwave"
+    ],
+    "youtubeVideoId": "QR2HE0YyYOs",
+    "backupVideoIds": []
+  },
+  {
+    "name": "This Mortal Coil",
+    "birthDate": "1983-00-00",
+    "venus": {
+      "sign": "Leo",
+      "degree": 23.5,
+      "decan": 3,
+      "element": "fire",
+      "dateApprox": true
+    },
+    "genres": [
+      "artpop",
+      "darkwave",
+      "ambient"
+    ],
+    "subgenres": [
+      "darkwave",
+      "ambient"
+    ],
+    "youtubeVideoId": "jKAA_INzDGo",
+    "backupVideoIds": []
+  },
+  {
     "name": "This Will Destroy You",
     "birthDate": "2005-00-00",
     "venus": {
@@ -10560,6 +11343,25 @@
       "athwHqqtSpM",
       "a99dtRrsNfA"
     ]
+  },
+  {
+    "name": "Trance to the Sun",
+    "birthDate": "1949-09-23",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 10.3,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "darkwave",
+      "artpop"
+    ],
+    "subgenres": [
+      "darkwave"
+    ],
+    "youtubeVideoId": "zTKKFeYouMQ",
+    "backupVideoIds": []
   },
   {
     "name": "Tricky",

@@ -328,6 +328,8 @@ Tracks manual additions and discovery runs — who was added, when, and what pro
 | 2026-02-18 | Joanna Brouk | Manual — direct knowledge, born 1949-02-20, Venus Aquarius 17.6° |
 | 2026-02-18 | Laraaji, Suzanne Ciani, Laurie Spiegel, Steve Roach, Pauline Anna Strom, Fripp & Eno, Colleen, Ana Roxanne, Emerald Web, Ariel Kalma, Satoshi Ashikawa, Chihei Hatakeyama, Jonny Nash, + 24 more (37 total) | `smart-match "Joanna Brouk" --depth 2 --filter` |
 | 2026-02-18 | David Casper | Manual — Gemini suggestion, Pacific NW sound sculptor, born 1953-09-25, Venus Virgo 1.6° |
+| 2026-02-18 | Clark, Caribou, Joy Orbison, Jamie xx, Burial & Four Tet, Burial & Four Tet & Thom Yorke, Massive Attack vs Burial, Nathan Fake, Modeselektor (10 total) | `smart-match "Four Tet" --depth 2 --filter` |
+| 2026-02-18 | Slowdive, Dead Can Dance, This Mortal Coil, my bloody valentine, Mazzy Star, Hope Sandoval & The Warm Inventions, Julee Cruise, Robin Guthrie, Cranes, Lycia, Claire Voyant, Black Tape for a Blue Girl, Bel Canto, His Name Is Alive, Pale Saints, An April March, Love Spirals Downwards, Kitchens of Distinction, Soul Whirling Somewhere, + 18 more (37 total) | `smart-match "Cocteau Twins" --depth 2 --filter` |
 
 ## Deployment
 
