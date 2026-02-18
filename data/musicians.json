@@ -2251,6 +2251,25 @@
     ]
   },
   {
+    "name": "David Casper",
+    "birthDate": "1953-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 25.5,
+      "decan": 3,
+      "element": "air",
+      "dateApprox": true
+    },
+    "genres": [
+      "ambient"
+    ],
+    "subgenres": [
+      "new-age"
+    ],
+    "youtubeVideoId": "Eap80ELmuj0",
+    "backupVideoIds": []
+  },
+  {
     "name": "Dean Blunt",
     "birthDate": "1984-02-08",
     "venus": {
