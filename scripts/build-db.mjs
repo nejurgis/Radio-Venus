@@ -11,6 +11,11 @@ const Astronomy = require('astronomy-engine');
 const ytSearch = require('yt-search');
 const Database = require('better-sqlite3');
 
+// Artists to exclude from Wikidata (wrong person / name collision / bad data)
+const WIKIDATA_EXCLUDE = new Set([
+  'mary lattimore', // Wikidata has a 1950s jazz musician; the ambient harpist (~1980) is a different person
+]);
+
 function httpGet(url) {
   return new Promise((resolve, reject) => {
     https.get(url, { headers: { 'User-Agent': 'RadioVenus/1.0', 'Accept': 'application/json' } }, res => {
@@ -43,7 +48,13 @@ const ELEMENTS = {
 
 function calculateVenus(dateStr) {
   const [y, m, d] = dateStr.split('-').map(Number);
-  const date = new Date(Date.UTC(y, m - 1, d, 12, 0, 0));
+  // Detect year-only placeholders (month=0 or day=0 from MusicBrainz, or Jan 1 pattern)
+  const yearOnly = m === 0 || d === 0;
+  const jan1 = !yearOnly && m === 1 && d === 1;
+  // For month=0 or day=0, use July 1 as midyear estimate instead of rolling back to prior year
+  const safeM = m === 0 ? 7 : m;
+  const safeD = d === 0 ? 1 : d;
+  const date = new Date(Date.UTC(y, safeM - 1, safeD, 12, 0, 0));
   const geo = Astronomy.GeoVector(Astronomy.Body.Venus, date, true);
   const ecl = Astronomy.Ecliptic(geo);
   const lon = ecl.elon;
@@ -55,6 +66,7 @@ function calculateVenus(dateStr) {
     degree: Math.round(degreeInSign * 10) / 10,
     decan: Math.floor(degreeInSign / 10) + 1,
     element: ELEMENTS[sign],
+    ...(yearOnly || jan1 ? { dateApprox: true } : {}),
   };
 }
 
@@ -101,6 +113,8 @@ async function queryWikidata() {
 
     const genres = categorizeGenres(rawGenres);
     if (genres.length === 0) continue;
+    // Classical artists are curated via seed only — skip classical-only Wikidata results
+    if (genres.length === 1 && genres[0] === 'classical') continue;
 
     const subgenres = categorizeSubgenres(rawGenres);
     artists.push({ name, birthDate, genres, subgenres });
@@ -186,6 +200,7 @@ async function main() {
   let newFromWikidata = 0;
   for (const w of wikidataArtists) {
     const key = w.name.toLowerCase();
+    if (WIKIDATA_EXCLUDE.has(key)) continue;
     if (!byName.has(key)) {
       // Check cache for a previously resolved YouTube ID
       const cached = cache.get(key);
@@ -200,7 +215,12 @@ async function main() {
 
   // ── 4. Process: Venus calc + YouTube lookup (only if needed) ────────────
   const musicians = [];
-  const entries = [...byName.values()];
+  // Classical artists are curated via seed only — drop classical-only non-seed entries
+  const seedNameSet = new Set(seed.map(s => s.name.toLowerCase()));
+  const entries = [...byName.values()].filter(e => {
+    const isClassicalOnly = e.genres?.length === 1 && e.genres[0] === 'classical';
+    return !isClassicalOnly || seedNameSet.has(e.name.toLowerCase());
+  });
   let skippedCached = 0;
   let searchedYt = 0;
   console.log(`\nProcessing ${entries.length} total artists...`);
