@@ -14,7 +14,7 @@
     "name": "500",
     "birthDate": "1962-12-09",
     "genres": [
-      "ambient",
+      "idm",
       "techno"
     ]
   },
@@ -47,8 +47,10 @@
     "name": "Actress",
     "birthDate": "1979-01-01",
     "genres": [
-      "techno",
-      "ambient"
+      "dnb",
+      "electronica",
+      "idm",
+      "techno"
     ],
     "youtubeVideoId": "h3l8bNhJKfU",
     "subgenres": [
@@ -61,9 +63,8 @@
     "name": "AFX",
     "birthDate": "1971-08-18",
     "genres": [
-      "idm",
-      "ambient",
-      "techno"
+      "dnb",
+      "idm"
     ],
     "youtubeVideoId": "DIrQNF6pfsg",
     "subgenres": [
@@ -211,8 +212,12 @@
     "name": "Andy Stott",
     "birthDate": "1981-03-12",
     "genres": [
+      "ambient",
+      "artpop",
+      "electronica",
+      "idm",
       "techno",
-      "industrial"
+      "triphop"
     ],
     "youtubeVideoId": "e-0rWeP8vMs",
     "subgenres": [
@@ -279,8 +284,8 @@
     "name": "Anthony Rother",
     "birthDate": "1972-04-29",
     "genres": [
-      "techno",
-      "darkwave"
+      "electronica",
+      "techno"
     ],
     "youtubeVideoId": "sl3TFF9TvvI"
   },
@@ -899,8 +904,6 @@
     "birthDate": "1978-01-01",
     "genres": [
       "ambient",
-      "techno",
-      "darkwave",
       "classical",
       "idm"
     ]
@@ -973,9 +976,8 @@
     "name": "Clark",
     "birthDate": "1979-06-25",
     "genres": [
-      "idm",
-      "techno",
-      "ambient"
+      "electronica",
+      "idm"
     ]
   },
   {
@@ -1064,7 +1066,6 @@
     "name": "Cooly G",
     "birthDate": "1982-09-21",
     "genres": [
-      "techno",
       "dnb"
     ],
     "subgenres": [
@@ -1151,8 +1152,7 @@
     "name": "Datassette",
     "birthDate": "2008-05-19",
     "genres": [
-      "idm",
-      "techno"
+      "idm"
     ],
     "subgenres": [
       "idm",
@@ -1173,8 +1173,7 @@
     "name": "David Carretta",
     "birthDate": "1953-01-01",
     "genres": [
-      "techno",
-      "idm"
+      "techno"
     ],
     "youtubeVideoId": "bSFHabd3OKs"
   },
@@ -1321,8 +1320,7 @@
     "name": "DJ Rashad",
     "birthDate": "1979-10-09",
     "genres": [
-      "dnb",
-      "techno"
+      "dnb"
     ],
     "subgenres": [
       "footwork"
@@ -1474,10 +1472,8 @@
     "birthDate": "1941-05-24",
     "genres": [
       "ambient",
-      "idm",
-      "techno",
-      "darkwave",
-      "classical"
+      "classical",
+      "idm"
     ]
   },
   {
@@ -1527,8 +1523,7 @@
     "name": "Electronic",
     "birthDate": "1988-06-15",
     "genres": [
-      "darkwave",
-      "techno"
+      "darkwave"
     ],
     "youtubeVideoId": "_7sVSSb2mU4"
   },
@@ -1568,10 +1563,8 @@
     "birthDate": "1994-06-15",
     "genres": [
       "ambient",
-      "idm",
-      "techno",
-      "darkwave",
-      "classical"
+      "classical",
+      "idm"
     ]
   },
   {
@@ -1789,7 +1782,8 @@
     "name": "Floating Points",
     "birthDate": "1986-09-23",
     "genres": [
-      "techno",
+      "dnb",
+      "electronica",
       "idm"
     ],
     "youtubeVideoId": "ucdYt46DpX8",
@@ -1857,8 +1851,7 @@
     "name": "Forward Strategy Group",
     "birthDate": "2010-04-26",
     "genres": [
-      "techno",
-      "industrial"
+      "techno"
     ],
     "subgenres": [
       "techno",
@@ -1871,8 +1864,10 @@
     "name": "Four Tet",
     "birthDate": "1978-08-30",
     "genres": [
-      "techno",
-      "idm"
+      "electronica",
+      "folk",
+      "idm",
+      "triphop"
     ],
     "youtubeVideoId": "vGeJVHwOZSk",
     "subgenres": [
@@ -2002,8 +1997,7 @@
     "name": "Gas",
     "birthDate": "1961-02-12",
     "genres": [
-      "ambient",
-      "techno"
+      "ambient"
     ],
     "youtubeVideoId": "NB7lTEEji08",
     "subgenres": [
@@ -2036,7 +2030,7 @@
     "birthDate": "1987-06-15",
     "genres": [
       "ambient",
-      "idm",
+      "electronica",
       "techno"
     ],
     "subgenres": [
@@ -2743,7 +2737,7 @@
     "birthDate": "1979-08-15",
     "genres": [
       "ambient",
-      "techno",
+      "electronica",
       "idm"
     ],
     "youtubeVideoId": "bazz7A_tD0g",
@@ -3068,8 +3062,10 @@
     "name": "Laurel Halo",
     "birthDate": "1985-06-03",
     "genres": [
-      "techno",
-      "ambient"
+      "ambient",
+      "artpop",
+      "idm",
+      "techno"
     ],
     "youtubeVideoId": "8TeMNkNEPeM",
     "subgenres": [
@@ -3100,10 +3096,9 @@
     "name": "Lee Gamble",
     "birthDate": "1953-01-01",
     "genres": [
+      "electronica",
       "idm",
-      "ambient",
-      "techno",
-      "industrial"
+      "techno"
     ],
     "youtubeVideoId": "gu4OjIomJ74",
     "subgenres": [
@@ -3408,7 +3403,8 @@
     "birthDate": "1971-05-13",
     "genres": [
       "ambient",
-      "techno"
+      "electronica",
+      "idm"
     ],
     "subgenres": [
       "ambient",
@@ -3589,9 +3585,9 @@
     "name": "Miss Kittin",
     "birthDate": "1973-07-16",
     "genres": [
-      "techno",
-      "idm",
-      "darkwave"
+      "darkwave",
+      "electronica",
+      "techno"
     ],
     "youtubeVideoId": "RG7SgUlj05g"
   },
@@ -3621,8 +3617,8 @@
     "name": "Model 500",
     "birthDate": "1962-09-12",
     "genres": [
-      "techno",
-      "idm"
+      "jazz",
+      "techno"
     ],
     "youtubeVideoId": "EarSRa19sZc"
   },
@@ -3630,8 +3626,7 @@
     "name": "Moderat",
     "birthDate": "1977-07-06",
     "genres": [
-      "techno",
-      "idm"
+      "electronica"
     ],
     "youtubeVideoId": "3NPxqXMZq7o",
     "subgenres": [
@@ -3855,8 +3850,7 @@
     "name": "New Order",
     "birthDate": "1980-06-15",
     "genres": [
-      "darkwave",
-      "techno"
+      "darkwave"
     ],
     "youtubeVideoId": "9-NFosnfd2c"
   },
@@ -3864,9 +3858,7 @@
     "name": "Nick León",
     "birthDate": "1988-05-06",
     "genres": [
-      "idm",
-      "techno",
-      "triphop"
+      "idm"
     ],
     "youtubeVideoId": "zco53xoZ8aA",
     "subgenres": [
@@ -3878,8 +3870,9 @@
     "name": "Nicolas Jaar",
     "birthDate": "1990-01-03",
     "genres": [
+      "electronica",
       "techno",
-      "ambient"
+      "triphop"
     ],
     "youtubeVideoId": "dDSMLLbR2Bo",
     "subgenres": [
@@ -3917,10 +3910,8 @@
     "name": "Nitzer Ebb",
     "birthDate": "1982-06-15",
     "genres": [
-      "industrial",
       "darkwave",
-      "idm",
-      "techno"
+      "industrial"
     ],
     "youtubeVideoId": "pJYL_YKhC10"
   },
@@ -4049,10 +4040,9 @@
     "birthDate": "1969-01-01",
     "genres": [
       "ambient",
-      "idm",
       "classical",
-      "techno",
-      "darkwave"
+      "idm",
+      "techno"
     ]
   },
   {
@@ -4399,7 +4389,7 @@
     "birthDate": "2020-01-01",
     "genres": [
       "ambient",
-      "techno",
+      "idm",
       "triphop"
     ],
     "subgenres": [
@@ -4454,11 +4444,8 @@
     "name": "Rafael Toral",
     "birthDate": "1967-00-00",
     "genres": [
-      "idm",
       "ambient",
-      "artpop",
-      "industrial",
-      "techno"
+      "idm"
     ]
   },
   {
@@ -4515,9 +4502,7 @@
     "birthDate": "1956-03-21",
     "genres": [
       "idm",
-      "techno",
-      "ambient",
-      "industrial"
+      "techno"
     ],
     "youtubeVideoId": "N7aZihQJmcU"
   },
@@ -4562,9 +4547,9 @@
     "name": "Rival Consoles",
     "birthDate": "1985-11-10",
     "genres": [
-      "idm",
       "ambient",
-      "techno"
+      "electronica",
+      "idm"
     ],
     "subgenres": [
       "idm",
@@ -4719,7 +4704,6 @@
     "name": "Scratcha DVA",
     "birthDate": "1980-01-01",
     "genres": [
-      "techno",
       "dnb"
     ],
     "subgenres": [
@@ -4821,8 +4805,9 @@
     "name": "Shygirl",
     "birthDate": "1993-05-04",
     "genres": [
+      "artpop",
       "dnb",
-      "techno"
+      "idm"
     ],
     "youtubeVideoId": "-DrlW5w5cpc"
   },
@@ -5283,20 +5268,17 @@
     "birthDate": "1971-04-30",
     "genres": [
       "ambient",
-      "idm",
-      "techno",
-      "darkwave",
-      "classical"
+      "classical",
+      "idm"
     ]
   },
   {
     "name": "Terence Fixmer",
     "birthDate": "1972-10-02",
     "genres": [
-      "techno",
-      "industrial",
       "darkwave",
-      "idm"
+      "industrial",
+      "techno"
     ],
     "youtubeVideoId": "nBYQYBnifrQ"
   },
@@ -5413,8 +5395,8 @@
     "name": "The Hacker",
     "birthDate": "1973-03-15",
     "genres": [
-      "techno",
-      "darkwave"
+      "electronica",
+      "techno"
     ],
     "youtubeVideoId": "lAkXQmJSR6E",
     "subgenres": [
@@ -5651,10 +5633,8 @@
     "name": "Tristan Arp",
     "birthDate": "1950-04-02",
     "genres": [
-      "triphop",
-      "idm",
-      "ambient",
-      "techno"
+      "electronica",
+      "idm"
     ]
   },
   {
@@ -5756,7 +5736,7 @@
     "name": "Underworld",
     "birthDate": "1957-01-13",
     "genres": [
-      "techno"
+      "electronica"
     ],
     "youtubeVideoId": "rAOHJqJMYDA",
     "subgenres": [
@@ -6037,9 +6017,9 @@
     "name": "µ-Ziq",
     "birthDate": "1971-09-26",
     "genres": [
-      "idm",
-      "ambient",
       "dnb",
+      "electronica",
+      "idm",
       "techno"
     ],
     "youtubeVideoId": "XHtbU-lHb-s",
@@ -6081,11 +6061,10 @@
     "birthDate": "2005-06-15",
     "genres": [
       "ambient",
-      "techno",
-      "darkwave",
       "classical",
+      "electronica",
       "idm",
-      "industrial"
+      "techno"
     ]
   },
   {
@@ -6271,13 +6250,8 @@
     "name": "Empress Of",
     "birthDate": "2000-00-00",
     "genres": [
-      "jazz",
-      "electronica",
-      "idm",
-      "darkwave",
-      "indiepop",
       "artpop",
-      "techno"
+      "electronica"
     ]
   },
   {
@@ -6323,11 +6297,8 @@
     "name": "Sudan Archives",
     "birthDate": "2000-00-00",
     "genres": [
-      "jazz",
-      "folk",
-      "techno",
       "idm",
-      "artpop"
+      "jazz"
     ]
   },
   {
@@ -6361,12 +6332,7 @@
     "genres": [
       "artpop",
       "electronica",
-      "idm",
-      "darkwave",
-      "indiepop",
-      "triphop",
-      "ambient",
-      "techno"
+      "indiepop"
     ]
   },
   {

@@ -30,7 +30,7 @@
       "element": "water"
     },
     "genres": [
-      "ambient",
+      "idm",
       "techno"
     ],
     "subgenres": [
@@ -174,8 +174,10 @@
       "dateApprox": true
     },
     "genres": [
-      "techno",
-      "ambient"
+      "dnb",
+      "electronica",
+      "idm",
+      "techno"
     ],
     "subgenres": [
       "experimental",
@@ -198,9 +200,8 @@
       "element": "fire"
     },
     "genres": [
-      "idm",
-      "ambient",
-      "techno"
+      "dnb",
+      "idm"
     ],
     "subgenres": [
       "acid",
@@ -500,8 +501,12 @@
       "element": "water"
     },
     "genres": [
+      "ambient",
+      "artpop",
+      "electronica",
+      "idm",
       "techno",
-      "industrial"
+      "triphop"
     ],
     "subgenres": [
       "techno",
@@ -706,8 +711,8 @@
       "element": "air"
     },
     "genres": [
-      "techno",
-      "darkwave"
+      "electronica",
+      "techno"
     ],
     "subgenres": [
       "techno",
@@ -1798,12 +1803,7 @@
     "genres": [
       "artpop",
       "electronica",
-      "idm",
-      "darkwave",
-      "indiepop",
-      "triphop",
-      "ambient",
-      "techno"
+      "indiepop"
     ],
     "subgenres": [
       "indietronica",
@@ -2094,8 +2094,6 @@
     },
     "genres": [
       "ambient",
-      "techno",
-      "darkwave",
       "classical",
       "idm"
     ],
@@ -2252,9 +2250,8 @@
       "element": "air"
     },
     "genres": [
-      "idm",
-      "techno",
-      "ambient"
+      "electronica",
+      "idm"
     ],
     "subgenres": [
       "idm",
@@ -2428,7 +2425,6 @@
       "element": "earth"
     },
     "genres": [
-      "techno",
       "dnb"
     ],
     "subgenres": [
@@ -2619,8 +2615,7 @@
       "element": "earth"
     },
     "genres": [
-      "idm",
-      "techno"
+      "idm"
     ],
     "subgenres": [
       "idm",
@@ -2665,8 +2660,7 @@
       "dateApprox": true
     },
     "genres": [
-      "techno",
-      "idm"
+      "techno"
     ],
     "subgenres": [
       "techno",
@@ -3018,8 +3012,7 @@
       "element": "air"
     },
     "genres": [
-      "dnb",
-      "techno"
+      "dnb"
     ],
     "subgenres": [
       "footwork"
@@ -3352,10 +3345,8 @@
     },
     "genres": [
       "ambient",
-      "idm",
-      "techno",
-      "darkwave",
-      "classical"
+      "classical",
+      "idm"
     ],
     "subgenres": [
       "ambient",
@@ -3465,8 +3456,7 @@
       "element": "air"
     },
     "genres": [
-      "darkwave",
-      "techno"
+      "darkwave"
     ],
     "subgenres": [
       "darkwave",
@@ -3579,10 +3569,8 @@
     },
     "genres": [
       "ambient",
-      "idm",
-      "techno",
-      "darkwave",
-      "classical"
+      "classical",
+      "idm"
     ],
     "subgenres": [
       "ambient",
@@ -3626,13 +3614,8 @@
       "dateApprox": true
     },
     "genres": [
-      "jazz",
-      "electronica",
-      "idm",
-      "darkwave",
-      "indiepop",
       "artpop",
-      "techno"
+      "electronica"
     ],
     "subgenres": [
       "spiritual-jazz",
@@ -3655,11 +3638,10 @@
     },
     "genres": [
       "ambient",
-      "techno",
-      "darkwave",
       "classical",
+      "electronica",
       "idm",
-      "industrial"
+      "techno"
     ],
     "subgenres": [
       "ambient",
@@ -4181,7 +4163,8 @@
       "element": "water"
     },
     "genres": [
-      "techno",
+      "dnb",
+      "electronica",
       "idm"
     ],
     "subgenres": [
@@ -4290,8 +4273,7 @@
       "element": "air"
     },
     "genres": [
-      "techno",
-      "industrial"
+      "techno"
     ],
     "subgenres": [
       "techno",
@@ -4314,8 +4296,10 @@
       "element": "air"
     },
     "genres": [
-      "techno",
-      "idm"
+      "electronica",
+      "folk",
+      "idm",
+      "triphop"
     ],
     "subgenres": [
       "electronica",
@@ -4548,8 +4532,7 @@
       "element": "fire"
     },
     "genres": [
-      "ambient",
-      "techno"
+      "ambient"
     ],
     "subgenres": [
       "ambient",
@@ -4621,7 +4604,7 @@
     },
     "genres": [
       "ambient",
-      "idm",
+      "electronica",
       "techno"
     ],
     "subgenres": [
@@ -6048,7 +6031,7 @@
     },
     "genres": [
       "ambient",
-      "techno",
+      "electronica",
       "idm"
     ],
     "subgenres": [
@@ -6764,8 +6747,10 @@
       "element": "fire"
     },
     "genres": [
-      "techno",
-      "ambient"
+      "ambient",
+      "artpop",
+      "idm",
+      "techno"
     ],
     "subgenres": [
       "experimental",
@@ -6833,10 +6818,9 @@
       "dateApprox": true
     },
     "genres": [
+      "electronica",
       "idm",
-      "ambient",
-      "techno",
-      "industrial"
+      "techno"
     ],
     "subgenres": [
       "experimental",
@@ -7459,7 +7443,8 @@
     },
     "genres": [
       "ambient",
-      "techno"
+      "electronica",
+      "idm"
     ],
     "subgenres": [
       "ambient",
@@ -7858,9 +7843,9 @@
       "element": "fire"
     },
     "genres": [
-      "techno",
-      "idm",
-      "darkwave"
+      "darkwave",
+      "electronica",
+      "techno"
     ],
     "subgenres": [
       "techno",
@@ -7930,8 +7915,8 @@
       "element": "water"
     },
     "genres": [
-      "techno",
-      "idm"
+      "jazz",
+      "techno"
     ],
     "subgenres": [
       "techno",
@@ -7953,8 +7938,7 @@
       "element": "earth"
     },
     "genres": [
-      "techno",
-      "idm"
+      "electronica"
     ],
     "subgenres": [
       "techno",
@@ -8456,8 +8440,7 @@
       "element": "air"
     },
     "genres": [
-      "darkwave",
-      "techno"
+      "darkwave"
     ],
     "subgenres": [
       "darkwave",
@@ -8479,9 +8462,7 @@
       "element": "air"
     },
     "genres": [
-      "idm",
-      "techno",
-      "triphop"
+      "idm"
     ],
     "subgenres": [
       "experimental",
@@ -8503,8 +8484,9 @@
       "element": "air"
     },
     "genres": [
+      "electronica",
       "techno",
-      "ambient"
+      "triphop"
     ],
     "subgenres": [
       "techno",
@@ -8590,10 +8572,8 @@
       "element": "earth"
     },
     "genres": [
-      "industrial",
       "darkwave",
-      "idm",
-      "techno"
+      "industrial"
     ],
     "subgenres": [
       "industrial",
@@ -8866,10 +8846,9 @@
     },
     "genres": [
       "ambient",
-      "idm",
       "classical",
-      "techno",
-      "darkwave"
+      "idm",
+      "techno"
     ],
     "subgenres": [
       "ambient",
@@ -9634,7 +9613,7 @@
     },
     "genres": [
       "ambient",
-      "techno",
+      "idm",
       "triphop"
     ],
     "subgenres": [
@@ -9743,11 +9722,8 @@
       "dateApprox": true
     },
     "genres": [
-      "idm",
       "ambient",
-      "artpop",
-      "industrial",
-      "techno"
+      "idm"
     ],
     "subgenres": [
       "idm",
@@ -9874,9 +9850,7 @@
     },
     "genres": [
       "idm",
-      "techno",
-      "ambient",
-      "industrial"
+      "techno"
     ],
     "subgenres": [
       "idm",
@@ -9965,9 +9939,9 @@
       "element": "water"
     },
     "genres": [
-      "idm",
       "ambient",
-      "techno"
+      "electronica",
+      "idm"
     ],
     "subgenres": [
       "idm",
@@ -10356,7 +10330,6 @@
       "dateApprox": true
     },
     "genres": [
-      "techno",
       "dnb"
     ],
     "subgenres": [
@@ -10595,8 +10568,9 @@
       "element": "fire"
     },
     "genres": [
+      "artpop",
       "dnb",
-      "techno"
+      "idm"
     ],
     "subgenres": [
       "techno"
@@ -11317,11 +11291,8 @@
       "dateApprox": true
     },
     "genres": [
-      "jazz",
-      "folk",
-      "techno",
       "idm",
-      "artpop"
+      "jazz"
     ],
     "subgenres": [
       "spiritual-jazz",
@@ -11546,10 +11517,8 @@
     },
     "genres": [
       "ambient",
-      "idm",
-      "techno",
-      "darkwave",
-      "classical"
+      "classical",
+      "idm"
     ],
     "subgenres": [
       "ambient",
@@ -11571,10 +11540,9 @@
       "element": "fire"
     },
     "genres": [
-      "techno",
-      "industrial",
       "darkwave",
-      "idm"
+      "industrial",
+      "techno"
     ],
     "subgenres": [
       "techno",
@@ -11831,8 +11799,8 @@
       "element": "water"
     },
     "genres": [
-      "techno",
-      "darkwave"
+      "electronica",
+      "techno"
     ],
     "subgenres": [
       "electro",
@@ -12386,10 +12354,8 @@
       "element": "air"
     },
     "genres": [
-      "triphop",
-      "idm",
-      "ambient",
-      "techno"
+      "electronica",
+      "idm"
     ],
     "subgenres": [
       "idm",
@@ -12636,7 +12602,7 @@
       "element": "earth"
     },
     "genres": [
-      "techno"
+      "electronica"
     ],
     "subgenres": [
       "techno",
@@ -13149,9 +13115,9 @@
       "element": "air"
     },
     "genres": [
-      "idm",
-      "ambient",
       "dnb",
+      "electronica",
+      "idm",
       "techno"
     ],
     "subgenres": [

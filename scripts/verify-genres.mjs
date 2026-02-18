@@ -86,10 +86,10 @@ const delay = ms => new Promise(r => setTimeout(r, ms));
 // ── Report structure ──────────────────────────────────────────────────────────
 const report = {
   meta: { date: new Date().toISOString(), filterGenre, total: artists.length },
-  ok:       [],   // stored genres fully covered by EN
-  missing:  [],   // EN implies genres not in stored (potential additions)
-  extra:    [],   // stored has genres EN doesn't support (potential wrong tags)
-  notFound: [],   // artist not on Everynoise
+  ok:          [],  // stored genres fully covered by EN
+  missing:     [],  // EN implies genres not in stored (potential additions)
+  extra:       [],  // stored has genres EN doesn't support (potential wrong tags)
+  notFound:    [],  // artist not found on Everynoise or wrong-artist match
 };
 
 function saveReport() {
@@ -105,9 +105,14 @@ for (let i = 0; i < artists.length; i++) {
 
   const enRaw = await getEverynoiseGenres(artist.name);
 
-  if (!enRaw) {
-    process.stdout.write('not found\n');
-    report.notFound.push({ name: artist.name, stored });
+  // Geo-specific genre markers = strong signal we matched the wrong artist
+  const GEO_NOISE = /\b(lithuanian|latvian|estonian|ukrainian|polish|czech|slovak|romanian|bulgarian|serbian|croatian|slovenian|nordic|norwegian|swedish|icelandic|finnish|danish|japanese|korean|chinese|oulu|tallinn|riga|vilnius)\b/i;
+  const isWrongMatch = enRaw && enRaw.some(g => GEO_NOISE.test(g));
+
+  if (!enRaw || isWrongMatch) {
+    const reason = isWrongMatch ? `wrong match (geo tags: ${enRaw.filter(g => GEO_NOISE.test(g)).join(', ')})` : 'not found';
+    process.stdout.write(`— ${reason}\n`);
+    report.notFound.push({ name: artist.name, stored, reason });
     if ((i + 1) % 10 === 0) saveReport();
     await delay(500);
     continue;
@@ -115,6 +120,15 @@ for (let i = 0; i < artists.length; i++) {
 
   // Map EN genre strings → our category IDs
   const enCategories = [...new Set(categorizeGenres(enRaw))];
+
+  // If none of EN's genres map to our system, it's likely a wrong-artist match too
+  if (enCategories.length === 0 && stored.length > 0) {
+    process.stdout.write(`— wrong match (no genre overlap: EN=[${enRaw.slice(0, 3).join(', ')}])\n`);
+    report.notFound.push({ name: artist.name, stored, reason: `no genre overlap`, enRaw });
+    if ((i + 1) % 10 === 0) saveReport();
+    await delay(500);
+    continue;
+  }
 
   const missingFromStored = enCategories.filter(c => !stored.includes(c));
   const notSupportedByEN  = stored.filter(c => !enCategories.includes(c));
@@ -148,10 +162,12 @@ const extraCount    = report.extra.length;
 
 console.log('\n════════════════════════════════════════════════════════════');
 console.log(`Total checked:     ${total}`);
+const wrongMatchCount = report.notFound.filter(e => e.reason).length;
 console.log(`  ✓ Correct:       ${okCount} (${Math.round(okCount/total*100)}%)`);
 console.log(`  ⚠ Missing genre: ${missingCount} — EN implies a genre not in stored`);
 console.log(`  ? Extra genre:   ${extraCount} — stored genre not confirmed by EN`);
-console.log(`  — Not found:     ${notFoundCount} (not on Everynoise)`);
+console.log(`  — Not found:     ${notFoundCount - wrongMatchCount} (not on Everynoise)`);
+console.log(`  ✗ Wrong match:   ${wrongMatchCount} (geo tags or no genre overlap — discarded)`);
 console.log(`\nReport saved to ${outputFile}`);
 console.log('Tip: run with --skip=N to resume from where you left off\n');
 
