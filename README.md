@@ -198,6 +198,20 @@ The matcher reconstructs the full ecliptic longitude from `sign + degree` for si
 
 Radio Venus uses a two-level genre system: **10 top-level categories** for primary UI filtering, and **~60 Discogs-derived subgenres** displayed as clickable chips beneath each genre button. Subgenres with 7+ artists in the database are interactive (accent-colored, clickable); those with fewer are shown dimmed as informational tags. Each genre button has a small dropdown arrow that reveals/hides its subgenre chips. All genre/subgenre data lives in `src/genres.js` — the single source of truth imported by both build scripts and the browser client.
 
+### Research methodology
+
+The genre taxonomy was built by cross-referencing four sources:
+
+1. **MusicBrainz** — 2,000 official curated genres with user-voted popularity counts. Queried via the [MusicBrainz API](https://musicbrainz.org/doc/MusicBrainz_API) (`inc=genres+tags`) for all seed artists to identify unmapped tags.
+
+2. **Discogs** — 15 top-level genres and ~300 styles (81 electronic). Analyzed via the [AcousticBrainz Genre Dataset](https://mtg.github.io/acousticbrainz-genre-dataset/) (Zenodo), which contains Discogs genre annotations for 905K recordings across 118K release groups. Co-occurrence analysis of electronic subgenres confirmed the 10-category clustering.
+
+3. **UPF ISMIR 2022** — Alonso-Jimenez, Serra & Bogdanov, "[Music Representation Learning Based on Editorial Metadata From Discogs](https://repositori.upf.edu/server/api/core/bitstreams/7f84b040-451b-4aa4-ae15-4a6153ac806e/content)". Trained contrastive models on the top-400 Discogs styles across 3.3M tracks. Their finding that artist-level associations produce the strongest genre representations (87.7 ROC-AUC) validates the artist-level genre tagging approach. Heavily referenced for quality music discovery throughout the project.
+
+4. **[cosine.club](https://cosine.club)** — Used for discovering and validating artists that fit the project's aesthetic. Provided a high-quality lens for underground and experimental music that formal taxonomies miss.
+
+The [MetaBrainz genre-matching project](https://github.com/metabrainz/genre-matching) provided cross-taxonomy mappings between Discogs, Last.fm, and MusicBrainz, confirming high compatibility between the systems.
+
 ### Top-level categories
 
 | ID | Label | Subgenres |
