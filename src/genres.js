@@ -7,6 +7,7 @@ export const GENRE_CATEGORIES = [
   { id: 'darkwave',   label: 'Synthwave / Darkwave' },
   { id: 'triphop',    label: 'Trip-Hop / Downtempo' },
   { id: 'dnb',        label: 'Drum & Bass / Jungle' },
+  { id: 'indiepop',   label: 'Indie / Experimental' },
   { id: 'artpop',     label: 'Art Pop / Avant-Garde' },
   { id: 'folk',       label: 'Folk / Neofolk' },
   { id: 'jazz',       label: 'Jazz / Spiritual' },
@@ -28,6 +29,7 @@ export const SUBGENRES = {
   industrial: ['industrial', 'noise', 'ebm', 'power-electronics', 'rhythmic-noise', 'harsh-noise'],
   darkwave:   ['darkwave', 'synth-pop', 'new-wave', 'coldwave', 'synthwave', 'darksynth', 'krautrock'],
   dnb:        ['drum-n-bass', 'jungle', 'breakbeat', 'breakcore', 'dubstep', 'grime', 'uk-garage', 'future-garage', 'footwork'],
+  indiepop:   ['indie-pop', 'bedroom-pop', 'noise-pop', 'psych-pop', 'lo-fi-indie', 'jangle-pop', 'twee-pop'],
   artpop:     ['art-pop', 'avant-garde-pop', 'baroque-pop', 'chamber-pop', 'experimental-pop', 'art-rock', 'glam'],
   folk:       ['neofolk', 'dark-folk', 'freak-folk', 'psychedelic-folk', 'chamber-folk', 'gothic-country', 'folk-rock', 'ambient-folk'],
   jazz:       ['spiritual-jazz', 'dark-jazz', 'doom-jazz', 'free-jazz', 'modal-jazz', 'jazz-fusion', 'soul-jazz', 'cosmic-jazz', 'ambient-jazz'],
@@ -167,6 +169,23 @@ const GENRE_MAP = {
   'drill and bass': ['dnb', 'idm'],
   'acid breaks': ['dnb', 'techno'],
 
+  // ── Indie / Experimental ──
+  'indie pop': ['indiepop'],
+  'indie rock': ['indiepop'],
+  'bedroom pop': ['indiepop'],
+  'noise pop': ['indiepop'],
+  'psychedelic pop': ['indiepop', 'artpop'],
+  'psych pop': ['indiepop', 'artpop'],
+  'lo-fi indie': ['indiepop', 'electronica'],
+  'jangle pop': ['indiepop'],
+  'twee pop': ['indiepop'],
+  'slacker rock': ['indiepop'],
+  'lo-fi rock': ['indiepop'],
+  'garage pop': ['indiepop'],
+  'indie folk': ['indiepop', 'folk'],
+  'sadcore': ['indiepop', 'artpop'],
+  'slowcore': ['indiepop'],
+
   // ── Art Pop / Avant-Garde ──
   'art pop': ['artpop'],
   'art-pop': ['artpop'],
@@ -176,9 +195,9 @@ const GENRE_MAP = {
   'experimental pop': ['artpop'],
   'art rock': ['artpop'],
   'glam rock': ['artpop'],
-  'dream pop': ['artpop'],
+  'dream pop': ['indiepop', 'artpop'],
   'ethereal wave': ['artpop', 'darkwave'],
-  'shoegaze': ['artpop'],
+  'shoegaze': ['indiepop', 'artpop'],
   'avant-garde': ['artpop'],
 
   // ── Folk / Neofolk ──
@@ -338,6 +357,16 @@ const SUBGENRE_MAP = {
   'drill and bass': 'breakbeat',
   'acid breaks': 'breakbeat',
 
+  // indiepop
+  'indie pop': 'indie-pop', 'indie rock': 'indie-pop',
+  'bedroom pop': 'bedroom-pop', 'garage pop': 'bedroom-pop',
+  'noise pop': 'noise-pop',
+  'psychedelic pop': 'psych-pop', 'psych pop': 'psych-pop',
+  'lo-fi indie': 'lo-fi-indie', 'lo-fi rock': 'lo-fi-indie', 'slacker rock': 'lo-fi-indie',
+  'jangle pop': 'jangle-pop', 'twee pop': 'twee-pop',
+  'dream pop': 'indie-pop', 'shoegaze': 'noise-pop',
+  'sadcore': 'indie-pop', 'slowcore': 'indie-pop',
+
   // artpop
   'art pop': 'art-pop', 'art-pop': 'art-pop',
   'baroque pop': 'baroque-pop', 'chamber pop': 'chamber-pop',
@@ -348,7 +377,8 @@ const SUBGENRE_MAP = {
   'avant-garde': 'avant-garde-pop',
 
   // folk
-  'folk': 'folk-rock', 'folk music': 'folk-rock', 'folk rock': 'folk-rock', 'indie folk': 'folk-rock',
+  'folk': 'folk-rock', 'folk music': 'folk-rock', 'folk rock': 'folk-rock',
+  'indie folk': 'folk-rock',
   'contemporary folk': 'folk-rock', 'nu folk': 'folk-rock',
   'neofolk': 'neofolk', 'neo-folk': 'neofolk', 'avant-folk': 'dark-folk',
   'dark folk': 'dark-folk', 'gothic country': 'gothic-country',
