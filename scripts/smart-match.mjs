@@ -9,6 +9,10 @@
 //   node scripts/smart-match.mjs "Boards of Canada"
 //   node scripts/smart-match.mjs "Basic Channel" --dry-run
 //   node scripts/smart-match.mjs "Aphex Twin" --depth 2
+//   node scripts/smart-match.mjs "Tim Hecker" --filter        # Groq vibe check before saving
+//   node scripts/smart-match.mjs "Burial" --depth 2 --filter  # combine freely
+//
+// Requires GROQ_API_KEY env var when using --filter.
 //
 import { createRequire } from 'node:module';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
@@ -88,6 +92,30 @@ function fetchJSON(url) {
 }
 
 function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+function postJSON(hostname, path, body, headers = {}) {
+  return new Promise((resolve, reject) => {
+    const payload = JSON.stringify(body);
+    const req = https.request({
+      hostname, path, method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(payload),
+        ...headers,
+      },
+    }, res => {
+      let data = '';
+      res.on('data', c => data += c);
+      res.on('end', () => {
+        try { resolve({ status: res.statusCode, body: JSON.parse(data) }); }
+        catch { resolve({ status: res.statusCode, body: data }); }
+      });
+    });
+    req.on('error', reject);
+    req.write(payload);
+    req.end();
+  });
+}
 
 // ── Last.fm: Social Similarity Engine ───────────────────────────────────────
 
@@ -327,22 +355,114 @@ async function getWikipediaBirthDate(artistName) {
   return null;
 }
 
+// ── Groq vibe filter ────────────────────────────────────────────────────────
+
+const GROQ_AESTHETIC = `Radio Venus is a music discovery app. Its aesthetic: underground, atmospheric, experimental, cerebral. Core genres: ambient, IDM, techno, darkwave, trip-hop, drum & bass, industrial, jazz, art pop, neo-classical. Reference points: Aphex Twin, Boards of Canada, Tim Hecker, Four Tet, Burial, Basic Channel, Arca, Flying Lotus, Grouper, Fennesz, Actress, Objekt, Shackleton, Jlin.
+
+The app should feel like a well-curated record shop — not a streaming algorithm. Reject mainstream pop, generic radio artists, and anyone whose inclusion would feel incongruous next to the reference points above.`;
+
+async function groqVibeFilter(artists) {
+  const apiKey = process.env.GROQ_API_KEY;
+  if (!apiKey) {
+    console.error('\n  ✗ GROQ_API_KEY not set — skipping filter, keeping all artists.');
+    console.error('    export GROQ_API_KEY=your_key_here');
+    return artists;
+  }
+
+  const BATCH = 10;
+  const kept = [];
+  const rejected = [];
+
+  console.log(`\nGroq vibe filter — evaluating ${artists.length} artist(s) in batches of ${BATCH}...`);
+
+  for (let i = 0; i < artists.length; i += BATCH) {
+    const batch = artists.slice(i, i + BATCH);
+
+    const list = batch.map((a, j) => {
+      const venus = calculateVenus(a.birthDate);
+      return `${j + 1}. ${a.name} (genres: ${a.genres.join(', ')}, Venus in ${venus})`;
+    }).join('\n');
+
+    const userPrompt = `${GROQ_AESTHETIC}\n\nEvaluate these artists for Radio Venus. For each, decide: does this artist genuinely fit the aesthetic?\n\n${list}\n\nReply ONLY with valid JSON: {"results": [{"name": "exact name as given", "keep": true, "reason": "one sentence"}]}`;
+
+    try {
+      const res = await postJSON(
+        'api.groq.com',
+        '/openai/v1/chat/completions',
+        {
+          model: 'llama-3.3-70b-versatile',
+          messages: [
+            { role: 'system', content: 'You are a music curator. Reply only with valid JSON.' },
+            { role: 'user', content: userPrompt },
+          ],
+          response_format: { type: 'json_object' },
+          temperature: 0.2,
+        },
+        { Authorization: `Bearer ${apiKey}` },
+      );
+
+      if (res.status !== 200) {
+        console.warn(`  ⚠ Groq returned ${res.status} — keeping batch as-is`);
+        kept.push(...batch);
+        continue;
+      }
+
+      const content = res.body?.choices?.[0]?.message?.content;
+      const parsed = JSON.parse(content);
+
+      for (const result of parsed.results ?? []) {
+        const artist = batch.find(a => a.name.toLowerCase() === result.name.toLowerCase());
+        if (!artist) continue;
+        if (result.keep) {
+          console.log(`  ✓ ${artist.name} — ${result.reason}`);
+          kept.push(artist);
+        } else {
+          console.log(`  ✗ ${artist.name} — ${result.reason}`);
+          rejected.push(artist);
+        }
+      }
+
+      // Artists Groq didn't mention — keep them (don't silently drop)
+      const mentioned = new Set((parsed.results ?? []).map(r => r.name.toLowerCase()));
+      for (const a of batch) {
+        if (!mentioned.has(a.name.toLowerCase())) {
+          console.log(`  ? ${a.name} — not evaluated by Groq, keeping`);
+          kept.push(a);
+        }
+      }
+
+    } catch (e) {
+      console.warn(`  ⚠ Groq filter error: ${e.message} — keeping batch as-is`);
+      kept.push(...batch);
+    }
+
+    if (i + BATCH < artists.length) await delay(1000);
+  }
+
+  console.log(`\n  Filter result: ${kept.length} kept, ${rejected.length} rejected`);
+  if (rejected.length) console.log(`  Rejected: ${rejected.map(a => a.name).join(', ')}`);
+  return kept;
+}
+
 // ── Main ────────────────────────────────────────────────────────────────────
 
 async function main() {
   const args = process.argv.slice(2);
   const dryRun = args.includes('--dry-run');
+  const useFilter = args.includes('--filter');
   const depthFlag = args.indexOf('--depth');
   const depth = depthFlag >= 0 ? parseInt(args[depthFlag + 1]) || 1 : 1;
   const seedArtists = args.filter(a => !a.startsWith('--') && (depthFlag < 0 || args.indexOf(a) !== depthFlag + 1));
 
   if (seedArtists.length === 0) {
-    console.log('Usage: node scripts/smart-match.mjs <Artist Name> [--dry-run] [--depth N]');
+    console.log('Usage: node scripts/smart-match.mjs <Artist Name> [--dry-run] [--depth N] [--filter]');
     console.log('');
     console.log('Examples:');
     console.log('  node scripts/smart-match.mjs "Boards of Canada"');
     console.log('  node scripts/smart-match.mjs "Basic Channel" --dry-run');
     console.log('  node scripts/smart-match.mjs "Aphex Twin" --depth 2');
+    console.log('  node scripts/smart-match.mjs "Tim Hecker" --filter        # Groq vibe check');
+    console.log('  node scripts/smart-match.mjs "Burial" --depth 2 --filter  # combine');
     process.exit(0);
   }
 
@@ -431,14 +551,25 @@ async function main() {
     if (signCounts[sign]) console.log(`  ${sign}: ${signCounts[sign]}`);
   }
 
+  // Groq vibe filter (runs before dry-run check so you can preview results)
+  let toAdd = discovered;
+  if (useFilter && discovered.length > 0) {
+    toAdd = await groqVibeFilter(discovered);
+  }
+
   if (dryRun) {
     console.log('\n--dry-run: Not writing to seed file.');
     console.log('Remove --dry-run to save these artists.');
     return;
   }
 
+  if (toAdd.length === 0) {
+    console.log('\nNo artists passed the filter. Nothing written.');
+    return;
+  }
+
   // Add to seed
-  for (const a of discovered) {
+  for (const a of toAdd) {
     seed.push(a);
   }
   writeFileSync(SEED_PATH, JSON.stringify(seed, null, 2));
