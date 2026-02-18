@@ -6047,5 +6047,212 @@
       "idm",
       "breakbeat"
     ]
+  },
+  {
+    "name": "Roly Porter",
+    "birthDate": "1927-08-12",
+    "genres": [
+      "ambient",
+      "industrial",
+      "idm"
+    ]
+  },
+  {
+    "name": "Abul Mogard",
+    "birthDate": "1913-05-07",
+    "genres": [
+      "ambient",
+      "industrial",
+      "idm"
+    ]
+  },
+  {
+    "name": "Blanck Mass",
+    "birthDate": "2010-06-15",
+    "genres": [
+      "ambient",
+      "idm",
+      "industrial",
+      "darkwave"
+    ]
+  },
+  {
+    "name": "Emptyset",
+    "birthDate": "2005-06-15",
+    "genres": [
+      "ambient",
+      "techno",
+      "darkwave",
+      "classical",
+      "idm",
+      "industrial"
+    ]
+  },
+  {
+    "name": "Emma Ruth Rundle",
+    "birthDate": "1983-10-10",
+    "genres": [
+      "idm",
+      "ambient",
+      "artpop"
+    ]
+  },
+  {
+    "name": "Chelsea Wolfe",
+    "birthDate": "1983-11-14",
+    "genres": [
+      "idm",
+      "darkwave",
+      "artpop"
+    ]
+  },
+  {
+    "name": "Marissa Nadler & Stephen Brodsky",
+    "birthDate": "1981-04-05",
+    "genres": [
+      "idm",
+      "ambient",
+      "artpop",
+      "darkwave"
+    ]
+  },
+  {
+    "name": "Shannon Wright",
+    "birthDate": "2000-00-00",
+    "genres": [
+      "idm",
+      "industrial",
+      "darkwave",
+      "artpop",
+      "classical"
+    ]
+  },
+  {
+    "name": "Marriages",
+    "birthDate": "2011-00-00",
+    "genres": [
+      "artpop",
+      "ambient"
+    ]
+  },
+  {
+    "name": "Midwife",
+    "birthDate": "2025-10-01",
+    "genres": [
+      "artpop",
+      "ambient",
+      "techno"
+    ]
+  },
+  {
+    "name": "Big Brave",
+    "birthDate": "2014-01-01",
+    "genres": [
+      "ambient",
+      "industrial",
+      "idm"
+    ]
+  },
+  {
+    "name": "Esben and the Witch",
+    "birthDate": "2008-00-00",
+    "genres": [
+      "darkwave",
+      "idm",
+      "artpop"
+    ]
+  },
+  {
+    "name": "A.A. Williams",
+    "birthDate": "1932-02-08",
+    "genres": [
+      "artpop",
+      "ambient"
+    ]
+  },
+  {
+    "name": "Public Memory",
+    "birthDate": "1969-06-15",
+    "genres": [
+      "darkwave",
+      "idm",
+      "triphop",
+      "ambient"
+    ]
+  },
+  {
+    "name": "Heather Woods Broderick",
+    "birthDate": "1983-06-07",
+    "genres": [
+      "idm",
+      "ambient",
+      "classical"
+    ]
+  },
+  {
+    "name": "Dark Dark Dark",
+    "birthDate": "1998-06-15",
+    "genres": [
+      "idm"
+    ]
+  },
+  {
+    "name": "Hand Habits",
+    "birthDate": "1971-06-15",
+    "genres": [
+      "idm"
+    ]
+  },
+  {
+    "name": "Cate Le Bon",
+    "birthDate": "1983-03-04",
+    "genres": [
+      "idm",
+      "industrial",
+      "darkwave",
+      "artpop"
+    ]
+  },
+  {
+    "name": "Modern Nature",
+    "birthDate": "1972-12-05",
+    "genres": [
+      "idm",
+      "jazz"
+    ]
+  },
+  {
+    "name": "S.G. Goodman",
+    "birthDate": "1909-05-30",
+    "genres": [
+      "idm",
+      "industrial",
+      "darkwave",
+      "artpop"
+    ]
+  },
+  {
+    "name": "Elysian Fields",
+    "birthDate": "1995-00-00",
+    "genres": [
+      "triphop",
+      "industrial",
+      "darkwave",
+      "artpop"
+    ]
+  },
+  {
+    "name": "My Brightest Diamond",
+    "birthDate": "2006-00-00",
+    "genres": [
+      "idm"
+    ]
+  },
+  {
+    "name": "Nina Nastasia",
+    "birthDate": "1966-05-13",
+    "genres": [
+      "idm"
+    ]
   }
 ]

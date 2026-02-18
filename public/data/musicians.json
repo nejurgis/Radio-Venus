@@ -103,6 +103,25 @@
     "backupVideoIds": []
   },
   {
+    "name": "A.A. Williams",
+    "birthDate": "1932-02-08",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 24.9,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "artpop",
+      "ambient"
+    ],
+    "subgenres": [
+      "ambient"
+    ],
+    "youtubeVideoId": "uvQ-25j-VT0",
+    "backupVideoIds": []
+  },
+  {
     "name": "A.R.T. Wilson",
     "birthDate": "1934-06-09",
     "venus": {
@@ -120,6 +139,28 @@
       "idm"
     ],
     "youtubeVideoId": "IM6Hewu80qs",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Abul Mogard",
+    "birthDate": "1913-05-07",
+    "venus": {
+      "sign": "Aries",
+      "degree": 27.7,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient",
+      "industrial",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "industrial",
+      "idm"
+    ],
+    "youtubeVideoId": "kXDcaLkjpqk",
     "backupVideoIds": []
   },
   {
@@ -1161,6 +1202,29 @@
     "backupVideoIds": []
   },
   {
+    "name": "Big Brave",
+    "birthDate": "2014-01-01",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 26.7,
+      "decan": 3,
+      "element": "earth",
+      "dateApprox": true
+    },
+    "genres": [
+      "ambient",
+      "industrial",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "industrial",
+      "idm"
+    ],
+    "youtubeVideoId": "Ee2OtLM_loQ",
+    "backupVideoIds": []
+  },
+  {
     "name": "Biosphere",
     "birthDate": "1962-05-30",
     "venus": {
@@ -1270,6 +1334,30 @@
       "classical"
     ],
     "youtubeVideoId": "jt2FOmlG_Cg",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Blanck Mass",
+    "birthDate": "2010-06-15",
+    "venus": {
+      "sign": "Leo",
+      "degree": 1.3,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "industrial",
+      "darkwave"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm",
+      "industrial",
+      "darkwave"
+    ],
+    "youtubeVideoId": "B79f3MYrWmU",
     "backupVideoIds": []
   },
   {
@@ -1726,6 +1814,29 @@
     "backupVideoIds": []
   },
   {
+    "name": "Cate Le Bon",
+    "birthDate": "1983-03-04",
+    "venus": {
+      "sign": "Aries",
+      "degree": 11.8,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "idm",
+      "industrial",
+      "darkwave",
+      "artpop"
+    ],
+    "subgenres": [
+      "idm",
+      "industrial",
+      "darkwave"
+    ],
+    "youtubeVideoId": "d16iHpd5Xxs",
+    "backupVideoIds": []
+  },
+  {
     "name": "Caustic Window",
     "birthDate": "1971-08-18",
     "venus": {
@@ -1816,6 +1927,27 @@
       "Eb2Nk3OHHhc",
       "E6oq5HCzG4c"
     ]
+  },
+  {
+    "name": "Chelsea Wolfe",
+    "birthDate": "1983-11-14",
+    "venus": {
+      "sign": "Libra",
+      "degree": 5.3,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "idm",
+      "darkwave",
+      "artpop"
+    ],
+    "subgenres": [
+      "idm",
+      "darkwave"
+    ],
+    "youtubeVideoId": "am-ABKqCuKU",
+    "backupVideoIds": []
   },
   {
     "name": "Chevel",
@@ -2305,6 +2437,24 @@
       "q8sVG8HhK-Y",
       "31kf1HIzgZE"
     ]
+  },
+  {
+    "name": "Dark Dark Dark",
+    "birthDate": "1998-06-15",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 19.3,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "idm"
+    ],
+    "youtubeVideoId": "UvTZwhOHYVA",
+    "backupVideoIds": []
   },
   {
     "name": "Darkstar",
@@ -3185,6 +3335,29 @@
     ]
   },
   {
+    "name": "Elysian Fields",
+    "birthDate": "1995-00-00",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 25.4,
+      "decan": 3,
+      "element": "air",
+      "dateApprox": true
+    },
+    "genres": [
+      "triphop",
+      "industrial",
+      "darkwave",
+      "artpop"
+    ],
+    "subgenres": [
+      "industrial",
+      "darkwave"
+    ],
+    "youtubeVideoId": "eA2lJCpM8cI",
+    "backupVideoIds": []
+  },
+  {
     "name": "Emerald Web",
     "birthDate": "1921-08-08",
     "venus": {
@@ -3228,6 +3401,55 @@
       "classical"
     ],
     "youtubeVideoId": "WTPvNYJCuzM",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Emma Ruth Rundle",
+    "birthDate": "1983-10-10",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 3.1,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "idm",
+      "ambient",
+      "artpop"
+    ],
+    "subgenres": [
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "9SSEkN7OXvU",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Emptyset",
+    "birthDate": "2005-06-15",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 14.5,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "techno",
+      "darkwave",
+      "classical",
+      "idm",
+      "industrial"
+    ],
+    "subgenres": [
+      "ambient",
+      "techno",
+      "darkwave",
+      "classical",
+      "idm",
+      "industrial"
+    ],
+    "youtubeVideoId": "VFBgUWbfeAI",
     "backupVideoIds": []
   },
   {
@@ -3337,6 +3559,28 @@
       "idm"
     ],
     "youtubeVideoId": "YJi5SMPiKqc",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Esben and the Witch",
+    "birthDate": "2008-00-00",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 16.1,
+      "decan": 2,
+      "element": "water",
+      "dateApprox": true
+    },
+    "genres": [
+      "darkwave",
+      "idm",
+      "artpop"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm"
+    ],
+    "youtubeVideoId": "UyocQey5y8g",
     "backupVideoIds": []
   },
   {
@@ -4423,6 +4667,24 @@
     "backupVideoIds": []
   },
   {
+    "name": "Hand Habits",
+    "birthDate": "1971-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 3.9,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "idm"
+    ],
+    "youtubeVideoId": "4Hzc6FSHPp8",
+    "backupVideoIds": []
+  },
+  {
     "name": "Harold Budd",
     "birthDate": "1936-05-24",
     "venus": {
@@ -4490,6 +4752,28 @@
       "classical"
     ],
     "youtubeVideoId": "K7Dm-ne-iSY",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Heather Woods Broderick",
+    "birthDate": "1983-06-07",
+    "venus": {
+      "sign": "Leo",
+      "degree": 1.3,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "idm",
+      "ambient",
+      "classical"
+    ],
+    "subgenres": [
+      "idm",
+      "ambient",
+      "classical"
+    ],
+    "youtubeVideoId": "5HbnGKkTN1k",
     "backupVideoIds": []
   },
   {
@@ -6794,6 +7078,29 @@
     "backupVideoIds": []
   },
   {
+    "name": "Marissa Nadler & Stephen Brodsky",
+    "birthDate": "1981-04-05",
+    "venus": {
+      "sign": "Aries",
+      "degree": 15.1,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "idm",
+      "ambient",
+      "artpop",
+      "darkwave"
+    ],
+    "subgenres": [
+      "idm",
+      "ambient",
+      "darkwave"
+    ],
+    "youtubeVideoId": "h8-Vmhp2ZEk",
+    "backupVideoIds": []
+  },
+  {
     "name": "Mark McGuire",
     "birthDate": "1986-12-31",
     "venus": {
@@ -6834,6 +7141,26 @@
       "idm"
     ],
     "youtubeVideoId": "3yMIOhL0kyU",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Marriages",
+    "birthDate": "2011-00-00",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 26.7,
+      "decan": 3,
+      "element": "air",
+      "dateApprox": true
+    },
+    "genres": [
+      "artpop",
+      "ambient"
+    ],
+    "subgenres": [
+      "ambient"
+    ],
+    "youtubeVideoId": "O4IgYxHEAuk",
     "backupVideoIds": []
   },
   {
@@ -7128,6 +7455,27 @@
     ]
   },
   {
+    "name": "Midwife",
+    "birthDate": "2025-10-01",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 14.7,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "artpop",
+      "ambient",
+      "techno"
+    ],
+    "subgenres": [
+      "ambient",
+      "techno"
+    ],
+    "youtubeVideoId": "QR2HE0YyYOs",
+    "backupVideoIds": []
+  },
+  {
     "name": "Milan W.",
     "birthDate": "1756-01-27",
     "venus": {
@@ -7293,6 +7641,26 @@
       "dLNgO7P1ZPo",
       "_B_BqQk7Q8k"
     ]
+  },
+  {
+    "name": "Modern Nature",
+    "birthDate": "1972-12-05",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 13.5,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "idm",
+      "jazz"
+    ],
+    "subgenres": [
+      "idm",
+      "spiritual-jazz"
+    ],
+    "youtubeVideoId": "4mvxwISwVWw",
+    "backupVideoIds": []
   },
   {
     "name": "Mogwai",
@@ -7673,6 +8041,25 @@
     "backupVideoIds": []
   },
   {
+    "name": "My Brightest Diamond",
+    "birthDate": "2006-00-00",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 8.9,
+      "decan": 1,
+      "element": "air",
+      "dateApprox": true
+    },
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "idm"
+    ],
+    "youtubeVideoId": "CePpTXIuQzY",
+    "backupVideoIds": []
+  },
+  {
     "name": "Nala Sinephro",
     "birthDate": "2021-09-03",
     "venus": {
@@ -7849,6 +8236,24 @@
       "H7FO2xJgssw",
       "9bxpMPQzx5c"
     ]
+  },
+  {
+    "name": "Nina Nastasia",
+    "birthDate": "1966-05-13",
+    "venus": {
+      "sign": "Aries",
+      "degree": 9.2,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "idm"
+    ],
+    "youtubeVideoId": "kBF7KOT0Hps",
+    "backupVideoIds": []
   },
   {
     "name": "Nitzer Ebb",
@@ -8795,6 +9200,29 @@
     ]
   },
   {
+    "name": "Public Memory",
+    "birthDate": "1969-06-15",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 8.5,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "darkwave",
+      "idm",
+      "triphop",
+      "ambient"
+    ],
+    "subgenres": [
+      "darkwave",
+      "idm",
+      "ambient"
+    ],
+    "youtubeVideoId": "ZXRbNj6JYtQ",
+    "backupVideoIds": []
+  },
+  {
     "name": "Purelink",
     "birthDate": "2020-01-01",
     "venus": {
@@ -9235,6 +9663,28 @@
     "backupVideoIds": []
   },
   {
+    "name": "Roly Porter",
+    "birthDate": "1927-08-12",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 23.8,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "industrial",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "industrial",
+      "idm"
+    ],
+    "youtubeVideoId": "Xe_eDQUEehE",
+    "backupVideoIds": []
+  },
+  {
     "name": "Roni Size",
     "birthDate": "1969-10-29",
     "venus": {
@@ -9303,6 +9753,29 @@
       "BGqMIe69KUI",
       "5lQ1w0ZCQGE"
     ]
+  },
+  {
+    "name": "S.G. Goodman",
+    "birthDate": "1909-05-30",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 16.9,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "idm",
+      "industrial",
+      "darkwave",
+      "artpop"
+    ],
+    "subgenres": [
+      "idm",
+      "industrial",
+      "darkwave"
+    ],
+    "youtubeVideoId": "xdo29t0O-z0",
+    "backupVideoIds": []
   },
   {
     "name": "Sam Gendel",
@@ -9662,6 +10135,32 @@
       "nhMQUw5Kln8",
       "V5bpvh4y6Tg"
     ]
+  },
+  {
+    "name": "Shannon Wright",
+    "birthDate": "2000-00-00",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 15.5,
+      "decan": 2,
+      "element": "water",
+      "dateApprox": true
+    },
+    "genres": [
+      "idm",
+      "industrial",
+      "darkwave",
+      "artpop",
+      "classical"
+    ],
+    "subgenres": [
+      "idm",
+      "industrial",
+      "darkwave",
+      "classical"
+    ],
+    "youtubeVideoId": "SckuWmb7WqU",
+    "backupVideoIds": []
   },
   {
     "name": "Shinichi Atobe",

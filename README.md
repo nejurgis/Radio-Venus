@@ -329,6 +329,8 @@ Tracks manual additions and discovery runs — who was added, when, and what pro
 | 2026-02-18 | Laraaji, Suzanne Ciani, Laurie Spiegel, Steve Roach, Pauline Anna Strom, Fripp & Eno, Colleen, Ana Roxanne, Emerald Web, Ariel Kalma, Satoshi Ashikawa, Chihei Hatakeyama, Jonny Nash, + 24 more (37 total) | `smart-match "Joanna Brouk" --depth 2 --filter` |
 | 2026-02-18 | David Casper | Manual — Gemini suggestion, Pacific NW sound sculptor, born 1953-09-25, Venus Virgo 1.6° |
 | 2026-02-18 | Clark, Caribou, Joy Orbison, Jamie xx, Burial & Four Tet, Burial & Four Tet & Thom Yorke, Massive Attack vs Burial, Nathan Fake, Modeselektor (10 total) | `smart-match "Four Tet" --depth 2 --filter` |
+| 2026-02-18 | Roly Porter, Abul Mogard, Blanck Mass, Emptyset (4 total) | `smart-match "Ben Frost" --depth 1 --filter` |
+| 2026-02-18 | Chelsea Wolfe, Emma Ruth Rundle, Shannon Wright, Esben and the Witch, Midwife, Big Brave, Cate Le Bon, Elysian Fields, My Brightest Diamond, Nina Nastasia, + 9 more (19 total) | `smart-match "Marissa Nadler" --depth 2 --filter` (proxy for Anna von Hausswolff orbit — Last.fm has no graph for Anna) |
 | 2026-02-18 | Slowdive, Dead Can Dance, This Mortal Coil, my bloody valentine, Mazzy Star, Hope Sandoval & The Warm Inventions, Julee Cruise, Robin Guthrie, Cranes, Lycia, Claire Voyant, Black Tape for a Blue Girl, Bel Canto, His Name Is Alive, Pale Saints, An April March, Love Spirals Downwards, Kitchens of Distinction, Soul Whirling Somewhere, + 18 more (37 total) | `smart-match "Cocteau Twins" --depth 2 --filter` |
 
 ## Deployment
