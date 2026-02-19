@@ -62,7 +62,11 @@ async function getEverynoiseGenres(artistName) {
     await page.setExtraHTTPHeaders({ 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' });
     const url = `https://everynoise.com/research.cgi?name=${encodeURIComponent(artistName)}&mode=artist`;
     await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
-    await page.waitForTimeout(8000);
+
+    // Wait for genre links to actually appear in the DOM (up to 20s) rather than a fixed delay.
+    // EN's database is huge and response time varies widely — fixed 8s was too short for many artists.
+    const GENRE_SELECTOR = '#exact + div .note a[href*="mode=genre"], .setname + div .note a[href*="mode=genre"]';
+    await page.waitForSelector(GENRE_SELECTOR, { timeout: 20000 }).catch(() => {});
 
     // $$eval passes an array to the callback (unlike $eval which passes a single element)
     // Try exact match section first, then first result section

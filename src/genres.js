@@ -93,6 +93,9 @@ const GENRE_MAP = {
   'space music': ['ambient'],
   'berlin-school': ['ambient'],
   'berlin school': ['ambient'],
+  'j-ambient': ['ambient'],        // Japanese ambient scene (Yoshimura, etc.)
+  'ambient synth': ['ambient'],    // EN micro-genre for analog synth ambient
+  'spectra': ['ambient'],          // EN cluster: Joanna Brouk, Laurel Halo, etc.
 
   // ── IDM / Experimental ──
   'idm': ['idm'],
@@ -254,6 +257,16 @@ const GENRE_MAP = {
   'afrofuturism': ['jazz'],
   'avant-garde jazz': ['jazz'],
   'third stream': ['jazz'],
+  'bebop': ['jazz'],
+  'hard bop': ['jazz'],
+  'post-bop': ['jazz'],
+  'contemporary post-bop': ['jazz'],
+  'experimental jazz': ['jazz'],   // explicit — prevents substring match to idm via 'experimental'
+  'ambient jazz': ['ambient', 'jazz'],
+  'jazz trumpet': ['jazz'],
+  'jazz harp': ['jazz'],
+  'fourth world': ['ambient', 'jazz'],  // Jon Hassell's ambient/jazz/world fusion
+  'tzadik': ['jazz', 'idm'],            // Zorn's label used as EN micro-genre (avant-garde/experimental)
 
   // ── Classical / Orchestral ──
   'classical music': ['classical'],
@@ -269,7 +282,9 @@ const GENRE_MAP = {
   'minimalism': ['classical'],
   'minimalist music': ['classical'],
   'contemporary classical': ['classical'],
+  'american contemporary classical': ['classical'],
   'neoclassical': ['classical'],
+  'neo-classical': ['classical'],
   'modern classical': ['classical'],
   'piano music': ['classical'],
   'choral music': ['classical'],
@@ -408,12 +423,18 @@ const SUBGENRE_MAP = {
   'jazz': 'spiritual-jazz',
   'spiritual jazz': 'spiritual-jazz',
   'free jazz': 'free-jazz', 'avant-garde jazz': 'free-jazz',
+  'experimental jazz': 'free-jazz',
+  'third stream': 'free-jazz',
+  'bebop': 'free-jazz', 'hard bop': 'free-jazz', 'post-bop': 'free-jazz', 'contemporary post-bop': 'free-jazz',
   'dark jazz': 'dark-jazz', 'doom jazz': 'doom-jazz',
   'modal jazz': 'modal-jazz',
   'jazz fusion': 'jazz-fusion', 'fusion': 'jazz-fusion',
   'soul jazz': 'soul-jazz', 'soul-jazz': 'soul-jazz',
   'cosmic jazz': 'cosmic-jazz', 'afrofuturism': 'cosmic-jazz',
-  'third stream': 'free-jazz',
+  'fourth world': 'cosmic-jazz',
+  'tzadik': 'free-jazz',
+  'jazz trumpet': 'free-jazz', 'jazz harp': 'free-jazz',
+  'ambient jazz': 'ambient-jazz',
 
   // classical
   'classical': 'classical', 'classical music': 'classical',
