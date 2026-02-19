@@ -2707,12 +2707,10 @@
       "dateApprox": true
     },
     "genres": [
-      "artpop",
-      "classical",
-      "darkwave"
+      "darkwave",
+      "artpop"
     ],
     "subgenres": [
-      "classical",
       "darkwave"
     ],
     "youtubeVideoId": "taZjS_oCj3o",
@@ -5553,7 +5551,6 @@
       "element": "water"
     },
     "genres": [
-      "classical",
       "electronica",
       "techno"
     ],
@@ -6800,7 +6797,7 @@
     },
     "genres": [
       "ambient",
-      "classical"
+      "idm"
     ],
     "subgenres": [
       "minimalist",
@@ -7287,14 +7284,11 @@
       "element": "water"
     },
     "genres": [
-      "ambient",
-      "classical",
-      "idm",
-      "techno",
-      "triphop"
+      "artpop",
+      "electronica"
     ],
     "subgenres": [
-      "synthwave"
+      "synth-pop"
     ],
     "youtubeVideoId": "Rf1PydBVzQI",
     "backupVideoIds": [
@@ -9859,24 +9853,6 @@
       "ambient techno"
     ],
     "youtubeVideoId": "dVAQO6Fs2f0",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Robert Schumann",
-    "birthDate": "1810-06-08",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 9,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "romantic"
-    ],
-    "youtubeVideoId": "ck1wDRMoCPM",
     "backupVideoIds": []
   },
   {
