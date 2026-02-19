@@ -149,7 +149,7 @@ Everynoise "fans also like" ──┤  scrobble co-listening vs Spotify data
      Append to seed-musicians.json
 ```
 
-- **Everynoise** (always-on): headless Playwright scrapes `research.cgi` for genres and `artistprofile.cgi` for "fans also like" — typically adds ~15 artists not on Last.fm per run. One shared browser instance per run.
+- **Everynoise** (always-on): headless Playwright scrapes `research.cgi` for genres and `artistprofile.cgi` for "fans also like" — typically adds ~15 artists not on Last.fm per run. One shared browser instance per run. `verify-genres.mjs` uses `waitForSelector` (20s timeout) rather than a fixed delay — EN is slow for niche/experimental/jazz artists and a fixed wait caused false "not found" results.
 - **Entity disambiguation**: Wikidata validates P106 occupation (musician/singer/composer/producer/DJ) or P31 instance-of (musical group). MusicBrainz prefers `Person` over `Group`. Both reject year < 1600 or future dates.
 - **MBID deduplication**: MusicBrainz ID stored on entry; catches rename/alias cases (e.g. "Clark" vs "Chris Clark") that name-matching alone misses.
 - **Pre-1940 rejection**: birth years < 1940 flagged as implausible for non-classical contexts — MusicBrainz often returns the wrong person for common names.
@@ -282,7 +282,7 @@ Of the ~60 subgenres defined, **28 have 7+ artists** and are clickable in the UI
 | house | 9 | techno |
 | dub | 9 | triphop |
 
-The remaining ~30 subgenres have 1-6 artists each and appear as dimmed (non-clickable) chips. Raw tags from MusicBrainz, Last.fm, and Wikidata are normalized via `GENRE_MAP` (~130 entries) in `src/genres.js` — the single source of truth imported by both build scripts and the browser client.
+The remaining ~30 subgenres have 1-6 artists each and appear as dimmed (non-clickable) chips. Raw tags from MusicBrainz, Last.fm, and Wikidata are normalized via `GENRE_MAP` (~160 entries) in `src/genres.js` — the single source of truth imported by both build scripts and the browser client.
 
 ## Valentine's playlist
 
@@ -355,22 +355,24 @@ sqlite3 scripts/musicians.db "SELECT venus_sign, count(*) as n FROM musicians GR
 Cross-checked against [Everynoise](https://everynoise.com) via `scripts/verify-genres.mjs`.
 Corrections applied via one-time patch scripts in `scripts/`.
 
+All 14 genres have been cross-checked and corrected. Key patterns found: EN reliably distinguishes techno/triphop/IDM/electronica (many stored tags were over-broad); `experimental` correctly maps to IDM for electronic artists but needs explicit overrides for jazz (Sun Ra, Eric Dolphy) to prevent false IDM tags; ambient is systematically under-tagged by EN for IDM crossover artists — preserved manually.
+
 | Genre | Artists | Status | Patch |
 |-------|---------|--------|-------|
 | techno | 103 | ✅ verified 2026-02-18 | patch-techno-genres.mjs |
 | darkwave | 100 | ✅ verified 2026-02-18 | patch-darkwave-genres.mjs |
 | ambient | 214 | ✅ verified 2026-02-18 | patch-ambient-genres.mjs |
 | altrock | 10 | ✅ verified 2026-02-18 (new genre, hand-curated) | patch-altrock-genres.mjs |
-| idm | 242 | ⬜ not yet checked | — |
-| classical | 91 | ⬜ not yet checked | — |
-| artpop | 111 | ⬜ not yet checked | — |
-| triphop | 60 | ⬜ not yet checked | — |
-| industrial | 54 | ⬜ not yet checked | — |
-| electronica | 46 | ⬜ not yet checked | — |
-| jazz | 42 | ⬜ not yet checked | — |
-| dnb | 40 | ⬜ not yet checked | — |
-| indiepop | 28 | ⬜ not yet checked | — |
-| folk | 20 | ⬜ not yet checked | — |
+| artpop | 111 | ✅ verified 2026-02-19 | patch-artpop-genres.mjs |
+| electronica | 46 | ✅ verified 2026-02-19 | patch-electronica-dnb-classical-genres.mjs |
+| dnb | 40 | ✅ verified 2026-02-19 | patch-electronica-dnb-classical-genres.mjs |
+| classical | 91 | ✅ verified 2026-02-19 | patch-electronica-dnb-classical-genres.mjs |
+| idm | 242 | ✅ verified 2026-02-19 | patch-folk-indiepop-idm-industrial-jazz-triphop-genres.mjs |
+| industrial | 54 | ✅ verified 2026-02-19 | patch-folk-indiepop-idm-industrial-jazz-triphop-genres.mjs |
+| jazz | 42 | ✅ verified 2026-02-19 | patch-folk-indiepop-idm-industrial-jazz-triphop-genres.mjs |
+| triphop | 60 | ✅ verified 2026-02-19 | patch-folk-indiepop-idm-industrial-jazz-triphop-genres.mjs |
+| indiepop | 28 | ✅ verified 2026-02-19 | patch-folk-indiepop-idm-industrial-jazz-triphop-genres.mjs |
+| folk | 20 | ✅ verified 2026-02-19 | patch-folk-indiepop-idm-industrial-jazz-triphop-genres.mjs |
 
 ## Roster log
 
