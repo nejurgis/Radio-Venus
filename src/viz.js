@@ -104,6 +104,18 @@ const getMoonPhaseCanvas = (phaseAngle) => {
   mc.fill();
   mc.globalCompositeOperation = 'source-over';
 
+  // Bake edge-softening blur into the cached canvas so the main canvas never
+  // needs ctx.filter or ctx.shadowBlur on a drawImage call — both cause a
+  // rectangular-highlight artefact on mobile Safari.
+  // 48px ≈ R*0.30, which matches moonR*0.30 visual blur after downscale.
+  const blurred = document.createElement('canvas');
+  blurred.width = SIZE; blurred.height = SIZE;
+  const bc = blurred.getContext('2d');
+  bc.filter = 'blur(48px)';
+  bc.drawImage(_moonPhaseCanvas, 0, 0);
+  mc.clearRect(0, 0, SIZE, SIZE);
+  mc.drawImage(blurred, 0, 0);
+
   return _moonPhaseCanvas;
 };
 // ── Zodiac Nebula: artist distribution ring on the portal screen ─────────────
@@ -1085,17 +1097,12 @@ function tick() {
     ctx.fill();
     ctx.restore();
 
-    // 2. Phase disc — blurred so the boundary dissolves into the surrounding haze
-    // phCanvas is 400×400 with an inner radius of 160; we crop the 320×320 centre
+    // 2. Phase disc — blur is baked into the cached canvas (avoids ctx.filter /
+    // ctx.shadowBlur on drawImage, which renders a rectangular artefact on iOS Safari)
+    // phCanvas is 400×400 with inner radius 160; crop the 320×320 centre region.
     const phCanvas = getMoonPhaseCanvas(phaseAngle);
     ctx.save();
-    ctx.filter               = `blur(${Math.max(0.6, moonR * 0.30)}px)`;
-    ctx.globalCompositeOperation = 'source-over';
-    ctx.shadowBlur           = moonR * 2.5;
-    ctx.shadowColor          = 'rgba(120, 190, 255, 0.55)';
     ctx.drawImage(phCanvas, 40, 40, 320, 320, mx - moonR, my - moonR, moonR * 2, moonR * 2);
-    ctx.shadowBlur = 0;
-    ctx.filter     = 'none';
     ctx.restore();
 
     // 3. Specular glow — white-hot focal point offset toward the lit limb
