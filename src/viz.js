@@ -194,6 +194,7 @@ let previewDot = null;  // soft glow while typing birth date
 let moonDot = null;     // current Moon position on the ecliptic
 let dots = [];
 const signBirths = new Array(12).fill(0); // timestamp per sign, 0 = not yet revealed
+let moonBirth = 0;                         // timestamp for moon reveal, 0 = hidden
 let hoveredDot = null;
 let mouseX = -1;
 let mouseY = -1;
@@ -457,15 +458,15 @@ export function renderNebula(musicians) {
   }
   signOrder.forEach((sign, i) => setTimeout(() => { signBirths[sign] = performance.now(); }, i * 80));
 
-  // Shuffle creation order so dots twinkle in scattered across the whole wheel
-  // rather than sign-by-sign. 8 per frame × 60fps ≈ 1.2s to populate 600 dots.
+  // Dots start 300ms after signs so the glyphs visibly lead
+  moonBirth = 0;
   const order = dots.map((_, i) => i);
   for (let i = order.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     const tmp = order[i]; order[i] = order[j]; order[j] = tmp;
   }
   let idx = 0;
-  (function buildBatch() {
+  function buildBatch() {
     const end = Math.min(idx + 8, order.length);
     while (idx < end) {
       const dot = dots[order[idx++]];
@@ -476,7 +477,11 @@ export function renderNebula(musicians) {
       dot.spriteOffset   = s.width / SPRITE_SCALE / 2;
     }
     if (idx < order.length) requestAnimationFrame(buildBatch);
-  })();
+  }
+  setTimeout(() => requestAnimationFrame(buildBatch), 300);
+
+  // Moon appears last — after signs (~960ms) and most dots (~1250ms) are visible
+  setTimeout(() => { moonBirth = performance.now(); }, 1500);
 }
 
 export function setUserVenus(longitude, element) {
@@ -1094,7 +1099,10 @@ function tick() {
   }
 
   // ── Moon dot ─────────────────────────────────────────────────────────────────
-  if (moonDot) {
+  if (moonDot && moonBirth > 0) {
+    const moonFade = Math.min(1, (performance.now() - moonBirth) / 500);
+    ctx.save();
+    ctx.globalAlpha = moonFade; // all sub-saves inherit this; restored at the end
     const phaseAngle = moonDot.phaseAngle ?? 45;
     const moonWaxing = phaseAngle < 180;
     // Pulse only when zoomed — on the rotating full ring it makes the moon look nervous
@@ -1159,6 +1167,7 @@ function tick() {
       ctx.fillText("Today's Moon", mx, my + moonR * 1.5 + 0.95);
       ctx.restore();
     }
+    ctx.restore(); // restore moonFade globalAlpha
   }
 
 
@@ -1175,6 +1184,7 @@ export function destroyNebula() {
   ctx = null;
   dots = [];
   signBirths.fill(0);
+  moonBirth = 0;
   spriteCache.clear();
   userDot = null;
   previewDot = null;
