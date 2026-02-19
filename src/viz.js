@@ -7,7 +7,7 @@ import { trackNebulaInteraction } from './analytics.js';
 let _moonPhaseCanvas = null;
 let _moonPhaseCached = -1;
 
-function getMoonPhaseCanvas(phaseAngle) {
+const getMoonPhaseCanvas = (phaseAngle) => {
   const q = Math.round(phaseAngle * 2) / 2; // 0.5° quantization for cache
   if (_moonPhaseCanvas && _moonPhaseCached === q) return _moonPhaseCanvas;
   _moonPhaseCached = q;
@@ -29,11 +29,11 @@ function getMoonPhaseCanvas(phaseAngle) {
   const p      = q * Math.PI / 180;
   const waxing = q < 180;
 
-  // Unlit side: deep blue-black sphere
+  // Unlit side: deep blue-black with faint earthshine (reflected Earth light)
   const darkG = mc.createRadialGradient(c - R * 0.15, c - R * 0.2, R * 0.05, c, c, R);
-  darkG.addColorStop(0,   'rgba(20, 26, 55, 0.97)');
-  darkG.addColorStop(0.7, 'rgba(8,  12, 30, 0.98)');
-  darkG.addColorStop(1,   'rgba(2,  4,  14, 0.99)');
+  darkG.addColorStop(0,   'rgba(30, 40, 72, 0.95)');  // earthshine: slightly lighter core
+  darkG.addColorStop(0.6, 'rgba(14, 20, 45, 0.97)');
+  darkG.addColorStop(1,   'rgba(3,  5,  16, 0.99)');
 
   // Lit side: white core fading to lunar blue at the limb
   const litG = mc.createRadialGradient(c + R * 0.2, c - R * 0.25, R * 0.05, c, c, R);
@@ -47,11 +47,20 @@ function getMoonPhaseCanvas(phaseAngle) {
   mc.arc(c, c, R, 0, Math.PI * 2);
   mc.clip();
 
-  // 1. Fill circle with dark background
+  // 1. Fill circle with dark background (earthshine baked into darkG above)
   mc.fillStyle = darkG;
   mc.fillRect(0, 0, SIZE, SIZE);
 
-  // 2. Lit semicircle — right for waxing, left for waning
+  // 2. Faint earthshine haze over the whole dark side — adds subtle sphere volume
+  const earthshineG = mc.createRadialGradient(c, c, 0, c, c, R);
+  earthshineG.addColorStop(0,   'rgba(55, 80, 140, 0.10)');
+  earthshineG.addColorStop(0.7, 'rgba(40, 60, 110, 0.05)');
+  earthshineG.addColorStop(1,   'rgba(20, 35,  75, 0)');
+  mc.fillStyle = earthshineG;
+  mc.fillRect(0, 0, SIZE, SIZE);
+
+  // 3. Lit semicircle — right for waxing, left for waning
+  //    (covers earthshine on the lit half, giving clean bright surface)
   mc.beginPath();
   if (waxing) {
     mc.arc(c, c, R, -Math.PI / 2, Math.PI / 2, false); // right half
@@ -62,7 +71,7 @@ function getMoonPhaseCanvas(phaseAngle) {
   mc.fillStyle = litG;
   mc.fill();
 
-  // 3. Terminator ellipse — carves the crescent or extends to gibbous
+  // 4. Terminator ellipse — carves the crescent or extends to gibbous
   //    rx = R·|cos(p)|: R at new/full, 0 at quarters
   const rx = Math.abs(Math.cos(p)) * R;
   if (rx > 0.5) {
@@ -80,9 +89,9 @@ function getMoonPhaseCanvas(phaseAngle) {
     mc.fill();
   }
 
-  // 4. Terminator softening — thin gradient band along the terminator line
+  // 5. Terminator softening — thin gradient band along the terminator line
   const terminatorX = c + (waxing ? Math.cos(p) : -Math.cos(p)) * R;
-  const bw = Math.max(R * 0.10, 4); // band width
+  const bw = Math.max(R * 0.10, 4);
   const softenG = mc.createLinearGradient(terminatorX - bw, c, terminatorX + bw, c);
   softenG.addColorStop(0,   'rgba(12, 18, 45, 0)');
   softenG.addColorStop(0.5, 'rgba(12, 18, 45, 0.30)');
@@ -92,7 +101,7 @@ function getMoonPhaseCanvas(phaseAngle) {
 
   mc.restore();
   return _moonPhaseCanvas;
-}
+};
 // ── Zodiac Nebula: artist distribution ring on the portal screen ─────────────
 import { isHarpEnabled } from './harp.js';
 
