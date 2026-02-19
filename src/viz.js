@@ -1055,15 +1055,16 @@ function tick() {
   // ── Moon dot ─────────────────────────────────────────────────────────────────
   if (moonDot) {
     const mt     = (performance.now() - moonDot.birth) / 1000;
-    const mPulse = 1 + 0.12 * Math.sin(mt * 0.8);
+    // Pulse only when zoomed — on the rotating full ring it makes the moon look nervous
+    const mPulse = isZoomed ? 1 + 0.12 * Math.sin(mt * 0.8) : 1;
 
     const mAngle = (-(moonDot.deg) - 90 + rot) * Math.PI / 180;
     const mx = cx + midR * Math.cos(mAngle);
     const my = cy + midR * Math.sin(mAngle);
 
-    // moonR: the logical radius of the drawn moon disc
-    const moonR  = isZoomed ? 5.5 : 13;
-    const hazeR  = (isZoomed ? 18 : 44) * mPulse;
+    // moonR: scale with canvas size so it's reasonable on small phone screens
+    const moonR  = isZoomed ? 5.5 : Math.min(13, minDim * 0.028);
+    const hazeR  = (isZoomed ? 18 : moonR * 3.2) * mPulse;
 
     // 1. Atmosphere haze (additive)
     ctx.save();
