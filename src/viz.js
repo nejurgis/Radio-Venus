@@ -437,27 +437,35 @@ export function renderNebula(musicians) {
       sign: m.venus.sign,
       genres: m.genres || [],
       sprite: null,       // populated lazily below
+      spriteBirth: 0,     // timestamp set when sprite is ready, drives fade-in
       spriteDrawSize: 0,
       spriteOffset: 0,
     });
   }
 
-  // Start the animation loop immediately — dots fall back to inline gradients
-  // until their sprite is ready, so the nebula appears without any blocking delay.
+  // Start the animation loop immediately — dots are invisible until their sprite
+  // arrives, then fade in, so the nebula appears without any blocking delay.
   if (!animId) tick();
 
-  // Spread sprite creation across rAF callbacks (30 per frame ≈ ~7 frames for 600 dots)
+  // Shuffle creation order so dots twinkle in scattered across the whole wheel
+  // rather than sign-by-sign. 8 per frame × 60fps ≈ 1.2s to populate 600 dots.
+  const order = dots.map((_, i) => i);
+  for (let i = order.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const tmp = order[i]; order[i] = order[j]; order[j] = tmp;
+  }
   let idx = 0;
   (function buildBatch() {
-    const end = Math.min(idx + 30, dots.length);
+    const end = Math.min(idx + 8, order.length);
     while (idx < end) {
-      const dot = dots[idx++];
+      const dot = dots[order[idx++]];
       const s = getDotSprite(dot.r, dot.g, dot.b, dot.size, dot.alpha);
-      dot.sprite = s;
+      dot.sprite         = s;
+      dot.spriteBirth    = performance.now();
       dot.spriteDrawSize = s.width / SPRITE_SCALE;
-      dot.spriteOffset   = dot.spriteDrawSize / 2;
+      dot.spriteOffset   = s.width / SPRITE_SCALE / 2;
     }
-    if (idx < dots.length) requestAnimationFrame(buildBatch);
+    if (idx < order.length) requestAnimationFrame(buildBatch);
   })();
 }
 
@@ -921,22 +929,24 @@ function tick() {
 
     const isHighlighted = isHovered || isOnNeedle;
 
-    if (isHighlighted || !dot.sprite) {
-      // Highlighted dots always use a fresh gradient; sprite-less dots use it as fallback
-      const drawSize = isHovered ? 7 : isOnNeedle ? 5 : dot.size * 1.5;
-      const a = isHighlighted ? 1 : dot.alpha;
+    if (isHighlighted) {
+      const drawSize = isHovered ? 7 : 5;
       const grad = ctx.createRadialGradient(x - drawSize*0.35, y - drawSize*0.35, drawSize*0.05, x, y, drawSize);
-      grad.addColorStop(0,   `rgba(255,255,255,${a})`);
-      grad.addColorStop(0.5, `rgba(${dot.r},${dot.g},${dot.b},${a * 0.9})`);
+      grad.addColorStop(0,   'rgba(255,255,255,1)');
+      grad.addColorStop(0.5, `rgba(${dot.r},${dot.g},${dot.b},0.9)`);
       grad.addColorStop(1,   `rgba(${Math.round(dot.r*0.1)},${Math.round(dot.g*0.1)},${Math.round(dot.b*0.1)},0)`);
       ctx.fillStyle = grad;
       ctx.beginPath();
       ctx.arc(x, y, drawSize, 0, Math.PI*2);
       ctx.fill();
-    } else {
+    } else if (dot.sprite) {
+      // Fade in over 400ms from when the sprite was first created
+      const fadeAlpha = Math.min(1, (performance.now() - dot.spriteBirth) / 400);
+      ctx.globalAlpha = fadeAlpha;
       ctx.drawImage(dot.sprite, x - dot.spriteOffset, y - dot.spriteOffset, dot.spriteDrawSize, dot.spriteDrawSize);
+      ctx.globalAlpha = 1;
     }
-    // Needle tracking outside sprite guard — works during lazy-load too
+    // null sprite → dot is invisible until its batch arrives (twinkling-in effect)
     if (isOnNeedle) curOnNeedle.add(i);
   }
 
