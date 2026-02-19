@@ -193,6 +193,7 @@ let userDot = null;
 let previewDot = null;  // soft glow while typing birth date
 let moonDot = null;     // current Moon position on the ecliptic
 let dots = [];
+const signBirths = new Array(12).fill(0); // timestamp per sign, 0 = not yet revealed
 let hoveredDot = null;
 let mouseX = -1;
 let mouseY = -1;
@@ -446,6 +447,15 @@ export function renderNebula(musicians) {
   // Start the animation loop immediately — dots are invisible until their sprite
   // arrives, then fade in, so the nebula appears without any blocking delay.
   if (!animId) tick();
+
+  // Zodiac glyphs twinkle in one by one in shuffled order, ~80ms apart
+  signBirths.fill(0);
+  const signOrder = [0,1,2,3,4,5,6,7,8,9,10,11];
+  for (let i = 11; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const tmp = signOrder[i]; signOrder[i] = signOrder[j]; signOrder[j] = tmp;
+  }
+  signOrder.forEach((sign, i) => setTimeout(() => { signBirths[sign] = performance.now(); }, i * 80));
 
   // Shuffle creation order so dots twinkle in scattered across the whole wheel
   // rather than sign-by-sign. 8 per frame × 60fps ≈ 1.2s to populate 600 dots.
@@ -777,11 +787,14 @@ function tick() {
 
 
   for (let sign = 0; sign < 12; sign++) {
+    if (signBirths[sign] === 0) continue; // not yet revealed
+
     const centerAngle = (-(sign * 30 + 15) - 90 + rot) * Math.PI / 180;
     const ix = cx + iconR * Math.cos(centerAngle);
     const iy = cy + iconR * Math.sin(centerAngle);
 
     ctx.save();
+    ctx.globalAlpha = Math.min(1, (performance.now() - signBirths[sign]) / 400);
     ctx.translate(ix, iy);
     ctx.rotate(centerAngle + Math.PI / 2);
     ctx.scale(iconScale, iconScale);
@@ -797,7 +810,6 @@ function tick() {
       ctx.stroke(paths[k]);
     }
     ctx.restore();
-
   }
 
   // ── Batched tick marks (2 draw calls instead of 360) ──
@@ -1162,6 +1174,7 @@ export function destroyNebula() {
   canvas = null;
   ctx = null;
   dots = [];
+  signBirths.fill(0);
   spriteCache.clear();
   userDot = null;
   previewDot = null;
