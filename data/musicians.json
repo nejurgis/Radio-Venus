@@ -4579,6 +4579,25 @@
     "backupVideoIds": []
   },
   {
+    "name": "Giuseppe Verdi",
+    "birthDate": "1813-10-10",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 22.6,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "romantic",
+      "opera"
+    ],
+    "youtubeVideoId": "rdv5fsgjO24",
+    "backupVideoIds": []
+  },
+  {
     "name": "Global Communication",
     "birthDate": "1971-05-13",
     "venus": {
@@ -5040,7 +5059,7 @@
       "modern-classical",
       "minimalist"
     ],
-    "youtubeVideoId": "87HJZBMjw5Y",
+    "youtubeVideoId": "0xl_x2tjWg0",
     "backupVideoIds": []
   },
   {
@@ -5056,7 +5075,8 @@
       "classical"
     ],
     "subgenres": [
-      "classical"
+      "medieval",
+      "early-music"
     ],
     "youtubeVideoId": "9eFPJa95qQE",
     "backupVideoIds": [
@@ -5796,6 +5816,24 @@
     "backupVideoIds": []
   },
   {
+    "name": "Johannes Brahms",
+    "birthDate": "1833-05-07",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 1.8,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "romantic"
+    ],
+    "youtubeVideoId": "OJUame8uvPs",
+    "backupVideoIds": []
+  },
+  {
     "name": "John Adams",
     "birthDate": "1947-02-15",
     "venus": {
@@ -5812,7 +5850,7 @@
       "minimalist",
       "modern-classical"
     ],
-    "youtubeVideoId": "OeeLa_bvOK0",
+    "youtubeVideoId": "XtvrzmzxkEk",
     "backupVideoIds": []
   },
   {
@@ -6285,10 +6323,10 @@
       "idm"
     ],
     "subgenres": [
-      "classical",
-      "idm"
+      "experimental",
+      "electronic-classical"
     ],
-    "youtubeVideoId": "4bHnGorNTT0",
+    "youtubeVideoId": "cUSnnKzSFQg",
     "backupVideoIds": [
       "Cr2yMRMjFGc",
       "zDxpa-XPMTo"
@@ -7462,6 +7500,24 @@
       "66A_3uwuZ_I",
       "3h-JYx76QNM"
     ]
+  },
+  {
+    "name": "Maurice Ravel",
+    "birthDate": "1875-03-07",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 0.6,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "impressionist"
+    ],
+    "youtubeVideoId": "cmNEvSFWftc",
+    "backupVideoIds": []
   },
   {
     "name": "Max Richter",
@@ -9826,6 +9882,24 @@
     "backupVideoIds": []
   },
   {
+    "name": "Robert Schumann",
+    "birthDate": "1810-06-08",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 9,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "romantic"
+    ],
+    "youtubeVideoId": "3jbHbDena_U",
+    "backupVideoIds": []
+  },
+  {
     "name": "Robin Guthrie",
     "birthDate": "1962-01-04",
     "venus": {
@@ -11017,12 +11091,12 @@
     },
     "genres": [
       "ambient",
-      "classical"
+      "electronica"
     ],
     "subgenres": [
       "minimalist"
     ],
-    "youtubeVideoId": "g0WVh1D0N50",
+    "youtubeVideoId": "ZXJWO2FQ16c",
     "backupVideoIds": []
   },
   {
