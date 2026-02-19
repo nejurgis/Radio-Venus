@@ -1084,8 +1084,8 @@ function tick() {
     //    The offscreen canvas is 400×400 with R=160, so scale = moonR/160
     ctx.save();
     ctx.globalCompositeOperation = 'source-over';
-    ctx.shadowBlur  = moonR * 0.8;
-    ctx.shadowColor = 'rgba(100, 180, 255, 0.75)';
+    ctx.shadowBlur  = moonR * 1.8;
+    ctx.shadowColor = 'rgba(100, 180, 255, 0.6)';
     const phCanvas  = getMoonPhaseCanvas(moonDot.phaseAngle ?? 45);
     const drawSize  = moonR * 2;
     const srcR      = 160; // radius used inside phCanvas
@@ -1096,7 +1096,24 @@ function tick() {
     ctx.shadowBlur = 0;
     ctx.restore();
 
-    // 3. Label
+    // 3. Specular glow — matches the planet-sprite aesthetic: white hot focal point
+    //    offset toward the lit side, bleeding to blue-white to transparent
+    const moonWaxing = (moonDot.phaseAngle ?? 45) < 180;
+    ctx.save();
+    ctx.globalCompositeOperation = 'lighter';
+    const hlFocX = mx + (moonWaxing ? moonR * 0.3 : -moonR * 0.3);
+    const hlFocY = my - moonR * 0.3;
+    const hlG = ctx.createRadialGradient(hlFocX, hlFocY, moonR * 0.05, mx, my, moonR * 1.6);
+    hlG.addColorStop(0,    'rgba(255, 255, 255, 0.28)');
+    hlG.addColorStop(0.35, 'rgba(180, 215, 255, 0.12)');
+    hlG.addColorStop(1,    'rgba(100, 160, 255, 0)');
+    ctx.fillStyle = hlG;
+    ctx.beginPath();
+    ctx.arc(mx, my, moonR * 1.6, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+
+    // 4. Label
     if (isZoomed) {
       ctx.save();
       ctx.globalCompositeOperation = 'source-over';
