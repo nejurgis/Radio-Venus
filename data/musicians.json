@@ -4003,13 +4003,10 @@
       "element": "fire"
     },
     "genres": [
-      "classical",
       "artpop"
     ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "ki1nvcNbYH8",
+    "subgenres": [],
+    "youtubeVideoId": "L9Wnh0V4HMM",
     "backupVideoIds": [
       "XU46O2QzYF0",
       "Z7nekCeeRyg"
@@ -6221,12 +6218,10 @@
     },
     "genres": [
       "ambient",
-      "classical",
       "idm"
     ],
     "subgenres": [
       "ambient",
-      "classical",
       "idm"
     ],
     "youtubeVideoId": "bpZqFa0Qiro",
@@ -6704,15 +6699,13 @@
     },
     "genres": [
       "ambient",
-      "classical",
-      "techno"
+      "idm"
     ],
     "subgenres": [
       "ambient",
-      "classical",
-      "techno"
+      "idm"
     ],
-    "youtubeVideoId": "zLd1RUDmX6w",
+    "youtubeVideoId": "Hlw9cJJWZI8",
     "backupVideoIds": []
   },
   {
@@ -7106,13 +7099,11 @@
     },
     "genres": [
       "ambient",
-      "idm",
-      "classical"
+      "idm"
     ],
     "subgenres": [
       "ambient",
-      "idm",
-      "classical"
+      "idm"
     ],
     "youtubeVideoId": "xZyyGxLgTFo",
     "backupVideoIds": []
@@ -10952,8 +10943,7 @@
       "element": "fire"
     },
     "genres": [
-      "ambient",
-      "classical"
+      "ambient"
     ],
     "subgenres": [
       "ambient",
