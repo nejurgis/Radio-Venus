@@ -29,29 +29,24 @@ const getMoonPhaseCanvas = (phaseAngle) => {
   const p      = q * Math.PI / 180;
   const waxing = q < 180;
 
-  // Unlit side: deep blue-black with faint earthshine (reflected Earth light)
+  // Unlit side: deep blue-black with earthshine (faint Earth-reflected light)
   const darkG = mc.createRadialGradient(c - R * 0.15, c - R * 0.2, R * 0.05, c, c, R);
-  darkG.addColorStop(0,   'rgba(30, 40, 72, 0.95)');  // earthshine: slightly lighter core
+  darkG.addColorStop(0,   'rgba(30, 40, 72, 0.95)');
   darkG.addColorStop(0.6, 'rgba(14, 20, 45, 0.97)');
   darkG.addColorStop(1,   'rgba(3,  5,  16, 0.99)');
 
-  // Lit side: white core fading to lunar blue at the limb
+  // Lit side: bright white core fading to lunar blue at the limb
   const litG = mc.createRadialGradient(c + R * 0.2, c - R * 0.25, R * 0.05, c, c, R);
-  litG.addColorStop(0,   'rgba(255, 255, 252, 0.98)');
-  litG.addColorStop(0.4, 'rgba(225, 235, 255, 0.95)');
-  litG.addColorStop(0.8, 'rgba(155, 190, 245, 0.90)');
-  litG.addColorStop(1,   'rgba(90,  138, 210, 0.85)');
+  litG.addColorStop(0,   'rgba(255, 255, 255, 1.00)');
+  litG.addColorStop(0.3, 'rgba(248, 251, 255, 0.99)');
+  litG.addColorStop(0.7, 'rgba(200, 218, 255, 0.96)');
+  litG.addColorStop(1,   'rgba(140, 170, 230, 0.90)');
 
-  mc.save();
-  mc.beginPath();
-  mc.arc(c, c, R, 0, Math.PI * 2);
-  mc.clip();
-
-  // 1. Fill circle with dark background (earthshine baked into darkG above)
+  // 1. Dark background
   mc.fillStyle = darkG;
   mc.fillRect(0, 0, SIZE, SIZE);
 
-  // 2. Faint earthshine haze over the whole dark side — adds subtle sphere volume
+  // 2. Earthshine haze — subtle blue glow on dark side
   const earthshineG = mc.createRadialGradient(c, c, 0, c, c, R);
   earthshineG.addColorStop(0,   'rgba(55, 80, 140, 0.10)');
   earthshineG.addColorStop(0.7, 'rgba(40, 60, 110, 0.05)');
@@ -59,9 +54,10 @@ const getMoonPhaseCanvas = (phaseAngle) => {
   mc.fillStyle = earthshineG;
   mc.fillRect(0, 0, SIZE, SIZE);
 
-  // 3. Lit semicircle — right for waxing, left for waning
-  //    (covers earthshine on the lit half, giving clean bright surface)
+  // 3. Lit semicircle — pie-slice from center avoids the diameter-chord seam
+  //    (closePath now closes to the moveTo point = center, not across the diameter)
   mc.beginPath();
+  mc.moveTo(c, c);
   if (waxing) {
     mc.arc(c, c, R, -Math.PI / 2, Math.PI / 2, false); // right half
   } else {
@@ -72,15 +68,10 @@ const getMoonPhaseCanvas = (phaseAngle) => {
   mc.fill();
 
   // 4. Terminator ellipse — carves the crescent or extends to gibbous
-  //    rx = R·|cos(p)|: R at new/full, 0 at quarters
   const rx = Math.abs(Math.cos(p)) * R;
   if (rx > 0.5) {
     mc.beginPath();
     mc.ellipse(c, c, rx, R, 0, 0, Math.PI * 2);
-    // waxing crescent  (0–90°):   dark covers most of lit right half
-    // waxing gibbous   (90–180°): lit expands into dark left half
-    // waning gibbous   (180–270°): lit expands into dark right half
-    // waning crescent  (270–360°): dark covers most of lit left half
     if (waxing) {
       mc.fillStyle = q < 90 ? darkG : litG;
     } else {
@@ -89,17 +80,28 @@ const getMoonPhaseCanvas = (phaseAngle) => {
     mc.fill();
   }
 
-  // 5. Terminator softening — thin gradient band along the terminator line
+  // 5. Terminator softening — gradient band at the lit/dark boundary
   const terminatorX = c + (waxing ? Math.cos(p) : -Math.cos(p)) * R;
   const bw = Math.max(R * 0.10, 4);
   const softenG = mc.createLinearGradient(terminatorX - bw, c, terminatorX + bw, c);
   softenG.addColorStop(0,   'rgba(12, 18, 45, 0)');
-  softenG.addColorStop(0.5, 'rgba(12, 18, 45, 0.30)');
+  softenG.addColorStop(0.5, 'rgba(12, 18, 45, 0.28)');
   softenG.addColorStop(1,   'rgba(12, 18, 45, 0)');
   mc.fillStyle = softenG;
   mc.fillRect(terminatorX - bw, c - R, bw * 2, R * 2);
 
-  mc.restore();
+  // 6. Soft rim — destination-in radial mask fades edge to transparent
+  //    (replaces hard clip(), gives smooth anti-aliased edge at any scale)
+  mc.globalCompositeOperation = 'destination-in';
+  const rimFade = mc.createRadialGradient(c, c, R * 0.92, c, c, R);
+  rimFade.addColorStop(0, 'rgba(0, 0, 0, 1)');  // fully opaque inside
+  rimFade.addColorStop(1, 'rgba(0, 0, 0, 0)');  // fade to transparent at edge
+  mc.fillStyle = rimFade;
+  mc.beginPath();
+  mc.arc(c, c, R, 0, Math.PI * 2);
+  mc.fill();
+  mc.globalCompositeOperation = 'source-over';
+
   return _moonPhaseCanvas;
 };
 // ── Zodiac Nebula: artist distribution ring on the portal screen ─────────────
