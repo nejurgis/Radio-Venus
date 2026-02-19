@@ -29,12 +29,13 @@ const getMoonPhaseCanvas = (phaseAngle) => {
   const p      = q * Math.PI / 180;
   const waxing = q < 180;
 
-  // Unlit side: deep blue-black — must be fully opaque so it cleanly covers
-  // the lit semicircle when used for the terminator ellipse (avoids vertical seam)
+  // Unlit side: deep blue-black — fully opaque at stops so it covers the lit
+  // semicircle cleanly (avoids seam), but centre is lightened so the dark side
+  // feels like it belongs inside the atmospheric glow rather than a solid ball
   const darkG = mc.createRadialGradient(c - R * 0.15, c - R * 0.2, R * 0.05, c, c, R);
-  darkG.addColorStop(0,   'rgba(30, 40, 72, 1)');
-  darkG.addColorStop(0.6, 'rgba(14, 20, 45, 1)');
-  darkG.addColorStop(1,   'rgba(3,  5,  16, 1)');
+  darkG.addColorStop(0,   'rgba(45, 58, 95, 1)');
+  darkG.addColorStop(0.6, 'rgba(18, 26, 58, 1)');
+  darkG.addColorStop(1,   'rgba(6,  9,  24, 1)');
 
   // Lit side: bright white core fading to lunar blue at the limb
   const litG = mc.createRadialGradient(c + R * 0.2, c - R * 0.25, R * 0.05, c, c, R);
@@ -1082,7 +1083,7 @@ function tick() {
 
     // 2. Phase disc — slight blur so edges dissolve into the glow
     ctx.save();
-    ctx.filter = `blur(${Math.max(0.4, moonR * 0.18)}px)`;
+    ctx.filter = `blur(${Math.max(0.6, moonR * 0.30)}px)`;
     ctx.globalCompositeOperation = 'source-over';
     ctx.shadowBlur  = moonR * 2.5;
     ctx.shadowColor = 'rgba(120, 190, 255, 0.55)';
