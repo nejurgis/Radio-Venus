@@ -223,30 +223,30 @@ let zoomResolve = null;    // promise resolver
 // ── OPTIMIZED SPRITE GENERATOR (High-Res + Soft Glow Filter) ──────────────
 
 const spriteCache = new Map();
-const SPRITE_SCALE = 8; // Supersampling for Retina/High-DPI smoothness
+const SPRITE_SCALE = 4; // 4× is crisp at 2–3× DPR and creates sprites ~4× faster than 8×
 
 function getDotSprite(r, g, b, size, alpha) {
-  // Round params for cache hits
-  const kSize = Math.round(size * 10) / 10; 
-  const kAlpha = Math.round(alpha * 10) / 10;
+  // Coarser quantisation → fewer unique canvases in the cache
+  const kSize  = Math.round(size  * 2) / 2;  // 0.5-step buckets
+  const kAlpha = Math.round(alpha * 5) / 5;  // 0.2-step buckets
   const key = `${r},${g},${b},${kSize},${kAlpha}`;
-  
+
   if (spriteCache.has(key)) return spriteCache.get(key);
 
   const sCanvas = document.createElement('canvas');
-  const drawRadius = kSize * 1.5; 
-  const padding = 2; 
-  
-  // Canvas dimensions: Multiplied by SPRITE_SCALE for high resolution
+  const drawRadius = kSize * 1.5;
+  const padding = 2;
+
   const dim = Math.ceil((drawRadius * 2 + padding * 2) * SPRITE_SCALE);
   const c = dim / 2;
-  
+
   sCanvas.width = dim;
   sCanvas.height = dim;
   const sCtx = sCanvas.getContext('2d');
-  
+
   sCtx.scale(SPRITE_SCALE, SPRITE_SCALE);
-  sCtx.filter = 'blur(0.5px) saturate(1.2)';
+  // No ctx.filter here — the radial gradient already produces a smooth glow,
+  // and the blur/saturate filter was the dominant cost in sprite creation.
 
   const grad = sCtx.createRadialGradient(
     (c / SPRITE_SCALE) - drawRadius * 0.35, 
@@ -425,10 +425,6 @@ export function renderNebula(musicians) {
     const finalSize = genreSize + jS * 0.6;
     const finalAlpha = genreAlpha + jS * 0.1;
 
-    // Pre-generate high-res sprite
-    const sprite = getDotSprite(r, g, b, finalSize, finalAlpha);
-    const logicalDrawSize = sprite.width / SPRITE_SCALE;
-
     dots.push({
       signIndex,
       deg: clampedDeg,
@@ -440,13 +436,29 @@ export function renderNebula(musicians) {
       name: m.name,
       sign: m.venus.sign,
       genres: m.genres || [],
-      sprite: sprite, 
-      spriteDrawSize: logicalDrawSize,
-      spriteOffset: logicalDrawSize / 2
+      sprite: null,       // populated lazily below
+      spriteDrawSize: 0,
+      spriteOffset: 0,
     });
   }
 
+  // Start the animation loop immediately — dots fall back to inline gradients
+  // until their sprite is ready, so the nebula appears without any blocking delay.
   if (!animId) tick();
+
+  // Spread sprite creation across rAF callbacks (30 per frame ≈ ~7 frames for 600 dots)
+  let idx = 0;
+  (function buildBatch() {
+    const end = Math.min(idx + 30, dots.length);
+    while (idx < end) {
+      const dot = dots[idx++];
+      const s = getDotSprite(dot.r, dot.g, dot.b, dot.size, dot.alpha);
+      dot.sprite = s;
+      dot.spriteDrawSize = s.width / SPRITE_SCALE;
+      dot.spriteOffset   = dot.spriteDrawSize / 2;
+    }
+    if (idx < dots.length) requestAnimationFrame(buildBatch);
+  })();
 }
 
 export function setUserVenus(longitude, element) {
@@ -909,29 +921,23 @@ function tick() {
 
     const isHighlighted = isHovered || isOnNeedle;
 
-    if (dot.sprite) {
-        if (isHighlighted) {
-             const drawSize = isHovered ? 7 : 5;
-             const grad = ctx.createRadialGradient(x - drawSize*0.35, y - drawSize*0.35, drawSize*0.05, x, y, drawSize);
-             grad.addColorStop(0, `rgba(255,255,255,1)`);
-             grad.addColorStop(0.5, `rgba(${dot.r},${dot.g},${dot.b},0.9)`);
-             grad.addColorStop(1, `rgba(${Math.round(dot.r*0.1)},${Math.round(dot.g*0.1)},${Math.round(dot.b*0.1)},0)`);
-             ctx.fillStyle = grad;
-             ctx.beginPath();
-             ctx.arc(x, y, drawSize, 0, Math.PI*2);
-             ctx.fill();
-        } else {
-             ctx.drawImage(
-               dot.sprite, 
-               x - dot.spriteOffset, 
-               y - dot.spriteOffset, 
-               dot.spriteDrawSize, 
-               dot.spriteDrawSize
-             );
-        }
-    // Track needle state for crossing detection
-    if (isOnNeedle) curOnNeedle.add(i);
+    if (isHighlighted || !dot.sprite) {
+      // Highlighted dots always use a fresh gradient; sprite-less dots use it as fallback
+      const drawSize = isHovered ? 7 : isOnNeedle ? 5 : dot.size * 1.5;
+      const a = isHighlighted ? 1 : dot.alpha;
+      const grad = ctx.createRadialGradient(x - drawSize*0.35, y - drawSize*0.35, drawSize*0.05, x, y, drawSize);
+      grad.addColorStop(0,   `rgba(255,255,255,${a})`);
+      grad.addColorStop(0.5, `rgba(${dot.r},${dot.g},${dot.b},${a * 0.9})`);
+      grad.addColorStop(1,   `rgba(${Math.round(dot.r*0.1)},${Math.round(dot.g*0.1)},${Math.round(dot.b*0.1)},0)`);
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(x, y, drawSize, 0, Math.PI*2);
+      ctx.fill();
+    } else {
+      ctx.drawImage(dot.sprite, x - dot.spriteOffset, y - dot.spriteOffset, dot.spriteDrawSize, dot.spriteDrawSize);
     }
+    // Needle tracking outside sprite guard — works during lazy-load too
+    if (isOnNeedle) curOnNeedle.add(i);
   }
 
   // Swap needle tracking sets
