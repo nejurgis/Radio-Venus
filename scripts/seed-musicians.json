@@ -87,8 +87,7 @@
     "birthDate": "1976-05-24",
     "genres": [
       "ambient",
-      "idm",
-      "industrial"
+      "idm"
     ]
   },
   {
@@ -144,8 +143,8 @@
     "name": "Alva Noto",
     "birthDate": "1965-09-18",
     "genres": [
-      "idm",
-      "industrial"
+      "ambient",
+      "idm"
     ],
     "youtubeVideoId": "OEBZuKxUrwE",
     "subgenres": [
@@ -229,8 +228,9 @@
     "name": "Angel-Ho",
     "birthDate": "1994-01-01",
     "genres": [
-      "industrial",
-      "idm"
+      "electronica",
+      "idm",
+      "techno"
     ],
     "subgenres": [
       "experimental"
@@ -271,6 +271,7 @@
     "name": "Anthony Braxton",
     "birthDate": "1945-06-04",
     "genres": [
+      "classical",
       "jazz"
     ],
     "subgenres": [
@@ -342,6 +343,7 @@
     "name": "Arca",
     "birthDate": "1989-04-20",
     "genres": [
+      "artpop",
       "idm",
       "industrial"
     ],
@@ -584,8 +586,7 @@
     "name": "Black Chamber",
     "birthDate": "1943-01-25",
     "genres": [
-      "jazz",
-      "triphop"
+      "jazz"
     ]
   },
   {
@@ -663,6 +664,7 @@
     "name": "Bohren & der Club of Gore",
     "birthDate": "1994-01-01",
     "genres": [
+      "ambient",
       "jazz"
     ],
     "subgenres": [
@@ -752,8 +754,10 @@
     "name": "Cabaret Voltaire",
     "birthDate": "1953-10-21",
     "genres": [
+      "darkwave",
+      "idm",
       "industrial",
-      "darkwave"
+      "techno"
     ],
     "youtubeVideoId": "EkMRw-3UXi4",
     "subgenres": [
@@ -823,9 +827,9 @@
     "name": "Casino Versus Japan",
     "birthDate": "1973-05-05",
     "genres": [
-      "idm",
       "ambient",
-      "triphop"
+      "dnb",
+      "idm"
     ],
     "youtubeVideoId": "cAoWP84Slfk",
     "subgenres": [
@@ -837,8 +841,9 @@
     "name": "Caspian",
     "birthDate": "2003-00-00",
     "genres": [
-      "idm",
-      "ambient"
+      "altrock",
+      "ambient",
+      "electronica"
     ]
   },
   {
@@ -927,8 +932,8 @@
     "name": "Christ.",
     "birthDate": "2002-07-09",
     "genres": [
-      "idm",
-      "triphop"
+      "ambient",
+      "idm"
     ],
     "subgenres": [
       "glitch",
@@ -940,8 +945,10 @@
     "name": "Chrome",
     "birthDate": "1970-06-04",
     "genres": [
-      "industrial",
-      "darkwave"
+      "altrock",
+      "darkwave",
+      "idm",
+      "industrial"
     ],
     "youtubeVideoId": "2FZGba4hIq4"
   },
@@ -1201,8 +1208,9 @@
     "name": "Dean Blunt",
     "birthDate": "1984-02-08",
     "genres": [
-      "artpop",
-      "idm"
+      "electronica",
+      "idm",
+      "techno"
     ],
     "youtubeVideoId": "OuK_eqGCPC0",
     "subgenres": [
@@ -1330,6 +1338,7 @@
     "name": "DJ Shadow",
     "birthDate": "1972-06-29",
     "genres": [
+      "electronica",
       "triphop"
     ],
     "youtubeVideoId": "Pcz7MBfgD8g",
@@ -1342,8 +1351,7 @@
     "name": "DJ Spooky",
     "birthDate": "1970-09-11",
     "genres": [
-      "triphop",
-      "idm"
+      "triphop"
     ],
     "youtubeVideoId": "M1Nc6EGfBM4",
     "subgenres": [
@@ -1368,7 +1376,7 @@
     "name": "Do Make Say Think",
     "birthDate": "1995-00-00",
     "genres": [
-      "idm",
+      "altrock",
       "ambient"
     ]
   },
@@ -1470,7 +1478,6 @@
     "birthDate": "1941-05-24",
     "genres": [
       "ambient",
-      "classical",
       "idm"
     ]
   },
@@ -1640,7 +1647,6 @@
     "name": "Ex-Easter Island Head",
     "birthDate": "1961-06-15",
     "genres": [
-      "classical",
       "idm"
     ]
   },
@@ -1665,8 +1671,9 @@
     "name": "Fatima Al Qadiri",
     "birthDate": "1981-07-01",
     "genres": [
+      "electronica",
       "idm",
-      "dnb"
+      "techno"
     ],
     "subgenres": [
       "grime",
@@ -1679,7 +1686,8 @@
     "birthDate": "1981-00-00",
     "genres": [
       "ambient",
-      "idm"
+      "idm",
+      "techno"
     ]
   },
   {
@@ -1687,7 +1695,8 @@
     "birthDate": "1962-12-25",
     "genres": [
       "ambient",
-      "idm"
+      "idm",
+      "techno"
     ],
     "youtubeVideoId": "9_DjJFpqWRc",
     "subgenres": [
@@ -1735,8 +1744,9 @@
     "name": "FKA twigs",
     "birthDate": "1988-01-16",
     "genres": [
-      "triphop",
-      "artpop"
+      "artpop",
+      "idm",
+      "triphop"
     ],
     "subgenres": [
       "trip-hop",
@@ -1792,8 +1802,7 @@
     "name": "Flowdan",
     "birthDate": "1980-03-17",
     "genres": [
-      "dnb",
-      "industrial"
+      "dnb"
     ],
     "subgenres": [
       "grime",
@@ -1805,8 +1814,9 @@
     "name": "Flying Lotus",
     "birthDate": "1983-10-07",
     "genres": [
+      "electronica",
       "idm",
-      "triphop"
+      "jazz"
     ],
     "youtubeVideoId": "0ScYz9sNaQk",
     "subgenres": [
@@ -2075,7 +2085,10 @@
     "name": "Goldfrapp",
     "birthDate": "1966-05-13",
     "genres": [
+      "altrock",
+      "artpop",
       "darkwave",
+      "electronica",
       "triphop"
     ],
     "subgenres": [
@@ -2377,8 +2390,8 @@
     "name": "Hype Williams",
     "birthDate": "1984-02-08",
     "genres": [
-      "triphop",
-      "idm"
+      "artpop",
+      "techno"
     ],
     "youtubeVideoId": "BYTPiHTfKbA",
     "subgenres": [
@@ -2484,8 +2497,10 @@
     "name": "Jan Jelinek",
     "birthDate": "1969-07-29",
     "genres": [
+      "ambient",
       "idm",
-      "ambient"
+      "techno",
+      "triphop"
     ],
     "youtubeVideoId": "jSFbtIyAqRw",
     "subgenres": [
@@ -2710,7 +2725,9 @@
     "birthDate": "1989-03-10",
     "genres": [
       "dnb",
-      "idm"
+      "electronica",
+      "idm",
+      "triphop"
     ],
     "subgenres": [
       "dubstep",
@@ -2917,8 +2934,7 @@
     "name": "King Midas Sound",
     "birthDate": "1965-09-22",
     "genres": [
-      "triphop",
-      "industrial"
+      "triphop"
     ],
     "subgenres": [
       "dub",
@@ -2995,7 +3011,10 @@
     "birthDate": "1973-01-01",
     "genres": [
       "dnb",
-      "idm"
+      "electronica",
+      "idm",
+      "techno",
+      "triphop"
     ],
     "subgenres": [
       "dubstep",
@@ -3117,6 +3136,7 @@
     "name": "Loraine James",
     "birthDate": "1995-12-18",
     "genres": [
+      "electronica",
       "idm",
       "techno"
     ],
@@ -3292,7 +3312,8 @@
     "birthDate": "1957-12-01",
     "genres": [
       "ambient",
-      "industrial"
+      "industrial",
+      "jazz"
     ],
     "youtubeVideoId": "gB7IQxE_03s",
     "subgenres": [
@@ -3424,6 +3445,7 @@
     "name": "Massive Attack",
     "birthDate": "1968-01-21",
     "genres": [
+      "electronica",
       "triphop"
     ],
     "youtubeVideoId": "u7K72X4eo_s",
@@ -3494,6 +3516,7 @@
     "birthDate": "1994-11-09",
     "genres": [
       "ambient",
+      "dnb",
       "idm"
     ]
   },
@@ -3501,6 +3524,9 @@
     "name": "Merzbow",
     "birthDate": "1956-12-19",
     "genres": [
+      "altrock",
+      "ambient",
+      "idm",
       "industrial"
     ],
     "youtubeVideoId": "AguPH0XBxdw",
@@ -3661,8 +3687,10 @@
     "name": "Monolake",
     "birthDate": "1969-05-10",
     "genres": [
+      "ambient",
+      "idm",
       "techno",
-      "idm"
+      "triphop"
     ],
     "youtubeVideoId": "Es1_vd8cQBs",
     "subgenres": [
@@ -3675,6 +3703,7 @@
     "name": "Morcheeba",
     "birthDate": "1969-03-11",
     "genres": [
+      "electronica",
       "triphop"
     ],
     "subgenres": [
@@ -3699,8 +3728,7 @@
     "birthDate": "1685-03-21",
     "genres": [
       "ambient",
-      "idm",
-      "techno"
+      "idm"
     ]
   },
   {
@@ -3748,6 +3776,7 @@
     "name": "Mouse on Mars",
     "birthDate": "1969-09-02",
     "genres": [
+      "electronica",
       "idm"
     ],
     "youtubeVideoId": "CL7qasY77wA",
@@ -3986,8 +4015,10 @@
     "name": "Oneohtrix Point Never",
     "birthDate": "1982-07-17",
     "genres": [
-      "idm",
-      "ambient"
+      "ambient",
+      "artpop",
+      "electronica",
+      "idm"
     ],
     "youtubeVideoId": "4z6u_S_VIno",
     "subgenres": [
@@ -4318,6 +4349,9 @@
     "name": "Portishead",
     "birthDate": "1971-04-06",
     "genres": [
+      "altrock",
+      "artpop",
+      "electronica",
       "triphop"
     ],
     "youtubeVideoId": "yF-GvT8Clnk",
@@ -4357,7 +4391,7 @@
     "birthDate": "1961-06-22",
     "genres": [
       "altrock",
-      "triphop"
+      "electronica"
     ],
     "subgenres": [
       "new-wave",
@@ -4459,7 +4493,8 @@
     "name": "Red Sparowes",
     "birthDate": "2003-00-00",
     "genres": [
-      "idm"
+      "altrock",
+      "ambient"
     ]
   },
   {
@@ -4598,8 +4633,7 @@
     "name": "Ryoji Ikeda",
     "birthDate": "1966-04-15",
     "genres": [
-      "idm",
-      "industrial"
+      "idm"
     ],
     "youtubeVideoId": "uvSLLyePrRk",
     "subgenres": [
@@ -4626,7 +4660,7 @@
     "name": "Samiyam",
     "birthDate": "1985-01-01",
     "genres": [
-      "triphop",
+      "electronica",
       "idm"
     ],
     "subgenres": [
@@ -4677,8 +4711,9 @@
     "name": "Schwefelgelb",
     "birthDate": "2004-06-15",
     "genres": [
-      "industrial",
       "darkwave",
+      "idm",
+      "industrial",
       "techno"
     ],
     "youtubeVideoId": "sz3WGYKGNYU"
@@ -4764,9 +4799,10 @@
     "name": "Severed Heads",
     "birthDate": "1979-06-15",
     "genres": [
-      "industrial",
+      "ambient",
+      "darkwave",
       "idm",
-      "darkwave"
+      "industrial"
     ],
     "youtubeVideoId": "Orr2ZqtijCQ"
   },
@@ -4831,6 +4867,7 @@
     "name": "Skinny Puppy",
     "birthDate": "1959-12-08",
     "genres": [
+      "darkwave",
       "industrial"
     ],
     "youtubeVideoId": "cod8bRiQjj4",
@@ -4961,8 +4998,8 @@
     "name": "SOPHIE",
     "birthDate": "1986-09-17",
     "genres": [
-      "idm",
-      "industrial"
+      "artpop",
+      "idm"
     ],
     "youtubeVideoId": "es9-P1SOtHU",
     "subgenres": [
@@ -5080,7 +5117,8 @@
     "birthDate": "1984-01-01",
     "genres": [
       "ambient",
-      "idm"
+      "idm",
+      "techno"
     ],
     "youtubeVideoId": "_V76ZoLKvxg",
     "subgenres": [
@@ -5252,7 +5290,8 @@
     "genres": [
       "darkwave",
       "industrial",
-      "techno"
+      "techno",
+      "triphop"
     ],
     "youtubeVideoId": "nBYQYBnifrQ"
   },
@@ -5293,14 +5332,15 @@
     "name": "The American Dollar",
     "birthDate": "1934-10-09",
     "genres": [
-      "ambient",
-      "idm"
+      "altrock",
+      "ambient"
     ]
   },
   {
     "name": "The Black Dog",
     "birthDate": "1969-01-01",
     "genres": [
+      "ambient",
       "idm",
       "techno"
     ],
@@ -5314,8 +5354,8 @@
     "name": "The Bug",
     "birthDate": "1965-09-22",
     "genres": [
-      "industrial",
-      "dnb"
+      "dnb",
+      "triphop"
     ],
     "subgenres": [
       "dub",
@@ -5507,6 +5547,8 @@
     "name": "Throbbing Gristle",
     "birthDate": "1950-02-22",
     "genres": [
+      "darkwave",
+      "idm",
       "industrial"
     ],
     "youtubeVideoId": "Y8klW9trVTQ",
@@ -5575,6 +5617,7 @@
     "name": "Tricky",
     "birthDate": "1968-01-27",
     "genres": [
+      "electronica",
       "triphop"
     ],
     "youtubeVideoId": "E3R_3h6zQEs",
@@ -5594,7 +5637,6 @@
     "name": "Tristan Arp",
     "birthDate": "1950-04-02",
     "genres": [
-      "electronica",
       "idm"
     ]
   },
@@ -5654,8 +5696,12 @@
     "name": "Ulrich Schnauss",
     "birthDate": "1977-11-20",
     "genres": [
+      "altrock",
+      "ambient",
+      "electronica",
       "idm",
-      "ambient"
+      "indiepop",
+      "techno"
     ],
     "youtubeVideoId": "9WujHGP0ojY",
     "subgenres": [
@@ -5961,8 +6007,9 @@
     "name": "Zoviet France",
     "birthDate": "1980-01-01",
     "genres": [
-      "industrial",
-      "ambient"
+      "ambient",
+      "idm",
+      "industrial"
     ],
     "subgenres": [
       "industrial",
@@ -6126,14 +6173,15 @@
     "name": "Dark Dark Dark",
     "birthDate": "1998-06-15",
     "genres": [
-      "idm"
+      "folk"
     ]
   },
   {
     "name": "Hand Habits",
     "birthDate": "1971-06-15",
     "genres": [
-      "idm"
+      "artpop",
+      "indiepop"
     ]
   },
   {
@@ -6147,8 +6195,9 @@
     "name": "Modern Nature",
     "birthDate": "1972-12-05",
     "genres": [
-      "idm",
-      "jazz"
+      "ambient",
+      "folk",
+      "idm"
     ]
   },
   {
@@ -6352,6 +6401,8 @@
     "birthDate": "2012-00-00",
     "genres": [
       "altrock",
+      "darkwave",
+      "indiepop",
       "industrial"
     ]
   },
