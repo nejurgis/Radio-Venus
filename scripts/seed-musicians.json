@@ -136,7 +136,8 @@
     "name": "Alison's Halo",
     "birthDate": "1985-06-03",
     "genres": [
-      "artpop"
+      "altrock",
+      "indiepop"
     ]
   },
   {
@@ -531,8 +532,8 @@
     "name": "Benoît Pioulard",
     "birthDate": "1984-08-04",
     "genres": [
+      "altrock",
       "ambient",
-      "artpop",
       "indiepop"
     ],
     "youtubeVideoId": "CmrFHDBnTTA",
@@ -592,10 +593,12 @@
     "name": "Black Tape for a Blue Girl",
     "birthDate": "1986-00-00",
     "genres": [
-      "darkwave",
+      "altrock",
       "artpop",
-      "ambient",
-      "classical"
+      "classical",
+      "darkwave",
+      "electronica",
+      "indiepop"
     ]
   },
   {
@@ -1014,7 +1017,8 @@
     "genres": [
       "altrock",
       "artpop",
-      "darkwave"
+      "darkwave",
+      "indiepop"
     ],
     "subgenres": [
       "darkwave",
@@ -1751,6 +1755,7 @@
     "name": "Fleeting Joys",
     "birthDate": "1992-08-06",
     "genres": [
+      "altrock",
       "artpop",
       "indiepop"
     ]
@@ -1759,6 +1764,7 @@
     "name": "Fleetwood Mac",
     "birthDate": "1967-07-01",
     "genres": [
+      "altrock",
       "artpop"
     ],
     "subgenres": [
@@ -2187,9 +2193,8 @@
     "name": "Harold Budd, Simon Raymonde, Robin Guthrie & Elizabeth Fraser",
     "birthDate": "1962-01-04",
     "genres": [
-      "artpop",
       "ambient",
-      "darkwave"
+      "artpop"
     ]
   },
   {
@@ -2284,6 +2289,7 @@
     "name": "His Name Is Alive",
     "birthDate": "1985-00-00",
     "genres": [
+      "altrock",
       "artpop",
       "indiepop"
     ]
@@ -2325,7 +2331,7 @@
     "birthDate": "2001-00-00",
     "genres": [
       "artpop",
-      "idm"
+      "indiepop"
     ]
   },
   {
@@ -2441,7 +2447,7 @@
     "name": "Isabel's Dream",
     "birthDate": "1977-09-20",
     "genres": [
-      "artpop",
+      "altrock",
       "indiepop"
     ]
   },
@@ -2603,7 +2609,7 @@
     "birthDate": "1982-01-18",
     "genres": [
       "artpop",
-      "classical"
+      "folk"
     ],
     "subgenres": [
       "chamber-pop",
@@ -2733,8 +2739,9 @@
     "name": "Joni Mitchell",
     "birthDate": "1943-11-07",
     "genres": [
-      "jazz",
-      "artpop"
+      "artpop",
+      "folk",
+      "jazz"
     ],
     "subgenres": [
       "soul-jazz"
@@ -2858,7 +2865,8 @@
     "name": "Kate Bush",
     "birthDate": "1958-07-30",
     "genres": [
-      "artpop"
+      "artpop",
+      "darkwave"
     ],
     "subgenres": [
       "art-pop",
@@ -2870,9 +2878,8 @@
     "name": "Kelela",
     "birthDate": "1983-06-04",
     "genres": [
-      "triphop",
-      "dnb",
-      "artpop"
+      "artpop",
+      "triphop"
     ],
     "subgenres": [
       "trip-hop",
@@ -2921,8 +2928,10 @@
     "name": "Kitchens of Distinction",
     "birthDate": "1986-00-00",
     "genres": [
+      "altrock",
       "artpop",
-      "darkwave"
+      "electronica",
+      "indiepop"
     ]
   },
   {
@@ -3037,7 +3046,6 @@
     "genres": [
       "ambient",
       "artpop",
-      "idm",
       "techno"
     ],
     "youtubeVideoId": "8TeMNkNEPeM",
@@ -3155,6 +3163,7 @@
     "name": "Love Spirals Downwards",
     "birthDate": "1991-00-00",
     "genres": [
+      "altrock",
       "ambient",
       "artpop",
       "darkwave",
@@ -3174,8 +3183,9 @@
     "name": "LSD and the Search for God",
     "birthDate": "1989-08-17",
     "genres": [
+      "altrock",
       "artpop",
-      "idm"
+      "indiepop"
     ]
   },
   {
@@ -3196,8 +3206,7 @@
     "name": "Lucinda Chua",
     "birthDate": "1988-01-01",
     "genres": [
-      "artpop",
-      "classical"
+      "artpop"
     ],
     "subgenres": [
       "ambient",
@@ -3447,8 +3456,9 @@
     "name": "Mazzy Star",
     "birthDate": "1989-00-00",
     "genres": [
+      "altrock",
       "artpop",
-      "idm"
+      "indiepop"
     ]
   },
   {
@@ -3463,7 +3473,7 @@
     "name": "Medicine",
     "birthDate": "1943-06-15",
     "genres": [
-      "artpop",
+      "altrock",
       "indiepop"
     ]
   },
@@ -3616,15 +3626,15 @@
     "birthDate": "1995-00-00",
     "genres": [
       "artpop",
-      "idm"
+      "indiepop"
     ]
   },
   {
     "name": "Monaco",
     "birthDate": "1995-06-15",
     "genres": [
-      "darkwave",
-      "artpop"
+      "altrock",
+      "electronica"
     ],
     "subgenres": [
       "synth-pop",
@@ -3779,8 +3789,9 @@
     "name": "my bloody valentine",
     "birthDate": "1983-00-00",
     "genres": [
+      "altrock",
       "artpop",
-      "industrial"
+      "indiepop"
     ]
   },
   {
@@ -4052,8 +4063,9 @@
     "name": "Pale Saints",
     "birthDate": "1987-00-00",
     "genres": [
+      "altrock",
       "artpop",
-      "industrial"
+      "indiepop"
     ]
   },
   {
@@ -4103,7 +4115,10 @@
     "name": "Perfume Genius",
     "birthDate": "1981-09-25",
     "genres": [
-      "artpop"
+      "artpop",
+      "darkwave",
+      "electronica",
+      "indiepop"
     ],
     "youtubeVideoId": "KKqlxdh9pDE"
   },
@@ -4727,9 +4742,8 @@
     "name": "Sevdaliza",
     "birthDate": "1987-04-12",
     "genres": [
-      "triphop",
-      "idm",
-      "artpop"
+      "artpop",
+      "triphop"
     ],
     "youtubeVideoId": "4WKQB_sOlv4",
     "subgenres": [
@@ -4996,7 +5010,10 @@
     "name": "St. Vincent",
     "birthDate": "1982-09-28",
     "genres": [
-      "artpop"
+      "artpop",
+      "darkwave",
+      "electronica",
+      "indiepop"
     ],
     "youtubeVideoId": "nWW4tFuzxGE"
   },
@@ -5004,6 +5021,7 @@
     "name": "Starflyer 59",
     "birthDate": "1993-00-00",
     "genres": [
+      "altrock",
       "artpop",
       "indiepop"
     ]
@@ -5810,7 +5828,9 @@
     "name": "Weyes Blood",
     "birthDate": "1988-06-11",
     "genres": [
-      "artpop"
+      "artpop",
+      "folk",
+      "indiepop"
     ],
     "youtubeVideoId": "Mwu3kCaIFf0"
   },
@@ -6034,14 +6054,15 @@
     "birthDate": "2011-00-00",
     "genres": [
       "artpop",
-      "ambient"
+      "folk",
+      "industrial"
     ]
   },
   {
     "name": "Midwife",
     "birthDate": "2025-10-01",
     "genres": [
-      "artpop",
+      "altrock",
       "idm",
       "indiepop"
     ]
@@ -6254,6 +6275,7 @@
     "name": "Animal Collective",
     "birthDate": "1999-00-00",
     "genres": [
+      "altrock",
       "artpop",
       "darkwave",
       "electronica",
@@ -6284,6 +6306,7 @@
     "birthDate": "2004-05-28",
     "mbid": "543e0a66-ab78-40fc-988a-e5abcb09debf",
     "genres": [
+      "altrock",
       "artpop",
       "indiepop"
     ]
@@ -6294,8 +6317,7 @@
     "mbid": "15c0e62b-3e46-4666-845d-d6c86bd44774",
     "genres": [
       "artpop",
-      "folk",
-      "indiepop"
+      "folk"
     ]
   },
   {
@@ -6337,5 +6359,46 @@
     ],
     "youtubeId": "_MzXQ9Xj3qQ",
     "birthDate": "1995-04-03"
+  },
+  {
+    "name": "Julianna Barwick",
+    "birthDate": "2000-01-01",
+    "genres": [
+      "ambient",
+      "artpop"
+    ]
+  },
+  {
+    "name": "Bellezza Eterna",
+    "birthDate": "1995-06-15",
+    "mbid": "189e72f7-cf0e-4e77-9a49-403ade2fbd17",
+    "genres": [
+      "ambient"
+    ]
+  },
+  {
+    "name": "Maria Duhova Trevor",
+    "birthDate": "1970-05-25",
+    "mbid": "b8634d0b-e1f8-4671-9ed9-21e9a03973ed",
+    "genres": [
+      "classical",
+      "ambient"
+    ]
+  },
+  {
+    "name": "Kristján Martinsson",
+    "birthDate": "1986-01-24",
+    "mbid": "d4141adc-6ebd-48f4-b20b-b5060a08f564",
+    "genres": [
+      "ambient"
+    ]
+  },
+  {
+    "name": "Dharma Gaia",
+    "birthDate": "1997-09-29",
+    "mbid": "210efc30-fed4-4413-bb06-25b016ce39d6",
+    "genres": [
+      "ambient"
+    ]
   }
 ]
