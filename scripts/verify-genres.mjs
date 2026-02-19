@@ -5,12 +5,13 @@
 // Runs sequentially to be polite to Everynoise (~13s per artist).
 //
 // Usage:
-//   node scripts/verify-genres.mjs                    # all artists
-//   node scripts/verify-genres.mjs --genre=artpop     # filter by stored genre
-//   node scripts/verify-genres.mjs --limit=50         # cap run
-//   node scripts/verify-genres.mjs --skip=50          # resume after N
-//   node scripts/verify-genres.mjs --output=my.json   # custom report file
-//   node scripts/verify-genres.mjs --seed             # read seed-musicians.json instead of built musicians.json
+//   node scripts/verify-genres.mjs                              # all artists
+//   node scripts/verify-genres.mjs --genre=artpop               # filter by stored genre
+//   node scripts/verify-genres.mjs --limit=50                   # cap run
+//   node scripts/verify-genres.mjs --skip=50                    # resume after N
+//   node scripts/verify-genres.mjs --output=my.json             # custom report file
+//   node scripts/verify-genres.mjs --seed                       # read seed-musicians.json instead of built musicians.json
+//   node scripts/verify-genres.mjs --from-report=prev.json      # re-check only the notFound artists from a previous report
 //
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -23,11 +24,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const args = process.argv.slice(2);
 const getArg = name => { const a = args.find(a => a.startsWith(`--${name}=`)); return a ? a.slice(name.length + 3) : null; };
 
-const filterGenre = getArg('genre');
-const limit       = parseInt(getArg('limit') || '0');
-const skip        = parseInt(getArg('skip')  || '0');
-const outputFile  = getArg('output') || join(__dirname, 'genre-report.json');
-const useSeed     = args.includes('--seed');
+const filterGenre  = getArg('genre');
+const limit        = parseInt(getArg('limit') || '0');
+const skip         = parseInt(getArg('skip')  || '0');
+const outputFile   = getArg('output') || join(__dirname, 'genre-report.json');
+const useSeed      = args.includes('--seed');
+const fromReport   = getArg('from-report');  // re-check notFound artists from a previous report
 
 // ── Load DB ───────────────────────────────────────────────────────────────────
 const dbPath = useSeed
@@ -36,9 +38,23 @@ const dbPath = useSeed
 const db = JSON.parse(readFileSync(dbPath, 'utf-8'));
 
 let artists = db.filter(a => a.genres?.length);
-if (filterGenre) artists = artists.filter(a => a.genres.includes(filterGenre));
-if (skip)        artists = artists.slice(skip);
-if (limit)       artists = artists.slice(0, limit);
+
+if (fromReport) {
+  // Pull the notFound names from a previous report and re-check only those
+  const prev = JSON.parse(readFileSync(fromReport, 'utf-8'));
+  const retryNames = new Set((prev.notFound || []).map(e => e.name));
+  // For artists not in the DB (collaborations, etc.) synthesise a minimal entry from the report
+  const inDb = new Set(db.map(a => a.name));
+  const synth = (prev.notFound || [])
+    .filter(e => !inDb.has(e.name))
+    .map(e => ({ name: e.name, genres: e.stored }));
+  artists = [...db.filter(a => retryNames.has(a.name)), ...synth];
+  console.log(`Re-checking ${artists.length} notFound artists from ${fromReport}`);
+} else {
+  if (filterGenre) artists = artists.filter(a => a.genres.includes(filterGenre));
+  if (skip)        artists = artists.slice(skip);
+  if (limit)       artists = artists.slice(0, limit);
+}
 
 console.log(`Verifying ${artists.length} artists against Everynoise...`);
 if (filterGenre) console.log(`  genre filter: ${filterGenre}`);
@@ -114,9 +130,14 @@ for (let i = 0; i < artists.length; i++) {
 
   const enRaw = await getEverynoiseGenres(artist.name);
 
-  // Geo-specific genre markers = strong signal we matched the wrong artist
+  // Geo-specific genre markers = strong signal we matched the wrong artist —
+  // BUT only if those geo tags don't actually categorize to our genres (e.g.
+  // "polish classical" is correct for Chopin; "lithuanian pop" for anyone else is noise).
   const GEO_NOISE = /\b(lithuanian|latvian|estonian|ukrainian|polish|czech|slovak|romanian|bulgarian|serbian|croatian|slovenian|nordic|norwegian|swedish|icelandic|finnish|danish|japanese|korean|chinese|oulu|tallinn|riga|vilnius)\b/i;
-  const isWrongMatch = enRaw && enRaw.some(g => GEO_NOISE.test(g));
+  const hasGeoNoise = enRaw && enRaw.some(g => GEO_NOISE.test(g));
+  const preCategories = hasGeoNoise ? [...new Set(categorizeGenres(enRaw))] : [];
+  const hasOverlap    = preCategories.some(c => stored.includes(c));
+  const isWrongMatch  = hasGeoNoise && !hasOverlap;
 
   if (!enRaw || isWrongMatch) {
     const reason = isWrongMatch ? `wrong match (geo tags: ${enRaw.filter(g => GEO_NOISE.test(g)).join(', ')})` : 'not found';

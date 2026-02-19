@@ -29,35 +29,26 @@ const getMoonPhaseCanvas = (phaseAngle) => {
   const p      = q * Math.PI / 180;
   const waxing = q < 180;
 
-  // Unlit side: deep blue-black — fully opaque at stops so it covers the lit
-  // semicircle cleanly (avoids seam), but centre is lightened so the dark side
-  // feels like it belongs inside the atmospheric glow rather than a solid ball
-  const darkG = mc.createRadialGradient(c - R * 0.15, c - R * 0.2, R * 0.05, c, c, R);
-  darkG.addColorStop(0,   'rgba(45, 58, 95, 1)');
-  darkG.addColorStop(0.6, 'rgba(18, 26, 58, 1)');
-  darkG.addColorStop(1,   'rgba(6,  9,  24, 1)');
+  // Phase-based color temperature: crescent (near horizon) = warm gold,
+  // full moon (high in sky) = cool silver-white. warmth: 1 at new, 0 at full.
+  const warmth = (Math.cos(p) + 1) / 2;
+  const lerp = (a, b, t) => Math.round(a + (b - a) * t);
+  // core:  cool (235,245,255) ↔ warm (255,252,230)
+  const [cr, cg, cb] = [lerp(235,255,warmth), lerp(245,252,warmth), lerp(255,230,warmth)];
+  // mid:   cool (210,225,248) ↔ warm (255,238,180)
+  const [mr, mg, mb] = [lerp(210,255,warmth), lerp(225,238,warmth), lerp(248,180,warmth)];
+  // outer: cool (170,200,240) ↔ warm (255,210,120)
+  const [or_, og, ob] = [lerp(170,255,warmth), lerp(200,210,warmth), lerp(240,120,warmth)];
+  // limb:  cool (120,160,215) ↔ warm (210,150,70)
+  const [lr, lg, lb] = [lerp(120,210,warmth), lerp(160,150,warmth), lerp(215,70,warmth)];
 
-  // Lit side: bright white core fading to lunar blue at the limb
   const litG = mc.createRadialGradient(c + R * 0.2, c - R * 0.25, R * 0.05, c, c, R);
-  litG.addColorStop(0,   'rgba(255, 255, 255, 1.00)');
-  litG.addColorStop(0.3, 'rgba(248, 251, 255, 0.99)');
-  litG.addColorStop(0.7, 'rgba(200, 218, 255, 0.96)');
-  litG.addColorStop(1,   'rgba(140, 170, 230, 0.90)');
+  litG.addColorStop(0,   `rgba(${cr},  ${cg},  ${cb},  1.00)`);
+  litG.addColorStop(0.3, `rgba(${mr},  ${mg},  ${mb},  0.99)`);
+  litG.addColorStop(0.7, `rgba(${or_}, ${og},  ${ob},  0.95)`);
+  litG.addColorStop(1,   `rgba(${lr},  ${lg},  ${lb},  0.80)`);
 
-  // 1. Dark background
-  mc.fillStyle = darkG;
-  mc.fillRect(0, 0, SIZE, SIZE);
-
-  // 2. Earthshine haze — subtle blue glow on dark side
-  const earthshineG = mc.createRadialGradient(c, c, 0, c, c, R);
-  earthshineG.addColorStop(0,   'rgba(55, 80, 140, 0.10)');
-  earthshineG.addColorStop(0.7, 'rgba(40, 60, 110, 0.05)');
-  earthshineG.addColorStop(1,   'rgba(20, 35,  75, 0)');
-  mc.fillStyle = earthshineG;
-  mc.fillRect(0, 0, SIZE, SIZE);
-
-  // 3. Lit semicircle — pie-slice from center avoids the diameter-chord seam
-  //    (closePath now closes to the moveTo point = center, not across the diameter)
+  // 1. Lit semicircle — pie-slice from center avoids the diameter-chord seam
   mc.beginPath();
   mc.moveTo(c, c);
   if (waxing) {
@@ -69,31 +60,26 @@ const getMoonPhaseCanvas = (phaseAngle) => {
   mc.fillStyle = litG;
   mc.fill();
 
-  // 4. Terminator ellipse — carves the crescent or extends to gibbous
+  // 2. Terminator ellipse — carves crescent (transparent dark side) or extends to gibbous
+  //    Crescent cases use destination-out so the dark side is fully transparent,
+  //    not an opaque disc — matching the real moon against a dark sky.
   const rx = Math.abs(Math.cos(p)) * R;
   if (rx > 0.5) {
     mc.beginPath();
     mc.ellipse(c, c, rx, R, 0, 0, Math.PI * 2);
-    if (waxing) {
-      mc.fillStyle = q < 90 ? darkG : litG;
+    const isCrescent = (waxing && q < 90) || (!waxing && q >= 270);
+    if (isCrescent) {
+      mc.globalCompositeOperation = 'destination-out';
+      mc.fillStyle = 'rgba(0, 0, 0, 1)';
     } else {
-      mc.fillStyle = q < 270 ? litG : darkG;
+      mc.globalCompositeOperation = 'source-over';
+      mc.fillStyle = litG;
     }
     mc.fill();
+    mc.globalCompositeOperation = 'source-over';
   }
 
-  // 5. Terminator softening — gradient band at the lit/dark boundary
-  const terminatorX = c + (waxing ? Math.cos(p) : -Math.cos(p)) * R;
-  const bw = Math.max(R * 0.10, 4);
-  const softenG = mc.createLinearGradient(terminatorX - bw, c, terminatorX + bw, c);
-  softenG.addColorStop(0,   'rgba(12, 18, 45, 0)');
-  softenG.addColorStop(0.5, 'rgba(12, 18, 45, 0.28)');
-  softenG.addColorStop(1,   'rgba(12, 18, 45, 0)');
-  mc.fillStyle = softenG;
-  mc.fillRect(terminatorX - bw, c - R, bw * 2, R * 2);
-
-  // 6. Soft rim — destination-in radial mask fades edge to transparent
-  //    (replaces hard clip(), gives smooth anti-aliased edge at any scale)
+  // 3. Soft rim — destination-in radial mask fades edge to transparent
   mc.globalCompositeOperation = 'destination-in';
   const rimFade = mc.createRadialGradient(c, c, R * 0.92, c, c, R);
   rimFade.addColorStop(0, 'rgba(0, 0, 0, 1)');  // fully opaque inside
@@ -103,18 +89,6 @@ const getMoonPhaseCanvas = (phaseAngle) => {
   mc.arc(c, c, R, 0, Math.PI * 2);
   mc.fill();
   mc.globalCompositeOperation = 'source-over';
-
-  // Bake edge-softening blur into the cached canvas so the main canvas never
-  // needs ctx.filter or ctx.shadowBlur on a drawImage call — both cause a
-  // rectangular-highlight artefact on mobile Safari.
-  // 48px ≈ R*0.30, which matches moonR*0.30 visual blur after downscale.
-  const blurred = document.createElement('canvas');
-  blurred.width = SIZE; blurred.height = SIZE;
-  const bc = blurred.getContext('2d');
-  bc.filter = 'blur(48px)';
-  bc.drawImage(_moonPhaseCanvas, 0, 0);
-  mc.clearRect(0, 0, SIZE, SIZE);
-  mc.drawImage(blurred, 0, 0);
 
   return _moonPhaseCanvas;
 };
@@ -192,6 +166,7 @@ let zoomDriftEnabled = false;
 let userDot = null;
 let previewDot = null;  // soft glow while typing birth date
 let moonDot = null;     // current Moon position on the ecliptic
+let sunDot  = null;     // current Sun position on the ecliptic
 let dots = [];
 const signBirths = new Array(12).fill(0); // timestamp per sign, 0 = not yet revealed
 let moonBirth = 0;                         // timestamp for moon reveal, 0 = hidden
@@ -502,6 +477,9 @@ export function setPreviewVenus(longitude, element) {
 export function clearPreviewVenus() { previewDot = null; }
 export function setMoonPosition(longitude, phaseAngle = 45) {
   moonDot = { deg: longitude, phaseAngle, birth: performance.now() };
+}
+export function setSunPosition(longitude) {
+  sunDot = { deg: longitude, birth: performance.now() };
 }
 export function onNebulaHover(callback) { hoverCallback = callback; }
 export function onNebulaClick(callback) { clickCallback = callback; }
@@ -1102,13 +1080,62 @@ function tick() {
     ctx.restore();
   }
 
+  // ── Sun dot ──────────────────────────────────────────────────────────────────
+  if (sunDot) {
+    const sAngle = (-(sunDot.deg) - 90 + rot) * Math.PI / 180;
+    const sx = cx + midR * Math.cos(sAngle);
+    const sy = cy + midR * Math.sin(sAngle);
+
+    const sunR   = isZoomed ? 5 : Math.min(11, minDim * 0.024);
+    const coronaR = sunR * 4.5;
+
+    // 1. Outer corona haze (additive)
+    ctx.save();
+    ctx.globalCompositeOperation = 'lighter';
+    const coronaG = ctx.createRadialGradient(sx, sy, 0, sx, sy, coronaR);
+    coronaG.addColorStop(0,   'rgba(255, 240, 160, 0.60)');
+    coronaG.addColorStop(0.2, 'rgba(255, 200,  80, 0.35)');
+    coronaG.addColorStop(0.6, 'rgba(255, 150,  40, 0.10)');
+    coronaG.addColorStop(1,   'rgba(255, 100,  20, 0)');
+    ctx.fillStyle = coronaG;
+    ctx.beginPath();
+    ctx.arc(sx, sy, coronaR, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+
+    // 2. Solar disc
+    ctx.save();
+    ctx.globalCompositeOperation = 'lighter';
+    const discG = ctx.createRadialGradient(sx - sunR * 0.25, sy - sunR * 0.25, sunR * 0.05, sx, sy, sunR * 1.3);
+    discG.addColorStop(0,   'rgba(255, 255, 230, 1.00)');
+    discG.addColorStop(0.4, 'rgba(255, 230, 120, 0.95)');
+    discG.addColorStop(0.8, 'rgba(255, 180,  50, 0.70)');
+    discG.addColorStop(1,   'rgba(255, 120,  20, 0)');
+    ctx.fillStyle = discG;
+    ctx.beginPath();
+    ctx.arc(sx, sy, sunR * 1.3, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+
+    // 3. Label
+    if (isZoomed) {
+      ctx.save();
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.font         = '1.3px monospace';
+      ctx.textAlign    = 'center';
+      ctx.textBaseline = 'top';
+      ctx.fillStyle    = 'rgba(255, 200, 80, 0.9)';
+      ctx.fillText('☉ Sun', sx, sy + sunR * 1.5 + 0.95);
+      ctx.restore();
+    }
+  }
+
   // ── Moon dot ─────────────────────────────────────────────────────────────────
   if (moonDot && moonBirth > 0) {
     const moonFade = Math.min(1, (now - moonBirth) / 500);
     ctx.save();
     ctx.globalAlpha = moonFade; // all sub-saves inherit this; restored at the end
     const phaseAngle = moonDot.phaseAngle ?? 45;
-    const moonWaxing = phaseAngle < 180;
     // Pulse only when zoomed — on the rotating full ring it makes the moon look nervous
     const mPulse = isZoomed
       ? 1 + 0.12 * Math.sin((now - moonDot.birth) / 1250)
@@ -1119,45 +1146,33 @@ function tick() {
     const my = cy + midR * Math.sin(mAngle);
 
     // moonR: scale with canvas size so it's reasonable on small phone screens
-    const moonR = isZoomed ? 5.5 : Math.min(13, minDim * 0.028);
-    const hazeR = (isZoomed ? 18 : moonR * 3.2) * mPulse;
-    const specR = moonR * 2.8;
+    const moonR = isZoomed ? 5.5 : Math.min(15, minDim * 0.032);
+    const hazeR = (isZoomed ? 18 : moonR * 3.5) * mPulse;
 
-    // 1. Large soft atmosphere haze (additive) — outer corona
+    // 1. Faint atmospheric halo — center stays dark, just a soft ring at the edges
     ctx.save();
     ctx.globalCompositeOperation = 'lighter';
-    const mGlow = ctx.createRadialGradient(mx, my, 0, mx, my, hazeR);
-    mGlow.addColorStop(0,    'rgba(200, 225, 255, 0.50)');
-    mGlow.addColorStop(0.25, 'rgba(100, 180, 255, 0.35)');
-    mGlow.addColorStop(0.6,  'rgba(80,  150, 255, 0.08)');
-    mGlow.addColorStop(1,    'rgba(60,  120, 255, 0)');
+    const mGlow = ctx.createRadialGradient(mx, my, moonR * 0.9, mx, my, hazeR);
+    mGlow.addColorStop(0,   'rgba(200, 220, 255, 0.12)');
+    mGlow.addColorStop(0.5, 'rgba(140, 180, 255, 0.05)');
+    mGlow.addColorStop(1,   'rgba(100, 150, 220, 0)');
     ctx.fillStyle = mGlow;
     ctx.beginPath();
     ctx.arc(mx, my, hazeR, 0, Math.PI * 2);
     ctx.fill();
     ctx.restore();
 
-    // 2. Phase disc — blur is baked into the cached canvas (avoids ctx.filter /
-    // ctx.shadowBlur on drawImage, which renders a rectangular artefact on iOS Safari)
-    // phCanvas is 400×400 with inner radius 160; crop the 320×320 centre region.
+    // 2. Phase disc — blurred so the boundary dissolves into the surrounding haze
+    // phCanvas is 400×400 with an inner radius of 160; we crop the 320×320 centre
     const phCanvas = getMoonPhaseCanvas(phaseAngle);
     ctx.save();
+    ctx.filter               = `blur(${Math.max(0.6, moonR * 0.25)}px)`;
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.shadowBlur           = moonR * 3.5;
+    ctx.shadowColor          = 'rgba(210, 230, 200, 0.55)';
     ctx.drawImage(phCanvas, 40, 40, 320, 320, mx - moonR, my - moonR, moonR * 2, moonR * 2);
-    ctx.restore();
-
-    // 3. Specular glow — white-hot focal point offset toward the lit limb
-    const hlFocX = mx + (moonWaxing ? moonR * 0.35 : -moonR * 0.35);
-    ctx.save();
-    ctx.globalCompositeOperation = 'lighter';
-    const hlG = ctx.createRadialGradient(hlFocX, my - moonR * 0.35, moonR * 0.05, mx, my, specR);
-    hlG.addColorStop(0,    'rgba(255, 255, 255, 0.60)');
-    hlG.addColorStop(0.2,  'rgba(220, 238, 255, 0.30)');
-    hlG.addColorStop(0.5,  'rgba(150, 200, 255, 0.10)');
-    hlG.addColorStop(1,    'rgba(100, 160, 255, 0)');
-    ctx.fillStyle = hlG;
-    ctx.beginPath();
-    ctx.arc(mx, my, specR, 0, Math.PI * 2);
-    ctx.fill();
+    ctx.shadowBlur = 0;
+    ctx.filter     = 'none';
     ctx.restore();
 
     // 4. Label
@@ -1167,7 +1182,7 @@ function tick() {
       ctx.font         = '1.3px monospace';
       ctx.textAlign    = 'center';
       ctx.textBaseline = 'top';
-      ctx.fillStyle    = 'rgba(100, 180, 255, 0.9)';
+      ctx.fillStyle    = 'rgba(180, 210, 255, 0.9)';
       ctx.fillText("Today's Moon", mx, my + moonR * 1.5 + 0.95);
       ctx.restore();
     }
@@ -1193,6 +1208,7 @@ export function destroyNebula() {
   userDot = null;
   previewDot = null;
   moonDot = null;
+  sunDot  = null;
   hoveredDot = null;
   mouseX = mouseY = -1;
   zoomSign = null;

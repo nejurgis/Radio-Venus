@@ -13,7 +13,8 @@ const Database = require('better-sqlite3');
 
 // Artists to exclude from Wikidata (wrong person / name collision / bad data)
 const WIKIDATA_EXCLUDE = new Set([
-  'mary lattimore', // Wikidata has a 1950s jazz musician; the ambient harpist (~1980) is a different person
+  'mary lattimore',    // Wikidata has a 1950s jazz musician; the ambient harpist (~1980) is a different person
+  'fernando garcía',   // wrong person from Wikidata
 ]);
 
 function httpGet(url) {

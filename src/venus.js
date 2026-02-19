@@ -52,12 +52,16 @@ export function calculateMoon() {
   const signIndex = Math.floor(longitude / 30);
   const sign = SIGNS[signIndex];
 
+  const sunSignIndex = Math.floor(eclSun.elon / 30);
+
   return {
     sign,
     glyph: SIGN_GLYPHS[sign],
     element: ELEMENTS[sign],
     longitude,
     phaseAngle,
+    sunLongitude: eclSun.elon,
+    sunSign: SIGNS[sunSignIndex],
   };
 }
 

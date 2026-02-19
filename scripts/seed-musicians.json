@@ -1,5 +1,16 @@
 [
   {
+    "name": "Anni Hogan",
+    "birthDate": "1961-01-01",
+    "mbid": "4d661913-0039-4a5e-b924-403fa24d114c",
+    "genres": [
+      "ambient",
+      "darkwave",
+      "artpop"
+    ],
+    "youtubeId": "vzOEJJWuIaw"
+  },
+  {
     "name": "10cc",
     "birthDate": "1972-07-01",
     "genres": [
@@ -255,19 +266,6 @@
       "industrial"
     ],
     "youtubeVideoId": "0_Db7LevbnI"
-  },
-  {
-    "name": "Annie Hogan",
-    "birthDate": "1961-01-01",
-    "genres": [
-      "darkwave",
-      "classical"
-    ],
-    "subgenres": [
-      "synth-pop",
-      "darkwave"
-    ],
-    "youtubeVideoId": "9g_qzNs6oNE"
   },
   {
     "name": "Anthony Braxton",
@@ -1201,9 +1199,8 @@
     "name": "Dead Can Dance",
     "birthDate": "1981-00-00",
     "genres": [
-      "artpop",
-      "classical",
-      "darkwave"
+      "darkwave",
+      "artpop"
     ]
   },
   {
@@ -1630,11 +1627,11 @@
     "name": "Eugen Thomass",
     "birthDate": "1927-12-24",
     "genres": [
-      "classical",
-      "triphop"
+      "ambient",
+      "electronica"
     ],
     "subgenres": [
-      "downtempo"
+      "space-ambient"
     ],
     "youtubeVideoId": "yAGTjRgDyB8"
   },
@@ -1723,10 +1720,9 @@
     "name": "Fiona Apple",
     "birthDate": "1977-09-13",
     "genres": [
-      "classical",
       "artpop"
     ],
-    "youtubeVideoId": "ki1nvcNbYH8"
+    "youtubeVideoId": "L9Wnh0V4HMM"
   },
   {
     "name": "Fis",
@@ -1888,11 +1884,10 @@
     "name": "Francis Monkman",
     "birthDate": "1949-06-09",
     "genres": [
-      "classical",
-      "darkwave"
+      "artpop",
+      "electronica"
     ],
     "subgenres": [
-      "classical",
       "synth-pop"
     ],
     "youtubeVideoId": "BUW6lBS57Cc"
@@ -2046,18 +2041,6 @@
     "youtubeVideoId": "NZyafXiZ7cU"
   },
   {
-    "name": "Giuseppe Verdi",
-    "birthDate": "1813-10-10",
-    "genres": [
-      "classical"
-    ],
-    "youtubeVideoId": "xoXGrIIBo0o",
-    "subgenres": [
-      "romantic",
-      "opera"
-    ]
-  },
-  {
     "name": "Global Communication",
     "birthDate": "1971-05-13",
     "genres": [
@@ -2199,8 +2182,7 @@
     "name": "Harold Budd",
     "birthDate": "1936-05-24",
     "genres": [
-      "ambient",
-      "classical"
+      "ambient"
     ],
     "youtubeVideoId": "wD7l5wod1-M",
     "subgenres": [
@@ -2266,25 +2248,14 @@
     "youtubeVideoId": "UgYpqdDsXGs"
   },
   {
-    "name": "Henryk Górecki",
-    "birthDate": "1933-12-06",
-    "genres": [
-      "classical"
-    ],
-    "youtubeVideoId": "87HJZBMjw5Y",
-    "subgenres": [
-      "modern-classical",
-      "minimalist"
-    ]
-  },
-  {
     "name": "Hildegard von Bingen",
     "birthDate": "1098-09-16",
     "genres": [
       "classical"
     ],
     "subgenres": [
-      "classical"
+      "medieval",
+      "early-music"
     ],
     "youtubeVideoId": "9eFPJa95qQE",
     "backupVideoIds": [
@@ -2527,7 +2498,6 @@
     "name": "Jean-Michel Jarre",
     "birthDate": "1948-08-24",
     "genres": [
-      "classical",
       "electronica",
       "techno"
     ],
@@ -2664,30 +2634,6 @@
     ]
   },
   {
-    "name": "Johannes Brahms",
-    "birthDate": "1833-05-07",
-    "genres": [
-      "classical"
-    ],
-    "youtubeVideoId": "s4R6JBO1HWA",
-    "subgenres": [
-      "romantic"
-    ]
-  },
-  {
-    "name": "John Adams",
-    "birthDate": "1947-02-15",
-    "genres": [
-      "ambient",
-      "classical"
-    ],
-    "youtubeVideoId": "OeeLa_bvOK0",
-    "subgenres": [
-      "minimalist",
-      "modern-classical"
-    ]
-  },
-  {
     "name": "John Carpenter",
     "birthDate": "1948-01-16",
     "genres": [
@@ -2783,9 +2729,8 @@
     "birthDate": "1975-04-23",
     "genres": [
       "ambient",
-      "idm",
-      "classical",
-      "artpop"
+      "artpop",
+      "altrock"
     ]
   },
   {
@@ -2849,7 +2794,6 @@
     "birthDate": "1994-00-00",
     "genres": [
       "ambient",
-      "classical",
       "idm"
     ]
   },
@@ -2871,8 +2815,7 @@
     "birthDate": "1951-09-22",
     "genres": [
       "ambient",
-      "idm",
-      "classical"
+      "idm"
     ]
   },
   {
@@ -2908,17 +2851,6 @@
       "art-pop"
     ],
     "youtubeVideoId": "87SSDIEQoO8"
-  },
-  {
-    "name": "Kiasmos",
-    "birthDate": "2009-06-15",
-    "genres": [
-      "idm",
-      "techno",
-      "darkwave",
-      "classical",
-      "ambient"
-    ]
   },
   {
     "name": "Kid Spatula",
@@ -3040,21 +2972,6 @@
     ]
   },
   {
-    "name": "Krzysztof Penderecki",
-    "birthDate": "1933-11-23",
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "modern-classical",
-      "contemporary"
-    ],
-    "youtubeVideoId": "Dp3BlFZWJNA",
-    "backupVideoIds": [
-      "HilGthRhwP8"
-    ]
-  },
-  {
     "name": "Laraaji",
     "birthDate": "1943-06-15",
     "genres": [
@@ -3080,9 +2997,9 @@
     "birthDate": "1945-09-20",
     "genres": [
       "ambient",
-      "classical",
-      "techno"
-    ]
+      "idm"
+    ],
+    "youtubeVideoId": "Hlw9cJJWZI8"
   },
   {
     "name": "Lawrence English",
@@ -3126,7 +3043,7 @@
     "birthDate": "1978-06-01",
     "genres": [
       "ambient",
-      "classical"
+      "idm"
     ],
     "subgenres": [
       "minimalist",
@@ -3290,8 +3207,7 @@
     "birthDate": "1976-10-22",
     "genres": [
       "ambient",
-      "idm",
-      "classical"
+      "idm"
     ]
   },
   {
@@ -3328,9 +3244,8 @@
     "name": "Lycia",
     "birthDate": "1988-05-15",
     "genres": [
-      "artpop",
-      "classical",
-      "darkwave"
+      "darkwave",
+      "artpop"
     ]
   },
   {
@@ -3374,14 +3289,11 @@
     "name": "Malcolm Ironton",
     "birthDate": "1946-06-15",
     "genres": [
-      "ambient",
-      "classical",
-      "idm",
-      "techno",
-      "triphop"
+      "artpop",
+      "electronica"
     ],
     "subgenres": [
-      "synthwave"
+      "synth-pop"
     ],
     "youtubeVideoId": "Rf1PydBVzQI"
   },
@@ -3458,17 +3370,6 @@
     ]
   },
   {
-    "name": "Maurice Ravel",
-    "birthDate": "1875-03-07",
-    "genres": [
-      "classical"
-    ],
-    "youtubeVideoId": "cJOW2caFNwE",
-    "subgenres": [
-      "impressionist"
-    ]
-  },
-  {
     "name": "Max Richter",
     "birthDate": "1966-03-22",
     "genres": [
@@ -3542,8 +3443,8 @@
     "name": "Mica Levi",
     "birthDate": "1987-02-28",
     "genres": [
-      "classical",
-      "ambient"
+      "artpop",
+      "classical"
     ],
     "subgenres": [
       "modern-classical",
@@ -3563,7 +3464,8 @@
     "birthDate": "1951-12-21",
     "genres": [
       "ambient",
-      "classical"
+      "classical",
+      "idm"
     ],
     "youtubeVideoId": "Bululwnj4ik",
     "subgenres": [
@@ -3988,23 +3890,6 @@
       "experimental"
     ],
     "youtubeVideoId": "2btaDYuVFfw"
-  },
-  {
-    "name": "Ólafur Arnalds",
-    "birthDate": "1986-11-03",
-    "genres": [
-      "ambient",
-      "classical"
-    ],
-    "subgenres": [
-      "neo-classical",
-      "ambient",
-      "modern-classical"
-    ],
-    "youtubeVideoId": "0kYc55bXJFI",
-    "backupVideoIds": [
-      "ejaaxLeUQd4"
-    ]
   },
   {
     "name": "Omni Gardens",
@@ -4581,17 +4466,6 @@
     "youtubeVideoId": "dVAQO6Fs2f0"
   },
   {
-    "name": "Robert Schumann",
-    "birthDate": "1810-06-08",
-    "genres": [
-      "classical"
-    ],
-    "youtubeVideoId": "ck1wDRMoCPM",
-    "subgenres": [
-      "romantic"
-    ]
-  },
-  {
     "name": "Robin Guthrie",
     "birthDate": "1962-01-04",
     "genres": [
@@ -4767,7 +4641,7 @@
     "genres": [
       "classical"
     ],
-    "youtubeVideoId": "bBsKgEj3gbo",
+    "youtubeVideoId": "KDfGBmbNbMw",
     "subgenres": [
       "modern-classical"
     ]
@@ -5080,8 +4954,7 @@
     "name": "Stars of the Lid",
     "birthDate": "1969-09-17",
     "genres": [
-      "ambient",
-      "classical"
+      "ambient"
     ],
     "youtubeVideoId": "c4E6RO4muLU",
     "subgenres": [
@@ -5134,9 +5007,9 @@
     "birthDate": "1936-10-03",
     "genres": [
       "ambient",
-      "classical"
+      "electronica"
     ],
-    "youtubeVideoId": "g0WVh1D0N50",
+    "youtubeVideoId": "ZXJWO2FQ16c",
     "subgenres": [
       "minimalist"
     ]
@@ -5316,7 +5189,6 @@
     "genres": [
       "ambient",
       "artpop",
-      "classical",
       "idm"
     ],
     "youtubeVideoId": "sqQ59i4PmGE",
@@ -5604,8 +5476,7 @@
     "name": "Tori Amos",
     "birthDate": "1963-08-22",
     "genres": [
-      "artpop",
-      "classical"
+      "artpop"
     ],
     "youtubeVideoId": "2CdWEHjaL30"
   },
@@ -5784,7 +5655,8 @@
     "birthDate": "1943-03-29",
     "genres": [
       "ambient",
-      "classical"
+      "electronica",
+      "artpop"
     ],
     "subgenres": [
       "ambient",
@@ -6105,11 +5977,9 @@
     "name": "Shannon Wright",
     "birthDate": "2000-00-00",
     "genres": [
-      "idm",
-      "industrial",
+      "altrock",
       "darkwave",
-      "artpop",
-      "classical"
+      "folk"
     ]
   },
   {
@@ -6462,5 +6332,54 @@
     "genres": [
       "ambient"
     ]
+  },
+  {
+    "name": "Johannes Brahms",
+    "birthDate": "1833-05-07",
+    "genres": ["classical"],
+    "subgenres": ["romantic"],
+    "youtubeVideoId": "OJUame8uvPs"
+  },
+  {
+    "name": "Maurice Ravel",
+    "birthDate": "1875-03-07",
+    "genres": ["classical"],
+    "subgenres": ["impressionist"],
+    "youtubeVideoId": "cmNEvSFWftc"
+  },
+  {
+    "name": "Robert Schumann",
+    "birthDate": "1810-06-08",
+    "genres": ["classical"],
+    "subgenres": ["romantic"],
+    "youtubeVideoId": "3jbHbDena_U"
+  },
+  {
+    "name": "John Adams",
+    "birthDate": "1947-02-15",
+    "genres": ["ambient", "classical"],
+    "subgenres": ["minimalist", "modern-classical"],
+    "youtubeVideoId": "XtvrzmzxkEk"
+  },
+  {
+    "name": "Henryk Górecki",
+    "birthDate": "1933-12-06",
+    "genres": ["classical", "ambient"],
+    "subgenres": ["modern-classical", "minimalist"],
+    "youtubeVideoId": "0xl_x2tjWg0"
+  },
+  {
+    "name": "Giuseppe Verdi",
+    "birthDate": "1813-10-10",
+    "genres": ["classical"],
+    "subgenres": ["romantic", "opera"],
+    "youtubeVideoId": "rdv5fsgjO24"
+  },
+  {
+    "name": "Karlheinz Stockhausen",
+    "birthDate": "1928-08-22",
+    "genres": ["classical", "idm"],
+    "subgenres": ["experimental", "electronic-classical"],
+    "youtubeVideoId": "cUSnnKzSFQg"
   }
 ]

@@ -2,7 +2,7 @@ import { calculateVenus, calculateMoon, makeBirthDate } from './venus.js';
 import { GENRE_CATEGORIES, SUBGENRES } from './genres.js';
 import { loadDatabase, getDatabase, match, matchFavorites, matchMoon, getSubgenreCounts } from './matcher.js';
 import { getFavorites, toggleFavorite, isFavorite } from './favorites.js';
-import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, setMoonPosition, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, enableDragRotate, nudgeWheel, onNebulaHover, onNebulaClick, onRotation, onNeedleCross, onSignCross } from './viz.js';
+import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, setMoonPosition, setSunPosition, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, enableDragRotate, nudgeWheel, onNebulaHover, onNebulaClick, onRotation, onNeedleCross, onSignCross } from './viz.js';
 import { pluck, gong, setHarpEnabled, isHarpEnabled, pokeAudio } from './harp.js';
 import { loadYouTubeAPI, initPlayer, loadVideo, cueVideo, togglePlay, isPlaying, getDuration, getCurrentTime, seekTo, getVideoTitle, isMuted, unMute } from './player.js';
 import {
@@ -172,6 +172,52 @@ document.addEventListener('DOMContentLoaded', async () => {
     showScreen('about');
     history.pushState({ screen: 'about' }, '', '#about');
   }
+
+  // Start nebula immediately — ring, ticks, moon/sun all render without musician data
+  initNebula('nebula-container');
+  renderNebula([]); // starts animation loop; dots populated after DB loads
+  const moonNow = calculateMoon();
+  setMoonPosition(moonNow.longitude, moonNow.phaseAngle);
+  setSunPosition(moonNow.sunLongitude);
+  onNebulaHover(info => highlightGenres(info ? info.genres : null));
+  onNeedleCross(({ radialFrac, element, speed }) => {
+    const velocity = Math.min(1, 0.2 + speed * 0.8);
+    pluck(radialFrac, element, velocity);
+  });
+  onSignCross(({ element, speed }) => {
+    const velocity = Math.min(1, 0.15 + speed * 0.5);
+    gong(element, velocity);
+  });
+  onRotation(longitude => {
+    tunedLongitude = longitude;
+    if (document.getElementById('screen-reveal').classList.contains('active')) {
+      updateTunedDisplay(longitude);
+    }
+  });
+  onNebulaClick(info => {
+    if (!venus || !info.genres.length) return;
+    const genreId = info.genres[0];
+    const label = GENRE_CATEGORIES.find(c => c.id === genreId)?.label || genreId;
+
+    const trackList = startRadio(genreId, label);
+    if (!trackList || trackList.length === 0) return;
+
+    const idx = trackList.findIndex(t => t.name === info.name);
+    if (idx === -1) return;
+
+    if (isPlaying() && hasPlayed) {
+      setTimeout(() => {
+        const items = document.querySelectorAll('#track-list .track-item');
+        if (items[idx]) {
+          items[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
+          items[idx].style.background = 'rgba(255,255,255,0.08)';
+          setTimeout(() => { items[idx].style.background = ''; }, 1200);
+        }
+      }, 50);
+    } else {
+      playTrack(idx);
+    }
+  });
 
   const [dbResult] = await Promise.allSettled([
     loadDatabase(),
@@ -492,49 +538,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (dbResult.status === 'rejected') {
     console.error('Failed to load musician database:', dbResult.reason);
   } else {
-    initNebula('nebula-container');
-    renderNebula(getDatabase());
-    const moon = calculateMoon();
-    setMoonPosition(moon.longitude, moon.phaseAngle);
-    onNebulaHover(info => highlightGenres(info ? info.genres : null));
-    onNeedleCross(({ radialFrac, element, speed }) => {
-      const velocity = Math.min(1, 0.2 + speed * 0.8);
-      pluck(radialFrac, element, velocity);
-    });
-    onSignCross(({ element, speed }) => {
-      const velocity = Math.min(1, 0.15 + speed * 0.5);
-      gong(element, velocity);
-    });
-    onRotation(longitude => {
-      tunedLongitude = longitude;
-      if (document.getElementById('screen-reveal').classList.contains('active')) {
-        updateTunedDisplay(longitude);
-      }
-    });
-    onNebulaClick(info => {
-      if (!venus || !info.genres.length) return;
-      const genreId = info.genres[0];
-      const label = GENRE_CATEGORIES.find(c => c.id === genreId)?.label || genreId;
-
-      const trackList = startRadio(genreId, label);
-      if (!trackList || trackList.length === 0) return;
-
-      const idx = trackList.findIndex(t => t.name === info.name);
-      if (idx === -1) return;
-
-      if (isPlaying() && hasPlayed) {
-        setTimeout(() => {
-          const items = document.querySelectorAll('#track-list .track-item');
-          if (items[idx]) {
-            items[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
-            items[idx].style.background = 'rgba(255,255,255,0.08)';
-            setTimeout(() => { items[idx].style.background = ''; }, 1200);
-          }
-        }, 50);
-      } else {
-        playTrack(idx);
-      }
-    });
+    renderNebula(getDatabase()); // populate artist dots now that DB is ready
   }
 });
 

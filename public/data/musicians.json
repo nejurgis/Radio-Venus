@@ -237,13 +237,11 @@
     },
     "genres": [
       "ambient",
-      "idm",
-      "industrial"
+      "idm"
     ],
     "subgenres": [
       "ambient",
-      "idm",
-      "industrial"
+      "idm"
     ],
     "youtubeVideoId": "CsVNVky5JUI",
     "backupVideoIds": []
@@ -342,7 +340,8 @@
       "element": "fire"
     },
     "genres": [
-      "artpop"
+      "altrock",
+      "indiepop"
     ],
     "subgenres": [],
     "youtubeVideoId": "0iX9bjlvfCg",
@@ -358,8 +357,8 @@
       "element": "water"
     },
     "genres": [
-      "idm",
-      "industrial"
+      "ambient",
+      "idm"
     ],
     "subgenres": [
       "glitch",
@@ -382,8 +381,10 @@
       "element": "water"
     },
     "genres": [
+      "artpop",
       "classical",
-      "idm"
+      "idm",
+      "jazz"
     ],
     "subgenres": [
       "minimalist",
@@ -425,8 +426,9 @@
       "element": "water"
     },
     "genres": [
-      "dnb",
+      "electronica",
       "idm",
+      "jazz",
       "triphop"
     ],
     "subgenres": [
@@ -535,8 +537,9 @@
       "dateApprox": true
     },
     "genres": [
-      "industrial",
-      "idm"
+      "electronica",
+      "idm",
+      "techno"
     ],
     "subgenres": [
       "experimental"
@@ -555,8 +558,7 @@
     },
     "genres": [
       "artpop",
-      "folk",
-      "indiepop"
+      "folk"
     ],
     "subgenres": [
       "folk-rock"
@@ -575,6 +577,7 @@
       "dateApprox": true
     },
     "genres": [
+      "altrock",
       "artpop",
       "darkwave",
       "electronica",
@@ -617,13 +620,11 @@
       "element": "air"
     },
     "genres": [
-      "classical",
       "darkwave",
       "folk",
       "industrial"
     ],
     "subgenres": [
-      "classical",
       "darkwave",
       "folk-rock",
       "industrial"
@@ -633,6 +634,28 @@
       "1x11nd1Ft-4",
       "QpxBgVW2A8I"
     ]
+  },
+  {
+    "name": "Anni Hogan",
+    "birthDate": "1961-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 25.9,
+      "decan": 3,
+      "element": "air",
+      "dateApprox": true
+    },
+    "genres": [
+      "ambient",
+      "darkwave",
+      "artpop"
+    ],
+    "subgenres": [
+      "ambient",
+      "darkwave"
+    ],
+    "youtubeVideoId": "vzOEJJWuIaw",
+    "backupVideoIds": []
   },
   {
     "name": "Annie Hogan",
@@ -668,6 +691,7 @@
       "element": "fire"
     },
     "genres": [
+      "classical",
       "jazz"
     ],
     "subgenres": [
@@ -797,6 +821,7 @@
       "element": "earth"
     },
     "genres": [
+      "artpop",
       "idm",
       "industrial"
     ],
@@ -1173,6 +1198,24 @@
     ]
   },
   {
+    "name": "Bellezza Eterna",
+    "birthDate": "1995-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 5.9,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "ambient"
+    ],
+    "subgenres": [
+      "ambient"
+    ],
+    "youtubeVideoId": "FIoNV5NML54",
+    "backupVideoIds": []
+  },
+  {
     "name": "Ben Frost",
     "birthDate": "1980-11-19",
     "venus": {
@@ -1207,8 +1250,7 @@
     },
     "genres": [
       "ambient",
-      "idm",
-      "classical"
+      "idm"
     ],
     "subgenres": [
       "ambient",
@@ -1227,8 +1269,8 @@
       "element": "fire"
     },
     "genres": [
+      "altrock",
       "ambient",
-      "artpop",
       "indiepop"
     ],
     "subgenres": [
@@ -1362,8 +1404,7 @@
       "element": "air"
     },
     "genres": [
-      "jazz",
-      "triphop"
+      "jazz"
     ],
     "subgenres": [
       "spiritual-jazz"
@@ -1382,15 +1423,17 @@
       "dateApprox": true
     },
     "genres": [
-      "darkwave",
+      "altrock",
       "artpop",
-      "ambient",
-      "classical"
+      "classical",
+      "darkwave",
+      "electronica",
+      "indiepop"
     ],
     "subgenres": [
+      "classical",
       "darkwave",
-      "ambient",
-      "classical"
+      "indietronica"
     ],
     "youtubeVideoId": "jt2FOmlG_Cg",
     "backupVideoIds": []
@@ -1407,13 +1450,11 @@
     "genres": [
       "electronica",
       "idm",
-      "industrial",
       "techno"
     ],
     "subgenres": [
       "indietronica",
       "idm",
-      "industrial",
       "techno"
     ],
     "youtubeVideoId": "B79f3MYrWmU",
@@ -1499,6 +1540,7 @@
       "ambient",
       "electronica",
       "idm",
+      "techno",
       "triphop"
     ],
     "subgenres": [
@@ -1548,6 +1590,7 @@
       "dateApprox": true
     },
     "genres": [
+      "ambient",
       "jazz"
     ],
     "subgenres": [
@@ -1666,8 +1709,11 @@
       "element": "earth"
     },
     "genres": [
+      "ambient",
       "dnb",
-      "ambient"
+      "electronica",
+      "idm",
+      "triphop"
     ],
     "subgenres": [
       "future-garage",
@@ -1690,8 +1736,10 @@
       "element": "air"
     },
     "genres": [
+      "darkwave",
+      "idm",
       "industrial",
-      "darkwave"
+      "techno"
     ],
     "subgenres": [
       "industrial",
@@ -1844,9 +1892,9 @@
       "element": "earth"
     },
     "genres": [
-      "idm",
       "ambient",
-      "triphop"
+      "dnb",
+      "idm"
     ],
     "subgenres": [
       "idm",
@@ -1869,12 +1917,13 @@
       "dateApprox": true
     },
     "genres": [
-      "idm",
-      "ambient"
+      "altrock",
+      "ambient",
+      "electronica"
     ],
     "subgenres": [
-      "idm",
-      "ambient"
+      "ambient",
+      "indietronica"
     ],
     "youtubeVideoId": "Azwuqj7JnMI",
     "backupVideoIds": []
@@ -1947,8 +1996,7 @@
       "element": "earth"
     },
     "genres": [
-      "jazz",
-      "classical"
+      "jazz"
     ],
     "subgenres": [
       "free-jazz"
@@ -2061,12 +2109,10 @@
     },
     "genres": [
       "ambient",
-      "classical",
       "idm"
     ],
     "subgenres": [
       "ambient",
-      "classical",
       "idm"
     ],
     "youtubeVideoId": "6JVDuaE1CrM",
@@ -2105,8 +2151,8 @@
       "element": "fire"
     },
     "genres": [
-      "idm",
-      "triphop"
+      "ambient",
+      "idm"
     ],
     "subgenres": [
       "glitch",
@@ -2128,12 +2174,15 @@
       "element": "water"
     },
     "genres": [
-      "industrial",
-      "darkwave"
+      "altrock",
+      "darkwave",
+      "idm",
+      "industrial"
     ],
     "subgenres": [
-      "industrial",
-      "darkwave"
+      "darkwave",
+      "idm",
+      "industrial"
     ],
     "youtubeVideoId": "2FZGba4hIq4",
     "backupVideoIds": [
@@ -2296,7 +2345,8 @@
     "genres": [
       "altrock",
       "artpop",
-      "darkwave"
+      "darkwave",
+      "indiepop"
     ],
     "subgenres": [
       "darkwave",
@@ -2510,10 +2560,10 @@
       "element": "earth"
     },
     "genres": [
-      "idm"
+      "folk"
     ],
     "subgenres": [
-      "idm"
+      "folk-rock"
     ],
     "youtubeVideoId": "UvTZwhOHYVA",
     "backupVideoIds": []
@@ -2657,12 +2707,10 @@
       "dateApprox": true
     },
     "genres": [
-      "artpop",
-      "classical",
-      "darkwave"
+      "darkwave",
+      "artpop"
     ],
     "subgenres": [
-      "classical",
       "darkwave"
     ],
     "youtubeVideoId": "taZjS_oCj3o",
@@ -2704,8 +2752,9 @@
       "element": "earth"
     },
     "genres": [
-      "artpop",
-      "idm"
+      "electronica",
+      "idm",
+      "techno"
     ],
     "subgenres": [
       "experimental"
@@ -2860,6 +2909,24 @@
     ]
   },
   {
+    "name": "Dharma Gaia",
+    "birthDate": "1997-09-29",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 20,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "ambient"
+    ],
+    "subgenres": [
+      "ambient"
+    ],
+    "youtubeVideoId": "iAdAlGHyTCY",
+    "backupVideoIds": []
+  },
+  {
     "name": "Dif Juz",
     "birthDate": "1980-00-00",
     "venus": {
@@ -2968,6 +3035,7 @@
       "element": "air"
     },
     "genres": [
+      "electronica",
       "triphop"
     ],
     "subgenres": [
@@ -2990,8 +3058,7 @@
       "element": "water"
     },
     "genres": [
-      "triphop",
-      "idm"
+      "triphop"
     ],
     "subgenres": [
       "trip-hop",
@@ -3037,11 +3104,10 @@
       "dateApprox": true
     },
     "genres": [
-      "idm",
+      "altrock",
       "ambient"
     ],
     "subgenres": [
-      "idm",
       "ambient"
     ],
     "youtubeVideoId": "MJrxgvzieMo",
@@ -3204,8 +3270,9 @@
       "element": "fire"
     },
     "genres": [
-      "techno",
-      "idm"
+      "idm",
+      "jazz",
+      "techno"
     ],
     "subgenres": [
       "electro",
@@ -3271,12 +3338,10 @@
     },
     "genres": [
       "ambient",
-      "classical",
       "idm"
     ],
     "subgenres": [
       "ambient",
-      "classical",
       "idm"
     ],
     "youtubeVideoId": "ucv95vqBlxk",
@@ -3380,9 +3445,11 @@
     },
     "genres": [
       "altrock",
+      "darkwave",
       "electronica"
     ],
     "subgenres": [
+      "darkwave",
       "indietronica"
     ],
     "youtubeVideoId": "_7sVSSb2mU4",
@@ -3492,12 +3559,10 @@
     },
     "genres": [
       "ambient",
-      "classical",
       "idm"
     ],
     "subgenres": [
       "ambient",
-      "classical",
       "idm"
     ],
     "youtubeVideoId": "WTPvNYJCuzM",
@@ -3556,14 +3621,12 @@
     },
     "genres": [
       "ambient",
-      "classical",
       "electronica",
       "idm",
       "techno"
     ],
     "subgenres": [
       "ambient",
-      "classical",
       "indietronica",
       "idm",
       "techno"
@@ -3709,11 +3772,11 @@
       "element": "water"
     },
     "genres": [
-      "classical",
-      "triphop"
+      "ambient",
+      "electronica"
     ],
     "subgenres": [
-      "downtempo"
+      "space-ambient"
     ],
     "youtubeVideoId": "yAGTjRgDyB8",
     "backupVideoIds": [
@@ -3750,11 +3813,9 @@
       "element": "earth"
     },
     "genres": [
-      "classical",
       "idm"
     ],
     "subgenres": [
-      "classical",
       "idm"
     ],
     "youtubeVideoId": "Cwz9l7gdRhI",
@@ -3770,6 +3831,7 @@
       "element": "air"
     },
     "genres": [
+      "altrock",
       "artpop",
       "indiepop"
     ],
@@ -3831,8 +3893,9 @@
       "element": "fire"
     },
     "genres": [
+      "electronica",
       "idm",
-      "dnb"
+      "techno"
     ],
     "subgenres": [
       "grime",
@@ -3853,11 +3916,13 @@
     },
     "genres": [
       "ambient",
-      "idm"
+      "idm",
+      "techno"
     ],
     "subgenres": [
       "ambient",
-      "idm"
+      "idm",
+      "techno"
     ],
     "youtubeVideoId": "nJ2zW4AidJw",
     "backupVideoIds": []
@@ -3873,7 +3938,8 @@
     },
     "genres": [
       "ambient",
-      "idm"
+      "idm",
+      "techno"
     ],
     "subgenres": [
       "glitch",
@@ -3937,13 +4003,10 @@
       "element": "fire"
     },
     "genres": [
-      "classical",
       "artpop"
     ],
-    "subgenres": [
-      "classical"
-    ],
-    "youtubeVideoId": "ki1nvcNbYH8",
+    "subgenres": [],
+    "youtubeVideoId": "L9Wnh0V4HMM",
     "backupVideoIds": [
       "XU46O2QzYF0",
       "Z7nekCeeRyg"
@@ -3984,8 +4047,9 @@
       "element": "water"
     },
     "genres": [
-      "triphop",
-      "artpop"
+      "artpop",
+      "idm",
+      "triphop"
     ],
     "subgenres": [
       "trip-hop",
@@ -4026,6 +4090,7 @@
       "element": "fire"
     },
     "genres": [
+      "altrock",
       "artpop",
       "indiepop"
     ],
@@ -4043,6 +4108,7 @@
       "element": "fire"
     },
     "genres": [
+      "altrock",
       "artpop"
     ],
     "subgenres": [
@@ -4089,8 +4155,7 @@
       "element": "earth"
     },
     "genres": [
-      "dnb",
-      "industrial"
+      "dnb"
     ],
     "subgenres": [
       "grime",
@@ -4109,8 +4174,9 @@
       "element": "earth"
     },
     "genres": [
+      "electronica",
       "idm",
-      "triphop"
+      "jazz"
     ],
     "subgenres": [
       "experimental",
@@ -4220,11 +4286,10 @@
       "element": "water"
     },
     "genres": [
-      "classical",
-      "darkwave"
+      "artpop",
+      "electronica"
     ],
     "subgenres": [
-      "classical",
       "synth-pop"
     ],
     "youtubeVideoId": "BUW6lBS57Cc",
@@ -4529,7 +4594,7 @@
       "romantic",
       "opera"
     ],
-    "youtubeVideoId": "xoXGrIIBo0o",
+    "youtubeVideoId": "rdv5fsgjO24",
     "backupVideoIds": []
   },
   {
@@ -4603,7 +4668,10 @@
       "element": "fire"
     },
     "genres": [
+      "altrock",
+      "artpop",
       "darkwave",
+      "electronica",
       "triphop"
     ],
     "subgenres": [
@@ -4774,6 +4842,8 @@
       "element": "earth"
     },
     "genres": [
+      "ambient",
+      "artpop",
       "classical"
     ],
     "subgenres": [
@@ -4813,11 +4883,10 @@
       "element": "air"
     },
     "genres": [
-      "idm"
+      "artpop",
+      "indiepop"
     ],
-    "subgenres": [
-      "idm"
-    ],
+    "subgenres": [],
     "youtubeVideoId": "4Hzc6FSHPp8",
     "backupVideoIds": []
   },
@@ -4831,8 +4900,7 @@
       "element": "earth"
     },
     "genres": [
-      "ambient",
-      "classical"
+      "ambient"
     ],
     "subgenres": [
       "ambient",
@@ -4854,13 +4922,11 @@
       "element": "earth"
     },
     "genres": [
-      "artpop",
       "ambient",
-      "darkwave"
+      "artpop"
     ],
     "subgenres": [
-      "ambient",
-      "darkwave"
+      "ambient"
     ],
     "youtubeVideoId": "-Hxm5DphtOE",
     "backupVideoIds": []
@@ -4902,12 +4968,10 @@
     },
     "genres": [
       "ambient",
-      "classical",
       "folk"
     ],
     "subgenres": [
       "ambient",
-      "classical",
       "folk-rock"
     ],
     "youtubeVideoId": "5HbnGKkTN1k",
@@ -4988,13 +5052,14 @@
       "element": "air"
     },
     "genres": [
-      "classical"
+      "classical",
+      "ambient"
     ],
     "subgenres": [
       "modern-classical",
       "minimalist"
     ],
-    "youtubeVideoId": "87HJZBMjw5Y",
+    "youtubeVideoId": "0xl_x2tjWg0",
     "backupVideoIds": []
   },
   {
@@ -5010,7 +5075,8 @@
       "classical"
     ],
     "subgenres": [
-      "classical"
+      "medieval",
+      "early-music"
     ],
     "youtubeVideoId": "9eFPJa95qQE",
     "backupVideoIds": [
@@ -5027,8 +5093,7 @@
       "element": "earth"
     },
     "genres": [
-      "ambient",
-      "classical"
+      "ambient"
     ],
     "subgenres": [
       "ambient",
@@ -5051,6 +5116,7 @@
       "dateApprox": true
     },
     "genres": [
+      "altrock",
       "artpop",
       "indiepop"
     ],
@@ -5137,11 +5203,9 @@
     },
     "genres": [
       "artpop",
-      "idm"
+      "indiepop"
     ],
-    "subgenres": [
-      "idm"
-    ],
+    "subgenres": [],
     "youtubeVideoId": "ldCtRxALvyY",
     "backupVideoIds": []
   },
@@ -5221,8 +5285,8 @@
       "element": "earth"
     },
     "genres": [
-      "triphop",
-      "idm"
+      "artpop",
+      "techno"
     ],
     "subgenres": [
       "experimental",
@@ -5345,8 +5409,9 @@
       "dateApprox": true
     },
     "genres": [
+      "artpop",
       "idm",
-      "artpop"
+      "techno"
     ],
     "subgenres": [
       "experimental"
@@ -5364,7 +5429,7 @@
       "element": "fire"
     },
     "genres": [
-      "artpop",
+      "altrock",
       "indiepop"
     ],
     "subgenres": [],
@@ -5441,8 +5506,9 @@
       "element": "air"
     },
     "genres": [
+      "ambient",
       "idm",
-      "ambient"
+      "techno"
     ],
     "subgenres": [
       "glitch",
@@ -5483,7 +5549,6 @@
       "element": "water"
     },
     "genres": [
-      "classical",
       "electronica",
       "techno"
     ],
@@ -5634,8 +5699,7 @@
       "element": "air"
     },
     "genres": [
-      "ambient",
-      "classical"
+      "ambient"
     ],
     "subgenres": [
       "ambient",
@@ -5656,7 +5720,7 @@
     },
     "genres": [
       "artpop",
-      "classical"
+      "folk"
     ],
     "subgenres": [
       "chamber-pop",
@@ -5766,7 +5830,7 @@
     "subgenres": [
       "romantic"
     ],
-    "youtubeVideoId": "s4R6JBO1HWA",
+    "youtubeVideoId": "OJUame8uvPs",
     "backupVideoIds": []
   },
   {
@@ -5779,13 +5843,14 @@
       "element": "earth"
     },
     "genres": [
+      "ambient",
       "classical"
     ],
     "subgenres": [
       "minimalist",
       "modern-classical"
     ],
-    "youtubeVideoId": "OeeLa_bvOK0",
+    "youtubeVideoId": "XtvrzmzxkEk",
     "backupVideoIds": []
   },
   {
@@ -5886,7 +5951,9 @@
     },
     "genres": [
       "dnb",
-      "idm"
+      "electronica",
+      "idm",
+      "techno"
     ],
     "subgenres": [
       "dubstep",
@@ -5930,8 +5997,9 @@
       "element": "earth"
     },
     "genres": [
-      "jazz",
-      "artpop"
+      "artpop",
+      "folk",
+      "jazz"
     ],
     "subgenres": [
       "soul-jazz"
@@ -5973,14 +6041,11 @@
     },
     "genres": [
       "ambient",
-      "idm",
-      "classical",
-      "artpop"
+      "artpop",
+      "altrock"
     ],
     "subgenres": [
-      "ambient",
-      "idm",
-      "classical"
+      "ambient"
     ],
     "youtubeVideoId": "1m-hlVeRccA",
     "backupVideoIds": []
@@ -6092,6 +6157,26 @@
     ]
   },
   {
+    "name": "Julianna Barwick",
+    "birthDate": "2000-01-01",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 1.6,
+      "decan": 1,
+      "element": "fire",
+      "dateApprox": true
+    },
+    "genres": [
+      "ambient",
+      "artpop"
+    ],
+    "subgenres": [
+      "ambient"
+    ],
+    "youtubeVideoId": "Kqa8glZUJ54",
+    "backupVideoIds": []
+  },
+  {
     "name": "Juraj Pospíšil",
     "birthDate": "1931-01-14",
     "venus": {
@@ -6152,12 +6237,10 @@
     },
     "genres": [
       "ambient",
-      "classical",
       "idm"
     ],
     "subgenres": [
       "ambient",
-      "classical",
       "idm"
     ],
     "youtubeVideoId": "bpZqFa0Qiro",
@@ -6197,13 +6280,11 @@
     },
     "genres": [
       "ambient",
-      "idm",
-      "classical"
+      "idm"
     ],
     "subgenres": [
       "ambient",
-      "idm",
-      "classical"
+      "idm"
     ],
     "youtubeVideoId": "oRzExskgXAA",
     "backupVideoIds": []
@@ -6242,10 +6323,10 @@
       "idm"
     ],
     "subgenres": [
-      "classical",
-      "idm"
+      "experimental",
+      "electronic-classical"
     ],
-    "youtubeVideoId": "4bHnGorNTT0",
+    "youtubeVideoId": "cUSnnKzSFQg",
     "backupVideoIds": [
       "Cr2yMRMjFGc",
       "zDxpa-XPMTo"
@@ -6261,7 +6342,8 @@
       "element": "water"
     },
     "genres": [
-      "artpop"
+      "artpop",
+      "darkwave"
     ],
     "subgenres": [
       "art-pop",
@@ -6283,9 +6365,8 @@
       "element": "water"
     },
     "genres": [
-      "triphop",
-      "dnb",
-      "artpop"
+      "artpop",
+      "triphop"
     ],
     "subgenres": [
       "trip-hop",
@@ -6375,8 +6456,7 @@
       "element": "water"
     },
     "genres": [
-      "triphop",
-      "industrial"
+      "triphop"
     ],
     "subgenres": [
       "dub",
@@ -6396,11 +6476,13 @@
       "dateApprox": true
     },
     "genres": [
+      "altrock",
       "artpop",
-      "darkwave"
+      "electronica",
+      "indiepop"
     ],
     "subgenres": [
-      "darkwave"
+      "indietronica"
     ],
     "youtubeVideoId": "wlSYIVatrPk",
     "backupVideoIds": []
@@ -6416,13 +6498,11 @@
     },
     "genres": [
       "ambient",
-      "idm",
-      "classical"
+      "idm"
     ],
     "subgenres": [
       "ambient",
-      "idm",
-      "classical"
+      "idm"
     ],
     "youtubeVideoId": "5VWnVagvRIk",
     "backupVideoIds": []
@@ -6529,7 +6609,9 @@
     },
     "genres": [
       "dnb",
-      "idm"
+      "electronica",
+      "idm",
+      "techno"
     ],
     "subgenres": [
       "dubstep",
@@ -6564,25 +6646,22 @@
     ]
   },
   {
-    "name": "Krzysztof Penderecki",
-    "birthDate": "1933-11-23",
+    "name": "Kristján Martinsson",
+    "birthDate": "1986-01-24",
     "venus": {
-      "sign": "Capricorn",
-      "degree": 18,
-      "decan": 2,
-      "element": "earth"
+      "sign": "Aquarius",
+      "degree": 5.4,
+      "decan": 1,
+      "element": "air"
     },
     "genres": [
-      "classical"
+      "ambient"
     ],
     "subgenres": [
-      "modern-classical",
-      "contemporary"
+      "ambient"
     ],
-    "youtubeVideoId": "Dp3BlFZWJNA",
-    "backupVideoIds": [
-      "HilGthRhwP8"
-    ]
+    "youtubeVideoId": "wTio07P2Snk",
+    "backupVideoIds": []
   },
   {
     "name": "Laraaji",
@@ -6594,12 +6673,10 @@
       "element": "fire"
     },
     "genres": [
-      "ambient",
-      "classical"
+      "ambient"
     ],
     "subgenres": [
-      "ambient",
-      "classical"
+      "ambient"
     ],
     "youtubeVideoId": "tMBNKmZgs_Y",
     "backupVideoIds": []
@@ -6616,7 +6693,6 @@
     "genres": [
       "ambient",
       "artpop",
-      "idm",
       "techno"
     ],
     "subgenres": [
@@ -6640,15 +6716,13 @@
     },
     "genres": [
       "ambient",
-      "classical",
-      "techno"
+      "idm"
     ],
     "subgenres": [
       "ambient",
-      "classical",
-      "techno"
+      "idm"
     ],
-    "youtubeVideoId": "zLd1RUDmX6w",
+    "youtubeVideoId": "Hlw9cJJWZI8",
     "backupVideoIds": []
   },
   {
@@ -6733,7 +6807,7 @@
     },
     "genres": [
       "ambient",
-      "classical"
+      "idm"
     ],
     "subgenres": [
       "minimalist",
@@ -6755,6 +6829,7 @@
       "element": "earth"
     },
     "genres": [
+      "electronica",
       "idm",
       "techno"
     ],
@@ -6843,6 +6918,7 @@
       "dateApprox": true
     },
     "genres": [
+      "altrock",
       "ambient",
       "artpop",
       "darkwave",
@@ -6885,12 +6961,11 @@
       "element": "earth"
     },
     "genres": [
+      "altrock",
       "artpop",
-      "idm"
+      "indiepop"
     ],
-    "subgenres": [
-      "idm"
-    ],
+    "subgenres": [],
     "youtubeVideoId": "iRdKlYi3K6g",
     "backupVideoIds": []
   },
@@ -6929,8 +7004,7 @@
       "dateApprox": true
     },
     "genres": [
-      "artpop",
-      "classical"
+      "artpop"
     ],
     "subgenres": [
       "ambient",
@@ -7042,13 +7116,11 @@
     },
     "genres": [
       "ambient",
-      "idm",
-      "classical"
+      "idm"
     ],
     "subgenres": [
       "ambient",
-      "idm",
-      "classical"
+      "idm"
     ],
     "youtubeVideoId": "xZyyGxLgTFo",
     "backupVideoIds": []
@@ -7064,8 +7136,9 @@
       "dateApprox": true
     },
     "genres": [
-      "idm",
       "ambient",
+      "electronica",
+      "idm",
       "techno"
     ],
     "subgenres": [
@@ -7090,7 +7163,8 @@
     },
     "genres": [
       "ambient",
-      "industrial"
+      "industrial",
+      "jazz"
     ],
     "subgenres": [
       "dark-ambient",
@@ -7112,12 +7186,10 @@
       "element": "air"
     },
     "genres": [
-      "artpop",
-      "classical",
-      "darkwave"
+      "darkwave",
+      "artpop"
     ],
     "subgenres": [
-      "classical",
       "darkwave"
     ],
     "youtubeVideoId": "de_FBh2xU8o",
@@ -7220,14 +7292,11 @@
       "element": "water"
     },
     "genres": [
-      "ambient",
-      "classical",
-      "idm",
-      "techno",
-      "triphop"
+      "artpop",
+      "electronica"
     ],
     "subgenres": [
-      "synthwave"
+      "synth-pop"
     ],
     "youtubeVideoId": "Rf1PydBVzQI",
     "backupVideoIds": [
@@ -7251,6 +7320,26 @@
       "spiritual-jazz"
     ],
     "youtubeVideoId": "khaglVoJMx8",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Maria Duhova Trevor",
+    "birthDate": "1970-05-25",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 3.5,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "classical",
+      "ambient"
+    ],
+    "subgenres": [
+      "classical",
+      "ambient"
+    ],
+    "youtubeVideoId": "uVFsv9cHB-k",
     "backupVideoIds": []
   },
   {
@@ -7332,10 +7421,12 @@
     },
     "genres": [
       "artpop",
-      "ambient"
+      "folk",
+      "industrial"
     ],
     "subgenres": [
-      "ambient"
+      "folk-rock",
+      "industrial"
     ],
     "youtubeVideoId": "O4IgYxHEAuk",
     "backupVideoIds": []
@@ -7374,8 +7465,11 @@
       "dateApprox": true
     },
     "genres": [
+      "dnb",
+      "electronica",
+      "idm",
       "techno",
-      "dnb"
+      "triphop"
     ],
     "subgenres": [
       "dubstep",
@@ -7394,6 +7488,7 @@
       "element": "fire"
     },
     "genres": [
+      "electronica",
       "triphop"
     ],
     "subgenres": [
@@ -7421,7 +7516,7 @@
     "subgenres": [
       "impressionist"
     ],
-    "youtubeVideoId": "cJOW2caFNwE",
+    "youtubeVideoId": "cmNEvSFWftc",
     "backupVideoIds": []
   },
   {
@@ -7434,6 +7529,7 @@
       "element": "air"
     },
     "genres": [
+      "ambient",
       "classical"
     ],
     "subgenres": [
@@ -7454,12 +7550,11 @@
       "dateApprox": true
     },
     "genres": [
+      "altrock",
       "artpop",
-      "idm"
+      "indiepop"
     ],
-    "subgenres": [
-      "idm"
-    ],
+    "subgenres": [],
     "youtubeVideoId": "ImKY6TZEyrI",
     "backupVideoIds": []
   },
@@ -7492,7 +7587,7 @@
       "element": "fire"
     },
     "genres": [
-      "artpop",
+      "altrock",
       "indiepop"
     ],
     "subgenres": [],
@@ -7531,6 +7626,7 @@
     },
     "genres": [
       "ambient",
+      "dnb",
       "idm"
     ],
     "subgenres": [
@@ -7550,6 +7646,9 @@
       "element": "water"
     },
     "genres": [
+      "altrock",
+      "ambient",
+      "idm",
       "industrial"
     ],
     "subgenres": [
@@ -7572,8 +7671,8 @@
       "element": "earth"
     },
     "genres": [
-      "classical",
-      "ambient"
+      "artpop",
+      "classical"
     ],
     "subgenres": [
       "modern-classical",
@@ -7611,7 +7710,8 @@
     },
     "genres": [
       "ambient",
-      "classical"
+      "classical",
+      "idm"
     ],
     "subgenres": [
       "ambient",
@@ -7633,7 +7733,7 @@
       "element": "earth"
     },
     "genres": [
-      "artpop",
+      "altrock",
       "idm",
       "indiepop"
     ],
@@ -7695,6 +7795,7 @@
       "element": "fire"
     },
     "genres": [
+      "altrock",
       "darkwave",
       "electronica",
       "techno"
@@ -7813,12 +7914,14 @@
       "element": "water"
     },
     "genres": [
-      "idm",
-      "jazz"
+      "ambient",
+      "folk",
+      "idm"
     ],
     "subgenres": [
-      "idm",
-      "spiritual-jazz"
+      "ambient",
+      "folk-rock",
+      "idm"
     ],
     "youtubeVideoId": "4mvxwISwVWw",
     "backupVideoIds": []
@@ -7836,7 +7939,9 @@
     "genres": [
       "altrock",
       "ambient",
-      "electronica"
+      "artpop",
+      "electronica",
+      "indiepop"
     ],
     "subgenres": [
       "ambient",
@@ -7857,11 +7962,9 @@
     },
     "genres": [
       "artpop",
-      "idm"
+      "indiepop"
     ],
-    "subgenres": [
-      "idm"
-    ],
+    "subgenres": [],
     "youtubeVideoId": "QR2HE0YyYOs",
     "backupVideoIds": []
   },
@@ -7875,8 +7978,8 @@
       "element": "air"
     },
     "genres": [
-      "darkwave",
-      "artpop"
+      "altrock",
+      "electronica"
     ],
     "subgenres": [
       "synth-pop",
@@ -7917,8 +8020,9 @@
       "element": "fire"
     },
     "genres": [
-      "techno",
-      "idm"
+      "ambient",
+      "idm",
+      "techno"
     ],
     "subgenres": [
       "dub-techno",
@@ -7941,6 +8045,7 @@
       "element": "fire"
     },
     "genres": [
+      "electronica",
       "triphop"
     ],
     "subgenres": [
@@ -7982,13 +8087,11 @@
     },
     "genres": [
       "ambient",
-      "idm",
-      "techno"
+      "idm"
     ],
     "subgenres": [
       "ambient",
-      "idm",
-      "techno"
+      "idm"
     ],
     "youtubeVideoId": "eICZeDiPkaE",
     "backupVideoIds": []
@@ -8093,6 +8196,7 @@
       "element": "fire"
     },
     "genres": [
+      "electronica",
       "idm"
     ],
     "subgenres": [
@@ -8161,8 +8265,10 @@
       "element": "earth"
     },
     "genres": [
+      "ambient",
+      "electronica",
       "idm",
-      "classical"
+      "techno"
     ],
     "subgenres": [
       "experimental",
@@ -8185,12 +8291,11 @@
       "dateApprox": true
     },
     "genres": [
+      "altrock",
       "artpop",
-      "industrial"
+      "indiepop"
     ],
-    "subgenres": [
-      "industrial"
-    ],
+    "subgenres": [],
     "youtubeVideoId": "HzRJUMNdVsg",
     "backupVideoIds": []
   },
@@ -8375,8 +8480,10 @@
       "element": "earth"
     },
     "genres": [
+      "ambient",
       "classical",
-      "ambient"
+      "darkwave",
+      "electronica"
     ],
     "subgenres": [
       "modern-classical",
@@ -8508,17 +8615,9 @@
       "dateApprox": true
     },
     "genres": [
-      "electronica",
-      "indiepop",
-      "folk",
-      "triphop",
-      "idm"
+      "artpop"
     ],
-    "subgenres": [
-      "indietronica",
-      "folk-rock",
-      "idm"
-    ],
+    "subgenres": [],
     "youtubeVideoId": "Q9ls6VmrLLY",
     "backupVideoIds": []
   },
@@ -8618,8 +8717,10 @@
       "element": "air"
     },
     "genres": [
-      "idm",
-      "ambient"
+      "ambient",
+      "artpop",
+      "electronica",
+      "idm"
     ],
     "subgenres": [
       "experimental",
@@ -8688,13 +8789,11 @@
     },
     "genres": [
       "ambient",
-      "classical",
       "idm",
       "techno"
     ],
     "subgenres": [
       "ambient",
-      "classical",
       "idm",
       "techno"
     ],
@@ -8829,12 +8928,11 @@
       "dateApprox": true
     },
     "genres": [
+      "altrock",
       "artpop",
-      "industrial"
+      "indiepop"
     ],
-    "subgenres": [
-      "industrial"
-    ],
+    "subgenres": [],
     "youtubeVideoId": "ptmpULKngT8",
     "backupVideoIds": []
   },
@@ -8936,9 +9034,15 @@
       "element": "water"
     },
     "genres": [
-      "artpop"
+      "artpop",
+      "darkwave",
+      "electronica",
+      "indiepop"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "darkwave",
+      "indietronica"
+    ],
     "youtubeVideoId": "KKqlxdh9pDE",
     "backupVideoIds": [
       "KKqlxdh9pDE",
@@ -9302,6 +9406,9 @@
       "element": "water"
     },
     "genres": [
+      "altrock",
+      "artpop",
+      "electronica",
       "triphop"
     ],
     "subgenres": [
@@ -9349,9 +9456,12 @@
     },
     "genres": [
       "altrock",
+      "darkwave",
+      "indiepop",
       "industrial"
     ],
     "subgenres": [
+      "darkwave",
       "industrial"
     ],
     "youtubeVideoId": "_P6qqceGQlM",
@@ -9388,7 +9498,7 @@
     },
     "genres": [
       "altrock",
-      "triphop"
+      "electronica"
     ],
     "subgenres": [
       "new-wave",
@@ -9609,10 +9719,11 @@
       "dateApprox": true
     },
     "genres": [
-      "idm"
+      "altrock",
+      "ambient"
     ],
     "subgenres": [
-      "idm"
+      "ambient"
     ],
     "youtubeVideoId": "5XWuD6UsM9Y",
     "backupVideoIds": []
@@ -9785,7 +9896,7 @@
     "subgenres": [
       "romantic"
     ],
-    "youtubeVideoId": "ck1wDRMoCPM",
+    "youtubeVideoId": "3jbHbDena_U",
     "backupVideoIds": []
   },
   {
@@ -9906,8 +10017,7 @@
       "element": "water"
     },
     "genres": [
-      "idm",
-      "industrial"
+      "idm"
     ],
     "subgenres": [
       "experimental",
@@ -9998,7 +10108,7 @@
       "dateApprox": true
     },
     "genres": [
-      "triphop",
+      "electronica",
       "idm"
     ],
     "subgenres": [
@@ -10040,13 +10150,13 @@
     },
     "genres": [
       "ambient",
-      "idm",
-      "classical"
+      "folk",
+      "idm"
     ],
     "subgenres": [
       "ambient",
-      "idm",
-      "classical"
+      "folk-rock",
+      "idm"
     ],
     "youtubeVideoId": "8cttc9Iq0jE",
     "backupVideoIds": []
@@ -10080,12 +10190,10 @@
       "dateApprox": true
     },
     "genres": [
-      "ambient",
-      "classical"
+      "ambient"
     ],
     "subgenres": [
-      "ambient",
-      "classical"
+      "ambient"
     ],
     "youtubeVideoId": "E-FtHTb1uLY",
     "backupVideoIds": []
@@ -10118,13 +10226,15 @@
       "element": "air"
     },
     "genres": [
-      "industrial",
       "darkwave",
+      "idm",
+      "industrial",
       "techno"
     ],
     "subgenres": [
-      "industrial",
       "darkwave",
+      "idm",
+      "industrial",
       "techno"
     ],
     "youtubeVideoId": "sz3WGYKGNYU",
@@ -10208,8 +10318,7 @@
       "element": "earth"
     },
     "genres": [
-      "idm",
-      "dnb"
+      "idm"
     ],
     "subgenres": [
       "idm"
@@ -10252,7 +10361,7 @@
     "subgenres": [
       "modern-classical"
     ],
-    "youtubeVideoId": "bBsKgEj3gbo",
+    "youtubeVideoId": "KDfGBmbNbMw",
     "backupVideoIds": []
   },
   {
@@ -10283,9 +10392,9 @@
       "element": "water"
     },
     "genres": [
-      "triphop",
-      "idm",
-      "artpop"
+      "artpop",
+      "electronica",
+      "techno"
     ],
     "subgenres": [
       "trip-hop",
@@ -10308,14 +10417,16 @@
       "element": "air"
     },
     "genres": [
-      "industrial",
+      "ambient",
+      "darkwave",
       "idm",
-      "darkwave"
+      "industrial"
     ],
     "subgenres": [
-      "industrial",
+      "ambient",
+      "darkwave",
       "idm",
-      "darkwave"
+      "industrial"
     ],
     "youtubeVideoId": "Orr2ZqtijCQ",
     "backupVideoIds": [
@@ -10334,17 +10445,13 @@
       "dateApprox": true
     },
     "genres": [
-      "idm",
-      "industrial",
+      "altrock",
       "darkwave",
-      "artpop",
-      "classical"
+      "folk"
     ],
     "subgenres": [
-      "idm",
-      "industrial",
       "darkwave",
-      "classical"
+      "folk-rock"
     ],
     "youtubeVideoId": "SckuWmb7WqU",
     "backupVideoIds": []
@@ -10467,6 +10574,7 @@
       "element": "water"
     },
     "genres": [
+      "darkwave",
       "industrial"
     ],
     "subgenres": [
@@ -10735,8 +10843,8 @@
       "element": "water"
     },
     "genres": [
-      "idm",
-      "industrial"
+      "artpop",
+      "idm"
     ],
     "subgenres": [
       "experimental",
@@ -10819,7 +10927,9 @@
     },
     "genres": [
       "dnb",
-      "idm"
+      "electronica",
+      "idm",
+      "triphop"
     ],
     "subgenres": [
       "drum-n-bass",
@@ -10842,9 +10952,15 @@
       "element": "earth"
     },
     "genres": [
-      "artpop"
+      "artpop",
+      "darkwave",
+      "electronica",
+      "indiepop"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "darkwave",
+      "indietronica"
+    ],
     "youtubeVideoId": "nWW4tFuzxGE",
     "backupVideoIds": [
       "9tw2LMnxvW0",
@@ -10862,6 +10978,7 @@
       "dateApprox": true
     },
     "genres": [
+      "altrock",
       "artpop",
       "indiepop"
     ],
@@ -10879,8 +10996,7 @@
       "element": "fire"
     },
     "genres": [
-      "ambient",
-      "classical"
+      "ambient"
     ],
     "subgenres": [
       "ambient",
@@ -10951,7 +11067,8 @@
     },
     "genres": [
       "ambient",
-      "idm"
+      "idm",
+      "techno"
     ],
     "subgenres": [
       "ambient",
@@ -10973,12 +11090,13 @@
       "element": "water"
     },
     "genres": [
-      "classical"
+      "ambient",
+      "electronica"
     ],
     "subgenres": [
       "minimalist"
     ],
-    "youtubeVideoId": "g0WVh1D0N50",
+    "youtubeVideoId": "ZXJWO2FQ16c",
     "backupVideoIds": []
   },
   {
@@ -11110,6 +11228,7 @@
       "element": "air"
     },
     "genres": [
+      "idm",
       "jazz"
     ],
     "subgenres": [
@@ -11201,12 +11320,10 @@
       "element": "water"
     },
     "genres": [
-      "ambient",
-      "classical"
+      "ambient"
     ],
     "subgenres": [
-      "ambient",
-      "classical"
+      "ambient"
     ],
     "youtubeVideoId": "plKQeV_exL4",
     "backupVideoIds": []
@@ -11301,12 +11418,10 @@
     },
     "genres": [
       "ambient",
-      "classical",
       "idm"
     ],
     "subgenres": [
       "ambient",
-      "classical",
       "idm"
     ],
     "youtubeVideoId": "RSikdZswhoA",
@@ -11324,7 +11439,8 @@
     "genres": [
       "darkwave",
       "industrial",
-      "techno"
+      "techno",
+      "triphop"
     ],
     "subgenres": [
       "darkwave",
@@ -11348,8 +11464,7 @@
       "dateApprox": true
     },
     "genres": [
-      "dnb",
-      "idm"
+      "dnb"
     ],
     "subgenres": [
       "grime"
@@ -11367,7 +11482,9 @@
       "element": "fire"
     },
     "genres": [
-      "classical"
+      "ambient",
+      "artpop",
+      "idm"
     ],
     "subgenres": [
       "minimalist",
@@ -11405,12 +11522,11 @@
       "element": "air"
     },
     "genres": [
-      "ambient",
-      "idm"
+      "altrock",
+      "ambient"
     ],
     "subgenres": [
-      "ambient",
-      "idm"
+      "ambient"
     ],
     "youtubeVideoId": "IRFPBRDPnz8",
     "backupVideoIds": []
@@ -11426,6 +11542,7 @@
       "dateApprox": true
     },
     "genres": [
+      "ambient",
       "idm",
       "techno"
     ],
@@ -11449,8 +11566,8 @@
       "element": "water"
     },
     "genres": [
-      "industrial",
-      "dnb"
+      "dnb",
+      "triphop"
     ],
     "subgenres": [
       "dub",
@@ -11899,6 +12016,8 @@
       "element": "air"
     },
     "genres": [
+      "darkwave",
+      "idm",
       "industrial"
     ],
     "subgenres": [
@@ -11945,12 +12064,10 @@
       "element": "water"
     },
     "genres": [
-      "ambient",
-      "classical"
+      "ambient"
     ],
     "subgenres": [
-      "ambient",
-      "classical"
+      "ambient"
     ],
     "youtubeVideoId": "qLunIpOB73w",
     "backupVideoIds": []
@@ -12020,12 +12137,9 @@
       "element": "fire"
     },
     "genres": [
-      "artpop",
-      "classical"
+      "artpop"
     ],
-    "subgenres": [
-      "classical"
-    ],
+    "subgenres": [],
     "youtubeVideoId": "2CdWEHjaL30",
     "backupVideoIds": [
       "athwHqqtSpM",
@@ -12061,6 +12175,7 @@
       "element": "earth"
     },
     "genres": [
+      "electronica",
       "triphop"
     ],
     "subgenres": [
@@ -12101,11 +12216,9 @@
       "element": "air"
     },
     "genres": [
-      "electronica",
       "idm"
     ],
     "subgenres": [
-      "indietronica",
       "idm"
     ],
     "youtubeVideoId": "ATMGBt53bS4",
@@ -12247,8 +12360,12 @@
       "element": "water"
     },
     "genres": [
+      "altrock",
+      "ambient",
+      "electronica",
       "idm",
-      "ambient"
+      "indiepop",
+      "techno"
     ],
     "subgenres": [
       "idm",
@@ -12401,7 +12518,8 @@
     },
     "genres": [
       "ambient",
-      "classical"
+      "electronica",
+      "artpop"
     ],
     "subgenres": [
       "ambient",
@@ -12444,7 +12562,9 @@
     },
     "genres": [
       "dnb",
-      "idm"
+      "idm",
+      "industrial",
+      "techno"
     ],
     "subgenres": [
       "breakcore",
@@ -12580,9 +12700,13 @@
       "element": "air"
     },
     "genres": [
-      "artpop"
+      "artpop",
+      "folk",
+      "indiepop"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "folk-rock"
+    ],
     "youtubeVideoId": "Mwu3kCaIFf0",
     "backupVideoIds": []
   },
@@ -12792,7 +12916,9 @@
     },
     "genres": [
       "dnb",
-      "idm"
+      "electronica",
+      "idm",
+      "triphop"
     ],
     "subgenres": [
       "jungle",
@@ -12812,8 +12938,9 @@
       "dateApprox": true
     },
     "genres": [
-      "industrial",
-      "ambient"
+      "ambient",
+      "idm",
+      "industrial"
     ],
     "subgenres": [
       "industrial",
