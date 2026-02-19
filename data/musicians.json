@@ -4292,11 +4292,9 @@
     },
     "genres": [
       "artpop",
-      "classical",
       "electronica"
     ],
     "subgenres": [
-      "classical",
       "synth-pop"
     ],
     "youtubeVideoId": "BUW6lBS57Cc",
@@ -4907,8 +4905,7 @@
       "element": "earth"
     },
     "genres": [
-      "ambient",
-      "classical"
+      "ambient"
     ],
     "subgenres": [
       "ambient",
@@ -5821,24 +5818,6 @@
       "baroque"
     ],
     "youtubeVideoId": "ho9rZjlsyYY",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Johannes Brahms",
-    "birthDate": "1833-05-07",
-    "venus": {
-      "sign": "Gemini",
-      "degree": 1.8,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "romantic"
-    ],
-    "youtubeVideoId": "s4R6JBO1HWA",
     "backupVideoIds": []
   },
   {
@@ -7202,12 +7181,10 @@
       "element": "air"
     },
     "genres": [
-      "artpop",
-      "classical",
-      "darkwave"
+      "darkwave",
+      "artpop"
     ],
     "subgenres": [
-      "classical",
       "darkwave"
     ],
     "youtubeVideoId": "de_FBh2xU8o",
@@ -7521,24 +7498,6 @@
       "66A_3uwuZ_I",
       "3h-JYx76QNM"
     ]
-  },
-  {
-    "name": "Maurice Ravel",
-    "birthDate": "1875-03-07",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 0.6,
-      "decan": 1,
-      "element": "air"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "impressionist"
-    ],
-    "youtubeVideoId": "cJOW2caFNwE",
-    "backupVideoIds": []
   },
   {
     "name": "Max Richter",
