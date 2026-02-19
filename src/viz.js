@@ -1055,17 +1055,21 @@ function tick() {
 
   // ── Moon dot ─────────────────────────────────────────────────────────────────
   if (moonDot) {
-    const mt     = (performance.now() - moonDot.birth) / 1000;
+    const phaseAngle = moonDot.phaseAngle ?? 45;
+    const moonWaxing = phaseAngle < 180;
     // Pulse only when zoomed — on the rotating full ring it makes the moon look nervous
-    const mPulse = isZoomed ? 1 + 0.12 * Math.sin(mt * 0.8) : 1;
+    const mPulse = isZoomed
+      ? 1 + 0.12 * Math.sin((performance.now() - moonDot.birth) / 1250)
+      : 1;
 
     const mAngle = (-(moonDot.deg) - 90 + rot) * Math.PI / 180;
     const mx = cx + midR * Math.cos(mAngle);
     const my = cy + midR * Math.sin(mAngle);
 
     // moonR: scale with canvas size so it's reasonable on small phone screens
-    const moonR  = isZoomed ? 5.5 : Math.min(13, minDim * 0.028);
-    const hazeR  = (isZoomed ? 18 : moonR * 3.2) * mPulse;
+    const moonR = isZoomed ? 5.5 : Math.min(13, minDim * 0.028);
+    const hazeR = (isZoomed ? 18 : moonR * 3.2) * mPulse;
+    const specR = moonR * 2.8;
 
     // 1. Large soft atmosphere haze (additive) — outer corona
     ctx.save();
@@ -1081,38 +1085,31 @@ function tick() {
     ctx.fill();
     ctx.restore();
 
-    // 2. Phase disc — slight blur so edges dissolve into the glow
+    // 2. Phase disc — blurred so the boundary dissolves into the surrounding haze
+    // phCanvas is 400×400 with an inner radius of 160; we crop the 320×320 centre
+    const phCanvas = getMoonPhaseCanvas(phaseAngle);
     ctx.save();
-    ctx.filter = `blur(${Math.max(0.6, moonR * 0.30)}px)`;
+    ctx.filter               = `blur(${Math.max(0.6, moonR * 0.30)}px)`;
     ctx.globalCompositeOperation = 'source-over';
-    ctx.shadowBlur  = moonR * 2.5;
-    ctx.shadowColor = 'rgba(120, 190, 255, 0.55)';
-    const phCanvas  = getMoonPhaseCanvas(moonDot.phaseAngle ?? 45);
-    const drawSize  = moonR * 2;
-    const srcR      = 160; // radius used inside phCanvas
-    const srcSize   = srcR * 2;
-    const srcOffset = (phCanvas.width - srcSize) / 2;
-    ctx.drawImage(phCanvas, srcOffset, srcOffset, srcSize, srcSize,
-                  mx - moonR, my - moonR, drawSize, drawSize);
+    ctx.shadowBlur           = moonR * 2.5;
+    ctx.shadowColor          = 'rgba(120, 190, 255, 0.55)';
+    ctx.drawImage(phCanvas, 40, 40, 320, 320, mx - moonR, my - moonR, moonR * 2, moonR * 2);
     ctx.shadowBlur = 0;
-    ctx.filter = 'none';
+    ctx.filter     = 'none';
     ctx.restore();
 
-    // 3. Specular glow — same white-hot-to-transparent gradient as getDotSprite,
-    //    focal point offset toward the lit limb so it reads as a sphere highlight
-    const moonWaxing = (moonDot.phaseAngle ?? 45) < 180;
+    // 3. Specular glow — white-hot focal point offset toward the lit limb
+    const hlFocX = mx + (moonWaxing ? moonR * 0.35 : -moonR * 0.35);
     ctx.save();
     ctx.globalCompositeOperation = 'lighter';
-    const hlFocX = mx + (moonWaxing ? moonR * 0.35 : -moonR * 0.35);
-    const hlFocY = my - moonR * 0.35;
-    const hlG = ctx.createRadialGradient(hlFocX, hlFocY, moonR * 0.05, mx, my, moonR * 2.8);
+    const hlG = ctx.createRadialGradient(hlFocX, my - moonR * 0.35, moonR * 0.05, mx, my, specR);
     hlG.addColorStop(0,    'rgba(255, 255, 255, 0.60)');
     hlG.addColorStop(0.2,  'rgba(220, 238, 255, 0.30)');
     hlG.addColorStop(0.5,  'rgba(150, 200, 255, 0.10)');
     hlG.addColorStop(1,    'rgba(100, 160, 255, 0)');
     ctx.fillStyle = hlG;
     ctx.beginPath();
-    ctx.arc(mx, my, moonR * 2.8, 0, Math.PI * 2);
+    ctx.arc(mx, my, specR, 0, Math.PI * 2);
     ctx.fill();
     ctx.restore();
 
