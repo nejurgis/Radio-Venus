@@ -1443,8 +1443,9 @@
     "name": "Drexciya",
     "birthDate": "1969-09-22",
     "genres": [
-      "techno",
-      "idm"
+      "idm",
+      "jazz",
+      "techno"
     ],
     "youtubeVideoId": "6Yrm1a4jfAc",
     "subgenres": [
@@ -2450,8 +2451,9 @@
     "name": "Inga Copeland",
     "birthDate": "1985-01-01",
     "genres": [
+      "artpop",
       "idm",
-      "artpop"
+      "techno"
     ],
     "subgenres": [
       "experimental"
@@ -2499,8 +2501,7 @@
     "genres": [
       "ambient",
       "idm",
-      "techno",
-      "triphop"
+      "techno"
     ],
     "youtubeVideoId": "jSFbtIyAqRw",
     "subgenres": [
@@ -2727,7 +2728,7 @@
       "dnb",
       "electronica",
       "idm",
-      "triphop"
+      "techno"
     ],
     "subgenres": [
       "dubstep",
@@ -3013,8 +3014,7 @@
       "dnb",
       "electronica",
       "idm",
-      "techno",
-      "triphop"
+      "techno"
     ],
     "subgenres": [
       "dubstep",
@@ -3296,8 +3296,9 @@
     "name": "Lusine ICL",
     "birthDate": "2000-01-01",
     "genres": [
-      "idm",
       "ambient",
+      "electronica",
+      "idm",
       "techno"
     ],
     "youtubeVideoId": "Rtl3vMF9-Ck",
@@ -3689,8 +3690,7 @@
     "genres": [
       "ambient",
       "idm",
-      "techno",
-      "triphop"
+      "techno"
     ],
     "youtubeVideoId": "Es1_vd8cQBs",
     "subgenres": [
@@ -4786,7 +4786,8 @@
     "birthDate": "1987-04-12",
     "genres": [
       "artpop",
-      "triphop"
+      "electronica",
+      "techno"
     ],
     "youtubeVideoId": "4WKQB_sOlv4",
     "subgenres": [
