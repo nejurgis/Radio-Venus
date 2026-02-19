@@ -467,7 +467,7 @@ export function renderNebula(musicians) {
   }
   let idx = 0;
   function buildBatch() {
-    const end = Math.min(idx + 8, order.length);
+    const end = Math.min(idx + 12, order.length);
     while (idx < end) {
       const dot = dots[order[idx++]];
       const s = getDotSprite(dot.r, dot.g, dot.b, dot.size, dot.alpha);
@@ -476,9 +476,11 @@ export function renderNebula(musicians) {
       dot.spriteDrawSize = s.width / SPRITE_SCALE;
       dot.spriteOffset   = s.width / SPRITE_SCALE / 2;
     }
-    if (idx < order.length) requestAnimationFrame(buildBatch);
+    // Use setTimeout instead of rAF so sprite creation never runs in the same
+    // frame as tick(), keeping the animation smooth during the reveal
+    if (idx < order.length) setTimeout(buildBatch, 32);
   }
-  setTimeout(() => requestAnimationFrame(buildBatch), 300);
+  setTimeout(buildBatch, 300);
 
   // Moon appears last — after signs (~960ms) and most dots (~1250ms) are visible
   setTimeout(() => { moonBirth = performance.now(); }, 1500);
@@ -569,6 +571,8 @@ function tick() {
   animId = requestAnimationFrame(tick);
   if (!ctx || !canvas) return;
 
+  const now = performance.now(); // cached once — used for all fade/pulse calculations
+
   const w = canvas.style.width ? parseFloat(canvas.style.width) : canvas.width;
   const h = canvas.style.height ? parseFloat(canvas.style.height) : canvas.height;
   const cx = w / 2;
@@ -631,7 +635,7 @@ function tick() {
 
   // ── Update Logic ────────────────────────────────────────────────
   if (zoomAnimating === true) {
-    const elapsed = performance.now() - zoomAnimStart;
+    const elapsed = now - zoomAnimStart;
     const raw = Math.min(1, elapsed / zoomAnimDuration);
     zoomProgress = 1 - Math.pow(1 - raw, 3);
     if (raw >= 1) {
@@ -640,7 +644,7 @@ function tick() {
       if (zoomResolve) { zoomResolve(); zoomResolve = null; }
     }
   } else if (zoomAnimating === 'out') {
-    const elapsed = performance.now() - zoomAnimStart;
+    const elapsed = now - zoomAnimStart;
     const raw = Math.min(1, elapsed / zoomAnimDuration);
     zoomProgress = Math.pow(1 - raw, 3);
     if (raw >= 1) {
@@ -799,7 +803,7 @@ function tick() {
     const iy = cy + iconR * Math.sin(centerAngle);
 
     ctx.save();
-    ctx.globalAlpha = Math.min(1, (performance.now() - signBirths[sign]) / 400);
+    ctx.globalAlpha = Math.min(1, (now - signBirths[sign]) / 400);
     ctx.translate(ix, iy);
     ctx.rotate(centerAngle + Math.PI / 2);
     ctx.scale(iconScale, iconScale);
@@ -958,7 +962,7 @@ function tick() {
       ctx.fill();
     } else if (dot.sprite) {
       // Fade in over 400ms from when the sprite was first created
-      const fadeAlpha = Math.min(1, (performance.now() - dot.spriteBirth) / 400);
+      const fadeAlpha = Math.min(1, (now - dot.spriteBirth) / 400);
       ctx.globalAlpha = fadeAlpha;
       ctx.drawImage(dot.sprite, x - dot.spriteOffset, y - dot.spriteOffset, dot.spriteDrawSize, dot.spriteDrawSize);
       ctx.globalAlpha = 1;
@@ -1033,7 +1037,7 @@ function tick() {
     const y = cy + midR * Math.sin(angle);
     ctx.save();
     ctx.globalCompositeOperation = 'lighter';
-    const breath = 0.3 + 0.15 * Math.sin(performance.now() / 600);
+    const breath = 0.3 + 0.15 * Math.sin(now / 600);
     const glowR = isZoomed ? 8 : 16;
     const grad = ctx.createRadialGradient(x, y, 0, x, y, glowR);
     grad.addColorStop(0, `rgba(${previewDot.r}, ${previewDot.g}, ${previewDot.b}, ${breath})`);
@@ -1046,7 +1050,7 @@ function tick() {
   }
 
   if (userDot) {
-    const t = (performance.now() - userDot.birth) / 1000;
+    const t = (now - userDot.birth) / 1000;
     const pulse = 1 + 0.15 * Math.sin(t * 0.8);
     const angle = (-(userDot.deg) - 90 + rot) * Math.PI / 180;
     const x = cx + midR * Math.cos(angle);
@@ -1100,14 +1104,14 @@ function tick() {
 
   // ── Moon dot ─────────────────────────────────────────────────────────────────
   if (moonDot && moonBirth > 0) {
-    const moonFade = Math.min(1, (performance.now() - moonBirth) / 500);
+    const moonFade = Math.min(1, (now - moonBirth) / 500);
     ctx.save();
     ctx.globalAlpha = moonFade; // all sub-saves inherit this; restored at the end
     const phaseAngle = moonDot.phaseAngle ?? 45;
     const moonWaxing = phaseAngle < 180;
     // Pulse only when zoomed — on the rotating full ring it makes the moon look nervous
     const mPulse = isZoomed
-      ? 1 + 0.12 * Math.sin((performance.now() - moonDot.birth) / 1250)
+      ? 1 + 0.12 * Math.sin((now - moonDot.birth) / 1250)
       : 1;
 
     const mAngle = (-(moonDot.deg) - 90 + rot) * Math.PI / 180;
