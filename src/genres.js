@@ -197,7 +197,7 @@ const GENRE_MAP = {
   'britpop': ['altrock'],
   'madchester': ['altrock', 'electronica'],
   'post-punk revival': ['altrock'],
-  'post-rock': ['altrock', 'ambient'],
+  'post-rock': ['altrock'],
   'shoegaze': ['altrock', 'indiepop'],
   'noise rock': ['altrock', 'industrial'],
   'grunge': ['altrock'],
@@ -265,7 +265,7 @@ const GENRE_MAP = {
   'ambient jazz': ['ambient', 'jazz'],
   'jazz trumpet': ['jazz'],
   'jazz harp': ['jazz'],
-  'fourth world': ['ambient', 'jazz'],  // Jon Hassell's ambient/jazz/world fusion
+  'fourth world': ['ambient'],          // texture tag, not a jazz indicator — Yoshimura/Brouk are ambient, not jazz
   'tzadik': ['jazz', 'idm'],            // Zorn's label used as EN micro-genre (avant-garde/experimental)
 
   // ── Classical / Orchestral ──
