@@ -29,11 +29,12 @@ const getMoonPhaseCanvas = (phaseAngle) => {
   const p      = q * Math.PI / 180;
   const waxing = q < 180;
 
-  // Unlit side: deep blue-black with earthshine (faint Earth-reflected light)
+  // Unlit side: deep blue-black — must be fully opaque so it cleanly covers
+  // the lit semicircle when used for the terminator ellipse (avoids vertical seam)
   const darkG = mc.createRadialGradient(c - R * 0.15, c - R * 0.2, R * 0.05, c, c, R);
-  darkG.addColorStop(0,   'rgba(30, 40, 72, 0.95)');
-  darkG.addColorStop(0.6, 'rgba(14, 20, 45, 0.97)');
-  darkG.addColorStop(1,   'rgba(3,  5,  16, 0.99)');
+  darkG.addColorStop(0,   'rgba(30, 40, 72, 1)');
+  darkG.addColorStop(0.6, 'rgba(14, 20, 45, 1)');
+  darkG.addColorStop(1,   'rgba(3,  5,  16, 1)');
 
   // Lit side: bright white core fading to lunar blue at the limb
   const litG = mc.createRadialGradient(c + R * 0.2, c - R * 0.25, R * 0.05, c, c, R);
