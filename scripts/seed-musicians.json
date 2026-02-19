@@ -158,7 +158,9 @@
     "birthDate": "1938-12-13",
     "genres": [
       "artpop",
-      "classical"
+      "classical",
+      "idm",
+      "jazz"
     ],
     "subgenres": [
       "minimalist",
@@ -5190,6 +5192,7 @@
     "name": "Sun Ra",
     "birthDate": "1914-05-22",
     "genres": [
+      "idm",
       "jazz"
     ],
     "subgenres": [
