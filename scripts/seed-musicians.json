@@ -158,8 +158,8 @@
     "name": "Alvin Curran",
     "birthDate": "1938-12-13",
     "genres": [
-      "classical",
-      "idm"
+      "artpop",
+      "classical"
     ],
     "subgenres": [
       "minimalist",
@@ -179,8 +179,9 @@
     "name": "Amon Tobin",
     "birthDate": "1972-02-07",
     "genres": [
-      "dnb",
+      "electronica",
       "idm",
+      "jazz",
       "triphop"
     ],
     "youtubeVideoId": "hDBW1TvABRI",
@@ -247,7 +248,6 @@
     "name": "Anna von Hausswolff",
     "birthDate": "1986-09-06",
     "genres": [
-      "classical",
       "darkwave",
       "folk",
       "industrial"
@@ -519,8 +519,7 @@
     "birthDate": "1981-12-01",
     "genres": [
       "ambient",
-      "idm",
-      "classical"
+      "idm"
     ],
     "subgenres": [
       "ambient",
@@ -635,6 +634,7 @@
       "ambient",
       "electronica",
       "idm",
+      "techno",
       "triphop"
     ],
     "youtubeVideoId": "A2zKARkpDW4",
@@ -731,8 +731,11 @@
     "name": "Burial",
     "birthDate": "1979-12-11",
     "genres": [
+      "ambient",
       "dnb",
-      "ambient"
+      "electronica",
+      "idm",
+      "triphop"
     ],
     "youtubeVideoId": "IlEkvbRmfrA",
     "subgenres": [
@@ -857,8 +860,7 @@
     "name": "Cecil Taylor",
     "birthDate": "1929-03-25",
     "genres": [
-      "jazz",
-      "classical"
+      "jazz"
     ],
     "subgenres": [
       "free-jazz"
@@ -905,7 +907,6 @@
     "birthDate": "1978-01-01",
     "genres": [
       "ambient",
-      "classical",
       "idm"
     ]
   },
@@ -1520,6 +1521,7 @@
     "birthDate": "1988-06-15",
     "genres": [
       "altrock",
+      "darkwave",
       "electronica"
     ],
     "youtubeVideoId": "_7sVSSb2mU4"
@@ -1560,7 +1562,6 @@
     "birthDate": "1994-06-15",
     "genres": [
       "ambient",
-      "classical",
       "idm"
     ]
   },
@@ -2158,6 +2159,8 @@
     "name": "György Ligeti",
     "birthDate": "1923-05-28",
     "genres": [
+      "ambient",
+      "artpop",
       "classical"
     ],
     "subgenres": [
@@ -2276,8 +2279,7 @@
     "name": "Hiroshi Yoshimura",
     "birthDate": "1940-10-22",
     "genres": [
-      "ambient",
-      "classical"
+      "ambient"
     ],
     "youtubeVideoId": "ZJSuKb8YAYI",
     "subgenres": [
@@ -2593,8 +2595,7 @@
     "name": "Joanna Brouk",
     "birthDate": "1949-02-20",
     "genres": [
-      "ambient",
-      "classical"
+      "ambient"
     ],
     "subgenres": [
       "ambient",
@@ -2659,6 +2660,7 @@
     "name": "John Adams",
     "birthDate": "1947-02-15",
     "genres": [
+      "ambient",
       "classical"
     ],
     "youtubeVideoId": "OeeLa_bvOK0",
@@ -2939,8 +2941,7 @@
     "birthDate": "1935-09-29",
     "genres": [
       "ambient",
-      "idm",
-      "classical"
+      "idm"
     ]
   },
   {
@@ -3036,8 +3037,7 @@
     "name": "Laraaji",
     "birthDate": "1943-06-15",
     "genres": [
-      "ambient",
-      "classical"
+      "ambient"
     ]
   },
   {
@@ -3408,8 +3408,11 @@
     "name": "Martyn",
     "birthDate": "1975-01-01",
     "genres": [
+      "dnb",
+      "electronica",
+      "idm",
       "techno",
-      "dnb"
+      "triphop"
     ],
     "subgenres": [
       "dubstep",
@@ -3444,6 +3447,7 @@
     "name": "Max Richter",
     "birthDate": "1966-03-22",
     "genres": [
+      "ambient",
       "classical"
     ],
     "youtubeVideoId": "tC0cp-dF2Jo",
@@ -3562,6 +3566,7 @@
     "name": "Miss Kittin",
     "birthDate": "1973-07-16",
     "genres": [
+      "altrock",
       "darkwave",
       "electronica",
       "techno"
@@ -3618,7 +3623,9 @@
     "genres": [
       "altrock",
       "ambient",
-      "electronica"
+      "artpop",
+      "electronica",
+      "indiepop"
     ]
   },
   {
@@ -3776,8 +3783,10 @@
     "name": "Murcof",
     "birthDate": "1970-07-16",
     "genres": [
+      "ambient",
+      "electronica",
       "idm",
-      "classical"
+      "techno"
     ],
     "youtubeVideoId": "GGGfLLkIoVc",
     "subgenres": [
@@ -3871,8 +3880,10 @@
     "name": "Nils Frahm",
     "birthDate": "1982-09-20",
     "genres": [
+      "ambient",
       "classical",
-      "ambient"
+      "darkwave",
+      "electronica"
     ],
     "youtubeVideoId": "xLNeZogTsNc",
     "subgenres": [
@@ -4014,7 +4025,6 @@
     "birthDate": "1969-01-01",
     "genres": [
       "ambient",
-      "classical",
       "idm",
       "techno"
     ]
@@ -4638,8 +4648,8 @@
     "birthDate": "1987-01-01",
     "genres": [
       "ambient",
-      "idm",
-      "classical"
+      "folk",
+      "idm"
     ]
   },
   {
@@ -4653,8 +4663,7 @@
     "name": "Satoshi Ashikawa",
     "birthDate": "1953-01-01",
     "genres": [
-      "ambient",
-      "classical"
+      "ambient"
     ]
   },
   {
@@ -4711,8 +4720,7 @@
     "name": "Sega Bodega",
     "birthDate": "1992-02-16",
     "genres": [
-      "idm",
-      "dnb"
+      "idm"
     ],
     "youtubeVideoId": "lkDXEz58ntg"
   },
@@ -4997,7 +5005,9 @@
     "birthDate": "1975-01-17",
     "genres": [
       "dnb",
-      "idm"
+      "electronica",
+      "idm",
+      "triphop"
     ],
     "youtubeVideoId": "fCbRNUGxlYs",
     "subgenres": [
@@ -5082,6 +5092,7 @@
     "name": "Steve Reich",
     "birthDate": "1936-10-03",
     "genres": [
+      "ambient",
       "classical"
     ],
     "youtubeVideoId": "g0WVh1D0N50",
@@ -5188,8 +5199,7 @@
     "name": "Suzanne Ciani",
     "birthDate": "1946-06-04",
     "genres": [
-      "ambient",
-      "classical"
+      "ambient"
     ]
   },
   {
@@ -5233,7 +5243,6 @@
     "birthDate": "1971-04-30",
     "genres": [
       "ambient",
-      "classical",
       "idm"
     ]
   },
@@ -5251,8 +5260,7 @@
     "name": "Terror Danjah",
     "birthDate": "1980-01-01",
     "genres": [
-      "dnb",
-      "idm"
+      "dnb"
     ],
     "subgenres": [
       "grime"
@@ -5263,7 +5271,10 @@
     "name": "Terry Riley",
     "birthDate": "1935-06-24",
     "genres": [
-      "classical"
+      "ambient",
+      "artpop",
+      "classical",
+      "idm"
     ],
     "youtubeVideoId": "sqQ59i4PmGE",
     "subgenres": [
@@ -5522,8 +5533,7 @@
     "name": "Tim Story",
     "birthDate": "1957-06-15",
     "genres": [
-      "ambient",
-      "classical"
+      "ambient"
     ]
   },
   {
@@ -5750,7 +5760,9 @@
     "birthDate": "1975-01-13",
     "genres": [
       "dnb",
-      "idm"
+      "idm",
+      "industrial",
+      "techno"
     ],
     "youtubeVideoId": "FbJ63spk48s",
     "subgenres": [
@@ -5935,7 +5947,9 @@
     "birthDate": "1980-01-01",
     "genres": [
       "dnb",
-      "idm"
+      "electronica",
+      "idm",
+      "triphop"
     ],
     "subgenres": [
       "jungle",
@@ -5994,7 +6008,6 @@
     "genres": [
       "electronica",
       "idm",
-      "industrial",
       "techno"
     ]
   },
@@ -6003,7 +6016,6 @@
     "birthDate": "2005-06-15",
     "genres": [
       "ambient",
-      "classical",
       "electronica",
       "idm",
       "techno"
@@ -6107,7 +6119,6 @@
     "birthDate": "1983-06-07",
     "genres": [
       "ambient",
-      "classical",
       "folk"
     ]
   },
@@ -6201,11 +6212,7 @@
     "name": "Okay Kaya",
     "birthDate": "1990-00-00",
     "genres": [
-      "electronica",
-      "indiepop",
-      "folk",
-      "triphop",
-      "idm"
+      "artpop"
     ]
   },
   {
