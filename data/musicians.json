@@ -3772,11 +3772,11 @@
       "element": "water"
     },
     "genres": [
-      "classical",
-      "triphop"
+      "ambient",
+      "electronica"
     ],
     "subgenres": [
-      "downtempo"
+      "space-ambient"
     ],
     "youtubeVideoId": "yAGTjRgDyB8",
     "backupVideoIds": [
@@ -4576,25 +4576,6 @@
       "downtempo"
     ],
     "youtubeVideoId": "NZyafXiZ7cU",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Giuseppe Verdi",
-    "birthDate": "1813-10-10",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 22.6,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "classical"
-    ],
-    "subgenres": [
-      "romantic",
-      "opera"
-    ],
-    "youtubeVideoId": "xoXGrIIBo0o",
     "backupVideoIds": []
   },
   {
@@ -6261,13 +6242,11 @@
     },
     "genres": [
       "ambient",
-      "idm",
-      "classical"
+      "idm"
     ],
     "subgenres": [
       "ambient",
-      "idm",
-      "classical"
+      "idm"
     ],
     "youtubeVideoId": "oRzExskgXAA",
     "backupVideoIds": []
@@ -12084,12 +12063,9 @@
       "element": "fire"
     },
     "genres": [
-      "artpop",
-      "classical"
+      "artpop"
     ],
-    "subgenres": [
-      "classical"
-    ],
+    "subgenres": [],
     "youtubeVideoId": "2CdWEHjaL30",
     "backupVideoIds": [
       "athwHqqtSpM",
