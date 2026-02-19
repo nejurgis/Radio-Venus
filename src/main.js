@@ -495,7 +495,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     initNebula('nebula-container');
     renderNebula(getDatabase());
     const moon = calculateMoon();
-    setMoonPosition(moon.longitude);
+    setMoonPosition(moon.longitude, moon.phaseAngle);
     onNebulaHover(info => highlightGenres(info ? info.genres : null));
     onNeedleCross(({ radialFrac, element, speed }) => {
       const velocity = Math.min(1, 0.2 + speed * 0.8);

@@ -40,9 +40,14 @@ export function calculateVenus(birthDate) {
 
 export function calculateMoon() {
   const now = new Date();
-  const geo = GeoVector(Body.Moon, now, true);
-  const ecl = Ecliptic(geo);
-  const longitude = ecl.elon;
+  const geoMoon = GeoVector(Body.Moon, now, true);
+  const eclMoon = Ecliptic(geoMoon);
+  const longitude = eclMoon.elon;
+
+  const geoSun = GeoVector(Body.Sun, now, true);
+  const eclSun = Ecliptic(geoSun);
+  // Phase angle: 0=new, 90=first quarter, 180=full, 270=last quarter
+  const phaseAngle = ((longitude - eclSun.elon) % 360 + 360) % 360;
 
   const signIndex = Math.floor(longitude / 30);
   const sign = SIGNS[signIndex];
@@ -52,6 +57,7 @@ export function calculateMoon() {
     glyph: SIGN_GLYPHS[sign],
     element: ELEMENTS[sign],
     longitude,
+    phaseAngle,
   };
 }
 

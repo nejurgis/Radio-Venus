@@ -1,52 +1,98 @@
 // src/viz.js
 import { trackNebulaInteraction } from './analytics.js';
-// --- PRE-RENDER MOON STICKER (Gradient + Soft Shadow) ---
-const moonCanvas = document.createElement('canvas');
-moonCanvas.width = 64;  
-moonCanvas.height = 64; 
-const mCtx = moonCanvas.getContext('2d');
 
-// ── 1. Draw the Base (The Lighted Part) ──
-mCtx.beginPath();
-// Center at 32, 32 | Radius 20
-mCtx.arc(32, 32, 20, 0, Math.PI * 2); 
+// ── Dynamic moon phase renderer ───────────────────────────────────────────────
+// Renders to an offscreen canvas sized for crisp display at any DPR.
+// Cached by phase angle (quantized to 0.5° — ~720 unique phases over a lunar cycle).
+let _moonPhaseCanvas = null;
+let _moonPhaseCached = -1;
 
-// DEFINE THE GRADIENT HERE (Local coordinates: 32,32)
-// We use the "Lunar Blue" values (100, 180, 255) directly
-const mGrad = mCtx.createRadialGradient(32, 32, 0, 32, 32, 20);
+function getMoonPhaseCanvas(phaseAngle) {
+  const q = Math.round(phaseAngle * 2) / 2; // 0.5° quantization for cache
+  if (_moonPhaseCanvas && _moonPhaseCached === q) return _moonPhaseCanvas;
+  _moonPhaseCached = q;
 
-mGrad.addColorStop(0.5, `rgba(255, 255, 255, 0.9)`);
+  // 400×400 gives sharp rendering up to ~3× DPR at the sizes we draw the moon
+  const SIZE = 400;
+  const R    = 160; // leave ~40px padding for the shadow bloom
+  const c    = SIZE / 2;
 
-// 0% - White Core
-mGrad.addColorStop(0.9, `rgba(255, 255, 255, 0.9)`);
-// 40% - Lunar Blue Mid
-mGrad.addColorStop(0.4, `rgba(100, 176, 247, 0.8)`);
-// 100% - Soft Edge
-mGrad.addColorStop(0.5, `rgba(100, 180, 255, 0.3)`);
+  if (!_moonPhaseCanvas) {
+    _moonPhaseCanvas = document.createElement('canvas');
+    _moonPhaseCanvas.width = SIZE;
+    _moonPhaseCanvas.height = SIZE;
+  }
 
-mCtx.fillStyle = mGrad;
-mCtx.shadowBlur = 4; // Slight bloom on the outer edge
-mCtx.shadowColor = 'rgba(100, 180, 255, 1)';
-mCtx.fill();
+  const mc = _moonPhaseCanvas.getContext('2d');
+  mc.clearRect(0, 0, SIZE, SIZE);
 
+  const p      = q * Math.PI / 180;
+  const waxing = q < 180;
 
-// ── 2. The Shadow Bite (The Eraser) ──
-mCtx.globalCompositeOperation = 'destination-out';
-mCtx.beginPath();
+  // Unlit side: deep blue-black sphere
+  const darkG = mc.createRadialGradient(c - R * 0.15, c - R * 0.2, R * 0.05, c, c, R);
+  darkG.addColorStop(0,   'rgba(20, 26, 55, 0.97)');
+  darkG.addColorStop(0.7, 'rgba(8,  12, 30, 0.98)');
+  darkG.addColorStop(1,   'rgba(2,  4,  14, 0.99)');
 
-// Shift "Eraser" circle to LEFT (x=24) to leave a crescent on the RIGHT
-// Radius 17 gives a nice thickness
-mCtx.arc(24, 32, 17, 0, Math.PI * 2); 
+  // Lit side: white core fading to lunar blue at the limb
+  const litG = mc.createRadialGradient(c + R * 0.2, c - R * 0.25, R * 0.05, c, c, R);
+  litG.addColorStop(0,   'rgba(255, 255, 252, 0.98)');
+  litG.addColorStop(0.4, 'rgba(225, 235, 255, 0.95)');
+  litG.addColorStop(0.8, 'rgba(155, 190, 245, 0.90)');
+  litG.addColorStop(1,   'rgba(90,  138, 210, 0.85)');
 
-// The eraser doesn't need a gradient, just opacity. 
-// A slight shadowBlur here softens the "Terminator" line (where light meets dark)
-mCtx.fillStyle = '#000000'; 
-mCtx.shadowBlur = 4; 
-mCtx.shadowColor = '#000000'; 
-mCtx.fill();
+  mc.save();
+  mc.beginPath();
+  mc.arc(c, c, R, 0, Math.PI * 2);
+  mc.clip();
 
-// Reset
-mCtx.globalCompositeOperation = 'source-over';
+  // 1. Fill circle with dark background
+  mc.fillStyle = darkG;
+  mc.fillRect(0, 0, SIZE, SIZE);
+
+  // 2. Lit semicircle — right for waxing, left for waning
+  mc.beginPath();
+  if (waxing) {
+    mc.arc(c, c, R, -Math.PI / 2, Math.PI / 2, false); // right half
+  } else {
+    mc.arc(c, c, R, -Math.PI / 2, Math.PI / 2, true);  // left half
+  }
+  mc.closePath();
+  mc.fillStyle = litG;
+  mc.fill();
+
+  // 3. Terminator ellipse — carves the crescent or extends to gibbous
+  //    rx = R·|cos(p)|: R at new/full, 0 at quarters
+  const rx = Math.abs(Math.cos(p)) * R;
+  if (rx > 0.5) {
+    mc.beginPath();
+    mc.ellipse(c, c, rx, R, 0, 0, Math.PI * 2);
+    // waxing crescent  (0–90°):   dark covers most of lit right half
+    // waxing gibbous   (90–180°): lit expands into dark left half
+    // waning gibbous   (180–270°): lit expands into dark right half
+    // waning crescent  (270–360°): dark covers most of lit left half
+    if (waxing) {
+      mc.fillStyle = q < 90 ? darkG : litG;
+    } else {
+      mc.fillStyle = q < 270 ? litG : darkG;
+    }
+    mc.fill();
+  }
+
+  // 4. Terminator softening — thin gradient band along the terminator line
+  const terminatorX = c + (waxing ? Math.cos(p) : -Math.cos(p)) * R;
+  const bw = Math.max(R * 0.10, 4); // band width
+  const softenG = mc.createLinearGradient(terminatorX - bw, c, terminatorX + bw, c);
+  softenG.addColorStop(0,   'rgba(12, 18, 45, 0)');
+  softenG.addColorStop(0.5, 'rgba(12, 18, 45, 0.30)');
+  softenG.addColorStop(1,   'rgba(12, 18, 45, 0)');
+  mc.fillStyle = softenG;
+  mc.fillRect(terminatorX - bw, c - R, bw * 2, R * 2);
+
+  mc.restore();
+  return _moonPhaseCanvas;
+}
 // ── Zodiac Nebula: artist distribution ring on the portal screen ─────────────
 import { isHarpEnabled } from './harp.js';
 
@@ -392,8 +438,8 @@ export function setPreviewVenus(longitude, element) {
 }
 
 export function clearPreviewVenus() { previewDot = null; }
-export function setMoonPosition(longitude) {
-  moonDot = { deg: longitude, birth: performance.now() };
+export function setMoonPosition(longitude, phaseAngle = 45) {
+  moonDot = { deg: longitude, phaseAngle, birth: performance.now() };
 }
 export function onNebulaHover(callback) { hoverCallback = callback; }
 export function onNebulaClick(callback) { clickCallback = callback; }
@@ -994,73 +1040,61 @@ function tick() {
     ctx.restore();
   }
 
-  // ── Moon dot ──
-// ── Moon Dot (Offset 3D Style) ──
-// ── Moon Dot (Consolidated Style) ──
-if (moonDot) {
-  const mt = (performance.now() - moonDot.birth) / 1000;
-  const mPulse = 1 + 0.15 * Math.sin(mt * 0.8);
-  
-  const mAngle = (-(moonDot.deg) - 90 + rot) * Math.PI / 180;
-  const mx = cx + midR * Math.cos(mAngle);
-  const my = cy + midR * Math.sin(mAngle);
+  // ── Moon dot ─────────────────────────────────────────────────────────────────
+  if (moonDot) {
+    const mt     = (performance.now() - moonDot.birth) / 1000;
+    const mPulse = 1 + 0.12 * Math.sin(mt * 0.8);
 
-  const coreScale = isZoomed ? 0.17 : 0.45; 
-  const mGlowR = isZoomed ? 20 : 50; 
-  const hazeR = mGlowR * mPulse;
-  
-  // Lunar Blue
-  const mr = 100, mg = 180, mb = 255;
+    const mAngle = (-(moonDot.deg) - 90 + rot) * Math.PI / 180;
+    const mx = cx + midR * Math.cos(mAngle);
+    const my = cy + midR * Math.sin(mAngle);
 
-  // 1. Atmosphere (Centered)
-  ctx.save();
-  ctx.globalCompositeOperation = 'lighter';
-  const mGlow = ctx.createRadialGradient(mx, my, 0, mx, my, hazeR);
-  mGlow.addColorStop(0, `rgba(254, 254, 254, 0.33)`);
-  mGlow.addColorStop(0.3, `rgba(${mr}, ${mg}, ${mb}, 0.5)`);
-  mGlow.addColorStop(0.6, `rgba(${mr}, ${mg}, ${mb}, 0.1)`);
-  mGlow.addColorStop(1, `rgba(${mr}, ${mg}, ${mb}, 0)`);
-  ctx.fillStyle = mGlow;
-  ctx.beginPath();
-  ctx.arc(mx, my, hazeR, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.restore();
+    // moonR: the logical radius of the drawn moon disc
+    const moonR  = isZoomed ? 5.5 : 13;
+    const hazeR  = (isZoomed ? 18 : 44) * mPulse;
 
-  // 2. Shape
-  ctx.save();
-  ctx.globalCompositeOperation = 'source-over'; 
-  ctx.translate(mx, my);
-  ctx.rotate(mAngle + Math.PI / 2); 
-  ctx.scale(coreScale, coreScale);
-  ctx.shadowBlur = 12; 
-  ctx.shadowColor = `rgba(${mr}, ${mg}, ${mb}, 0.8)`;
-  ctx.drawImage(moonCanvas, -32, -32); 
-  ctx.restore();
+    // 1. Atmosphere haze (additive)
+    ctx.save();
+    ctx.globalCompositeOperation = 'lighter';
+    const mGlow = ctx.createRadialGradient(mx, my, 0, mx, my, hazeR);
+    mGlow.addColorStop(0,   'rgba(254, 254, 254, 0.30)');
+    mGlow.addColorStop(0.3, 'rgba(100, 180, 255, 0.45)');
+    mGlow.addColorStop(0.6, 'rgba(100, 180, 255, 0.08)');
+    mGlow.addColorStop(1,   'rgba(100, 180, 255, 0)');
+    ctx.fillStyle = mGlow;
+    ctx.beginPath();
+    ctx.arc(mx, my, hazeR, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
 
-  // 3. Label (Using your exact formula)
-  // Only show if zoomed (or always, if you prefer)
-  if (isZoomed) {
+    // 2. Phase disc — draw the dynamic phase canvas scaled to moonR
+    //    The offscreen canvas is 400×400 with R=160, so scale = moonR/160
     ctx.save();
     ctx.globalCompositeOperation = 'source-over';
-    
-    // Match the artist dot font size
-    ctx.font = '1.3px monospace'; 
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'top';
-    
-    // Use moon color with high alpha (0.9) for readability
-    ctx.fillStyle = `rgba(${mr}, ${mg}, ${mb}, 0.9)`;
-    
-    // FORMULA APPLIED:
-    // We use 'hazeR' as the proxy for 'dot.size' since the moon is bigger
-    // We assume the visual "body" is about half the haze radius
-    const visualBodySize = hazeR * 0.6; 
-    
-    ctx.fillText("Today's Moon", mx, my + visualBodySize * 1.5 + 0.95);
-    
+    ctx.shadowBlur  = moonR * 0.8;
+    ctx.shadowColor = 'rgba(100, 180, 255, 0.75)';
+    const phCanvas  = getMoonPhaseCanvas(moonDot.phaseAngle ?? 45);
+    const drawSize  = moonR * 2;
+    const srcR      = 160; // radius used inside phCanvas
+    const srcSize   = srcR * 2;
+    const srcOffset = (phCanvas.width - srcSize) / 2;
+    ctx.drawImage(phCanvas, srcOffset, srcOffset, srcSize, srcSize,
+                  mx - moonR, my - moonR, drawSize, drawSize);
+    ctx.shadowBlur = 0;
     ctx.restore();
+
+    // 3. Label
+    if (isZoomed) {
+      ctx.save();
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.font         = '1.3px monospace';
+      ctx.textAlign    = 'center';
+      ctx.textBaseline = 'top';
+      ctx.fillStyle    = 'rgba(100, 180, 255, 0.9)';
+      ctx.fillText("Today's Moon", mx, my + moonR * 1.5 + 0.95);
+      ctx.restore();
+    }
   }
-}
 
 
 
