@@ -96,6 +96,15 @@ const GENRE_MAP = {
   'j-ambient': ['ambient'],        // Japanese ambient scene (Yoshimura, etc.)
   'ambient synth': ['ambient'],    // EN micro-genre for analog synth ambient
   'spectra': ['ambient'],          // EN cluster: Joanna Brouk, Laurel Halo, etc.
+  'healing': ['ambient'],          // EN cluster: new age / meditation ambient (Iasos, etc.)
+  'focus': ['ambient'],            // EN cluster: background / concentration music
+  'soundscape': ['ambient'],
+  'modular synth': ['ambient', 'idm'],  // Ariel Kalma, Don Slepian, etc.
+  'synthesizer': ['electronica', 'ambient'],  // Vangelis, Mort Garson, etc.
+  'moog': ['electronica', 'ambient'],
+  'didgeridoo': ['ambient'],       // Ariel Kalma — drone instrument, not a wrong match
+  'soundtrack': ['classical', 'ambient'],   // Mica Levi, Vangelis, etc.
+  'library music': ['ambient'],    // Stringtronics — production/library composers
 
   // ── IDM / Experimental ──
   'idm': ['idm'],
@@ -111,6 +120,13 @@ const GENRE_MAP = {
   'deconstructed club': ['idm'],
   'hyperpop': ['idm'],
   'vaporwave': ['idm'],
+  'braindance': ['idm'],           // core IDM tag — Aphex Twin, Bradley Strider, etc.
+  'abstract hip hop': ['idm'],     // Alias, Boom Bip, Odd Nosdam, Sole, etc.
+  'fluxwork': ['idm', 'artpop'],   // EN cluster: Holly Herndon, Babyfather, etc.
+  'electra': ['idm', 'artpop', 'techno'],  // EN cluster: Helena Hauff, Arca, Kaitlyn Aurelia Smith
+  'escape room': ['artpop', 'idm'],// EN cluster: SOPHIE, Oklou, Caroline Polachek, etc.
+  'weightless': ['idm'],           // EN cluster: UK experimental bass
+  'italian occult psychedelia': ['ambient', 'idm'],  // Lino Capra Vaccina, Alessandro Cortini
 
   // ── Industrial / Noise ──
   'industrial music': ['industrial'],
@@ -142,6 +158,9 @@ const GENRE_MAP = {
   'electropunk': ['darkwave'],
   'darksynth': ['darkwave'],
   'krautrock': ['darkwave'],
+  'grave wave': ['darkwave'],      // EN cluster: post-punk/goth darkwave (Public Memory, etc.)
+  'cyberpunk': ['industrial', 'darkwave'],  // Vangelis, industrial-adjacent
+  'synth punk': ['darkwave', 'industrial'],
 
   // ── Trip-Hop / Downtempo ──
   'trip hop': ['triphop'],
@@ -190,6 +209,17 @@ const GENRE_MAP = {
   'indie folk': ['indiepop', 'folk'],
   'sadcore': ['indiepop', 'artpop'],
   'slowcore': ['indiepop'],
+
+  // ── Art Pop ──
+  'etherpop': ['artpop'],          // EN cluster: My Brightest Diamond, etc.
+  'melancholia': ['artpop', 'folk'],  // EN cluster: Nina Nastasia, Shannon Wright, Mazzy Star
+  'crank wave': ['artpop'],        // EN micro-genre: Jockstrap, etc.
+  'spytrack': ['electronica', 'artpop'],  // Francis Monkman — cinematic/spy-funk
+
+  // ── Folk / Roots ──
+  'kentucky roots': ['folk'],
+  'american roots': ['folk'],
+  'appalachian folk': ['folk'],
 
   // ── Alt Rock / Post-Punk ──
   'alternative rock': ['altrock'],
@@ -269,6 +299,9 @@ const GENRE_MAP = {
   'tzadik': ['jazz', 'idm'],            // Zorn's label used as EN micro-genre (avant-garde/experimental)
 
   // ── Classical / Orchestral ──
+  'medieval': ['classical'],       // Pérotin, Hildegard von Bingen, etc.
+  'early music': ['classical'],    // pre-baroque historical performance
+  'renaissance': ['classical'],
   'classical music': ['classical'],
   'classical': ['classical'],
   'orchestral': ['classical'],
