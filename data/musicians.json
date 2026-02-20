@@ -172,7 +172,10 @@
     },
     "genres": [
       "valentine",
-      "electronic"
+      "idm",
+      "hiphop",
+      "dnb",
+      "artpop"
     ],
     "subgenres": [
       "electronica"
@@ -882,9 +885,7 @@
     "genres": [
       "idm",
       "artpop",
-      "dnb",
-      "electronica",
-      "techno"
+      "electronica"
     ],
     "subgenres": [
       "experimental",
@@ -1037,9 +1038,14 @@
       "element": "fire"
     },
     "genres": [
-      "valentine"
+      "valentine",
+      "artpop",
+      "folk",
+      "indiepop"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "folk-rock"
+    ],
     "youtubeVideoId": "W0J0m5sU_Ys",
     "backupVideoIds": []
   },
@@ -2811,8 +2817,7 @@
       "element": "fire"
     },
     "genres": [
-      "electronica",
-      "techno"
+      "electronica"
     ],
     "subgenres": [
       "indietronica",
@@ -5220,9 +5225,14 @@
       "element": "earth"
     },
     "genres": [
+      "techno",
+      "jazz",
       "intercelestial"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "techno",
+      "spiritual-jazz"
+    ],
     "youtubeVideoId": "L3XrWoSC2n0",
     "backupVideoIds": []
   },
@@ -7627,7 +7637,6 @@
     },
     "genres": [
       "electronica",
-      "techno",
       "idm",
       "artpop",
       "ambient"
@@ -9086,12 +9095,7 @@
     },
     "genres": [
       "artpop",
-      "altrock",
-      "industrial",
-      "darkwave",
-      "indiepop",
-      "electronica",
-      "folk"
+      "altrock"
     ],
     "subgenres": [
       "glam",
@@ -9589,6 +9593,7 @@
       "element": "air"
     },
     "genres": [
+      "hiphop",
       "intercelestial"
     ],
     "subgenres": [],
@@ -11476,11 +11481,6 @@
     "genres": [
       "altrock",
       "industrial",
-      "darkwave",
-      "indiepop",
-      "electronica",
-      "artpop",
-      "folk",
       "hiphop"
     ],
     "subgenres": [
@@ -11541,7 +11541,6 @@
       "element": "air"
     },
     "genres": [
-      "darkwave",
       "techno",
       "industrial",
       "altrock",
@@ -11596,8 +11595,7 @@
       "element": "fire"
     },
     "genres": [
-      "idm",
-      "dnb"
+      "idm"
     ],
     "subgenres": [
       "experimental",
@@ -12942,7 +12940,6 @@
       "element": "fire"
     },
     "genres": [
-      "jazz",
       "electronica",
       "techno",
       "hiphop",
@@ -13739,7 +13736,6 @@
     },
     "genres": [
       "idm",
-      "dnb",
       "artpop"
     ],
     "subgenres": [
@@ -14217,7 +14213,8 @@
     },
     "genres": [
       "ambient",
-      "classical"
+      "classical",
+      "darkwave"
     ],
     "subgenres": [
       "neo-classical",
@@ -14467,9 +14464,15 @@
       "element": "water"
     },
     "genres": [
-      "valentine"
+      "valentine",
+      "idm",
+      "artpop",
+      "techno"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "idm",
+      "techno"
+    ],
     "youtubeVideoId": "QEh0WIY_ZRw",
     "backupVideoIds": []
   },
@@ -14816,7 +14819,6 @@
     },
     "genres": [
       "electronica",
-      "techno",
       "ambient",
       "idm"
     ],
@@ -15895,7 +15897,6 @@
     "genres": [
       "idm",
       "dnb",
-      "triphop",
       "hiphop"
     ],
     "subgenres": [
@@ -16643,7 +16644,8 @@
     },
     "genres": [
       "valentine",
-      "jazz"
+      "jazz",
+      "ambient"
     ],
     "subgenres": [
       "spiritual-jazz"
@@ -16745,6 +16747,7 @@
       "element": "fire"
     },
     "genres": [
+      "hiphop",
       "intercelestial"
     ],
     "subgenres": [],
@@ -17728,9 +17731,14 @@
       "element": "fire"
     },
     "genres": [
-      "valentine"
+      "valentine",
+      "altrock",
+      "indiepop",
+      "industrial"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "industrial"
+    ],
     "youtubeVideoId": "tFNnvQLvs7I",
     "backupVideoIds": []
   },
@@ -19624,8 +19632,7 @@
       "dateApprox": true
     },
     "genres": [
-      "valentine",
-      "soul"
+      "valentine"
     ],
     "subgenres": [
       "soul-jazz"
@@ -19786,11 +19793,7 @@
     "genres": [
       "altrock",
       "artpop",
-      "folk",
-      "industrial",
-      "darkwave",
-      "indiepop",
-      "electronica"
+      "folk"
     ],
     "subgenres": [
       "noise",
@@ -20036,7 +20039,9 @@
       "decan": 3,
       "element": "earth"
     },
-    "genres": [],
+    "genres": [
+      "intercelestial"
+    ],
     "subgenres": [],
     "youtubeVideoId": "Ai14SX2q2ZU",
     "backupVideoIds": []
