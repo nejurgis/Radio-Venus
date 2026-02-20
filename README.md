@@ -4,7 +4,7 @@
 
 Radio Venus is an astrology-based music discovery app. Enter your birth date, the app calculates your Venus placement, you pick a genre, and it plays music from artists who share your Venus sign — streamed via YouTube.
 
-The database spans from Hildegard von Bingen (1098) to contemporary electronic producers, covering classical orchestral works, ambient, techno, IDM, industrial, darkwave, trip-hop, drum & bass, art pop, and jazz.
+The database spans from Hildegard von Bingen (1098) to contemporary electronic producers, covering classical orchestral works, ambient, techno, IDM, industrial, darkwave, trip-hop, drum & bass, art pop, jazz, hip-hop, and R&B.
 
 ## How it works
 
@@ -105,28 +105,35 @@ Radio-Venus/
     build-db.mjs                    # Wikidata + Venus calc + YouTube lookup → musicians.json + musicians.db
     smart-match.mjs                 # Last.fm similarity graph → discover new artists
     find-backups.mjs                # Find 2 backup YouTube video IDs per artist
+    import-spotify.mjs              # Import from Spotify playlist CSV (Exportify) → seed additions
+    merge-import.mjs                # Merge parallel import-spotify output slices into seed
     db-import.mjs                   # One-time / re-sync: musicians.json → musicians.db
     db-stats.mjs                    # SQLite dashboard: sign/genre distribution, gaps, anchors
-    seed-musicians.json             # 460 hand-curated artists with verified video IDs
+    verify-genres.mjs               # Playwright: check genres against Everynoise, save enTags
+    seed-musicians.json             # ~580 hand-curated artists with verified video IDs
     musicians.db                    # SQLite DB (gitignored) — for ad-hoc queries
-    manual-overrides.json           # Birth dates for artists invisible to all databases
+    manual-overrides.json           # Birth dates + genre overrides for artists invisible to all DBs
+  data/
+    playlist.csv                    # Exportify export of hand-curated Spotify playlist (for GH Actions import)
   public/
-    data/musicians.json             # Generated database (520 artists)
+    data/musicians.json             # Live database served to the site (718 artists, tracked in git)
     favicon.svg                     # Venus glyph
   .github/workflows/
     deploy.yml                      # Auto-deploy to GitHub Pages on push to master
+    import-spotify.yml              # Parallel Spotify import (2-worker matrix) + seed merge
 ```
 
 **Build time** (Node.js, `scripts/build-db.mjs`):
 1. Loads seed data with manual subgenres, Everynoise raw tags (`enTags`), and YouTube IDs
-2. Queries Wikidata SPARQL for musicians with birth dates
-3. Maps raw genre tags through `categorizeGenres()` and `categorizeSubgenres()` from `src/genres.js`
-4. Calculates Venus positions (sign, degree, decan, element) using astronomy-engine
+2. Loads `manual-overrides.json` for birth date corrections and genre overrides
+3. Queries Wikidata SPARQL for musicians with birth dates
+4. **Genre enrichment** (additive — never removes): start from stored genres → re-run `categorizeGenres(enTags)` with current `GENRE_MAP` → apply `manual-overrides[name].genres` — so adding a new genre to `GENRE_MAP` + rebuilding retroactively populates the new tile without re-importing
 5. Derives subgenres in priority order: (a) manual seed subgenres, (b) `categorizeSubgenres(enTags)` for EN-enriched artists, (c) `categorizeSubgenres(genres)` fallback for Wikidata artists — merged as a Set to avoid duplicates
-6. Merges seed + Wikidata (seed takes priority), preserves cached YouTube IDs
-7. Searches YouTube for any artists still missing video IDs
-8. Preserves backup video IDs from previous builds
-9. Outputs `public/data/musicians.json`
+6. Calculates Venus positions (sign, degree, decan, element) using astronomy-engine
+7. Merges seed + Wikidata (seed takes priority), preserves cached YouTube IDs
+8. Searches YouTube for any artists still missing video IDs
+9. Preserves backup video IDs from previous builds
+10. Outputs `public/data/musicians.json` — **must be committed after every rebuild** (deploy workflow does not run `build-db`)
 
 **Discovery** (Node.js, `scripts/smart-match.mjs`):
 
@@ -169,22 +176,28 @@ Everynoise "fans also like" ──┤  scrobble co-listening vs Spotify data
 
 ## Database
 
-**520 musicians** across all 12 Venus signs and 10 genres.
+**718 musicians** across all 12 Venus signs and 16 genres.
 
 | Genre | Artists |
 |-------|---------|
-| IDM / Experimental | 214 |
-| Ambient / Drone | 211 |
-| Classical / Orchestral | 116 |
-| Techno / House | 107 |
-| Synthwave / Darkwave | 98 |
-| Art Pop | 59 |
-| Trip-Hop / Downtempo | 57 |
-| Industrial / Noise | 54 |
-| Jazz | 33 |
-| Drum & Bass / Jungle | 33 |
+| IDM / Experimental | 304 |
+| Ambient / Drone | 297 |
+| Art Pop | 192 |
+| Techno / House | 171 |
+| Synthwave / Darkwave | 145 |
+| Electronica | 126 |
+| Hip-Hop / R&B | 72 |
+| Classical / Orchestral | 83 |
+| Alt-Rock / Indie | 78 |
+| Indie Pop | 78 |
+| Trip-Hop / Downtempo | 76 |
+| Folk | 76 |
+| Industrial / Noise | 69 |
+| Jazz | 66 |
+| Drum & Bass / Jungle | 54 |
+| Inter-Celestial | 14 |
 
-The seed file contains **460 artists** with verified embeddable YouTube video IDs and hand-assigned subgenres. Wikidata supplements this with additional musicians. The build script auto-derives subgenres for all artists using `categorizeSubgenres()`. Classical is intentionally curated: the ~116 kept are minimalists, impressionists, 20th-century avant-garde, and household icons — not the full Wikidata dump. The build processes artists in parallel batches of 5.
+The seed file contains **~580 artists** with verified embeddable YouTube video IDs and hand-assigned subgenres. Wikidata and Spotify playlist import supplement this with additional musicians. The build script auto-derives subgenres for all artists using `categorizeSubgenres()`. Classical is intentionally curated: only minimalists, impressionists, 20th-century avant-garde, and household icons — not the full Wikidata dump. The build processes artists in parallel batches of 5.
 
 ### Data model
 
@@ -220,7 +233,7 @@ The matcher reconstructs the full ecliptic longitude from `sign + degree` for si
 
 ## Genre taxonomy
 
-Radio Venus uses a two-level genre system: **10 top-level categories** for primary UI filtering, and **~60 Discogs-derived subgenres** displayed as clickable chips beneath each genre button. Subgenres with 7+ artists in the database are interactive (accent-colored, clickable); those with fewer are shown dimmed as informational tags. Each genre button has a small dropdown arrow that reveals/hides its subgenre chips. All genre/subgenre data lives in `src/genres.js` — the single source of truth imported by both build scripts and the browser client.
+Radio Venus uses a two-level genre system: **16 top-level categories** for primary UI filtering, and **~60 Discogs-derived subgenres** displayed as clickable chips beneath each genre button. Subgenres with 7+ artists in the database are interactive (accent-colored, clickable); those with fewer are shown dimmed as informational tags. Each genre button has a small dropdown arrow that reveals/hides its subgenre chips. All genre/subgenre data lives in `src/genres.js` — the single source of truth imported by both build scripts and the browser client.
 
 ### Research methodology
 
@@ -250,6 +263,8 @@ The [MetaBrainz genre-matching project](https://github.com/metabrainz/genre-matc
 | `classical` | Classical / Orchestral | classical, baroque, romantic, contemporary, neo-classical, impressionist, modern-classical, opera, minimalist |
 | `artpop` | Art Pop | art-pop, art-rock, post-punk, shoegaze, dream-pop, indie-pop, noise-pop |
 | `jazz` | Jazz | spiritual-jazz, free-jazz, nu-jazz, jazz-fusion, modal-jazz, avant-garde-jazz |
+| `hiphop` | Hip-Hop / R&B | hip-hop, cloud-rap, trap, phonk, boom-bap, experimental-hiphop, lo-fi-hiphop, rnb, neo-soul |
+| `intercelestial` | Inter-Celestial | world, field-recording, outsider, traditional, unclassifiable |
 
 ### Subgenre coverage
 
@@ -399,6 +414,8 @@ Tracks manual additions and discovery runs — who was added, when, and what pro
 
 Pushes to `master` trigger a GitHub Actions workflow (`.github/workflows/deploy.yml`) that builds the project and deploys `dist/` to the `gh-pages` branch via [JamesIves/github-pages-deploy-action](https://github.com/JamesIves/github-pages-deploy-action).
 
+**Important:** the deploy workflow runs `vite build` only — it does **not** run `build-db.mjs`. After rebuilding the database locally, commit and push `public/data/musicians.json` to make the changes live.
+
 ## Setup
 
 Requires **Node.js 18+** (uses Vite 6).
@@ -492,11 +509,34 @@ To add more artists, edit `scripts/seed-musicians.json`:
 
 **Tip**: Use YouTube "Topic" channel videos (auto-generated, static artwork) — they're almost always embeddable. Search for `"Artist Name" - Topic` on YouTube.
 
-Genre IDs: `ambient`, `techno`, `idm`, `industrial`, `darkwave`, `triphop`, `dnb`, `classical`, `artpop`, `jazz`
+Genre IDs: `ambient`, `techno`, `idm`, `industrial`, `darkwave`, `triphop`, `dnb`, `classical`, `artpop`, `jazz`, `hiphop`, `intercelestial`
 
 Subgenre IDs: see the taxonomy table above, or check `SUBGENRES` in `src/genres.js`.
 
 Then rebuild: `npm run build:db`
+
+## Spotify playlist import workflow
+
+Artists from curated Spotify playlists can be bulk-imported using an [Exportify](https://exportify.net) CSV export. The pipeline is safe to run in parallel and resumes without clobbering existing seed data.
+
+```bash
+# Export playlist to CSV via Exportify → save as data/playlist.csv
+
+# Run locally (single process):
+node scripts/import-spotify.mjs
+
+# Run in parallel slices (halves runtime):
+node scripts/import-spotify.mjs --offset=0  --limit=90 --output=/tmp/part1.json
+node scripts/import-spotify.mjs --offset=90 --limit=90 --output=/tmp/part2.json
+node scripts/merge-import.mjs /tmp/part1.json /tmp/part2.json
+
+# Or trigger the GitHub Actions workflow (2-worker matrix, runs in CI):
+# GitHub → Actions → "Import Spotify Playlist" → Run workflow
+```
+
+The `--output` mode writes `{ additions, patches }` JSON without touching `seed-musicians.json` in-place — safe for parallel runs. `merge-import.mjs` combines the slices sequentially after both finish.
+
+**Adding new genre tiles:** If newly imported artists have enTags that map to a genre not yet in `GENRE_MAP`, you can add the mapping to `src/genres.js` and run `npm run build:db` — the build re-derives genres from all stored `enTags` retroactively. No re-import needed.
 
 ## Subgenre enrichment workflow
 
@@ -550,5 +590,8 @@ What Claude helped build:
 - Everynoise `enTags` pipeline (`--save-tags` flag + build-db enrichment) for future decan/iOS filtering
 - Unified genre/subgenre pipeline — `smart-match` and `build-db` both call `categorizeGenres()` + `categorizeSubgenres()` on the same raw tags, so discovered artists land in seed with consistent genres and subgenres immediately
 - Zodiac nebula early-render (ring visible before DB loads, dots populate async)
+- Spotify import pipeline (`import-spotify.mjs`, `merge-import.mjs`, GH Actions parallel workflow) for bulk-importing from curated playlists
+- `hiphop` and `intercelestial` genre categories with full GENRE_MAP/SUBGENRE_MAP coverage
+- Additive genre enrichment at build time — `build-db` re-derives genres from stored `enTags` so new tiles populate retroactively without re-importing
 
 The human (Jurgis) brought the astrological premise, musical curation, visual design direction, and all creative decisions. Claude brought the engineering execution and research throughput.
