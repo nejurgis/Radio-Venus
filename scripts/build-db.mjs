@@ -254,11 +254,20 @@ async function main() {
 
         if (!videoId) return null;
 
-        // Derive subgenres from genres if empty (e.g. cached Wikidata artists)
-        let subgenres = entry.subgenres || [];
-        if (subgenres.length === 0 && entry.genres.length > 0) {
-          subgenres = categorizeSubgenres(entry.genres);
+        // Build subgenres: start from manual curation, enrich with EN tags, fallback to genre names
+        const subgenreSet = new Set(entry.subgenres || []);
+
+        // Enrich with Everynoise tags when available (written by verify-genres --save-tags)
+        if (entry.enTags?.length) {
+          for (const s of categorizeSubgenres(entry.enTags)) subgenreSet.add(s);
         }
+
+        // Fallback: derive from top-level genre strings for Wikidata artists with no other data
+        if (subgenreSet.size === 0 && entry.genres.length > 0) {
+          for (const s of categorizeSubgenres(entry.genres)) subgenreSet.add(s);
+        }
+
+        const subgenres = [...subgenreSet];
 
         return {
           name: entry.name,
@@ -266,6 +275,7 @@ async function main() {
           venus,
           genres: entry.genres,
           subgenres,
+          ...(entry.enTags?.length && { enTags: entry.enTags }),
           youtubeVideoId: videoId,
           backupVideoIds: entry.backupVideoIds || [],
         };

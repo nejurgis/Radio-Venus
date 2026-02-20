@@ -118,11 +118,11 @@ Radio-Venus/
 ```
 
 **Build time** (Node.js, `scripts/build-db.mjs`):
-1. Loads seed data (361 artists with subgenres + YouTube IDs)
+1. Loads seed data with manual subgenres, Everynoise raw tags (`enTags`), and YouTube IDs
 2. Queries Wikidata SPARQL for musicians with birth dates
 3. Maps raw genre tags through `categorizeGenres()` and `categorizeSubgenres()` from `src/genres.js`
 4. Calculates Venus positions (sign, degree, decan, element) using astronomy-engine
-5. Derives subgenres from genre categories for any artist with empty subgenres
+5. Derives subgenres in priority order: (a) manual seed subgenres, (b) `categorizeSubgenres(enTags)` for EN-enriched artists, (c) `categorizeSubgenres(genres)` fallback for Wikidata artists — merged as a Set to avoid duplicates
 6. Merges seed + Wikidata (seed takes priority), preserves cached YouTube IDs
 7. Searches YouTube for any artists still missing video IDs
 8. Preserves backup video IDs from previous builds
@@ -157,7 +157,7 @@ Everynoise "fans also like" ──┤  scrobble co-listening vs Spotify data
 - Supports BFS depth (`--depth 2` follows similarity chains two levels deep)
 
 **Runtime** (browser):
-1. `main.js` loads `musicians.json` + YouTube IFrame API in parallel; `viz.js` initializes the zodiac nebula ring
+1. `main.js` initializes the zodiac nebula ring immediately (empty dots), then loads `musicians.json` + YouTube IFrame API in parallel — nebula ring is visible from the first frame with no waiting
 2. User enters birth date → `venus.js` computes sign, degree, decan, element, longitude → user Venus dot appears on the nebula
 3. User navigates to genre screen → nebula zooms into user's sign sector → `ui.js` renders genre grid with subgenre chips
 4. User clicks genre or subgenre → `matcher.js` returns full pool sorted by Venus similarity
@@ -200,6 +200,7 @@ Each artist in `musicians.json` has this structure:
   },
   "genres": ["idm", "ambient", "techno"],
   "subgenres": ["idm", "acid", "ambient"],
+  "enTags": ["intelligent dance music", "experimental electronic", "acid techno"],
   "youtubeVideoId": "Xw5AiRVqfqk",
   "backupVideoIds": ["2fmo1Sjmc_g", "GrC_yuzO-Ss"]
 }
@@ -209,7 +210,8 @@ Each artist in `musicians.json` has this structure:
 - **`venus.decan`** — 1 (0-10°), 2 (10-20°), or 3 (20-30°)
 - **`venus.element`** — fire/earth/air/water (derived from sign)
 - **`genres`** — top-level category IDs (used for filtering)
-- **`subgenres`** — Discogs-derived subgenre IDs (used for subgenre chip filtering)
+- **`subgenres`** — Discogs-derived subgenre IDs (used for subgenre chip filtering); merged from manual seed curation + EN-derived tags
+- **`enTags`** — raw Everynoise genre strings (present when enriched via `verify-genres --save-tags`); source material for subgenre derivation and future micro-genre features
 - **`backupVideoIds`** — up to 2 fallback YouTube video IDs for hot-swap on embed error
 
 The matcher reconstructs the full ecliptic longitude from `sign + degree` for similarity calculations. The browser-side `venus.js` also returns the raw `longitude` (0-360°) for the user's Venus.
@@ -464,7 +466,7 @@ Each track displays: artist name (left, truncated with ellipsis if long), Venus 
 
 ## Known limitations
 
-- **Subgenre precision varies** — Seed artists (361) have hand-curated subgenres. Wikidata artists have subgenres auto-derived from their genre categories, which gives broad but less precise assignments (e.g., a classical composer gets `classical` and `opera` subgenres based on Wikidata labels, but not fine-grained tags like `romantic` or `impressionist` unless those labels were present).
+- **Subgenre precision varies** — Seed artists with Everynoise enrichment (`enTags`) get the richest subgenres (e.g., `["neofolk", "dark-folk", "gaian-doom"]`). Seed artists without EN enrichment have hand-curated subgenres. Wikidata artists get subgenres auto-derived from broad genre categories, which is less precise (e.g., a classical composer gets `classical` and `opera` but not `romantic` unless those labels appeared in Wikidata).
 - **Embed restrictions** — Some YouTube videos block embedded playback (Error 150/101). The app hot-swaps to backup video IDs before skipping, but some tracks may still fail if all IDs are restricted.
 - **Birth time not considered** — Venus sign is calculated at noon UTC. For birth dates where Venus changes signs that day, the result may differ from a full natal chart with exact birth time. The similarity score could show ~100% for an artist whose actual Venus is in the adjacent sign.
 - **Electronic genre coverage is thin vs. classical** — Wikidata has far more classical composers with birth dates than electronic musicians. The seed file compensates but could always use more entries.
@@ -494,10 +496,28 @@ Subgenre IDs: see the taxonomy table above, or check `SUBGENRES` in `src/genres.
 
 Then rebuild: `npm run build:db`
 
+## Subgenre enrichment workflow
+
+Seed artists can be enriched with Everynoise micro-genre tags (`enTags`) which are then auto-normalized into `subgenres` during the build. This enables finer filtering (e.g., "gaian doom" under Folk, "dub-techno" under Techno) and is the foundation for future decan-level and iOS app features.
+
+```bash
+# Enrich a genre's artists with EN tags (saves enTags to seed-musicians.json)
+node scripts/verify-genres.mjs --genre=folk --save-tags
+
+# Enrich all artists (slow — ~13s per artist)
+node scripts/verify-genres.mjs --save-tags
+
+# Rebuild musicians.json (picks up enTags → normalized subgenres automatically)
+npm run build:db
+```
+
+The `--save-tags` flag writes raw EN strings to each artist's `enTags` field in `seed-musicians.json`. During build, `categorizeSubgenres(enTags)` converts those to normalized IDs and merges them with the manually curated `subgenres` (no duplicates). The raw `enTags` strings are also preserved in `musicians.json` for future use (iOS app, decan-level filtering, etc.).
+
 ## Potential improvements
 
+- **Decan-level filtering (iOS app)** — Venus decans (0-10°, 10-20°, 20-30° within a sign) each have a distinct astrological flavor. The `enTags` field now stored per artist provides the micro-genre data needed to surface, e.g., "neofolk artists with Scorpio Venus decan 2." Planned for a future iOS companion app.
 - **Alternative audio backend** — YouTube embeds are a cross-origin black box: no audio access, fragile video IDs, embed restrictions. Internet Archive, Bandcamp, or self-hosted audio would unlock Web Audio API analysis and real-time features.
-- **Finer subgenre assignment** — Wikidata artists get subgenres derived from broad genre categories. AcousticBrainz recording-level lookups could provide more precise tags (e.g., distinguishing `baroque` from `romantic`).
+- **Finer subgenre assignment** — Run `verify-genres.mjs --save-tags` for all genres to fully enrich the seed with EN micro-genre data. Currently only a subset of artists have `enTags`.
 - **Venus modality matching** — Add cardinal/fixed/mutable as a matching axis alongside element, or weight matches by astrological aspect (trine, sextile, square).
 - **Confidence scoring** — Weight genre tags by how many sources agree on them rather than treating all tags equally.
 
@@ -525,5 +545,7 @@ What Claude helped build:
 - Backup video ID hunting (`find-backups.mjs`)
 - SEO layer (meta tags, structured data, crawlable content, robots.txt, sitemap, llms.txt)
 - Valentine's playlist sequencing and the `sequenceIndex` sort fix
+- Everynoise `enTags` pipeline (`--save-tags` flag + build-db enrichment) for future decan/iOS filtering
+- Zodiac nebula early-render (ring visible before DB loads, dots populate async)
 
 The human (Jurgis) brought the astrological premise, musical curation, visual design direction, and all creative decisions. Claude brought the engineering execution and research throughput.

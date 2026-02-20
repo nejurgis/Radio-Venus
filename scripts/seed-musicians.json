@@ -19,7 +19,17 @@
     "subgenres": [
       "art-rock"
     ],
-    "youtubeId": "STugQ0X1NoI"
+    "youtubeId": "STugQ0X1NoI",
+    "enTags": [
+      "glam rock",
+      "art rock",
+      "yacht rock",
+      "soft rock",
+      "mellow gold",
+      "new romantic",
+      "classic rock",
+      "album rock"
+    ]
   },
   {
     "name": "500",
@@ -27,6 +37,10 @@
     "genres": [
       "idm",
       "techno"
+    ],
+    "enTags": [
+      "deconstructed club",
+      "hypertrance"
     ]
   },
   {
@@ -35,6 +49,12 @@
     "genres": [
       "idm",
       "techno"
+    ],
+    "enTags": [
+      "experimental electronic",
+      "hypertrance",
+      "deconstructed club",
+      "new isolationism"
     ]
   },
   {
@@ -66,6 +86,16 @@
       "experimental",
       "techno",
       "ambient"
+    ],
+    "enTags": [
+      "fluxwork",
+      "hauntology",
+      "microhouse",
+      "outsider house",
+      "intelligent dance music",
+      "future garage",
+      "wonky",
+      "deconstructed club"
     ]
   },
   {
@@ -79,6 +109,11 @@
     "subgenres": [
       "acid",
       "idm"
+    ],
+    "enTags": [
+      "intelligent dance music",
+      "braindance",
+      "drill and bass"
     ]
   },
   {
@@ -91,7 +126,12 @@
       "free-jazz",
       "spiritual-jazz"
     ],
-    "youtubeVideoId": "xWsIG5sNq1Q"
+    "youtubeVideoId": "xWsIG5sNq1Q",
+    "enTags": [
+      "free jazz",
+      "avant-garde jazz",
+      "jazz saxophone"
+    ]
   },
   {
     "name": "Alessandro Cortini",
@@ -99,6 +139,12 @@
     "genres": [
       "ambient",
       "idm"
+    ],
+    "enTags": [
+      "modular synth",
+      "italian experimental",
+      "italian occult psychedelia",
+      "drone"
     ]
   },
   {
@@ -131,7 +177,14 @@
     "subgenres": [
       "spiritual-jazz"
     ],
-    "youtubeId": "NxPMKgY_8qk"
+    "youtubeId": "NxPMKgY_8qk",
+    "enTags": [
+      "jazz harp",
+      "spiritual jazz",
+      "afrofuturism",
+      "avant-garde jazz",
+      "free jazz"
+    ]
   },
   {
     "name": "Alice Glass",
@@ -148,6 +201,13 @@
     "genres": [
       "altrock",
       "indiepop"
+    ],
+    "enTags": [
+      "dreamgaze",
+      "shoegaze",
+      "tempe indie",
+      "nu gaze",
+      "american shoegaze"
     ]
   },
   {
@@ -162,6 +222,18 @@
       "glitch",
       "minimal",
       "experimental"
+    ],
+    "enTags": [
+      "glitch",
+      "abstract idm",
+      "drone",
+      "intelligent dance music",
+      "glitch ambient",
+      "trap brasileiro",
+      "talentkonkurrence",
+      "pop ambient",
+      "sound art",
+      "experimental ambient"
     ]
   },
   {
@@ -177,7 +249,12 @@
       "minimalist",
       "experimental"
     ],
-    "youtubeVideoId": "vXbAfntiisI"
+    "youtubeVideoId": "vXbAfntiisI",
+    "enTags": [
+      "tzadik",
+      "american contemporary classical",
+      "avant-garde"
+    ]
   },
   {
     "name": "Amiina",
@@ -201,6 +278,13 @@
       "drum-n-bass",
       "trip-hop",
       "idm"
+    ],
+    "enTags": [
+      "jazztronica",
+      "trip hop",
+      "electronica",
+      "intelligent dance music",
+      "wonky"
     ]
   },
   {
@@ -235,6 +319,18 @@
       "techno",
       "industrial",
       "dub-techno"
+    ],
+    "enTags": [
+      "fluxwork",
+      "intelligent dance music",
+      "ambient",
+      "microhouse",
+      "dub techno",
+      "wonky",
+      "drone",
+      "art pop",
+      "electronica",
+      "ambient dub"
     ]
   },
   {
@@ -248,7 +344,14 @@
     "subgenres": [
       "experimental"
     ],
-    "youtubeVideoId": "kWZ4EfQnF3w"
+    "youtubeVideoId": "kWZ4EfQnF3w",
+    "enTags": [
+      "experimental electronic",
+      "experimental club",
+      "transpop",
+      "south african electronic",
+      "deconstructed club"
+    ]
   },
   {
     "name": "Ann Annie",
@@ -265,7 +368,13 @@
       "folk",
       "industrial"
     ],
-    "youtubeVideoId": "0_Db7LevbnI"
+    "youtubeVideoId": "0_Db7LevbnI",
+    "enTags": [
+      "gothenburg indie",
+      "dark pop",
+      "gaian doom",
+      "spectra"
+    ]
   },
   {
     "name": "Anthony Braxton",
@@ -277,7 +386,14 @@
     "subgenres": [
       "free-jazz"
     ],
-    "youtubeVideoId": "TLMaE-kGr4k"
+    "youtubeVideoId": "TLMaE-kGr4k",
+    "enTags": [
+      "free jazz",
+      "avant-garde jazz",
+      "free improvisation",
+      "african-american classical",
+      "jazz saxophone"
+    ]
   },
   {
     "name": "Anthony Rother",
@@ -286,7 +402,12 @@
       "electronica",
       "techno"
     ],
-    "youtubeVideoId": "sl3TFF9TvvI"
+    "youtubeVideoId": "sl3TFF9TvvI",
+    "enTags": [
+      "frankfurt electronic",
+      "techno",
+      "minimal techno"
+    ]
   },
   {
     "name": "Antonín Dvořák",
@@ -308,6 +429,13 @@
     "youtubeVideoId": "GRxofEmo3HA",
     "subgenres": [
       "baroque"
+    ],
+    "enTags": [
+      "classical",
+      "early music",
+      "italian baroque",
+      "baroque",
+      "horn ensemble"
     ]
   },
   {
@@ -352,6 +480,14 @@
       "experimental",
       "idm",
       "industrial"
+    ],
+    "enTags": [
+      "ai",
+      "art pop",
+      "experimental pop",
+      "escape room",
+      "fluxwork",
+      "deconstructed club"
     ]
   },
   {
@@ -364,7 +500,11 @@
       "free-jazz",
       "spiritual-jazz"
     ],
-    "youtubeVideoId": "8CQ2Bpi00tk"
+    "youtubeVideoId": "8CQ2Bpi00tk",
+    "enTags": [
+      "free jazz",
+      "jazz saxophone"
+    ]
   },
   {
     "name": "Ariel Kalma",
@@ -399,6 +539,14 @@
     "subgenres": [
       "minimalist",
       "modern-classical"
+    ],
+    "enTags": [
+      "baltic classical",
+      "minimalism",
+      "compositional ambient",
+      "contemporary classical",
+      "classical",
+      "21st century classical"
     ]
   },
   {
@@ -434,6 +582,10 @@
       "artpop",
       "darkwave",
       "indiepop"
+    ],
+    "enTags": [
+      "ethereal wave",
+      "dream pop"
     ]
   },
   {
@@ -488,6 +640,25 @@
       "darkwave",
       "idm",
       "ambient"
+    ],
+    "enTags": [
+      "ethereal wave",
+      "neoclassical darkwave",
+      "dark wave",
+      "british choir",
+      "baltic choir",
+      "contemporary choir",
+      "chanson quebecois",
+      "cantopop",
+      "deep soft rock",
+      "chill lounge",
+      "cumbia pop",
+      "cuatro puertorriqueno",
+      "puerto rican folk",
+      "musica jibara",
+      "israeli folk",
+      "bullerengue",
+      "klezmer"
     ]
   },
   {
@@ -500,6 +671,12 @@
     "subgenres": [
       "modern-classical",
       "contemporary"
+    ],
+    "enTags": [
+      "neoclassicism",
+      "classical",
+      "early modern classical",
+      "horn ensemble"
     ]
   },
   {
@@ -527,7 +704,12 @@
       "ambient",
       "modern classical"
     ],
-    "youtubeVideoId": "rN6dGKRjX38"
+    "youtubeVideoId": "rN6dGKRjX38",
+    "enTags": [
+      "compositional ambient",
+      "abstract idm",
+      "ambient"
+    ]
   },
   {
     "name": "Benoît Pioulard",
@@ -541,6 +723,13 @@
     "subgenres": [
       "ambient",
       "folktronica"
+    ],
+    "enTags": [
+      "warm drone",
+      "ambient",
+      "drone",
+      "drift",
+      "shoegaze"
     ]
   },
   {
@@ -570,6 +759,10 @@
     "genres": [
       "ambient",
       "folk"
+    ],
+    "enTags": [
+      "abstractro",
+      "pastoral"
     ]
   },
   {
@@ -587,6 +780,9 @@
     "birthDate": "1943-01-25",
     "genres": [
       "jazz"
+    ],
+    "enTags": [
+      "dark jazz"
     ]
   },
   {
@@ -599,6 +795,23 @@
       "darkwave",
       "electronica",
       "indiepop"
+    ],
+    "enTags": [
+      "ethereal wave",
+      "dark wave",
+      "neoclassical darkwave",
+      "gothic rock",
+      "dance-punk",
+      "midwest shoegaze",
+      "minimal synth",
+      "minimal wave",
+      "modern dream pop",
+      "psychedelic pop",
+      "elephant 6",
+      "lo-fi",
+      "experimental pop",
+      "laboratorio",
+      "deep gothic post-punk"
     ]
   },
   {
@@ -643,6 +856,13 @@
       "idm",
       "ambient",
       "downtempo"
+    ],
+    "enTags": [
+      "scottish electronic",
+      "electronica",
+      "intelligent dance music",
+      "trip hop",
+      "indietronica"
     ]
   },
   {
@@ -658,6 +878,14 @@
       "idm",
       "acid",
       "electro"
+    ],
+    "enTags": [
+      "acid idm",
+      "braindance",
+      "abstract",
+      "intelligent dance music",
+      "drill and bass",
+      "deep idm"
     ]
   },
   {
@@ -671,7 +899,11 @@
       "dark-jazz",
       "doom-jazz"
     ],
-    "youtubeId": "ORL36OsbtDc"
+    "youtubeId": "ORL36OsbtDc",
+    "enTags": [
+      "dark jazz",
+      "drone"
+    ]
   },
   {
     "name": "Bonobo",
@@ -686,6 +918,15 @@
       "downtempo",
       "trip-hop",
       "nu-jazz"
+    ],
+    "enTags": [
+      "downtempo",
+      "electronica",
+      "nu jazz",
+      "jazztronica",
+      "instrumental hip hop",
+      "trip hop",
+      "indietronica"
     ]
   },
   {
@@ -748,6 +989,20 @@
     "backupVideoIds": [
       "wRPHQzXD-5k",
       "9hI4bSCy9iE"
+    ],
+    "enTags": [
+      "electronica",
+      "future garage",
+      "hauntology",
+      "wonky",
+      "intelligent dance music",
+      "uk bass",
+      "classic dubstep",
+      "trip hop",
+      "death doom",
+      "dutch death metal",
+      "grim death metal",
+      "british death metal"
     ]
   },
   {
@@ -764,6 +1019,19 @@
       "industrial",
       "synth-pop",
       "ebm"
+    ],
+    "enTags": [
+      "proto-techno",
+      "industrial",
+      "experimental",
+      "british industrial",
+      "british experimental",
+      "experimental rock",
+      "bleep techno",
+      "uk post-punk",
+      "post-punk",
+      "industrial rock",
+      "synthpop"
     ]
   },
   {
@@ -821,6 +1089,51 @@
     "subgenres": [
       "ambient",
       "experimental"
+    ],
+    "enTags": [
+      "minneapolis metal",
+      "industrial black metal",
+      "commons",
+      "minimal tech house",
+      "zydeco",
+      "swamp pop",
+      "zydeco",
+      "swamp pop",
+      "canadian metal",
+      "zydeco",
+      "melodic hardcore",
+      "boston hardcore",
+      "chaotic hardcore",
+      "metallic hardcore",
+      "5th wave emo",
+      "street punk",
+      "family gospel",
+      "easycore",
+      "background jazz",
+      "rare groove",
+      "deep disco",
+      "post-disco soul",
+      "post-disco",
+      "deathgrass",
+      "kansas indie",
+      "women's music",
+      "ectofolk",
+      "traditional funk",
+      "lilith",
+      "slam poetry",
+      "pennsylvania hardcore",
+      "straight edge",
+      "california hardcore",
+      "hardcore",
+      "drain",
+      "cloud rap",
+      "plugg",
+      "glitchcore",
+      "classical piano duo",
+      "dayton indie",
+      "family gospel",
+      "cajun",
+      "zydeco"
     ]
   },
   {
@@ -835,6 +1148,12 @@
     "subgenres": [
       "idm",
       "ambient"
+    ],
+    "enTags": [
+      "abstract",
+      "drill and bass",
+      "intelligent dance music",
+      "deep idm"
     ]
   },
   {
@@ -844,6 +1163,14 @@
       "altrock",
       "ambient",
       "electronica"
+    ],
+    "enTags": [
+      "post-rock",
+      "instrumental post-rock",
+      "american post-rock",
+      "boston rock",
+      "bc underground hip hop",
+      "lo-fi vgm"
     ]
   },
   {
@@ -870,7 +1197,13 @@
     "subgenres": [
       "free-jazz"
     ],
-    "youtubeVideoId": "LT4h3i36G4k"
+    "youtubeVideoId": "LT4h3i36G4k",
+    "enTags": [
+      "avant-garde jazz",
+      "free jazz",
+      "jazz piano",
+      "contemporary post-bop"
+    ]
   },
   {
     "name": "Cecile Believe",
@@ -878,7 +1211,11 @@
     "genres": [
       "idm"
     ],
-    "youtubeVideoId": "bZdCdpvofqQ"
+    "youtubeVideoId": "bZdCdpvofqQ",
+    "enTags": [
+      "escape room",
+      "hyperpop"
+    ]
   },
   {
     "name": "Charli xcx",
@@ -891,7 +1228,14 @@
       "art-pop",
       "synth-pop"
     ],
-    "youtubeVideoId": "Rj6dwEBmBJA"
+    "youtubeVideoId": "Rj6dwEBmBJA",
+    "enTags": [
+      "uk pop",
+      "pop",
+      "candy pop",
+      "art pop",
+      "metropopolis"
+    ]
   },
   {
     "name": "Chevel",
@@ -905,7 +1249,12 @@
       "techno",
       "idm"
     ],
-    "youtubeVideoId": "vOiONgG0eGQ"
+    "youtubeVideoId": "vOiONgG0eGQ",
+    "enTags": [
+      "weightless",
+      "experimental techno",
+      "deconstructed club"
+    ]
   },
   {
     "name": "Chihei Hatakeyama",
@@ -913,6 +1262,13 @@
     "genres": [
       "ambient",
       "idm"
+    ],
+    "enTags": [
+      "experimental ambient",
+      "ambient",
+      "j-ambient",
+      "drone",
+      "drift"
     ]
   },
   {
@@ -939,7 +1295,11 @@
       "glitch",
       "idm"
     ],
-    "youtubeId": "QpXnWaZfPBo"
+    "youtubeId": "QpXnWaZfPBo",
+    "enTags": [
+      "ambient idm",
+      "deep idm"
+    ]
   },
   {
     "name": "Chrome",
@@ -950,7 +1310,17 @@
       "idm",
       "industrial"
     ],
-    "youtubeVideoId": "2FZGba4hIq4"
+    "youtubeVideoId": "2FZGba4hIq4",
+    "enTags": [
+      "synth punk",
+      "post-punk",
+      "experimental rock",
+      "industrial",
+      "experimental",
+      "industrial rock",
+      "noise rock",
+      "britcore"
+    ]
   },
   {
     "name": "Chuck Person",
@@ -978,6 +1348,10 @@
     "genres": [
       "artpop",
       "darkwave"
+    ],
+    "enTags": [
+      "ethereal wave",
+      "dark wave"
     ]
   },
   {
@@ -986,6 +1360,11 @@
     "genres": [
       "electronica",
       "idm"
+    ],
+    "enTags": [
+      "intelligent dance music",
+      "wonky",
+      "electronica"
     ]
   },
   {
@@ -1005,7 +1384,12 @@
     "genres": [
       "industrial"
     ],
-    "youtubeVideoId": "tMGFI6vfjcE"
+    "youtubeVideoId": "tMGFI6vfjcE",
+    "enTags": [
+      "industrial",
+      "british industrial",
+      "cyberpunk"
+    ]
   },
   {
     "name": "cLOUDDEAD",
@@ -1017,7 +1401,12 @@
       "abstract",
       "experimental"
     ],
-    "youtubeVideoId": "BV7AF4q9N8U"
+    "youtubeVideoId": "BV7AF4q9N8U",
+    "enTags": [
+      "psychedelic hip hop",
+      "experimental hip hop",
+      "abstract hip hop"
+    ]
   },
   {
     "name": "Cocteau Twins",
@@ -1036,6 +1425,17 @@
     "youtubeVideoId": "PbbUeLkZt74",
     "backupVideoIds": [
       "wMwO9UACbSQ"
+    ],
+    "enTags": [
+      "dream pop",
+      "melancholia",
+      "scottish indie",
+      "shoegaze",
+      "ethereal wave",
+      "art pop",
+      "synthpop",
+      "alternative rock",
+      "scottish shoegaze"
     ]
   },
   {
@@ -1051,7 +1451,11 @@
       "drone",
       "industrial"
     ],
-    "youtubeVideoId": "oV0QhDOhuKI"
+    "youtubeVideoId": "oV0QhDOhuKI",
+    "enTags": [
+      "ambient industrial",
+      "british experimental"
+    ]
   },
   {
     "name": "Colleen",
@@ -1060,6 +1464,13 @@
       "artpop",
       "electronica",
       "folk"
+    ],
+    "enTags": [
+      "folktronica",
+      "experimental pop",
+      "electra",
+      "spectra",
+      "art pop"
     ]
   },
   {
@@ -1080,7 +1491,11 @@
       "dubstep",
       "house"
     ],
-    "youtubeVideoId": "TKxKPkp_riY"
+    "youtubeVideoId": "TKxKPkp_riY",
+    "enTags": [
+      "footwork",
+      "electra"
+    ]
   },
   {
     "name": "Cranes",
@@ -1140,7 +1555,10 @@
       "synth-pop",
       "dubstep"
     ],
-    "youtubeVideoId": "02XLLA-lZqI"
+    "youtubeVideoId": "02XLLA-lZqI",
+    "enTags": [
+      "wonky"
+    ]
   },
   {
     "name": "Datach'i",
@@ -1153,6 +1571,15 @@
     "subgenres": [
       "idm",
       "glitch"
+    ],
+    "enTags": [
+      "drill and bass",
+      "flashcore",
+      "braindance",
+      "deep idm",
+      "modular synth",
+      "breakcore",
+      "intelligent dance music"
     ]
   },
   {
@@ -1165,7 +1592,12 @@
       "idm",
       "electro"
     ],
-    "youtubeVideoId": "QJN8BOeYezE"
+    "youtubeVideoId": "QJN8BOeYezE",
+    "enTags": [
+      "braindance",
+      "deep idm",
+      "intelligent dance music"
+    ]
   },
   {
     "name": "Dave Gahan",
@@ -1214,6 +1646,11 @@
     "youtubeVideoId": "OuK_eqGCPC0",
     "subgenres": [
       "experimental"
+    ],
+    "enTags": [
+      "hypnagogic pop",
+      "collage pop",
+      "uk experimental electronic"
     ]
   },
   {
@@ -1233,6 +1670,34 @@
     "backupVideoIds": [
       "4uIBLg2WWeI",
       "oJu6vG64C2M"
+    ],
+    "enTags": [
+      "big beat",
+      "trip hop",
+      "electronica",
+      "techno",
+      "electronicore",
+      "instrumental rock",
+      "chaotic hardcore",
+      "powerviolence",
+      "atlanta metal",
+      "grindcore",
+      "emoplugg",
+      "screamocore",
+      "neofolk",
+      "british industrial",
+      "martial industrial",
+      "industrial",
+      "grave wave",
+      "neofolk",
+      "martial industrial",
+      "neofolk",
+      "martial industrial",
+      "organic house",
+      "horror punk",
+      "sleaze rock",
+      "punk cover",
+      "neo metal"
     ]
   },
   {
@@ -1261,6 +1726,13 @@
       "dark-ambient",
       "industrial",
       "experimental"
+    ],
+    "enTags": [
+      "hauntology",
+      "dub techno",
+      "drone",
+      "intelligent dance music",
+      "deconstructed club"
     ]
   },
   {
@@ -1308,6 +1780,9 @@
     "genres": [
       "artpop",
       "indiepop"
+    ],
+    "enTags": [
+      "dream pop"
     ]
   },
   {
@@ -1331,7 +1806,10 @@
     "subgenres": [
       "footwork"
     ],
-    "youtubeVideoId": "UH9J-5cVncM"
+    "youtubeVideoId": "UH9J-5cVncM",
+    "enTags": [
+      "footwork"
+    ]
   },
   {
     "name": "DJ Shadow",
@@ -1344,6 +1822,12 @@
     "subgenres": [
       "trip-hop",
       "downtempo"
+    ],
+    "enTags": [
+      "downtempo",
+      "trip hop",
+      "electronica",
+      "instrumental hip hop"
     ]
   },
   {
@@ -1357,6 +1841,10 @@
       "trip-hop",
       "experimental",
       "idm"
+    ],
+    "enTags": [
+      "illbient",
+      "trip hop"
     ]
   },
   {
@@ -1377,6 +1865,12 @@
     "genres": [
       "altrock",
       "ambient"
+    ],
+    "enTags": [
+      "canadian post-rock",
+      "double drumming",
+      "post-rock",
+      "instrumental post-rock"
     ]
   },
   {
@@ -1415,7 +1909,10 @@
     "genres": [
       "idm"
     ],
-    "youtubeVideoId": "7A3ecrtub94"
+    "youtubeVideoId": "7A3ecrtub94",
+    "enTags": [
+      "deconstructed club"
+    ]
   },
   {
     "name": "Dopplereffekt",
@@ -1424,7 +1921,13 @@
       "techno",
       "idm"
     ],
-    "youtubeId": "15X4xqFoL90"
+    "youtubeId": "15X4xqFoL90",
+    "enTags": [
+      "electro",
+      "detroit techno",
+      "techno",
+      "intelligent dance music"
+    ]
   },
   {
     "name": "Dorothy Ashby",
@@ -1449,6 +1952,13 @@
     "youtubeVideoId": "6Yrm1a4jfAc",
     "subgenres": [
       "electro",
+      "techno"
+    ],
+    "enTags": [
+      "detroit techno",
+      "electro",
+      "afrofuturism",
+      "intelligent dance music",
       "techno"
     ]
   },
@@ -1479,6 +1989,9 @@
     "genres": [
       "ambient",
       "idm"
+    ],
+    "enTags": [
+      "experimental ambient"
     ]
   },
   {
@@ -1495,6 +2008,10 @@
     "genres": [
       "electronica",
       "techno"
+    ],
+    "enTags": [
+      "fourth world",
+      "organic electronic"
     ]
   },
   {
@@ -1508,7 +2025,14 @@
       "art-pop",
       "experimental-pop"
     ],
-    "youtubeVideoId": "Rp8Fqs7TdGk"
+    "youtubeVideoId": "Rp8Fqs7TdGk",
+    "enTags": [
+      "electra",
+      "escape room",
+      "art pop",
+      "spectra",
+      "deconstructed club"
+    ]
   },
   {
     "name": "Echospace",
@@ -1531,7 +2055,14 @@
       "darkwave",
       "electronica"
     ],
-    "youtubeVideoId": "_7sVSSb2mU4"
+    "youtubeVideoId": "_7sVSSb2mU4",
+    "enTags": [
+      "madchester",
+      "dance rock",
+      "synthpop",
+      "britpop",
+      "new romantic"
+    ]
   },
   {
     "name": "Elori Saxl",
@@ -1541,6 +2072,11 @@
       "classical",
       "folk",
       "idm"
+    ],
+    "enTags": [
+      "experimental classical",
+      "pastoral",
+      "spectra"
     ]
   },
   {
@@ -1554,6 +2090,18 @@
     "subgenres": [
       "experimental",
       "idm"
+    ],
+    "enTags": [
+      "modern southern rock",
+      "italian classical piano",
+      "new orleans jazz",
+      "jazz piano",
+      "cosmic american",
+      "canadian psychedelic",
+      "modern string quartet",
+      "wind quintet",
+      "grimewave",
+      "deconstructed club"
     ]
   },
   {
@@ -1562,6 +2110,9 @@
     "genres": [
       "ambient",
       "idm"
+    ],
+    "enTags": [
+      "experimental synth"
     ]
   },
   {
@@ -1570,6 +2121,15 @@
     "genres": [
       "ambient",
       "idm"
+    ],
+    "enTags": [
+      "ambient synth",
+      "experimental ambient",
+      "experimental synth",
+      "modular synth",
+      "spectra",
+      "ambient",
+      "electra"
     ]
   },
   {
@@ -1648,6 +2208,9 @@
     "birthDate": "1961-06-15",
     "genres": [
       "idm"
+    ],
+    "enTags": [
+      "experimental psych"
     ]
   },
   {
@@ -1679,7 +2242,17 @@
       "grime",
       "experimental"
     ],
-    "youtubeVideoId": "XM8na3eeYVE"
+    "youtubeVideoId": "XM8na3eeYVE",
+    "enTags": [
+      "arab experimental",
+      "experimental electronic",
+      "fluxwork",
+      "electra",
+      "escape room",
+      "arab electronic",
+      "spectra",
+      "deconstructed club"
+    ]
   },
   {
     "name": "Felicia Atkinson",
@@ -1688,6 +2261,13 @@
       "ambient",
       "idm",
       "techno"
+    ],
+    "enTags": [
+      "spectra",
+      "electra",
+      "experimental ambient",
+      "modern electroacoustic",
+      "mandible"
     ]
   },
   {
@@ -1702,6 +2282,17 @@
     "subgenres": [
       "glitch",
       "ambient"
+    ],
+    "enTags": [
+      "ambient",
+      "electroacoustic improvisation",
+      "drone",
+      "glitch",
+      "experimental guitar",
+      "mandible",
+      "ambient guitar",
+      "intelligent dance music",
+      "glitch ambient"
     ]
   },
   {
@@ -1714,7 +2305,11 @@
     "subgenres": [
       "house"
     ],
-    "youtubeVideoId": "eD3rcbf0Vyk"
+    "youtubeVideoId": "eD3rcbf0Vyk",
+    "enTags": [
+      "afrofuturism",
+      "outsider house"
+    ]
   },
   {
     "name": "Fiona Apple",
@@ -1751,7 +2346,15 @@
       "trip-hop",
       "art-pop"
     ],
-    "youtubeVideoId": "E3RG4LGmSMY"
+    "youtubeVideoId": "E3RG4LGmSMY",
+    "enTags": [
+      "afrofuturism",
+      "art pop",
+      "experimental r&b",
+      "escape room",
+      "alternative r&b",
+      "trip hop"
+    ]
   },
   {
     "name": "flat7",
@@ -1768,6 +2371,13 @@
       "altrock",
       "artpop",
       "indiepop"
+    ],
+    "enTags": [
+      "nu gaze",
+      "shoegaze",
+      "dream pop",
+      "american shoegaze",
+      "indie shoegaze"
     ]
   },
   {
@@ -1780,7 +2390,14 @@
     "subgenres": [
       "art-rock"
     ],
-    "youtubeId": "fXeKi6ZkbOw"
+    "youtubeId": "fXeKi6ZkbOw",
+    "enTags": [
+      "rock",
+      "yacht rock",
+      "classic rock",
+      "album rock",
+      "soft rock"
+    ]
   },
   {
     "name": "Floating Points",
@@ -1795,6 +2412,12 @@
       "house",
       "techno",
       "experimental"
+    ],
+    "enTags": [
+      "electronica",
+      "future garage",
+      "wonky",
+      "intelligent dance music"
     ]
   },
   {
@@ -1807,7 +2430,10 @@
       "grime",
       "dub"
     ],
-    "youtubeVideoId": "-yyHn0eGObk"
+    "youtubeVideoId": "-yyHn0eGObk",
+    "enTags": [
+      "grime"
+    ]
   },
   {
     "name": "Flying Lotus",
@@ -1822,6 +2448,21 @@
       "experimental",
       "idm",
       "trip-hop"
+    ],
+    "enTags": [
+      "afrofuturism",
+      "instrumental hip hop",
+      "psychedelic hip hop",
+      "wonky",
+      "jazztronica",
+      "experimental hip hop",
+      "glitch hop",
+      "escape room",
+      "glitch",
+      "intelligent dance music",
+      "electronica",
+      "alternative hip hop",
+      "indietronica"
     ]
   },
   {
@@ -1878,6 +2519,13 @@
       "electronica",
       "folktronica",
       "techno"
+    ],
+    "enTags": [
+      "electronica",
+      "folktronica",
+      "intelligent dance music",
+      "indietronica",
+      "trip hop"
     ]
   },
   {
@@ -1921,6 +2569,11 @@
     "subgenres": [
       "romantic",
       "classical"
+    ],
+    "enTags": [
+      "classical",
+      "early romantic era",
+      "classical era"
     ]
   },
   {
@@ -1966,6 +2619,11 @@
     "subgenres": [
       "trip-hop",
       "idm",
+      "downtempo"
+    ],
+    "enTags": [
+      "jazztronica",
+      "trip hop",
       "downtempo"
     ]
   },
@@ -2013,7 +2671,11 @@
     "genres": [
       "idm"
     ],
-    "youtubeVideoId": "ksk5mthTR_c"
+    "youtubeVideoId": "ksk5mthTR_c",
+    "enTags": [
+      "hypnagogic pop",
+      "vaporwave"
+    ]
   },
   {
     "name": "Gesaffelstein",
@@ -2038,7 +2700,11 @@
       "ambient techno",
       "downtempo"
     ],
-    "youtubeVideoId": "NZyafXiZ7cU"
+    "youtubeVideoId": "NZyafXiZ7cU",
+    "enTags": [
+      "italian electronica",
+      "substep"
+    ]
   },
   {
     "name": "Global Communication",
@@ -2085,6 +2751,14 @@
     "youtubeVideoId": "YeawPUpTHJA",
     "backupVideoIds": [
       "sBAS9hvSuQw"
+    ],
+    "enTags": [
+      "neo-synthpop",
+      "art pop",
+      "trip hop",
+      "alternative dance",
+      "electronica",
+      "indietronica"
     ]
   },
   {
@@ -2120,6 +2794,14 @@
       "synth-pop",
       "experimental",
       "darkwave"
+    ],
+    "enTags": [
+      "canadian electropop",
+      "art pop",
+      "metropopolis",
+      "indietronica",
+      "grave wave",
+      "neo-synthpop"
     ]
   },
   {
@@ -2152,6 +2834,10 @@
     "youtubeVideoId": "ypClfhEwwCw",
     "subgenres": [
       "romantic"
+    ],
+    "enTags": [
+      "classical",
+      "post-romantic era"
     ]
   },
   {
@@ -2169,6 +2855,14 @@
     "youtubeVideoId": "RCNzwdLwA8g",
     "backupVideoIds": [
       "wqrJmxy4q3A"
+    ],
+    "enTags": [
+      "hungarian contemporary classical",
+      "laboratorio",
+      "contemporary classical",
+      "avant-garde",
+      "compositional ambient",
+      "classical"
     ]
   },
   {
@@ -2188,6 +2882,14 @@
     "subgenres": [
       "ambient",
       "modern-classical"
+    ],
+    "enTags": [
+      "fourth world",
+      "ambient",
+      "minimalism",
+      "american contemporary classical",
+      "compositional ambient",
+      "drone"
     ]
   },
   {
@@ -2196,6 +2898,14 @@
     "genres": [
       "ambient",
       "artpop"
+    ],
+    "enTags": [
+      "fourth world",
+      "ambient",
+      "minimalism",
+      "american contemporary classical",
+      "compositional ambient",
+      "drone"
     ]
   },
   {
@@ -2260,6 +2970,11 @@
     "youtubeVideoId": "9eFPJa95qQE",
     "backupVideoIds": [
       "_Vcv2HdApcs"
+    ],
+    "enTags": [
+      "medieval",
+      "early music",
+      "classical"
     ]
   },
   {
@@ -2272,6 +2987,11 @@
     "subgenres": [
       "ambient",
       "new-age"
+    ],
+    "enTags": [
+      "fourth world",
+      "j-ambient",
+      "ambient"
     ]
   },
   {
@@ -2281,6 +3001,10 @@
       "altrock",
       "artpop",
       "indiepop"
+    ],
+    "enTags": [
+      "dream pop",
+      "shoegaze"
     ]
   },
   {
@@ -2305,6 +3029,14 @@
     "subgenres": [
       "experimental",
       "idm"
+    ],
+    "enTags": [
+      "ai",
+      "electra",
+      "experimental vocal",
+      "fluxwork",
+      "art pop",
+      "spectra"
     ]
   },
   {
@@ -2321,6 +3053,11 @@
     "genres": [
       "artpop",
       "indiepop"
+    ],
+    "enTags": [
+      "dream pop",
+      "melancholia",
+      "art pop"
     ]
   },
   {
@@ -2333,7 +3070,12 @@
       "ambient",
       "experimental"
     ],
-    "youtubeVideoId": "UKGhlAI2anU"
+    "youtubeVideoId": "UKGhlAI2anU",
+    "enTags": [
+      "hauntology",
+      "british experimental",
+      "tape music"
+    ]
   },
   {
     "name": "Huerco S.",
@@ -2371,6 +3113,12 @@
     "subgenres": [
       "experimental",
       "dub"
+    ],
+    "enTags": [
+      "hypnagogic pop",
+      "experimental pop",
+      "outsider house",
+      "hauntology"
     ]
   },
   {
@@ -2392,6 +3140,12 @@
     "subgenres": [
       "modern-classical",
       "contemporary"
+    ],
+    "enTags": [
+      "classical",
+      "russian modern classical",
+      "neoclassicism",
+      "early modern classical"
     ]
   },
   {
@@ -2431,7 +3185,11 @@
     "subgenres": [
       "experimental"
     ],
-    "youtubeVideoId": "CsewLteZIio"
+    "youtubeVideoId": "CsewLteZIio",
+    "enTags": [
+      "outsider house",
+      "gauze pop"
+    ]
   },
   {
     "name": "Isabel's Dream",
@@ -2439,6 +3197,9 @@
     "genres": [
       "altrock",
       "indiepop"
+    ],
+    "enTags": [
+      "indie shoegaze"
     ]
   },
   {
@@ -2452,6 +3213,15 @@
     "subgenres": [
       "experimental",
       "idm"
+    ],
+    "enTags": [
+      "hypnagogic pop",
+      "utopian virtual",
+      "abstractro",
+      "experimental pop",
+      "vaporwave",
+      "hauntology",
+      "rochester ny indie"
     ]
   },
   {
@@ -2481,6 +3251,14 @@
       "glitch",
       "minimal",
       "dub-techno"
+    ],
+    "enTags": [
+      "glitch",
+      "microhouse",
+      "intelligent dance music",
+      "drone",
+      "ambient dub",
+      "glitch ambient"
     ]
   },
   {
@@ -2509,6 +3287,11 @@
     "youtubeVideoId": "kSIMVnPA994",
     "backupVideoIds": [
       "s_SVhB-a7cc"
+    ],
+    "enTags": [
+      "synthesizer",
+      "vintage french electronic",
+      "laboratorio"
     ]
   },
   {
@@ -2529,6 +3312,14 @@
     "genres": [
       "ambient",
       "folk"
+    ],
+    "enTags": [
+      "warm drone",
+      "drone",
+      "pastoral",
+      "ambient",
+      "fourth world",
+      "sound art"
     ]
   },
   {
@@ -2564,7 +3355,15 @@
     "subgenres": [
       "synth-pop"
     ],
-    "youtubeVideoId": "dqQAPY2bdfU"
+    "youtubeVideoId": "dqQAPY2bdfU",
+    "enTags": [
+      "canadian electropop",
+      "experimental r&b",
+      "electra",
+      "art pop",
+      "hamilton on indie",
+      "spectra"
+    ]
   },
   {
     "name": "Jo Johnson",
@@ -2591,7 +3390,12 @@
       "minimalist"
     ],
     "youtubeVideoId": "1Q6or2vtpKM",
-    "backupVideoIds": []
+    "backupVideoIds": [],
+    "enTags": [
+      "fourth world",
+      "ambient synth",
+      "spectra"
+    ]
   },
   {
     "name": "Joanna Newsom",
@@ -2604,7 +3408,13 @@
       "chamber-pop",
       "baroque-pop"
     ],
-    "youtubeVideoId": "TdPC1tvAcYo"
+    "youtubeVideoId": "TdPC1tvAcYo",
+    "enTags": [
+      "new weird america",
+      "chamber folk",
+      "harp",
+      "chamber pop"
+    ]
   },
   {
     "name": "Joe Westerlund",
@@ -2631,6 +3441,13 @@
     "youtubeVideoId": "ho9rZjlsyYY",
     "subgenres": [
       "baroque"
+    ],
+    "enTags": [
+      "german baroque",
+      "classical",
+      "early music",
+      "baroque",
+      "horn ensemble"
     ]
   },
   {
@@ -2682,7 +3499,19 @@
       "dubstep",
       "grime"
     ],
-    "youtubeVideoId": "0bIR_YmiuVw"
+    "youtubeVideoId": "0bIR_YmiuVw",
+    "enTags": [
+      "turkish hip hop",
+      "turkish trap",
+      "purple sound",
+      "classic dubstep",
+      "bristol electronic",
+      "wonky",
+      "filthstep",
+      "indonesian pop rock",
+      "disco polo",
+      "classic disco polo"
+    ]
   },
   {
     "name": "Jon Hopkins",
@@ -2701,6 +3530,11 @@
       "techno",
       "ambient",
       "idm"
+    ],
+    "enTags": [
+      "electronica",
+      "compositional ambient",
+      "intelligent dance music"
     ]
   },
   {
@@ -2714,7 +3548,13 @@
     "subgenres": [
       "soul-jazz"
     ],
-    "youtubeVideoId": "zL1S8461znc"
+    "youtubeVideoId": "zL1S8461znc",
+    "enTags": [
+      "singer-songwriter",
+      "folk",
+      "folk rock",
+      "canadian singer-songwriter"
+    ]
   },
   {
     "name": "Jonny Nash",
@@ -2722,6 +3562,10 @@
     "genres": [
       "ambient",
       "idm"
+    ],
+    "enTags": [
+      "experimental ambient",
+      "fourth world"
     ]
   },
   {
@@ -2739,6 +3583,10 @@
     "genres": [
       "ambient",
       "idm"
+    ],
+    "enTags": [
+      "experimental ambient",
+      "fourth world"
     ]
   },
   {
@@ -2747,6 +3595,10 @@
     "genres": [
       "ambient",
       "idm"
+    ],
+    "enTags": [
+      "experimental ambient",
+      "fourth world"
     ]
   },
   {
@@ -2765,6 +3617,9 @@
       "ambient",
       "artpop",
       "indiepop"
+    ],
+    "enTags": [
+      "dream pop"
     ]
   },
   {
@@ -2787,6 +3642,14 @@
       "ambient",
       "idm",
       "artpop"
+    ],
+    "enTags": [
+      "modular synth",
+      "experimental ambient",
+      "electra",
+      "spectra",
+      "fluxwork",
+      "art pop"
     ]
   },
   {
@@ -2808,7 +3671,11 @@
       "experimental",
       "drone"
     ],
-    "youtubeVideoId": "RiDUm54BcKE"
+    "youtubeVideoId": "RiDUm54BcKE",
+    "enTags": [
+      "australian experimental",
+      "nu age"
+    ]
   },
   {
     "name": "Kara-Lis Coverdale",
@@ -2824,6 +3691,11 @@
     "genres": [
       "ambient",
       "idm"
+    ],
+    "enTags": [
+      "arab experimental",
+      "experimental ambient",
+      "arab alternative"
     ]
   },
   {
@@ -2837,7 +3709,16 @@
       "art-pop",
       "baroque-pop"
     ],
-    "youtubeId": "wp43OdtAAkM"
+    "youtubeId": "wp43OdtAAkM",
+    "enTags": [
+      "baroque pop",
+      "art rock",
+      "art pop",
+      "piano rock",
+      "permanent wave",
+      "singer-songwriter",
+      "new wave pop"
+    ]
   },
   {
     "name": "Kelela",
@@ -2850,7 +3731,13 @@
       "trip-hop",
       "art-pop"
     ],
-    "youtubeVideoId": "87SSDIEQoO8"
+    "youtubeVideoId": "87SSDIEQoO8",
+    "enTags": [
+      "afrofuturism",
+      "experimental r&b",
+      "alternative r&b",
+      "escape room"
+    ]
   },
   {
     "name": "Kid Spatula",
@@ -2863,6 +3750,12 @@
     "subgenres": [
       "idm",
       "breakbeat"
+    ],
+    "enTags": [
+      "drill and bass",
+      "deep idm",
+      "intelligent dance music",
+      "breakcore"
     ]
   },
   {
@@ -2875,7 +3768,10 @@
       "dub",
       "trip-hop"
     ],
-    "youtubeVideoId": "HI8XhwncEW4"
+    "youtubeVideoId": "HI8XhwncEW4",
+    "enTags": [
+      "dub metal"
+    ]
   },
   {
     "name": "Kitchens of Distinction",
@@ -2885,6 +3781,14 @@
       "artpop",
       "electronica",
       "indiepop"
+    ],
+    "enTags": [
+      "dream pop",
+      "shoegaze",
+      "lo-fi indie",
+      "aberdeen indie",
+      "scottish singer-songwriter",
+      "synth punk"
     ]
   },
   {
@@ -2893,6 +3797,12 @@
     "genres": [
       "ambient",
       "idm"
+    ],
+    "enTags": [
+      "mandible",
+      "experimental ambient",
+      "electra",
+      "spectra"
     ]
   },
   {
@@ -2919,6 +3829,17 @@
     "youtubeVideoId": "NXZXZypxQnw",
     "subgenres": [
       "experimental"
+    ],
+    "enTags": [
+      "multidisciplinary",
+      "uk experimental electronic",
+      "spectra",
+      "afrofuturism",
+      "mandible",
+      "deconstructed club",
+      "british experimental",
+      "lo-fi beats",
+      "luxembourgian indie"
     ]
   },
   {
@@ -2939,6 +3860,12 @@
     "genres": [
       "ambient",
       "idm"
+    ],
+    "enTags": [
+      "african experimental",
+      "sound art",
+      "ambient",
+      "drone"
     ]
   },
   {
@@ -2955,7 +3882,16 @@
       "footwork",
       "jungle"
     ],
-    "youtubeVideoId": "zkQQwsRVUf4"
+    "youtubeVideoId": "zkQQwsRVUf4",
+    "enTags": [
+      "scottish electronic",
+      "classic dubstep",
+      "footwork",
+      "wonky",
+      "future garage",
+      "uk bass",
+      "intelligent dance music"
+    ]
   },
   {
     "name": "Kraftwerk",
@@ -2976,6 +3912,10 @@
     "birthDate": "1943-06-15",
     "genres": [
       "ambient"
+    ],
+    "enTags": [
+      "fourth world",
+      "ambient"
     ]
   },
   {
@@ -2990,6 +3930,16 @@
     "subgenres": [
       "experimental",
       "techno"
+    ],
+    "enTags": [
+      "electra",
+      "experimental pop",
+      "spectra",
+      "hauntology",
+      "outsider house",
+      "gauze pop",
+      "mandible",
+      "art pop"
     ]
   },
   {
@@ -2999,7 +3949,15 @@
       "ambient",
       "idm"
     ],
-    "youtubeVideoId": "Hlw9cJJWZI8"
+    "youtubeVideoId": "Hlw9cJJWZI8",
+    "enTags": [
+      "minimalism",
+      "acousmatic",
+      "proto-techno",
+      "sound art",
+      "spectra",
+      "drone"
+    ]
   },
   {
     "name": "Lawrence English",
@@ -3007,6 +3965,15 @@
     "genres": [
       "ambient",
       "idm"
+    ],
+    "enTags": [
+      "australian experimental",
+      "drone",
+      "field recording",
+      "sound art",
+      "ambient",
+      "australian ambient",
+      "field recording ambient"
     ]
   },
   {
@@ -3022,6 +3989,11 @@
       "experimental",
       "idm",
       "ambient"
+    ],
+    "enTags": [
+      "uk experimental electronic",
+      "weightless",
+      "deconstructed club"
     ]
   },
   {
@@ -3062,7 +4034,11 @@
     "subgenres": [
       "experimental"
     ],
-    "youtubeVideoId": "gQ3LQRep0MY"
+    "youtubeVideoId": "gQ3LQRep0MY",
+    "enTags": [
+      "uk experimental electronic",
+      "deconstructed club"
+    ]
   },
   {
     "name": "Loscil",
@@ -3096,7 +4072,12 @@
       "drone",
       "industrial"
     ],
-    "youtubeVideoId": "k6PgftKbQnQ"
+    "youtubeVideoId": "k6PgftKbQnQ",
+    "enTags": [
+      "russian experimental electronic",
+      "abstractro",
+      "russian electronic"
+    ]
   },
   {
     "name": "Love Spirals Downwards",
@@ -3107,6 +4088,12 @@
       "artpop",
       "darkwave",
       "indiepop"
+    ],
+    "enTags": [
+      "ethereal wave",
+      "dream pop",
+      "dark wave",
+      "shoegaze"
     ]
   },
   {
@@ -3125,6 +4112,13 @@
       "altrock",
       "artpop",
       "indiepop"
+    ],
+    "enTags": [
+      "dream pop",
+      "nu gaze",
+      "shoegaze",
+      "american shoegaze",
+      "slowcore"
     ]
   },
   {
@@ -3139,6 +4133,15 @@
     "subgenres": [
       "drum-n-bass",
       "ambient"
+    ],
+    "enTags": [
+      "atmospheric dnb",
+      "downtempo",
+      "jazzy dnb",
+      "drum and bass",
+      "jungle",
+      "breakbeat",
+      "trip hop"
     ]
   },
   {
@@ -3151,7 +4154,10 @@
       "ambient",
       "neo-classical"
     ],
-    "youtubeVideoId": "k0h9QGrsZ0w"
+    "youtubeVideoId": "k0h9QGrsZ0w",
+    "enTags": [
+      "experimental pop"
+    ]
   },
   {
     "name": "Lucrecia Dalt",
@@ -3176,6 +4182,12 @@
     "subgenres": [
       "classical",
       "romantic"
+    ],
+    "enTags": [
+      "german romanticism",
+      "early romantic era",
+      "classical",
+      "classical era"
     ]
   },
   {
@@ -3184,6 +4196,17 @@
     "genres": [
       "ambient",
       "idm"
+    ],
+    "enTags": [
+      "uk worship",
+      "ccm",
+      "color noise",
+      "white noise",
+      "pastoral",
+      "british singer-songwriter",
+      "indie folk",
+      "indie anthem-folk",
+      "brazilian bass"
     ]
   },
   {
@@ -3200,6 +4223,12 @@
       "acid",
       "idm",
       "breakbeat"
+    ],
+    "enTags": [
+      "intelligent dance music",
+      "drill and bass",
+      "acid house",
+      "trip hop"
     ]
   },
   {
@@ -3224,6 +4253,14 @@
       "idm",
       "ambient",
       "glitch"
+    ],
+    "enTags": [
+      "abstract",
+      "ambient idm",
+      "intelligent dance music",
+      "microhouse",
+      "wonky",
+      "electronica"
     ]
   },
   {
@@ -3238,6 +4275,13 @@
     "subgenres": [
       "dark-ambient",
       "industrial"
+    ],
+    "enTags": [
+      "ritual ambient",
+      "ambient industrial",
+      "british industrial",
+      "dark jazz",
+      "dark ambient"
     ]
   },
   {
@@ -3246,6 +4290,13 @@
     "genres": [
       "darkwave",
       "artpop"
+    ],
+    "enTags": [
+      "dark wave",
+      "ethereal wave",
+      "neoclassical darkwave",
+      "modern goth",
+      "gothic rock"
     ]
   },
   {
@@ -3254,6 +4305,11 @@
     "genres": [
       "ambient",
       "folk"
+    ],
+    "enTags": [
+      "pastoral",
+      "fourth world",
+      "j-ambient"
     ]
   },
   {
@@ -3263,7 +4319,13 @@
       "ambient",
       "idm"
     ],
-    "youtubeVideoId": "QTskdzJ1VCE"
+    "youtubeVideoId": "QTskdzJ1VCE",
+    "enTags": [
+      "mexican experimental",
+      "guatemalan indie",
+      "ambient pop",
+      "spectra"
+    ]
   },
   {
     "name": "Madonna",
@@ -3275,7 +4337,11 @@
     "subgenres": [
       "art-pop"
     ],
-    "youtubeVideoId": "0-pXUCkcCgY"
+    "youtubeVideoId": "0-pXUCkcCgY",
+    "enTags": [
+      "dance pop",
+      "pop"
+    ]
   },
   {
     "name": "Magic Sword",
@@ -3302,6 +4368,9 @@
     "birthDate": "1958-06-15",
     "genres": [
       "jazz"
+    ],
+    "enTags": [
+      "dark jazz"
     ]
   },
   {
@@ -3315,6 +4384,9 @@
     "subgenres": [
       "ambient",
       "drone"
+    ],
+    "enTags": [
+      "experimental guitar"
     ]
   },
   {
@@ -3329,7 +4401,13 @@
       "ambient",
       "idm"
     ],
-    "youtubeVideoId": "3yMIOhL0kyU"
+    "youtubeVideoId": "3yMIOhL0kyU",
+    "enTags": [
+      "australian experimental",
+      "australian ambient",
+      "wonky",
+      "intelligent dance music"
+    ]
   },
   {
     "name": "Martin L. Gore",
@@ -3354,7 +4432,17 @@
       "dubstep",
       "house"
     ],
-    "youtubeVideoId": "chSHwbw0iGk"
+    "youtubeVideoId": "chSHwbw0iGk",
+    "enTags": [
+      "future garage",
+      "uk bass",
+      "wonky",
+      "outsider house",
+      "classic dubstep",
+      "float house",
+      "footwork",
+      "microhouse"
+    ]
   },
   {
     "name": "Massive Attack",
@@ -3367,6 +4455,11 @@
     "subgenres": [
       "trip-hop",
       "dub"
+    ],
+    "enTags": [
+      "downtempo",
+      "electronica",
+      "trip hop"
     ]
   },
   {
@@ -3380,6 +4473,10 @@
     "subgenres": [
       "modern-classical",
       "neo-classical"
+    ],
+    "enTags": [
+      "compositional ambient",
+      "post-minimalism"
     ]
   },
   {
@@ -3389,6 +4486,12 @@
       "altrock",
       "artpop",
       "indiepop"
+    ],
+    "enTags": [
+      "dream pop",
+      "melancholia",
+      "slowcore",
+      "shoegaze"
     ]
   },
   {
@@ -3397,6 +4500,11 @@
     "genres": [
       "dnb",
       "idm"
+    ],
+    "enTags": [
+      "drain",
+      "grimewave",
+      "deconstructed club"
     ]
   },
   {
@@ -3405,6 +4513,11 @@
     "genres": [
       "altrock",
       "indiepop"
+    ],
+    "enTags": [
+      "rock kapak",
+      "shoegaze",
+      "nu gaze"
     ]
   },
   {
@@ -3422,6 +4535,17 @@
       "ambient",
       "dnb",
       "idm"
+    ],
+    "enTags": [
+      "channel pop",
+      "lds youth",
+      "new isolationism",
+      "deconstructed club",
+      "grimewave",
+      "new jersey indie",
+      "metropopolis",
+      "jazz pop",
+      "rain"
     ]
   },
   {
@@ -3437,6 +4561,17 @@
     "subgenres": [
       "noise",
       "harsh-noise"
+    ],
+    "enTags": [
+      "japanoise",
+      "noise",
+      "drone",
+      "experimental",
+      "experimental rock",
+      "industrial",
+      "power electronics",
+      "sound art",
+      "noise rock"
     ]
   },
   {
@@ -3478,6 +4613,9 @@
     "birthDate": "1756-01-27",
     "genres": [
       "idm"
+    ],
+    "enTags": [
+      "belgian experimental"
     ]
   },
   {
@@ -3491,7 +4629,10 @@
       "ambient",
       "glitch"
     ],
-    "youtubeId": "wcaObFbTbBI"
+    "youtubeId": "wcaObFbTbBI",
+    "enTags": [
+      "deep idm"
+    ]
   },
   {
     "name": "Miss Kittin",
@@ -3502,7 +4643,15 @@
       "electronica",
       "techno"
     ],
-    "youtubeVideoId": "RG7SgUlj05g"
+    "youtubeVideoId": "RG7SgUlj05g",
+    "enTags": [
+      "french techno",
+      "electroclash",
+      "alternative dance",
+      "electra",
+      "electronica",
+      "neo-synthpop"
+    ]
   },
   {
     "name": "Miss Kittin & The Hacker",
@@ -3533,7 +4682,14 @@
       "jazz",
       "techno"
     ],
-    "youtubeVideoId": "EarSRa19sZc"
+    "youtubeVideoId": "EarSRa19sZc",
+    "enTags": [
+      "detroit techno",
+      "acid house",
+      "techno",
+      "proto-techno",
+      "afrofuturism"
+    ]
   },
   {
     "name": "Moderat",
@@ -3546,6 +4702,10 @@
       "techno",
       "idm",
       "electronica"
+    ],
+    "enTags": [
+      "electronica",
+      "indietronica"
     ]
   },
   {
@@ -3557,6 +4717,17 @@
       "artpop",
       "electronica",
       "indiepop"
+    ],
+    "enTags": [
+      "cosmic post-rock",
+      "post-rock",
+      "british post-rock",
+      "scottish rock",
+      "dream pop",
+      "indie rock",
+      "instrumental post-rock",
+      "compositional ambient",
+      "electronica"
     ]
   },
   {
@@ -3565,6 +4736,10 @@
     "genres": [
       "artpop",
       "indiepop"
+    ],
+    "enTags": [
+      "dream pop",
+      "slowcore"
     ]
   },
   {
@@ -3578,7 +4753,11 @@
       "synth-pop",
       "new-wave"
     ],
-    "youtubeVideoId": "WxZ9IFsGeXs"
+    "youtubeVideoId": "WxZ9IFsGeXs",
+    "enTags": [
+      "madchester",
+      "britpop"
+    ]
   },
   {
     "name": "Mono",
@@ -3601,6 +4780,16 @@
       "dub-techno",
       "minimal",
       "techno"
+    ],
+    "enTags": [
+      "dub techno",
+      "abstract",
+      "ambient techno",
+      "intelligent dance music",
+      "microhouse",
+      "ambient",
+      "minimal techno",
+      "ambient dub"
     ]
   },
   {
@@ -3618,6 +4807,11 @@
     "youtubeVideoId": "zWHXPz6qF7g",
     "backupVideoIds": [
       "rOLN9T9w9kA"
+    ],
+    "enTags": [
+      "downtempo",
+      "trip hop",
+      "electronica"
     ]
   },
   {
@@ -3625,6 +4819,10 @@
     "birthDate": "1948-10-06",
     "genres": [
       "idm"
+    ],
+    "enTags": [
+      "experimental electronic",
+      "spectra"
     ]
   },
   {
@@ -3633,6 +4831,10 @@
     "genres": [
       "ambient",
       "idm"
+    ],
+    "enTags": [
+      "experimental percussion",
+      "spectra"
     ]
   },
   {
@@ -3674,7 +4876,15 @@
       "electronica",
       "idm"
     ],
-    "youtubeVideoId": "PjaDGMRgXU0"
+    "youtubeVideoId": "PjaDGMRgXU0",
+    "enTags": [
+      "future garage",
+      "electronica",
+      "wonky",
+      "electra",
+      "indie soul",
+      "indietronica"
+    ]
   },
   {
     "name": "Mouse on Mars",
@@ -3688,6 +4898,61 @@
       "idm",
       "experimental",
       "glitch"
+    ],
+    "enTags": [
+      "german electronica",
+      "dusseldorf indie",
+      "intelligent dance music",
+      "dusseldorf electronic",
+      "complextro",
+      "gaming edm",
+      "filthstep",
+      "melodic dubstep",
+      "children's folk",
+      "swing revival",
+      "modern swing",
+      "movie tunes",
+      "cardiff indie",
+      "welsh indie",
+      "lo-fi vgm",
+      "comedy rap",
+      "organic ambient",
+      "horrorcore",
+      "no wave",
+      "austin rock",
+      "coverchill",
+      "electro jazz",
+      "collage pop",
+      "modern progressive rock",
+      "cartoon",
+      "movie tunes",
+      "movie tunes",
+      "indie catracho",
+      "rva drill",
+      "baton rouge rap",
+      "freakbeat",
+      "classic garage rock",
+      "baton rouge rap",
+      "lo-fi indie",
+      "melbourne indie",
+      "5th wave emo",
+      "christchurch indie",
+      "manchester indie",
+      "gbvfi",
+      "modern power pop",
+      "pittsburgh rock",
+      "moog",
+      "kc indie",
+      "movie tunes",
+      "movie tunes",
+      "cleveland indie",
+      "super eurobeat",
+      "kindie rock",
+      "comfy synth",
+      "dungeon synth",
+      "seinen",
+      "dusseldorf indie",
+      "synth punk"
     ]
   },
   {
@@ -3725,6 +4990,12 @@
     "subgenres": [
       "experimental",
       "modern-classical"
+    ],
+    "enTags": [
+      "mexican experimental",
+      "tijuana electronic",
+      "glitch",
+      "drone"
     ]
   },
   {
@@ -3734,6 +5005,13 @@
       "altrock",
       "artpop",
       "indiepop"
+    ],
+    "enTags": [
+      "noise pop",
+      "dream pop",
+      "alternative rock",
+      "shoegaze",
+      "irish shoegaze"
     ]
   },
   {
@@ -3780,6 +5058,9 @@
     "subgenres": [
       "experimental",
       "idm"
+    ],
+    "enTags": [
+      "experimental club"
     ]
   },
   {
@@ -3795,6 +5076,11 @@
       "techno",
       "ambient",
       "experimental"
+    ],
+    "enTags": [
+      "electronica",
+      "downtempo",
+      "microhouse"
     ]
   },
   {
@@ -3822,6 +5108,11 @@
     "subgenres": [
       "modern-classical",
       "ambient"
+    ],
+    "enTags": [
+      "compositional ambient",
+      "neoclassical darkwave",
+      "electronica"
     ]
   },
   {
@@ -3831,7 +5122,17 @@
       "darkwave",
       "industrial"
     ],
-    "youtubeVideoId": "pJYL_YKhC10"
+    "youtubeVideoId": "pJYL_YKhC10",
+    "enTags": [
+      "ebm",
+      "industrial rock",
+      "industrial",
+      "new beat",
+      "british industrial",
+      "old school ebm",
+      "electro-industrial",
+      "industrial metal"
+    ]
   },
   {
     "name": "North Americans",
@@ -3839,6 +5140,10 @@
     "genres": [
       "ambient",
       "folk"
+    ],
+    "enTags": [
+      "pastoral",
+      "american primitive"
     ]
   },
   {
@@ -3911,6 +5216,18 @@
     "subgenres": [
       "experimental",
       "ambient"
+    ],
+    "enTags": [
+      "experimental pop",
+      "hypnagogic pop",
+      "hauntology",
+      "fluxwork",
+      "art pop",
+      "ambient",
+      "intelligent dance music",
+      "drone",
+      "escape room",
+      "wonky"
     ]
   },
   {
@@ -3945,6 +5262,18 @@
       "ambient",
       "idm",
       "techno"
+    ],
+    "enTags": [
+      "electroacoustic improvisation",
+      "modern electroacoustic",
+      "australian experimental",
+      "experimental guitar",
+      "drone",
+      "sound art",
+      "australian ambient",
+      "lowercase",
+      "ambient",
+      "drone metal"
     ]
   },
   {
@@ -3953,6 +5282,12 @@
     "genres": [
       "dnb",
       "idm"
+    ],
+    "enTags": [
+      "experimental electronic",
+      "deconstructed club",
+      "grimewave",
+      "new isolationism"
     ]
   },
   {
@@ -3964,7 +5299,14 @@
     "subgenres": [
       "free-jazz"
     ],
-    "youtubeVideoId": "CblTx-tdVMA"
+    "youtubeVideoId": "CblTx-tdVMA",
+    "enTags": [
+      "free jazz",
+      "avant-garde jazz",
+      "jazz",
+      "contemporary post-bop",
+      "jazz saxophone"
+    ]
   },
   {
     "name": "Oval",
@@ -3994,6 +5336,12 @@
       "altrock",
       "artpop",
       "indiepop"
+    ],
+    "enTags": [
+      "dream pop",
+      "shoegaze",
+      "dreamgaze",
+      "nu gaze"
     ]
   },
   {
@@ -4048,7 +5396,15 @@
       "electronica",
       "indiepop"
     ],
-    "youtubeVideoId": "KKqlxdh9pDE"
+    "youtubeVideoId": "KKqlxdh9pDE",
+    "enTags": [
+      "art pop",
+      "chamber pop",
+      "seattle indie",
+      "indie rock",
+      "indietronica",
+      "neo-synthpop"
+    ]
   },
   {
     "name": "Pérotin",
@@ -4104,7 +5460,16 @@
       "spiritual-jazz",
       "free-jazz"
     ],
-    "youtubeVideoId": "ucdYt46DpX8"
+    "youtubeVideoId": "ucdYt46DpX8",
+    "enTags": [
+      "spiritual jazz",
+      "free jazz",
+      "avant-garde jazz",
+      "hard bop",
+      "jazz funk",
+      "jazz saxophone",
+      "jazz"
+    ]
   },
   {
     "name": "Philip Glass",
@@ -4117,6 +5482,13 @@
     "subgenres": [
       "minimalist",
       "modern-classical"
+    ],
+    "enTags": [
+      "compositional ambient",
+      "minimalism",
+      "american contemporary classical",
+      "contemporary classical",
+      "classical"
     ]
   },
   {
@@ -4130,6 +5502,12 @@
     "subgenres": [
       "drum-n-bass",
       "idm"
+    ],
+    "enTags": [
+      "atmospheric dnb",
+      "drum and bass",
+      "jungle",
+      "intelligent dance music"
     ]
   },
   {
@@ -4148,7 +5526,15 @@
       "altrock",
       "artpop"
     ],
-    "youtubeVideoId": "mxZtKK5TzdI"
+    "youtubeVideoId": "mxZtKK5TzdI",
+    "enTags": [
+      "melancholia",
+      "art pop",
+      "permanent wave",
+      "alternative rock",
+      "piano rock",
+      "singer-songwriter"
+    ]
   },
   {
     "name": "Plaid",
@@ -4245,6 +5631,14 @@
     "subgenres": [
       "trip-hop",
       "experimental"
+    ],
+    "enTags": [
+      "trip hop",
+      "dark pop",
+      "laboratorio",
+      "electronica",
+      "art pop",
+      "alternative rock"
     ]
   },
   {
@@ -4288,6 +5682,12 @@
     "youtubeVideoId": "Y3ixEzKA4k0",
     "backupVideoIds": [
       "Ha1H-UQhVW0"
+    ],
+    "enTags": [
+      "dance rock",
+      "scottish indie",
+      "britpop",
+      "alternative rock"
     ]
   },
   {
@@ -4303,7 +5703,10 @@
       "dub-techno",
       "downtempo"
     ],
-    "youtubeVideoId": "T4QhJEXF7MA"
+    "youtubeVideoId": "T4QhJEXF7MA",
+    "enTags": [
+      "experimental dub"
+    ]
   },
   {
     "name": "Pyotr Ilyich Tchaikovsky",
@@ -4314,6 +5717,12 @@
     "youtubeVideoId": "4_PSjr47AUo",
     "subgenres": [
       "romantic"
+    ],
+    "enTags": [
+      "classical drill",
+      "russian romanticism",
+      "classical",
+      "late romantic era"
     ]
   },
   {
@@ -4336,7 +5745,12 @@
     "subgenres": [
       "experimental-pop"
     ],
-    "youtubeVideoId": "qrEmcwEVG6c"
+    "youtubeVideoId": "qrEmcwEVG6c",
+    "enTags": [
+      "tennessee experimental",
+      "outsider",
+      "lo-fi"
+    ]
   },
   {
     "name": "Rachika Nayar",
@@ -4344,6 +5758,10 @@
     "genres": [
       "ambient",
       "folk"
+    ],
+    "enTags": [
+      "pastoral",
+      "spectra"
     ]
   },
   {
@@ -4352,6 +5770,9 @@
     "genres": [
       "ambient",
       "idm"
+    ],
+    "enTags": [
+      "portuguese experimental"
     ]
   },
   {
@@ -4366,6 +5787,15 @@
     "subgenres": [
       "industrial",
       "dark-ambient"
+    ],
+    "enTags": [
+      "weightless",
+      "abstract",
+      "dub metal",
+      "outsider house",
+      "new isolationism",
+      "drone",
+      "ambient"
     ]
   },
   {
@@ -4382,6 +5812,12 @@
     "genres": [
       "altrock",
       "ambient"
+    ],
+    "enTags": [
+      "post-rock",
+      "post-metal",
+      "instrumental post-rock",
+      "american post-rock"
     ]
   },
   {
@@ -4391,6 +5827,11 @@
       "ambient",
       "electronica",
       "techno"
+    ],
+    "enTags": [
+      "nz electronic",
+      "oceania soundtrack",
+      "compositional ambient"
     ]
   },
   {
@@ -4412,7 +5853,12 @@
       "idm",
       "techno"
     ],
-    "youtubeVideoId": "N7aZihQJmcU"
+    "youtubeVideoId": "N7aZihQJmcU",
+    "enTags": [
+      "proto-techno",
+      "british experimental",
+      "intelligent dance music"
+    ]
   },
   {
     "name": "Richard Skelton",
@@ -4436,6 +5882,12 @@
     "subgenres": [
       "romantic",
       "opera"
+    ],
+    "enTags": [
+      "german romanticism",
+      "classical",
+      "german opera",
+      "late romantic era"
     ]
   },
   {
@@ -4463,7 +5915,13 @@
       "idm",
       "ambient techno"
     ],
-    "youtubeVideoId": "dVAQO6Fs2f0"
+    "youtubeVideoId": "dVAQO6Fs2f0",
+    "enTags": [
+      "ambient idm",
+      "electronica",
+      "compositional ambient",
+      "intelligent dance music"
+    ]
   },
   {
     "name": "Robin Guthrie",
@@ -4471,6 +5929,10 @@
     "genres": [
       "artpop",
       "indiepop"
+    ],
+    "enTags": [
+      "solo wave",
+      "dream pop"
     ]
   },
   {
@@ -4503,6 +5965,12 @@
     "subgenres": [
       "drum-n-bass",
       "jungle"
+    ],
+    "enTags": [
+      "drum and bass",
+      "big beat",
+      "breakbeat",
+      "jungle"
     ]
   },
   {
@@ -4516,6 +5984,11 @@
       "experimental",
       "glitch",
       "minimal"
+    ],
+    "enTags": [
+      "glitch",
+      "sound art",
+      "microsound"
     ]
   },
   {
@@ -4542,7 +6015,11 @@
     "subgenres": [
       "experimental"
     ],
-    "youtubeVideoId": "VYJUOvIY1BU"
+    "youtubeVideoId": "VYJUOvIY1BU",
+    "enTags": [
+      "wonky",
+      "glitch"
+    ]
   },
   {
     "name": "Samuel Organ",
@@ -4560,6 +6037,17 @@
       "ambient",
       "folk",
       "idm"
+    ],
+    "enTags": [
+      "experimental ambient",
+      "experimental synth",
+      "spectra",
+      "electra",
+      "canadian experimental",
+      "modular synth",
+      "drone",
+      "pastoral",
+      "drone ambient"
     ]
   },
   {
@@ -4574,6 +6062,10 @@
     "birthDate": "1953-01-01",
     "genres": [
       "ambient"
+    ],
+    "enTags": [
+      "fourth world",
+      "j-ambient"
     ]
   },
   {
@@ -4592,7 +6084,12 @@
       "industrial",
       "techno"
     ],
-    "youtubeVideoId": "sz3WGYKGNYU"
+    "youtubeVideoId": "sz3WGYKGNYU",
+    "enTags": [
+      "experimental techno",
+      "german ebm",
+      "modern ebm"
+    ]
   },
   {
     "name": "Scratcha DVA",
@@ -4605,7 +6102,12 @@
       "grime",
       "house"
     ],
-    "youtubeVideoId": "cN8AryMZRzU"
+    "youtubeVideoId": "cN8AryMZRzU",
+    "enTags": [
+      "footwork",
+      "grimewave",
+      "uk bass"
+    ]
   },
   {
     "name": "Secreto Metro",
@@ -4633,7 +6135,13 @@
     "genres": [
       "idm"
     ],
-    "youtubeVideoId": "lkDXEz58ntg"
+    "youtubeVideoId": "lkDXEz58ntg",
+    "enTags": [
+      "proto-hyperpop",
+      "escape room",
+      "deconstructed club",
+      "hyperpop"
+    ]
   },
   {
     "name": "Sergei Prokofiev",
@@ -4644,6 +6152,12 @@
     "youtubeVideoId": "KDfGBmbNbMw",
     "subgenres": [
       "modern-classical"
+    ],
+    "enTags": [
+      "russian modern classical",
+      "classical",
+      "neoclassicism",
+      "early modern classical"
     ]
   },
   {
@@ -4670,6 +6184,12 @@
       "trip-hop",
       "experimental",
       "art-pop"
+    ],
+    "enTags": [
+      "persian electronic",
+      "escape room",
+      "art pop",
+      "alternative r&b"
     ]
   },
   {
@@ -4681,7 +6201,15 @@
       "idm",
       "industrial"
     ],
-    "youtubeVideoId": "Orr2ZqtijCQ"
+    "youtubeVideoId": "Orr2ZqtijCQ",
+    "enTags": [
+      "industrial",
+      "experimental",
+      "ambient industrial",
+      "no wave",
+      "industrial rock",
+      "minimal wave"
+    ]
   },
   {
     "name": "Shinichi Atobe",
@@ -4703,7 +6231,15 @@
       "dnb",
       "idm"
     ],
-    "youtubeVideoId": "-DrlW5w5cpc"
+    "youtubeVideoId": "-DrlW5w5cpc",
+    "enTags": [
+      "escape room",
+      "grimewave",
+      "electra",
+      "art pop",
+      "alternative r&b",
+      "hyperpop"
+    ]
   },
   {
     "name": "Silicon Teens",
@@ -4722,7 +6258,12 @@
     "subgenres": [
       "art-pop"
     ],
-    "youtubeVideoId": "OklWRgYmoHw"
+    "youtubeVideoId": "OklWRgYmoHw",
+    "enTags": [
+      "lilith",
+      "new wave pop",
+      "singer-songwriter"
+    ]
   },
   {
     "name": "Siouxsie and the Banshees",
@@ -4750,6 +6291,14 @@
     "youtubeVideoId": "cod8bRiQjj4",
     "subgenres": [
       "industrial",
+      "ebm"
+    ],
+    "enTags": [
+      "industrial rock",
+      "industrial",
+      "electro-industrial",
+      "industrial metal",
+      "gothic rock",
       "ebm"
     ]
   },
@@ -4785,6 +6334,11 @@
     "subgenres": [
       "idm",
       "downtempo"
+    ],
+    "enTags": [
+      "drill and bass",
+      "deep idm",
+      "intelligent dance music"
     ]
   },
   {
@@ -4793,6 +6347,11 @@
     "genres": [
       "ambient",
       "idm"
+    ],
+    "enTags": [
+      "experimental synth",
+      "fourth world",
+      "j-ambient"
     ]
   },
   {
@@ -4830,6 +6389,10 @@
     "backupVideoIds": [
       "WFB31_8V6Ms",
       "ECooA0roht4"
+    ],
+    "enTags": [
+      "trip hop",
+      "electronica"
     ]
   },
   {
@@ -4858,6 +6421,96 @@
       "jazz",
       "triphop",
       "ambient"
+    ],
+    "enTags": [
+      "dark jazz",
+      "electro swing",
+      "background jazz",
+      "broadway",
+      "north carolina roots",
+      "eugene indie",
+      "varmland rock",
+      "go-go",
+      "vintage jazz",
+      "new orleans jazz",
+      "brazilian blues",
+      "jazz double bass",
+      "jazz piano",
+      "dixieland",
+      "bboy",
+      "library music",
+      "smooth saxophone",
+      "deep vocal jazz",
+      "contemporary post-bop",
+      "jazz saxophone",
+      "modern funk",
+      "smooth jazz",
+      "chillsynth",
+      "post-disco soul",
+      "funktronica",
+      "vocal jazz",
+      "modern swing",
+      "saxophone trio",
+      "australian r&b",
+      "contemporary vocal jazz",
+      "tin pan alley",
+      "american modern classical",
+      "classical",
+      "early modern classical",
+      "swing revival",
+      "jazz worship",
+      "man's orchestra",
+      "british dance band",
+      "vaudeville",
+      "hot jazz",
+      "deep adult standards",
+      "big band",
+      "swing",
+      "deep smooth jazz",
+      "soulful house",
+      "deep house",
+      "background jazz product",
+      "modern big band",
+      "rap boricua",
+      "experimental big band",
+      "jazz orchestra",
+      "dinner jazz",
+      "washboard",
+      "torch song",
+      "new orleans indie",
+      "pop violin",
+      "easy listening",
+      "brass band",
+      "ukg revival",
+      "slam poetry",
+      "contemporary jazz",
+      "uk contemporary jazz",
+      "jazz vibraphone",
+      "instrumental funk",
+      "jazz clarinet",
+      "italian jazz fusion",
+      "italian library music",
+      "israeli jazz",
+      "ecm-style jazz",
+      "jazz guitar",
+      "early american folk",
+      "garage house",
+      "college a cappella",
+      "jazz trumpet",
+      "broken beat",
+      "acid jazz",
+      "indie jazz",
+      "gospel singers",
+      "brass quintet",
+      "brass band pop",
+      "dessin anime",
+      "jazz cover",
+      "bronx hip hop",
+      "radio symphony",
+      "gypsy jazz",
+      "old school hip hop",
+      "sleaze rock",
+      "new wave of glam metal"
     ]
   },
   {
@@ -4869,7 +6522,13 @@
     "subgenres": [
       "free-jazz"
     ],
-    "youtubeVideoId": "w38o2dJI_cQ"
+    "youtubeVideoId": "w38o2dJI_cQ",
+    "enTags": [
+      "spiritual jazz",
+      "free jazz",
+      "avant-garde jazz",
+      "jazz guitar"
+    ]
   },
   {
     "name": "SOPHIE",
@@ -4882,6 +6541,15 @@
     "subgenres": [
       "experimental",
       "idm"
+    ],
+    "enTags": [
+      "escape room",
+      "transpop",
+      "art pop",
+      "proto-hyperpop",
+      "bubblegum bass",
+      "hyperpop",
+      "deconstructed club"
     ]
   },
   {
@@ -4912,7 +6580,12 @@
     "genres": [
       "artpop"
     ],
-    "youtubeVideoId": "rdf62fcwmeA"
+    "youtubeVideoId": "rdf62fcwmeA",
+    "enTags": [
+      "oakland indie",
+      "escape room",
+      "art pop"
+    ]
   },
   {
     "name": "Squarepusher",
@@ -4928,6 +6601,13 @@
       "drum-n-bass",
       "idm",
       "breakbeat"
+    ],
+    "enTags": [
+      "abstract",
+      "intelligent dance music",
+      "drill and bass",
+      "electronica",
+      "trip hop"
     ]
   },
   {
@@ -4939,7 +6619,15 @@
       "electronica",
       "indiepop"
     ],
-    "youtubeVideoId": "nWW4tFuzxGE"
+    "youtubeVideoId": "nWW4tFuzxGE",
+    "enTags": [
+      "etherpop",
+      "art pop",
+      "metropopolis",
+      "indie rock",
+      "indietronica",
+      "neo-synthpop"
+    ]
   },
   {
     "name": "Starflyer 59",
@@ -4948,6 +6636,13 @@
       "altrock",
       "artpop",
       "indiepop"
+    ],
+    "enTags": [
+      "spacegrunge",
+      "dream pop",
+      "shoegaze",
+      "american shoegaze",
+      "nu gaze"
     ]
   },
   {
@@ -5000,6 +6695,15 @@
     "subgenres": [
       "ambient",
       "experimental"
+    ],
+    "enTags": [
+      "experimental synth",
+      "modular synth",
+      "hauntology",
+      "ambient",
+      "ambient techno",
+      "drone",
+      "intelligent dance music"
     ]
   },
   {
@@ -5012,6 +6716,13 @@
     "youtubeVideoId": "ZXJWO2FQ16c",
     "subgenres": [
       "minimalist"
+    ],
+    "enTags": [
+      "minimalism",
+      "american contemporary classical",
+      "compositional ambient",
+      "contemporary classical",
+      "classical"
     ]
   },
   {
@@ -5034,6 +6745,10 @@
     "genres": [
       "darkwave",
       "artpop"
+    ],
+    "enTags": [
+      "ethereal wave",
+      "modern goth"
     ]
   },
   {
@@ -5073,7 +6788,15 @@
       "free-jazz",
       "spiritual-jazz"
     ],
-    "youtubeId": "owCPrIEliZc"
+    "youtubeId": "owCPrIEliZc",
+    "enTags": [
+      "spiritual jazz",
+      "afrofuturism",
+      "free jazz",
+      "avant-garde jazz",
+      "experimental",
+      "jazz"
+    ]
   },
   {
     "name": "Sunn O)))",
@@ -5094,6 +6817,11 @@
     "genres": [
       "ambient",
       "idm"
+    ],
+    "enTags": [
+      "spanish experimental",
+      "fourth world",
+      "j-ambient"
     ]
   },
   {
@@ -5115,6 +6843,11 @@
     "birthDate": "1946-06-04",
     "genres": [
       "ambient"
+    ],
+    "enTags": [
+      "modular synth",
+      "new age",
+      "spectra"
     ]
   },
   {
@@ -5122,6 +6855,9 @@
     "birthDate": "2007-00-00",
     "genres": [
       "jazz"
+    ],
+    "enTags": [
+      "dark jazz"
     ]
   },
   {
@@ -5137,6 +6873,9 @@
     "birthDate": "1962-05-30",
     "genres": [
       "jazz"
+    ],
+    "enTags": [
+      "progressive jazz fusion"
     ]
   },
   {
@@ -5159,6 +6898,16 @@
     "genres": [
       "ambient",
       "idm"
+    ],
+    "enTags": [
+      "nu age",
+      "lowercase",
+      "ambient",
+      "drone",
+      "glitch",
+      "mandible",
+      "sound art",
+      "tape music"
     ]
   },
   {
@@ -5170,7 +6919,13 @@
       "techno",
       "triphop"
     ],
-    "youtubeVideoId": "nBYQYBnifrQ"
+    "youtubeVideoId": "nBYQYBnifrQ",
+    "enTags": [
+      "french techno",
+      "techno",
+      "minimal dub",
+      "modern ebm"
+    ]
   },
   {
     "name": "Terror Danjah",
@@ -5181,7 +6936,11 @@
     "subgenres": [
       "grime"
     ],
-    "youtubeVideoId": "kwLop3xcJ_0"
+    "youtubeVideoId": "kwLop3xcJ_0",
+    "enTags": [
+      "purple sound",
+      "grime"
+    ]
   },
   {
     "name": "Terry Riley",
@@ -5195,6 +6954,17 @@
     "subgenres": [
       "minimalist",
       "experimental"
+    ],
+    "enTags": [
+      "minimalism",
+      "american contemporary classical",
+      "tzadik",
+      "fourth world",
+      "experimental",
+      "compositional ambient",
+      "avant-garde",
+      "contemporary classical",
+      "21st century classical"
     ]
   },
   {
@@ -5210,6 +6980,12 @@
     "genres": [
       "altrock",
       "ambient"
+    ],
+    "enTags": [
+      "post-rock",
+      "american post-rock",
+      "instrumental post-rock",
+      "focus"
     ]
   },
   {
@@ -5224,6 +7000,10 @@
     "subgenres": [
       "techno",
       "idm"
+    ],
+    "enTags": [
+      "intelligent dance music",
+      "ambient techno"
     ]
   },
   {
@@ -5237,7 +7017,13 @@
       "dub",
       "noise"
     ],
-    "youtubeVideoId": "bjx1HVch8Xw"
+    "youtubeVideoId": "bjx1HVch8Xw",
+    "enTags": [
+      "illbient",
+      "dub metal",
+      "classic dubstep",
+      "trip hop"
+    ]
   },
   {
     "name": "The Cure",
@@ -5293,6 +7079,12 @@
       "electro",
       "techno",
       "darkwave"
+    ],
+    "enTags": [
+      "french techno",
+      "destroy techno",
+      "electroclash",
+      "filter house"
     ]
   },
   {
@@ -5309,13 +7101,19 @@
     "genres": [
       "jazz"
     ],
-    "youtubeVideoId": "tMpbiwN9wlI"
+    "youtubeVideoId": "tMpbiwN9wlI",
+    "enTags": [
+      "dark jazz"
+    ]
   },
   {
     "name": "The Lovecraft Sextet",
     "birthDate": "2021-00-00",
     "genres": [
       "jazz"
+    ],
+    "enTags": [
+      "dark jazz"
     ]
   },
   {
@@ -5327,7 +7125,11 @@
       "jazz",
       "techno"
     ],
-    "youtubeVideoId": "LvAtGjZc_sc"
+    "youtubeVideoId": "LvAtGjZc_sc",
+    "enTags": [
+      "dark jazz",
+      "dutch experimental electronic"
+    ]
   },
   {
     "name": "The Normal",
@@ -5401,6 +7203,11 @@
     "genres": [
       "artpop",
       "darkwave"
+    ],
+    "enTags": [
+      "ethereal wave",
+      "dark wave",
+      "gothic rock"
     ]
   },
   {
@@ -5410,6 +7217,12 @@
       "artpop",
       "darkwave",
       "indiepop"
+    ],
+    "enTags": [
+      "dream pop",
+      "melancholia",
+      "ethereal wave",
+      "uk post-punk"
     ]
   },
   {
@@ -5432,6 +7245,16 @@
       "industrial",
       "noise",
       "experimental"
+    ],
+    "enTags": [
+      "industrial",
+      "experimental",
+      "experimental rock",
+      "laboratorio",
+      "british experimental",
+      "british industrial",
+      "industrial rock",
+      "uk post-punk"
     ]
   },
   {
@@ -5452,6 +7275,9 @@
     "birthDate": "1957-06-15",
     "genres": [
       "ambient"
+    ],
+    "enTags": [
+      "new age"
     ]
   },
   {
@@ -5459,6 +7285,11 @@
     "birthDate": "2013-02-15",
     "genres": [
       "industrial"
+    ],
+    "enTags": [
+      "mandible",
+      "british industrial",
+      "fourth world"
     ]
   },
   {
@@ -5470,7 +7301,12 @@
     "subgenres": [
       "art-rock"
     ],
-    "youtubeId": "sILF_IlO-8w"
+    "youtubeId": "sILF_IlO-8w",
+    "enTags": [
+      "popgaze",
+      "experimental pop",
+      "experimental indie"
+    ]
   },
   {
     "name": "Tori Amos",
@@ -5478,7 +7314,17 @@
     "genres": [
       "artpop"
     ],
-    "youtubeVideoId": "2CdWEHjaL30"
+    "youtubeVideoId": "2CdWEHjaL30",
+    "enTags": [
+      "ectofolk",
+      "lilith",
+      "piano rock",
+      "dark pop",
+      "permanent wave",
+      "melancholia",
+      "singer-songwriter",
+      "new wave pop"
+    ]
   },
   {
     "name": "Trance to the Sun",
@@ -5499,6 +7345,10 @@
     "subgenres": [
       "trip-hop",
       "experimental"
+    ],
+    "enTags": [
+      "trip hop",
+      "electronica"
     ]
   },
   {
@@ -5506,6 +7356,9 @@
     "birthDate": "1685-03-21",
     "genres": [
       "jazz"
+    ],
+    "enTags": [
+      "dark jazz"
     ]
   },
   {
@@ -5513,6 +7366,9 @@
     "birthDate": "1950-04-02",
     "genres": [
       "idm"
+    ],
+    "enTags": [
+      "experimental electronic"
     ]
   },
   {
@@ -5556,6 +7412,13 @@
       "downtempo",
       "ambient",
       "idm"
+    ],
+    "enTags": [
+      "indietronica",
+      "downtempo",
+      "chillwave",
+      "electronica",
+      "intelligent dance music"
     ]
   },
   {
@@ -5582,6 +7445,15 @@
     "subgenres": [
       "idm",
       "ambient"
+    ],
+    "enTags": [
+      "german electronica",
+      "ambient guitar",
+      "intelligent dance music",
+      "ambient",
+      "nu gaze",
+      "shoegaze",
+      "indietronica"
     ]
   },
   {
@@ -5589,6 +7461,10 @@
     "birthDate": "1990-12-15",
     "genres": [
       "idm"
+    ],
+    "enTags": [
+      "bubblegum bass",
+      "hyperpop"
     ]
   },
   {
@@ -5621,6 +7497,10 @@
     "subgenres": [
       "techno",
       "progressive-house"
+    ],
+    "enTags": [
+      "big beat",
+      "electronica"
     ]
   },
   {
@@ -5634,6 +7514,10 @@
     "subgenres": [
       "trip-hop",
       "darkwave"
+    ],
+    "enTags": [
+      "electronica",
+      "trip hop"
     ]
   },
   {
@@ -5675,7 +7559,10 @@
     "genres": [
       "idm"
     ],
-    "youtubeVideoId": "Fi3tuTLa1C0"
+    "youtubeVideoId": "Fi3tuTLa1C0",
+    "enTags": [
+      "experimental hip hop"
+    ]
   },
   {
     "name": "Venetian Snares",
@@ -5690,6 +7577,13 @@
     "subgenres": [
       "breakcore",
       "idm"
+    ],
+    "enTags": [
+      "drill and bass",
+      "breakcore",
+      "braindance",
+      "intelligent dance music",
+      "hardcore techno"
     ]
   },
   {
@@ -5766,7 +7660,14 @@
       "folk",
       "indiepop"
     ],
-    "youtubeVideoId": "Mwu3kCaIFf0"
+    "youtubeVideoId": "Mwu3kCaIFf0",
+    "enTags": [
+      "experimental folk",
+      "art pop",
+      "experimental pop",
+      "indie pop",
+      "chamber pop"
+    ]
   },
   {
     "name": "Whatever The Weather",
@@ -5807,6 +7708,11 @@
     "genres": [
       "ambient",
       "idm"
+    ],
+    "enTags": [
+      "australian ambient",
+      "australian experimental",
+      "fourth world"
     ]
   },
   {
@@ -5818,6 +7724,11 @@
     "youtubeVideoId": "Rb0UmrCXxVA",
     "subgenres": [
       "classical"
+    ],
+    "enTags": [
+      "classical",
+      "classical era",
+      "horn ensemble"
     ]
   },
   {
@@ -5825,6 +7736,11 @@
     "birthDate": "1946-03-10",
     "genres": [
       "idm"
+    ],
+    "enTags": [
+      "k-rap",
+      "fourth world",
+      "british experimental"
     ]
   },
   {
@@ -5834,6 +7750,21 @@
       "ambient",
       "idm",
       "techno"
+    ],
+    "enTags": [
+      "ambient pop",
+      "deconstructed club",
+      "psychedelic trance",
+      "forest psy",
+      "progressive psytrance",
+      "progressive alternative",
+      "slamming deathcore",
+      "forest psy",
+      "instrumental stoner rock",
+      "palm desert scene",
+      "stoner rock",
+      "stoner metal",
+      "instrumental rock"
     ]
   },
   {
@@ -5842,6 +7773,10 @@
     "genres": [
       "ambient",
       "folk"
+    ],
+    "enTags": [
+      "ambient country",
+      "pastoral"
     ]
   },
   {
@@ -5862,7 +7797,14 @@
       "experimental-pop",
       "art-rock"
     ],
-    "youtubeId": "G-9QCsH3OQM"
+    "youtubeId": "G-9QCsH3OQM",
+    "enTags": [
+      "experimental r&b",
+      "hypnagogic pop",
+      "art pop",
+      "experimental pop",
+      "escape room"
+    ]
   },
   {
     "name": "Zomby",
@@ -5877,7 +7819,16 @@
       "jungle",
       "dubstep"
     ],
-    "youtubeVideoId": "swCqGEwLO4Y"
+    "youtubeVideoId": "swCqGEwLO4Y",
+    "enTags": [
+      "weightless",
+      "uk bass",
+      "wonky",
+      "classic dubstep",
+      "future garage",
+      "footwork",
+      "uk garage"
+    ]
   },
   {
     "name": "Zoviet France",
@@ -5892,7 +7843,16 @@
       "drone",
       "ambient"
     ],
-    "youtubeVideoId": "vW5wRHI28uo"
+    "youtubeVideoId": "vW5wRHI28uo",
+    "enTags": [
+      "ambient industrial",
+      "british experimental",
+      "british industrial",
+      "tribal ambient",
+      "balkan beats",
+      "french folk pop",
+      "izvorna muzika"
+    ]
   },
   {
     "name": "µ-Ziq",
@@ -5907,6 +7867,15 @@
     "subgenres": [
       "idm",
       "breakbeat"
+    ],
+    "enTags": [
+      "drill and bass",
+      "intelligent dance music",
+      "uk experimental electronic",
+      "braindance",
+      "abstract",
+      "deep idm",
+      "breakcore"
     ]
   },
   {
@@ -5916,6 +7885,11 @@
       "electronica",
       "idm",
       "techno"
+    ],
+    "enTags": [
+      "mandible",
+      "uk experimental electronic",
+      "british experimental"
     ]
   },
   {
@@ -5932,6 +7906,13 @@
       "electronica",
       "idm",
       "techno"
+    ],
+    "enTags": [
+      "abstractro",
+      "uk experimental electronic",
+      "fluxwork",
+      "hauntology",
+      "mandible"
     ]
   },
   {
@@ -5942,6 +7923,14 @@
       "electronica",
       "idm",
       "techno"
+    ],
+    "enTags": [
+      "mandible",
+      "uk experimental electronic",
+      "glitch",
+      "british experimental",
+      "bristol electronic",
+      "dub techno"
     ]
   },
   {
@@ -5952,6 +7941,12 @@
       "folk",
       "indiepop",
       "industrial"
+    ],
+    "enTags": [
+      "gaian doom",
+      "modern dream pop",
+      "post-metal",
+      "spectra"
     ]
   },
   {
@@ -5961,6 +7956,12 @@
       "darkwave",
       "folk",
       "industrial"
+    ],
+    "enTags": [
+      "dark pop",
+      "sacramento indie",
+      "doomgaze",
+      "gaian doom"
     ]
   },
   {
@@ -5989,6 +7990,10 @@
       "artpop",
       "folk",
       "industrial"
+    ],
+    "enTags": [
+      "gaian doom",
+      "post-metal"
     ]
   },
   {
@@ -5998,6 +8003,11 @@
       "altrock",
       "idm",
       "indiepop"
+    ],
+    "enTags": [
+      "experimental guitar",
+      "nu gaze",
+      "american shoegaze"
     ]
   },
   {
@@ -6007,6 +8017,65 @@
       "ambient",
       "industrial",
       "idm"
+    ],
+    "enTags": [
+      "chattanooga indie",
+      "candy pop",
+      "canadian rock",
+      "lilith",
+      "j-reggae",
+      "chicago hardcore",
+      "chicago punk",
+      "noise rock",
+      "industrial rock",
+      "post-hardcore",
+      "shimmer pop",
+      "brooklyn indie",
+      "maine indie",
+      "modern psychedelic folk",
+      "epunk",
+      "modern melodic hardcore",
+      "uk garage",
+      "orebro indie",
+      "boston rock",
+      "welsh rock",
+      "rez country",
+      "powwow",
+      "australian indie",
+      "indietronica",
+      "psychedelic doom",
+      "la pop",
+      "doomgaze",
+      "post-doom metal",
+      "avant-garde metal",
+      "drone metal",
+      "post-metal",
+      "christian trap",
+      "christian hip hop",
+      "brazilian power metal",
+      "psychedelic folk rock",
+      "nwocr",
+      "christian punk",
+      "pirate",
+      "celtic punk",
+      "cambridgeshire indie",
+      "british alternative rock",
+      "worcester ma indie",
+      "neo-psychedelic",
+      "indie garage rock",
+      "christian metal",
+      "deep christian rock",
+      "indiana indie",
+      "deathgrass",
+      "roots rock",
+      "modern blues rock",
+      "vapor pop",
+      "french garage rock",
+      "rock alternatif francais",
+      "polka",
+      "denton tx indie",
+      "spiritual hip hop",
+      "high vibe"
     ]
   },
   {
@@ -6016,6 +8085,10 @@
       "darkwave",
       "folk",
       "industrial"
+    ],
+    "enTags": [
+      "gaian doom",
+      "brighton indie"
     ]
   },
   {
@@ -6041,6 +8114,9 @@
     "genres": [
       "ambient",
       "folk"
+    ],
+    "enTags": [
+      "ambient folk"
     ]
   },
   {
@@ -6048,6 +8124,10 @@
     "birthDate": "1998-06-15",
     "genres": [
       "folk"
+    ],
+    "enTags": [
+      "chamber folk",
+      "chicago indie"
     ]
   },
   {
@@ -6056,6 +8136,10 @@
     "genres": [
       "artpop",
       "indiepop"
+    ],
+    "enTags": [
+      "bedroom pop",
+      "chamber pop"
     ]
   },
   {
@@ -6063,6 +8147,12 @@
     "birthDate": "1983-03-04",
     "genres": [
       "artpop"
+    ],
+    "enTags": [
+      "chamber psych",
+      "welsh indie",
+      "art pop",
+      "chamber pop"
     ]
   },
   {
@@ -6072,6 +8162,10 @@
       "ambient",
       "folk",
       "idm"
+    ],
+    "enTags": [
+      "experimental folk",
+      "pastoral"
     ]
   },
   {
@@ -6121,6 +8215,13 @@
     "genres": [
       "artpop",
       "electronica"
+    ],
+    "enTags": [
+      "shiver pop",
+      "etherpop",
+      "electropop",
+      "art pop",
+      "escape room"
     ]
   },
   {
@@ -6129,6 +8230,15 @@
     "mbid": "e2a65942-78d1-4eb4-b7e1-9a8021881fca",
     "genres": [
       "artpop"
+    ],
+    "enTags": [
+      "escape room",
+      "experimental pop",
+      "electra",
+      "art pop",
+      "spectra",
+      "uk contemporary r&b",
+      "alternative r&b"
     ]
   },
   {
@@ -6136,6 +8246,9 @@
     "birthDate": "1990-00-00",
     "genres": [
       "artpop"
+    ],
+    "enTags": [
+      "art pop"
     ]
   },
   {
@@ -6144,6 +8257,9 @@
     "mbid": "92ed8183-8f22-42b2-af4e-d44137610fa0",
     "genres": [
       "artpop"
+    ],
+    "enTags": [
+      "experimental pop"
     ]
   },
   {
@@ -6152,6 +8268,13 @@
     "genres": [
       "idm",
       "jazz"
+    ],
+    "enTags": [
+      "afrofuturism",
+      "experimental r&b",
+      "indie soul",
+      "alternative r&b",
+      "la pop"
     ]
   },
   {
@@ -6171,6 +8294,11 @@
     "mbid": "036912f5-c717-498d-8958-6058de17bb70",
     "genres": [
       "artpop"
+    ],
+    "enTags": [
+      "experimental pop",
+      "art pop",
+      "chamber psych"
     ]
   },
   {
@@ -6180,6 +8308,12 @@
       "artpop",
       "electronica",
       "indiepop"
+    ],
+    "enTags": [
+      "art pop",
+      "escape room",
+      "indie pop",
+      "indietronica"
     ]
   },
   {
@@ -6191,6 +8325,9 @@
       "artpop",
       "folk",
       "electronica"
+    ],
+    "enTags": [
+      "experimental pop"
     ]
   },
   {
@@ -6199,6 +8336,13 @@
     "genres": [
       "artpop",
       "indiepop"
+    ],
+    "enTags": [
+      "one-person band",
+      "hypnagogic pop",
+      "quebec indie",
+      "experimental pop",
+      "noise pop"
     ]
   },
   {
@@ -6211,6 +8355,20 @@
       "electronica",
       "folk",
       "indiepop"
+    ],
+    "enTags": [
+      "experimental pop",
+      "baltimore indie",
+      "indie rock",
+      "freak folk",
+      "art pop",
+      "chillwave",
+      "noise pop",
+      "dance-punk",
+      "dream pop",
+      "alternative dance",
+      "alternative rock",
+      "neo-synthpop"
     ]
   },
   {
@@ -6219,6 +8377,14 @@
     "genres": [
       "artpop",
       "indiepop"
+    ],
+    "enTags": [
+      "hypnagogic pop",
+      "experimental pop",
+      "baroque pop",
+      "grave wave",
+      "art pop",
+      "noise pop"
     ]
   },
   {
@@ -6229,6 +8395,12 @@
       "electronica",
       "artpop",
       "darkwave"
+    ],
+    "enTags": [
+      "lo-fi",
+      "no wave",
+      "experimental pop",
+      "uk post-punk"
     ]
   },
   {
@@ -6239,6 +8411,11 @@
       "altrock",
       "artpop",
       "indiepop"
+    ],
+    "enTags": [
+      "neo-kraut",
+      "german shoegaze",
+      "experimental pop"
     ]
   },
   {
@@ -6248,6 +8425,11 @@
     "genres": [
       "artpop",
       "folk"
+    ],
+    "enTags": [
+      "experimental pop",
+      "bristol indie",
+      "new weird america"
     ]
   },
   {
@@ -6278,6 +8460,20 @@
       "darkwave",
       "indiepop",
       "industrial"
+    ],
+    "enTags": [
+      "canadian post-punk",
+      "garage psych",
+      "calgary indie",
+      "noise rock",
+      "canadian punk",
+      "canadian indie",
+      "nu gaze",
+      "crank wave",
+      "neo-psychedelic",
+      "shoegaze",
+      "indie punk",
+      "indie rock"
     ]
   },
   {
@@ -6290,7 +8486,10 @@
       "bedroom-pop"
     ],
     "youtubeId": "_MzXQ9Xj3qQ",
-    "birthDate": "1995-04-03"
+    "birthDate": "1995-04-03",
+    "enTags": [
+      "experimental indie"
+    ]
   },
   {
     "name": "Julianna Barwick",
@@ -6336,50 +8535,113 @@
   {
     "name": "Johannes Brahms",
     "birthDate": "1833-05-07",
-    "genres": ["classical"],
-    "subgenres": ["romantic"],
-    "youtubeVideoId": "OJUame8uvPs"
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "romantic"
+    ],
+    "youtubeVideoId": "OJUame8uvPs",
+    "enTags": [
+      "german romanticism",
+      "classical",
+      "late romantic era"
+    ]
   },
   {
     "name": "Maurice Ravel",
     "birthDate": "1875-03-07",
-    "genres": ["classical"],
-    "subgenres": ["impressionist"],
-    "youtubeVideoId": "cmNEvSFWftc"
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "impressionist"
+    ],
+    "youtubeVideoId": "cmNEvSFWftc",
+    "enTags": [
+      "classical",
+      "neoclassicism",
+      "post-romantic era",
+      "impressionism",
+      "horn ensemble"
+    ]
   },
   {
     "name": "Robert Schumann",
     "birthDate": "1810-06-08",
-    "genres": ["classical"],
-    "subgenres": ["romantic"],
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "romantic"
+    ],
     "youtubeVideoId": "3jbHbDena_U"
   },
   {
     "name": "John Adams",
     "birthDate": "1947-02-15",
-    "genres": ["ambient", "classical"],
-    "subgenres": ["minimalist", "modern-classical"],
-    "youtubeVideoId": "XtvrzmzxkEk"
+    "genres": [
+      "ambient",
+      "classical"
+    ],
+    "subgenres": [
+      "minimalist",
+      "modern-classical"
+    ],
+    "youtubeVideoId": "XtvrzmzxkEk",
+    "enTags": [
+      "post-minimalism",
+      "american contemporary classical",
+      "minimalism",
+      "contemporary classical",
+      "compositional ambient",
+      "21st century classical",
+      "classical",
+      "acoustic cover"
+    ]
   },
   {
     "name": "Henryk Górecki",
     "birthDate": "1933-12-06",
-    "genres": ["classical", "ambient"],
-    "subgenres": ["modern-classical", "minimalist"],
+    "genres": [
+      "classical",
+      "ambient"
+    ],
+    "subgenres": [
+      "modern-classical",
+      "minimalist"
+    ],
     "youtubeVideoId": "0xl_x2tjWg0"
   },
   {
     "name": "Giuseppe Verdi",
     "birthDate": "1813-10-10",
-    "genres": ["classical"],
-    "subgenres": ["romantic", "opera"],
-    "youtubeVideoId": "rdv5fsgjO24"
+    "genres": [
+      "classical"
+    ],
+    "subgenres": [
+      "romantic",
+      "opera"
+    ],
+    "youtubeVideoId": "rdv5fsgjO24",
+    "enTags": [
+      "italian romanticism",
+      "classical",
+      "italian opera",
+      "late romantic era"
+    ]
   },
   {
     "name": "Karlheinz Stockhausen",
     "birthDate": "1928-08-22",
-    "genres": ["classical", "idm"],
-    "subgenres": ["experimental", "electronic-classical"],
+    "genres": [
+      "classical",
+      "idm"
+    ],
+    "subgenres": [
+      "experimental",
+      "electronic-classical"
+    ],
     "youtubeVideoId": "cUSnnKzSFQg"
   }
 ]

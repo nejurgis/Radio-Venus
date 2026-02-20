@@ -12,6 +12,7 @@
 //   node scripts/verify-genres.mjs --output=my.json             # custom report file
 //   node scripts/verify-genres.mjs --seed                       # read seed-musicians.json instead of built musicians.json
 //   node scripts/verify-genres.mjs --from-report=prev.json      # re-check only the notFound artists from a previous report
+//   node scripts/verify-genres.mjs --save-tags                  # write enTags back to seed-musicians.json for build-db enrichment
 //
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -30,12 +31,23 @@ const skip         = parseInt(getArg('skip')  || '0');
 const outputFile   = getArg('output') || join(__dirname, 'genre-report.json');
 const useSeed      = args.includes('--seed');
 const fromReport   = getArg('from-report');  // re-check notFound artists from a previous report
+const saveTags     = args.includes('--save-tags'); // write enTags back to seed for build-db enrichment
 
 // ── Load DB ───────────────────────────────────────────────────────────────────
 const dbPath = useSeed
   ? join(__dirname, 'seed-musicians.json')
   : join(__dirname, '../public/data/musicians.json');
 const db = JSON.parse(readFileSync(dbPath, 'utf-8'));
+
+// ── Load seed for tag patching (always needed when --save-tags) ───────────────
+const seedPath = join(__dirname, 'seed-musicians.json');
+let seedData = null;
+let seedByName = null;
+if (saveTags) {
+  seedData = JSON.parse(readFileSync(seedPath, 'utf-8'));
+  seedByName = new Map(seedData.map(a => [a.name.toLowerCase(), a]));
+  console.log(`--save-tags: will write enTags back to ${seedPath}`);
+}
 
 let artists = db.filter(a => a.genres?.length);
 
@@ -177,11 +189,24 @@ for (let i = 0; i < artists.length; i++) {
     if (notSupportedByEN.length)  report.extra.push(entry);
   }
 
-  if ((i + 1) % 10 === 0) saveReport();
+  // Save EN tags back to seed entry for build-db subgenre enrichment
+  if (saveTags && seedByName) {
+    const seedEntry = seedByName.get(artist.name.toLowerCase());
+    if (seedEntry) seedEntry.enTags = enRaw;
+  }
+
+  if ((i + 1) % 10 === 0) {
+    saveReport();
+    if (saveTags && seedData) writeFileSync(seedPath, JSON.stringify(seedData, null, 2));
+  }
   await delay(1000);
 }
 
 saveReport();
+if (saveTags && seedData) {
+  writeFileSync(seedPath, JSON.stringify(seedData, null, 2));
+  console.log(`enTags saved to ${seedPath}`);
+}
 
 // ── Summary ───────────────────────────────────────────────────────────────────
 const total = artists.length;
