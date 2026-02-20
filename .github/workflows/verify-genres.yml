@@ -4,19 +4,45 @@ on:
   workflow_dispatch:
     inputs:
       genre:
-        description: 'Single genre to check — leave blank to run all unchecked genres in parallel'
+        description: 'Single genre to check — leave blank to run today''s additions'
         required: false
         default: ''
       use_seed:
-        description: 'Use seed-musicians.json instead of built musicians.json (set false for genres like hiphop that are derived at build time)'
+        description: 'Use seed-musicians.json (set false for build-time genres like hiphop)'
         type: boolean
         required: false
         default: true
+      from_report:
+        description: 'Path to a from-report JSON (e.g. scripts/verify-today.json) — overrides genre filter'
+        required: false
+        default: ''
 
 jobs:
-  # ── Single genre (when input provided) ───────────────────────────────────────
+  # ── From-report: check a specific artist list (e.g. today's additions) ───────
+  verify-from-report:
+    if: ${{ inputs.from_report != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm install
+      - run: npx playwright install chromium --with-deps
+      - name: Run verification from report
+        run: node scripts/verify-genres.mjs --from-report=${{ inputs.from_report }} --output=scripts/genre-report-new.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: genre-report-new-${{ github.run_number }}
+          path: scripts/genre-report-new.json
+          retention-days: 30
+
+  # ── Single genre ──────────────────────────────────────────────────────────────
   verify-single:
-    if: ${{ inputs.genre != '' }}
+    if: ${{ inputs.from_report == '' && inputs.genre != '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 120
     steps:
@@ -28,7 +54,7 @@ jobs:
       - run: npm install
       - run: npx playwright install chromium --with-deps
       - name: Run verification
-        run: node scripts/verify-genres.mjs ${{ inputs.use_seed && '--seed' || '' }} --genre=${{ inputs.genre }} --output=scripts/genre-report.json
+        run: node scripts/verify-genres.mjs ${{ inputs.use_seed == true && '--seed' || '' }} --genre=${{ inputs.genre }} --output=scripts/genre-report.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -36,15 +62,15 @@ jobs:
           path: scripts/genre-report.json
           retention-days: 30
 
-  # ── All unchecked genres in parallel (default) ────────────────────────────────
+  # ── All genres in parallel (default) ─────────────────────────────────────────
   verify-all:
-    if: ${{ inputs.genre == '' }}
+    if: ${{ inputs.from_report == '' && inputs.genre == '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 120
     strategy:
       fail-fast: false
       matrix:
-        genre: [idm, classical, artpop, triphop, industrial, electronica, jazz, dnb, indiepop, folk]
+        genre: [ambient, techno, idm, industrial, darkwave, triphop, dnb, classical, artpop, jazz, electronica, indiepop, altrock, folk, hiphop, intercelestial]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
