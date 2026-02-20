@@ -8675,6 +8675,38 @@
     "backupVideoIds": []
   },
   {
+    "name": "Jon Hassell",
+    "birthDate": "1937-03-22",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 5.3,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "jazz"
+    ],
+    "subgenres": [
+      "ambient",
+      "cosmic-jazz",
+      "ambient-jazz",
+      "free-jazz",
+      "avant-garde-pop"
+    ],
+    "enTags": [
+      "fourth world",
+      "ambient jazz",
+      "jazz trumpet",
+      "avant-garde"
+    ],
+    "youtubeVideoId": "lxtHRTpOfxg",
+    "backupVideoIds": [
+      "5ppIUKAmysc",
+      "-7IRnin9gF0"
+    ]
+  },
+  {
     "name": "Jon Hopkins",
     "birthDate": "1979-08-15",
     "venus": {
@@ -13833,6 +13865,37 @@
     ],
     "youtubeVideoId": "QR2HE0YyYOs",
     "backupVideoIds": []
+  },
+  {
+    "name": "Roedelius",
+    "birthDate": "1934-10-26",
+    "venus": {
+      "sign": "Libra",
+      "degree": 26.5,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "electronica",
+      "darkwave"
+    ],
+    "subgenres": [
+      "berlin-school",
+      "ambient",
+      "krautrock"
+    ],
+    "enTags": [
+      "berlin school",
+      "krautrock",
+      "ambient",
+      "kosmische musik"
+    ],
+    "youtubeVideoId": "FbUDvhd-uNc",
+    "backupVideoIds": [
+      "XJTA9EVKXdk",
+      "yu71TgWo0CQ"
+    ]
   },
   {
     "name": "Roger Eno",
