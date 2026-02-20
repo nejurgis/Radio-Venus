@@ -836,9 +836,10 @@ async function main() {
     return;
   }
 
-  // Add to seed (strip rawTags — runtime-only, not persisted)
+  // Add to seed — persist rawTags as enTags for subgenre enrichment pipeline
   for (const a of toAdd) {
     const { rawTags, ...entry } = a;
+    if (rawTags?.length) entry.enTags = rawTags;
     seed.push(entry);
   }
   writeFileSync(SEED_PATH, JSON.stringify(seed, null, 2));

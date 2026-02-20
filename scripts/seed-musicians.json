@@ -10643,6 +10643,10 @@
     "birthDate": "1959-01-01",
     "genres": [
       "ambient"
+    ],
+    "enTags": [
+      "fourth world",
+      "ambient"
     ]
   },
   {
@@ -10651,6 +10655,10 @@
     "genres": [
       "darkwave",
       "ambient"
+    ],
+    "enTags": [
+      "krautrock",
+      "berlin school"
     ]
   },
   {
@@ -10659,6 +10667,13 @@
     "mbid": "b0a55bd8-60c7-45c1-b78e-f20e4c8adba1",
     "genres": [
       "ambient"
+    ],
+    "enTags": [
+      "ambient",
+      "drone",
+      "nu age",
+      "compositional ambient",
+      "drift"
     ]
   },
   {
@@ -10678,6 +10693,13 @@
     "genres": [
       "ambient",
       "folk"
+    ],
+    "enTags": [
+      "warm drone",
+      "ambient",
+      "drone",
+      "pastoral",
+      "compositional ambient"
     ]
   },
   {
