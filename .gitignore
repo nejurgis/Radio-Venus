@@ -1,4 +1,7 @@
 node_modules/
 dist/
 .env
+.DS_Store
 scripts/musicians.db
+scripts/genre-report*.json
+scripts/notfound-retry*.json
