@@ -758,7 +758,7 @@ async function main() {
         // Get genres: override > Everynoise (primary) > Last.fm tags (fallback)
         const overrides = loadOverrides();
         const ov = overrides[name] || overrides[name.toLowerCase()];
-        let genres;
+        let genres = [];
         let rawTags = [];
         if (ov?.genres?.length) {
           genres = ov.genres;

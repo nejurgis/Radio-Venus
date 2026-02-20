@@ -4033,7 +4033,7 @@
     "genres": [
       "ambient"
     ],
-    "youtubeVideoId": "wD7l5wod1-M",
+    "youtubeVideoId": "lzE8cF1Gtvk",
     "subgenres": [
       "ambient",
       "modern-classical"
@@ -4045,6 +4045,10 @@
       "american contemporary classical",
       "compositional ambient",
       "drone"
+    ],
+    "backupVideoIds": [
+      "KyGYK_v9rw4",
+      "3R87tzRCo0s"
     ]
   },
   {
@@ -4746,9 +4750,14 @@
     "birthDate": "1947-09-29",
     "genres": [
       "darkwave",
-      "ambient"
+      "ambient",
+      "electronica"
     ],
-    "youtubeVideoId": "KyGYK_v9rw4"
+    "youtubeVideoId": "KyGYK_v9rw4",
+    "backupVideoIds": [
+      "lzE8cF1Gtvk",
+      "8cPgbxIH_UQ"
+    ]
   },
   {
     "name": "Joker",
@@ -10628,5 +10637,47 @@
       "electronic-classical"
     ],
     "youtubeVideoId": "cUSnnKzSFQg"
+  },
+  {
+    "name": "Roger Eno",
+    "birthDate": "1959-01-01",
+    "genres": [
+      "ambient"
+    ]
+  },
+  {
+    "name": "Cluster",
+    "birthDate": "1971-00-00",
+    "genres": [
+      "darkwave",
+      "ambient"
+    ]
+  },
+  {
+    "name": "Brian McBride",
+    "birthDate": "1966-07-29",
+    "mbid": "b0a55bd8-60c7-45c1-b78e-f20e4c8adba1",
+    "genres": [
+      "ambient"
+    ]
+  },
+  {
+    "name": "Eraldo Bernocchi",
+    "birthDate": "1963-10-21",
+    "genres": [
+      "ambient",
+      "electronica",
+      "idm",
+      "industrial",
+      "triphop"
+    ]
+  },
+  {
+    "name": "The Dead Texan",
+    "birthDate": "2004-00-00",
+    "genres": [
+      "ambient",
+      "folk"
+    ]
   }
 ]
