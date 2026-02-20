@@ -13,6 +13,8 @@ export const GENRE_CATEGORIES = [
   { id: 'folk',       label: 'Folk / Neofolk' },
   { id: 'jazz',       label: 'Jazz / Spiritual' },
   { id: 'classical',  label: 'Classical / Orchestral' },
+  { id: 'hiphop',         label: 'Hip-Hop / R&B' },
+  { id: 'intercelestial', label: 'Inter-Celestial' },
   { id: 'valentine', label: "Valentine's day special" },
   { id: 'moon', label: "Today's Moon playlist" },
 ];
@@ -36,6 +38,8 @@ export const SUBGENRES = {
   folk:       ['neofolk', 'dark-folk', 'freak-folk', 'psychedelic-folk', 'chamber-folk', 'gothic-country', 'folk-rock', 'ambient-folk'],
   jazz:       ['spiritual-jazz', 'dark-jazz', 'doom-jazz', 'free-jazz', 'modal-jazz', 'jazz-fusion', 'soul-jazz', 'cosmic-jazz', 'ambient-jazz'],
   classical:  ['classical', 'baroque', 'romantic', 'contemporary', 'neo-classical', 'impressionist', 'modern-classical', 'opera', 'minimalist'],
+  hiphop:        ['hip-hop', 'cloud-rap', 'trap', 'phonk', 'boom-bap', 'experimental-hiphop', 'lo-fi-hiphop', 'rnb', 'neo-soul'],
+  intercelestial: ['world', 'field-recording', 'outsider', 'traditional', 'unclassifiable'],
 };
 
 // ── Raw tag → top-level genre mapping ────────────────────────────────────────
@@ -54,7 +58,7 @@ const GENRE_MAP = {
   'alternative electronic': ['electronica'],
   'chillwave': ['electronica'],
   'lo-fi': ['electronica'],
-  'lo-fi hip hop': ['electronica', 'triphop'],
+  'lo-fi hip hop': ['hiphop', 'electronica', 'triphop'],
   'microhouse': ['electronica', 'techno'],
   'filter house': ['electronica', 'techno'],
   'nu-disco': ['electronica', 'techno'],
@@ -121,7 +125,7 @@ const GENRE_MAP = {
   'hyperpop': ['idm'],
   'vaporwave': ['idm'],
   'braindance': ['idm'],           // core IDM tag — Aphex Twin, Bradley Strider, etc.
-  'abstract hip hop': ['idm'],     // Alias, Boom Bip, Odd Nosdam, Sole, etc.
+  'abstract hip hop': ['hiphop', 'idm'],  // Alias, Boom Bip, Odd Nosdam, Sole, etc.
   'fluxwork': ['idm', 'artpop'],   // EN cluster: Holly Herndon, Babyfather, etc.
   'electra': ['idm', 'artpop', 'techno'],  // EN cluster: Helena Hauff, Arca, Kaitlyn Aurelia Smith
   'escape room': ['artpop', 'idm'],// EN cluster: SOPHIE, Oklou, Caroline Polachek, etc.
@@ -297,6 +301,94 @@ const GENRE_MAP = {
   'jazz harp': ['jazz'],
   'fourth world': ['ambient'],          // texture tag, not a jazz indicator — Yoshimura/Brouk are ambient, not jazz
   'tzadik': ['jazz', 'idm'],            // Zorn's label used as EN micro-genre (avant-garde/experimental)
+
+  // ── Hip-Hop / R&B ──
+  'hip hop': ['hiphop'],
+  'hip-hop': ['hiphop'],
+  'rap': ['hiphop'],
+  'rap music': ['hiphop'],
+  'alternative hip hop': ['hiphop'],
+  'experimental hip hop': ['hiphop', 'idm'],
+  'industrial hip hop': ['hiphop', 'industrial'],
+  'psychedelic hip hop': ['hiphop'],
+  'underground hip hop': ['hiphop'],
+  'cloud rap': ['hiphop'],
+  'trap': ['hiphop'],
+  'trap music': ['hiphop'],
+  'phonk': ['hiphop'],
+  'drift phonk': ['hiphop'],
+  'pop rap': ['hiphop'],
+  'boom bap': ['hiphop'],
+  'conscious hip hop': ['hiphop'],
+  'gangsta rap': ['hiphop'],
+  'emo rap': ['hiphop'],
+  'jazz rap': ['hiphop', 'jazz'],
+  'rap metal': ['hiphop', 'industrial'],
+  'nu metal': ['hiphop', 'altrock'],
+  'hip house': ['hiphop', 'techno'],
+  'bubblegum bass': ['hiphop', 'dnb'],
+  'r&b': ['hiphop'],
+  'rnb': ['hiphop'],
+  'soul': ['hiphop', 'triphop'],
+  'classic soul': ['hiphop', 'triphop'],
+  'motown': ['hiphop', 'triphop'],
+  'funk': ['hiphop', 'electronica'],
+  'disco': ['electronica', 'techno'],
+  'quiet storm': ['hiphop', 'triphop'],
+  'neo soul': ['hiphop'],
+  'indie soul': ['hiphop', 'artpop'],
+  'alternative r&b': ['hiphop'],
+  'experimental r&b': ['hiphop', 'idm'],
+
+  // ── K-Pop / C-Pop / City Pop (closest: Art Pop) ──
+  'k-pop': ['artpop'],
+  'c-pop': ['artpop'],
+  'j-pop': ['artpop'],
+  'korean city pop': ['artpop'],
+  'city pop': ['artpop', 'electronica'],
+
+  // ── Singer-Songwriter / Indie catch-alls ──
+  'singer-songwriter': ['folk'],
+  'countrygaze': ['folk', 'indiepop'],
+  'mellow gold': ['folk'],
+  'soft rock': ['folk', 'altrock'],
+  'eurodance': ['techno'],
+  'europop': ['techno', 'artpop'],
+  'post-grunge': ['altrock'],
+  'alternative metal': ['altrock', 'industrial'],
+  // geographic indie tags → indiepop
+  'nz indie': ['indiepop'],
+  'manchester indie': ['indiepop'],
+  'olympia wa indie': ['indiepop'],
+  'boston indie': ['indiepop'],
+  'popgaze': ['indiepop'],
+
+  // ── Hardcore / Punk (closest: Alt Rock + Industrial) ──
+  'hardcore punk': ['altrock', 'industrial'],
+  'hardcore': ['altrock', 'industrial'],
+  'california hardcore': ['altrock', 'industrial'],
+  'modern hardcore': ['altrock', 'industrial'],
+  'black punk': ['altrock', 'industrial'],
+
+  // ── Sound Art / Musique Concrète adjacent ──
+  'sound art': ['ambient', 'idm'],
+  'sound collage': ['idm'],
+  'tape music': ['ambient', 'idm'],
+  'lowercase': ['ambient', 'idm'],
+  'hauntology': ['ambient', 'idm'],
+  'new isolationism': ['ambient', 'idm'],
+  'prepared piano': ['classical', 'idm'],
+
+  // ── Additional classical micro-genres ──
+  'impressionism': ['classical'],
+  'modern cello': ['classical'],
+  'ethio-jazz': ['jazz'],
+  'ecm-style jazz': ['jazz'],
+  'jazz piano': ['jazz'],
+  'compositional ambient': ['ambient'],
+  'ambient pop': ['ambient', 'artpop'],
+  'musica andina': ['folk'],
+  'folklore boliviano': ['folk'],
 
   // ── Classical / Orchestral ──
   'medieval': ['classical'],       // Pérotin, Hildegard von Bingen, etc.
@@ -492,6 +584,21 @@ const SUBGENRE_MAP = {
   'tzadik': 'free-jazz',
   'jazz trumpet': 'free-jazz', 'jazz harp': 'free-jazz',
   'ambient jazz': 'ambient-jazz',
+
+  // hiphop
+  'hip hop': 'hip-hop', 'hip-hop': 'hip-hop', 'rap': 'hip-hop', 'rap music': 'hip-hop',
+  'alternative hip hop': 'hip-hop', 'underground hip hop': 'hip-hop', 'pop rap': 'hip-hop',
+  'conscious hip hop': 'hip-hop', 'jazz rap': 'hip-hop', 'gangsta rap': 'hip-hop',
+  'experimental hip hop': 'experimental-hiphop', 'industrial hip hop': 'experimental-hiphop',
+  'psychedelic hip hop': 'experimental-hiphop', 'abstract hip hop': 'experimental-hiphop',
+  'cloud rap': 'cloud-rap', 'emo rap': 'cloud-rap',
+  'trap': 'trap', 'trap music': 'trap',
+  'phonk': 'phonk', 'drift phonk': 'phonk',
+  'boom bap': 'boom-bap',
+  'lo-fi hip hop': 'lo-fi-hiphop',
+  'r&b': 'rnb', 'rnb': 'rnb', 'alternative r&b': 'rnb', 'experimental r&b': 'rnb', 'quiet storm': 'rnb',
+  'soul': 'soul', 'classic soul': 'soul', 'motown': 'soul', 'funk': 'soul',
+  'neo soul': 'neo-soul', 'indie soul': 'neo-soul',
 
   // classical
   'classical': 'classical', 'classical music': 'classical',

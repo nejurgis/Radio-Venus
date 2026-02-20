@@ -25,7 +25,7 @@
   "Iggy Pop":                    { "birthDate": "1947-04-21" },
   "Imogen Heap":                 { "birthDate": "1977-12-09" },
   "James Blake":                 { "birthDate": "1988-09-26" },
-  "JAY-Z":                       { "birthDate": "1969-12-04" },
+  "JAY-Z":                       { "birthDate": "1969-12-04", "genres": ["hiphop"] },
   "Jenny Hval":                  { "birthDate": "1980-07-11" },
   "John Denver":                 { "birthDate": "1943-12-31" },
   "Jónsi":                       { "birthDate": "1975-04-23" },
@@ -53,5 +53,26 @@
   "Thom Yorke":                  { "birthDate": "1968-10-07" },
   "Tom Waits":                   { "birthDate": "1949-12-07" },
   "Uhm Jung Hwa":                { "birthDate": "1969-08-17" },
-  "Yung Lean":                   { "birthDate": "1996-07-18" }
+  "Yung Lean":                   { "birthDate": "1996-07-18" },
+
+  "illi mel":       { "birthDate": "2023-04-07", "genres": ["intercelestial"] },
+  "Casey MQ":       { "birthDate": "1993-06-15" },
+  "Bing & Ruth":    { "birthDate": "2006-06-15" },
+  "Pavel Milyakov": { "birthDate": "2021-02-10" },
+  "Stine Janvin":   { "birthDate": "1985-06-15", "genres": ["intercelestial"] },
+
+  "Ragnar Johnson":       { "birthDate": "1949-06-15", "genres": ["intercelestial"] },
+  "Zainaba":              { "birthDate": "1960-12-31", "genres": ["intercelestial"] },
+  "Gosti iz Budushchego": { "birthDate": "1975-05-19", "genres": ["intercelestial"] },
+  "Osonnya Choir":        { "birthDate": "2022-03-25", "genres": ["intercelestial"] },
+  "Luzmila Carpio":       { "birthDate": "2015-01-12", "genres": ["intercelestial"] },
+  "Flash and the Pan":    { "birthDate": "1946-03-22", "genres": ["intercelestial"] },
+  "HONESTY":              { "birthDate": "2023-11-22", "genres": ["intercelestial"] },
+  "Headache":             { "birthDate": "1993-06-15", "genres": ["idm"] },
+  "Davishmar":            { "birthDate": "2022-01-02", "genres": ["intercelestial"] },
+  "Gal Go":               { "birthDate": "2021-02-23", "genres": ["intercelestial"] },
+  "DJH":                  { "birthDate": "2021-10-01", "genres": ["intercelestial"] },
+  "Sasha Vosk":           { "birthDate": "2019-04-26", "genres": ["intercelestial"] },
+  "Jayla Kai":            { "birthDate": "2023-05-05", "genres": ["intercelestial"] },
+  "@":                    { "birthDate": "2023-02-17", "genres": ["intercelestial"] }
 }
