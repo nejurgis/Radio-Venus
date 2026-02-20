@@ -1,0 +1,104 @@
+name: Import Spotify Playlist
+
+# Imports a hand-curated Spotify playlist (exported as CSV via exportify.net)
+# into seed-musicians.json. Runs two parallel workers to halve the runtime,
+# then merges results and commits the updated seed.
+#
+# Before running:
+#   1. Export your playlist at https://exportify.net
+#   2. Copy the CSV to data/playlist.csv in the repo and commit it
+#   3. Trigger this workflow from the Actions tab
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run — show what would change without modifying seed'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  # ── Two parallel workers processing different halves of the artist list ───────
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - part: 1
+            offset: 0
+            limit: 82
+          - part: 2
+            offset: 82
+            limit: 82
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm install
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium --with-deps
+
+      - name: Run import (part ${{ matrix.part }})
+        run: |
+          node scripts/import-spotify.mjs data/playlist.csv \
+            --offset=${{ matrix.offset }} \
+            --limit=${{ matrix.limit }} \
+            --output=import-part-${{ matrix.part }}.json
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: import-part-${{ matrix.part }}-${{ github.run_number }}
+          path: import-part-${{ matrix.part }}.json
+          retention-days: 7
+
+  # ── Merge job: combine parts → seed, rebuild DB, commit ──────────────────────
+  merge:
+    needs: import
+    runs-on: ubuntu-latest
+    if: ${{ !inputs.dry_run }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm install
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: import-part-1-${{ github.run_number }}
+          path: .
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: import-part-2-${{ github.run_number }}
+          path: .
+
+      - name: Merge imports into seed
+        run: node scripts/merge-import.mjs import-part-1.json import-part-2.json
+
+      - name: Rebuild DB
+        run: node scripts/build-db.mjs
+
+      - name: Commit updated seed + DB
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scripts/seed-musicians.json
+          git diff --cached --quiet || git commit -m "feat: import handpicked playlist artists [bot]"
+          git push

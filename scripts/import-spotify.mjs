@@ -37,9 +37,15 @@ const ytSearch  = require('yt-search');
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SEED_PATH = join(__dirname, 'seed-musicians.json');
 
-const args    = process.argv.slice(2);
-const DRY_RUN = args.includes('--dry-run');
-const csvPath = args.find(a => !a.startsWith('--'));
+const args       = process.argv.slice(2);
+const DRY_RUN    = args.includes('--dry-run');
+const csvPath    = args.find(a => !a.startsWith('--'));
+const offsetArg  = args.find(a => a.startsWith('--offset='));
+const limitArg   = args.find(a => a.startsWith('--limit='));
+const outputArg  = args.find(a => a.startsWith('--output='));
+const OFFSET     = offsetArg ? parseInt(offsetArg.split('=')[1], 10) : 0;
+const LIMIT      = limitArg  ? parseInt(limitArg.split('=')[1], 10)  : Infinity;
+const outputPath = outputArg ? outputArg.split('=')[1] : null;
 
 if (!csvPath || !csvPath.endsWith('.csv')) {
   console.error('Usage: node scripts/import-spotify.mjs <exportify-playlist.csv> [--dry-run]');
@@ -59,8 +65,9 @@ function parseExportifyCSV(csvText) {
 
   // Find header row to locate column indices dynamically
   const header = parseCSVRow(lines[0]).map(h => h.toLowerCase().trim());
-  const artistCol = header.findIndex(h => h.includes('artist name'));
-  const trackCol  = header.findIndex(h => h === 'track name' || h.includes('track name'));
+  const artistCol  = header.findIndex(h => h.includes('artist name'));
+  const trackCol   = header.findIndex(h => h === 'track name' || h.includes('track name'));
+  const releaseCol = header.findIndex(h => h.includes('release date'));
 
   if (artistCol === -1 || trackCol === -1) {
     throw new Error(`Cannot find Artist Name / Track Name columns in CSV header: ${lines[0]}`);
@@ -70,10 +77,12 @@ function parseExportifyCSV(csvText) {
     if (!line.trim()) continue;
     const cols = parseCSVRow(line);
     // Exportify joins multiple artists with ";" — take primary artist only
-    const artistRaw  = cols[artistCol]?.trim() ?? '';
-    const artistName = artistRaw.split(';')[0].trim();
-    const trackName  = cols[trackCol]?.trim();
-    if (artistName && trackName) tracks.push({ artistName, trackName });
+    const artistRaw   = cols[artistCol]?.trim() ?? '';
+    const artistName  = artistRaw.split(';')[0].trim();
+    const trackName   = cols[trackCol]?.trim();
+    // Release date as final birth date fallback (per app policy for bands)
+    const releaseDate = releaseCol >= 0 ? cols[releaseCol]?.trim() : undefined;
+    if (artistName && trackName) tracks.push({ artistName, trackName, releaseDate });
   }
   return tracks;
 }
@@ -308,16 +317,40 @@ async function getWikipediaBirthDate(name) {
   return null;
 }
 
-async function getBirthDate(name) {
+function loadOverrides() {
+  const p = join(__dirname, 'manual-overrides.json');
+  try { return existsSync(p) ? JSON.parse(readFileSync(p, 'utf-8')) : {}; }
+  catch { return {}; }
+}
+
+async function getBirthDate(name, releaseDate) {
+  // Priority 0: manual-overrides.json (Gemini-verified + founding-member dates)
+  const overrides = loadOverrides();
+  const ov = overrides[name] ?? overrides[name.toLowerCase()];
+  if (ov?.birthDate) return { date: ov.birthDate, mbid: null };
+
+  // Priority 1: Wikidata
   const wd = await getWikidataBirthDate(name);
   if (wd) return { date: wd, mbid: null };
 
+  // Priority 2: MusicBrainz
   await delay(1000);
   const mb = await getMusicBrainzBirthDate(name);
   if (mb) return mb;
 
+  // Priority 3: Wikipedia
   const wp = await getWikipediaBirthDate(name);
   if (wp) return { date: wp, mbid: null };
+
+  // Priority 4: album/track release date from CSV
+  // (per app policy: when no birth date exists, use first release date —
+  //  works for bands whose Venus as a unit is tied to when they emerged)
+  if (releaseDate && /^\d{4}/.test(releaseDate)) {
+    const normalized = releaseDate.length === 4
+      ? `${releaseDate}-06-15`    // year only → mid-year
+      : releaseDate.slice(0, 10); // already YYYY-MM-DD
+    return { date: normalized, mbid: null, isReleaseDate: true };
+  }
 
   return null;
 }
@@ -327,7 +360,9 @@ async function getBirthDate(name) {
 async function main() {
   console.log(`\nSpotify → seed importer`);
   console.log(`CSV: ${csvPath}`);
-  if (DRY_RUN) console.log('DRY RUN — no writes\n');
+  if (DRY_RUN)    console.log('DRY RUN — no writes');
+  if (outputPath) console.log(`Output: ${outputPath} (seed not modified directly)`);
+  console.log();
 
   // Parse Exportify CSV
   const csvText = readFileSync(csvPath, 'utf-8');
@@ -340,27 +375,45 @@ async function main() {
     const key = t.artistName.toLowerCase();
     if (!seen.has(key)) seen.set(key, t);
   }
-  const artists = [...seen.values()];
-  console.log(`${artists.length} unique artists\n`);
+  const allArtists = [...seen.values()];
+  console.log(`${allArtists.length} unique artists`);
+
+  // Apply offset / limit for parallel runs
+  const artists = allArtists.slice(OFFSET, OFFSET + LIMIT);
+  if (OFFSET || LIMIT < Infinity)
+    console.log(`Processing ${artists.length} artists (offset=${OFFSET}, limit=${LIMIT})`);
+  console.log();
 
   const seed = JSON.parse(readFileSync(SEED_PATH, 'utf-8'));
   const seedByName = new Map(seed.map(a => [a.name.toLowerCase(), a]));
 
   const results = { updated: [], added: [], skipped: [] };
+  // For --output mode: collect changes without touching seed on disk
+  const outputAdditions = [];  // new artist entries
+  const outputPatches   = [];  // { name, handpicked, handpickedTrack } for existing artists
 
   for (let i = 0; i < artists.length; i++) {
-    const { artistName, trackName } = artists[i];
+    const { artistName, trackName, releaseDate } = artists[i];
     const key = artistName.toLowerCase();
     console.log(`[${i + 1}/${artists.length}] ${artistName} — "${trackName}"`);
 
     // ── Already in seed ───────────────────────────────────────────────────
     if (seedByName.has(key)) {
       const entry = seedByName.get(key);
-      const changes = [];
-      if (!entry.handpicked)      { entry.handpicked = true;           changes.push('handpicked=true'); }
-      if (!entry.handpickedTrack) { entry.handpickedTrack = trackName; changes.push(`track="${trackName}"`); }
-      if (changes.length) {
+      const needsHandpicked = !entry.handpicked;
+      const needsTrack      = !entry.handpickedTrack;
+      if (needsHandpicked || needsTrack) {
+        const changes = [];
+        if (needsHandpicked) changes.push('handpicked=true');
+        if (needsTrack)      changes.push(`track="${trackName}"`);
         console.log(`  ✓ existing — ${changes.join(', ')}`);
+        if (outputPath) {
+          // Defer patch to merge step
+          outputPatches.push({ name: artistName, handpicked: true, handpickedTrack: trackName });
+        } else {
+          if (needsHandpicked) entry.handpicked = true;
+          if (needsTrack)      entry.handpickedTrack = trackName;
+        }
         results.updated.push(artistName);
       } else {
         console.log(`  ✓ existing — already handpicked`);
@@ -373,7 +426,7 @@ async function main() {
 
     // 1. Birth date
     process.stdout.write(`  birth date... `);
-    const birthResult = await getBirthDate(artistName);
+    const birthResult = await getBirthDate(artistName, releaseDate);
     if (!birthResult) {
       console.log('not found — skipping');
       results.skipped.push(`${artistName} (no birth date)`);
@@ -425,7 +478,9 @@ async function main() {
     console.log(`  + adding ${label}`);
     results.added.push(genres.length ? artistName : `${artistName} ⚠`);
 
-    if (!DRY_RUN) {
+    if (outputPath) {
+      outputAdditions.push(entry);
+    } else if (!DRY_RUN) {
       seed.push(entry);
       seedByName.set(key, entry);
     }
@@ -445,7 +500,11 @@ async function main() {
   console.log(`Skipped:                         ${results.skipped.length}`);
   if (results.skipped.length) results.skipped.forEach(n => console.log(`  ${n}`));
 
-  if (!DRY_RUN && (results.updated.length || results.added.length)) {
+  if (outputPath) {
+    writeFileSync(outputPath, JSON.stringify({ additions: outputAdditions, patches: outputPatches }, null, 2));
+    console.log(`\nWrote ${outputAdditions.length} new entries + ${outputPatches.length} patches → ${outputPath}`);
+    console.log('Run "node scripts/merge-import.mjs" to merge into seed.');
+  } else if (!DRY_RUN && (results.updated.length || results.added.length)) {
     writeFileSync(SEED_PATH, JSON.stringify(seed, null, 2));
     console.log(`\nWrote ${seed.length} total artists to ${SEED_PATH}`);
     console.log('Run "node scripts/build-db.mjs" to rebuild the database.');
