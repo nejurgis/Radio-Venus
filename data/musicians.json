@@ -2665,7 +2665,15 @@
       "ambient"
     ],
     "subgenres": [
-      "ambient"
+      "ambient",
+      "drone"
+    ],
+    "enTags": [
+      "ambient",
+      "drone",
+      "nu age",
+      "compositional ambient",
+      "drift"
     ],
     "youtubeVideoId": "_COj0JSPWmc",
     "backupVideoIds": []
@@ -3527,8 +3535,12 @@
       "ambient"
     ],
     "subgenres": [
-      "darkwave",
-      "ambient"
+      "krautrock",
+      "berlin-school"
+    ],
+    "enTags": [
+      "krautrock",
+      "berlin school"
     ],
     "youtubeVideoId": "i3G2vYje3-k",
     "backupVideoIds": []
@@ -13911,6 +13923,11 @@
       "ambient"
     ],
     "subgenres": [
+      "cosmic-jazz",
+      "ambient"
+    ],
+    "enTags": [
+      "fourth world",
       "ambient"
     ],
     "youtubeVideoId": "vNwYtllyt3Q",
@@ -16449,8 +16466,16 @@
       "folk"
     ],
     "subgenres": [
+      "drone",
       "ambient",
-      "folk-rock"
+      "ambient-folk"
+    ],
+    "enTags": [
+      "warm drone",
+      "ambient",
+      "drone",
+      "pastoral",
+      "compositional ambient"
     ],
     "youtubeVideoId": "WMJp6vEAse8",
     "backupVideoIds": []
