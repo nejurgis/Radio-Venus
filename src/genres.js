@@ -13,7 +13,7 @@ export const GENRE_CATEGORIES = [
   { id: 'folk',       label: 'Folk / Neofolk' },
   { id: 'jazz',       label: 'Jazz / Spiritual' },
   { id: 'classical',  label: 'Classical / Orchestral' },
-  { id: 'hiphop',         label: 'Hip-Hop / R&B' },
+  // { id: 'hiphop',         label: 'Hip-Hop / R&B' },
   { id: 'intercelestial', label: 'Inter-Celestial' },
   { id: 'valentine', label: "Valentine's day special" },
   { id: 'moon', label: "Today's Moon playlist" },
