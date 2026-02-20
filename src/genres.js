@@ -287,6 +287,8 @@ const GENRE_MAP = {
   'fusion': ['jazz'],
   'soul jazz': ['jazz'],
   'soul-jazz': ['jazz'],
+  'jazz funk': ['jazz'],          // prevents funk substring matching → hiphop
+  'jazz vibraphone': ['jazz'],    // prevents vibraphone→rap substring false positive
   'cosmic jazz': ['jazz'],
   'afrofuturism': ['jazz'],
   'avant-garde jazz': ['jazz'],
@@ -619,6 +621,17 @@ const SUBGENRE_MAP = {
 
 // ── Genre categorization ─────────────────────────────────────────────────────
 
+// Returns true only if `needle` appears as a whole-word phrase inside `haystack`.
+// Prevents short keys like "rap" from matching inside "vibraphone" or "drift" from
+// matching inside "drift phonk" when we only have the tag "drift".
+function phraseMatch(haystack, needle) {
+  const idx = haystack.indexOf(needle);
+  if (idx === -1) return false;
+  const before = idx === 0 || !/[a-z0-9]/.test(haystack[idx - 1]);
+  const after  = idx + needle.length >= haystack.length || !/[a-z0-9]/.test(haystack[idx + needle.length]);
+  return before && after;
+}
+
 export function categorizeGenres(rawGenres) {
   const categories = new Set();
   for (const raw of rawGenres) {
@@ -627,7 +640,7 @@ export function categorizeGenres(rawGenres) {
       GENRE_MAP[normalized].forEach(c => categories.add(c));
     } else {
       for (const [key, cats] of Object.entries(GENRE_MAP)) {
-        if (normalized.includes(key) || key.includes(normalized)) {
+        if (phraseMatch(normalized, key)) {
           cats.forEach(c => categories.add(c));
         }
       }
@@ -644,7 +657,7 @@ export function categorizeSubgenres(rawGenres) {
       subgenres.add(SUBGENRE_MAP[normalized]);
     } else {
       for (const [key, sub] of Object.entries(SUBGENRE_MAP)) {
-        if (normalized.includes(key) || key.includes(normalized)) {
+        if (phraseMatch(normalized, key)) {
           subgenres.add(sub);
         }
       }

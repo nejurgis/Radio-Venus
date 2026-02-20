@@ -63,8 +63,7 @@
       "techno"
     ],
     "subgenres": [
-      "experimental",
-      "trance"
+      "experimental"
     ],
     "enTags": [
       "deconstructed club",
@@ -109,8 +108,7 @@
       "ambient"
     ],
     "subgenres": [
-      "experimental",
-      "trance"
+      "experimental"
     ],
     "enTags": [
       "experimental electronic",
@@ -616,7 +614,6 @@
       "idm",
       "drone",
       "ambient",
-      "hip-hop",
       "trap"
     ],
     "enTags": [
@@ -687,10 +684,10 @@
       "triphop",
       "altrock",
       "industrial",
-      "classical",
       "electronica",
       "techno",
       "darkwave",
+      "classical",
       "folk",
       "jazz",
       "dnb"
@@ -699,7 +696,6 @@
       "ambient",
       "hip-hop",
       "soul",
-      "nu-disco",
       "new-wave",
       "opera",
       "classical",
@@ -710,13 +706,11 @@
       "house",
       "tech-house",
       "indietronica",
-      "electro",
       "lo-fi",
       "uk-garage",
       "jazz-fusion",
       "trance",
-      "progressive-house",
-      "phonk"
+      "progressive-house"
     ],
     "enTags": [
       "icelandic indie",
@@ -926,7 +920,6 @@
       "drum-n-bass",
       "trip-hop",
       "idm",
-      "spiritual-jazz",
       "indietronica",
       "glitch-pop"
     ],
@@ -1080,13 +1073,10 @@
     "subgenres": [
       "experimental",
       "indietronica",
-      "electro",
       "folk-rock",
-      "trance",
       "art-pop",
       "spiritual-jazz",
       "hip-hop",
-      "techno",
       "jungle",
       "lo-fi",
       "trap",
@@ -1100,17 +1090,16 @@
       "classical",
       "opera",
       "soul",
-      "noise",
-      "harsh-noise",
-      "rhythmic-noise",
+      "trance",
       "free-jazz",
       "dark-jazz",
+      "techno",
       "minimal",
       "darkwave",
-      "glitch",
       "neo-soul",
       "experimental-hiphop",
       "industrial",
+      "electro",
       "minimalist",
       "ambient",
       "contemporary",
@@ -1626,7 +1615,6 @@
     ],
     "subgenres": [
       "indietronica",
-      "electro",
       "techno",
       "minimal"
     ],
@@ -1708,8 +1696,7 @@
       "acid",
       "ambient",
       "experimental",
-      "indietronica",
-      "electro"
+      "indietronica"
     ],
     "enTags": [
       "braindance",
@@ -1770,15 +1757,12 @@
     "genres": [
       "artpop",
       "idm",
-      "industrial",
-      "folk",
-      "classical"
+      "industrial"
     ],
     "subgenres": [
       "experimental",
       "idm",
       "industrial",
-      "dark-folk",
       "art-pop",
       "experimental-pop"
     ],
@@ -1884,14 +1868,12 @@
       "dateApprox": true
     },
     "genres": [
-      "idm",
-      "hiphop"
+      "idm"
     ],
     "subgenres": [
       "idm",
       "ambient",
-      "glitch",
-      "experimental-hiphop"
+      "glitch"
     ],
     "enTags": [
       "abstract",
@@ -2017,17 +1999,14 @@
     "genres": [
       "idm",
       "ambient",
-      "hiphop",
       "electronica",
-      "techno",
-      "dnb"
+      "dnb",
+      "techno"
     ],
     "subgenres": [
       "idm",
       "experimental",
-      "experimental-hiphop",
       "indietronica",
-      "electro",
       "breakbeat",
       "glitch",
       "techno"
@@ -2254,7 +2233,6 @@
     "subgenres": [
       "art-pop",
       "darkwave",
-      "classical",
       "neo-classical",
       "chillout",
       "folk-rock"
@@ -2390,14 +2368,12 @@
     "genres": [
       "altrock",
       "ambient",
-      "indiepop",
-      "hiphop"
+      "indiepop"
     ],
     "subgenres": [
       "ambient",
       "folktronica",
       "drone",
-      "phonk",
       "art-pop"
     ],
     "enTags": [
@@ -2467,8 +2443,8 @@
       "indietronica",
       "avant-garde-pop",
       "drone",
-      "hip-hop",
-      "trap"
+      "trap",
+      "hip-hop"
     ],
     "enTags": [
       "chattanooga indie",
@@ -2703,7 +2679,6 @@
     "subgenres": [
       "art-pop",
       "darkwave",
-      "classical",
       "neo-classical",
       "psych-pop",
       "lo-fi",
@@ -2770,8 +2745,7 @@
     ],
     "subgenres": [
       "experimental",
-      "indietronica",
-      "electro"
+      "indietronica"
     ],
     "enTags": [
       "abstractro",
@@ -2934,7 +2908,6 @@
       "ambient",
       "downtempo",
       "indietronica",
-      "electro",
       "trip-hop"
     ],
     "enTags": [
@@ -2962,14 +2935,12 @@
     "genres": [
       "dnb",
       "idm",
-      "techno",
-      "hiphop"
+      "techno"
     ],
     "subgenres": [
       "idm",
       "acid",
       "electro",
-      "experimental-hiphop",
       "breakbeat"
     ],
     "enTags": [
@@ -3035,7 +3006,6 @@
       "trip-hop",
       "nu-jazz",
       "indietronica",
-      "spiritual-jazz",
       "hip-hop"
     ],
     "enTags": [
@@ -3175,13 +3145,11 @@
       "element": "water"
     },
     "genres": [
-      "ambient",
-      "hiphop"
+      "ambient"
     ],
     "subgenres": [
       "ambient",
-      "drone",
-      "phonk"
+      "drone"
     ],
     "enTags": [
       "ambient",
@@ -3242,7 +3210,6 @@
       "indietronica",
       "glitch-pop",
       "idm",
-      "dub",
       "trip-hop"
     ],
     "enTags": [
@@ -3440,7 +3407,6 @@
       "electronica",
       "hiphop",
       "triphop",
-      "folk",
       "classical"
     ],
     "subgenres": [
@@ -3451,10 +3417,7 @@
       "tech-house",
       "spiritual-jazz",
       "soul",
-      "folk-rock",
-      "techno",
       "cloud-rap",
-      "glitch",
       "classical"
     ],
     "enTags": [
@@ -3540,13 +3503,11 @@
     "genres": [
       "ambient",
       "dnb",
-      "idm",
-      "hiphop"
+      "idm"
     ],
     "subgenres": [
       "idm",
       "ambient",
-      "experimental-hiphop",
       "breakbeat"
     ],
     "enTags": [
@@ -3749,31 +3710,11 @@
     },
     "genres": [
       "artpop",
-      "electronica",
-      "idm",
-      "darkwave",
-      "indiepop",
-      "altrock",
-      "hiphop",
-      "techno",
-      "ambient"
+      "electronica"
     ],
     "subgenres": [
       "art-pop",
-      "synth-pop",
-      "glitch-pop",
-      "experimental",
-      "indie-pop",
-      "bedroom-pop",
-      "noise-pop",
-      "psych-pop",
-      "jangle-pop",
-      "twee-pop",
-      "baroque-pop",
-      "chamber-pop",
-      "experimental-pop",
-      "avant-garde-pop",
-      "hip-hop"
+      "synth-pop"
     ],
     "enTags": [
       "uk pop",
@@ -3856,14 +3797,12 @@
     },
     "genres": [
       "ambient",
-      "idm",
-      "hiphop"
+      "idm"
     ],
     "subgenres": [
       "ambient",
       "experimental",
-      "drone",
-      "phonk"
+      "drone"
     ],
     "enTags": [
       "experimental ambient",
@@ -4446,9 +4385,9 @@
       "jazz",
       "ambient",
       "idm",
+      "classical",
       "hiphop",
       "electronica",
-      "classical",
       "artpop",
       "techno",
       "triphop",
@@ -4468,16 +4407,15 @@
       "drone",
       "rnb",
       "neo-soul",
-      "hip-hop",
       "experimental",
       "indietronica",
-      "electro",
       "jazz-fusion",
       "experimental-pop",
       "minimalist",
       "acid",
       "folk-rock",
       "ambient-folk",
+      "hip-hop",
       "noise",
       "jangle-pop",
       "indie-pop"
@@ -5306,7 +5244,6 @@
     "subgenres": [
       "art-pop",
       "darkwave",
-      "classical",
       "neo-classical"
     ],
     "enTags": [
@@ -5358,8 +5295,7 @@
     ],
     "subgenres": [
       "experimental",
-      "indietronica",
-      "electro"
+      "indietronica"
     ],
     "enTags": [
       "hypnagogic pop",
@@ -5425,7 +5361,6 @@
       "trip-hop",
       "indietronica",
       "techno",
-      "electro",
       "neofolk",
       "industrial",
       "house"
@@ -6165,9 +6100,7 @@
       "element": "water"
     },
     "genres": [
-      "jazz",
-      "hiphop",
-      "electronica"
+      "jazz"
     ],
     "subgenres": [
       "soul-jazz",
@@ -6287,22 +6220,11 @@
       "artpop",
       "altrock",
       "electronica",
-      "industrial",
-      "indiepop",
       "folk"
     ],
     "subgenres": [
       "synth-pop",
-      "new-wave",
-      "noise",
-      "industrial",
-      "darkwave",
-      "krautrock",
-      "indie-pop",
-      "lo-fi-indie",
-      "art-rock",
-      "glam",
-      "folk-rock"
+      "new-wave"
     ],
     "enTags": [
       "dance rock",
@@ -6380,8 +6302,7 @@
     ],
     "subgenres": [
       "cosmic-jazz",
-      "indietronica",
-      "electro"
+      "indietronica"
     ],
     "enTags": [
       "fourth world",
@@ -6565,15 +6486,13 @@
       "idm",
       "ambient",
       "classical",
-      "jazz",
-      "dnb"
+      "jazz"
     ],
     "subgenres": [
       "experimental",
       "idm",
       "classical",
-      "spiritual-jazz",
-      "grime"
+      "spiritual-jazz"
     ],
     "enTags": [
       "modern southern rock",
@@ -6734,11 +6653,9 @@
     "genres": [
       "artpop",
       "electronica",
-      "techno",
       "idm"
     ],
     "subgenres": [
-      "electro",
       "art-pop"
     ],
     "enTags": [
@@ -6769,7 +6686,6 @@
     "subgenres": [
       "experimental",
       "indietronica",
-      "electro",
       "glitch",
       "dub-techno"
     ],
@@ -7196,8 +7112,7 @@
     "subgenres": [
       "grime",
       "experimental",
-      "indietronica",
-      "electro"
+      "indietronica"
     ],
     "enTags": [
       "arab experimental",
@@ -7249,8 +7164,7 @@
     ],
     "subgenres": [
       "ambient",
-      "experimental",
-      "electro"
+      "experimental"
     ],
     "enTags": [
       "spectra",
@@ -7280,7 +7194,6 @@
       "glitch",
       "ambient",
       "experimental",
-      "electro",
       "drone",
       "idm"
     ],
@@ -7515,22 +7428,10 @@
     "genres": [
       "altrock",
       "artpop",
-      "industrial",
-      "darkwave",
-      "indiepop",
-      "electronica",
       "folk"
     ],
     "subgenres": [
-      "art-rock",
-      "noise",
-      "industrial",
-      "darkwave",
-      "krautrock",
-      "indie-pop",
-      "lo-fi-indie",
-      "glam",
-      "folk-rock"
+      "art-rock"
     ],
     "enTags": [
       "rock",
@@ -7650,7 +7551,6 @@
       "hip-hop",
       "experimental-hiphop",
       "glitch-pop",
-      "spiritual-jazz",
       "glitch",
       "indietronica"
     ],
@@ -8010,8 +7910,7 @@
     "subgenres": [
       "trip-hop",
       "idm",
-      "downtempo",
-      "spiritual-jazz"
+      "downtempo"
     ],
     "enTags": [
       "jazztronica",
@@ -8180,8 +8079,7 @@
     "subgenres": [
       "ambient techno",
       "downtempo",
-      "indietronica",
-      "electro"
+      "indietronica"
     ],
     "enTags": [
       "italian electronica",
@@ -8429,7 +8327,6 @@
       "synth-pop",
       "experimental",
       "darkwave",
-      "electro",
       "art-pop",
       "indietronica"
     ],
@@ -8958,14 +8855,12 @@
       "folk",
       "idm",
       "industrial",
-      "classical",
       "techno",
       "ambient"
     ],
     "subgenres": [
       "experimental",
       "idm",
-      "dark-folk",
       "art-pop"
     ],
     "enTags": [
@@ -9277,7 +9172,6 @@
       "dnb",
       "idm",
       "electronica",
-      "triphop",
       "artpop"
     ],
     "subgenres": [
@@ -9286,7 +9180,6 @@
       "experimental",
       "indietronica",
       "glitch-pop",
-      "dub",
       "footwork",
       "future-garage"
     ],
@@ -9318,35 +9211,32 @@
       "techno",
       "dnb",
       "hiphop",
-      "electronica",
       "artpop",
       "triphop",
       "altrock",
       "industrial",
+      "electronica",
       "folk",
       "darkwave",
-      "idm",
-      "classical",
       "jazz",
+      "idm",
       "indiepop"
     ],
     "subgenres": [
       "uk-garage",
       "house",
-      "soul",
       "hip-hop",
       "trip-hop",
       "rnb",
       "folk-rock",
       "industrial",
       "jungle",
-      "breakbeat",
       "lo-fi",
       "progressive-house",
       "trance",
       "trap",
       "indietronica",
-      "electro",
+      "soul",
       "spiritual-jazz",
       "experimental",
       "indie-pop",
@@ -9735,16 +9625,13 @@
     "genres": [
       "electronica",
       "techno",
-      "ambient",
-      "classical"
+      "ambient"
     ],
     "subgenres": [
       "berlin-school",
       "synth-pop",
       "space-ambient",
-      "indietronica",
-      "electro",
-      "classical"
+      "indietronica"
     ],
     "enTags": [
       "synthesizer",
@@ -9875,7 +9762,6 @@
     ],
     "subgenres": [
       "synth-pop",
-      "electro",
       "rnb",
       "art-pop"
     ],
@@ -9950,15 +9836,13 @@
     },
     "genres": [
       "artpop",
-      "folk",
-      "jazz"
+      "folk"
     ],
     "subgenres": [
       "chamber-pop",
       "baroque-pop",
       "freak-folk",
-      "chamber-folk",
-      "free-jazz"
+      "chamber-folk"
     ],
     "enTags": [
       "new weird america",
@@ -10287,17 +10171,14 @@
       "electronica",
       "idm",
       "techno",
-      "hiphop",
-      "triphop"
+      "hiphop"
     ],
     "subgenres": [
       "dubstep",
       "grime",
       "hip-hop",
       "trap",
-      "dub",
       "indietronica",
-      "electro",
       "glitch-pop"
     ],
     "enTags": [
@@ -10562,21 +10443,11 @@
       "industrial",
       "altrock",
       "electronica",
-      "indiepop",
-      "artpop",
-      "folk"
+      "indiepop"
     ],
     "subgenres": [
       "new-wave",
-      "noise",
-      "industrial",
-      "darkwave",
-      "krautrock",
-      "indie-pop",
-      "lo-fi-indie",
-      "art-rock",
-      "glam",
-      "folk-rock"
+      "indie-pop"
     ],
     "enTags": [
       "alternative rock",
@@ -11194,7 +11065,6 @@
     "subgenres": [
       "experimental",
       "indietronica",
-      "electro",
       "cosmic-jazz",
       "lo-fi"
     ],
@@ -11279,16 +11149,13 @@
       "dnb",
       "electronica",
       "idm",
-      "techno",
-      "triphop"
+      "techno"
     ],
     "subgenres": [
       "dubstep",
       "footwork",
       "jungle",
       "indietronica",
-      "electro",
-      "dub",
       "glitch-pop",
       "future-garage",
       "idm"
@@ -11515,8 +11382,7 @@
       "experimental",
       "idm",
       "ambient",
-      "indietronica",
-      "electro"
+      "indietronica"
     ],
     "enTags": [
       "uk experimental electronic",
@@ -11711,8 +11577,7 @@
     ],
     "subgenres": [
       "experimental",
-      "indietronica",
-      "electro"
+      "indietronica"
     ],
     "enTags": [
       "uk experimental electronic",
@@ -11808,8 +11673,7 @@
       "drone",
       "industrial",
       "experimental",
-      "indietronica",
-      "electro"
+      "indietronica"
     ],
     "enTags": [
       "russian experimental electronic",
@@ -11954,7 +11818,6 @@
       "drum-n-bass",
       "ambient",
       "downtempo",
-      "spiritual-jazz",
       "jungle",
       "breakbeat",
       "trip-hop"
@@ -12157,14 +12020,12 @@
       "ambient",
       "electronica",
       "idm",
-      "techno",
-      "hiphop"
+      "techno"
     ],
     "subgenres": [
       "idm",
       "ambient",
       "glitch",
-      "experimental-hiphop",
       "minimal",
       "glitch-pop",
       "indietronica"
@@ -12233,7 +12094,6 @@
     "subgenres": [
       "darkwave",
       "art-pop",
-      "classical",
       "neo-classical"
     ],
     "enTags": [
@@ -12314,31 +12174,10 @@
     },
     "genres": [
       "artpop",
-      "techno",
-      "electronica",
-      "idm",
-      "darkwave",
-      "indiepop",
-      "altrock",
-      "hiphop",
-      "ambient"
+      "techno"
     ],
     "subgenres": [
-      "art-pop",
-      "glitch-pop",
-      "experimental",
-      "synth-pop",
-      "indie-pop",
-      "bedroom-pop",
-      "noise-pop",
-      "psych-pop",
-      "jangle-pop",
-      "twee-pop",
-      "baroque-pop",
-      "chamber-pop",
-      "experimental-pop",
-      "avant-garde-pop",
-      "hip-hop"
+      "art-pop"
     ],
     "enTags": [
       "dance pop",
@@ -12604,7 +12443,6 @@
       "house",
       "future-garage",
       "glitch-pop",
-      "dub",
       "footwork",
       "minimal"
     ],
@@ -12781,7 +12619,6 @@
       "idm"
     ],
     "subgenres": [
-      "grime",
       "experimental"
     ],
     "enTags": [
@@ -12894,12 +12731,10 @@
       "ambient",
       "dnb",
       "idm",
-      "jazz",
-      "classical"
+      "jazz"
     ],
     "subgenres": [
       "experimental",
-      "grime",
       "spiritual-jazz"
     ],
     "enTags": [
@@ -13178,7 +13013,6 @@
     ],
     "subgenres": [
       "techno",
-      "electro",
       "indietronica",
       "synth-pop"
     ],
@@ -13472,14 +13306,12 @@
       "ambient",
       "idm",
       "techno",
-      "hiphop",
       "triphop"
     ],
     "subgenres": [
       "dub-techno",
       "minimal",
       "techno",
-      "experimental-hiphop",
       "idm",
       "ambient",
       "dub"
@@ -13732,12 +13564,11 @@
     "genres": [
       "electronica",
       "idm",
-      "techno",
-      "triphop",
       "dnb",
       "folk",
       "hiphop",
       "ambient",
+      "techno",
       "jazz",
       "indiepop",
       "darkwave",
@@ -13748,16 +13579,14 @@
       "experimental",
       "glitch",
       "indietronica",
-      "electro",
-      "dub",
       "dubstep",
       "folk-rock",
       "lo-fi",
       "hip-hop",
       "ambient",
+      "electro",
       "spiritual-jazz",
-      "lo-fi-indie",
-      "indie-pop"
+      "lo-fi-indie"
     ],
     "enTags": [
       "german electronica",
@@ -13884,7 +13713,6 @@
       "experimental",
       "modern-classical",
       "indietronica",
-      "electro",
       "glitch",
       "drone"
     ],
@@ -14162,7 +13990,6 @@
       "modern-classical",
       "ambient",
       "darkwave",
-      "classical",
       "neo-classical",
       "indietronica"
     ],
@@ -14524,7 +14351,6 @@
     ],
     "subgenres": [
       "experimental",
-      "electro",
       "drone",
       "ambient"
     ],
@@ -14558,8 +14384,7 @@
       "ambient"
     ],
     "subgenres": [
-      "experimental",
-      "grime"
+      "experimental"
     ],
     "enTags": [
       "experimental electronic",
@@ -15174,9 +14999,7 @@
       "element": "earth"
     },
     "genres": [
-      "jazz",
-      "hiphop",
-      "electronica"
+      "jazz"
     ],
     "subgenres": [
       "spiritual-jazz",
@@ -15320,26 +15143,17 @@
       "trance",
       "folk-rock",
       "psychedelic-folk",
-      "glitch-pop",
-      "experimental",
-      "synth-pop",
-      "bedroom-pop",
-      "noise-pop",
-      "psych-pop",
-      "jangle-pop",
-      "twee-pop",
-      "baroque-pop",
-      "chamber-pop",
-      "experimental-pop",
-      "avant-garde-pop",
       "soul",
       "darkwave",
       "trap",
+      "experimental",
       "chillout",
       "rnb",
       "experimental-hiphop",
       "jazz-fusion",
+      "avant-garde-pop",
       "lo-fi-indie",
+      "bedroom-pop",
       "indietronica",
       "minimal"
     ],
@@ -15555,13 +15369,11 @@
     },
     "genres": [
       "idm",
-      "hiphop",
       "electronica"
     ],
     "subgenres": [
       "idm",
       "experimental",
-      "experimental-hiphop",
       "indietronica"
     ],
     "enTags": [
@@ -15747,13 +15559,11 @@
       "altrock",
       "artpop",
       "electronica",
-      "triphop",
-      "classical"
+      "triphop"
     ],
     "subgenres": [
       "trip-hop",
       "experimental",
-      "classical",
       "indietronica",
       "art-pop"
     ],
@@ -16186,13 +15996,11 @@
       "ambient",
       "techno",
       "triphop",
-      "idm",
-      "hiphop"
+      "idm"
     ],
     "subgenres": [
       "industrial",
       "dark-ambient",
-      "experimental-hiphop",
       "dub",
       "house",
       "drone",
@@ -16278,7 +16086,6 @@
     ],
     "subgenres": [
       "indietronica",
-      "electro",
       "ambient"
     ],
     "enTags": [
@@ -16636,8 +16443,7 @@
     ],
     "subgenres": [
       "experimental",
-      "indietronica",
-      "electro"
+      "indietronica"
     ],
     "enTags": [
       "mandible",
@@ -17262,7 +17068,6 @@
       "experimental",
       "art-pop",
       "indietronica",
-      "electro",
       "rnb"
     ],
     "enTags": [
@@ -17378,7 +17183,6 @@
       "hiphop"
     ],
     "subgenres": [
-      "grime",
       "art-pop",
       "rnb",
       "experimental"
@@ -18136,14 +17940,12 @@
       "dnb",
       "electronica",
       "idm",
-      "triphop",
-      "hiphop"
+      "triphop"
     ],
     "subgenres": [
       "drum-n-bass",
       "idm",
       "breakbeat",
-      "experimental-hiphop",
       "indietronica",
       "trip-hop"
     ],
@@ -18568,9 +18370,9 @@
       "indiepop",
       "altrock",
       "dnb",
-      "electronica",
       "techno",
       "folk",
+      "electronica",
       "darkwave",
       "classical",
       "jazz",
@@ -18587,12 +18389,10 @@
       "experimental",
       "breakbeat",
       "drum-n-bass",
-      "soul",
       "lo-fi-indie",
       "house",
       "folk-rock",
       "indietronica",
-      "electro",
       "synth-pop",
       "indie-pop",
       "acid",
@@ -18601,6 +18401,7 @@
       "phonk",
       "lo-fi",
       "rnb",
+      "soul",
       "classical",
       "industrial",
       "hip-hop",
@@ -18618,17 +18419,14 @@
       "synthwave",
       "glitch",
       "deep-house",
+      "electro",
       "neo-soul",
       "cloud-rap",
       "progressive-house",
       "trap",
       "experimental-pop",
       "future-garage",
-      "glitch-pop",
-      "darkwave",
-      "krautrock",
-      "art-rock",
-      "glam"
+      "glitch-pop"
     ],
     "enTags": [
       "drone metal",
@@ -19853,8 +19651,7 @@
     "subgenres": [
       "dark-jazz",
       "experimental",
-      "indietronica",
-      "electro"
+      "indietronica"
     ],
     "enTags": [
       "dark jazz",
@@ -20207,14 +20004,12 @@
     "genres": [
       "darkwave",
       "idm",
-      "industrial",
-      "classical"
+      "industrial"
     ],
     "subgenres": [
       "industrial",
       "noise",
-      "experimental",
-      "classical"
+      "experimental"
     ],
     "enTags": [
       "industrial",
@@ -20437,7 +20232,6 @@
       "darkwave"
     ],
     "subgenres": [
-      "folk-rock",
       "new-wave"
     ],
     "enTags": [
@@ -20774,7 +20568,6 @@
       "idm",
       "ambient",
       "indietronica",
-      "electro",
       "art-pop"
     ],
     "enTags": [
@@ -21529,7 +21322,6 @@
       "jungle",
       "dubstep",
       "glitch-pop",
-      "dub",
       "future-garage",
       "footwork",
       "uk-garage"
@@ -21620,16 +21412,13 @@
       "dnb",
       "electronica",
       "idm",
-      "techno",
-      "hiphop"
+      "techno"
     ],
     "subgenres": [
       "idm",
       "breakbeat",
       "experimental",
       "indietronica",
-      "electro",
-      "experimental-hiphop",
       "breakcore"
     ],
     "enTags": [

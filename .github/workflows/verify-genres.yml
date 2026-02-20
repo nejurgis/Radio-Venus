@@ -7,6 +7,11 @@ on:
         description: 'Single genre to check — leave blank to run all unchecked genres in parallel'
         required: false
         default: ''
+      use_seed:
+        description: 'Use seed-musicians.json instead of built musicians.json (set false for genres like hiphop that are derived at build time)'
+        type: boolean
+        required: false
+        default: true
 
 jobs:
   # ── Single genre (when input provided) ───────────────────────────────────────
@@ -23,7 +28,7 @@ jobs:
       - run: npm install
       - run: npx playwright install chromium --with-deps
       - name: Run verification
-        run: node scripts/verify-genres.mjs --seed --genre=${{ inputs.genre }} --output=scripts/genre-report.json
+        run: node scripts/verify-genres.mjs ${{ inputs.use_seed && '--seed' || '' }} --genre=${{ inputs.genre }} --output=scripts/genre-report.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
