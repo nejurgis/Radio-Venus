@@ -2,27 +2,22 @@
 // ── import-spotify.mjs ──────────────────────────────────────────────────────
 // Imports a Spotify playlist into seed-musicians.json.
 //
+// Spotify's API (Nov 2023) blocks playlist track access for non-approved apps.
+// Export your playlist as CSV via https://exportify.net then pass the file:
+//
+//   node scripts/import-spotify.mjs playlist.csv
+//   node scripts/import-spotify.mjs playlist.csv --dry-run
+//
 // For each track:
 //   - Existing seed artists: marked handpicked:true, handpickedTrack stored
 //   - New artists: birth date (Wikidata→MB→Wikipedia) → genres (Everynoise)
 //     → YouTube search for the specific song → added with handpicked:true
-//
-// First run: Spotify OAuth will open in your browser. Add
-//   http://localhost:8888/callback
-// to the Redirect URIs in your Spotify app's Developer Dashboard.
-//
-// Usage:
-//   node scripts/import-spotify.mjs <playlist-url-or-id>
-//   node scripts/import-spotify.mjs 7Ez4E5FuC1mLoCSBwKb8bY --dry-run
 //
 import { createRequire } from 'node:module';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import https from 'node:https';
-import http from 'node:http';
-import crypto from 'node:crypto';
-import { execSync } from 'node:child_process';
 import { categorizeGenres, categorizeSubgenres } from '../src/genres.js';
 
 // ── Load .env ────────────────────────────────────────────────────────────────
@@ -44,12 +39,63 @@ const SEED_PATH = join(__dirname, 'seed-musicians.json');
 
 const args    = process.argv.slice(2);
 const DRY_RUN = args.includes('--dry-run');
-const rawArg  = args.find(a => !a.startsWith('--')) ?? '';
+const csvPath = args.find(a => !a.startsWith('--'));
 
-const playlistId = rawArg.match(/playlist\/([A-Za-z0-9]+)/)?.[1] ?? rawArg;
-if (!playlistId) {
-  console.error('Usage: node scripts/import-spotify.mjs <playlist-url-or-id>');
+if (!csvPath || !csvPath.endsWith('.csv')) {
+  console.error('Usage: node scripts/import-spotify.mjs <exportify-playlist.csv> [--dry-run]');
+  console.error('       Export your playlist at https://exportify.net');
   process.exit(1);
+}
+
+// ── Parse Exportify CSV ───────────────────────────────────────────────────────
+// Exportify columns: Spotify ID, Artist IDs, Artist Names, Album Name,
+//   Track Name, Release Date, Duration (ms), Popularity, Added By, Added At
+//
+// We only need: Artist Name (col 2, 0-indexed) and Track Name (col 4)
+
+function parseExportifyCSV(csvText) {
+  const lines = csvText.split('\n').filter(l => l.trim());
+  const tracks = [];
+
+  // Find header row to locate column indices dynamically
+  const header = parseCSVRow(lines[0]).map(h => h.toLowerCase().trim());
+  const artistCol = header.findIndex(h => h.includes('artist name'));
+  const trackCol  = header.findIndex(h => h === 'track name' || h.includes('track name'));
+
+  if (artistCol === -1 || trackCol === -1) {
+    throw new Error(`Cannot find Artist Name / Track Name columns in CSV header: ${lines[0]}`);
+  }
+
+  for (const line of lines.slice(1)) {
+    if (!line.trim()) continue;
+    const cols = parseCSVRow(line);
+    // Exportify joins multiple artists with ";" — take primary artist only
+    const artistRaw  = cols[artistCol]?.trim() ?? '';
+    const artistName = artistRaw.split(';')[0].trim();
+    const trackName  = cols[trackCol]?.trim();
+    if (artistName && trackName) tracks.push({ artistName, trackName });
+  }
+  return tracks;
+}
+
+// Minimal RFC 4180 CSV parser (handles quoted fields with embedded commas/newlines)
+function parseCSVRow(line) {
+  const cols = [];
+  let cur = '';
+  let inQuote = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (ch === '"') {
+      if (inQuote && line[i + 1] === '"') { cur += '"'; i++; }
+      else inQuote = !inQuote;
+    } else if (ch === ',' && !inQuote) {
+      cols.push(cur); cur = '';
+    } else {
+      cur += ch;
+    }
+  }
+  cols.push(cur);
+  return cols;
 }
 
 // ── Venus ────────────────────────────────────────────────────────────────────
@@ -94,112 +140,7 @@ function fetchJSON(url, extraHeaders = {}) {
   });
 }
 
-function postForm(hostname, path, body, extraHeaders = {}) {
-  return new Promise((resolve, reject) => {
-    const payload = new URLSearchParams(body).toString();
-    const req = https.request({
-      hostname, path, method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Content-Length': Buffer.byteLength(payload),
-        ...extraHeaders,
-      },
-    }, res => {
-      let data = '';
-      res.on('data', c => data += c);
-      res.on('end', () => {
-        try { resolve(JSON.parse(data)); }
-        catch { reject(new Error(`JSON parse error: ${data.slice(0, 120)}`)); }
-      });
-    });
-    req.on('error', reject);
-    req.write(payload);
-    req.end();
-  });
-}
-
 const delay = ms => new Promise(r => setTimeout(r, ms));
-
-// ── Spotify OAuth (PKCE) ─────────────────────────────────────────────────────
-// Client credentials can no longer read playlist tracks (Spotify API policy
-// Nov 2023). PKCE user auth is required even for public playlists.
-// Add http://localhost:8888/callback to your Spotify app's Redirect URIs.
-
-const REDIRECT_URI = 'http://localhost:8888/callback';
-
-async function getSpotifyToken() {
-  const clientId  = process.env.SPOTIFY_CLIENT_ID;
-  const clientSec = process.env.SPOTIFY_CLIENT_SECRET;
-  if (!clientId || !clientSec) throw new Error('SPOTIFY_CLIENT_ID / SPOTIFY_CLIENT_SECRET missing from .env');
-
-  // PKCE code verifier + challenge
-  const verifier  = crypto.randomBytes(32).toString('base64url');
-  const challenge = crypto.createHash('sha256').update(verifier).digest('base64url');
-
-  const authUrl = 'https://accounts.spotify.com/authorize?' + new URLSearchParams({
-    response_type:         'code',
-    client_id:             clientId,
-    scope:                 'playlist-read-private playlist-read-collaborative',
-    redirect_uri:          REDIRECT_URI,
-    code_challenge_method: 'S256',
-    code_challenge:        challenge,
-  });
-
-  console.log('\nOpening Spotify login in your browser...');
-  console.log('(If nothing opens, visit the URL manually:)');
-  console.log(authUrl.slice(0, 100) + '…\n');
-  try { execSync(`open "${authUrl}"`); } catch { /* non-macOS */ }
-
-  // Local server catches the OAuth callback
-  const code = await new Promise((resolve, reject) => {
-    const server = http.createServer((req, res) => {
-      const url = new URL(req.url, 'http://localhost:8888');
-      const code  = url.searchParams.get('code');
-      const error = url.searchParams.get('error');
-      res.writeHead(200, { 'Content-Type': 'text/html' });
-      res.end('<html><body style="font-family:monospace;padding:2em"><h2>✓ Authorised — you can close this tab.</h2></body></html>');
-      server.close();
-      if (code) resolve(code);
-      else reject(new Error(`Spotify auth denied: ${error}`));
-    });
-    server.listen(8888, 'localhost', () =>
-      console.log('Waiting for Spotify callback on localhost:8888 ...')
-    );
-    server.on('error', e => reject(new Error(`Local server error: ${e.message} — is :8888 in use?`)));
-  });
-
-  console.log('Callback received. Exchanging code for token...');
-  const data = await postForm('accounts.spotify.com', '/api/token', {
-    grant_type:    'authorization_code',
-    code,
-    redirect_uri:  REDIRECT_URI,
-    client_id:     clientId,
-    code_verifier: verifier,
-  }, {
-    Authorization: `Basic ${Buffer.from(`${clientId}:${clientSec}`).toString('base64')}`,
-  });
-
-  if (!data.access_token) throw new Error(`Token exchange failed: ${JSON.stringify(data)}`);
-  console.log('Spotify auth OK\n');
-  return data.access_token;
-}
-
-async function getPlaylistTracks(pid, token) {
-  const tracks = [];
-  let url = `https://api.spotify.com/v1/playlists/${pid}/tracks?limit=100`;
-  while (url) {
-    const data = await fetchJSON(url, { Authorization: `Bearer ${token}` });
-    if (data.error) throw new Error(`Spotify API error: ${JSON.stringify(data.error)}`);
-    for (const item of (data.items ?? [])) {
-      if (!item.track?.artists?.[0]) continue;
-      const { name: trackName, artists } = item.track;
-      tracks.push({ artistName: artists[0].name, artistId: artists[0].id, trackName });
-    }
-    url = data.next ?? null;
-    if (url) await delay(150);
-  }
-  return tracks;
-}
 
 // ── Everynoise: genre lookup via Playwright (single source of truth) ──────────
 
@@ -385,14 +326,13 @@ async function getBirthDate(name) {
 
 async function main() {
   console.log(`\nSpotify → seed importer`);
-  console.log(`Playlist: ${playlistId}`);
+  console.log(`CSV: ${csvPath}`);
   if (DRY_RUN) console.log('DRY RUN — no writes\n');
 
-  const token = await getSpotifyToken();
-
-  process.stdout.write('Fetching playlist tracks... ');
-  const tracks = await getPlaylistTracks(playlistId, token);
-  console.log(`${tracks.length} tracks`);
+  // Parse Exportify CSV
+  const csvText = readFileSync(csvPath, 'utf-8');
+  const tracks = parseExportifyCSV(csvText);
+  console.log(`${tracks.length} tracks in CSV`);
 
   // Deduplicate by artist — keep first occurrence per artist
   const seen = new Map();
