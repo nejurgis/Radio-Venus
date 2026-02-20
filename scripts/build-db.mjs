@@ -172,6 +172,12 @@ async function main() {
   const seed = JSON.parse(readFileSync(seedPath, 'utf-8'));
   console.log(`Loaded ${seed.length} seed artists.`);
 
+  // Load manual-overrides for genre corrections (applied at build time)
+  const overridesPath = join(__dirname, 'manual-overrides.json');
+  const overrides = existsSync(overridesPath)
+    ? JSON.parse(readFileSync(overridesPath, 'utf-8'))
+    : {};
+
   // Build merge map: seed > cache > wikidata
   const byName = new Map();
 
@@ -254,6 +260,18 @@ async function main() {
 
         if (!videoId) return null;
 
+        // Build genres: stored seed genres + enTags re-categorized with current GENRE_MAP
+        // + manual-override genres (so new genre tiles pick up artists without re-importing)
+        const genreSet = new Set(entry.genres || []);
+        if (entry.enTags?.length) {
+          for (const g of categorizeGenres(entry.enTags)) genreSet.add(g);
+        }
+        const ov = overrides[entry.name] ?? overrides[entry.name?.toLowerCase()];
+        if (ov?.genres?.length) {
+          for (const g of ov.genres) genreSet.add(g);
+        }
+        const genres = [...genreSet];
+
         // Build subgenres: start from manual curation, enrich with EN tags, fallback to genre names
         const subgenreSet = new Set(entry.subgenres || []);
 
@@ -263,8 +281,8 @@ async function main() {
         }
 
         // Fallback: derive from top-level genre strings for Wikidata artists with no other data
-        if (subgenreSet.size === 0 && entry.genres.length > 0) {
-          for (const s of categorizeSubgenres(entry.genres)) subgenreSet.add(s);
+        if (subgenreSet.size === 0 && genres.length > 0) {
+          for (const s of categorizeSubgenres(genres)) subgenreSet.add(s);
         }
 
         const subgenres = [...subgenreSet];
@@ -273,7 +291,7 @@ async function main() {
           name: entry.name,
           birthDate: entry.birthDate,
           venus,
-          genres: entry.genres,
+          genres,
           subgenres,
           ...(entry.enTags?.length && { enTags: entry.enTags }),
           youtubeVideoId: videoId,

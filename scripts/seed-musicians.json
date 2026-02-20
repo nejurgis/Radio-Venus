@@ -464,7 +464,9 @@
     "enTags": [
       "experimental electronic",
       "spectra"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "I'm Every Sparkly Woman"
   },
   {
     "name": "Andy Stott",
@@ -828,7 +830,9 @@
       "dark pop",
       "gaian doom",
       "spectra"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "The Whole Woman"
   },
   {
     "name": "Anthony Braxton",
@@ -912,7 +916,9 @@
       "electronica",
       "ambient",
       "intelligent dance music"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "Alberto Balsalm"
   },
   {
     "name": "Apparat",
@@ -1101,7 +1107,9 @@
     "youtubeVideoId": "ysCedXhbwiw",
     "enTags": [
       "fluxwork"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "MANNA"
   },
   {
     "name": "Bar Italia",
@@ -1154,7 +1162,9 @@
       "israeli folk",
       "bullerengue",
       "klezmer"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "Capio"
   },
   {
     "name": "Béla Bartók",
@@ -1536,7 +1546,9 @@
       "post-punk",
       "industrial rock",
       "synthpop"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "Landslide"
   },
   {
     "name": "Camouflage",
@@ -1844,7 +1856,9 @@
     "genres": [
       "idm",
       "ambient"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "Sigh In My Ear"
   },
   {
     "name": "Claire Voyant",
@@ -1945,7 +1959,9 @@
       "synthpop",
       "alternative rock",
       "scottish shoegaze"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "Sea, Swallow Me"
   },
   {
     "name": "Colin Potter",
@@ -2582,7 +2598,9 @@
     "subgenres": [
       "techno",
       "ambient"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "Infinite Future"
   },
   {
     "name": "Darkstar",
@@ -2680,7 +2698,9 @@
     "enTags": [
       "ethereal wave",
       "neoclassical darkwave"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "Enigma of the Absolute"
   },
   {
     "name": "Dean Blunt",
@@ -2698,7 +2718,9 @@
       "hypnagogic pop",
       "collage pop",
       "uk experimental electronic"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "The Narcissist"
   },
   {
     "name": "Death in Vegas",
@@ -2793,7 +2815,9 @@
       "synth-pop",
       "new-wave",
       "darkwave"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "Happiest Girl - The Pulsating Orbital Vocal Mix"
   },
   {
     "name": "Derrick May",
@@ -3080,7 +3104,9 @@
     ],
     "enTags": [
       "experimental ambient"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "Little Frogs Swam by Every Now and Then"
   },
   {
     "name": "Dynatron",
@@ -4137,7 +4163,9 @@
       "medieval",
       "early music",
       "classical"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "O viridissima virga, BN 19"
   },
   {
     "name": "Hiroshi Yoshimura",
@@ -4202,7 +4230,9 @@
       "fluxwork",
       "art pop",
       "spectra"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "Frontier"
   },
   {
     "name": "Hollywood Burns",
@@ -4645,7 +4675,9 @@
       "fourth world",
       "ambient synth",
       "spectra"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "Going Through the Veil - Becoming a Swan"
   },
   {
     "name": "Joanna Newsom",
@@ -4757,7 +4789,9 @@
     "backupVideoIds": [
       "lzE8cF1Gtvk",
       "8cPgbxIH_UQ"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "Subtext"
   },
   {
     "name": "Joker",
@@ -4808,7 +4842,9 @@
       "electronica",
       "compositional ambient",
       "intelligent dance music"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "Contact Note"
   },
   {
     "name": "Joni Mitchell",
@@ -4941,7 +4977,9 @@
       "spectra",
       "fluxwork",
       "art pop"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "Arthropoda"
   },
   {
     "name": "Kali Malone",
@@ -5235,7 +5273,9 @@
       "gauze pop",
       "mandible",
       "art pop"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "Belleville"
   },
   {
     "name": "Laurie Spiegel",
@@ -6365,7 +6405,9 @@
     "genres": [
       "darkwave"
     ],
-    "youtubeVideoId": "9-NFosnfd2c"
+    "youtubeVideoId": "9-NFosnfd2c",
+    "handpicked": true,
+    "handpickedTrack": "Elegia - 2015 Remaster"
   },
   {
     "name": "Nick León",
@@ -6479,7 +6521,9 @@
     "youtubeVideoId": "t3WeS72cyyw",
     "enTags": [
       "abstract hip hop"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "T r i s h"
   },
   {
     "name": "Off The Sky",
@@ -6554,7 +6598,9 @@
       "drone",
       "escape room",
       "wonky"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "The Pure and the Damned"
   },
   {
     "name": "Orbital",
@@ -6745,7 +6791,9 @@
       "indie rock",
       "indietronica",
       "neo-synthpop"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "Leave - Jenny Hval Remix"
   },
   {
     "name": "Pérotin",
@@ -6835,7 +6883,9 @@
       "american contemporary classical",
       "contemporary classical",
       "classical"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "Koyaanisqatsi"
   },
   {
     "name": "Photek",
@@ -7217,7 +7267,9 @@
       "scottish indie",
       "britpop",
       "alternative rock"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "Higher Than the Sun - Higher Than the Orb Mix"
   },
   {
     "name": "Purelink",
@@ -7799,7 +7851,9 @@
       "lilith",
       "new wave pop",
       "singer-songwriter"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "I Am Stretched on Your Grave"
   },
   {
     "name": "Siouxsie and the Banshees",
@@ -7857,7 +7911,9 @@
       "ambient",
       "idm",
       "dnb"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "I Think I Am"
   },
   {
     "name": "Slag Boom Van Loon",
@@ -7936,7 +7992,9 @@
     "enTags": [
       "trip hop",
       "electronica"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "Post-Modern Sleaze"
   },
   {
     "name": "Soft Cell",
@@ -8272,7 +8330,9 @@
       "compositional ambient",
       "contemporary classical",
       "classical"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "Pulses"
   },
   {
     "name": "Steve Roach",
@@ -8780,7 +8840,9 @@
       "ambient",
       "house",
       "experimental"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "Azukiiro No Kaori"
   },
   {
     "name": "Suzanne Ciani",
@@ -9259,7 +9321,9 @@
       "popgaze",
       "experimental pop",
       "experimental indie"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "Softly Kidding"
   },
   {
     "name": "Tori Amos",
@@ -9732,7 +9796,9 @@
       "stoner rock",
       "stoner metal",
       "instrumental rock"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "Notice the Direction of Fires - felicita live remix"
   },
   {
     "name": "yes/and",
@@ -10113,7 +10179,9 @@
     "enTags": [
       "bedroom pop",
       "chamber pop"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "i believe in you"
   },
   {
     "name": "Cate Le Bon",
@@ -10224,7 +10292,9 @@
       "spectra",
       "uk contemporary r&b",
       "alternative r&b"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "Holding On"
   },
   {
     "name": "Okay Kaya",
@@ -10486,7 +10556,9 @@
     "genres": [
       "ambient",
       "artpop"
-    ]
+    ],
+    "handpicked": true,
+    "handpickedTrack": "In Light"
   },
   {
     "name": "Bellezza Eterna",
@@ -10749,5 +10821,2536 @@
       "XJTA9EVKXdk",
       "yu71TgWo0CQ"
     ]
+  },
+  {
+    "name": "Eola",
+    "birthDate": "1964-06-15",
+    "mbid": "4704e5e8-0cf1-460e-9e0d-8f39b7b27bc3",
+    "genres": [],
+    "subgenres": [],
+    "enTags": [
+      "popgaze"
+    ],
+    "youtubeVideoId": "D1_tsBYsMoA",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "B and O Blues"
+  },
+  {
+    "name": "CCFX",
+    "birthDate": "2017-10-20",
+    "genres": [],
+    "subgenres": [],
+    "enTags": [
+      "olympia wa indie"
+    ],
+    "youtubeVideoId": "yFBQA-jU9Bg",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "The One to Wait"
+  },
+  {
+    "name": "Diplo",
+    "birthDate": "1978-11-10",
+    "genres": [
+      "techno"
+    ],
+    "subgenres": [
+      "house",
+      "electro"
+    ],
+    "enTags": [
+      "moombahton",
+      "edm",
+      "pop dance",
+      "electro house",
+      "dance pop"
+    ],
+    "youtubeVideoId": "trPkC6eoqP4",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "I LUV U"
+  },
+  {
+    "name": "Torn Hawk",
+    "birthDate": "1969-11-15",
+    "mbid": "1e8b3e4f-83c3-4b30-afa0-220363a7df5a",
+    "genres": [
+      "techno"
+    ],
+    "subgenres": [
+      "house"
+    ],
+    "enTags": [
+      "outsider house",
+      "hypnagogic pop"
+    ],
+    "youtubeVideoId": "Andk9sBBGsc",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Oh Yeah (Cop Collab)"
+  },
+  {
+    "name": "Hans Zimmer",
+    "birthDate": "1957-09-12",
+    "genres": [
+      "classical",
+      "ambient"
+    ],
+    "subgenres": [
+      "classical"
+    ],
+    "enTags": [
+      "german soundtrack",
+      "orchestral soundtrack",
+      "soundtrack"
+    ],
+    "youtubeVideoId": "ReWoLyeuZPw",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "God Yu Tekem Laef Blong Mi (From \"The Thin Red Line\" Soundtrack)"
+  },
+  {
+    "name": "AE MAK",
+    "birthDate": "1987-11-22",
+    "mbid": "12997aa6-88fb-4a09-a5a7-4de104184717",
+    "genres": [
+      "artpop"
+    ],
+    "subgenres": [
+      "art-pop"
+    ],
+    "enTags": [
+      "irish pop",
+      "modern alternative pop",
+      "art pop"
+    ],
+    "youtubeVideoId": "aSImZwqEg4M",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Low Down"
+  },
+  {
+    "name": "Uhm Jung Hwa",
+    "birthDate": "1969-08-17",
+    "genres": [],
+    "subgenres": [],
+    "enTags": [
+      "korean city pop"
+    ],
+    "youtubeVideoId": "vfSbfm5g40Q",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Watch Me Move"
+  },
+  {
+    "name": "A Lily",
+    "birthDate": "1985-05-02",
+    "mbid": "6e0c7c0e-cba5-4c2c-a652-38f71ef5785d",
+    "genres": [
+      "ambient"
+    ],
+    "subgenres": [
+      "ambient"
+    ],
+    "enTags": [
+      "organic ambient"
+    ],
+    "youtubeVideoId": "QTBGq-RyPFk",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Flimkien Ngħaddu Mill-Bieb"
+  },
+  {
+    "name": "Elkka",
+    "birthDate": "1988-06-15",
+    "genres": [
+      "idm",
+      "artpop",
+      "techno"
+    ],
+    "subgenres": [],
+    "enTags": [
+      "electra"
+    ],
+    "youtubeVideoId": "18etGza55G4",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Attention, Lovers - Mixed"
+  },
+  {
+    "name": "Fred again..",
+    "birthDate": "1993-07-19",
+    "genres": [
+      "techno"
+    ],
+    "subgenres": [
+      "house"
+    ],
+    "enTags": [
+      "stutter house",
+      "house",
+      "edm"
+    ],
+    "youtubeVideoId": "sQRfp2Xp6U0",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "stayinit"
+  },
+  {
+    "name": "Buffy Sainte-Marie",
+    "birthDate": "1941-02-20",
+    "genres": [
+      "folk"
+    ],
+    "subgenres": [
+      "folk-rock"
+    ],
+    "enTags": [
+      "native american contemporary",
+      "american folk revival",
+      "canadian indigenous music",
+      "canadian singer-songwriter",
+      "folk",
+      "folk rock"
+    ],
+    "youtubeVideoId": "i-GonR4S1to",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "God Is Alive Magic Is Afoot"
+  },
+  {
+    "name": "Love Is Colder Than Death",
+    "birthDate": "1990-06-15",
+    "genres": [
+      "artpop",
+      "darkwave",
+      "classical"
+    ],
+    "subgenres": [
+      "art-pop",
+      "darkwave",
+      "classical",
+      "neo-classical"
+    ],
+    "enTags": [
+      "ethereal wave",
+      "neoclassical darkwave",
+      "dark wave",
+      "leipzig indie",
+      "neue deutsche todeskunst",
+      "gothic rock"
+    ],
+    "youtubeVideoId": "w2aTx_kNeKw",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Structure"
+  },
+  {
+    "name": "HONESTY",
+    "birthDate": "1989-06-15",
+    "mbid": "2aac077a-4dba-430e-be48-1c331d3806d2",
+    "genres": [],
+    "subgenres": [],
+    "youtubeVideoId": "rE0-sgbAnoQ",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "TUNE IN TUNE OUT"
+  },
+  {
+    "name": "Drumloop",
+    "birthDate": "2019-03-17",
+    "genres": [
+      "electronica",
+      "idm"
+    ],
+    "subgenres": [
+      "glitch-pop",
+      "experimental"
+    ],
+    "enTags": [
+      "glitch pop",
+      "deconstructed club"
+    ],
+    "youtubeVideoId": "1XnE247zsV8",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "When Its Cold I'd Like to Die (Moby)"
+  },
+  {
+    "name": "La Bouche",
+    "birthDate": "1994-06-15",
+    "mbid": "b79a3909-7611-4b89-ab5a-5609c4aaacae",
+    "genres": [
+      "techno"
+    ],
+    "subgenres": [
+      "house",
+      "techno"
+    ],
+    "enTags": [
+      "eurodance",
+      "europop",
+      "diva house",
+      "german techno"
+    ],
+    "youtubeVideoId": "4dxiRAbMmP4",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Forget Me Nots - Club Mix"
+  },
+  {
+    "name": "Bloodz Boi",
+    "birthDate": "2022-12-02",
+    "genres": [
+      "electronica",
+      "techno"
+    ],
+    "subgenres": [
+      "indietronica",
+      "electro"
+    ],
+    "enTags": [
+      "chinese electronic"
+    ],
+    "youtubeVideoId": "JGP-Uv-J99A",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "180"
+  },
+  {
+    "name": "BoA",
+    "birthDate": "1986-11-05",
+    "genres": [],
+    "subgenres": [],
+    "enTags": [
+      "k-pop"
+    ],
+    "youtubeVideoId": "WS5u-6LnyUU",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Forgive Me"
+  },
+  {
+    "name": "Far East Movement",
+    "birthDate": "2003-06-15",
+    "genres": [],
+    "subgenres": [],
+    "enTags": [
+      "pop rap",
+      "asian american hip hop",
+      "dance pop"
+    ],
+    "youtubeVideoId": "w4s6H4ku6ZY",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Like A G6"
+  },
+  {
+    "name": "illi mel",
+    "birthDate": "1925-09-13",
+    "mbid": "4439c2fd-a754-4f6a-b3a6-791b47726156",
+    "genres": [],
+    "subgenres": [],
+    "youtubeVideoId": "qv0P819gDtQ",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "The Sound of Water"
+  },
+  {
+    "name": "Headache",
+    "birthDate": "1988-09-02",
+    "mbid": "65b30507-4ef1-4d69-8005-36b10bc61e03",
+    "genres": [],
+    "subgenres": [],
+    "youtubeVideoId": "FpPXKRbKrFk",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Business Opportunities"
+  },
+  {
+    "name": "death's dynamic shroud",
+    "birthDate": "1978-11-04",
+    "mbid": "b7821e91-b584-4254-a9e5-48001c36f8ad",
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "enTags": [
+      "slushwave",
+      "vaporwave",
+      "hardvapour",
+      "deconstructed club",
+      "hyper-rock"
+    ],
+    "youtubeVideoId": "CFCMUKmbZMg",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Tell Me Your Secret"
+  },
+  {
+    "name": "Imogen Heap",
+    "birthDate": "1977-12-09",
+    "genres": [
+      "artpop"
+    ],
+    "subgenres": [],
+    "enTags": [
+      "etherpop",
+      "metropopolis"
+    ],
+    "youtubeVideoId": "UYIAfiVGluk",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Hide and Seek"
+  },
+  {
+    "name": "Miranda Sex Garden",
+    "birthDate": "1990-06-15",
+    "genres": [
+      "artpop",
+      "darkwave",
+      "classical"
+    ],
+    "subgenres": [
+      "art-pop",
+      "darkwave",
+      "classical",
+      "neo-classical"
+    ],
+    "enTags": [
+      "ethereal wave",
+      "dark wave",
+      "neoclassical darkwave",
+      "gothic rock"
+    ],
+    "youtubeVideoId": "d8nCdJfdazc",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Gush Forth My Tears"
+  },
+  {
+    "name": "JAY-Z",
+    "birthDate": "1969-12-04",
+    "genres": [],
+    "subgenres": [],
+    "youtubeVideoId": "_1oO4wzPCmE",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Numb / Encore"
+  },
+  {
+    "name": "Ragnar Johnson",
+    "birthDate": "1911-05-08",
+    "mbid": "8a8bbba6-72f7-4900-a306-c40b94f2631b",
+    "genres": [],
+    "subgenres": [],
+    "enTags": [
+      "papuan traditional"
+    ],
+    "youtubeVideoId": "pZ23-cNRCjI",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Mo-Mo 1"
+  },
+  {
+    "name": "Mega Bog",
+    "birthDate": "2009-06-15",
+    "mbid": "4343ece5-c46d-4457-a580-ef1cefa9546d",
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "enTags": [
+      "experimental indie"
+    ],
+    "youtubeVideoId": "wVLs5MbYxSQ",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Dolphine"
+  },
+  {
+    "name": "Zulu",
+    "birthDate": "1951-06-15",
+    "genres": [],
+    "subgenres": [],
+    "enTags": [
+      "black punk",
+      "california hardcore",
+      "modern hardcore",
+      "la hardcore",
+      "sega mauricien"
+    ],
+    "youtubeVideoId": "ZO7WvCdAbpY",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Hooligan Break"
+  },
+  {
+    "name": "SALEM",
+    "birthDate": "1999-08-19",
+    "mbid": "c0583ff5-73cd-444b-9870-fe781c9eef17",
+    "genres": [
+      "darkwave",
+      "techno"
+    ],
+    "subgenres": [
+      "house"
+    ],
+    "enTags": [
+      "grave wave",
+      "witch house"
+    ],
+    "youtubeVideoId": "aU5U2qB8hMk",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Not Much Of A Life"
+  },
+  {
+    "name": "Dali Muru & The Polyphonic Swarm",
+    "birthDate": "2021-11-25",
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "enTags": [
+      "experimental electronic"
+    ],
+    "youtubeVideoId": "UKxZ-8ehar8",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Bom Bom Bow"
+  },
+  {
+    "name": "Lichtenfels",
+    "birthDate": "2003-06-15",
+    "genres": [
+      "techno"
+    ],
+    "subgenres": [
+      "trance"
+    ],
+    "enTags": [
+      "bubble trance"
+    ],
+    "youtubeVideoId": "EhDI2bNR18Y",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Sounds Like a Melody - Original Radio Edit"
+  },
+  {
+    "name": "Stine Janvin",
+    "birthDate": "1943-10-08",
+    "mbid": "81bd1d37-1497-4e19-95cc-5e77098fbfab",
+    "genres": [],
+    "subgenres": [],
+    "youtubeVideoId": "tEhqVKuFjmE",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Like Last Night"
+  },
+  {
+    "name": "Rabit",
+    "birthDate": "2022-11-25",
+    "genres": [
+      "idm",
+      "dnb",
+      "triphop"
+    ],
+    "subgenres": [
+      "experimental",
+      "grime",
+      "dub",
+      "dubstep"
+    ],
+    "enTags": [
+      "weightless",
+      "experimental club",
+      "deconstructed club",
+      "grimewave",
+      "vogue",
+      "minimal dubstep",
+      "smutny rap"
+    ],
+    "youtubeVideoId": "G09NIk-GYD4",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "No Ceiling"
+  },
+  {
+    "name": "Amnesia Scanner",
+    "birthDate": "1964-06-15",
+    "mbid": "306789f8-f913-4def-b264-8edbc59a586f",
+    "genres": [
+      "idm",
+      "artpop",
+      "dnb",
+      "electronica",
+      "techno"
+    ],
+    "subgenres": [
+      "experimental",
+      "grime",
+      "indietronica",
+      "electro"
+    ],
+    "enTags": [
+      "fluxwork",
+      "deconstructed club",
+      "grimewave",
+      "finnish electronic"
+    ],
+    "youtubeVideoId": "oijjeza-F74",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Cat"
+  },
+  {
+    "name": "Akira Rabelais",
+    "birthDate": "1966-03-22",
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "drone",
+      "ambient",
+      "glitch"
+    ],
+    "enTags": [
+      "lowercase",
+      "sound art",
+      "hauntology",
+      "drone",
+      "ambient",
+      "glitch ambient",
+      "tape music"
+    ],
+    "youtubeVideoId": "IaSLNNMvY_c",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Pe Loc"
+  },
+  {
+    "name": "Palehound",
+    "birthDate": "2014-06-15",
+    "mbid": "d0d25805-3446-49eb-bf6b-b4fa821c3a7f",
+    "genres": [
+      "altrock"
+    ],
+    "subgenres": [],
+    "enTags": [
+      "boston indie",
+      "boston rock",
+      "bubblegrunge",
+      "indie punk",
+      "new england emo"
+    ],
+    "youtubeVideoId": "UGrKnCGJlSM",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "My Evil"
+  },
+  {
+    "name": "Jayla Kai",
+    "birthDate": "1969-07-23",
+    "mbid": "0ec0657f-860d-4cc6-996c-09ba76fffc76",
+    "genres": [],
+    "subgenres": [],
+    "youtubeVideoId": "ZapOWdA19wk",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Hear Me Now"
+  },
+  {
+    "name": "@",
+    "birthDate": "2020-06-15",
+    "mbid": "893b6621-4877-4671-8a7c-b9971f723837",
+    "genres": [],
+    "subgenres": [],
+    "youtubeVideoId": "SK2EF5C-byM",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Where'd You Put Me"
+  },
+  {
+    "name": "Arthur Russell",
+    "birthDate": "1951-05-21",
+    "genres": [
+      "classical",
+      "artpop",
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "minimalist",
+      "art-pop",
+      "cosmic-jazz",
+      "experimental"
+    ],
+    "enTags": [
+      "modern cello",
+      "minimalism",
+      "cello",
+      "no wave",
+      "art pop",
+      "fourth world",
+      "experimental"
+    ],
+    "youtubeVideoId": "474lIxM0YjQ",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "The Boy With a Smile"
+  },
+  {
+    "name": "Bluematter",
+    "birthDate": "2023-07-07",
+    "genres": [
+      "dnb"
+    ],
+    "subgenres": [
+      "jungle"
+    ],
+    "enTags": [
+      "modern jungle"
+    ],
+    "youtubeVideoId": "AEDnVGEdup8",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Voltage"
+  },
+  {
+    "name": "Florian Kupfer",
+    "birthDate": "1988-02-27",
+    "mbid": "30395365-4a0a-4474-8487-fa6736102476",
+    "genres": [
+      "techno",
+      "electronica"
+    ],
+    "subgenres": [
+      "house",
+      "lo-fi"
+    ],
+    "enTags": [
+      "outsider house",
+      "lo-fi house"
+    ],
+    "youtubeVideoId": "C414Gzk8ttw",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Come True"
+  },
+  {
+    "name": "Forest Swords",
+    "birthDate": "1999-06-15",
+    "mbid": "0a25507b-d682-49ac-b378-f26a651799fe",
+    "genres": [
+      "electronica",
+      "techno",
+      "idm",
+      "artpop"
+    ],
+    "subgenres": [
+      "experimental",
+      "indietronica",
+      "electro",
+      "glitch-pop",
+      "art-pop"
+    ],
+    "enTags": [
+      "uk experimental electronic",
+      "hauntology",
+      "wonky",
+      "art pop"
+    ],
+    "youtubeVideoId": "l8t5KPnr224",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Tar"
+  },
+  {
+    "name": "Murlo",
+    "birthDate": "2021-07-23",
+    "genres": [
+      "idm",
+      "dnb",
+      "artpop"
+    ],
+    "subgenres": [
+      "grime"
+    ],
+    "enTags": [
+      "weightless",
+      "grimewave",
+      "fluxwork"
+    ],
+    "youtubeVideoId": "5A_TC2iqEU4",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Grasshopper"
+  },
+  {
+    "name": "Daniel Pemberton",
+    "birthDate": "1977-11-03",
+    "genres": [
+      "classical",
+      "ambient"
+    ],
+    "subgenres": [
+      "classical"
+    ],
+    "enTags": [
+      "orchestral soundtrack",
+      "british soundtrack",
+      "soundtrack"
+    ],
+    "youtubeVideoId": "OgD_TxzjniU",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Spider-Man 2099 (Miguel O'Hara)"
+  },
+  {
+    "name": "Bill Orcutt",
+    "birthDate": "1962-02-02",
+    "genres": [
+      "idm",
+      "folk",
+      "ambient"
+    ],
+    "subgenres": [
+      "experimental",
+      "freak-folk",
+      "ambient-folk",
+      "drone",
+      "folk-rock"
+    ],
+    "enTags": [
+      "experimental guitar",
+      "totalism",
+      "new weird america",
+      "american primitive",
+      "pastoral",
+      "drone folk"
+    ],
+    "youtubeVideoId": "Tu_PRf1tyjI",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "What Do You Do With Memory"
+  },
+  {
+    "name": "Tom Waits",
+    "birthDate": "1949-12-07",
+    "genres": [
+      "folk"
+    ],
+    "subgenres": [
+      "folk-rock"
+    ],
+    "enTags": [
+      "singer-songwriter",
+      "folk"
+    ],
+    "youtubeVideoId": "gvqsNer088k",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "That's The Way"
+  },
+  {
+    "name": "Seal",
+    "birthDate": "1963-02-19",
+    "genres": [
+      "darkwave"
+    ],
+    "subgenres": [
+      "new-wave"
+    ],
+    "enTags": [
+      "british soul",
+      "new wave pop"
+    ],
+    "youtubeVideoId": "Q9ffkziFDbw",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Violet"
+  },
+  {
+    "name": "Paul Bley",
+    "birthDate": "1932-11-10",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "ecm-style jazz",
+      "jazz piano",
+      "contemporary post-bop"
+    ],
+    "youtubeVideoId": "kSm-Pl6ls8E",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Gentle Man"
+  },
+  {
+    "name": "Clan of Xymox",
+    "birthDate": "1981-06-15",
+    "genres": [
+      "darkwave",
+      "artpop",
+      "indiepop",
+      "altrock"
+    ],
+    "subgenres": [
+      "darkwave",
+      "art-pop"
+    ],
+    "enTags": [
+      "dark wave",
+      "gothic rock",
+      "ethereal wave",
+      "dream pop",
+      "dutch post-punk",
+      "dutch shoegaze"
+    ],
+    "youtubeVideoId": "svChFVcZOAI",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Stumble and Fall"
+  },
+  {
+    "name": "Pieter Nooten",
+    "birthDate": "1961-01-22",
+    "genres": [
+      "ambient"
+    ],
+    "subgenres": [
+      "ambient"
+    ],
+    "enTags": [
+      "ambient pop"
+    ],
+    "youtubeVideoId": "gQ4TDJKyfqE",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Searching"
+  },
+  {
+    "name": "Patrick O'Hearn",
+    "birthDate": "1954-09-06",
+    "genres": [
+      "ambient"
+    ],
+    "subgenres": [
+      "ambient"
+    ],
+    "enTags": [
+      "ambient",
+      "focus"
+    ],
+    "youtubeVideoId": "jxm4VpgpLj4",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "The Lone Man"
+  },
+  {
+    "name": "Flash and the Pan",
+    "birthDate": "1976-06-15",
+    "genres": [],
+    "subgenres": [],
+    "youtubeVideoId": "JNGLLCAq_xI",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Walking In The Rain"
+  },
+  {
+    "name": "Imaginary Softwoods",
+    "birthDate": "1979-06-15",
+    "mbid": "374c7b2b-193b-469e-af0a-a0a0ebb92e35",
+    "genres": [
+      "folk",
+      "ambient"
+    ],
+    "subgenres": [
+      "ambient-folk",
+      "ambient",
+      "cosmic-jazz"
+    ],
+    "enTags": [
+      "pastoral",
+      "ambient",
+      "fourth world",
+      "j-ambient"
+    ],
+    "youtubeVideoId": "YPiDsbsAGUc",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Poisitive Ruin Court Garden"
+  },
+  {
+    "name": "Courtesy",
+    "birthDate": "2023-02-15",
+    "genres": [
+      "techno",
+      "ambient"
+    ],
+    "subgenres": [
+      "trance"
+    ],
+    "enTags": [
+      "hypertrance",
+      "spectra"
+    ],
+    "youtubeVideoId": "e4lMA9-lhCc",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Hearts"
+  },
+  {
+    "name": "Avalon Emerson",
+    "birthDate": "1988-11-10",
+    "genres": [
+      "techno",
+      "idm",
+      "artpop"
+    ],
+    "subgenres": [
+      "house"
+    ],
+    "enTags": [
+      "float house",
+      "electra"
+    ],
+    "youtubeVideoId": "iMhJxgLdSdQ",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "A Dam Will Always Divide"
+  },
+  {
+    "name": "Dialect",
+    "birthDate": "1995-06-15",
+    "mbid": "2826485e-57e7-4cc5-a343-663a5db370d1",
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "experimental"
+    ],
+    "enTags": [
+      "experimental ambient"
+    ],
+    "youtubeVideoId": "IIbQxJ2dHXo",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Late Fragment"
+  },
+  {
+    "name": "Gosti iz Budushchego",
+    "birthDate": "1996-01-01",
+    "genres": [],
+    "subgenres": [],
+    "enTags": [
+      "russian pop",
+      "classic russian pop"
+    ],
+    "youtubeVideoId": "ujnxQlkGi28",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Беги от меня"
+  },
+  {
+    "name": "Bowery Electric",
+    "birthDate": "1992-07-04",
+    "mbid": "3dd3618d-8d59-41f1-8ece-43a2724b0660",
+    "genres": [
+      "altrock",
+      "indiepop",
+      "artpop",
+      "ambient",
+      "triphop"
+    ],
+    "subgenres": [
+      "art-pop",
+      "indie-pop",
+      "drone",
+      "downtempo"
+    ],
+    "enTags": [
+      "shoegaze",
+      "slowcore",
+      "dream pop",
+      "nu gaze",
+      "drone",
+      "downtempo"
+    ],
+    "youtubeVideoId": "ibs3qygln2Y",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Without Stopping"
+  },
+  {
+    "name": "Tiberius b",
+    "birthDate": "1989-08-17",
+    "mbid": "1550f952-c91b-40d7-9b4d-d26a259ee932",
+    "genres": [],
+    "subgenres": [],
+    "youtubeVideoId": "Ai14SX2q2ZU",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Big Deal"
+  },
+  {
+    "name": "Aimee Mann",
+    "birthDate": "1960-09-08",
+    "genres": [
+      "folk",
+      "darkwave"
+    ],
+    "subgenres": [
+      "folk-rock",
+      "new-wave"
+    ],
+    "enTags": [
+      "lilith",
+      "ectofolk",
+      "permanent wave",
+      "singer-songwriter",
+      "new wave pop"
+    ],
+    "youtubeVideoId": "dcIs3rAEytk",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Wise Up"
+  },
+  {
+    "name": "The Brian Jonestown Massacre",
+    "birthDate": "1990-06-15",
+    "genres": [
+      "indiepop",
+      "altrock"
+    ],
+    "subgenres": [
+      "noise-pop",
+      "art-pop"
+    ],
+    "enTags": [
+      "bay area indie",
+      "neo-psychedelic",
+      "garage rock",
+      "noise pop",
+      "shoegaze",
+      "alternative rock"
+    ],
+    "youtubeVideoId": "E8cRaaR3qK8",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Bring Me The Head Of Paul McCartney On Heather Mill's Wooden Peg (Dropping Bombs On The White House)"
+  },
+  {
+    "name": "Zainaba",
+    "birthDate": "1960-12-31",
+    "genres": [],
+    "subgenres": [],
+    "enTags": [
+      "musique traditionnelle comorienne",
+      "musique comorienne"
+    ],
+    "youtubeVideoId": "Dw9_ZyEqoYQ",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Wadaha"
+  },
+  {
+    "name": "Morton Feldman",
+    "birthDate": "1926-01-12",
+    "genres": [
+      "classical",
+      "artpop",
+      "jazz",
+      "idm",
+      "ambient"
+    ],
+    "subgenres": [
+      "classical",
+      "contemporary",
+      "avant-garde-pop",
+      "minimalist",
+      "free-jazz",
+      "drone"
+    ],
+    "enTags": [
+      "american contemporary classical",
+      "avant-garde",
+      "contemporary classical",
+      "minimalism",
+      "tzadik",
+      "drone"
+    ],
+    "youtubeVideoId": "Y8al_H6IRaQ",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Rothko Chapel 5"
+  },
+  {
+    "name": "DJ Dean",
+    "birthDate": "1975-10-25",
+    "genres": [
+      "techno"
+    ],
+    "subgenres": [
+      "trance"
+    ],
+    "enTags": [
+      "hard trance",
+      "bubble trance",
+      "hands up"
+    ],
+    "youtubeVideoId": "cDYatzcHl2g",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "It's A Dream - DJ Manian Vs. Yanou Vocal Radio Cut"
+  },
+  {
+    "name": "Triad God",
+    "birthDate": "2019-03-01",
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "enTags": [
+      "experimental electronic",
+      "deconstructed club"
+    ],
+    "youtubeVideoId": "KZJsTb2jSJg",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "BDG"
+  },
+  {
+    "name": "Palmistry",
+    "birthDate": "2016-06-15",
+    "mbid": "e96eba11-9d2b-48e7-9053-1d5987c945f0",
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "enTags": [
+      "proto-hyperpop"
+    ],
+    "youtubeVideoId": "rQswbkk6_Vo",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "My Friend"
+  },
+  {
+    "name": "Jonathan Bree",
+    "birthDate": "1979-09-01",
+    "genres": [],
+    "subgenres": [],
+    "enTags": [
+      "nz indie"
+    ],
+    "youtubeVideoId": "n7kKiB_-h8Y",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "The Primrose Path"
+  },
+  {
+    "name": "Pearl City",
+    "birthDate": "1986-07-05",
+    "mbid": "ad279295-653f-42e1-9aaa-b731df2e78ba",
+    "genres": [],
+    "subgenres": [],
+    "enTags": [
+      "manchester indie"
+    ],
+    "youtubeVideoId": "esDXQf9v4KU",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Down by the Tree"
+  },
+  {
+    "name": "Casey MQ",
+    "birthDate": "1932-04-27",
+    "mbid": "9dd99129-8069-4528-b10d-5ca0179e42eb",
+    "genres": [],
+    "subgenres": [],
+    "enTags": [
+      "bubblegum bass"
+    ],
+    "youtubeVideoId": "gpj6wO6lcWk",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Wings Are Growing"
+  },
+  {
+    "name": "Emahoy Tsege Mariam Gebru",
+    "birthDate": "1923-12-12",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "ethio-jazz",
+      "impressionism"
+    ],
+    "youtubeVideoId": "c5KCfomUgVE",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Song of Abayi"
+  },
+  {
+    "name": "DJH",
+    "birthDate": "1986-06-20",
+    "mbid": "a12c34d3-efd1-4321-acaa-3c1e62ac3e43",
+    "genres": [],
+    "subgenres": [],
+    "youtubeVideoId": "6Ai2jzIHr9c",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Xzit"
+  },
+  {
+    "name": "Ruphay",
+    "birthDate": "1968-06-15",
+    "genres": [
+      "folk"
+    ],
+    "subgenres": [
+      "folk-rock"
+    ],
+    "enTags": [
+      "musica andina",
+      "folklore boliviano"
+    ],
+    "youtubeVideoId": "ud7OG8b3Aks",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Aylluman Cutiripuna"
+  },
+  {
+    "name": "Sigur Rós",
+    "birthDate": "1994-06-15",
+    "genres": [
+      "artpop",
+      "folk",
+      "altrock",
+      "indiepop",
+      "darkwave",
+      "ambient"
+    ],
+    "subgenres": [
+      "art-pop",
+      "chamber-pop",
+      "ambient",
+      "indie-pop"
+    ],
+    "enTags": [
+      "melancholia",
+      "nordic post-rock",
+      "post-rock",
+      "dream pop",
+      "ethereal wave",
+      "chamber pop",
+      "icelandic rock",
+      "compositional ambient",
+      "indie rock"
+    ],
+    "youtubeVideoId": "8L64BcCRDAE",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Svefn-g-englar"
+  },
+  {
+    "name": "Takkyu Ishino",
+    "birthDate": "1967-12-26",
+    "genres": [
+      "techno"
+    ],
+    "subgenres": [
+      "techno"
+    ],
+    "enTags": [
+      "japanese techno"
+    ],
+    "youtubeVideoId": "-A8X8GVLl0M",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "suck me disco"
+  },
+  {
+    "name": "Oxhy",
+    "birthDate": "2021-08-25",
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "enTags": [
+      "drain",
+      "deconstructed club"
+    ],
+    "youtubeVideoId": "rIM8J_8f4RM",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "that which could hurt ourselves"
+  },
+  {
+    "name": "Delia Derbyshire Appreciation Society",
+    "birthDate": "1937-05-05",
+    "mbid": "530068ef-0762-4969-871c-0c2c11e0c105",
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "experimental"
+    ],
+    "enTags": [
+      "experimental ambient"
+    ],
+    "youtubeVideoId": "UvCYPBWZ7b8",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Airlifted"
+  },
+  {
+    "name": "Richard Youngs",
+    "birthDate": "1966-05-29",
+    "genres": [
+      "idm",
+      "folk",
+      "altrock"
+    ],
+    "subgenres": [
+      "experimental",
+      "folk-rock",
+      "freak-folk"
+    ],
+    "enTags": [
+      "experimental folk",
+      "free folk",
+      "scottish indie folk"
+    ],
+    "youtubeVideoId": "QDR4-VJxMx4",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Soon It Will Be Fire"
+  },
+  {
+    "name": "Blackhaine",
+    "birthDate": "2022-04-21",
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "enTags": [
+      "experimental hip hop"
+    ],
+    "youtubeVideoId": "jpWKkJS-ivY",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Stained Materials"
+  },
+  {
+    "name": "Leila K",
+    "birthDate": "1971-09-06",
+    "genres": [
+      "techno"
+    ],
+    "subgenres": [
+      "house"
+    ],
+    "enTags": [
+      "hip house",
+      "eurodance"
+    ],
+    "youtubeVideoId": "q3k58kZCRlM",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Ca plane pour moi"
+  },
+  {
+    "name": "post-hudba",
+    "birthDate": "1995-07-04",
+    "mbid": "b1e26560-60e5-4236-bbdb-9aa5a8d5ee19",
+    "genres": [
+      "techno"
+    ],
+    "subgenres": [
+      "electro"
+    ],
+    "enTags": [
+      "czsk electropop",
+      "czech indie"
+    ],
+    "youtubeVideoId": "rabMiWMDVBE",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Krásný nový ráno"
+  },
+  {
+    "name": "Yung Lean",
+    "birthDate": "1996-07-18",
+    "genres": [],
+    "subgenres": [],
+    "enTags": [
+      "cloud rap",
+      "psychedelic hip hop",
+      "underground hip hop"
+    ],
+    "youtubeVideoId": "hEWPmWprx7Y",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Agony"
+  },
+  {
+    "name": "The Velvet Underground",
+    "birthDate": "1965-01-01",
+    "genres": [
+      "altrock",
+      "artpop",
+      "folk",
+      "industrial",
+      "darkwave",
+      "indiepop",
+      "electronica"
+    ],
+    "subgenres": [
+      "noise",
+      "industrial",
+      "darkwave",
+      "krautrock",
+      "indie-pop",
+      "lo-fi-indie",
+      "art-rock",
+      "glam",
+      "folk-rock"
+    ],
+    "enTags": [
+      "permanent wave",
+      "alternative rock",
+      "melancholia",
+      "protopunk",
+      "rock"
+    ],
+    "youtubeVideoId": "AC7xbqmlluo",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "What Goes On"
+  },
+  {
+    "name": "Sasha Vosk",
+    "birthDate": "1983-09-30",
+    "mbid": "27da1d63-e899-409e-bfab-97e415ffbde3",
+    "genres": [],
+    "subgenres": [],
+    "youtubeVideoId": "ArLrXVjZ278",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Xосhesh?"
+  },
+  {
+    "name": "John Denver",
+    "birthDate": "1943-12-31",
+    "genres": [
+      "folk"
+    ],
+    "subgenres": [
+      "folk-rock"
+    ],
+    "enTags": [
+      "mellow gold",
+      "folk",
+      "folk rock",
+      "singer-songwriter",
+      "classic country pop",
+      "soft rock"
+    ],
+    "youtubeVideoId": "g5sbTHMP0Ig",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Sunshine On My Shoulders"
+  },
+  {
+    "name": "Marina Herlop",
+    "birthDate": "1992-06-15",
+    "genres": [
+      "ambient"
+    ],
+    "subgenres": [],
+    "enTags": [
+      "spectra"
+    ],
+    "youtubeVideoId": "aWZ1gBi2jr0",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "miu"
+  },
+  {
+    "name": "Pavel Milyakov",
+    "birthDate": "1937-09-16",
+    "mbid": "7483798e-a9d0-4e4a-bcd2-d0a4317ea8c0",
+    "genres": [
+      "electronica",
+      "techno"
+    ],
+    "subgenres": [
+      "indietronica",
+      "electro"
+    ],
+    "enTags": [
+      "russian electronic",
+      "new isolationism"
+    ],
+    "youtubeVideoId": "wMyqzASEOJ0",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Strong Willed"
+  },
+  {
+    "name": "Tarta Relena",
+    "birthDate": "2016-06-15",
+    "genres": [
+      "ambient"
+    ],
+    "subgenres": [],
+    "enTags": [
+      "indie catala",
+      "spectra"
+    ],
+    "youtubeVideoId": "AJLYgJ6Xlx4",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Las Alamedas"
+  },
+  {
+    "name": "Ed Schrader's Music Beat",
+    "birthDate": "2012-06-25",
+    "genres": [
+      "darkwave",
+      "indiepop"
+    ],
+    "subgenres": [
+      "noise-pop"
+    ],
+    "enTags": [
+      "baltimore indie",
+      "american post-punk",
+      "noise pop"
+    ],
+    "youtubeVideoId": "g6GHXCg7qSA",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Rats"
+  },
+  {
+    "name": "Osonnya Choir",
+    "birthDate": "1975-06-15",
+    "mbid": "57961a97-3796-4bf7-9f02-a985a8979ae9",
+    "genres": [],
+    "subgenres": [],
+    "youtubeVideoId": "Q27xL4mPkSI",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "В темную нічку"
+  },
+  {
+    "name": "Davishmar",
+    "birthDate": "2022-01-02",
+    "genres": [],
+    "subgenres": [],
+    "youtubeVideoId": "L3XrWoSC2n0",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "A Rose Blooms in Chaos"
+  },
+  {
+    "name": "Kedr Livanskiy",
+    "birthDate": "1990-10-04",
+    "genres": [
+      "electronica",
+      "techno",
+      "idm",
+      "artpop",
+      "ambient"
+    ],
+    "subgenres": [
+      "indietronica",
+      "electro",
+      "experimental",
+      "techno"
+    ],
+    "enTags": [
+      "russian electronic",
+      "russian experimental electronic",
+      "russian techno",
+      "fluxwork",
+      "electra",
+      "spectra"
+    ],
+    "youtubeVideoId": "WvJ9yLnunwQ",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Разрушительный круг"
+  },
+  {
+    "name": "Lorenzo Senni",
+    "birthDate": "1983-06-15",
+    "genres": [
+      "idm",
+      "dnb"
+    ],
+    "subgenres": [
+      "experimental",
+      "grime"
+    ],
+    "enTags": [
+      "italian experimental",
+      "grimewave",
+      "deconstructed club"
+    ],
+    "youtubeVideoId": "48fbn7lLBR4",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Dance Tonight Revolution Tomorrow"
+  },
+  {
+    "name": "Scatman John",
+    "birthDate": "1942-03-13",
+    "genres": [],
+    "subgenres": [],
+    "enTags": [
+      "eurodance"
+    ],
+    "youtubeVideoId": "02vDkMEdIkY",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Scatman's World"
+  },
+  {
+    "name": "The Wedding Present",
+    "birthDate": "1985-06-15",
+    "genres": [
+      "darkwave"
+    ],
+    "subgenres": [],
+    "enTags": [
+      "c86",
+      "uk post-punk"
+    ],
+    "youtubeVideoId": "Lj0eDrVwszw",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "I'm Not Always So Stupid"
+  },
+  {
+    "name": "Jonwayne",
+    "birthDate": "1990-04-02",
+    "genres": [
+      "electronica",
+      "idm"
+    ],
+    "subgenres": [
+      "glitch-pop"
+    ],
+    "enTags": [
+      "wonky",
+      "alternative hip hop"
+    ],
+    "youtubeVideoId": "vMucoAUuRC4",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Out of Sight"
+  },
+  {
+    "name": "Iggy Pop",
+    "birthDate": "1947-04-21",
+    "genres": [
+      "artpop",
+      "altrock",
+      "industrial",
+      "darkwave",
+      "indiepop",
+      "electronica",
+      "folk"
+    ],
+    "subgenres": [
+      "glam",
+      "noise",
+      "industrial",
+      "darkwave",
+      "krautrock",
+      "indie-pop",
+      "lo-fi-indie",
+      "art-rock",
+      "folk-rock"
+    ],
+    "enTags": [
+      "permanent wave",
+      "glam rock",
+      "protopunk",
+      "alternative rock",
+      "rock"
+    ],
+    "youtubeVideoId": "9joKjItYwac",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "I Wanna Be Your Dog (Extended Psych Version)"
+  },
+  {
+    "name": "The Young Gods",
+    "birthDate": "1985-06-15",
+    "genres": [
+      "altrock",
+      "industrial"
+    ],
+    "subgenres": [
+      "industrial"
+    ],
+    "enTags": [
+      "swiss alternative rock",
+      "industrial rock",
+      "industrial",
+      "swiss rock"
+    ],
+    "youtubeVideoId": "C2jKTKG9Tao",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Ophiushi"
+  },
+  {
+    "name": "The Jesus and Mary Chain",
+    "birthDate": "1983-06-15",
+    "genres": [
+      "altrock",
+      "indiepop",
+      "darkwave"
+    ],
+    "subgenres": [
+      "noise-pop",
+      "art-pop",
+      "new-wave"
+    ],
+    "enTags": [
+      "alternative rock",
+      "noise pop",
+      "scottish indie",
+      "post-punk",
+      "uk post-punk",
+      "shoegaze",
+      "new wave",
+      "singer-songwriter",
+      "scottish shoegaze"
+    ],
+    "youtubeVideoId": "CzpdvaH-Pg8",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "War On Peace"
+  },
+  {
+    "name": "Planet 1999",
+    "birthDate": "2021-01-06",
+    "genres": [
+      "artpop",
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "enTags": [
+      "escape room",
+      "hyperpop"
+    ],
+    "youtubeVideoId": "0IuciZAOztE",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Replay"
+  },
+  {
+    "name": "Linkin Park",
+    "birthDate": "1996-01-01",
+    "genres": [
+      "altrock",
+      "industrial",
+      "darkwave",
+      "indiepop",
+      "electronica",
+      "artpop",
+      "folk"
+    ],
+    "subgenres": [
+      "noise",
+      "industrial",
+      "darkwave",
+      "krautrock",
+      "indie-pop",
+      "lo-fi-indie",
+      "art-rock",
+      "glam",
+      "folk-rock"
+    ],
+    "enTags": [
+      "rap metal",
+      "post-grunge",
+      "nu metal",
+      "alternative metal",
+      "rock"
+    ],
+    "youtubeVideoId": "kXYiU_JCYtU",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Numb"
+  },
+  {
+    "name": "Liquid",
+    "birthDate": "1979-06-23",
+    "mbid": "b2e9df97-3deb-4e4e-8193-ab1af10cfd83",
+    "genres": [
+      "darkwave",
+      "techno",
+      "industrial"
+    ],
+    "subgenres": [
+      "techno"
+    ],
+    "enTags": [
+      "rave",
+      "hardcore breaks",
+      "hardcore techno",
+      "bayerischer rap",
+      "bayerischer rap"
+    ],
+    "youtubeVideoId": "i04xP4yWisM",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Sweet Harmony"
+  },
+  {
+    "name": "Gal Go",
+    "birthDate": "2021-02-23",
+    "genres": [],
+    "subgenres": [],
+    "youtubeVideoId": "SRm_bof3blc",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "FLAMA"
+  },
+  {
+    "name": "Dmitry Evgrafov",
+    "birthDate": "1989-06-15",
+    "mbid": "92b1f8d7-a08b-4ad1-8170-951682190646",
+    "genres": [
+      "ambient",
+      "classical"
+    ],
+    "subgenres": [
+      "ambient",
+      "classical"
+    ],
+    "enTags": [
+      "compositional ambient",
+      "neo-classical",
+      "focus"
+    ],
+    "youtubeVideoId": "hMrfaZ56TZI",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Sway"
+  },
+  {
+    "name": "6 Senz",
+    "birthDate": "2017-10-31",
+    "genres": [],
+    "subgenres": [],
+    "enTags": [
+      "drift phonk"
+    ],
+    "youtubeVideoId": "__NKhRAPfDI",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Function"
+  },
+  {
+    "name": "Spacemen 3",
+    "birthDate": "1982-06-15",
+    "genres": [
+      "idm",
+      "altrock",
+      "indiepop",
+      "artpop",
+      "darkwave"
+    ],
+    "subgenres": [
+      "experimental",
+      "art-pop",
+      "noise-pop"
+    ],
+    "enTags": [
+      "experimental rock",
+      "spacegrunge",
+      "dream pop",
+      "shoegaze",
+      "noise pop",
+      "uk post-punk"
+    ],
+    "youtubeVideoId": "pYqFcICTwkM",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "An Evening Of Contemporary Sitar Music - Live"
+  },
+  {
+    "name": "Kelly Moran",
+    "birthDate": "1988-02-17",
+    "genres": [
+      "idm",
+      "classical",
+      "artpop",
+      "techno",
+      "ambient"
+    ],
+    "subgenres": [
+      "experimental",
+      "classical"
+    ],
+    "enTags": [
+      "experimental classical",
+      "prepared piano",
+      "electra",
+      "spectra",
+      "mandible",
+      "new isolationism"
+    ],
+    "youtubeVideoId": "JHLJMlTzTMQ",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Helix - Edit"
+  },
+  {
+    "name": "Minnie Riperton",
+    "birthDate": "1947-11-08",
+    "genres": [
+      "jazz",
+      "electronica",
+      "techno"
+    ],
+    "subgenres": [
+      "soul-jazz",
+      "nu-disco"
+    ],
+    "enTags": [
+      "soul",
+      "motown",
+      "funk",
+      "quiet storm",
+      "disco",
+      "classic soul"
+    ],
+    "youtubeVideoId": "g1kDd6yBQZ4",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Les Fleurs"
+  },
+  {
+    "name": "The Cinematic Orchestra",
+    "birthDate": "1999-06-15",
+    "genres": [
+      "triphop",
+      "ambient"
+    ],
+    "subgenres": [
+      "nu-jazz",
+      "downtempo",
+      "ambient"
+    ],
+    "enTags": [
+      "nu jazz",
+      "downtempo",
+      "compositional ambient"
+    ],
+    "youtubeVideoId": "jikJvWx-KiM",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Wait For Now - Mary Lattimore Rework"
+  },
+  {
+    "name": "Mary Lattimore",
+    "birthDate": "1950-06-15",
+    "genres": [
+      "jazz",
+      "folk",
+      "ambient",
+      "idm",
+      "artpop",
+      "techno"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "ambient-folk",
+      "ambient",
+      "experimental",
+      "art-pop"
+    ],
+    "enTags": [
+      "jazz harp",
+      "pastoral",
+      "experimental ambient",
+      "spectra",
+      "electra",
+      "art pop"
+    ],
+    "youtubeVideoId": "ZgWHW6vCTQQ",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Dreaming of the Kelly Pool"
+  },
+  {
+    "name": "Cassandra Jenkins",
+    "birthDate": "1984-01-01",
+    "genres": [],
+    "subgenres": [],
+    "enTags": [
+      "countrygaze"
+    ],
+    "youtubeVideoId": "eW8XoovSlsM",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Hard Drive"
+  },
+  {
+    "name": "Spiritualized",
+    "birthDate": "1990-06-15",
+    "genres": [
+      "altrock",
+      "indiepop",
+      "artpop"
+    ],
+    "subgenres": [
+      "art-pop",
+      "noise-pop",
+      "chamber-pop"
+    ],
+    "enTags": [
+      "shoegaze",
+      "noise pop",
+      "spacegrunge",
+      "chamber pop",
+      "britpop",
+      "alternative rock"
+    ],
+    "youtubeVideoId": "EcaKOuChJlk",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "I Want You"
+  },
+  {
+    "name": "James Blake",
+    "birthDate": "1988-09-26",
+    "genres": [
+      "artpop",
+      "electronica"
+    ],
+    "subgenres": [
+      "art-pop",
+      "indietronica"
+    ],
+    "enTags": [
+      "uk alternative pop",
+      "indie soul",
+      "art pop",
+      "indietronica"
+    ],
+    "youtubeVideoId": "vOmkOa4ON4s",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Atmosphere"
+  },
+  {
+    "name": "Faye Wong",
+    "birthDate": "1969-08-08",
+    "genres": [],
+    "subgenres": [],
+    "enTags": [
+      "c-pop"
+    ],
+    "youtubeVideoId": "CVy_-gF5M48",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "將愛"
+  },
+  {
+    "name": "Kelsey Lu",
+    "birthDate": "1989-05-12",
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "enTags": [
+      "experimental r&b",
+      "alternative r&b"
+    ],
+    "youtubeVideoId": "SxdbSt5mnRs",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "I'm Not In Love"
+  },
+  {
+    "name": "Yo La Tengo",
+    "birthDate": "1984-06-15",
+    "genres": [
+      "indiepop",
+      "artpop",
+      "electronica",
+      "altrock"
+    ],
+    "subgenres": [
+      "art-pop",
+      "indie-pop",
+      "lo-fi",
+      "noise-pop",
+      "indietronica"
+    ],
+    "enTags": [
+      "dream pop",
+      "indie rock",
+      "new jersey indie",
+      "lo-fi",
+      "noise pop",
+      "alternative rock",
+      "permanent wave",
+      "art pop",
+      "shoegaze",
+      "indietronica"
+    ],
+    "youtubeVideoId": "sl1lN20Mkb8",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Nowhere Near"
+  },
+  {
+    "name": "Sibylle Baier",
+    "birthDate": "1955-02-25",
+    "genres": [
+      "folk"
+    ],
+    "subgenres": [
+      "freak-folk"
+    ],
+    "enTags": [
+      "new weird america"
+    ],
+    "youtubeVideoId": "u0j58Aa88bw",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Tonight"
+  },
+  {
+    "name": "Bing & Ruth",
+    "birthDate": "1903-05-03",
+    "mbid": "2437980f-513a-44fc-80f1-b90d9d7fcf8f",
+    "genres": [
+      "ambient",
+      "folk"
+    ],
+    "subgenres": [
+      "ambient",
+      "ambient-folk",
+      "drone"
+    ],
+    "enTags": [
+      "compositional ambient",
+      "pastoral",
+      "ambient",
+      "drone"
+    ],
+    "youtubeVideoId": "hq1LTgtxirc",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "As Much as Possible"
+  },
+  {
+    "name": "Alan Vega",
+    "birthDate": "1938-06-23",
+    "genres": [
+      "darkwave",
+      "industrial",
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "enTags": [
+      "synth punk",
+      "no wave",
+      "experimental",
+      "experimental rock",
+      "post-punk"
+    ],
+    "youtubeVideoId": "p63uxLCI260",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Nike Soldier"
+  },
+  {
+    "name": "Mekons",
+    "birthDate": "1977-06-15",
+    "genres": [
+      "darkwave"
+    ],
+    "subgenres": [],
+    "enTags": [
+      "cowpunk",
+      "uk post-punk",
+      "post-punk"
+    ],
+    "youtubeVideoId": "71s-T8oUTQs",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Where Were You"
+  },
+  {
+    "name": "Thom Yorke",
+    "birthDate": "1968-10-07",
+    "genres": [
+      "electronica",
+      "idm",
+      "artpop",
+      "indiepop",
+      "altrock"
+    ],
+    "subgenres": [
+      "glitch-pop",
+      "art-rock",
+      "art-pop",
+      "indietronica",
+      "indie-pop"
+    ],
+    "enTags": [
+      "glitch pop",
+      "oxford indie",
+      "art rock",
+      "art pop",
+      "electronica",
+      "indie rock",
+      "alternative rock"
+    ],
+    "youtubeVideoId": "BTZl9KMjbrU",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Suspirium"
+  },
+  {
+    "name": "Colin Stetson",
+    "birthDate": "1975-03-03",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "dark-jazz"
+    ],
+    "enTags": [
+      "dark jazz"
+    ],
+    "youtubeVideoId": "KJHr2DlRog8",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Spindrift"
+  },
+  {
+    "name": "Death Grips",
+    "birthDate": "2010-01-01",
+    "genres": [
+      "industrial",
+      "idm",
+      "artpop"
+    ],
+    "subgenres": [
+      "industrial",
+      "experimental"
+    ],
+    "enTags": [
+      "industrial hip hop",
+      "experimental hip hop",
+      "escape room"
+    ],
+    "youtubeVideoId": "uoZgZT4DGSY",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Hacker"
+  },
+  {
+    "name": "Molchat Doma",
+    "birthDate": "2017-06-15",
+    "genres": [
+      "darkwave"
+    ],
+    "subgenres": [],
+    "enTags": [
+      "sovietwave",
+      "belarusian indie",
+      "russian post-punk"
+    ],
+    "youtubeVideoId": "-6G6AW7oApA",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Волны"
+  },
+  {
+    "name": "Psychic TV",
+    "birthDate": "1982-06-15",
+    "genres": [
+      "industrial",
+      "idm",
+      "darkwave",
+      "techno"
+    ],
+    "subgenres": [
+      "industrial",
+      "experimental",
+      "acid"
+    ],
+    "enTags": [
+      "industrial",
+      "british industrial",
+      "british experimental",
+      "experimental",
+      "experimental rock",
+      "uk post-punk",
+      "acid house"
+    ],
+    "youtubeVideoId": "zglpNUJw4gw",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "The Orchids"
+  },
+  {
+    "name": "The Durutti Column",
+    "birthDate": "1978-06-15",
+    "genres": [
+      "darkwave"
+    ],
+    "subgenres": [],
+    "enTags": [
+      "uk post-punk"
+    ],
+    "youtubeVideoId": "n8rv9AxbQgE",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Sketch for Summer"
+  },
+  {
+    "name": "Panda Bear",
+    "birthDate": "1978-07-17",
+    "genres": [
+      "artpop",
+      "indiepop",
+      "electronica",
+      "darkwave"
+    ],
+    "subgenres": [
+      "experimental-pop",
+      "noise-pop",
+      "chillwave",
+      "art-pop",
+      "indietronica",
+      "indie-pop",
+      "chamber-pop",
+      "synth-pop"
+    ],
+    "enTags": [
+      "experimental pop",
+      "noise pop",
+      "chillwave",
+      "art pop",
+      "indietronica",
+      "indie rock",
+      "chamber pop",
+      "dream pop",
+      "neo-synthpop"
+    ],
+    "youtubeVideoId": "prBaZzYmQrI",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Boys Latin"
+  },
+  {
+    "name": "S.Maharba",
+    "birthDate": "2012-04-24",
+    "genres": [
+      "electronica",
+      "idm"
+    ],
+    "subgenres": [
+      "glitch-pop"
+    ],
+    "enTags": [
+      "abstract beats",
+      "wonky"
+    ],
+    "youtubeVideoId": "NV_ihMAJN3k",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "W.I.G.T.S."
+  },
+  {
+    "name": "TOBACCO",
+    "birthDate": "2016-08-19",
+    "genres": [
+      "electronica",
+      "idm"
+    ],
+    "subgenres": [
+      "glitch-pop"
+    ],
+    "enTags": [
+      "wonky"
+    ],
+    "youtubeVideoId": "Gge-I62AEK8",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Human Om"
+  },
+  {
+    "name": "Eric Copeland",
+    "birthDate": "1952-07-16",
+    "mbid": "885ae336-ef63-465d-a0e7-bdc0a5b788e8",
+    "genres": [
+      "artpop",
+      "indiepop"
+    ],
+    "subgenres": [
+      "experimental-pop",
+      "noise-pop"
+    ],
+    "enTags": [
+      "sound collage",
+      "experimental pop",
+      "noise pop"
+    ],
+    "youtubeVideoId": "3_ICChJB3w4",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Fun Dink Death"
   }
 ]
