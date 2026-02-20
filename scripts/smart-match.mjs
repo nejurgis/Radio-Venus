@@ -743,7 +743,7 @@ async function main() {
 
         // Sanity check: reject implausibly old birth years (MusicBrainz often returns wrong person)
         const year = parseInt(birthDate.split('-')[0]);
-        if (year < 1940) {
+        if (year < 1901) {
           console.log(`  - ${name} (${birthDate}): implausible birth year — skipping`);
           continue;
         }
