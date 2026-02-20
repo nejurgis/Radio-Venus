@@ -2653,6 +2653,24 @@
     ]
   },
   {
+    "name": "Brian McBride",
+    "birthDate": "1966-07-29",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 9.4,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "ambient"
+    ],
+    "subgenres": [
+      "ambient"
+    ],
+    "youtubeVideoId": "_COj0JSPWmc",
+    "backupVideoIds": []
+  },
+  {
     "name": "Burial",
     "birthDate": "1979-12-11",
     "venus": {
@@ -3492,6 +3510,27 @@
       "abstract hip hop"
     ],
     "youtubeVideoId": "BV7AF4q9N8U",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Cluster",
+    "birthDate": "1971-00-00",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 23.4,
+      "decan": 3,
+      "element": "air",
+      "dateApprox": true
+    },
+    "genres": [
+      "darkwave",
+      "ambient"
+    ],
+    "subgenres": [
+      "darkwave",
+      "ambient"
+    ],
+    "youtubeVideoId": "i3G2vYje3-k",
     "backupVideoIds": []
   },
   {
@@ -5661,6 +5700,31 @@
     "backupVideoIds": []
   },
   {
+    "name": "Eraldo Bernocchi",
+    "birthDate": "1963-10-21",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 11.2,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "electronica",
+      "idm",
+      "industrial",
+      "triphop"
+    ],
+    "subgenres": [
+      "ambient",
+      "indietronica",
+      "idm",
+      "industrial"
+    ],
+    "youtubeVideoId": "S7FiYdhlnxI",
+    "backupVideoIds": []
+  },
+  {
     "name": "Erasure",
     "birthDate": "1985-06-15",
     "venus": {
@@ -7212,10 +7276,10 @@
       "compositional ambient",
       "drone"
     ],
-    "youtubeVideoId": "wD7l5wod1-M",
+    "youtubeVideoId": "lzE8cF1Gtvk",
     "backupVideoIds": [
-      "KSEpSpIrt98",
-      "S7FiYdhlnxI"
+      "KyGYK_v9rw4",
+      "3R87tzRCo0s"
     ]
   },
   {
@@ -8528,16 +8592,18 @@
     },
     "genres": [
       "darkwave",
-      "ambient"
+      "ambient",
+      "electronica"
     ],
     "subgenres": [
       "darkwave",
-      "ambient"
+      "ambient",
+      "indietronica"
     ],
     "youtubeVideoId": "KyGYK_v9rw4",
     "backupVideoIds": [
-      "mIYPCxdkIzw",
-      "qRA6THTrwx8"
+      "lzE8cF1Gtvk",
+      "8cPgbxIH_UQ"
     ]
   },
   {
@@ -13769,6 +13835,25 @@
     "backupVideoIds": []
   },
   {
+    "name": "Roger Eno",
+    "birthDate": "1959-01-01",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 22.7,
+      "decan": 3,
+      "element": "earth",
+      "dateApprox": true
+    },
+    "genres": [
+      "ambient"
+    ],
+    "subgenres": [
+      "ambient"
+    ],
+    "youtubeVideoId": "vNwYtllyt3Q",
+    "backupVideoIds": []
+  },
+  {
     "name": "Roly Porter",
     "birthDate": "1927-08-12",
     "venus": {
@@ -16285,6 +16370,27 @@
       "latEhwt1uis",
       "n3nPiBai66M"
     ]
+  },
+  {
+    "name": "The Dead Texan",
+    "birthDate": "2004-00-00",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 9.7,
+      "decan": 1,
+      "element": "air",
+      "dateApprox": true
+    },
+    "genres": [
+      "ambient",
+      "folk"
+    ],
+    "subgenres": [
+      "ambient",
+      "folk-rock"
+    ],
+    "youtubeVideoId": "WMJp6vEAse8",
+    "backupVideoIds": []
   },
   {
     "name": "The End of the Ocean",
