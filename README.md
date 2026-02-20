@@ -144,15 +144,17 @@ Everynoise "fans also like" ──┤  scrobble co-listening vs Spotify data
                 ↓
      Genre tags: Everynoise (primary) → Last.fm tags (fallback) → categorizeGenres()
                 ↓
+     Same raw tags → categorizeSubgenres() → subgenres (same pipeline as build-db)
+                ↓
      [--filter]  Groq vibe check — raw tags sent for aesthetic judgment
                 ↓
-     Append to seed-musicians.json
+     Append to seed-musicians.json (with genres + subgenres + enTags)
 ```
 
 - **Everynoise** (always-on): headless Playwright scrapes `research.cgi` for genres and `artistprofile.cgi` for "fans also like" — typically adds ~15 artists not on Last.fm per run. One shared browser instance per run. `verify-genres.mjs` uses `waitForSelector` (20s timeout) rather than a fixed delay — EN is slow for niche/experimental/jazz artists and a fixed wait caused false "not found" results.
 - **Entity disambiguation**: Wikidata validates P106 occupation (musician/singer/composer/producer/DJ) or P31 instance-of (musical group). MusicBrainz prefers `Person` over `Group`. Both reject year < 1600 or future dates.
 - **MBID deduplication**: MusicBrainz ID stored on entry; catches rename/alias cases (e.g. "Clark" vs "Chris Clark") that name-matching alone misses.
-- **Pre-1940 rejection**: birth years < 1940 flagged as implausible for non-classical contexts — MusicBrainz often returns the wrong person for common names.
+- **Pre-1901 rejection**: birth years < 1901 flagged as implausible for non-classical contexts — MusicBrainz often returns the wrong person for common names.
 - **Groq filter** (`--filter`): raw Last.fm tags (not normalized categories) sent to `llama-3.3-70b` at temperature 0.2 for aesthetic fit judgment against the Radio Venus reference aesthetic.
 - Supports BFS depth (`--depth 2` follows similarity chains two levels deep)
 
@@ -546,6 +548,7 @@ What Claude helped build:
 - SEO layer (meta tags, structured data, crawlable content, robots.txt, sitemap, llms.txt)
 - Valentine's playlist sequencing and the `sequenceIndex` sort fix
 - Everynoise `enTags` pipeline (`--save-tags` flag + build-db enrichment) for future decan/iOS filtering
+- Unified genre/subgenre pipeline — `smart-match` and `build-db` both call `categorizeGenres()` + `categorizeSubgenres()` on the same raw tags, so discovered artists land in seed with consistent genres and subgenres immediately
 - Zodiac nebula early-render (ring visible before DB loads, dots populate async)
 
 The human (Jurgis) brought the astrological premise, musical curation, visual design direction, and all creative decisions. Claude brought the engineering execution and research throughput.
