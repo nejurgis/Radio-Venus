@@ -19,7 +19,7 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import https from 'node:https';
-import { categorizeGenres } from '../src/genres.js';
+import { categorizeGenres, categorizeSubgenres } from '../src/genres.js';
 
 // Load .env (if present) without requiring a package
 const __envPath = join(dirname(fileURLToPath(import.meta.url)), '..', '.env');
@@ -787,7 +787,8 @@ async function main() {
         const venus = calculateVenus(birthDate);
         console.log(`  + ${name} — born ${birthDate} — Venus in ${venus} — [${genres.join(', ')}]`);
 
-        discovered.push({ name, birthDate, ...(mbid ? { mbid } : {}), rawTags, genres });
+        const subgenres = categorizeSubgenres(rawTags);
+        discovered.push({ name, birthDate, ...(mbid ? { mbid } : {}), rawTags, genres, subgenres });
         knownNames.add(key);
         if (mbid) knownMbids.add(mbid);
         nextQueue.push(name); // For depth > 1
