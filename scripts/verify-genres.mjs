@@ -127,22 +127,26 @@ async function getEverynoiseGenres(artistName) {
       ).catch(() => []);
     }
 
-    // Also capture "Spotify genre-ish tags" section (shown as #hashtags below main genres).
-    // These provide important micro-genre context (e.g. #experimental, #art pop for Marina Herlop).
-    const spotifyTags = await page.evaluate(() => {
-      const notes = document.querySelectorAll('.note');
-      for (const note of notes) {
-        if (note.textContent.includes('Spotify genre-ish tags')) {
-          return [...note.querySelectorAll('a')]
-            .map(a => a.textContent.trim().replace(/^#/, '').trim())
-            .filter(Boolean);
-        }
-      }
-      return [];
-    }).catch(() => []);
+    // Also capture "Spotify genre-ish tags" from the artist profile page.
+    // These live in <span title="Spotify genre-ish tags">#experimental, #art pop</span>
+    // on artistprofile.cgi — NOT on the research page.
+    const profileHref = await page.$eval(
+      '#exact + div .artistname a[href*="artistprofile.cgi"]',
+      a => a.href,
+    ).catch(() => null);
 
-    if (spotifyTags.length > 0) {
-      genres = [...new Set([...genres, ...spotifyTags])];
+    if (profileHref) {
+      await page.goto(profileHref, { waitUntil: 'domcontentloaded', timeout: 15000 }).catch(() => null);
+      const spotifyTags = await page.$eval(
+        'span[title="Spotify genre-ish tags"]',
+        span => span.textContent.trim()
+          .split(',')
+          .map(t => t.trim().replace(/^#/, '').trim())
+          .filter(Boolean),
+      ).catch(() => []);
+      if (spotifyTags.length > 0) {
+        genres = [...new Set([...genres, ...spotifyTags])];
+      }
     }
 
     return genres.length > 0 ? genres : null;
