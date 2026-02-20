@@ -1043,7 +1043,9 @@
       "folk",
       "indiepop"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "folk-rock"
+    ],
     "youtubeVideoId": "W0J0m5sU_Ys",
     "backupVideoIds": []
   },
@@ -5223,11 +5225,14 @@
       "element": "earth"
     },
     "genres": [
-      "intercelestial",
       "techno",
-      "jazz"
+      "jazz",
+      "intercelestial"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "techno",
+      "spiritual-jazz"
+    ],
     "youtubeVideoId": "L3XrWoSC2n0",
     "backupVideoIds": []
   },
@@ -9588,8 +9593,8 @@
       "element": "air"
     },
     "genres": [
-      "intercelestial",
-      "hiphop"
+      "hiphop",
+      "intercelestial"
     ],
     "subgenres": [],
     "youtubeVideoId": "ZapOWdA19wk",
@@ -14464,7 +14469,10 @@
       "artpop",
       "techno"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "idm",
+      "techno"
+    ],
     "youtubeVideoId": "QEh0WIY_ZRw",
     "backupVideoIds": []
   },
@@ -16739,8 +16747,8 @@
       "element": "fire"
     },
     "genres": [
-      "intercelestial",
-      "hiphop"
+      "hiphop",
+      "intercelestial"
     ],
     "subgenres": [],
     "youtubeVideoId": "ArLrXVjZ278",
@@ -17728,7 +17736,9 @@
       "indiepop",
       "industrial"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "industrial"
+    ],
     "youtubeVideoId": "tFNnvQLvs7I",
     "backupVideoIds": []
   },
@@ -20029,7 +20039,9 @@
       "decan": 3,
       "element": "earth"
     },
-    "genres": [],
+    "genres": [
+      "intercelestial"
+    ],
     "subgenres": [],
     "youtubeVideoId": "Ai14SX2q2ZU",
     "backupVideoIds": []
