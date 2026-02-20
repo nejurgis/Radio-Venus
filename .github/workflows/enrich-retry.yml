@@ -1,0 +1,47 @@
+name: Enrich enTags (notFound retry)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  retry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm install
+
+      - run: npx playwright install chromium --with-deps
+
+      - name: Run second-pass EN verification (143 artists, ~31 min)
+        run: |
+          node scripts/verify-genres.mjs \
+            --from-report=scripts/notfound-retry.json \
+            --save-tags \
+            --output=scripts/notfound-retry-results.json
+
+      - name: Upload retry results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: notfound-retry-results-${{ github.run_number }}
+          path: scripts/notfound-retry-results.json
+          retention-days: 30
+
+      - name: Commit enriched seed back to master
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scripts/seed-musicians.json
+          git diff --staged --quiet || git commit -m "enrich: add enTags from notFound retry pass [skip ci]"
+          git push
