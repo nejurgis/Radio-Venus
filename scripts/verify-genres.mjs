@@ -75,21 +75,38 @@ console.log(`  estimated time: ~${Math.round(artists.length * 13 / 60)} minutes\
 
 // ── Playwright ────────────────────────────────────────────────────────────────
 let _browser = null;
-async function getBrowser() {
-  if (_browser) return _browser;
+let _browserUseCount = 0;
+const BROWSER_RESTART_EVERY = 50; // restart Chromium every N artists to prevent memory/hang buildup
+
+async function getBrowser(forceRestart = false) {
   const { chromium } = await import('playwright');
-  _browser = await chromium.launch({ headless: true });
+  if (forceRestart || !_browser) {
+    if (_browser) await _browser.close().catch(() => {});
+    _browser = await chromium.launch({ headless: true });
+    _browserUseCount = 0;
+  }
   return _browser;
 }
 
 async function getEverynoiseGenres(artistName) {
+  if (_browserUseCount > 0 && _browserUseCount % BROWSER_RESTART_EVERY === 0) {
+    await getBrowser(true);
+  }
   const browser = await getBrowser();
+  _browserUseCount++;
+
   let page;
+  // Hard per-artist timeout — prevents a hung page from blocking the whole run
+  const ARTIST_TIMEOUT = 60000;
   try {
     page = await browser.newPage();
     await page.setExtraHTTPHeaders({ 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' });
     const url = `https://everynoise.com/research.cgi?name=${encodeURIComponent(artistName)}&mode=artist`;
-    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
+
+    await Promise.race([
+      page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 }),
+      new Promise((_, reject) => setTimeout(() => reject(new Error('artist timeout')), ARTIST_TIMEOUT)),
+    ]);
 
     // Wait for genre links to actually appear in the DOM (up to 20s) rather than a fixed delay.
     // EN's database is huge and response time varies widely — fixed 8s was too short for many artists.
