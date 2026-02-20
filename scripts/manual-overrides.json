@@ -55,6 +55,13 @@
   "Uhm Jung Hwa":                { "birthDate": "1969-08-17" },
   "Yung Lean":                   { "birthDate": "1996-07-18" },
 
+  "A. G. Cook":     { "genres": ["idm", "hiphop", "dnb", "artpop"] },
+  "Angel Olsen":    { "genres": ["artpop", "folk", "indiepop"] },
+  "Ólafur Arnalds": { "genres": ["darkwave"] },
+  "Ouri":           { "genres": ["idm", "artpop", "techno"] },
+  "Sam Gendel":     { "genres": ["ambient"] },
+  "Sonic Youth":    { "genres": ["altrock", "indiepop", "industrial"] },
+
   "illi mel":       { "birthDate": "2023-04-07", "genres": ["intercelestial"] },
   "Casey MQ":       { "birthDate": "1993-06-15" },
   "Bing & Ruth":    { "birthDate": "2006-06-15" },

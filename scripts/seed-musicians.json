@@ -11103,8 +11103,7 @@
     "name": "Bloodz Boi",
     "birthDate": "2022-12-02",
     "genres": [
-      "electronica",
-      "techno"
+      "electronica"
     ],
     "subgenres": [
       "indietronica",
@@ -11360,8 +11359,7 @@
     "birthDate": "2022-11-25",
     "genres": [
       "idm",
-      "dnb",
-      "triphop"
+      "dnb"
     ],
     "subgenres": [
       "experimental",
@@ -11390,9 +11388,7 @@
     "genres": [
       "idm",
       "artpop",
-      "dnb",
-      "electronica",
-      "techno"
+      "electronica"
     ],
     "subgenres": [
       "experimental",
@@ -11461,7 +11457,9 @@
     "name": "Jayla Kai",
     "birthDate": "1969-07-23",
     "mbid": "0ec0657f-860d-4cc6-996c-09ba76fffc76",
-    "genres": [],
+    "genres": [
+      "hiphop"
+    ],
     "subgenres": [],
     "youtubeVideoId": "ZapOWdA19wk",
     "backupVideoIds": [],
@@ -11552,7 +11550,6 @@
     "mbid": "0a25507b-d682-49ac-b378-f26a651799fe",
     "genres": [
       "electronica",
-      "techno",
       "idm",
       "artpop"
     ],
@@ -11579,7 +11576,6 @@
     "birthDate": "2021-07-23",
     "genres": [
       "idm",
-      "dnb",
       "artpop"
     ],
     "subgenres": [
@@ -12329,11 +12325,7 @@
     "genres": [
       "altrock",
       "artpop",
-      "folk",
-      "industrial",
-      "darkwave",
-      "indiepop",
-      "electronica"
+      "folk"
     ],
     "subgenres": [
       "noise",
@@ -12362,7 +12354,9 @@
     "name": "Sasha Vosk",
     "birthDate": "1983-09-30",
     "mbid": "27da1d63-e899-409e-bfab-97e415ffbde3",
-    "genres": [],
+    "genres": [
+      "hiphop"
+    ],
     "subgenres": [],
     "youtubeVideoId": "ArLrXVjZ278",
     "backupVideoIds": [],
@@ -12411,8 +12405,7 @@
     "birthDate": "1937-09-16",
     "mbid": "7483798e-a9d0-4e4a-bcd2-d0a4317ea8c0",
     "genres": [
-      "electronica",
-      "techno"
+      "electronica"
     ],
     "subgenres": [
       "indietronica",
@@ -12477,7 +12470,10 @@
   {
     "name": "Davishmar",
     "birthDate": "2022-01-02",
-    "genres": [],
+    "genres": [
+      "techno",
+      "jazz"
+    ],
     "subgenres": [],
     "youtubeVideoId": "L3XrWoSC2n0",
     "backupVideoIds": [],
@@ -12517,8 +12513,7 @@
     "name": "Lorenzo Senni",
     "birthDate": "1983-06-15",
     "genres": [
-      "idm",
-      "dnb"
+      "idm"
     ],
     "subgenres": [
       "experimental",
@@ -12587,12 +12582,7 @@
     "birthDate": "1947-04-21",
     "genres": [
       "artpop",
-      "altrock",
-      "industrial",
-      "darkwave",
-      "indiepop",
-      "electronica",
-      "folk"
+      "altrock"
     ],
     "subgenres": [
       "glam",
@@ -12691,12 +12681,7 @@
     "birthDate": "1996-01-01",
     "genres": [
       "altrock",
-      "industrial",
-      "darkwave",
-      "indiepop",
-      "electronica",
-      "artpop",
-      "folk"
+      "industrial"
     ],
     "subgenres": [
       "noise",
@@ -12726,7 +12711,6 @@
     "birthDate": "1979-06-23",
     "mbid": "b2e9df97-3deb-4e4e-8193-ab1af10cfd83",
     "genres": [
-      "darkwave",
       "techno",
       "industrial"
     ],
@@ -12849,7 +12833,6 @@
     "name": "Minnie Riperton",
     "birthDate": "1947-11-08",
     "genres": [
-      "jazz",
       "electronica",
       "techno"
     ],
