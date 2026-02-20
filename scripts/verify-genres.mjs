@@ -127,6 +127,24 @@ async function getEverynoiseGenres(artistName) {
       ).catch(() => []);
     }
 
+    // Also capture "Spotify genre-ish tags" section (shown as #hashtags below main genres).
+    // These provide important micro-genre context (e.g. #experimental, #art pop for Marina Herlop).
+    const spotifyTags = await page.evaluate(() => {
+      const notes = document.querySelectorAll('.note');
+      for (const note of notes) {
+        if (note.textContent.includes('Spotify genre-ish tags')) {
+          return [...note.querySelectorAll('a')]
+            .map(a => a.textContent.trim().replace(/^#/, '').trim())
+            .filter(Boolean);
+        }
+      }
+      return [];
+    }).catch(() => []);
+
+    if (spotifyTags.length > 0) {
+      genres = [...new Set([...genres, ...spotifyTags])];
+    }
+
     return genres.length > 0 ? genres : null;
   } catch {
     return null;

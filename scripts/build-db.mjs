@@ -271,6 +271,8 @@ async function main() {
           for (const g of ov.genres) genreSet.add(g);
         }
         const genres = [...genreSet];
+        // Auto-assign intercelestial for artists with no recognized genre (can trickle down later)
+        if (genres.length === 0) genres.push('intercelestial');
 
         // Build subgenres: start from manual curation, enrich with EN tags, fallback to genre names
         const subgenreSet = new Set(entry.subgenres || []);
