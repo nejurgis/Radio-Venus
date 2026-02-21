@@ -2076,6 +2076,8 @@ button.is-pressed svg,
 
 .index-sign-group {
   margin-bottom: 0.7rem;
+  content-visibility: auto; /* <--- The magic bullet */
+  contain-intrinsic-size: 0 200px; /* Gives the browser a rough height estimate */
 }
 
 .index-sign-heading {
@@ -2092,24 +2094,31 @@ button.is-pressed svg,
 }
 
 .index-artist-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: block; 
+  text-align: justify;
+  text-align-last: justify; 
+  text-justify: inter-word;
   text-transform: uppercase;
-  gap: 0;
+  line-height: 0.05; /* <--- Go below 1 to cut into the font's invisible bounding box */
 }
 
 .index-artist {
+  display: inline-block; 
+  white-space: nowrap;   
   font-family: var(--font-mono);
   font-size: 0.5rem;
   color: var(--text-dim);
   opacity: 0.6;
-  line-height: 1.01;
   cursor: default;
   font-weight: 500;
+  
+  /* The two critical fixes */
+  line-height: 0.85;       
+  vertical-align: middle;  /* Stops the baseline from pushing the row taller */
 }
 
 .index-artist::after {
-  content: ' ·  ';
+  content: ' \00B7 '; /* Using the unicode for a middle dot with explicit spaces */
   opacity: 0.35;
 }
 

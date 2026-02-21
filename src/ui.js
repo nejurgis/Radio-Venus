@@ -543,8 +543,8 @@ export function renderArtistIndex(db) {
     html += `<div class="index-artist-list">`;
     html += artists.map(a => {
       const deg = Math.round(a.venus?.degree || 0);
-      return `<span class="index-artist" title="${sign} ${deg}°">${a.name}</span>`;
-    }).join('');
+      return `<span class="index-artist" title="${sign} ${deg}°">${a.name} ${deg}°</span>`;
+    }).join(' '); // <-- Change this to a space
     html += `</div></div>`;
   });
 
