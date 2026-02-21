@@ -2126,10 +2126,10 @@ button.is-pressed svg,
   content: '';
 }
 
-.index-artist:hover {
+/* .index-artist:hover {
   opacity: 1;
   color: var(--text-bright);
-}
+} */
 
 /* ── SEO-only content (in DOM for crawlers, visually hidden) ───────────────── */
 
