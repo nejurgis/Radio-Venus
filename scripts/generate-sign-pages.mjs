@@ -201,6 +201,14 @@ for (const sign of SIGNS) {
       })),
     },
     { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': faqEntities },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'Radio Venus', 'item': 'https://radio-venus.club/' },
+        { '@type': 'ListItem', 'position': 2, 'name': `Venus in ${sign}`, 'item': url },
+      ],
+    },
   ]);
 
   const metaDesc = `${artists.length} musicians with Venus in ${sign}. ${desc.slice(0, 130).replace(/"/g, '&quot;')}`;
@@ -255,7 +263,7 @@ for (const sign of SIGNS) {
       .map(s => `<a href="/sign/${s.toLowerCase()}/${genre}/">${GLYPHS[s]} ${s}</a>`)
       .join('\n      ');
 
-    const faqSchema = JSON.stringify({
+    const faqSchema = JSON.stringify([{
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
       'mainEntity': [
@@ -273,7 +281,17 @@ for (const sign of SIGNS) {
           'acceptedAnswer': { '@type': 'Answer', 'text': desc },
         },
       ],
-    });
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'Radio Venus', 'item': 'https://radio-venus.club/' },
+        { '@type': 'ListItem', 'position': 2, 'name': `Venus in ${sign}`, 'item': `https://radio-venus.club/sign/${slug}/` },
+        { '@type': 'ListItem', 'position': 3, 'name': genreLabel, 'item': url },
+      ],
+    },
+    ]);
 
     const title = `Venus in ${sign} — ${genreLabel} Musicians | Radio Venus`;
     const metaDesc = `${artists.length} ${genreLabel} musicians with Venus in ${sign}. ${desc.slice(0, 110).replace(/"/g, '&quot;')}`;
