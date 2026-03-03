@@ -6,13 +6,63 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://radio-venus.club/#moon</loc>
-    <changefreq>daily</changefreq>
+    <loc>https://radio-venus.club/sign/aries/</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://radio-venus.club/#about</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://radio-venus.club/sign/taurus/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/sign/gemini/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/sign/cancer/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/sign/leo/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/sign/virgo/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/sign/libra/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/sign/scorpio/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/sign/sagittarius/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/sign/capricorn/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/sign/aquarius/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/sign/pisces/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
