@@ -1,0 +1,142 @@
+import fs from 'fs';
+
+const SIGNS = ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo',
+               'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'];
+
+const GLYPHS = {
+  Aries: '♈', Taurus: '♉', Gemini: '♊', Cancer: '♋', Leo: '♌', Virgo: '♍',
+  Libra: '♎', Scorpio: '♏', Sagittarius: '♐', Capricorn: '♑', Aquarius: '♒', Pisces: '♓',
+};
+
+const db = JSON.parse(fs.readFileSync('./public/data/musicians.json', 'utf8'))
+  .filter(a => a.name !== '@' && a.venus?.sign);
+
+// Extract sign descriptions from the source index.html (avoids duplication)
+const sourceHtml = fs.readFileSync('./index.html', 'utf8');
+const descriptions = {};
+for (const sign of SIGNS) {
+  const m = sourceHtml.match(new RegExp(`id="venus-${sign.toLowerCase()}"[\\s\\S]*?<p>([\\s\\S]*?)<\\/p>`));
+  descriptions[sign] = m ? m[1].replace(/\s+/g, ' ').trim() : '';
+}
+
+const CSS = `
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --bg: #0e0b14; --text: #e0d8ee; --muted: #9080a8; --accent: #c8a8e8; --border: #2a2040; }
+  body { background: var(--bg); color: var(--text); font-family: 'Archivo', sans-serif;
+         font-size: 16px; line-height: 1.6; padding: 2rem 1rem; max-width: 760px; margin: 0 auto; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  header { margin-bottom: 3rem; font-size: 0.875rem; color: var(--muted); }
+  h1 { font-family: 'EB Garamond', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 400;
+       margin-bottom: 1.25rem; letter-spacing: -0.02em; }
+  .sign-desc { font-family: 'EB Garamond', serif; font-size: 1.125rem; color: var(--muted);
+               margin-bottom: 2rem; line-height: 1.7; font-style: italic; }
+  .artist-count { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;
+                  color: var(--muted); margin-bottom: 1.25rem; }
+  ul.artist-list { list-style: none; border-top: 1px solid var(--border); }
+  ul.artist-list li { display: flex; justify-content: space-between; align-items: baseline;
+                      padding: 0.6rem 0; border-bottom: 1px solid var(--border); gap: 1rem; }
+  .artist-name { font-weight: 500; }
+  .artist-meta { font-size: 0.8rem; color: var(--muted); white-space: nowrap; }
+  .cta { margin-top: 3rem; padding: 1.5rem; border: 1px solid var(--border); border-radius: 4px;
+         font-family: 'EB Garamond', serif; font-size: 1.05rem; color: var(--muted); }
+  .cta a { color: var(--text); }
+`;
+
+for (const sign of SIGNS) {
+  const dir = `./dist/sign/${sign.toLowerCase()}`;
+  fs.mkdirSync(dir, { recursive: true });
+
+  const artists = db
+    .filter(a => a.venus.sign === sign)
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  const desc = descriptions[sign];
+  const glyph = GLYPHS[sign];
+  const count = artists.length;
+  const slug = sign.toLowerCase();
+
+  const metaDesc = `${count} musicians with Venus in ${sign}. ${desc.slice(0, 130).replace(/"/g, '&quot;')}`;
+
+  const schema = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    'name': `Venus in ${sign} Musicians`,
+    'description': desc,
+    'url': `https://radio-venus.club/sign/${slug}/`,
+    'itemListElement': artists.map((a, i) => ({
+      '@type': 'ListItem',
+      'position': i + 1,
+      'name': a.name,
+      'description': `Venus in ${sign} ${Math.round(a.venus.degree || 0)}°`,
+    })),
+  });
+
+  const listItems = artists.map(a => {
+    const deg = Math.round(a.venus.degree || 0);
+    const genres = (a.genres || []).join(', ');
+    return `    <li>
+      <span class="artist-name">${a.name}</span>
+      <span class="artist-meta">${deg}° ${sign}${genres ? ` · ${genres}` : ''}</span>
+    </li>`;
+  }).join('\n');
+
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venus in ${sign} Musicians | Radio Venus</title>
+  <meta name="description" content="${metaDesc}">
+  <link rel="canonical" href="https://radio-venus.club/sign/${slug}/" />
+  <meta property="og:title" content="Venus in ${sign} Musicians | Radio Venus">
+  <meta property="og:description" content="${metaDesc}">
+  <meta property="og:url" content="https://radio-venus.club/sign/${slug}/">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <script type="application/ld+json">${schema}</script>
+  <style>${CSS}</style>
+</head>
+<body>
+  <header>
+    <a href="/">← Radio Venus</a>
+  </header>
+  <main>
+    <h1>${glyph} Venus in ${sign}</h1>
+    <p class="sign-desc">${desc}</p>
+    <p class="artist-count">${count} musicians in the database</p>
+    <ul class="artist-list">
+${listItems}
+    </ul>
+    <div class="cta">
+      <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
+    </div>
+  </main>
+</body>
+</html>`;
+
+  fs.writeFileSync(`${dir}/index.html`, html);
+  console.log(`  /sign/${slug}/  (${count} artists)`);
+}
+
+// Update dist/sitemap.xml to include sign pages
+const signUrls = SIGNS.map(sign => `  <url>
+    <loc>https://radio-venus.club/sign/${sign.toLowerCase()}/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>`).join('\n');
+
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://radio-venus.club/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+${signUrls}
+</urlset>`;
+
+fs.writeFileSync('./dist/sitemap.xml', sitemap);
+console.log('  sitemap.xml updated');

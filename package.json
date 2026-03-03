@@ -5,12 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/generate-sign-pages.mjs",
     "build:db": "node scripts/build-db.mjs",
     "db:import": "node scripts/db-import.mjs",
     "db:stats": "node scripts/db-stats.mjs",
     "preview": "vite preview",
-    "deploy": "vite build && npx gh-pages -d dist"
+    "deploy": "npm run build && npx gh-pages -d dist"
   },
   "dependencies": {
     "astronomy-engine": "^2.1.0",
