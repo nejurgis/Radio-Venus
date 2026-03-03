@@ -1080,55 +1080,55 @@ function tick() {
     ctx.restore();
   }
 
-  // ── Sun dot ──────────────────────────────────────────────────────────────────
-  if (sunDot) {
-    const sAngle = (-(sunDot.deg) - 90 + rot) * Math.PI / 180;
-    const sx = cx + midR * Math.cos(sAngle);
-    const sy = cy + midR * Math.sin(sAngle);
+// ── Sun dot ──────────────────────────────────────────────────────────────────
+if (sunDot) {
+  const sAngle = (-(sunDot.deg) - 90 + rot) * Math.PI / 180;
+  const sx = cx + midR * Math.cos(sAngle);
+  const sy = cy + midR * Math.sin(sAngle);
 
-    const sunR   = isZoomed ? 5 : Math.min(11, minDim * 0.024);
-    const coronaR = sunR * 4.5;
+  const sunR   = isZoomed ? 6 : Math.min(12, minDim * 0.025);
+  const coronaR = sunR * 5.0;
 
-    // 1. Outer corona haze (additive)
+  // 1. Outer Corona Haze (Warm Burnt Orange)
+  ctx.save();
+  ctx.globalCompositeOperation = 'screen'; 
+  const coronaG = ctx.createRadialGradient(sx, sy, 0, sx, sy, coronaR);
+  coronaG.addColorStop(0,   'rgba(255, 160,  60, 0.55)'); // Golden-orange
+  coronaG.addColorStop(0.3, 'rgba(255, 100,  20, 0.30)'); // Deep orange
+  coronaG.addColorStop(0.7, 'rgba(180,  50,  10, 0.10)'); // Soft rust/red-orange
+  coronaG.addColorStop(1,   'rgba(100,  20,   0, 0)');
+  ctx.fillStyle = coronaG;
+  ctx.beginPath();
+  ctx.arc(sx, sy, coronaR, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+
+  // 2. Inner Solar Disc (White core bleeding into golden-fire)
+  ctx.save();
+  ctx.globalCompositeOperation = 'lighter'; 
+  const discG = ctx.createRadialGradient(sx - sunR * 0.2, sy - sunR * 0.2, 0, sx, sy, sunR * 1.3);
+  discG.addColorStop(0,   'rgba(255, 250, 240, 1.00)'); // Bright hot core
+  discG.addColorStop(0.2, 'rgba(255, 180,  80, 0.95)'); // Bright gold
+  discG.addColorStop(0.6, 'rgba(255,  80,  20, 0.70)'); // Fiery orange
+  discG.addColorStop(1,   'rgba(200,  40,   0, 0)');    // Fade into background
+  ctx.fillStyle = discG;
+  ctx.beginPath();
+  ctx.arc(sx, sy, sunR * 1.3, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+
+  // 3. Label
+  if (isZoomed) {
     ctx.save();
-    ctx.globalCompositeOperation = 'lighter';
-    const coronaG = ctx.createRadialGradient(sx, sy, 0, sx, sy, coronaR);
-    coronaG.addColorStop(0,   'rgba(255, 240, 160, 0.60)');
-    coronaG.addColorStop(0.2, 'rgba(255, 200,  80, 0.35)');
-    coronaG.addColorStop(0.6, 'rgba(255, 150,  40, 0.10)');
-    coronaG.addColorStop(1,   'rgba(255, 100,  20, 0)');
-    ctx.fillStyle = coronaG;
-    ctx.beginPath();
-    ctx.arc(sx, sy, coronaR, 0, Math.PI * 2);
-    ctx.fill();
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.font         = '1.4px sans-serif'; 
+    ctx.textAlign    = 'center';
+    ctx.textBaseline = 'top';
+    ctx.fillStyle    = 'rgba(255, 180, 100, 0.85)'; // Warm gold text
+    ctx.fillText('☉ Sun', sx, sy + sunR * 1.6);
     ctx.restore();
-
-    // 2. Solar disc
-    ctx.save();
-    ctx.globalCompositeOperation = 'lighter';
-    const discG = ctx.createRadialGradient(sx - sunR * 0.25, sy - sunR * 0.25, sunR * 0.05, sx, sy, sunR * 1.3);
-    discG.addColorStop(0,   'rgba(255, 255, 230, 1.00)');
-    discG.addColorStop(0.4, 'rgba(255, 230, 120, 0.95)');
-    discG.addColorStop(0.8, 'rgba(255, 180,  50, 0.70)');
-    discG.addColorStop(1,   'rgba(255, 120,  20, 0)');
-    ctx.fillStyle = discG;
-    ctx.beginPath();
-    ctx.arc(sx, sy, sunR * 1.3, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.restore();
-
-    // 3. Label
-    if (isZoomed) {
-      ctx.save();
-      ctx.globalCompositeOperation = 'source-over';
-      ctx.font         = '1.3px monospace';
-      ctx.textAlign    = 'center';
-      ctx.textBaseline = 'top';
-      ctx.fillStyle    = 'rgba(255, 200, 80, 0.9)';
-      ctx.fillText('☉ Sun', sx, sy + sunR * 1.5 + 0.95);
-      ctx.restore();
-    }
   }
+}
 
   // ── Moon dot ─────────────────────────────────────────────────────────────────
   if (moonDot && moonBirth > 0) {

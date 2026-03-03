@@ -9,15 +9,23 @@ function send(event, params) {
 
 // ── 1. Heartbeat: periodic ping while music is playing ───────────────────────
 let heartbeatInterval = null;
-let sessionListenSec = 0;
 
+// Removed sessionListenSec totalizer to prevent GA4 double-counting
 export function startHeartbeat() {
   stopHeartbeat();
   heartbeatInterval = setInterval(() => {
-    sessionListenSec += 30;
+    // Look up the current track to provide context to the heartbeat
+    // Assuming 'tracks' and 'currentTrackIndex' are available in this scope or imported
+    const currentTrack = typeof tracks !== 'undefined' ? tracks[currentTrackIndex] : null;
+
     send('listening_heartbeat', {
       event_category: 'engagement',
-      value: sessionListenSec,
+      // 'value' should be the constant increment (30 seconds)
+      value: 30, 
+      // This matches the Custom Dimension you registered in GA4
+      artist: currentTrack ? currentTrack.name : 'Unknown',
+      // If you have a 'genre' or 'sign' dimension, add it here too
+      genre: typeof playingGenreId !== 'undefined' ? playingGenreId : 'general'
     });
   }, 30_000);
 }
@@ -26,7 +34,6 @@ export function stopHeartbeat() {
   clearInterval(heartbeatInterval);
   heartbeatInterval = null;
 }
-
 // ── 2. Song events ───────────────────────────────────────────────────────────
 
 export function trackSongStart(artist, genre) {
