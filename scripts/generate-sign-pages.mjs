@@ -4,8 +4,8 @@ const SIGNS = ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo',
                'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'];
 
 const GLYPHS = {
-  Aries: '♈', Taurus: '♉', Gemini: '♊', Cancer: '♋', Leo: '♌', Virgo: '♍',
-  Libra: '♎', Scorpio: '♏', Sagittarius: '♐', Capricorn: '♑', Aquarius: '♒', Pisces: '♓',
+  Aries: 'A', Taurus: 'B', Gemini: 'C', Cancer: 'D', Leo: 'E', Virgo: 'F',
+  Libra: 'G', Scorpio: 'H', Sagittarius: 'J', Capricorn: 'K', Aquarius: 'L', Pisces: 'M',
 };
 
 const GENRE_LABELS = {
@@ -85,6 +85,12 @@ function genreNav(currentSign, currentGenre = null) {
 }
 
 const CSS = `
+  @font-face {
+    font-family: 'Zodiac St';
+    src: url('/assets/ZodiacSt.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     background: #0a0a0c;
@@ -122,10 +128,17 @@ const CSS = `
   .breadcrumb a { color: rgba(255,255,255,0.3); background: none; }
   .breadcrumb a:hover { color: rgba(255,255,255,0.7); }
   .breadcrumb span { color: rgba(255,255,255,0.15); margin: 0 0.35em; }
-  h1 {
-    font-family: 'EB Garamond', serif; font-weight: 400;
-    font-size: clamp(2rem, 6vw, 3rem); letter-spacing: -0.02em;
-    color: #fff; margin-bottom: 1.5rem; line-height: 1.1;
+  .sign-lead {
+    text-align: center; margin-bottom: 1.5rem;
+  }
+  .zodiac-char {
+    font-family: 'Zodiac St', serif;
+    font-size: 5rem; display: block; line-height: 1;
+    margin-bottom: 0.5rem; color: #fff;
+  }
+  .sign-name {
+    display: block; font-size: 0.6rem; letter-spacing: 0.1em;
+    text-transform: lowercase; color: #fff; text-align: center;
   }
   .sign-desc {
     font-size: 1rem; line-height: 1.4;
@@ -272,7 +285,10 @@ ${head(title, metaDesc, url, schema)}
 <body>
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
-    <h1>${glyph} Venus in ${sign}</h1>
+    <p class="sign-lead">
+      <span class="zodiac-char">${glyph}</span>
+      <span class="sign-name">Venus in ${sign}</span>
+    </p>
     <p class="sign-desc">${desc}</p>
     ${genreNav(sign)}
     <p class="artist-count">${artists.length} musicians in the database</p>
@@ -363,7 +379,10 @@ ${head(title, metaDesc, url, faqSchema)}
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
     <p class="breadcrumb"><a href="/sign/${slug}/">Venus in ${sign}</a><span>›</span>${genreLabel}</p>
-    <h1>${glyph} Venus in ${sign} — ${genreLabel}</h1>
+    <p class="sign-lead">
+      <span class="zodiac-char">${glyph}</span>
+      <span class="sign-name">Venus in ${sign} — ${genreLabel}</span>
+    </p>
     <p class="sign-desc">${desc}</p>
     ${genreNav(sign, genre)}
     <p class="artist-count">${artists.length} musicians in the database</p>
