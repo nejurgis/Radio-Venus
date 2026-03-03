@@ -15,6 +15,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=EB+Garamond:ital,wght@0,400;1,400&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
   <script type="application/ld+json">[{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which IDM artists have Venus in Aquarius?","acceptedAnswer":{"@type":"Answer","text":"Akira Rabelais, Alex Somers, Bill Orcutt, Darkstar, Drumloop, Foodman, George Clanton, Howlround and 28 more."}},{"@type":"Question","name":"What is Venus in Aquarius?","acceptedAnswer":{"@type":"Answer","text":"Experimental, detached, futuristic. These musicians hear sounds from tomorrow — electronic pioneers, avant-garde provocateurs, artists who would rather invent a genre than join one. Their beauty is cerebral and strange, and it often takes years for everyone else to catch up."}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Radio Venus","item":"https://radio-venus.club/"},{"@type":"ListItem","position":2,"name":"Venus in Aquarius","item":"https://radio-venus.club/sign/aquarius/"},{"@type":"ListItem","position":3,"name":"IDM","item":"https://radio-venus.club/sign/aquarius/idm/"}]}]</script>
   <style>
+  @font-face {
+    font-family: 'Zodiac St';
+    src: url('/assets/ZodiacSt.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     background: #0a0a0c;
@@ -52,10 +58,17 @@
   .breadcrumb a { color: rgba(255,255,255,0.3); background: none; }
   .breadcrumb a:hover { color: rgba(255,255,255,0.7); }
   .breadcrumb span { color: rgba(255,255,255,0.15); margin: 0 0.35em; }
-  h1 {
-    font-family: 'EB Garamond', serif; font-weight: 400;
-    font-size: clamp(2rem, 6vw, 3rem); letter-spacing: -0.02em;
-    color: #fff; margin-bottom: 1.5rem; line-height: 1.1;
+  .sign-lead {
+    text-align: center; margin-bottom: 1.5rem;
+  }
+  .zodiac-char {
+    font-family: 'Zodiac St', serif;
+    font-size: 5rem; display: block; line-height: 1;
+    margin-bottom: 0.5rem; color: #fff;
+  }
+  .sign-name {
+    display: block; font-size: 0.6rem; letter-spacing: 0.1em;
+    text-transform: lowercase; color: #fff; text-align: center;
   }
   .sign-desc {
     font-size: 1rem; line-height: 1.4;
@@ -106,7 +119,10 @@
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
     <p class="breadcrumb"><a href="/sign/aquarius/">Venus in Aquarius</a><span>›</span>IDM</p>
-    <h1>♒ Venus in Aquarius — IDM</h1>
+    <p class="sign-lead">
+      <span class="zodiac-char">L</span>
+      <span class="sign-name">Venus in Aquarius — IDM</span>
+    </p>
     <p class="sign-desc">Experimental, detached, futuristic. These musicians hear sounds from tomorrow — electronic pioneers, avant-garde provocateurs, artists who would rather invent a genre than join one. Their beauty is cerebral and strange, and it often takes years for everyone else to catch up.</p>
     <nav class="genre-nav" aria-label="Filter by genre">
     <p class="nav-label">Filter by genre</p>
@@ -281,34 +297,34 @@
     <nav class="sign-nav sibling-nav" aria-label="Same genre, other signs">
       <p class="nav-label">IDM by other signs</p>
       <div class="sign-links">
-      <a href="/sign/aries/idm/">♈ Aries</a>
-      <a href="/sign/taurus/idm/">♉ Taurus</a>
-      <a href="/sign/gemini/idm/">♊ Gemini</a>
-      <a href="/sign/cancer/idm/">♋ Cancer</a>
-      <a href="/sign/leo/idm/">♌ Leo</a>
-      <a href="/sign/virgo/idm/">♍ Virgo</a>
-      <a href="/sign/libra/idm/">♎ Libra</a>
-      <a href="/sign/scorpio/idm/">♏ Scorpio</a>
-      <a href="/sign/sagittarius/idm/">♐ Sagittarius</a>
-      <a href="/sign/capricorn/idm/">♑ Capricorn</a>
-      <a href="/sign/pisces/idm/">♓ Pisces</a>
+      <a href="/sign/aries/idm/">A Aries</a>
+      <a href="/sign/taurus/idm/">B Taurus</a>
+      <a href="/sign/gemini/idm/">C Gemini</a>
+      <a href="/sign/cancer/idm/">D Cancer</a>
+      <a href="/sign/leo/idm/">E Leo</a>
+      <a href="/sign/virgo/idm/">F Virgo</a>
+      <a href="/sign/libra/idm/">G Libra</a>
+      <a href="/sign/scorpio/idm/">H Scorpio</a>
+      <a href="/sign/sagittarius/idm/">J Sagittarius</a>
+      <a href="/sign/capricorn/idm/">K Capricorn</a>
+      <a href="/sign/pisces/idm/">M Pisces</a>
       </div>
     </nav>
     <nav class="sign-nav" aria-label="Browse signs">
     <p class="nav-label">Browse all signs</p>
     <div class="sign-links">
-      <a href="/sign/aries/idm/">♈ Aries</a>
-      <a href="/sign/taurus/idm/">♉ Taurus</a>
-      <a href="/sign/gemini/idm/">♊ Gemini</a>
-      <a href="/sign/cancer/idm/">♋ Cancer</a>
-      <a href="/sign/leo/idm/">♌ Leo</a>
-      <a href="/sign/virgo/idm/">♍ Virgo</a>
-      <a href="/sign/libra/idm/">♎ Libra</a>
-      <a href="/sign/scorpio/idm/">♏ Scorpio</a>
-      <a href="/sign/sagittarius/idm/">♐ Sagittarius</a>
-      <a href="/sign/capricorn/idm/">♑ Capricorn</a>
-      <a href="/sign/aquarius/idm/" class="current">♒ Aquarius</a>
-      <a href="/sign/pisces/idm/">♓ Pisces</a>
+      <a href="/sign/aries/idm/">A Aries</a>
+      <a href="/sign/taurus/idm/">B Taurus</a>
+      <a href="/sign/gemini/idm/">C Gemini</a>
+      <a href="/sign/cancer/idm/">D Cancer</a>
+      <a href="/sign/leo/idm/">E Leo</a>
+      <a href="/sign/virgo/idm/">F Virgo</a>
+      <a href="/sign/libra/idm/">G Libra</a>
+      <a href="/sign/scorpio/idm/">H Scorpio</a>
+      <a href="/sign/sagittarius/idm/">J Sagittarius</a>
+      <a href="/sign/capricorn/idm/">K Capricorn</a>
+      <a href="/sign/aquarius/idm/" class="current">L Aquarius</a>
+      <a href="/sign/pisces/idm/">M Pisces</a>
     </div>
   </nav>
   </main>

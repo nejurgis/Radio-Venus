@@ -15,6 +15,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=EB+Garamond:ital,wght@0,400;1,400&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
   <script type="application/ld+json">[{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which IDM artists have Venus in Capricorn?","acceptedAnswer":{"@type":"Answer","text":"Angel-Ho, Arnošt Parsch, Astrid Sonne, Babyfather, Ben Lukas Boysen, Big Brave, Björk, Burial and 16 more."}},{"@type":"Question","name":"What is Venus in Capricorn?","acceptedAnswer":{"@type":"Answer","text":"Structured, austere, enduring. Venus in Capricorn musicians build cathedrals — compositions with architecture, albums that function as complete statements. Expect discipline in the craft, respect for tradition, and a seriousness that ages into timelessness."}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Radio Venus","item":"https://radio-venus.club/"},{"@type":"ListItem","position":2,"name":"Venus in Capricorn","item":"https://radio-venus.club/sign/capricorn/"},{"@type":"ListItem","position":3,"name":"IDM","item":"https://radio-venus.club/sign/capricorn/idm/"}]}]</script>
   <style>
+  @font-face {
+    font-family: 'Zodiac St';
+    src: url('/assets/ZodiacSt.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     background: #0a0a0c;
@@ -52,10 +58,17 @@
   .breadcrumb a { color: rgba(255,255,255,0.3); background: none; }
   .breadcrumb a:hover { color: rgba(255,255,255,0.7); }
   .breadcrumb span { color: rgba(255,255,255,0.15); margin: 0 0.35em; }
-  h1 {
-    font-family: 'EB Garamond', serif; font-weight: 400;
-    font-size: clamp(2rem, 6vw, 3rem); letter-spacing: -0.02em;
-    color: #fff; margin-bottom: 1.5rem; line-height: 1.1;
+  .sign-lead {
+    text-align: center; margin-bottom: 1.5rem;
+  }
+  .zodiac-char {
+    font-family: 'Zodiac St', serif;
+    font-size: 5rem; display: block; line-height: 1;
+    margin-bottom: 0.5rem; color: #fff;
+  }
+  .sign-name {
+    display: block; font-size: 0.6rem; letter-spacing: 0.1em;
+    text-transform: lowercase; color: #fff; text-align: center;
   }
   .sign-desc {
     font-size: 1rem; line-height: 1.4;
@@ -106,7 +119,10 @@
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
     <p class="breadcrumb"><a href="/sign/capricorn/">Venus in Capricorn</a><span>›</span>IDM</p>
-    <h1>♑ Venus in Capricorn — IDM</h1>
+    <p class="sign-lead">
+      <span class="zodiac-char">K</span>
+      <span class="sign-name">Venus in Capricorn — IDM</span>
+    </p>
     <p class="sign-desc">Structured, austere, enduring. Venus in Capricorn musicians build cathedrals — compositions with architecture, albums that function as complete statements. Expect discipline in the craft, respect for tradition, and a seriousness that ages into timelessness.</p>
     <nav class="genre-nav" aria-label="Filter by genre">
     <p class="nav-label">Filter by genre</p>
@@ -231,34 +247,34 @@
     <nav class="sign-nav sibling-nav" aria-label="Same genre, other signs">
       <p class="nav-label">IDM by other signs</p>
       <div class="sign-links">
-      <a href="/sign/aries/idm/">♈ Aries</a>
-      <a href="/sign/taurus/idm/">♉ Taurus</a>
-      <a href="/sign/gemini/idm/">♊ Gemini</a>
-      <a href="/sign/cancer/idm/">♋ Cancer</a>
-      <a href="/sign/leo/idm/">♌ Leo</a>
-      <a href="/sign/virgo/idm/">♍ Virgo</a>
-      <a href="/sign/libra/idm/">♎ Libra</a>
-      <a href="/sign/scorpio/idm/">♏ Scorpio</a>
-      <a href="/sign/sagittarius/idm/">♐ Sagittarius</a>
-      <a href="/sign/aquarius/idm/">♒ Aquarius</a>
-      <a href="/sign/pisces/idm/">♓ Pisces</a>
+      <a href="/sign/aries/idm/">A Aries</a>
+      <a href="/sign/taurus/idm/">B Taurus</a>
+      <a href="/sign/gemini/idm/">C Gemini</a>
+      <a href="/sign/cancer/idm/">D Cancer</a>
+      <a href="/sign/leo/idm/">E Leo</a>
+      <a href="/sign/virgo/idm/">F Virgo</a>
+      <a href="/sign/libra/idm/">G Libra</a>
+      <a href="/sign/scorpio/idm/">H Scorpio</a>
+      <a href="/sign/sagittarius/idm/">J Sagittarius</a>
+      <a href="/sign/aquarius/idm/">L Aquarius</a>
+      <a href="/sign/pisces/idm/">M Pisces</a>
       </div>
     </nav>
     <nav class="sign-nav" aria-label="Browse signs">
     <p class="nav-label">Browse all signs</p>
     <div class="sign-links">
-      <a href="/sign/aries/idm/">♈ Aries</a>
-      <a href="/sign/taurus/idm/">♉ Taurus</a>
-      <a href="/sign/gemini/idm/">♊ Gemini</a>
-      <a href="/sign/cancer/idm/">♋ Cancer</a>
-      <a href="/sign/leo/idm/">♌ Leo</a>
-      <a href="/sign/virgo/idm/">♍ Virgo</a>
-      <a href="/sign/libra/idm/">♎ Libra</a>
-      <a href="/sign/scorpio/idm/">♏ Scorpio</a>
-      <a href="/sign/sagittarius/idm/">♐ Sagittarius</a>
-      <a href="/sign/capricorn/idm/" class="current">♑ Capricorn</a>
-      <a href="/sign/aquarius/idm/">♒ Aquarius</a>
-      <a href="/sign/pisces/idm/">♓ Pisces</a>
+      <a href="/sign/aries/idm/">A Aries</a>
+      <a href="/sign/taurus/idm/">B Taurus</a>
+      <a href="/sign/gemini/idm/">C Gemini</a>
+      <a href="/sign/cancer/idm/">D Cancer</a>
+      <a href="/sign/leo/idm/">E Leo</a>
+      <a href="/sign/virgo/idm/">F Virgo</a>
+      <a href="/sign/libra/idm/">G Libra</a>
+      <a href="/sign/scorpio/idm/">H Scorpio</a>
+      <a href="/sign/sagittarius/idm/">J Sagittarius</a>
+      <a href="/sign/capricorn/idm/" class="current">K Capricorn</a>
+      <a href="/sign/aquarius/idm/">L Aquarius</a>
+      <a href="/sign/pisces/idm/">M Pisces</a>
     </div>
   </nav>
   </main>

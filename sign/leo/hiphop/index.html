@@ -15,6 +15,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=EB+Garamond:ital,wght@0,400;1,400&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
   <script type="application/ld+json">[{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which Hip-Hop artists have Venus in Leo?","acceptedAnswer":{"@type":"Answer","text":"A. G. Cook, James Blake, Jessy Lanza, Mouse on Mars, Pink Must, Sasha Vosk."}},{"@type":"Question","name":"What is Venus in Leo?","acceptedAnswer":{"@type":"Answer","text":"Dramatic, generous, radiant. Venus in Leo musicians command a stage and make you feel like the show is just for you. Big voices, theatrical arrangements, golden production — their art is an act of self-expression so total it becomes universal."}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Radio Venus","item":"https://radio-venus.club/"},{"@type":"ListItem","position":2,"name":"Venus in Leo","item":"https://radio-venus.club/sign/leo/"},{"@type":"ListItem","position":3,"name":"Hip-Hop","item":"https://radio-venus.club/sign/leo/hiphop/"}]}]</script>
   <style>
+  @font-face {
+    font-family: 'Zodiac St';
+    src: url('/assets/ZodiacSt.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     background: #0a0a0c;
@@ -52,10 +58,17 @@
   .breadcrumb a { color: rgba(255,255,255,0.3); background: none; }
   .breadcrumb a:hover { color: rgba(255,255,255,0.7); }
   .breadcrumb span { color: rgba(255,255,255,0.15); margin: 0 0.35em; }
-  h1 {
-    font-family: 'EB Garamond', serif; font-weight: 400;
-    font-size: clamp(2rem, 6vw, 3rem); letter-spacing: -0.02em;
-    color: #fff; margin-bottom: 1.5rem; line-height: 1.1;
+  .sign-lead {
+    text-align: center; margin-bottom: 1.5rem;
+  }
+  .zodiac-char {
+    font-family: 'Zodiac St', serif;
+    font-size: 5rem; display: block; line-height: 1;
+    margin-bottom: 0.5rem; color: #fff;
+  }
+  .sign-name {
+    display: block; font-size: 0.6rem; letter-spacing: 0.1em;
+    text-transform: lowercase; color: #fff; text-align: center;
   }
   .sign-desc {
     font-size: 1rem; line-height: 1.4;
@@ -106,7 +119,10 @@
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
     <p class="breadcrumb"><a href="/sign/leo/">Venus in Leo</a><span>›</span>Hip-Hop</p>
-    <h1>♌ Venus in Leo — Hip-Hop</h1>
+    <p class="sign-lead">
+      <span class="zodiac-char">E</span>
+      <span class="sign-name">Venus in Leo — Hip-Hop</span>
+    </p>
     <p class="sign-desc">Dramatic, generous, radiant. Venus in Leo musicians command a stage and make you feel like the show is just for you. Big voices, theatrical arrangements, golden production — their art is an act of self-expression so total it becomes universal.</p>
     <nav class="genre-nav" aria-label="Filter by genre">
     <p class="nav-label">Filter by genre</p>
@@ -163,28 +179,28 @@
     <nav class="sign-nav sibling-nav" aria-label="Same genre, other signs">
       <p class="nav-label">Hip-Hop by other signs</p>
       <div class="sign-links">
-      <a href="/sign/gemini/hiphop/">♊ Gemini</a>
-      <a href="/sign/scorpio/hiphop/">♏ Scorpio</a>
-      <a href="/sign/capricorn/hiphop/">♑ Capricorn</a>
-      <a href="/sign/aquarius/hiphop/">♒ Aquarius</a>
-      <a href="/sign/pisces/hiphop/">♓ Pisces</a>
+      <a href="/sign/gemini/hiphop/">C Gemini</a>
+      <a href="/sign/scorpio/hiphop/">H Scorpio</a>
+      <a href="/sign/capricorn/hiphop/">K Capricorn</a>
+      <a href="/sign/aquarius/hiphop/">L Aquarius</a>
+      <a href="/sign/pisces/hiphop/">M Pisces</a>
       </div>
     </nav>
     <nav class="sign-nav" aria-label="Browse signs">
     <p class="nav-label">Browse all signs</p>
     <div class="sign-links">
-      <a href="/sign/aries/">♈ Aries</a>
-      <a href="/sign/taurus/">♉ Taurus</a>
-      <a href="/sign/gemini/hiphop/">♊ Gemini</a>
-      <a href="/sign/cancer/">♋ Cancer</a>
-      <a href="/sign/leo/hiphop/" class="current">♌ Leo</a>
-      <a href="/sign/virgo/">♍ Virgo</a>
-      <a href="/sign/libra/">♎ Libra</a>
-      <a href="/sign/scorpio/hiphop/">♏ Scorpio</a>
-      <a href="/sign/sagittarius/">♐ Sagittarius</a>
-      <a href="/sign/capricorn/hiphop/">♑ Capricorn</a>
-      <a href="/sign/aquarius/hiphop/">♒ Aquarius</a>
-      <a href="/sign/pisces/hiphop/">♓ Pisces</a>
+      <a href="/sign/aries/">A Aries</a>
+      <a href="/sign/taurus/">B Taurus</a>
+      <a href="/sign/gemini/hiphop/">C Gemini</a>
+      <a href="/sign/cancer/">D Cancer</a>
+      <a href="/sign/leo/hiphop/" class="current">E Leo</a>
+      <a href="/sign/virgo/">F Virgo</a>
+      <a href="/sign/libra/">G Libra</a>
+      <a href="/sign/scorpio/hiphop/">H Scorpio</a>
+      <a href="/sign/sagittarius/">J Sagittarius</a>
+      <a href="/sign/capricorn/hiphop/">K Capricorn</a>
+      <a href="/sign/aquarius/hiphop/">L Aquarius</a>
+      <a href="/sign/pisces/hiphop/">M Pisces</a>
     </div>
   </nav>
   </main>
