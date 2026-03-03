@@ -12,48 +12,100 @@
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=EB+Garamond:ital,wght@0,400;1,400&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
   <script type="application/ld+json">[{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which Industrial artists have Venus in Gemini?","acceptedAnswer":{"@type":"Answer","text":"Elysian Fields, Fis, Holly Herndon, Joy Division, Liquid, Marriages, Pan Sonic, Preoccupations and 3 more."}},{"@type":"Question","name":"What is Venus in Gemini?","acceptedAnswer":{"@type":"Answer","text":"Restless, clever, shape-shifting. Venus in Gemini musicians can't sit still in one genre — they sample everything, talk fast, and make connections nobody else sees. Expect wit in the lyrics, unexpected genre-blending, and an intellectual sparkle that keeps you guessing."}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Radio Venus","item":"https://radio-venus.club/"},{"@type":"ListItem","position":2,"name":"Venus in Gemini","item":"https://radio-venus.club/sign/gemini/"},{"@type":"ListItem","position":3,"name":"Industrial","item":"https://radio-venus.club/sign/gemini/industrial/"}]}]</script>
   <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root { --bg: #0e0b14; --text: #e0d8ee; --muted: #9080a8; --accent: #c8a8e8; --border: #2a2040; }
-  body { background: var(--bg); color: var(--text); font-family: 'Archivo', sans-serif;
-         font-size: 16px; line-height: 1.6; padding: 2rem 1rem; max-width: 760px; margin: 0 auto; }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  a.current { color: var(--text); font-weight: 600; pointer-events: none; }
-  header { margin-bottom: 3rem; font-size: 0.875rem; color: var(--muted); }
-  .breadcrumb { font-size: 0.875rem; color: var(--muted); margin-bottom: 0.5rem; }
-  .breadcrumb a { color: var(--muted); }
-  h1 { font-family: 'EB Garamond', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 400;
-       margin-bottom: 1.25rem; letter-spacing: -0.02em; }
-  .sign-desc { font-family: 'EB Garamond', serif; font-size: 1.125rem; color: var(--muted);
-               margin-bottom: 2rem; line-height: 1.7; font-style: italic; }
-  .artist-count { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;
-                  color: var(--muted); margin-bottom: 1.25rem; }
-  ul.artist-list { list-style: none; border-top: 1px solid var(--border); }
-  ul.artist-list li { display: flex; justify-content: space-between; align-items: baseline;
-                      padding: 0.6rem 0; border-bottom: 1px solid var(--border); gap: 1rem; }
-  .artist-name { font-weight: 500; }
-  .artist-meta { font-size: 0.8rem; color: var(--muted); white-space: nowrap; }
-  .cta { margin-top: 3rem; padding: 1.5rem; border: 1px solid var(--border); border-radius: 4px;
-         font-family: 'EB Garamond', serif; font-size: 1.05rem; color: var(--muted); }
-  .cta a { color: var(--text); }
-  .nav-label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
-               color: var(--muted); margin-bottom: 0.75rem; }
-  .sign-nav { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
-  .sign-links, .genre-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-  .sign-links a, .genre-links a { font-size: 0.875rem; padding: 0.3rem 0.75rem;
-    border: 1px solid var(--border); border-radius: 2rem; color: var(--muted); }
-  .sign-links a:hover, .genre-links a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
-  .sign-links a.current, .genre-links a.current { border-color: var(--text); color: var(--text); font-weight: 500; }
-  .genre-nav { margin-top: 1.5rem; margin-bottom: 2rem; }
+  body {
+    background: #0a0a0c;
+    color: #e8e8f0;
+    font-family: 'Helvetica Neue', Helvetica, 'Archivo', Arial, sans-serif;
+    font-size: clamp(15px, 3vw, 18px);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  main {
+    max-width: 610px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+    background: linear-gradient(#fff, #fff);
+    background-repeat: repeat-x;
+    background-position: 0 96%;
+    background-size: 1px 1px;
+  }
+  a:hover { color: rgba(255,255,255,0.55); background-image: linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)); }
+  header { padding: 2rem 1.5rem 0; max-width: 610px; margin: 0 auto; }
+  .home-link {
+    font-size: 0.75rem; letter-spacing: 0.06em; color: rgba(255,255,255,0.35);
+    background: none; text-transform: lowercase;
+  }
+  .home-link:hover { color: #fff; background: none; }
+  .breadcrumb {
+    font-size: 0.7rem; letter-spacing: 0.04em;
+    color: rgba(255,255,255,0.3); margin-bottom: 0.75rem;
+  }
+  .breadcrumb a { color: rgba(255,255,255,0.3); background: none; }
+  .breadcrumb a:hover { color: rgba(255,255,255,0.7); }
+  .breadcrumb span { color: rgba(255,255,255,0.15); margin: 0 0.35em; }
+  h1 {
+    font-family: 'EB Garamond', serif; font-weight: 400;
+    font-size: clamp(2rem, 6vw, 3rem); letter-spacing: -0.02em;
+    color: #fff; margin-bottom: 1.5rem; line-height: 1.1;
+  }
+  .sign-desc {
+    font-size: 1rem; line-height: 1.4;
+    color: rgba(255,255,255,0.7); text-indent: 1.5em; margin-bottom: 2rem;
+  }
+  .artist-count {
+    font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.3); margin-bottom: 1rem;
+  }
+  ul.artist-list { list-style: none; }
+  ul.artist-list li {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 0.55rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); gap: 1rem;
+  }
+  .artist-name { font-weight: 400; color: #e8e8f0; background: none; }
+  .artist-meta {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
+    color: rgba(255,255,255,0.28); white-space: nowrap; text-transform: uppercase;
+  }
+  .cta {
+    margin-top: 3rem; font-size: 0.9rem; color: rgba(255,255,255,0.45);
+    border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem;
+  }
+  .cta a { color: #fff; }
+  .nav-label {
+    font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.28); margin-bottom: 0.75rem;
+  }
+  .sign-nav { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
+  .genre-nav { margin-bottom: 2rem; }
+  .sibling-nav { margin-top: 1.5rem; }
+  .sign-links, .genre-links { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .sign-links a, .genre-links a {
+    font-size: 0.75rem; padding: 0.25rem 0.65rem;
+    border: 1px solid rgba(255,255,255,0.12); border-radius: 2rem;
+    color: rgba(255,255,255,0.4); background: none;
+  }
+  .sign-links a:hover, .genre-links a:hover {
+    border-color: rgba(255,255,255,0.45); color: #fff; background: none;
+  }
+  a.current, .sign-links a.current, .genre-links a.current {
+    border-color: rgba(255,255,255,0.6); color: #fff;
+    background: none; pointer-events: none;
+  }
 </style>
 </head>
 <body>
-  <header><a href="/">← Radio Venus</a></header>
+  <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
-    <p class="breadcrumb"><a href="/sign/gemini/">Venus in Gemini</a> › Industrial</p>
+    <p class="breadcrumb"><a href="/sign/gemini/">Venus in Gemini</a><span>›</span>Industrial</p>
     <h1>♊ Venus in Gemini — Industrial</h1>
     <p class="sign-desc">Restless, clever, shape-shifting. Venus in Gemini musicians can't sit still in one genre — they sample everything, talk fast, and make connections nobody else sees. Expect wit in the lyrics, unexpected genre-blending, and an intellectual sparkle that keeps you guessing.</p>
     <nav class="genre-nav" aria-label="Filter by genre">
