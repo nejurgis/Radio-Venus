@@ -47,6 +47,7 @@ let pendingSeekTime = 0;  // for shared links — seek once on first PLAYING
 
 let activeGenreLabel = null;       // label of the currently playing genre
 let tunedLongitude = null;         // current longitude at the tuner needle
+let playerInitPromise = null;      // lazy YouTube player init
 
 const ZODIAC_SIGNS = [
   'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo',
@@ -58,6 +59,82 @@ const ZODIAC_ELEMENTS = {
   Gemini: 'air', Libra: 'air', Aquarius: 'air',
   Cancer: 'water', Scorpio: 'water', Pisces: 'water',
 };
+
+// ── Lazy YouTube player initialization ──────────────────────────────────────
+
+function ensurePlayerReady() {
+  if (!playerInitPromise) {
+    playerInitPromise = loadYouTubeAPI().then(() => initPlayer('yt-player', {
+      onEnd: () => {
+        const track = tracks[currentTrackIndex];
+        if (track) trackSongComplete(track.name, playingGenreId, getDuration());
+        playTrack(currentTrackIndex + 1);
+      },
+      onError: (code) => {
+        if (code === 2 && !hasPlayed) {
+          console.warn(`[Radio Venus] Handshake glitch (Error 2). Retrying track...`);
+          const track = tracks[currentTrackIndex];
+          if (track) {
+            loadVideo(getVideoIds(track)[trackVideoIndex.get(currentTrackIndex) || 0]);
+            return;
+          }
+        }
+        clearTimeout(silentFailTimer);
+        stopLoadingProgress();
+        const reason = code === 150 || code === 101 ? 'embed restricted' : code === 100 ? 'removed' : 'error ' + code;
+        tryBackupOrFail(reason);
+      },
+      onStateChange: (state) => {
+        if (state === window.YT.PlayerState.PLAYING) {
+          updatePlayButton(true);
+        } else if (state === window.YT.PlayerState.BUFFERING) {
+          updatePlayButton('buffering');
+        } else {
+          updatePlayButton(false);
+        }
+        if (state === window.YT.PlayerState.PLAYING) {
+          hasPlayed = true;
+          sessionHasPlayed = true;
+          isPaused = false;
+          startHeartbeat(() => ({ artist: tracks[currentTrackIndex]?.name ?? 'Unknown', genre: playingGenreId ?? 'general' }));
+          clearTimeout(silentFailTimer);
+          stopLoadingProgress();
+          hideBuffering();
+          const title = getVideoTitle();
+          const track = tracks[currentTrackIndex];
+          if (track) updateNowPlaying(track.name, title);
+          if (pendingSeekTime > 0) {
+            seekTo(pendingSeekTime);
+            pendingSeekTime = 0;
+          }
+          if (isMuted()) showUnmuteOverlay();
+          updateNowPlayingButton(!document.getElementById('screen-radio').classList.contains('active'));
+
+          clearInterval(progressInterval);
+          progressInterval = setInterval(() => {
+            updateProgress(getCurrentTime(), getDuration());
+          }, 100);
+        } else {
+          stopHeartbeat();
+          clearInterval(progressInterval);
+          progressInterval = null;
+          if (hasPlayed && state === window.YT.PlayerState.BUFFERING) {
+            const dur = getDuration();
+            const cur = getCurrentTime();
+            if (dur > 0) showBuffering((cur / dur) * 100);
+          }
+          if (hasPlayed && state === window.YT.PlayerState.PAUSED) {
+            isPaused = true;
+            const track = tracks[currentTrackIndex];
+            if (track) setNowPlayingPaused(track.name, getVideoTitle());
+            updateNowPlayingButton(!document.getElementById('screen-radio').classList.contains('active'), true);
+          }
+        }
+      },
+    }));
+  }
+  return playerInitPromise;
+}
 
 // ── Init ────────────────────────────────────────────────────────────────────
 
@@ -173,9 +250,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     history.pushState({ screen: 'about' }, '', '#about');
   }
 
-  // Start nebula immediately — ring, ticks, moon/sun all render without musician data
-  initNebula('nebula-container');
-  renderNebula([]); // starts animation loop; dots populated after DB loads
+  // Defer nebula canvas to keep critical path clear — fires within 300ms for real users
+  let nebulaReady = false;
+  const startNebula = () => {
+    initNebula('nebula-container');
+    const db = getDatabase();
+    renderNebula(db.length ? db : []);
+    nebulaReady = true;
+  };
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(startNebula, { timeout: 300 });
+  } else {
+    setTimeout(startNebula, 50);
+  }
+
   const moonNow = calculateMoon();
   setMoonPosition(moonNow.longitude, moonNow.phaseAngle);
   setSunPosition(moonNow.sunLongitude);
@@ -219,90 +307,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   });
 
-  const [dbResult] = await Promise.allSettled([
-    loadDatabase(),
-    loadYouTubeAPI(),
-  ]);
+  const dbResult = await loadDatabase()
+    .then(() => ({ status: 'fulfilled' }))
+    .catch(e => ({ status: 'rejected', reason: e }));
 
   // If user landed on #about, render the index now that DB is loaded
   if (cameFromAbout) renderArtistIndex(getDatabase());
 
-  await initPlayer('yt-player', {
-    onEnd: () => {
-      const track = tracks[currentTrackIndex];
-      if (track) trackSongComplete(track.name, playingGenreId, getDuration());
-      playTrack(currentTrackIndex + 1);
-    },
-    onError: (code) => {
-      // If code is 2, it's often a handshake error. 
-      // If hasPlayed is false, we give it one "second chance" reload 
-      // before giving up and skipping.
-      if (code === 2 && !hasPlayed) {
-        console.warn(`[Radio Venus] Handshake glitch (Error 2). Retrying track...`);
-        const track = tracks[currentTrackIndex];
-        if (track) {
-          loadVideo(getVideoIds(track)[trackVideoIndex.get(currentTrackIndex) || 0]);
-          return; // Stop here, don't skip yet!
-        }
-      }
-
-      clearTimeout(silentFailTimer);
-      stopLoadingProgress();
-      const reason = code === 150 || code === 101 ? 'embed restricted' : code === 100 ? 'removed' : 'error ' + code;
-      tryBackupOrFail(reason);
-    },
-    onStateChange: (state) => {
-      if (state === window.YT.PlayerState.PLAYING) {
-        updatePlayButton(true);
-      } else if (state === window.YT.PlayerState.BUFFERING) {
-        updatePlayButton('buffering');
-      } else {
-        updatePlayButton(false);
-      }
-      if (state === window.YT.PlayerState.PLAYING) {
-        hasPlayed = true;
-        sessionHasPlayed = true;
-        isPaused = false;
-        startHeartbeat(() => ({ artist: tracks[currentTrackIndex]?.name ?? 'Unknown', genre: playingGenreId ?? 'general' }));
-        clearTimeout(silentFailTimer);
-        stopLoadingProgress();
-        hideBuffering();
-        const title = getVideoTitle();
-        const track = tracks[currentTrackIndex];
-        if (track) updateNowPlaying(track.name, title);
-        if (pendingSeekTime > 0) {
-          seekTo(pendingSeekTime);
-          pendingSeekTime = 0;
-        }
-        // iOS muted autoplay: show tap-to-unmute if playing but muted
-        if (isMuted()) showUnmuteOverlay();
-        updateNowPlayingButton(!document.getElementById('screen-radio').classList.contains('active'));
-
-        clearInterval(progressInterval);
-        // CHANGED: 500ms -> 100ms for smoother playback progress
-        progressInterval = setInterval(() => {
-          updateProgress(getCurrentTime(), getDuration());
-        }, 100);
-
-      } else {
-        stopHeartbeat();
-        clearInterval(progressInterval);
-        progressInterval = null;
-        if (hasPlayed && state === window.YT.PlayerState.BUFFERING) {
-          const dur = getDuration();
-          const cur = getCurrentTime();
-          if (dur > 0) showBuffering((cur / dur) * 100);
-        }
-        // Show [PAUSED] on now-playing when paused
-        if (hasPlayed && state === window.YT.PlayerState.PAUSED) {
-          isPaused = true;
-          const track = tracks[currentTrackIndex];
-          if (track) setNowPlayingPaused(track.name, getVideoTitle());
-          updateNowPlayingButton(!document.getElementById('screen-radio').classList.contains('active'), true);
-        }
-      }
-    },
-  });
+  // Pre-warm YouTube player during idle time (before user needs it)
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => ensurePlayerReady(), { timeout: 3000 });
+  } else {
+    setTimeout(() => ensurePlayerReady(), 1000);
+  }
 
   // ── Handle #valentine link ──
   if (window.location.hash === '#valentine' && dbResult.status === 'fulfilled') {
@@ -338,7 +355,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       updateNowPlaying(tracks[0].name);
       updateFavoriteButton(isFavorite(tracks[0].name));
-      cueVideo(tracks[0].youtubeVideoId);
+      ensurePlayerReady().then(() => cueVideo(tracks[0].youtubeVideoId));
       updatePlayButton(false);
 
       const signIndex = ZODIAC_SIGNS.indexOf('Aries');
@@ -381,7 +398,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       updateNowPlaying(tracks[0].name);
       updateFavoriteButton(isFavorite(tracks[0].name));
-      cueVideo(tracks[0].youtubeVideoId);
+      ensurePlayerReady().then(() => cueVideo(tracks[0].youtubeVideoId));
       updatePlayButton(false);
 
       const signIdx = ZODIAC_SIGNS.indexOf('Aries');
@@ -435,7 +452,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (tracks.length > 0) {
       updateNowPlaying(tracks[0].name);
       updateFavoriteButton(isFavorite(tracks[0].name));
-      cueVideo(tracks[0].youtubeVideoId);
+      ensurePlayerReady().then(() => cueVideo(tracks[0].youtubeVideoId));
       updatePlayButton(false);
     }
 
@@ -506,7 +523,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           updateFavoriteButton(isFavorite(sharedArtist));
 
           pendingSeekTime = sharedTime;
-          cueVideo(sharedVid);
+          ensurePlayerReady().then(() => cueVideo(sharedVid));
           updatePlayButton(false);
         }
       }
@@ -537,8 +554,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   if (dbResult.status === 'rejected') {
     console.error('Failed to load musician database:', dbResult.reason);
-  } else {
-    renderNebula(getDatabase()); // populate artist dots now that DB is ready
+  } else if (nebulaReady) {
+    renderNebula(getDatabase()); // nebula already init'd — populate artist dots now
+    // If nebula isn't ready yet, startNebula() will call renderNebula with the loaded db
   }
 });
 
@@ -948,8 +966,10 @@ function playTrack(index) {
   resetProgress();
   trackVideoIndex.set(currentTrackIndex, 0);
 
-  loadVideo(getVideoIds(track)[0]);
-  startSilentFailTimer();
+  ensurePlayerReady().then(() => {
+    loadVideo(getVideoIds(track)[0]);
+    startSilentFailTimer();
+  });
   startLoadingProgress();
   updateNowPlaying('Loading...');
   updateFavoriteButton(isFavorite(track.name));
