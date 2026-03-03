@@ -56,7 +56,7 @@ function signNav(currentSign = null, currentGenre = null) {
           : `/sign/${s.toLowerCase()}/`)
       : `/sign/${s.toLowerCase()}/`;
     const active = s === currentSign ? ' class="current"' : '';
-    return `<a href="${href}"${active}>${GLYPHS[s]} ${s}</a>`;
+    return `<a href="${href}"${active}><span class="z">${GLYPHS[s]}</span> ${s}</a>`;
   }).join('\n      ');
   return `<nav class="sign-nav" aria-label="Browse signs">
     <p class="nav-label">Browse all signs</p>
@@ -171,6 +171,7 @@ const CSS = `
   .genre-nav { margin-bottom: 2rem; }
   .sibling-nav { margin-top: 1.5rem; }
   .sign-links, .genre-links { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .z { font-family: 'Zodiac St', serif; }
   .sign-links a, .genre-links a {
     font-size: 0.75rem; padding: 0.25rem 0.65rem;
     border: 1px solid rgba(255,255,255,0.12); border-radius: 2rem;
@@ -328,7 +329,7 @@ for (const sign of SIGNS) {
     // Sibling pages: other signs with the same genre
     const siblingLinks = SIGNS
       .filter(s => s !== sign && bySignGenre[s]?.[genre]?.length >= MIN_ARTISTS)
-      .map(s => `<a href="/sign/${s.toLowerCase()}/${genre}/">${GLYPHS[s]} ${s}</a>`)
+      .map(s => `<a href="/sign/${s.toLowerCase()}/${genre}/"><span class="z">${GLYPHS[s]}</span> ${s}</a>`)
       .join('\n      ');
 
     const faqSchema = JSON.stringify([{
