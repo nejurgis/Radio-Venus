@@ -11,21 +11,15 @@ function send(event, params) {
 let heartbeatInterval = null;
 
 // Removed sessionListenSec totalizer to prevent GA4 double-counting
-export function startHeartbeat() {
+export function startHeartbeat(getContext) {
   stopHeartbeat();
   heartbeatInterval = setInterval(() => {
-    // Look up the current track to provide context to the heartbeat
-    // Assuming 'tracks' and 'currentTrackIndex' are available in this scope or imported
-    const currentTrack = typeof tracks !== 'undefined' ? tracks[currentTrackIndex] : null;
-
+    const { artist = 'Unknown', genre = 'general' } = getContext?.() ?? {};
     send('listening_heartbeat', {
       event_category: 'engagement',
-      // 'value' should be the constant increment (30 seconds)
-      value: 30, 
-      // This matches the Custom Dimension you registered in GA4
-      artist: currentTrack ? currentTrack.name : 'Unknown',
-      // If you have a 'genre' or 'sign' dimension, add it here too
-      genre: typeof playingGenreId !== 'undefined' ? playingGenreId : 'general'
+      value: 30,
+      artist,
+      genre,
     });
   }, 30_000);
 }

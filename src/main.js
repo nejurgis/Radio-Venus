@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         hasPlayed = true;
         sessionHasPlayed = true;
         isPaused = false;
-        startHeartbeat();
+        startHeartbeat(() => ({ artist: tracks[currentTrackIndex]?.name ?? 'Unknown', genre: playingGenreId ?? 'general' }));
         clearTimeout(silentFailTimer);
         stopLoadingProgress();
         hideBuffering();
