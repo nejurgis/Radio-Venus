@@ -1498,6 +1498,7 @@ p a:hover {
   position: relative;
   flex: 1;
   min-height: 0;
+  width: 100%;
 }
 .track-list-wrap::before {
   content: '';
