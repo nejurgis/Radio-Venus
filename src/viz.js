@@ -177,6 +177,8 @@ let zoomSign = null;       // null = full ring, sign index = zoomed
 let containerEl = null;
 let hoverCallback = null;  // called with { name, genres } or null
 let clickCallback = null;  // called with { name, genres } when dot clicked in zoom
+let moonHoverCallback = null; // called with boolean when moon hover state changes
+let wasMoonActive = false;
 let rotationCallback = null; // called with tuned longitude each frame
 let zoomTargetDeg = null;    // exact degree to center on (null = sign center)
 let dragRotateEnabled = false;
@@ -483,6 +485,7 @@ export function setSunPosition(longitude) {
 }
 export function onNebulaHover(callback) { hoverCallback = callback; }
 export function onNebulaClick(callback) { clickCallback = callback; }
+export function onMoonHover(callback) { moonHoverCallback = callback; }
 export function onRotation(callback) { rotationCallback = callback; }
 export function onNeedleCross(callback) { needleCrossCallback = callback; }
 export function onSignCross(callback) { signCrossCallback = callback; }
@@ -999,6 +1002,8 @@ function tick() {
   hoveredDot = closestDot;
   if (hoveredDot) {
     document.body.style.cursor = crosshairCursor;
+  } else if (wasMoonActive) {
+    document.body.style.cursor = 'pointer';
   } else if (document.body.style.cursor) {
     document.body.style.cursor = '';
   }
@@ -1145,6 +1150,18 @@ if (sunDot) {
     const mx = cx + midR * Math.cos(mAngle);
     const my = cy + midR * Math.sin(mAngle);
 
+    // Moon active: mouse proximity OR needle alignment (works on mobile too)
+    const moonHitR = 22;
+    const mdx = hitX - mx, mdy = hitY - my;
+    const isMouseOnMoon = mouseX >= 0 && (mdx * mdx + mdy * mdy) < moonHitR * moonHitR;
+    const moonAngDist = Math.abs(moonDot.deg - needleDeg);
+    const isNeedleOnMoon = needleDeg >= 0 && (moonAngDist > 180 ? 360 - moonAngDist : moonAngDist) < 5;
+    const nowMoonActive = isMouseOnMoon || isNeedleOnMoon;
+    if (nowMoonActive !== wasMoonActive) {
+      wasMoonActive = nowMoonActive;
+      if (moonHoverCallback) moonHoverCallback(nowMoonActive);
+    }
+
     // moonR: scale with canvas size so it's reasonable on small phone screens
     const moonR = isZoomed ? 5.5 : Math.min(15, minDim * 0.032);
     const hazeR = (isZoomed ? 18 : moonR * 3.5) * mPulse;
@@ -1187,9 +1204,10 @@ if (sunDot) {
       ctx.restore();
     }
     ctx.restore(); // restore moonFade globalAlpha
+  } else if (wasMoonActive) {
+    wasMoonActive = false;
+    if (moonHoverCallback) moonHoverCallback(false);
   }
-
-
 
 
   if (isZoomed) ctx.restore(); // final restore for zoom transform

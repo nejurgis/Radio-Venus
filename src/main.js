@@ -2,7 +2,7 @@ import { calculateVenus, calculateMoon, makeBirthDate } from './venus.js';
 import { GENRE_CATEGORIES, SUBGENRES } from './genres.js';
 import { loadDatabase, getDatabase, match, matchFavorites, matchMoon, getSubgenreCounts } from './matcher.js';
 import { getFavorites, toggleFavorite, isFavorite } from './favorites.js';
-import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, setMoonPosition, setSunPosition, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, enableDragRotate, nudgeWheel, onNebulaHover, onNebulaClick, onRotation, onNeedleCross, onSignCross } from './viz.js';
+import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, setMoonPosition, setSunPosition, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, enableDragRotate, nudgeWheel, onNebulaHover, onNebulaClick, onRotation, onNeedleCross, onSignCross, onMoonHover } from './viz.js';
 import { pluck, gong, setHarpEnabled, isHarpEnabled, pokeAudio } from './harp.js';
 import { loadYouTubeAPI, initPlayer, loadVideo, cueVideo, togglePlay, isPlaying, getDuration, getCurrentTime, seekTo, getVideoTitle, isMuted, unMute } from './player.js';
 import {
@@ -268,6 +268,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   setMoonPosition(moonNow.longitude, moonNow.phaseAngle);
   setSunPosition(moonNow.sunLongitude);
   onNebulaHover(info => highlightGenres(info ? info.genres : null));
+  onMoonHover(active => {
+    document.getElementById('btn-moon-playlist').classList.toggle('visible', active);
+  });
+  document.getElementById('btn-moon-playlist').addEventListener('click', () => {
+    launchMoonPlaylist();
+  });
   onNeedleCross(({ radialFrac, element, speed }) => {
     const velocity = Math.min(1, 0.2 + speed * 0.8);
     pluck(radialFrac, element, velocity);
@@ -410,56 +416,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // ── Handle #moon link (Today's Moon) ──
   if (window.location.hash === '#moon' && dbResult.status === 'fulfilled') {
     history.replaceState({ screen: 'portal' }, '', window.location.pathname);
-    
-    // 1. Calculate Real-Time Moon Position
-    const now = new Date();
-    const moonData = calculateMoon(now);
-    const moonSign = moonData.sign; 
-    const moonDeg = Math.round(moonData.longitude % 30);
-    const el = ZODIAC_ELEMENTS[moonSign] || 'water'; // Default to water (moody) if undefined
-
-    // 2. Setup Visuals (Nebula & Theme)
-    setElementTheme(el);
-    renderRadioHeader(moonSign, `Moon in ${moonSign} ${moonDeg}°`);
-    showScreen('radio');
-    showNebula(true);
-
-    const nebulaCont = document.getElementById('nebula-container');
-    if (nebulaCont) {
-      nebulaCont.classList.add('is-dimmed');
-      nebulaCont.classList.add('is-deep-dimmed');
-      nebulaCont.classList.add('is-zoomed');
-    }
-    dimNebula(true);
-    deepDimNebula(true);
-    setZoomDrift(true);
-    history.pushState({ screen: 'radio' }, '');
-
-    // 3. Get Tracks & Render
-    // We pass the calculated longitude to matchMoon
-    tracks = matchMoon(moonData.longitude);
-    playingGenreId = 'moon';
-    activeGenreLabel = "Today's Moon";
-    
-    currentTrackIndex = 0;
-    failedIds.clear();
-    trackVideoIndex.clear();
-    
-    // 4. Start Playback
-    // Pass 'sharePlaylist' here so the share button appears on the shared page too!
-    renderTrackList(tracks, 0, i => playTrack(i), failedIds, new Set(getFavorites()), sharePlaylist);
-
-    if (tracks.length > 0) {
-      updateNowPlaying(tracks[0].name);
-      updateFavoriteButton(isFavorite(tracks[0].name));
-      ensurePlayerReady().then(() => cueVideo(tracks[0].youtubeVideoId));
-      updatePlayButton(false);
-    }
-
-    // 5. Zoom to the Moon's Sign
-    const signIndex = ZODIAC_SIGNS.indexOf(moonSign);
-    if (signIndex >= 0) zoomToSign(signIndex, { duration: 2500, targetDeg: moonData.longitude });
-    updateNowPlayingButton(false);
+    launchMoonPlaylist();
   }
 
   // ── Handle shared link (?vid=...&t=...&artist=...) ──
@@ -939,6 +896,49 @@ function startLoadingProgress() {
 function stopLoadingProgress() {
   if (loadingAnimFrame) cancelAnimationFrame(loadingAnimFrame);
   loadingAnimFrame = null;
+}
+
+function launchMoonPlaylist() {
+  const moonData = calculateMoon(new Date());
+  const moonSign = moonData.sign;
+  const moonDeg = Math.round(moonData.longitude % 30);
+  const el = ZODIAC_ELEMENTS[moonSign] || 'water';
+
+  setElementTheme(el);
+  renderRadioHeader(moonSign, `Moon in ${moonSign} ${moonDeg}°`);
+  showScreen('radio');
+  showNebula(true);
+
+  const nebulaCont = document.getElementById('nebula-container');
+  if (nebulaCont) {
+    nebulaCont.classList.add('is-dimmed');
+    nebulaCont.classList.add('is-deep-dimmed');
+    nebulaCont.classList.add('is-zoomed');
+  }
+  dimNebula(true);
+  deepDimNebula(true);
+  setZoomDrift(true);
+  history.pushState({ screen: 'radio' }, '');
+
+  tracks = matchMoon(moonData.longitude);
+  playingGenreId = 'moon';
+  activeGenreLabel = "Today's Moon";
+  currentTrackIndex = 0;
+  failedIds.clear();
+  trackVideoIndex.clear();
+
+  renderTrackList(tracks, 0, i => playTrack(i), failedIds, new Set(getFavorites()), sharePlaylist);
+
+  if (tracks.length > 0) {
+    updateNowPlaying(tracks[0].name);
+    updateFavoriteButton(isFavorite(tracks[0].name));
+    ensurePlayerReady().then(() => cueVideo(tracks[0].youtubeVideoId));
+    updatePlayButton(false);
+  }
+
+  const signIndex = ZODIAC_SIGNS.indexOf(moonSign);
+  if (signIndex >= 0) zoomToSign(signIndex, { duration: 2500, targetDeg: moonData.longitude });
+  updateNowPlayingButton(false);
 }
 
 // ────────────────────────────────────────────────────────────────────────────
