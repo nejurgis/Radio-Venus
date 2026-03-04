@@ -72,6 +72,9 @@ html, body {
 }
 
 .screen-inner {
+  display: flex;           /* 1. Enable Flexbox */
+  flex-direction: column;  /* 2. Stack children vertically */
+  align-items: center;     /* 3. Center them horizontally */
   width: 100%;
   max-width: 600px;
   margin: auto;
@@ -262,12 +265,27 @@ html, body {
   pointer-events: auto;
 }
 
+/* Apply this to both buttons */
+.btn-enter, .btn-moon-playlist {       /* Set a fixed width for both */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;   /* Prevents text from wrapping to a second line */
+}
+
 .btn-enter {
-  width: 64px;
-  height: 64px;
+  height: 64px; 
+  width: 64px;         /* Keep your circular height or adjust */
   padding: 0;
-  border-radius: 50%;
+  border-radius: 32px;  /* Changed from 50% to half-height for a "pill" look */
   font-size: 0.75rem;
+}
+
+.btn-moon-playlist {
+  font-size: 0.65rem;   /* Make this slightly smaller so it fits the width */
+  letter-spacing: 1px;
+  padding: 0.8rem 2.5rem; 
 }
 
 /* Portal fade-out during zoom animation */

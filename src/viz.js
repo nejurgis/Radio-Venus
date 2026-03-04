@@ -1151,7 +1151,7 @@ if (sunDot) {
     const my = cy + midR * Math.sin(mAngle);
 
     // Moon active: mouse proximity OR needle alignment (works on mobile too)
-    const moonHitR = 22;
+    const moonHitR = 5;
     const mdx = hitX - mx, mdy = hitY - my;
     const isMouseOnMoon = mouseX >= 0 && (mdx * mdx + mdy * mdy) < moonHitR * moonHitR;
     const moonAngDist = Math.abs(moonDot.deg - needleDeg);
