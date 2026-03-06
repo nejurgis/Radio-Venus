@@ -33,18 +33,20 @@ const artistArg = args.find(a => !a.startsWith('--'));
 if (!artistArg) {
   console.error([
     'Usage: node scripts/en-discover.mjs "Artist Name" [options]',
-    '  --depth=N            recurse N levels deep (default: 1)',
-    '  --min-followers=N    skip artists below N followers (default: 2000)',
-    '  --dry-run            print results without saving',
-    '  --output=file.json   save to file instead of seed-musicians.json',
+    '  --depth=N              recurse N levels deep (default: 1)',
+    '  --min-followers=N      skip artists below N followers (default: 2000)',
+    '  --min-tag-overlap=N    skip artists with fewer than N shared EN tags with seed (default: 1)',
+    '  --dry-run              print results without saving',
+    '  --output=file.json     save to file instead of seed-musicians.json',
   ].join('\n'));
   process.exit(1);
 }
 
-const depth        = parseInt(args.find(a => a.startsWith('--depth='))?.split('=')[1]         ?? '1');
-const minFollowers = parseInt(args.find(a => a.startsWith('--min-followers='))?.split('=')[1] ?? '2000');
-const dryRun       = args.includes('--dry-run');
-const outputFlag   = args.find(a => a.startsWith('--output='))?.split('=')[1] ?? null;
+const depth          = parseInt(args.find(a => a.startsWith('--depth='))?.split('=')[1]           ?? '1');
+const minFollowers   = parseInt(args.find(a => a.startsWith('--min-followers='))?.split('=')[1]   ?? '2000');
+const minTagOverlap  = parseInt(args.find(a => a.startsWith('--min-tag-overlap='))?.split('=')[1] ?? '1');
+const dryRun         = args.includes('--dry-run');
+const outputFlag     = args.find(a => a.startsWith('--output='))?.split('=')[1] ?? null;
 
 function parseSpotifyId(str) {
   const m = str.match(/(?:spotify:artist:|open\.spotify\.com\/artist\/)([A-Za-z0-9]+)/);
@@ -244,7 +246,14 @@ async function scrapeFansAlsoLike(spotifyId) {
     );
     await page.waitForSelector('#falcell', { timeout: 30000 });
 
-    return await page.$$eval('#falcell .falbox', boxes =>
+    const ownTags = await page.$$eval(
+      'span[title="Spotify genre-ish tags"]',
+      els => els.flatMap(el =>
+        el.textContent.split(',').map(t => t.trim().replace(/^#/, '')).filter(Boolean)
+      )
+    ).catch(() => []);
+
+    const candidates = await page.$$eval('#falcell .falbox', boxes =>
       boxes.map(box => {
         const nameEl    = box.querySelector('.falname a');
         const name      = nameEl?.textContent.trim() ?? '';
@@ -263,9 +272,11 @@ async function scrapeFansAlsoLike(spotifyId) {
         return { name, spotifyId, followers, tags };
       }).filter(e => e.name && e.spotifyId)
     );
+
+    return { candidates, ownTags };
   } catch (e) {
     console.error(`  Scrape failed for ${spotifyId}: ${e.message}`);
-    return [];
+    return { candidates: [], ownTags: [] };
   } finally {
     await page.close().catch(() => {});
   }
@@ -293,6 +304,16 @@ async function main() {
     console.log(`  → ${seedId}`);
   }
 
+  // Seed artist's EN tags — used for tag-overlap filtering
+  // Prefer stored enTags from seed file; fallback to scraping the EN profile page
+  const seedEntry = seed.find(a =>
+    a.spotifyId === seedId || a.name.toLowerCase() === artistArg.toLowerCase()
+  );
+  let seedTags = new Set(seedEntry?.enTags ?? []);
+  if (seedTags.size) {
+    console.log(`  Seed tags (from DB): ${[...seedTags].slice(0, 8).join(', ')}`);
+  }
+
   const additions = [];
   const visited   = new Set([seedId]);
   // BFS queue: { spotifyId, currentDepth }
@@ -304,7 +325,14 @@ async function main() {
     console.log(`\n${'━'.repeat(60)}`);
     console.log(`[depth ${currentDepth}] Scraping fans also like — ${currentId}`);
 
-    const candidates = await scrapeFansAlsoLike(currentId);
+    const { candidates, ownTags } = await scrapeFansAlsoLike(currentId);
+
+    // If this is the seed artist and we have no stored tags, use scraped Spotify tags
+    if (!seedTags.size && currentId === seedId && ownTags.length) {
+      seedTags = new Set(ownTags);
+      console.log(`  Seed tags (from EN): ${[...seedTags].join(', ')}`);
+    }
+
     const fresh = candidates.filter(c =>
       c.followers >= minFollowers &&
       c.tags.length > 0 &&
@@ -329,6 +357,22 @@ async function main() {
         continue;
       }
       console.log(`    genres: ${genres.join(', ')}`);
+
+      // Tag overlap with seed artist
+      const sharedTags = seedTags.size
+        ? candidate.tags.filter(t => seedTags.has(t))
+        : [];
+      if (seedTags.size) {
+        if (sharedTags.length) {
+          console.log(`    overlap: ${sharedTags.length} shared (${sharedTags.join(', ')})`);
+        } else {
+          console.log(`    overlap: 0 shared tags with seed artist`);
+        }
+      }
+      if (minTagOverlap > 0 && seedTags.size > 0 && sharedTags.length < minTagOverlap) {
+        console.log(`    ✗ Below --min-tag-overlap=${minTagOverlap} — skipping`);
+        continue;
+      }
 
       // Birth date: Wikidata first (no rate limit), then MusicBrainz by Spotify ID
       let birthDate = null;
