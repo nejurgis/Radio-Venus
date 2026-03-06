@@ -346,14 +346,14 @@ export function initNebula(containerId) {
   }
 
   document.addEventListener('mousedown', (e) => {
-    if (e.target.closest('button, a, input, select, textarea')) return;
+    if (e.target.closest('button, a, input, select, textarea, .screen-inner')) return;
     dragStart(e.clientX);
   });
   document.addEventListener('mousemove', (e) => dragMove(e.clientX));
   document.addEventListener('mouseup', dragEnd);
 
   document.addEventListener('touchstart', (e) => {
-    if (e.target.closest('button, a, input, select, textarea')) return;
+    if (e.target.closest('button, a, input, select, textarea, .screen-inner')) return;
     if (e.touches.length === 1) dragStart(e.touches[0].clientX);
   }, { passive: true });
   document.addEventListener('touchmove', (e) => {

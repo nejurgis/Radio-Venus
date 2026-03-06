@@ -13935,5 +13935,333 @@
     "backupVideoIds": [],
     "handpicked": true,
     "handpickedTrack": "Fun Dink Death"
+  },
+  {
+    "name": "Lingua Ignota",
+    "birthDate": "1986-06-17",
+    "genres": [
+      "industrial",
+      "folk",
+      "ambient"
+    ],
+    "subgenres": [
+      "industrial",
+      "dark-folk"
+    ],
+    "youtubeId": "7YRMV7ffPpY",
+    "enTags": [
+      "death industrial",
+      "gaian doom",
+      "spectra"
+    ],
+    "spotifyId": "3Q2RrKEOBdkWI2MJQgdt84"
+  },
+  {
+    "name": "Marissa Nadler",
+    "birthDate": "1981-04-05",
+    "genres": [
+      "folk",
+      "ambient",
+      "artpop"
+    ],
+    "subgenres": [
+      "ambient-folk",
+      "freak-folk"
+    ],
+    "youtubeId": "h8-Vmhp2ZEk",
+    "youtubeNeedsVerify": true,
+    "enTags": [
+      "ambient folk",
+      "new weird america",
+      "melancholia",
+      "spectra"
+    ],
+    "spotifyId": "5zjaF8JUdylMWrA7AVo3hJ"
+  },
+  {
+    "name": "King Woman",
+    "birthDate": "2009-06-15",
+    "genres": [
+      "folk",
+      "industrial",
+      "ambient"
+    ],
+    "subgenres": [
+      "dark-folk",
+      "drone"
+    ],
+    "youtubeId": "kCTkZspaSUQ",
+    "youtubeNeedsVerify": true,
+    "enTags": [
+      "gaian doom",
+      "doomgaze",
+      "bay area indie",
+      "drone metal"
+    ],
+    "spotifyId": "4C20AUsp5T2VNHmzSTSzYn"
+  },
+  {
+    "name": "The Body",
+    "birthDate": "1999-06-15",
+    "genres": [
+      "ambient",
+      "industrial",
+      "altrock"
+    ],
+    "subgenres": [
+      "drone",
+      "industrial",
+      "noise"
+    ],
+    "youtubeId": "3jzqqBF0dbw",
+    "youtubeNeedsVerify": true,
+    "enTags": [
+      "drone metal",
+      "new england metal",
+      "post-doom metal",
+      "rhode island indie",
+      "death industrial",
+      "post-metal",
+      "drone",
+      "noise rock",
+      "sludge metal"
+    ],
+    "spotifyId": "1VFYpTpgmp7ANXqok2dTg3"
+  },
+  {
+    "name": "Swans",
+    "birthDate": "1982-06-15",
+    "genres": [
+      "idm",
+      "altrock",
+      "industrial",
+      "indiepop",
+      "darkwave",
+      "artpop"
+    ],
+    "subgenres": [
+      "experimental",
+      "noise",
+      "industrial",
+      "noise-pop",
+      "art-pop"
+    ],
+    "youtubeId": "AhYoM-215Zw",
+    "youtubeNeedsVerify": true,
+    "enTags": [
+      "experimental rock",
+      "noise rock",
+      "no wave",
+      "experimental",
+      "industrial rock",
+      "post-rock",
+      "noise pop",
+      "post-punk",
+      "dream pop",
+      "industrial",
+      "shoegaze",
+      "art pop"
+    ],
+    "spotifyId": "79S80ZWgVhIPMCHuvl6SkA"
+  },
+  {
+    "name": "Current 93",
+    "birthDate": "1982-06-15",
+    "genres": [
+      "industrial",
+      "idm",
+      "folk",
+      "darkwave"
+    ],
+    "subgenres": [
+      "industrial",
+      "experimental",
+      "neofolk"
+    ],
+    "youtubeId": "IncLgPm0Rq4",
+    "youtubeNeedsVerify": true,
+    "enTags": [
+      "british industrial",
+      "experimental",
+      "neofolk",
+      "industrial"
+    ],
+    "spotifyId": "7vF3DcPluq6lZI36VniagW"
+  },
+  {
+    "name": "King Dude",
+    "birthDate": "2000-06-15",
+    "genres": [
+      "darkwave",
+      "folk",
+      "industrial"
+    ],
+    "subgenres": [
+      "neofolk",
+      "industrial"
+    ],
+    "youtubeId": "-Xnqsab-Psw",
+    "youtubeNeedsVerify": true,
+    "enTags": [
+      "gothic americana",
+      "grave wave",
+      "neofolk",
+      "martial industrial"
+    ],
+    "spotifyId": "0erhjm5MwzWpFRFuorXLT2"
+  },
+  {
+    "name": "BIG|BRAVE",
+    "birthDate": "2014-06-15",
+    "genres": [
+      "artpop",
+      "ambient"
+    ],
+    "subgenres": [
+      "avant-garde-pop",
+      "drone"
+    ],
+    "youtubeId": "BpNf33gP4vw",
+    "youtubeNeedsVerify": true,
+    "enTags": [
+      "doomgaze",
+      "post-doom metal",
+      "avant-garde metal",
+      "drone metal",
+      "post-metal"
+    ],
+    "spotifyId": "5nlpqhz47LYv7KvarJdh44"
+  },
+  {
+    "name": "Thou",
+    "birthDate": "2005-06-15",
+    "genres": [
+      "ambient",
+      "folk",
+      "industrial"
+    ],
+    "subgenres": [
+      "drone",
+      "dark-folk"
+    ],
+    "youtubeId": "PwDq3nBf38k",
+    "youtubeNeedsVerify": true,
+    "enTags": [
+      "drone metal",
+      "gaian doom",
+      "post-doom metal",
+      "louisiana metal",
+      "sludge metal",
+      "voidgrind"
+    ],
+    "spotifyId": "4KoZpKiPeX4jIi7Euwcfuo"
+  },
+  {
+    "name": "Jarboe",
+    "birthDate": "2000-06-15",
+    "genres": [
+      "idm",
+      "industrial",
+      "ambient",
+      "jazz",
+      "folk",
+      "darkwave"
+    ],
+    "subgenres": [
+      "experimental",
+      "industrial",
+      "ambient",
+      "dark-jazz",
+      "neofolk"
+    ],
+    "youtubeId": "M3cOPDTl3ek",
+    "youtubeNeedsVerify": true,
+    "enTags": [
+      "laboratorio",
+      "experimental",
+      "industrial",
+      "ambient industrial",
+      "experimental rock",
+      "dark jazz",
+      "neofolk"
+    ],
+    "spotifyId": "5cCzokwZSw5IRKcm7LpRbH"
+  },
+  {
+    "name": "Fvnerals",
+    "birthDate": "2013-06-15",
+    "genres": [
+      "folk",
+      "industrial",
+      "ambient"
+    ],
+    "subgenres": [
+      "dark-folk",
+      "drone"
+    ],
+    "youtubeId": "O7Hm9myxdG0",
+    "youtubeNeedsVerify": true,
+    "enTags": [
+      "doomgaze",
+      "gaian doom",
+      "drone metal"
+    ],
+    "spotifyId": "3Z9ijrVnS0SeT22OTcsTqu"
+  },
+  {
+    "name": "Coil",
+    "birthDate": "1982-06-15",
+    "genres": [
+      "idm",
+      "industrial",
+      "ambient",
+      "electronica"
+    ],
+    "subgenres": [
+      "experimental",
+      "industrial",
+      "ambient",
+      "indietronica"
+    ],
+    "youtubeId": "INMo0sj9AMw",
+    "enTags": [
+      "british experimental",
+      "british industrial",
+      "industrial",
+      "ritual ambient",
+      "experimental",
+      "experimental rock",
+      "uk experimental electronic"
+    ],
+    "spotifyId": "37KB5e6cGsN1AQAB9Omm1U"
+  },
+  {
+    "name": "Pharmakon",
+    "birthDate": "1990-06-19",
+    "genres": [
+      "industrial",
+      "idm",
+      "artpop",
+      "techno",
+      "ambient"
+    ],
+    "subgenres": [
+      "noise",
+      "industrial",
+      "power-electronics",
+      "avant-garde-pop"
+    ],
+    "youtubeId": "EnoeTdptXRc",
+    "youtubeNeedsVerify": true,
+    "enTags": [
+      "noise",
+      "death industrial",
+      "mandible",
+      "electra",
+      "new isolationism",
+      "power electronics",
+      "avant-garde metal"
+    ],
+    "spotifyId": "1ix1aDOd7GSOeT9iqNh5KO"
   }
 ]
