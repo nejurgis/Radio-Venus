@@ -429,7 +429,8 @@ async function main() {
   if (needsVerify.length) {
     console.log(`\nYouTube IDs to verify (${needsVerify.length}):`);
     for (const a of needsVerify) {
-      console.log(`  ${a.name.padEnd(36)} https://youtu.be/${a.youtubeId}`);
+      const genres = `[${a.genres.join(', ')}]`;
+      console.log(`  ${a.name.padEnd(36)} ${genres.padEnd(32)} https://youtu.be/${a.youtubeId}`);
     }
   }
 
