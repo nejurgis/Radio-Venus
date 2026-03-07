@@ -36,18 +36,31 @@ function reconstructLongitude(m) {
   return SIGNS.indexOf(m.venus.sign) * 30 + m.venus.degree;
 }
 
+const SIGN_ELEMENTS   = ['fire','earth','air','water','fire','earth','air','water','fire','earth','air','water'];
+const SIGN_MODALITIES = ['cardinal','fixed','mutable','cardinal','fixed','mutable','cardinal','fixed','mutable','cardinal','fixed','mutable'];
+
 function venusSimilarity(userLon, artistLon) {
-  // Shortest arc on the 360° circle
   const diff = Math.abs(userLon - artistLon);
   const angularDistance = diff > 180 ? 360 - diff : diff;
-  // 0° = 100%, 180° (opposition) = 0%
-  const base = 100 * (1 - angularDistance / 180);
-  // Same-sign artists always rank above cross-sign artists:
-  // same sign gets the raw score, different sign is capped so it
-  // never exceeds the worst possible same-sign score (~84%).
-  const sameSign = Math.floor(userLon / 30) === Math.floor(artistLon / 30);
-  if (sameSign) return Math.round(base);
-  return Math.round(Math.min(base, 83));
+  const rawScore = 100 * (1 - angularDistance / 180);
+
+  const userSign   = Math.floor(userLon   / 30);
+  const artistSign = Math.floor(artistLon / 30);
+  const sameSign   = userSign === artistSign;
+  const userDecan   = Math.floor((userLon   % 30) / 10);
+  const artistDecan = Math.floor((artistLon % 30) / 10);
+  const sameDecan   = userDecan === artistDecan;
+
+  // Tier 1: same sign + same decan → +20 bonus (caps at 100)
+  if (sameSign && sameDecan)  return Math.min(100, Math.round(rawScore + 20));
+  // Tier 2: same sign, different decan → +10 bonus (caps at 99)
+  if (sameSign && !sameDecan) return Math.min(99,  Math.round(rawScore + 10));
+  // Tier 3: same element OR modality (trine/square resonance) → +5 bonus (caps at 85)
+  const sameElement  = SIGN_ELEMENTS[userSign]   === SIGN_ELEMENTS[artistSign];
+  const sameModality = SIGN_MODALITIES[userSign] === SIGN_MODALITIES[artistSign];
+  if (sameElement || sameModality) return Math.min(85, Math.round(rawScore + 5));
+  // Tier 4: no resonance — raw angular score, capped at 70
+  return Math.min(70, Math.round(rawScore));
 }
 
 function sortBySimilarity(arr, userLon) {
