@@ -36,6 +36,7 @@ if (!artistArg) {
     '  --depth=N              recurse N levels deep (default: 1)',
     '  --min-followers=N      skip artists below N followers (default: 2000)',
     '  --min-tag-overlap=N    skip artists with fewer than N shared EN tags with seed (default: 1)',
+    '  --scan                 quick scan: show new vs in-DB candidates, no date/YouTube lookups',
     '  --dry-run              print results without saving',
     '  --output=file.json     save to file instead of seed-musicians.json',
   ].join('\n'));
@@ -46,6 +47,7 @@ const depth          = parseInt(args.find(a => a.startsWith('--depth='))?.split(
 const minFollowers   = parseInt(args.find(a => a.startsWith('--min-followers='))?.split('=')[1]   ?? '2000');
 const minTagOverlap  = parseInt(args.find(a => a.startsWith('--min-tag-overlap='))?.split('=')[1] ?? '1');
 const dryRun         = args.includes('--dry-run');
+const scanOnly       = args.includes('--scan');
 const outputFlag     = args.find(a => a.startsWith('--output='))?.split('=')[1] ?? null;
 
 function parseSpotifyId(str) {
@@ -288,6 +290,7 @@ async function main() {
   const seed           = JSON.parse(readFileSync(SEED_PATH, 'utf-8'));
   const existingNames  = new Set(seed.map(a => a.name.toLowerCase()));
   const existingSpIds  = new Set(seed.map(a => a.spotifyId).filter(Boolean));
+  console.log(`Seed: ${seed.length} artists, ${existingSpIds.size} with Spotify IDs`);
 
   // Resolve seed Spotify ID
   const directId = parseSpotifyId(artistArg);
@@ -342,6 +345,15 @@ async function main() {
     );
 
     console.log(`  ${candidates.length} total, ${fresh.length} new (≥${minFollowers.toLocaleString()} followers, not in DB)`);
+
+    if (scanOnly) {
+      for (const c of candidates.filter(c => c.followers >= minFollowers && c.tags.length > 0)) {
+        const inDB = existingNames.has(c.name.toLowerCase()) || existingSpIds.has(c.spotifyId);
+        const tags = c.tags.slice(0, 3).join(', ');
+        console.log(`  ${inDB ? '✓ in DB' : '★ NEW  '} ${c.name.padEnd(32)} ${c.followers.toLocaleString().padStart(8)}  [${tags}]`);
+      }
+      continue;
+    }
 
     for (const candidate of fresh) {
       visited.add(candidate.spotifyId);
@@ -402,22 +414,29 @@ async function main() {
         console.log(`    ⚠ YouTube ID not found`);
       }
 
-      additions.push({
-        name:      candidate.name,
+      const entry = {
+        name:             candidate.name,
         birthDate,
         genres,
         subgenres,
-        youtubeId: youtubeId ?? null,
-        ...(youtubeId ? { youtubeNeedsVerify: true } : {}),
-        enTags:    candidate.tags,
-        spotifyId: candidate.spotifyId,
-      });
+        youtubeId:        youtubeId ?? null,
+        enTags:           candidate.tags,
+        spotifyId:        candidate.spotifyId,
+        spotifyFollowers: candidate.followers || null,
+      };
+      if (youtubeId) entry.youtubeNeedsVerify = true;
+      additions.push(entry);
 
       // Queue candidate for next depth
       if (currentDepth < depth) {
         queue.push({ spotifyId: candidate.spotifyId, currentDepth: currentDepth + 1 });
       }
     }
+  }
+
+  if (scanOnly) {
+    await closeBrowser();
+    return;
   }
 
   // ── Summary ──────────────────────────────────────────────────────────────
