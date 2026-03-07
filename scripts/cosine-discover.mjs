@@ -203,6 +203,40 @@ const COSINE_HEADERS = {
   'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
 };
 
+const EN_HEADERS = { ...COSINE_HEADERS };
+
+// Look up an artist on Everynoise research page — returns enTags + spotifyId
+async function lookupOnEN(artistName) {
+  const browser = await getBrowser();
+  const page    = await browser.newPage();
+  try {
+    await page.setExtraHTTPHeaders(EN_HEADERS);
+    await page.goto(
+      `https://everynoise.com/research.cgi?name=${encodeURIComponent(artistName)}&mode=artist`,
+      { waitUntil: 'domcontentloaded', timeout: 45000 }
+    );
+    await page.waitForSelector('#exact', { timeout: 20000 }).catch(() => {});
+
+    const enTags = await page.$$eval(
+      '#exact + div .note a[href*="mode=genre"]',
+      els => els.map(el => el.textContent.trim()).filter(Boolean)
+    ).catch(() => []);
+
+    const profileHref = await page.$eval(
+      '#exact + div .artistname a[href*="artistprofile.cgi"]',
+      el => el.getAttribute('href')
+    ).catch(() => null);
+    const spMatch  = profileHref?.match(/[?&]id=([A-Za-z0-9]+)/);
+    const spotifyId = spMatch?.[1] ?? null;
+
+    return { enTags, spotifyId };
+  } catch {
+    return { enTags: [], spotifyId: null };
+  } finally {
+    await page.close().catch(() => {});
+  }
+}
+
 // Search cosine.club for an artist, return the URL of their best matching track
 async function findTrackUrl(artistName, trackHint) {
   const browser = await getBrowser();
@@ -342,8 +376,6 @@ async function main() {
   }
   console.log(`  Found: ${tracks.length} similar tracks`);
 
-  await closeBrowser();
-
   if (!tracks.length) {
     console.error('✗ No similar tracks found. The page structure may have changed.');
     process.exit(1);
@@ -371,30 +403,38 @@ async function main() {
   if (scanOnly) {
     for (const c of candidates) {
       const sim = c.similarity ? `${c.similarity}%` : '  ?%';
-      console.log(`  ★ ${sim}  ${c.artist.padEnd(32)}  [${c.trackName || c.slugText.slice(0, 30)}]`);
+      console.log(`  ★ ${sim}  ${c.artist.padEnd(32)}  [${c.trackName}]`);
     }
+    await closeBrowser();
     return;
   }
 
-  // Step 5: enrich each candidate
+  // Step 5: enrich each candidate — EN tags + birth date + YouTube
   const additions = [];
 
   for (const candidate of candidates) {
-    console.log(`\n  ▸ ${candidate.artist}${candidate.similarity ? `  (${candidate.similarity}% similar)` : ''}`);
+    console.log(`\n  ▸ ${candidate.artist}  (${candidate.similarity}% similar)`);
 
-    // EN genres via Wikidata/MB — no EN scraping needed here since
-    // genres come from EN's categorizeGenres on stored enTags.
-    // For cosine-discovered artists we derive genres from MusicBrainz tags.
-    let genres = [], subgenres = [], enTags = [];
+    // EN lookup: genre tags + Spotify ID (reuses open browser)
+    const { enTags, spotifyId } = await lookupOnEN(candidate.artist);
+    const genres    = categorizeGenres(enTags);
+    const subgenres = categorizeSubgenres(enTags);
 
-    // Birth date
+    if (enTags.length) {
+      console.log(`    enTags : ${enTags.slice(0, 5).join(', ')}`);
+      console.log(`    genres : ${genres.join(', ') || '(none mapped)'}`);
+    } else {
+      console.log(`    ⚠ Not found on Everynoise — genres will be empty`);
+    }
+
+    // Birth date: Wikidata first, then MusicBrainz (use spotifyId from EN if available)
     let birthDate = null;
     const wdDate = await getWDBirthDate(candidate.artist);
     if (wdDate) {
       birthDate = wdDate;
       console.log(`    birth date (Wikidata): ${birthDate}`);
     } else {
-      const mbDate = await getMBBirthDate(candidate.artist, null);
+      const mbDate = await getMBBirthDate(candidate.artist, spotifyId);
       if (mbDate) {
         birthDate = mbDate;
         console.log(`    birth date (MusicBrainz): ${birthDate}`);
@@ -407,7 +447,7 @@ async function main() {
     }
 
     // YouTube
-    const youtubeId = await findYouTubeId(candidate.artist, '');
+    const youtubeId = await findYouTubeId(candidate.artist, enTags[0] ?? '');
     if (youtubeId) {
       console.log(`    youtube: https://youtu.be/${youtubeId}  ← verify`);
     } else {
@@ -415,18 +455,21 @@ async function main() {
     }
 
     const entry = {
-      name:              candidate.artist,
+      name:             candidate.artist,
       birthDate,
       genres,
       subgenres,
-      youtubeId:         youtubeId ?? null,
-      enTags:            [],
-      cosineUrl:         `https://cosine.club${candidate.href}`,
-      cosineSimilarity:  candidate.similarity || null,
+      youtubeId:        youtubeId ?? null,
+      enTags,
+      spotifyId:        spotifyId ?? null,
+      cosineUrl:        `https://cosine.club${candidate.href}`,
+      cosineSimilarity: candidate.similarity || null,
     };
     if (youtubeId) entry.youtubeNeedsVerify = true;
     additions.push(entry);
   }
+
+  await closeBrowser();
 
   // ── Summary ───────────────────────────────────────────────────────────────
 
@@ -434,11 +477,12 @@ async function main() {
   console.log(`Discovered: ${additions.length} new artists`);
 
   if (additions.length) {
-    console.log(`\nArtists (need genre assignment via verify-genres or manual):`);
+    console.log(`\nYouTube IDs to verify (${additions.filter(a => a.youtubeNeedsVerify).length}):`);
     for (const a of additions) {
-      const sim = a.cosineSimilarity ? `${a.cosineSimilarity}%` : '  ?%';
-      const yt  = a.youtubeId ? `https://youtu.be/${a.youtubeId}` : '(no YouTube)';
-      console.log(`  ${sim}  ${a.name.padEnd(32)}  ${yt}`);
+      if (!a.youtubeNeedsVerify) continue;
+      const sim    = a.cosineSimilarity ? `${a.cosineSimilarity}%` : '  ?%';
+      const genres = `[${a.genres.join(', ') || 'no genre'}]`;
+      console.log(`  ${sim}  ${a.name.padEnd(32)} ${genres.padEnd(28)} https://youtu.be/${a.youtubeId}`);
     }
   }
 
