@@ -63,10 +63,23 @@ function venusSimilarity(userLon, artistLon) {
   return Math.min(70, Math.round(rawScore));
 }
 
+function angularDist(a, b) {
+  const d = Math.abs(a - b);
+  return d > 180 ? 360 - d : d;
+}
+
 function sortBySimilarity(arr, userLon) {
   if (userLon == null) return shuffle(arr);
-  for (const m of arr) m.similarity = venusSimilarity(userLon, reconstructLongitude(m));
-  return arr.sort((a, b) => b.similarity - a.similarity || a.name.localeCompare(b.name));
+  for (const m of arr) {
+    const lon = reconstructLongitude(m);
+    m.similarity = venusSimilarity(userLon, lon);
+    m._dist = angularDist(userLon, lon);
+  }
+  return arr.sort((a, b) =>
+    b.similarity - a.similarity ||
+    a._dist - b._dist ||           // tiebreak: closer degrees first
+    a.name.localeCompare(b.name)
+  );
 }
 
 // ── Subgenre counts ─────────────────────────────────────────────────────────
