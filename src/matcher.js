@@ -33,11 +33,18 @@ export function getDatabase() {
 // ── Venus similarity ────────────────────────────────────────────────────────
 
 function reconstructLongitude(m) {
-  return SIGNS.indexOf(m.venus.sign) * 30 + m.venus.degree;
+  // Clamp degree to <30 — Venus at exactly a sign boundary can be stored as degree=30,
+  // which would overflow into the next sign and misclassify tier.
+  return SIGNS.indexOf(m.venus.sign) * 30 + Math.min(m.venus.degree, 29.99);
 }
 
 const SIGN_ELEMENTS   = ['fire','earth','air','water','fire','earth','air','water','fire','earth','air','water'];
 const SIGN_MODALITIES = ['cardinal','fixed','mutable','cardinal','fixed','mutable','cardinal','fixed','mutable','cardinal','fixed','mutable'];
+
+function angularDist(a, b) {
+  const d = Math.abs(a - b);
+  return d > 180 ? 360 - d : d;
+}
 
 function venusSimilarity(userLon, artistLon) {
   const diff = Math.abs(userLon - artistLon);
@@ -56,18 +63,21 @@ function venusSimilarity(userLon, artistLon) {
   // Tier 2 — same sign, different decan: 70–89 (maps 0°→89, 30°→70)
   if (sameSign)               return Math.round(89 - (d / 30) * 19);
 
-  // Tier 3 — same element OR modality: 40–69 (maps 0°→69, 180°→40)
+  // Tier 3 — same element OR modality: 40–69
+  // Primary: distance to artist's nearest sign boundary (groups all Virgo together, then all Pisces, etc.)
+  // Fine:    individual degree distance within the group
   const sameElement  = SIGN_ELEMENTS[userSign]   === SIGN_ELEMENTS[artistSign];
   const sameModality = SIGN_MODALITIES[userSign] === SIGN_MODALITIES[artistSign];
-  if (sameElement || sameModality) return Math.round(40 + (1 - d / 180) * 29);
+  if (sameElement || sameModality) {
+    const nearBound = Math.min(
+      angularDist(userLon, artistSign * 30),
+      angularDist(userLon, artistSign * 30 + 30)
+    );
+    return Math.round(40 + (1 - nearBound / 180) * 24 + (1 - d / 180) * 5);
+  }
 
   // Tier 4 — no resonance: 0–39
   return Math.round((1 - d / 180) * 39);
-}
-
-function angularDist(a, b) {
-  const d = Math.abs(a - b);
-  return d > 180 ? 360 - d : d;
 }
 
 function sortBySimilarity(arr, userLon) {
