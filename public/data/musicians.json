@@ -2217,6 +2217,57 @@
     ]
   },
   {
+    "name": "Beat Happening",
+    "birthDate": "1982-06-15",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 18.2,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "indiepop",
+      "electronica",
+      "altrock"
+    ],
+    "subgenres": [
+      "lo-fi",
+      "twee-pop",
+      "noise-pop",
+      "lo-fi-indie"
+    ],
+    "enTags": [
+      "olympia wa indie",
+      "lo-fi",
+      "twee pop",
+      "noise pop",
+      "tape club",
+      "riot grrrl",
+      "alternative rock",
+      "slacker rock"
+    ],
+    "youtubeVideoId": "lRZalykl2ts",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Beaumont Hannant",
+    "birthDate": "1957-04-05",
+    "venus": {
+      "sign": "Aries",
+      "degree": 13.1,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "idm"
+    ],
+    "youtubeVideoId": "H8rcZJaPhHw",
+    "backupVideoIds": []
+  },
+  {
     "name": "Bel Canto",
     "birthDate": "1985-00-00",
     "venus": {
@@ -7276,6 +7327,32 @@
     "backupVideoIds": []
   },
   {
+    "name": "Felt",
+    "birthDate": "1979-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 4.5,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave",
+      "indiepop",
+      "artpop"
+    ],
+    "subgenres": [
+      "art-pop"
+    ],
+    "enTags": [
+      "uk post-punk",
+      "c86",
+      "dream pop",
+      "tape club"
+    ],
+    "youtubeVideoId": "K5XgLshyN8w",
+    "backupVideoIds": []
+  },
+  {
     "name": "Fennesz",
     "birthDate": "1962-12-25",
     "venus": {
@@ -11792,6 +11869,31 @@
     "backupVideoIds": []
   },
   {
+    "name": "Lizzy Mercier Descloux",
+    "birthDate": "1956-12-16",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 25.9,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "enTags": [
+      "no wave",
+      "french post-punk",
+      "post-punk",
+      "experimental rock"
+    ],
+    "youtubeVideoId": "DwuujEjbNK0",
+    "backupVideoIds": []
+  },
+  {
     "name": "Loraine James",
     "birthDate": "1995-12-18",
     "venus": {
@@ -12521,6 +12623,31 @@
       "spectra"
     ],
     "youtubeVideoId": "aWZ1gBi2jr0",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Marine Girls",
+    "birthDate": "1980-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 24.2,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave",
+      "indiepop"
+    ],
+    "subgenres": [
+      "twee-pop"
+    ],
+    "enTags": [
+      "c86",
+      "tape club",
+      "uk post-punk",
+      "twee pop"
+    ],
+    "youtubeVideoId": "RUaRUIweXhc",
     "backupVideoIds": []
   },
   {
@@ -17030,6 +17157,24 @@
     "backupVideoIds": []
   },
   {
+    "name": "Sarin Sunday",
+    "birthDate": "2000-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 25.8,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "idm"
+    ],
+    "youtubeVideoId": "OvYOA2onUzM",
+    "backupVideoIds": []
+  },
+  {
     "name": "Sasha Vosk",
     "birthDate": "1983-09-30",
     "venus": {
@@ -17881,6 +18026,31 @@
     "backupVideoIds": []
   },
   {
+    "name": "Solid Space",
+    "birthDate": "1980-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 24.2,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "techno",
+      "darkwave"
+    ],
+    "subgenres": [
+      "techno",
+      "darkwave"
+    ],
+    "enTags": [
+      "proto-techno",
+      "minimal wave",
+      "uk post-punk"
+    ],
+    "youtubeVideoId": "nyWgMykF6Ig",
+    "backupVideoIds": []
+  },
+  {
     "name": "Somewhere off Jazz Street",
     "birthDate": "1978-11-27",
     "venus": {
@@ -18589,6 +18759,31 @@
     "backupVideoIds": []
   },
   {
+    "name": "Suburban Lawns",
+    "birthDate": "1965-06-15",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 11.2,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "enTags": [
+      "no wave",
+      "post-punk",
+      "experimental rock",
+      "egg punk"
+    ],
+    "youtubeVideoId": "UjKeiZLEWsM",
+    "backupVideoIds": []
+  },
+  {
     "name": "Sudan Archives",
     "birthDate": "2000-00-00",
     "venus": {
@@ -18617,6 +18812,35 @@
       "la pop"
     ],
     "youtubeVideoId": "Z9wvNed0oT4",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Suicide",
+    "birthDate": "1975-06-15",
+    "venus": {
+      "sign": "Leo",
+      "degree": 9.1,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "idm",
+      "darkwave",
+      "industrial",
+      "altrock"
+    ],
+    "subgenres": [
+      "experimental",
+      "noise"
+    ],
+    "enTags": [
+      "experimental rock",
+      "no wave",
+      "synth punk",
+      "experimental",
+      "noise rock"
+    ],
+    "youtubeVideoId": "52eUPbb4r8Y",
     "backupVideoIds": []
   },
   {
@@ -19408,6 +19632,30 @@
     "backupVideoIds": []
   },
   {
+    "name": "Television Personalities",
+    "birthDate": "1978-06-15",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 29.1,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "darkwave"
+    ],
+    "subgenres": [
+      "darkwave"
+    ],
+    "enTags": [
+      "uk post-punk",
+      "post-punk",
+      "c86",
+      "tape club"
+    ],
+    "youtubeVideoId": "HUyx8BoWTWA",
+    "backupVideoIds": []
+  },
+  {
     "name": "Terence Fixmer",
     "birthDate": "1972-10-02",
     "venus": {
@@ -19544,6 +19792,32 @@
       "focus"
     ],
     "youtubeVideoId": "IRFPBRDPnz8",
+    "backupVideoIds": []
+  },
+  {
+    "name": "The Bats",
+    "birthDate": "1982-06-15",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 18.2,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "electronica",
+      "indiepop"
+    ],
+    "subgenres": [
+      "lo-fi"
+    ],
+    "enTags": [
+      "dunedin sound",
+      "christchurch indie",
+      "lo-fi",
+      "nz indie",
+      "tape club"
+    ],
+    "youtubeVideoId": "HBwjfe7xpWQ",
     "backupVideoIds": []
   },
   {
@@ -19688,6 +19962,29 @@
       "compositional ambient"
     ],
     "youtubeVideoId": "jikJvWx-KiM",
+    "backupVideoIds": []
+  },
+  {
+    "name": "The Clean",
+    "birthDate": "1978-06-15",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 29.1,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "electronica"
+    ],
+    "subgenres": [
+      "lo-fi"
+    ],
+    "enTags": [
+      "dunedin indie",
+      "lo-fi",
+      "dunedin sound"
+    ],
+    "youtubeVideoId": "s5I6a_ew8kI",
     "backupVideoIds": []
   },
   {
@@ -20180,6 +20477,31 @@
       "rock"
     ],
     "youtubeVideoId": "AC7xbqmlluo",
+    "backupVideoIds": []
+  },
+  {
+    "name": "The Wake",
+    "birthDate": "1986-06-15",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 29.7,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "darkwave"
+    ],
+    "subgenres": [
+      "new-wave"
+    ],
+    "enTags": [
+      "c86",
+      "scottish new wave",
+      "uk post-punk",
+      "tape club",
+      "deathrock"
+    ],
+    "youtubeVideoId": "BVzMdlwmKW0",
     "backupVideoIds": []
   },
   {
