@@ -41,26 +41,28 @@ const SIGN_MODALITIES = ['cardinal','fixed','mutable','cardinal','fixed','mutabl
 
 function venusSimilarity(userLon, artistLon) {
   const diff = Math.abs(userLon - artistLon);
-  const angularDistance = diff > 180 ? 360 - diff : diff;
-  const rawScore = 100 * (1 - angularDistance / 180);
+  const d    = diff > 180 ? 360 - diff : diff;  // shortest arc
 
-  const userSign   = Math.floor(userLon   / 30);
-  const artistSign = Math.floor(artistLon / 30);
-  const sameSign   = userSign === artistSign;
+  const userSign    = Math.floor(userLon   / 30);
+  const artistSign  = Math.floor(artistLon / 30);
+  const sameSign    = userSign === artistSign;
   const userDecan   = Math.floor((userLon   % 30) / 10);
   const artistDecan = Math.floor((artistLon % 30) / 10);
   const sameDecan   = userDecan === artistDecan;
 
-  // Tier 1: same sign + same decan → +20 bonus (caps at 100)
-  if (sameSign && sameDecan)  return Math.min(100, Math.round(rawScore + 20));
-  // Tier 2: same sign, different decan → +10 bonus (caps at 99)
-  if (sameSign && !sameDecan) return Math.min(99,  Math.round(rawScore + 10));
-  // Tier 3: same element OR modality (trine/square resonance) → +5 bonus (caps at 85)
+  // Tier 1 — same sign, same decan: 90–100 (1 pt per degree, 10° range)
+  if (sameSign && sameDecan)  return Math.round(100 - d);
+
+  // Tier 2 — same sign, different decan: 70–89 (maps 0°→89, 30°→70)
+  if (sameSign)               return Math.round(89 - (d / 30) * 19);
+
+  // Tier 3 — same element OR modality: 40–69 (maps 0°→69, 180°→40)
   const sameElement  = SIGN_ELEMENTS[userSign]   === SIGN_ELEMENTS[artistSign];
   const sameModality = SIGN_MODALITIES[userSign] === SIGN_MODALITIES[artistSign];
-  if (sameElement || sameModality) return Math.min(85, Math.round(rawScore + 5));
-  // Tier 4: no resonance — raw angular score, capped at 70
-  return Math.min(70, Math.round(rawScore));
+  if (sameElement || sameModality) return Math.round(40 + (1 - d / 180) * 29);
+
+  // Tier 4 — no resonance: 0–39
+  return Math.round((1 - d / 180) * 39);
 }
 
 function angularDist(a, b) {
