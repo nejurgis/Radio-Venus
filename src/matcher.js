@@ -86,10 +86,19 @@ function sortBySimilarity(arr, userLon) {
     const lon = reconstructLongitude(m);
     m.similarity = venusSimilarity(userLon, lon);
     m._dist = angularDist(userLon, lon);
+    const artistSign = Math.floor(lon / 30);
+    // Nearest boundary of the artist's sign — used as tiebreaker to guarantee
+    // all artists from the same sign group cluster together even when the fine
+    // adjustment in venusSimilarity causes their rounded scores to tie.
+    m._signGroupDist = Math.min(
+      angularDist(userLon, artistSign * 30),
+      angularDist(userLon, artistSign * 30 + 30)
+    );
   }
   return arr.sort((a, b) =>
     b.similarity - a.similarity ||
-    a._dist - b._dist ||           // tiebreak: closer degrees first
+    a._signGroupDist - b._signGroupDist ||  // same score → cluster by sign group
+    a._dist - b._dist ||                    // same group → closer degrees first
     a.name.localeCompare(b.name)
   );
 }
