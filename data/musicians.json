@@ -2217,6 +2217,57 @@
     ]
   },
   {
+    "name": "Beat Happening",
+    "birthDate": "1982-06-15",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 18.2,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "indiepop",
+      "electronica",
+      "altrock"
+    ],
+    "subgenres": [
+      "lo-fi",
+      "twee-pop",
+      "noise-pop",
+      "lo-fi-indie"
+    ],
+    "enTags": [
+      "olympia wa indie",
+      "lo-fi",
+      "twee pop",
+      "noise pop",
+      "tape club",
+      "riot grrrl",
+      "alternative rock",
+      "slacker rock"
+    ],
+    "youtubeVideoId": "lRZalykl2ts",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Beaumont Hannant",
+    "birthDate": "1957-04-05",
+    "venus": {
+      "sign": "Aries",
+      "degree": 13.1,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "idm"
+    ],
+    "youtubeVideoId": "H8rcZJaPhHw",
+    "backupVideoIds": []
+  },
+  {
     "name": "Bel Canto",
     "birthDate": "1985-00-00",
     "venus": {
@@ -2512,6 +2563,33 @@
       "high vibe"
     ],
     "youtubeVideoId": "Ee2OtLM_loQ",
+    "backupVideoIds": []
+  },
+  {
+    "name": "BIG|BRAVE",
+    "birthDate": "2014-06-15",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 20.5,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "artpop",
+      "ambient"
+    ],
+    "subgenres": [
+      "avant-garde-pop",
+      "drone"
+    ],
+    "enTags": [
+      "doomgaze",
+      "post-doom metal",
+      "avant-garde metal",
+      "drone metal",
+      "post-metal"
+    ],
+    "youtubeVideoId": "BpNf33gP4vw",
     "backupVideoIds": []
   },
   {
@@ -4174,6 +4252,39 @@
     ]
   },
   {
+    "name": "Coil",
+    "birthDate": "1982-06-15",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 18.2,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "idm",
+      "industrial",
+      "ambient",
+      "electronica"
+    ],
+    "subgenres": [
+      "experimental",
+      "industrial",
+      "ambient",
+      "indietronica"
+    ],
+    "enTags": [
+      "british experimental",
+      "british industrial",
+      "industrial",
+      "ritual ambient",
+      "experimental",
+      "experimental rock",
+      "uk experimental electronic"
+    ],
+    "youtubeVideoId": "INMo0sj9AMw",
+    "backupVideoIds": []
+  },
+  {
     "name": "Colin Potter",
     "birthDate": "1980-06-01",
     "venus": {
@@ -4375,6 +4486,35 @@
       "deconstructed club"
     ],
     "youtubeVideoId": "podihyHpTzQ",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Current 93",
+    "birthDate": "1982-06-15",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 18.2,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "industrial",
+      "idm",
+      "folk",
+      "darkwave"
+    ],
+    "subgenres": [
+      "industrial",
+      "experimental",
+      "neofolk"
+    ],
+    "enTags": [
+      "british industrial",
+      "experimental",
+      "neofolk",
+      "industrial"
+    ],
+    "youtubeVideoId": "IncLgPm0Rq4",
     "backupVideoIds": []
   },
   {
@@ -7187,6 +7327,32 @@
     "backupVideoIds": []
   },
   {
+    "name": "Felt",
+    "birthDate": "1979-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 4.5,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave",
+      "indiepop",
+      "artpop"
+    ],
+    "subgenres": [
+      "art-pop"
+    ],
+    "enTags": [
+      "uk post-punk",
+      "c86",
+      "dream pop",
+      "tape club"
+    ],
+    "youtubeVideoId": "K5XgLshyN8w",
+    "backupVideoIds": []
+  },
+  {
     "name": "Fennesz",
     "birthDate": "1962-12-25",
     "venus": {
@@ -7931,6 +8097,32 @@
       "Vd0qwLxZHBI",
       "BQzbAJoAPnQ"
     ]
+  },
+  {
+    "name": "Fvnerals",
+    "birthDate": "2013-06-15",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 15.1,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "folk",
+      "industrial",
+      "ambient"
+    ],
+    "subgenres": [
+      "dark-folk",
+      "drone"
+    ],
+    "enTags": [
+      "doomgaze",
+      "gaian doom",
+      "drone metal"
+    ],
+    "youtubeVideoId": "O7Hm9myxdG0",
+    "backupVideoIds": []
   },
   {
     "name": "GAK",
@@ -9568,6 +9760,42 @@
     ]
   },
   {
+    "name": "Jarboe",
+    "birthDate": "2000-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 25.8,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "idm",
+      "industrial",
+      "ambient",
+      "jazz",
+      "folk",
+      "darkwave"
+    ],
+    "subgenres": [
+      "experimental",
+      "industrial",
+      "ambient",
+      "dark-jazz",
+      "neofolk"
+    ],
+    "enTags": [
+      "laboratorio",
+      "experimental",
+      "industrial",
+      "ambient industrial",
+      "experimental rock",
+      "dark jazz",
+      "neofolk"
+    ],
+    "youtubeVideoId": "M3cOPDTl3ek",
+    "backupVideoIds": []
+  },
+  {
     "name": "JAY-Z",
     "birthDate": "1969-12-04",
     "venus": {
@@ -10945,6 +11173,33 @@
     ]
   },
   {
+    "name": "King Dude",
+    "birthDate": "2000-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 25.8,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave",
+      "folk",
+      "industrial"
+    ],
+    "subgenres": [
+      "neofolk",
+      "industrial"
+    ],
+    "enTags": [
+      "gothic americana",
+      "grave wave",
+      "neofolk",
+      "martial industrial"
+    ],
+    "youtubeVideoId": "-Xnqsab-Psw",
+    "backupVideoIds": []
+  },
+  {
     "name": "King Midas Sound",
     "birthDate": "1965-09-22",
     "venus": {
@@ -10964,6 +11219,33 @@
       "dub metal"
     ],
     "youtubeVideoId": "HI8XhwncEW4",
+    "backupVideoIds": []
+  },
+  {
+    "name": "King Woman",
+    "birthDate": "2009-06-15",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 9,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "folk",
+      "industrial",
+      "ambient"
+    ],
+    "subgenres": [
+      "dark-folk",
+      "drone"
+    ],
+    "enTags": [
+      "gaian doom",
+      "doomgaze",
+      "bay area indie",
+      "drone metal"
+    ],
+    "youtubeVideoId": "kCTkZspaSUQ",
     "backupVideoIds": []
   },
   {
@@ -11469,6 +11751,32 @@
     "backupVideoIds": []
   },
   {
+    "name": "Lingua Ignota",
+    "birthDate": "1986-06-17",
+    "venus": {
+      "sign": "Leo",
+      "degree": 2,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "industrial",
+      "folk",
+      "ambient"
+    ],
+    "subgenres": [
+      "industrial",
+      "dark-folk"
+    ],
+    "enTags": [
+      "death industrial",
+      "gaian doom",
+      "spectra"
+    ],
+    "youtubeVideoId": "7YRMV7ffPpY",
+    "backupVideoIds": []
+  },
+  {
     "name": "Linkin Park",
     "birthDate": "1996-01-01",
     "venus": {
@@ -11558,6 +11866,31 @@
       "bayerischer rap"
     ],
     "youtubeVideoId": "i04xP4yWisM",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Lizzy Mercier Descloux",
+    "birthDate": "1956-12-16",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 25.9,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "enTags": [
+      "no wave",
+      "french post-punk",
+      "post-punk",
+      "experimental rock"
+    ],
+    "youtubeVideoId": "DwuujEjbNK0",
     "backupVideoIds": []
   },
   {
@@ -12290,6 +12623,58 @@
       "spectra"
     ],
     "youtubeVideoId": "aWZ1gBi2jr0",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Marine Girls",
+    "birthDate": "1980-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 24.2,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "darkwave",
+      "indiepop"
+    ],
+    "subgenres": [
+      "twee-pop"
+    ],
+    "enTags": [
+      "c86",
+      "tape club",
+      "uk post-punk",
+      "twee pop"
+    ],
+    "youtubeVideoId": "RUaRUIweXhc",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Marissa Nadler",
+    "birthDate": "1981-04-05",
+    "venus": {
+      "sign": "Aries",
+      "degree": 15.1,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "folk",
+      "ambient",
+      "artpop"
+    ],
+    "subgenres": [
+      "ambient-folk",
+      "freak-folk"
+    ],
+    "enTags": [
+      "ambient folk",
+      "new weird america",
+      "melancholia",
+      "spectra"
+    ],
+    "youtubeVideoId": "h8-Vmhp2ZEk",
     "backupVideoIds": []
   },
   {
@@ -14992,6 +15377,40 @@
     "backupVideoIds": []
   },
   {
+    "name": "Pharmakon",
+    "birthDate": "1990-06-19",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 23.5,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "industrial",
+      "idm",
+      "artpop",
+      "techno",
+      "ambient"
+    ],
+    "subgenres": [
+      "noise",
+      "industrial",
+      "power-electronics",
+      "avant-garde-pop"
+    ],
+    "enTags": [
+      "noise",
+      "death industrial",
+      "mandible",
+      "electra",
+      "new isolationism",
+      "power electronics",
+      "avant-garde metal"
+    ],
+    "youtubeVideoId": "EnoeTdptXRc",
+    "backupVideoIds": []
+  },
+  {
     "name": "Pharoah Sanders",
     "birthDate": "1940-10-13",
     "venus": {
@@ -16738,6 +17157,24 @@
     "backupVideoIds": []
   },
   {
+    "name": "Sarin Sunday",
+    "birthDate": "2000-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 25.8,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "idm"
+    ],
+    "subgenres": [
+      "idm"
+    ],
+    "youtubeVideoId": "OvYOA2onUzM",
+    "backupVideoIds": []
+  },
+  {
     "name": "Sasha Vosk",
     "birthDate": "1983-09-30",
     "venus": {
@@ -17589,6 +18026,31 @@
     "backupVideoIds": []
   },
   {
+    "name": "Solid Space",
+    "birthDate": "1980-06-15",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 24.2,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "techno",
+      "darkwave"
+    ],
+    "subgenres": [
+      "techno",
+      "darkwave"
+    ],
+    "enTags": [
+      "proto-techno",
+      "minimal wave",
+      "uk post-punk"
+    ],
+    "youtubeVideoId": "nyWgMykF6Ig",
+    "backupVideoIds": []
+  },
+  {
     "name": "Somewhere off Jazz Street",
     "birthDate": "1978-11-27",
     "venus": {
@@ -18297,6 +18759,31 @@
     "backupVideoIds": []
   },
   {
+    "name": "Suburban Lawns",
+    "birthDate": "1965-06-15",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 11.2,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "enTags": [
+      "no wave",
+      "post-punk",
+      "experimental rock",
+      "egg punk"
+    ],
+    "youtubeVideoId": "UjKeiZLEWsM",
+    "backupVideoIds": []
+  },
+  {
     "name": "Sudan Archives",
     "birthDate": "2000-00-00",
     "venus": {
@@ -18325,6 +18812,35 @@
       "la pop"
     ],
     "youtubeVideoId": "Z9wvNed0oT4",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Suicide",
+    "birthDate": "1975-06-15",
+    "venus": {
+      "sign": "Leo",
+      "degree": 9.1,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "idm",
+      "darkwave",
+      "industrial",
+      "altrock"
+    ],
+    "subgenres": [
+      "experimental",
+      "noise"
+    ],
+    "enTags": [
+      "experimental rock",
+      "no wave",
+      "synth punk",
+      "experimental",
+      "noise rock"
+    ],
+    "youtubeVideoId": "52eUPbb4r8Y",
     "backupVideoIds": []
   },
   {
@@ -18929,6 +19445,47 @@
     "backupVideoIds": []
   },
   {
+    "name": "Swans",
+    "birthDate": "1982-06-15",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 18.2,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "idm",
+      "altrock",
+      "industrial",
+      "indiepop",
+      "darkwave",
+      "artpop"
+    ],
+    "subgenres": [
+      "experimental",
+      "noise",
+      "industrial",
+      "noise-pop",
+      "art-pop"
+    ],
+    "enTags": [
+      "experimental rock",
+      "noise rock",
+      "no wave",
+      "experimental",
+      "industrial rock",
+      "post-rock",
+      "noise pop",
+      "post-punk",
+      "dream pop",
+      "industrial",
+      "shoegaze",
+      "art pop"
+    ],
+    "youtubeVideoId": "AhYoM-215Zw",
+    "backupVideoIds": []
+  },
+  {
     "name": "Swervedriver",
     "birthDate": "1989-00-00",
     "venus": {
@@ -19075,6 +19632,30 @@
     "backupVideoIds": []
   },
   {
+    "name": "Television Personalities",
+    "birthDate": "1978-06-15",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 29.1,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "darkwave"
+    ],
+    "subgenres": [
+      "darkwave"
+    ],
+    "enTags": [
+      "uk post-punk",
+      "post-punk",
+      "c86",
+      "tape club"
+    ],
+    "youtubeVideoId": "HUyx8BoWTWA",
+    "backupVideoIds": []
+  },
+  {
     "name": "Terence Fixmer",
     "birthDate": "1972-10-02",
     "venus": {
@@ -19214,6 +19795,32 @@
     "backupVideoIds": []
   },
   {
+    "name": "The Bats",
+    "birthDate": "1982-06-15",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 18.2,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "electronica",
+      "indiepop"
+    ],
+    "subgenres": [
+      "lo-fi"
+    ],
+    "enTags": [
+      "dunedin sound",
+      "christchurch indie",
+      "lo-fi",
+      "nz indie",
+      "tape club"
+    ],
+    "youtubeVideoId": "HBwjfe7xpWQ",
+    "backupVideoIds": []
+  },
+  {
     "name": "The Black Dog",
     "birthDate": "1969-01-01",
     "venus": {
@@ -19241,6 +19848,39 @@
       "boTxIGsyJls",
       "whVoJb2DITE"
     ]
+  },
+  {
+    "name": "The Body",
+    "birthDate": "1999-06-15",
+    "venus": {
+      "sign": "Leo",
+      "degree": 9.3,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient",
+      "industrial",
+      "altrock"
+    ],
+    "subgenres": [
+      "drone",
+      "industrial",
+      "noise"
+    ],
+    "enTags": [
+      "drone metal",
+      "new england metal",
+      "post-doom metal",
+      "rhode island indie",
+      "death industrial",
+      "post-metal",
+      "drone",
+      "noise rock",
+      "sludge metal"
+    ],
+    "youtubeVideoId": "3jzqqBF0dbw",
+    "backupVideoIds": []
   },
   {
     "name": "The Brian Jonestown Massacre",
@@ -19322,6 +19962,29 @@
       "compositional ambient"
     ],
     "youtubeVideoId": "jikJvWx-KiM",
+    "backupVideoIds": []
+  },
+  {
+    "name": "The Clean",
+    "birthDate": "1978-06-15",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 29.1,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "electronica"
+    ],
+    "subgenres": [
+      "lo-fi"
+    ],
+    "enTags": [
+      "dunedin indie",
+      "lo-fi",
+      "dunedin sound"
+    ],
+    "youtubeVideoId": "s5I6a_ew8kI",
     "backupVideoIds": []
   },
   {
@@ -19817,6 +20480,31 @@
     "backupVideoIds": []
   },
   {
+    "name": "The Wake",
+    "birthDate": "1986-06-15",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 29.7,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "darkwave"
+    ],
+    "subgenres": [
+      "new-wave"
+    ],
+    "enTags": [
+      "c86",
+      "scottish new wave",
+      "uk post-punk",
+      "tape club",
+      "deathrock"
+    ],
+    "youtubeVideoId": "BVzMdlwmKW0",
+    "backupVideoIds": []
+  },
+  {
     "name": "The Wedding Present",
     "birthDate": "1985-06-15",
     "venus": {
@@ -19993,6 +20681,35 @@
       "alternative rock"
     ],
     "youtubeVideoId": "BTZl9KMjbrU",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Thou",
+    "birthDate": "2005-06-15",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 14.5,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "folk",
+      "industrial"
+    ],
+    "subgenres": [
+      "drone",
+      "dark-folk"
+    ],
+    "enTags": [
+      "drone metal",
+      "gaian doom",
+      "post-doom metal",
+      "louisiana metal",
+      "sludge metal",
+      "voidgrind"
+    ],
+    "youtubeVideoId": "PwDq3nBf38k",
     "backupVideoIds": []
   },
   {
