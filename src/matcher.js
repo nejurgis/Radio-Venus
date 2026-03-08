@@ -63,9 +63,6 @@ function venusSimilarity(userLon, artistLon) {
   // Tier 2 — same sign, different decan: 70–89 (maps 0°→89, 30°→70)
   if (sameSign)               return Math.round(89 - (d / 30) * 19);
 
-  // Tier 3 — same element OR modality: 40–69
-  // Primary: distance to artist's nearest sign boundary (groups all Virgo together, then all Pisces, etc.)
-  // Fine:    individual degree distance within the group
   const sameElement  = SIGN_ELEMENTS[userSign]   === SIGN_ELEMENTS[artistSign];
   const sameModality = SIGN_MODALITIES[userSign] === SIGN_MODALITIES[artistSign];
   if (sameElement || sameModality) {
@@ -73,7 +70,10 @@ function venusSimilarity(userLon, artistLon) {
       angularDist(userLon, artistSign * 30),
       angularDist(userLon, artistSign * 30 + 30)
     );
-    return Math.round(40 + (1 - nearBound / 180) * 24 + (1 - d / 180) * 5);
+    // Tier 3a — same element (trine): 55–69
+    if (sameElement)  return Math.round(55 + (1 - nearBound / 180) * 9 + (1 - d / 180) * 5);
+    // Tier 3b — same modality only (square/opposition): 40–54
+    return              Math.round(40 + (1 - nearBound / 180) * 9 + (1 - d / 180) * 5);
   }
 
   // Tier 4 — no resonance: 0–39
