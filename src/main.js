@@ -478,12 +478,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     // 4. Load Data
     if (sharedGenreId && dbResult.status === 'fulfilled') {
       const genreCat = GENRE_CATEGORIES.find(g => g.id === sharedGenreId);
-      if (genreCat) {
+      if (sharedGenreId) {
         const candidateTracks = match(sign, sharedGenreId, el, { userLongitude: 0 });
         if (candidateTracks.length > 0) {
           tracks = candidateTracks;
           playingGenreId = sharedGenreId;
-          activeGenreLabel = sharedGenre || genreCat.label;
+          activeGenreLabel = sharedGenre || genreCat?.label || sharedGenreId;
 
           const idx = tracks.findIndex(t => t.name === sharedArtist);
           currentTrackIndex = idx >= 0 ? idx : 0;
