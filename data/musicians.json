@@ -3729,6 +3729,33 @@
     ]
   },
   {
+    "name": "Cities Aviv",
+    "birthDate": "1989-06-15",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 13.2,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "hiphop",
+      "idm",
+      "triphop"
+    ],
+    "subgenres": [
+      "experimental-hiphop",
+      "hip-hop"
+    ],
+    "enTags": [
+      "psychedelic hip hop",
+      "experimental hip hop",
+      "memphis indie",
+      "drumless hip hop"
+    ],
+    "youtubeVideoId": "T_00pgIa8aI",
+    "backupVideoIds": []
+  },
+  {
     "name": "Claire Rousay",
     "birthDate": "1926-08-10",
     "venus": {
@@ -9898,6 +9925,29 @@
       "lzE8cF1Gtvk",
       "8cPgbxIH_UQ"
     ]
+  },
+  {
+    "name": "John Glacier",
+    "birthDate": "1994-12-19",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 13.4,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "hiphop",
+      "idm",
+      "triphop"
+    ],
+    "subgenres": [
+      "experimental-hiphop"
+    ],
+    "enTags": [
+      "experimental hip hop"
+    ],
+    "youtubeVideoId": "VCV7VxZbHbA",
+    "backupVideoIds": []
   },
   {
     "name": "John Maus",
@@ -17106,6 +17156,30 @@
     ]
   },
   {
+    "name": "Slauson Malone 1",
+    "birthDate": "1995-12-26",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 5.8,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "hiphop",
+      "idm",
+      "triphop"
+    ],
+    "subgenres": [
+      "experimental-hiphop"
+    ],
+    "enTags": [
+      "experimental hip hop",
+      "psychedelic hip hop"
+    ],
+    "youtubeVideoId": "xl5_cSoUJeA",
+    "backupVideoIds": []
+  },
+  {
     "name": "Slow Attack Ensemble",
     "birthDate": "1940-12-21",
     "venus": {
@@ -17670,6 +17744,31 @@
       "9tw2LMnxvW0",
       "jKAA_INzDGo"
     ]
+  },
+  {
+    "name": "Standing On The Corner",
+    "birthDate": "2016-09-11",
+    "venus": {
+      "sign": "Libra",
+      "degree": 15.2,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "hiphop",
+      "idm",
+      "triphop"
+    ],
+    "subgenres": [
+      "experimental-hiphop"
+    ],
+    "enTags": [
+      "experimental hip hop",
+      "collage pop",
+      "hypnagogic pop"
+    ],
+    "youtubeVideoId": "BxpAsZxd3pE",
+    "backupVideoIds": []
   },
   {
     "name": "Starflyer 59",
