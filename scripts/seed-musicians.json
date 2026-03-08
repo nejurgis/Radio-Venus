@@ -14158,5 +14158,26 @@
     "spotifyId": "6DvcKNW1Fs3B4aAktmpb2S",
     "cosineUrl": "https://cosine.club/track/660099-beaumont-hannant-nocturnal-calling",
     "cosineSimilarity": 90
+  },
+  {
+    "name": "Von Sudenfed",
+    "birthDate": "1957-03-05",
+    "genres": [
+      "idm",
+      "darkwave",
+      "electronica"
+    ],
+    "subgenres": [
+      "electroclash",
+      "alternative dance",
+      "idm"
+    ],
+    "enTags": [
+      "dusseldorf indie",
+      "synth punk",
+      "electroclash",
+      "alternative dance",
+      "intelligent dance music"
+    ]
   }
 ]

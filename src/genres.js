@@ -166,6 +166,7 @@ const GENRE_MAP = {
   'grave wave': ['darkwave'],      // EN cluster: post-punk/goth darkwave (Public Memory, etc.)
   'cyberpunk': ['industrial', 'darkwave'],  // Vangelis, industrial-adjacent
   'synth punk': ['darkwave', 'industrial'],
+  'electroclash': ['darkwave', 'electronica'],  // 2000s electro+punk/new wave: Peaches, Adult., Fischerspooner
 
   // ── Trip-Hop / Downtempo ──
   'trip hop': ['triphop'],
