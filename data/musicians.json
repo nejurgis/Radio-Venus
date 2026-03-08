@@ -19292,7 +19292,8 @@
     },
     "genres": [
       "electronica",
-      "techno"
+      "techno",
+      "darkwave"
     ],
     "subgenres": [
       "electro",
@@ -20694,6 +20695,37 @@
       "experimental"
     ],
     "youtubeVideoId": "2rOmE6zIrno",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Von Sudenfed",
+    "birthDate": "1957-03-05",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 4.5,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "idm",
+      "darkwave",
+      "electronica",
+      "industrial",
+      "altrock"
+    ],
+    "subgenres": [
+      "electroclash",
+      "alternative dance",
+      "idm"
+    ],
+    "enTags": [
+      "dusseldorf indie",
+      "synth punk",
+      "electroclash",
+      "alternative dance",
+      "intelligent dance music"
+    ],
+    "youtubeVideoId": "I6Y79-i_x3Y",
     "backupVideoIds": []
   },
   {
