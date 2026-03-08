@@ -216,8 +216,11 @@ function artistList(artists, sign) {
   return artists.map(a => {
     const deg = Math.round(a.venus.degree || 0);
     const genres = (a.genres || []).join(', ');
+    const nameEl = a.youtubeVideoId
+      ? `<a class="artist-name" href="https://youtu.be/${a.youtubeVideoId}" target="_blank" rel="noopener">${a.name}</a>`
+      : `<span class="artist-name">${a.name}</span>`;
     return `    <li>
-      <span class="artist-name">${a.name}</span>
+      ${nameEl}
       <span class="artist-meta">${deg}° ${sign}${genres ? ` · ${genres}` : ''}</span>
     </li>`;
   }).join('\n');
