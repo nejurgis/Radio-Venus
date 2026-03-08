@@ -1,30 +1,80 @@
 {
   "additions": [
     {
-      "name": "Sarin Sunday",
-      "birthDate": "2000-06-15",
+      "name": "John Glacier",
+      "birthDate": "1994-12-19",
       "genres": [
-        "idm"
+        "hiphop",
+        "idm",
+        "triphop"
       ],
-      "subgenres": [],
-      "youtubeId": "OvYOA2onUzM",
-      "enTags": [],
-      "spotifyId": null,
-      "cosineUrl": "https://cosine.club/track/763939-sarin-sunday-malachite",
-      "cosineSimilarity": 90
+      "subgenres": [
+        "experimental-hiphop"
+      ],
+      "youtubeId": "VCV7VxZbHbA",
+      "enTags": [
+        "experimental hip hop"
+      ],
+      "spotifyId": "0FNfiTQCR5o3ounOlWzm1d",
+      "spotifyFollowers": 48658,
+      "youtubeNeedsVerify": true
     },
     {
-      "name": "Beaumont Hannant",
-      "birthDate": "1957-04-05",
+      "name": "Slauson Malone 1",
+      "birthDate": "1995-12-26",
       "genres": [
-        "idm"
+        "hiphop",
+        "idm",
+        "triphop"
       ],
-      "subgenres": [],
-      "youtubeId": "H8rcZJaPhHw",
-      "enTags": [],
-      "spotifyId": "6DvcKNW1Fs3B4aAktmpb2S",
-      "cosineUrl": "https://cosine.club/track/660099-beaumont-hannant-nocturnal-calling",
-      "cosineSimilarity": 90
+      "subgenres": [
+        "experimental-hiphop"
+      ],
+      "youtubeId": "xl5_cSoUJeA",
+      "enTags": [
+        "experimental hip hop",
+        "psychedelic hip hop"
+      ],
+      "spotifyId": "6mWYIx4qV7et94cpRRU77N",
+      "spotifyFollowers": 54937,
+      "youtubeNeedsVerify": true
+    },
+    {
+      "name": "Cities Aviv",
+      "birthDate": "1989-06-15",
+      "genres": [
+        "hiphop",
+        "idm",
+        "triphop"
+      ],
+      "subgenres": [
+        "experimental-hiphop",
+        "hip-hop"
+      ],
+      "youtubeId": "T_00pgIa8aI",
+      "enTags": [
+        "psychedelic hip hop",
+        "experimental hip hop",
+        "memphis indie",
+        "drumless hip hop"
+      ],
+      "spotifyId": "4m0HRALRlPxbZp5SwvktFX",
+      "spotifyFollowers": 94501,
+      "youtubeNeedsVerify": true
+    },
+    {
+      "name": "Standing On The Corner",
+      "birthDate": "2016-09-11",
+      "genres": [
+        "hiphop",
+        "idm",
+        "triphop"
+      ],
+      "enTags": [
+        "experimental hip hop",
+        "collage pop",
+        "hypnagogic pop"
+      ]
     }
   ],
   "patches": []

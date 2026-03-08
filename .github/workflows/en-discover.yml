@@ -1,0 +1,46 @@
+name: EN Discover
+
+on:
+  workflow_dispatch:
+    inputs:
+      artist:
+        description: 'Seed artist name (e.g. "Vegyn") or spotify:artist:ID'
+        required: true
+      depth:
+        description: 'Crawl depth (1 = direct fans-also-like, 2 = one hop further)'
+        required: false
+        default: '1'
+      min_followers:
+        description: 'Minimum follower count'
+        required: false
+        default: '2000'
+      min_tag_overlap:
+        description: 'Minimum shared EN tags with seed artist'
+        required: false
+        default: '1'
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm install
+      - run: npx playwright install chromium --with-deps
+      - name: Run EN discovery for "${{ inputs.artist }}"
+        run: |
+          node scripts/en-discover.mjs "${{ inputs.artist }}" \
+            --depth=${{ inputs.depth }} \
+            --min-followers=${{ inputs.min_followers }} \
+            --min-tag-overlap=${{ inputs.min_tag_overlap }} \
+            --output=scripts/en-discovered.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: en-discovered-${{ github.run_number }}
+          path: scripts/en-discovered.json
+          retention-days: 30
