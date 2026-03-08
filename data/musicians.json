@@ -162,6 +162,33 @@
     "backupVideoIds": []
   },
   {
+    "name": "A. G. Cook",
+    "birthDate": "1990-08-23",
+    "venus": {
+      "sign": "Leo",
+      "degree": 11.7,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "artpop",
+      "idm",
+      "electronica"
+    ],
+    "subgenres": [
+      "hyperpop",
+      "experimental"
+    ],
+    "enTags": [
+      "proto-hyperpop",
+      "bubblegum bass",
+      "escape room",
+      "hyperpop"
+    ],
+    "youtubeVideoId": "nEMN8FiXIMI",
+    "backupVideoIds": []
+  },
+  {
     "name": "A.A. Williams",
     "birthDate": "1932-02-08",
     "venus": {
@@ -3056,7 +3083,8 @@
       "darkwave",
       "idm",
       "industrial",
-      "techno"
+      "techno",
+      "altrock"
     ],
     "subgenres": [
       "industrial",
@@ -5323,6 +5351,30 @@
     "backupVideoIds": []
   },
   {
+    "name": "Delroy Edwards",
+    "birthDate": "1990-03-29",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 22.1,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "techno",
+      "electronica"
+    ],
+    "subgenres": [
+      "house",
+      "lo-fi"
+    ],
+    "enTags": [
+      "outsider house",
+      "lo-fi house"
+    ],
+    "youtubeVideoId": "yn_K3-JvGrY",
+    "backupVideoIds": []
+  },
+  {
     "name": "Demdike Stare",
     "birthDate": "2009-10-13",
     "venus": {
@@ -6879,7 +6931,8 @@
     "genres": [
       "darkwave",
       "industrial",
-      "techno"
+      "techno",
+      "altrock"
     ],
     "subgenres": [
       "techno",
@@ -7018,7 +7071,8 @@
     "genres": [
       "darkwave",
       "indiepop",
-      "artpop"
+      "artpop",
+      "altrock"
     ],
     "subgenres": [
       "art-pop"
@@ -7081,7 +7135,8 @@
     },
     "genres": [
       "jazz",
-      "techno"
+      "techno",
+      "electronica"
     ],
     "subgenres": [
       "house",
@@ -8863,6 +8918,7 @@
     "genres": [
       "artpop",
       "techno",
+      "electronica",
       "ambient",
       "idm"
     ],
@@ -9187,7 +9243,8 @@
     "genres": [
       "artpop",
       "idm",
-      "techno"
+      "techno",
+      "electronica"
     ],
     "subgenres": [
       "experimental",
@@ -10711,6 +10768,36 @@
     ]
   },
   {
+    "name": "King Krule",
+    "birthDate": "1994-08-24",
+    "venus": {
+      "sign": "Libra",
+      "degree": 17.1,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "hiphop",
+      "jazz",
+      "altrock",
+      "artpop"
+    ],
+    "subgenres": [
+      "jazz-rap",
+      "post-punk",
+      "hip-hop",
+      "art-pop"
+    ],
+    "enTags": [
+      "jazz rap",
+      "uk post-punk",
+      "art punk",
+      "art pop"
+    ],
+    "youtubeVideoId": "JwnEA-X3h6g",
+    "backupVideoIds": []
+  },
+  {
     "name": "King Midas Sound",
     "birthDate": "1965-09-22",
     "venus": {
@@ -11047,7 +11134,8 @@
       "ambient",
       "artpop",
       "techno",
-      "idm"
+      "idm",
+      "electronica"
     ],
     "subgenres": [
       "experimental",
@@ -12120,7 +12208,8 @@
     },
     "genres": [
       "darkwave",
-      "indiepop"
+      "indiepop",
+      "altrock"
     ],
     "subgenres": [
       "twee-pop"
@@ -12503,7 +12592,8 @@
       "element": "earth"
     },
     "genres": [
-      "idm"
+      "idm",
+      "indiepop"
     ],
     "subgenres": [
       "experimental"
@@ -12545,7 +12635,8 @@
       "element": "earth"
     },
     "genres": [
-      "darkwave"
+      "darkwave",
+      "altrock"
     ],
     "subgenres": [
       "darkwave"
@@ -14017,6 +14108,29 @@
     "backupVideoIds": []
   },
   {
+    "name": "Oli XL",
+    "birthDate": "1995-03-03",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 0.7,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "idm",
+      "ambient"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "enTags": [
+      "deconstructed club",
+      "new isolationism"
+    ],
+    "youtubeVideoId": "i-f4Slxqw3U",
+    "backupVideoIds": []
+  },
+  {
     "name": "Omni Gardens",
     "birthDate": "2013-08-10",
     "venus": {
@@ -14383,7 +14497,8 @@
       "element": "air"
     },
     "genres": [
-      "idm"
+      "idm",
+      "artpop"
     ],
     "subgenres": [
       "experimental"
@@ -15471,7 +15586,8 @@
       "industrial",
       "idm",
       "darkwave",
-      "techno"
+      "techno",
+      "altrock"
     ],
     "subgenres": [
       "industrial",
@@ -15739,7 +15855,8 @@
       "ambient",
       "techno",
       "triphop",
-      "idm"
+      "idm",
+      "electronica"
     ],
     "subgenres": [
       "industrial",
@@ -16490,6 +16607,30 @@
     ],
     "subgenres": [],
     "youtubeVideoId": "ArLrXVjZ278",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Sassy 009",
+    "birthDate": "1976-05-11",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 10.8,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "idm",
+      "artpop",
+      "techno"
+    ],
+    "subgenres": [
+      "idm",
+      "techno"
+    ],
+    "enTags": [
+      "electra"
+    ],
+    "youtubeVideoId": "pxH5bqfHu24",
     "backupVideoIds": []
   },
   {
@@ -17343,7 +17484,8 @@
     },
     "genres": [
       "techno",
-      "darkwave"
+      "darkwave",
+      "altrock"
     ],
     "subgenres": [
       "techno",
@@ -18892,7 +19034,8 @@
       "element": "water"
     },
     "genres": [
-      "darkwave"
+      "darkwave",
+      "altrock"
     ],
     "subgenres": [
       "darkwave"
@@ -19217,7 +19360,8 @@
     "genres": [
       "electronica",
       "artpop",
-      "darkwave"
+      "darkwave",
+      "altrock"
     ],
     "subgenres": [
       "lo-fi",
@@ -19292,7 +19436,8 @@
       "element": "water"
     },
     "genres": [
-      "darkwave"
+      "darkwave",
+      "altrock"
     ],
     "subgenres": [
       "darkwave"
@@ -19689,7 +19834,8 @@
       "element": "water"
     },
     "genres": [
-      "darkwave"
+      "darkwave",
+      "altrock"
     ],
     "subgenres": [
       "new-wave"
@@ -19714,7 +19860,8 @@
       "element": "earth"
     },
     "genres": [
-      "darkwave"
+      "darkwave",
+      "altrock"
     ],
     "subgenres": [
       "darkwave"
@@ -19816,7 +19963,8 @@
       "artpop",
       "darkwave",
       "indiepop",
-      "folk"
+      "folk",
+      "altrock"
     ],
     "subgenres": [
       "art-pop"
@@ -19896,7 +20044,8 @@
     "genres": [
       "darkwave",
       "idm",
-      "industrial"
+      "industrial",
+      "altrock"
     ],
     "subgenres": [
       "industrial",
@@ -20155,7 +20304,8 @@
       "element": "water"
     },
     "genres": [
-      "techno"
+      "techno",
+      "electronica"
     ],
     "subgenres": [
       "house"
