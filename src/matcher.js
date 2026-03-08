@@ -40,6 +40,7 @@ function reconstructLongitude(m) {
 
 const SIGN_ELEMENTS   = ['fire','earth','air','water','fire','earth','air','water','fire','earth','air','water'];
 const SIGN_MODALITIES = ['cardinal','fixed','mutable','cardinal','fixed','mutable','cardinal','fixed','mutable','cardinal','fixed','mutable'];
+const COMPATIBLE_ELEMENTS = { fire: 'air', air: 'fire', earth: 'water', water: 'earth' };
 
 function angularDist(a, b) {
   const d = Math.abs(a - b);
@@ -63,17 +64,23 @@ function venusSimilarity(userLon, artistLon) {
   // Tier 2 — same sign, different decan: 70–89 (maps 0°→89, 30°→70)
   if (sameSign)               return Math.round(89 - (d / 30) * 19);
 
-  const sameElement  = SIGN_ELEMENTS[userSign]   === SIGN_ELEMENTS[artistSign];
-  const sameModality = SIGN_MODALITIES[userSign] === SIGN_MODALITIES[artistSign];
-  if (sameElement || sameModality) {
+  const userElement   = SIGN_ELEMENTS[userSign];
+  const artistElement = SIGN_ELEMENTS[artistSign];
+  const sameElement        = userElement === artistElement;
+  const compatibleElement  = COMPATIBLE_ELEMENTS[userElement] === artistElement;
+  const sameModality       = SIGN_MODALITIES[userSign] === SIGN_MODALITIES[artistSign];
+
+  if (sameElement || compatibleElement || sameModality) {
     const nearBound = Math.min(
       angularDist(userLon, artistSign * 30),
       angularDist(userLon, artistSign * 30 + 30)
     );
     // Tier 3a — same element (trine): 55–69
-    if (sameElement)  return Math.round(55 + (1 - nearBound / 180) * 9 + (1 - d / 180) * 5);
-    // Tier 3b — same modality only (square/opposition): 40–54
-    return              Math.round(40 + (1 - nearBound / 180) * 9 + (1 - d / 180) * 5);
+    if (sameElement)       return Math.round(55 + (1 - nearBound / 180) * 9 + (1 - d / 180) * 5);
+    // Tier 3b — compatible element (sextile, incl. oppositions): 45–54
+    if (compatibleElement) return Math.round(45 + (1 - nearBound / 180) * 5 + (1 - d / 180) * 4);
+    // Tier 3c — same modality only (square): 40–44
+    return                        Math.round(40 + (1 - nearBound / 180) * 3 + (1 - d / 180) * 1);
   }
 
   // Tier 4 — no resonance: 0–39
