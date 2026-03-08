@@ -199,12 +199,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://radio-venus.club/sign/taurus/jazz/</loc>
-    <lastmod>2026-03-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://radio-venus.club/sign/gemini/idm/</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
@@ -266,12 +260,6 @@
   </url>
   <url>
     <loc>https://radio-venus.club/sign/gemini/industrial/</loc>
-    <lastmod>2026-03-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://radio-venus.club/sign/gemini/jazz/</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -433,12 +421,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://radio-venus.club/sign/leo/hiphop/</loc>
-    <lastmod>2026-03-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://radio-venus.club/sign/leo/dnb/</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
@@ -583,12 +565,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://radio-venus.club/sign/scorpio/hiphop/</loc>
-    <lastmod>2026-03-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://radio-venus.club/sign/scorpio/dnb/</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
@@ -667,19 +643,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://radio-venus.club/sign/capricorn/industrial/</loc>
-    <lastmod>2026-03-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://radio-venus.club/sign/capricorn/jazz/</loc>
-    <lastmod>2026-03-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://radio-venus.club/sign/capricorn/hiphop/</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -751,18 +715,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://radio-venus.club/sign/aquarius/jazz/</loc>
-    <lastmod>2026-03-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://radio-venus.club/sign/aquarius/hiphop/</loc>
-    <lastmod>2026-03-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://radio-venus.club/sign/aquarius/dnb/</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
@@ -799,19 +751,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://radio-venus.club/sign/pisces/classical/</loc>
-    <lastmod>2026-03-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://radio-venus.club/sign/pisces/triphop/</loc>
-    <lastmod>2026-03-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://radio-venus.club/sign/pisces/industrial/</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
