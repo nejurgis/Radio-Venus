@@ -42,6 +42,14 @@ const SIGN_ELEMENTS   = ['fire','earth','air','water','fire','earth','air','wate
 const SIGN_MODALITIES = ['cardinal','fixed','mutable','cardinal','fixed','mutable','cardinal','fixed','mutable','cardinal','fixed','mutable'];
 const COMPATIBLE_ELEMENTS = { fire: 'air', air: 'fire', earth: 'water', water: 'earth' };
 
+// Exaltation affinity: index = user sign, value = artist sign that gets a hidden boost.
+// Logic: a sign's ruling planet is exalted in the affinity sign — an "aspirational" bond
+// where the user's foundational energy reveres the idealized version of that energy.
+// Traditional rulerships: Aries/Scorpio=Mars, Taurus/Libra=Venus, Gemini/Virgo=Mercury,
+// Cancer=Moon, Leo=Sun, Sagittarius/Pisces=Jupiter, Capricorn/Aquarius=Saturn.
+//                     Ari Tau Gem Can Leo Vir Lib Sco Sag Cap Aqu Pis
+const EXALTATION_AFFINITY = [9, 11,  5,  1,  0,  5, 11,  9,  3,  6,  6,  3];
+
 function angularDist(a, b) {
   const d = Math.abs(a - b);
   return d > 180 ? 360 - d : d;
@@ -58,42 +66,50 @@ function venusSimilarity(userLon, artistLon) {
   const artistDecan = Math.floor((artistLon % 30) / 10);
   const sameDecan   = userDecan === artistDecan;
 
-  // Tier 1 — same sign, same decan: 90–100 (1 pt per degree, 10° range)
-  if (sameSign && sameDecan)  return Math.round(100 - d);
+  let score;
 
-  // Tier 2 — same sign, different decan: 70–89 (maps 0°→89, 30°→70)
-  if (sameSign)               return Math.round(89 - (d / 30) * 19);
+  if (sameSign && sameDecan) {
+    // Tier 1 — same sign, same decan: 90–100
+    score = Math.round(100 - d);
+  } else if (sameSign) {
+    // Tier 2 — same sign, different decan: 70–89
+    score = Math.round(89 - (d / 30) * 19);
+  } else {
+    const userElement   = SIGN_ELEMENTS[userSign];
+    const artistElement = SIGN_ELEMENTS[artistSign];
+    const sameElement        = userElement === artistElement;
+    const compatibleElement  = COMPATIBLE_ELEMENTS[userElement] === artistElement;
+    const sameModality       = SIGN_MODALITIES[userSign] === SIGN_MODALITIES[artistSign];
 
-  const userElement   = SIGN_ELEMENTS[userSign];
-  const artistElement = SIGN_ELEMENTS[artistSign];
-  const sameElement        = userElement === artistElement;
-  const compatibleElement  = COMPATIBLE_ELEMENTS[userElement] === artistElement;
-  const sameModality       = SIGN_MODALITIES[userSign] === SIGN_MODALITIES[artistSign];
-
-  if (sameElement || compatibleElement || sameModality) {
-    const nearBound = Math.min(
-      angularDist(userLon, artistSign * 30),
-      angularDist(userLon, artistSign * 30 + 30)
-    );
-    // Tier 3a — same element (trine): 55–69
-    if (sameElement)       return Math.round(55 + (1 - nearBound / 180) * 9 + (1 - d / 180) * 5);
-    // Tier 3b — compatible element (sextile, incl. oppositions): 45–54
-    if (compatibleElement) return Math.round(45 + (1 - nearBound / 180) * 5 + (1 - d / 180) * 4);
-    // Tier 3c — same modality only (square): 40–44
-    return                        Math.round(40 + (1 - nearBound / 180) * 3 + (1 - d / 180) * 1);
+    if (sameElement || compatibleElement || sameModality) {
+      const nearBound = Math.min(
+        angularDist(userLon, artistSign * 30),
+        angularDist(userLon, artistSign * 30 + 30)
+      );
+      if (sameElement)       score = Math.round(55 + (1 - nearBound / 180) * 9 + (1 - d / 180) * 5); // T3a 55–69
+      else if (compatibleElement) score = Math.round(45 + (1 - nearBound / 180) * 5 + (1 - d / 180) * 4); // T3b 45–54
+      else                   score = Math.round(40 + (1 - nearBound / 180) * 3 + (1 - d / 180) * 1); // T3c 40–44
+    } else {
+      // Tier 4 — no resonance (aversion): 0–39
+      // Antiscia (solstice mirror, sum%12===5): equal daylight shadow bond.
+      // Contra-antiscia (equinox mirror, sum%12===11): faint structural sympathy.
+      const base = Math.round((1 - d / 180) * 39);
+      const sum  = (userSign + artistSign) % 12;
+      score = sum === 5 ? Math.min(39, base + 8)   // antiscia
+            : sum === 11 ? Math.min(39, base + 5)  // contra-antiscia
+            : base;
+    }
   }
 
-  // Tier 4 — no resonance (aversion): 0–39
-  // Antiscia (solstice mirror, sum%12===5): signs that share equal daylight hours
-  //   carry a hidden sympathetic bond even in aversion — e.g. Gemini↔Cancer.
-  // Contra-antiscia (equinox mirror, sum%12===11): faint structural sympathy
-  //   from equal rising times — e.g. Gemini↔Capricorn.
-  // Pure aversion (Taurus, Scorpio for Gemini): no mitigation whatsoever.
-  const base = Math.round((1 - d / 180) * 39);
-  const sum  = (userSign + artistSign) % 12;
-  if (sum === 5)  return Math.min(39, base + 8);  // antiscia
-  if (sum === 11) return Math.min(39, base + 5);  // contra-antiscia
-  return base;
+  // Exaltation affinity — directional aspirational bond (+5, capped at 69).
+  // The user's ruling planet is exalted in this artist's sign: a "reverential" pull
+  // that elevates the artist above others in the same tier.
+  // Does not affect T1/T2 (same sign) or Virgo's self-referential exaltation.
+  if (artistSign !== userSign && artistSign === EXALTATION_AFFINITY[userSign]) {
+    score = Math.min(69, score + 5);
+  }
+
+  return score;
 }
 
 function sortBySimilarity(arr, userLon) {
