@@ -14342,6 +14342,28 @@
     "backupVideoIds": []
   },
   {
+    "name": "OTTO",
+    "birthDate": "2020-09-23",
+    "venus": {
+      "sign": "Leo",
+      "degree": 19.2,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "idm",
+      "indiepop"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "enTags": [
+      "experimental indie"
+    ],
+    "youtubeVideoId": "mms-TiGxXE8",
+    "backupVideoIds": []
+  },
+  {
     "name": "Ought",
     "birthDate": "2011-01-01",
     "venus": {
