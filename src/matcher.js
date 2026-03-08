@@ -83,8 +83,17 @@ function venusSimilarity(userLon, artistLon) {
     return                        Math.round(40 + (1 - nearBound / 180) * 3 + (1 - d / 180) * 1);
   }
 
-  // Tier 4 — no resonance: 0–39
-  return Math.round((1 - d / 180) * 39);
+  // Tier 4 — no resonance (aversion): 0–39
+  // Antiscia (solstice mirror, sum%12===5): signs that share equal daylight hours
+  //   carry a hidden sympathetic bond even in aversion — e.g. Gemini↔Cancer.
+  // Contra-antiscia (equinox mirror, sum%12===11): faint structural sympathy
+  //   from equal rising times — e.g. Gemini↔Capricorn.
+  // Pure aversion (Taurus, Scorpio for Gemini): no mitigation whatsoever.
+  const base = Math.round((1 - d / 180) * 39);
+  const sum  = (userSign + artistSign) % 12;
+  if (sum === 5)  return Math.min(39, base + 8);  // antiscia
+  if (sum === 11) return Math.min(39, base + 5);  // contra-antiscia
+  return base;
 }
 
 function sortBySimilarity(arr, userLon) {
