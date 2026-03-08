@@ -179,6 +179,7 @@ async function main() {
     : {};
 
   // Build merge map: seed > cache > wikidata
+  const seedNameSet = new Set(seed.map(s => s.name.toLowerCase()));
   const byName = new Map();
 
   // Cache first (lowest priority of the two local sources)
@@ -200,6 +201,12 @@ async function main() {
       s.backupVideoIds = cached.backupVideoIds;
     }
     byName.set(key, s);
+  }
+
+  // Remove cache-only artists not present in seed (deleted artists)
+  // Wikidata artists will be re-added below
+  for (const key of byName.keys()) {
+    if (!seedNameSet.has(key)) byName.delete(key);
   }
 
   // ── 3. Query Wikidata for new artists ───────────────────────────────────
@@ -225,7 +232,6 @@ async function main() {
   // ── 4. Process: Venus calc + YouTube lookup (only if needed) ────────────
   const musicians = [];
   // Classical artists are curated via seed only — drop classical-only non-seed entries
-  const seedNameSet = new Set(seed.map(s => s.name.toLowerCase()));
   const entries = [...byName.values()].filter(e => {
     const isClassicalOnly = e.genres?.length === 1 && e.genres[0] === 'classical';
     return !isClassicalOnly || seedNameSet.has(e.name.toLowerCase());
@@ -260,17 +266,19 @@ async function main() {
 
         if (!videoId) return null;
 
-        // Build genres: stored seed genres + enTags re-categorized with current GENRE_MAP
-        // + manual-override genres (so new genre tiles pick up artists without re-importing)
-        const genreSet = new Set(entry.genres || []);
-        if (entry.enTags?.length) {
-          for (const g of categorizeGenres(entry.enTags)) genreSet.add(g);
-        }
+        // Build genres: manual override takes priority (replaces seed+enTags);
+        // otherwise merge seed genres + enTags re-categorized with current GENRE_MAP
         const ov = overrides[entry.name] ?? overrides[entry.name?.toLowerCase()];
+        let genres;
         if (ov?.genres?.length) {
-          for (const g of ov.genres) genreSet.add(g);
+          genres = [...ov.genres];
+        } else {
+          const genreSet = new Set(entry.genres || []);
+          if (entry.enTags?.length) {
+            for (const g of categorizeGenres(entry.enTags)) genreSet.add(g);
+          }
+          genres = [...genreSet];
         }
-        const genres = [...genreSet];
         // Auto-assign intercelestial for artists with no recognized genre (can trickle down later)
         if (genres.length === 0) genres.push('intercelestial');
 

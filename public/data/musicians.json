@@ -162,28 +162,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "A. G. Cook",
-    "birthDate": "1990-08-23",
-    "venus": {
-      "sign": "Leo",
-      "degree": 11.7,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "valentine",
-      "idm",
-      "hiphop",
-      "dnb",
-      "artpop"
-    ],
-    "subgenres": [
-      "electronica"
-    ],
-    "youtubeVideoId": "q2ZasIb0Hsw",
-    "backupVideoIds": []
-  },
-  {
     "name": "A.A. Williams",
     "birthDate": "1932-02-08",
     "venus": {
@@ -682,18 +660,7 @@
     },
     "genres": [
       "ambient",
-      "idm",
-      "hiphop",
-      "triphop",
-      "altrock",
-      "industrial",
-      "electronica",
-      "techno",
-      "darkwave",
-      "classical",
-      "folk",
-      "jazz",
-      "dnb"
+      "altrock"
     ],
     "subgenres": [
       "ambient",
@@ -1029,27 +996,6 @@
     ]
   },
   {
-    "name": "Angel Olsen",
-    "birthDate": "1987-01-22",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 15.2,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "valentine",
-      "artpop",
-      "folk",
-      "indiepop"
-    ],
-    "subgenres": [
-      "folk-rock"
-    ],
-    "youtubeVideoId": "W0J0m5sU_Ys",
-    "backupVideoIds": []
-  },
-  {
     "name": "Angel-Ho",
     "birthDate": "1994-01-01",
     "venus": {
@@ -1060,21 +1006,8 @@
       "dateApprox": true
     },
     "genres": [
-      "electronica",
       "idm",
-      "techno",
-      "folk",
-      "altrock",
-      "indiepop",
-      "jazz",
-      "hiphop",
-      "industrial",
-      "dnb",
-      "artpop",
-      "classical",
-      "triphop",
-      "ambient",
-      "darkwave"
+      "electronica"
     ],
     "subgenres": [
       "experimental",
@@ -1552,30 +1485,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Annie Hogan",
-    "birthDate": "1961-01-01",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 25.9,
-      "decan": 3,
-      "element": "air",
-      "dateApprox": true
-    },
-    "genres": [
-      "darkwave",
-      "classical"
-    ],
-    "subgenres": [
-      "synth-pop",
-      "darkwave"
-    ],
-    "youtubeVideoId": "9g_qzNs6oNE",
-    "backupVideoIds": [
-      "htKb4UxdtgE",
-      "E43hTHbiD_U"
-    ]
-  },
-  {
     "name": "Anthony Braxton",
     "birthDate": "1945-06-04",
     "venus": {
@@ -1836,32 +1745,6 @@
     ],
     "youtubeVideoId": "9f6dalmLkVM",
     "backupVideoIds": []
-  },
-  {
-    "name": "Arnošt Parsch",
-    "birthDate": "1936-02-12",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 18.2,
-      "decan": 2,
-      "element": "earth"
-    },
-    "genres": [
-      "classical",
-      "techno",
-      "idm"
-    ],
-    "subgenres": [
-      "contemporary",
-      "experimental",
-      "electro",
-      "classical"
-    ],
-    "youtubeVideoId": "9feYyOAHMAc",
-    "backupVideoIds": [
-      "7U4vkvjSUKE",
-      "y3zCi9l0V-Y"
-    ]
   },
   {
     "name": "Arovane",
@@ -2126,29 +2009,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Axel Dörner",
-    "birthDate": "1964-04-26",
-    "venus": {
-      "sign": "Gemini",
-      "degree": 20.9,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "techno",
-      "idm"
-    ],
-    "subgenres": [
-      "experimental",
-      "electro"
-    ],
-    "youtubeVideoId": "dIO7xBvMj9g",
-    "backupVideoIds": [
-      "H36v9eSbF3o",
-      "7lgyDq8N1J0"
-    ]
-  },
-  {
     "name": "Babyfather",
     "birthDate": "1984-02-08",
     "venus": {
@@ -2278,14 +2138,8 @@
       "dateApprox": true
     },
     "genres": [
-      "artpop",
       "darkwave",
-      "idm",
-      "ambient",
-      "classical",
-      "folk",
-      "altrock",
-      "triphop"
+      "artpop"
     ],
     "subgenres": [
       "art-pop",
@@ -2471,128 +2325,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Big Brave",
-    "birthDate": "2014-01-01",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 26.7,
-      "decan": 3,
-      "element": "earth",
-      "dateApprox": true
-    },
-    "genres": [
-      "ambient",
-      "industrial",
-      "idm",
-      "altrock",
-      "folk",
-      "dnb",
-      "electronica",
-      "artpop",
-      "hiphop"
-    ],
-    "subgenres": [
-      "noise",
-      "industrial",
-      "folk-rock",
-      "psychedelic-folk",
-      "uk-garage",
-      "indietronica",
-      "avant-garde-pop",
-      "drone",
-      "trap",
-      "hip-hop"
-    ],
-    "enTags": [
-      "chattanooga indie",
-      "candy pop",
-      "canadian rock",
-      "lilith",
-      "j-reggae",
-      "chicago hardcore",
-      "chicago punk",
-      "noise rock",
-      "industrial rock",
-      "post-hardcore",
-      "shimmer pop",
-      "brooklyn indie",
-      "maine indie",
-      "modern psychedelic folk",
-      "epunk",
-      "modern melodic hardcore",
-      "uk garage",
-      "orebro indie",
-      "boston rock",
-      "welsh rock",
-      "rez country",
-      "powwow",
-      "australian indie",
-      "indietronica",
-      "psychedelic doom",
-      "la pop",
-      "doomgaze",
-      "post-doom metal",
-      "avant-garde metal",
-      "drone metal",
-      "post-metal",
-      "christian trap",
-      "christian hip hop",
-      "brazilian power metal",
-      "psychedelic folk rock",
-      "nwocr",
-      "christian punk",
-      "pirate",
-      "celtic punk",
-      "cambridgeshire indie",
-      "british alternative rock",
-      "worcester ma indie",
-      "neo-psychedelic",
-      "indie garage rock",
-      "christian metal",
-      "deep christian rock",
-      "indiana indie",
-      "deathgrass",
-      "roots rock",
-      "modern blues rock",
-      "vapor pop",
-      "french garage rock",
-      "rock alternatif francais",
-      "polka",
-      "denton tx indie",
-      "spiritual hip hop",
-      "high vibe"
-    ],
-    "youtubeVideoId": "Ee2OtLM_loQ",
-    "backupVideoIds": []
-  },
-  {
-    "name": "BIG|BRAVE",
-    "birthDate": "2014-06-15",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 20.5,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "artpop",
-      "ambient"
-    ],
-    "subgenres": [
-      "avant-garde-pop",
-      "drone"
-    ],
-    "enTags": [
-      "doomgaze",
-      "post-doom metal",
-      "avant-garde metal",
-      "drone metal",
-      "post-metal"
-    ],
-    "youtubeVideoId": "BpNf33gP4vw",
-    "backupVideoIds": []
-  },
-  {
     "name": "Bill Orcutt",
     "birthDate": "1962-02-02",
     "venus": {
@@ -2753,12 +2485,7 @@
       "dateApprox": true
     },
     "genres": [
-      "altrock",
-      "artpop",
-      "classical",
-      "darkwave",
-      "electronica",
-      "indiepop"
+      "darkwave"
     ],
     "subgenres": [
       "art-pop",
@@ -4489,35 +4216,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Current 93",
-    "birthDate": "1982-06-15",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 18.2,
-      "decan": 2,
-      "element": "earth"
-    },
-    "genres": [
-      "industrial",
-      "idm",
-      "folk",
-      "darkwave"
-    ],
-    "subgenres": [
-      "industrial",
-      "experimental",
-      "neofolk"
-    ],
-    "enTags": [
-      "british industrial",
-      "experimental",
-      "neofolk",
-      "industrial"
-    ],
-    "youtubeVideoId": "IncLgPm0Rq4",
-    "backupVideoIds": []
-  },
-  {
     "name": "Dale Cooper Quartet & The Dictaphones",
     "birthDate": "1948-02-04",
     "venus": {
@@ -4528,18 +4226,7 @@
     },
     "genres": [
       "jazz",
-      "ambient",
-      "idm",
-      "classical",
-      "hiphop",
-      "electronica",
-      "artpop",
-      "techno",
-      "triphop",
-      "indiepop",
-      "folk",
-      "industrial",
-      "altrock"
+      "ambient"
     ],
     "subgenres": [
       "spiritual-jazz",
@@ -5365,14 +5052,9 @@
       "element": "earth"
     },
     "genres": [
-      "techno",
-      "jazz",
       "intercelestial"
     ],
-    "subgenres": [
-      "techno",
-      "spiritual-jazz"
-    ],
+    "subgenres": [],
     "youtubeVideoId": "L3XrWoSC2n0",
     "backupVideoIds": []
   },
@@ -5497,13 +5179,9 @@
       "element": "air"
     },
     "genres": [
-      "darkwave",
       "triphop",
-      "techno",
       "electronica",
-      "altrock",
-      "industrial",
-      "folk"
+      "techno"
     ],
     "subgenres": [
       "darkwave",
@@ -5887,28 +5565,6 @@
       "hands up"
     ],
     "youtubeVideoId": "cDYatzcHl2g",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Dj Lostboi",
-    "birthDate": "1992-08-13",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 7.7,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "ambient",
-      "idm",
-      "techno"
-    ],
-    "subgenres": [
-      "ambient",
-      "idm",
-      "techno"
-    ],
-    "youtubeVideoId": "nbLQYqHrJR0",
     "backupVideoIds": []
   },
   {
@@ -7391,29 +7047,6 @@
     ]
   },
   {
-    "name": "Fernando García",
-    "birthDate": "1930-07-04",
-    "venus": {
-      "sign": "Leo",
-      "degree": 18.1,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "classical",
-      "idm"
-    ],
-    "subgenres": [
-      "contemporary",
-      "experimental"
-    ],
-    "youtubeVideoId": "9tFCeuXDrww",
-    "backupVideoIds": [
-      "jMF2zZPbT8M",
-      "NDqb_UTkiGQ"
-    ]
-  },
-  {
     "name": "Fhloston Paradigm",
     "birthDate": "1968-11-26",
     "venus": {
@@ -8097,32 +7730,6 @@
       "Vd0qwLxZHBI",
       "BQzbAJoAPnQ"
     ]
-  },
-  {
-    "name": "Fvnerals",
-    "birthDate": "2013-06-15",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 15.1,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "folk",
-      "industrial",
-      "ambient"
-    ],
-    "subgenres": [
-      "dark-folk",
-      "drone"
-    ],
-    "enTags": [
-      "doomgaze",
-      "gaian doom",
-      "drone metal"
-    ],
-    "youtubeVideoId": "O7Hm9myxdG0",
-    "backupVideoIds": []
   },
   {
     "name": "GAK",
@@ -9337,23 +8944,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Iko Chérie",
-    "birthDate": "1990-01-01",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 6.2,
-      "decan": 1,
-      "element": "air",
-      "dateApprox": true
-    },
-    "genres": [
-      "valentine"
-    ],
-    "subgenres": [],
-    "youtubeVideoId": "7jOkiDyxShI",
-    "backupVideoIds": []
-  },
-  {
     "name": "Ikonika",
     "birthDate": "1985-01-01",
     "venus": {
@@ -9404,19 +8994,8 @@
       "dateApprox": true
     },
     "genres": [
-      "techno",
       "dnb",
-      "hiphop",
-      "artpop",
-      "triphop",
-      "altrock",
-      "industrial",
-      "electronica",
-      "folk",
-      "darkwave",
-      "jazz",
-      "idm",
-      "indiepop"
+      "hiphop"
     ],
     "subgenres": [
       "uk-garage",
@@ -9760,42 +9339,6 @@
     ]
   },
   {
-    "name": "Jarboe",
-    "birthDate": "2000-06-15",
-    "venus": {
-      "sign": "Gemini",
-      "degree": 25.8,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "idm",
-      "industrial",
-      "ambient",
-      "jazz",
-      "folk",
-      "darkwave"
-    ],
-    "subgenres": [
-      "experimental",
-      "industrial",
-      "ambient",
-      "dark-jazz",
-      "neofolk"
-    ],
-    "enTags": [
-      "laboratorio",
-      "experimental",
-      "industrial",
-      "ambient industrial",
-      "experimental rock",
-      "dark jazz",
-      "neofolk"
-    ],
-    "youtubeVideoId": "M3cOPDTl3ek",
-    "backupVideoIds": []
-  },
-  {
     "name": "JAY-Z",
     "birthDate": "1969-12-04",
     "venus": {
@@ -9821,7 +9364,6 @@
       "element": "air"
     },
     "genres": [
-      "hiphop",
       "intercelestial"
     ],
     "subgenres": [],
@@ -9909,8 +9451,6 @@
     },
     "genres": [
       "ambient",
-      "folk",
-      "idm",
       "industrial"
     ],
     "subgenres": [
@@ -10778,33 +10318,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Juraj Pospíšil",
-    "birthDate": "1931-01-14",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 8.1,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "classical",
-      "techno",
-      "idm"
-    ],
-    "subgenres": [
-      "contemporary",
-      "experimental",
-      "electro",
-      "opera",
-      "classical"
-    ],
-    "youtubeVideoId": "LUDrOMn3Bdo",
-    "backupVideoIds": [
-      "G-9OU14gg_M",
-      "SNINKa2XpXw"
-    ]
-  },
-  {
     "name": "Kaitlyn Aurelia Smith",
     "birthDate": "1987-00-00",
     "venus": {
@@ -11117,32 +10630,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Kiasmos",
-    "birthDate": "2009-06-15",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 9,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "idm",
-      "techno",
-      "darkwave",
-      "classical",
-      "ambient"
-    ],
-    "subgenres": [
-      "idm",
-      "techno",
-      "darkwave",
-      "classical",
-      "ambient"
-    ],
-    "youtubeVideoId": "cxvdImFbNyQ",
-    "backupVideoIds": []
-  },
-  {
     "name": "Kid Spatula",
     "birthDate": "1971-09-26",
     "venus": {
@@ -11173,33 +10660,6 @@
     ]
   },
   {
-    "name": "King Dude",
-    "birthDate": "2000-06-15",
-    "venus": {
-      "sign": "Gemini",
-      "degree": 25.8,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "darkwave",
-      "folk",
-      "industrial"
-    ],
-    "subgenres": [
-      "neofolk",
-      "industrial"
-    ],
-    "enTags": [
-      "gothic americana",
-      "grave wave",
-      "neofolk",
-      "martial industrial"
-    ],
-    "youtubeVideoId": "-Xnqsab-Psw",
-    "backupVideoIds": []
-  },
-  {
     "name": "King Midas Sound",
     "birthDate": "1965-09-22",
     "venus": {
@@ -11219,33 +10679,6 @@
       "dub metal"
     ],
     "youtubeVideoId": "HI8XhwncEW4",
-    "backupVideoIds": []
-  },
-  {
-    "name": "King Woman",
-    "birthDate": "2009-06-15",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 9,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "folk",
-      "industrial",
-      "ambient"
-    ],
-    "subgenres": [
-      "dark-folk",
-      "drone"
-    ],
-    "enTags": [
-      "gaian doom",
-      "doomgaze",
-      "bay area indie",
-      "drone metal"
-    ],
-    "youtubeVideoId": "kCTkZspaSUQ",
     "backupVideoIds": []
   },
   {
@@ -12651,33 +12084,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Marissa Nadler",
-    "birthDate": "1981-04-05",
-    "venus": {
-      "sign": "Aries",
-      "degree": 15.1,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "folk",
-      "ambient",
-      "artpop"
-    ],
-    "subgenres": [
-      "ambient-folk",
-      "freak-folk"
-    ],
-    "enTags": [
-      "ambient folk",
-      "new weird america",
-      "melancholia",
-      "spectra"
-    ],
-    "youtubeVideoId": "h8-Vmhp2ZEk",
-    "backupVideoIds": []
-  },
-  {
     "name": "Marissa Nadler & Stephen Brodsky",
     "birthDate": "1981-04-05",
     "venus": {
@@ -13944,17 +13350,8 @@
       "element": "fire"
     },
     "genres": [
-      "electronica",
       "idm",
-      "dnb",
-      "folk",
-      "hiphop",
-      "ambient",
-      "techno",
-      "jazz",
-      "indiepop",
-      "darkwave",
-      "industrial"
+      "electronica"
     ],
     "subgenres": [
       "idm",
@@ -14211,22 +13608,6 @@
       "Qqi_EZ0DgrA",
       "l_3lOC1arME"
     ]
-  },
-  {
-    "name": "Nathanial Young",
-    "birthDate": "1995-02-14",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 10.9,
-      "decan": 2,
-      "element": "earth"
-    },
-    "genres": [
-      "valentine"
-    ],
-    "subgenres": [],
-    "youtubeVideoId": "igZrrKLe81I",
-    "backupVideoIds": []
   },
   {
     "name": "Neil Scrivin",
@@ -14588,30 +13969,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Ólafur Arnalds",
-    "birthDate": "1986-11-03",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 13.9,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "ambient",
-      "classical",
-      "darkwave"
-    ],
-    "subgenres": [
-      "neo-classical",
-      "ambient",
-      "modern-classical"
-    ],
-    "youtubeVideoId": "0kYc55bXJFI",
-    "backupVideoIds": [
-      "ejaaxLeUQd4"
-    ]
-  },
-  {
     "name": "Omni Gardens",
     "birthDate": "2013-08-10",
     "venus": {
@@ -14837,28 +14194,6 @@
     ],
     "subgenres": [],
     "youtubeVideoId": "eSna2APlZ4I",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Ouri",
-    "birthDate": "1992-06-20",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 1.3,
-      "decan": 1,
-      "element": "water"
-    },
-    "genres": [
-      "valentine",
-      "idm",
-      "artpop",
-      "techno"
-    ],
-    "subgenres": [
-      "idm",
-      "techno"
-    ],
-    "youtubeVideoId": "QEh0WIY_ZRw",
     "backupVideoIds": []
   },
   {
@@ -15358,56 +14693,6 @@
       "ambient"
     ],
     "youtubeVideoId": "5V2mcZHkLeI",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Peter Kardas",
-    "birthDate": "1995-02-14",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 10.9,
-      "decan": 2,
-      "element": "earth"
-    },
-    "genres": [
-      "valentine"
-    ],
-    "subgenres": [],
-    "youtubeVideoId": "RmrlJpKlwcc",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Pharmakon",
-    "birthDate": "1990-06-19",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 23.5,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "industrial",
-      "idm",
-      "artpop",
-      "techno",
-      "ambient"
-    ],
-    "subgenres": [
-      "noise",
-      "industrial",
-      "power-electronics",
-      "avant-garde-pop"
-    ],
-    "enTags": [
-      "noise",
-      "death industrial",
-      "mandible",
-      "electra",
-      "new isolationism",
-      "power electronics",
-      "avant-garde metal"
-    ],
-    "youtubeVideoId": "EnoeTdptXRc",
     "backupVideoIds": []
   },
   {
@@ -16728,8 +16013,8 @@
       "element": "earth"
     },
     "genres": [
-      "artpop",
-      "indiepop"
+      "ambient",
+      "artpop"
     ],
     "subgenres": [
       "art-pop"
@@ -17052,27 +16337,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Sam Gendel",
-    "birthDate": "1990-01-01",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 6.2,
-      "decan": 1,
-      "element": "air",
-      "dateApprox": true
-    },
-    "genres": [
-      "valentine",
-      "jazz",
-      "ambient"
-    ],
-    "subgenres": [
-      "spiritual-jazz"
-    ],
-    "youtubeVideoId": "eSwjSbgXM78",
-    "backupVideoIds": []
-  },
-  {
     "name": "Samiyam",
     "birthDate": "1985-01-01",
     "venus": {
@@ -17184,7 +16448,6 @@
       "element": "fire"
     },
     "genres": [
-      "hiphop",
       "intercelestial"
     ],
     "subgenres": [],
@@ -17426,23 +16689,6 @@
       "HkBHp3IZ9ik",
       "DomTr_YkT8Q"
     ]
-  },
-  {
-    "name": "Semi Trucks",
-    "birthDate": "1995-01-01",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 24.3,
-      "decan": 3,
-      "element": "water",
-      "dateApprox": true
-    },
-    "genres": [
-      "valentine"
-    ],
-    "subgenres": [],
-    "youtubeVideoId": "JUiUPj0eXn8",
-    "backupVideoIds": []
   },
   {
     "name": "Sergei Prokofiev",
@@ -18061,15 +17307,7 @@
     },
     "genres": [
       "jazz",
-      "triphop",
-      "ambient",
-      "techno",
-      "hiphop",
-      "electronica",
-      "classical",
-      "idm",
-      "folk",
-      "darkwave"
+      "ambient"
     ],
     "subgenres": [
       "dark-jazz",
@@ -18181,27 +17419,6 @@
       "new wave of glam metal"
     ],
     "youtubeVideoId": "GxmqsaugwaM",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Sonic Youth",
-    "birthDate": "1953-04-28",
-    "venus": {
-      "sign": "Aries",
-      "degree": 15.7,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "valentine",
-      "altrock",
-      "indiepop",
-      "industrial"
-    ],
-    "subgenres": [
-      "industrial"
-    ],
-    "youtubeVideoId": "tFNnvQLvs7I",
     "backupVideoIds": []
   },
   {
@@ -18887,20 +18104,7 @@
     },
     "genres": [
       "ambient",
-      "industrial",
-      "artpop",
-      "hiphop",
-      "idm",
-      "indiepop",
-      "altrock",
-      "dnb",
-      "techno",
-      "folk",
-      "electronica",
-      "darkwave",
-      "classical",
-      "jazz",
-      "triphop"
+      "industrial"
     ],
     "subgenres": [
       "drone",
@@ -19445,47 +18649,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Swans",
-    "birthDate": "1982-06-15",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 18.2,
-      "decan": 2,
-      "element": "earth"
-    },
-    "genres": [
-      "idm",
-      "altrock",
-      "industrial",
-      "indiepop",
-      "darkwave",
-      "artpop"
-    ],
-    "subgenres": [
-      "experimental",
-      "noise",
-      "industrial",
-      "noise-pop",
-      "art-pop"
-    ],
-    "enTags": [
-      "experimental rock",
-      "noise rock",
-      "no wave",
-      "experimental",
-      "industrial rock",
-      "post-rock",
-      "noise pop",
-      "post-punk",
-      "dream pop",
-      "industrial",
-      "shoegaze",
-      "art pop"
-    ],
-    "youtubeVideoId": "AhYoM-215Zw",
-    "backupVideoIds": []
-  },
-  {
     "name": "Swervedriver",
     "birthDate": "1989-00-00",
     "venus": {
@@ -19848,39 +19011,6 @@
       "boTxIGsyJls",
       "whVoJb2DITE"
     ]
-  },
-  {
-    "name": "The Body",
-    "birthDate": "1999-06-15",
-    "venus": {
-      "sign": "Leo",
-      "degree": 9.3,
-      "decan": 1,
-      "element": "fire"
-    },
-    "genres": [
-      "ambient",
-      "industrial",
-      "altrock"
-    ],
-    "subgenres": [
-      "drone",
-      "industrial",
-      "noise"
-    ],
-    "enTags": [
-      "drone metal",
-      "new england metal",
-      "post-doom metal",
-      "rhode island indie",
-      "death industrial",
-      "post-metal",
-      "drone",
-      "noise rock",
-      "sludge metal"
-    ],
-    "youtubeVideoId": "3jzqqBF0dbw",
-    "backupVideoIds": []
   },
   {
     "name": "The Brian Jonestown Massacre",
@@ -20285,25 +19415,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "The Memphis Mustangs",
-    "birthDate": "1970-01-01",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 5.1,
-      "decan": 1,
-      "element": "earth",
-      "dateApprox": true
-    },
-    "genres": [
-      "valentine"
-    ],
-    "subgenres": [
-      "soul-jazz"
-    ],
-    "youtubeVideoId": "54Lqir2N_Eo",
-    "backupVideoIds": []
-  },
-  {
     "name": "The Mount Fuji Doomjazz Corporation",
     "birthDate": "1984-11-28",
     "venus": {
@@ -20681,35 +19792,6 @@
       "alternative rock"
     ],
     "youtubeVideoId": "BTZl9KMjbrU",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Thou",
-    "birthDate": "2005-06-15",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 14.5,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "ambient",
-      "folk",
-      "industrial"
-    ],
-    "subgenres": [
-      "drone",
-      "dark-folk"
-    ],
-    "enTags": [
-      "drone metal",
-      "gaian doom",
-      "post-doom metal",
-      "louisiana metal",
-      "sludge metal",
-      "voidgrind"
-    ],
-    "youtubeVideoId": "PwDq3nBf38k",
     "backupVideoIds": []
   },
   {
