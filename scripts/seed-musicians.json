@@ -14191,13 +14191,12 @@
     "subgenres": [
       "experimental-hiphop"
     ],
-    "youtubeId": "VCV7VxZbHbA",
+    "youtubeId": "4jw0dMZpfZU",
     "enTags": [
       "experimental hip hop"
     ],
     "spotifyId": "0FNfiTQCR5o3ounOlWzm1d",
-    "spotifyFollowers": 48658,
-    "youtubeNeedsVerify": true
+    "spotifyFollowers": 48658
   },
   {
     "name": "Slauson Malone 1",
@@ -14216,8 +14215,7 @@
       "psychedelic hip hop"
     ],
     "spotifyId": "6mWYIx4qV7et94cpRRU77N",
-    "spotifyFollowers": 54937,
-    "youtubeNeedsVerify": true
+    "spotifyFollowers": 54937
   },
   {
     "name": "Cities Aviv",
@@ -14231,7 +14229,7 @@
       "experimental-hiphop",
       "hip-hop"
     ],
-    "youtubeId": "T_00pgIa8aI",
+    "youtubeId": "pGK9J3RHTqk",
     "enTags": [
       "psychedelic hip hop",
       "experimental hip hop",
@@ -14239,8 +14237,7 @@
       "drumless hip hop"
     ],
     "spotifyId": "4m0HRALRlPxbZp5SwvktFX",
-    "spotifyFollowers": 94501,
-    "youtubeNeedsVerify": true
+    "spotifyFollowers": 94501
   },
   {
     "name": "Standing On The Corner",
@@ -14255,6 +14252,22 @@
       "collage pop",
       "hypnagogic pop"
     ]
+  },
+  {
+    "name": "OTTO",
+    "birthDate": "2020-09-23",
+    "genres": [
+      "idm",
+      "indiepop"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "youtubeId": "cHDelq2iInc",
+    "enTags": [
+      "experimental indie"
+    ],
+    "spotifyId": "4PxPpid4wSQJ630DTqZ046"
   },
   {
     "name": "Oli XL",
@@ -14288,7 +14301,7 @@
       "jazz-rap",
       "post-punk"
     ],
-    "youtubeId": "JwnEA-X3h6g",
+    "youtubeId": "hRzlbh4or3c",
     "enTags": [
       "jazz rap",
       "uk post-punk",
@@ -14296,8 +14309,7 @@
       "art pop"
     ],
     "spotifyId": "2pLvihTVAElhBCw7HcrIUC",
-    "spotifyFollowers": 102565,
-    "youtubeNeedsVerify": true
+    "spotifyFollowers": 102565
   },
   {
     "name": "Sassy 009",
@@ -14308,13 +14320,12 @@
       "techno"
     ],
     "subgenres": [],
-    "youtubeId": "pxH5bqfHu24",
+    "youtubeId": "CTvVCzrqGIM",
     "enTags": [
       "electra"
     ],
     "spotifyId": "30gJ2CPCeUvghTg6TkfA4L",
-    "spotifyFollowers": 54010,
-    "youtubeNeedsVerify": true
+    "spotifyFollowers": 54010
   },
   {
     "name": "A. G. Cook",
@@ -14328,7 +14339,7 @@
       "hyperpop",
       "experimental"
     ],
-    "youtubeId": "nEMN8FiXIMI",
+    "youtubeId": "kH2wQ5speuU",
     "enTags": [
       "proto-hyperpop",
       "bubblegum bass",
@@ -14336,8 +14347,7 @@
       "hyperpop"
     ],
     "spotifyId": "335TWGWGFan4vaacJzSiU8",
-    "spotifyFollowers": 226337,
-    "youtubeNeedsVerify": true
+    "spotifyFollowers": 226337
   },
   {
     "name": "Delroy Edwards",
@@ -14350,13 +14360,12 @@
       "house",
       "lo-fi"
     ],
-    "youtubeId": "yn_K3-JvGrY",
+    "youtubeId": "U-gjm3rQ_p8",
     "enTags": [
       "outsider house",
       "lo-fi house"
     ],
     "spotifyId": "683gIqfxdjjg2sowYxBHIQ",
-    "spotifyFollowers": 29359,
-    "youtubeNeedsVerify": true
+    "spotifyFollowers": 29359
   }
 ]
