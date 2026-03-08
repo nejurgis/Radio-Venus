@@ -2526,7 +2526,8 @@
     },
     "genres": [
       "idm",
-      "hiphop"
+      "hiphop",
+      "triphop"
     ],
     "subgenres": [
       "experimental",
@@ -3209,15 +3210,9 @@
       "element": "water"
     },
     "genres": [
-      "idm",
       "techno",
-      "industrial",
-      "altrock",
-      "jazz",
-      "electronica",
-      "hiphop",
-      "triphop",
-      "classical"
+      "ambient",
+      "idm"
     ],
     "subgenres": [
       "ambient",
@@ -3899,7 +3894,8 @@
     },
     "genres": [
       "idm",
-      "hiphop"
+      "hiphop",
+      "triphop"
     ],
     "subgenres": [
       "abstract",
@@ -5154,7 +5150,8 @@
       "industrial",
       "idm",
       "artpop",
-      "hiphop"
+      "hiphop",
+      "triphop"
     ],
     "subgenres": [
       "industrial",
@@ -7350,6 +7347,7 @@
       "idm",
       "jazz",
       "hiphop",
+      "triphop",
       "artpop"
     ],
     "subgenres": [
@@ -8812,7 +8810,8 @@
     },
     "genres": [
       "idm",
-      "hiphop"
+      "hiphop",
+      "triphop"
     ],
     "subgenres": [
       "abstract",
@@ -9531,6 +9530,7 @@
       "idm",
       "techno",
       "hiphop",
+      "triphop",
       "ambient"
     ],
     "subgenres": [
@@ -10616,7 +10616,8 @@
     },
     "genres": [
       "idm",
-      "hiphop"
+      "hiphop",
+      "triphop"
     ],
     "subgenres": [
       "experimental",
@@ -13933,9 +13934,6 @@
     "genres": [
       "idm",
       "artpop",
-      "ambient",
-      "darkwave",
-      "techno",
       "hiphop"
     ],
     "subgenres": [
@@ -14822,19 +14820,9 @@
       "element": "fire"
     },
     "genres": [
-      "idm",
-      "ambient",
-      "artpop",
       "electronica",
-      "industrial",
-      "hiphop",
       "indiepop",
-      "altrock",
-      "darkwave",
-      "techno",
-      "folk",
-      "triphop",
-      "jazz"
+      "hiphop"
     ],
     "subgenres": [
       "lo-fi",
@@ -16743,9 +16731,8 @@
       "element": "water"
     },
     "genres": [
-      "artpop",
       "electronica",
-      "techno",
+      "artpop",
       "idm",
       "hiphop"
     ],
@@ -16863,7 +16850,6 @@
     },
     "genres": [
       "artpop",
-      "dnb",
       "idm",
       "techno",
       "hiphop"
@@ -17255,7 +17241,8 @@
     },
     "genres": [
       "idm",
-      "hiphop"
+      "hiphop",
+      "triphop"
     ],
     "subgenres": [
       "abstract",
@@ -17962,7 +17949,8 @@
     },
     "genres": [
       "idm",
-      "hiphop"
+      "hiphop",
+      "triphop"
     ],
     "subgenres": [
       "abstract",
@@ -18014,6 +18002,7 @@
       "idm",
       "jazz",
       "hiphop",
+      "triphop",
       "artpop"
     ],
     "subgenres": [
@@ -19674,7 +19663,8 @@
     },
     "genres": [
       "idm",
-      "hiphop"
+      "hiphop",
+      "triphop"
     ],
     "subgenres": [
       "abstract",
@@ -19904,7 +19894,8 @@
       "idm",
       "techno",
       "ambient",
-      "hiphop"
+      "hiphop",
+      "triphop"
     ],
     "subgenres": [
       "experimental-pop",
@@ -20579,7 +20570,8 @@
     },
     "genres": [
       "idm",
-      "hiphop"
+      "hiphop",
+      "triphop"
     ],
     "subgenres": [
       "experimental-hiphop"
@@ -21100,7 +21092,8 @@
     "genres": [
       "artpop",
       "hiphop",
-      "idm"
+      "idm",
+      "triphop"
     ],
     "subgenres": [
       "experimental-pop",
