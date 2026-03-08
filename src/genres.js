@@ -126,7 +126,7 @@ const GENRE_MAP = {
   'hyperpop': ['idm'],
   'vaporwave': ['idm'],
   'braindance': ['idm'],           // core IDM tag — Aphex Twin, Bradley Strider, etc.
-  'abstract hip hop': ['hiphop', 'idm'],  // Alias, Boom Bip, Odd Nosdam, Sole, etc.
+  'abstract hip hop': ['hiphop', 'idm', 'triphop'],  // Alias, Boom Bip, Odd Nosdam, Sole, etc.
   'fluxwork': ['idm', 'artpop'],   // EN cluster: Holly Herndon, Babyfather, etc.
   'electra': ['idm', 'artpop', 'techno'],  // EN cluster: Helena Hauff, Arca, Kaitlyn Aurelia Smith
   'escape room': ['artpop', 'idm'],// EN cluster: SOPHIE, Oklou, Caroline Polachek, etc.
@@ -312,7 +312,8 @@ const GENRE_MAP = {
   'rap': ['hiphop'],
   'rap music': ['hiphop'],
   'alternative hip hop': ['hiphop'],
-  'experimental hip hop': ['hiphop', 'idm'],
+  'experimental hip hop': ['hiphop', 'idm', 'triphop'],
+  'instrumental hip hop': ['hiphop', 'triphop'],
   'industrial hip hop': ['hiphop', 'industrial'],
   'psychedelic hip hop': ['hiphop'],
   'underground hip hop': ['hiphop'],
@@ -341,8 +342,8 @@ const GENRE_MAP = {
   'quiet storm': ['hiphop', 'triphop'],
   'neo soul': ['hiphop'],
   'indie soul': ['hiphop', 'artpop'],
-  'alternative r&b': ['hiphop'],
-  'experimental r&b': ['hiphop', 'idm'],
+  'alternative r&b': ['hiphop', 'triphop'],
+  'experimental r&b': ['hiphop', 'idm', 'triphop'],
 
   // ── K-Pop / C-Pop / City Pop (closest: Art Pop) ──
   'k-pop': ['artpop'],

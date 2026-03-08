@@ -381,5 +381,42 @@
       "idm",
       "electronica"
     ]
+  },
+  "Carrier": {
+    "genres": [
+      "techno",
+      "ambient",
+      "idm"
+    ]
+  },
+  "Pink Must": {
+    "genres": [
+      "electronica",
+      "indiepop",
+      "hiphop"
+    ]
+  },
+  "Oklou": {
+    "genres": [
+      "idm",
+      "artpop",
+      "hiphop"
+    ]
+  },
+  "Sevdaliza": {
+    "genres": [
+      "electronica",
+      "artpop",
+      "idm",
+      "hiphop"
+    ]
+  },
+  "Shygirl": {
+    "genres": [
+      "artpop",
+      "idm",
+      "techno",
+      "hiphop"
+    ]
   }
 }
