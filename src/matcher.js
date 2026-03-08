@@ -126,11 +126,13 @@ function sortBySimilarity(arr, userLon) {
       angularDist(userLon, artistSign * 30),
       angularDist(userLon, artistSign * 30 + 30)
     );
+    m._signIndex = artistSign;
   }
   return arr.sort((a, b) =>
     b.similarity - a.similarity ||
     a._signGroupDist - b._signGroupDist ||  // same score → cluster by sign group
-    a._dist - b._dist ||                    // same group → closer degrees first
+    a._signIndex    - b._signIndex    ||    // symmetric signs (e.g. Leo/Libra for Virgo) → zodiac order
+    a._dist         - b._dist         ||    // same group → closer degrees first
     a.name.localeCompare(b.name)
   );
 }
