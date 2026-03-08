@@ -21,7 +21,8 @@ if (!inputFiles.length) {
 }
 
 const seed = JSON.parse(readFileSync(SEED_PATH, 'utf-8'));
-const seedByName = new Map(seed.map(a => [a.name.toLowerCase(), a]));
+const seedByName     = new Map(seed.map(a => [a.name.toLowerCase(), a]));
+const seedBySpotify  = new Map(seed.filter(a => a.spotifyId).map(a => [a.spotifyId, a]));
 
 let totalAdded   = 0;
 let totalPatched = 0;
@@ -32,12 +33,15 @@ for (const file of inputFiles) {
 
   for (const entry of additions) {
     const key = entry.name.toLowerCase();
-    if (!seedByName.has(key)) {
+    const existing = seedByName.get(key) ?? (entry.spotifyId && seedBySpotify.get(entry.spotifyId));
+    if (!existing) {
       seed.push(entry);
       seedByName.set(key, entry);
+      if (entry.spotifyId) seedBySpotify.set(entry.spotifyId, entry);
       totalAdded++;
     } else {
-      console.log(`  skip duplicate: ${entry.name}`);
+      const reason = seedByName.has(key) ? entry.name : `Spotify ID ${entry.spotifyId} → "${existing.name}"`;
+      console.log(`  skip duplicate: ${reason}`);
     }
   }
 

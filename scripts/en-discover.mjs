@@ -37,6 +37,7 @@ if (!artistArg) {
     '  --min-followers=N      skip artists below N followers (default: 2000)',
     '  --min-tag-overlap=N    skip artists with fewer than N shared EN tags with seed (default: 1)',
     '  --scan                 quick scan: show new vs in-DB candidates, no date/YouTube lookups',
+    '  --fetch-profile-tags   visit each candidate\'s EN profile for full tag list (slower, richer enTags)',
     '  --dry-run              print results without saving',
     '  --output=file.json     save to file instead of seed-musicians.json',
   ].join('\n'));
@@ -46,8 +47,9 @@ if (!artistArg) {
 const depth          = parseInt(args.find(a => a.startsWith('--depth='))?.split('=')[1]           ?? '1');
 const minFollowers   = parseInt(args.find(a => a.startsWith('--min-followers='))?.split('=')[1]   ?? '2000');
 const minTagOverlap  = parseInt(args.find(a => a.startsWith('--min-tag-overlap='))?.split('=')[1] ?? '1');
-const dryRun         = args.includes('--dry-run');
-const scanOnly       = args.includes('--scan');
+const dryRun            = args.includes('--dry-run');
+const scanOnly          = args.includes('--scan');
+const fetchProfileTags  = args.includes('--fetch-profile-tags');
 const outputFlag     = args.find(a => a.startsWith('--output='))?.split('=')[1] ?? null;
 
 function parseSpotifyId(str) {
@@ -284,6 +286,28 @@ async function scrapeFansAlsoLike(spotifyId) {
   }
 }
 
+async function scrapeProfileTags(spotifyId) {
+  const browser = await getBrowser();
+  const page    = await browser.newPage();
+  try {
+    await page.setExtraHTTPHeaders(EN_HEADERS);
+    await page.goto(
+      `https://everynoise.com/artistprofile.cgi?id=${spotifyId}`,
+      { waitUntil: 'domcontentloaded', timeout: 45000 }
+    );
+    return await page.$$eval(
+      'span[title="Spotify genre-ish tags"]',
+      els => els.flatMap(el =>
+        el.textContent.split(',').map(t => t.trim().replace(/^#/, '')).filter(Boolean)
+      )
+    ).catch(() => []);
+  } catch {
+    return [];
+  } finally {
+    await page.close().catch(() => {});
+  }
+}
+
 // ── Main ──────────────────────────────────────────────────────────────────────
 
 async function main() {
@@ -372,17 +396,24 @@ async function main() {
       console.log(`\n  ▸ ${candidate.name}  (${candidate.followers.toLocaleString()} followers)`);
       console.log(`    tags: ${candidate.tags.join(', ')}`);
 
-      // Derive genres from EN tags
-      const genres    = categorizeGenres(candidate.tags);
-      const subgenres = categorizeSubgenres(candidate.tags);
+      // Check Spotify display name — catches real-name vs stage-name mismatches from EN
+      try {
+        const oembed = await fetchJSON(
+          `https://open.spotify.com/oembed?url=https://open.spotify.com/artist/${candidate.spotifyId}`
+        );
+        const spotifyName = oembed?.title;
+        if (spotifyName && spotifyName.toLowerCase() !== candidate.name.toLowerCase()) {
+          console.log(`    ⚠ Spotify name: "${spotifyName}" — EN listed as "${candidate.name}"`);
+          candidate.name = spotifyName;
+          console.log(`    → using Spotify name`);
+        }
+      } catch { /* oembed unavailable — skip silently */ }
 
-      if (!genres.length) {
+      // Quick genre + overlap check on shallow tags (no network calls)
+      if (!categorizeGenres(candidate.tags).length) {
         console.log(`    ✗ No genres mapped — skipping`);
         continue;
       }
-      console.log(`    genres: ${genres.join(', ')}`);
-
-      // Tag overlap with seed artist
       const sharedTags = seedTags.size
         ? candidate.tags.filter(t => seedTags.has(t))
         : [];
@@ -397,6 +428,20 @@ async function main() {
         console.log(`    ✗ Below --min-tag-overlap=${minTagOverlap} — skipping`);
         continue;
       }
+
+      // Fetch full EN profile tags if requested (enriches candidate.tags before genre derivation)
+      if (fetchProfileTags) {
+        const profileTags = await scrapeProfileTags(candidate.spotifyId);
+        if (profileTags.length > candidate.tags.length) {
+          console.log(`    profile tags (${profileTags.length}): ${profileTags.join(', ')}`);
+          candidate.tags = profileTags;
+        }
+      }
+
+      // Derive genres from final tag list
+      const genres    = categorizeGenres(candidate.tags);
+      const subgenres = categorizeSubgenres(candidate.tags);
+      console.log(`    genres: ${genres.join(', ')}`);
 
       // Birth date: Wikidata first (no rate limit), then MusicBrainz by Spotify ID
       let birthDate = null;
