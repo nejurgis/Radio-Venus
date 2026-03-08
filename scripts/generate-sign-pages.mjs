@@ -157,13 +157,13 @@ const CSS = `
   }
   ul.artist-list { list-style: none; }
   ul.artist-list li {
-    display: flex; justify-content: space-between; align-items: baseline;
-    padding: 0.55rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); gap: 1rem;
+    padding: 0.55rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);
   }
-  .artist-name { font-weight: 400; color: #e8e8f0; background: none; }
+  .artist-name { display: block; font-weight: 400; color: #e8e8f0; background: none; }
   .artist-meta {
+    display: block; margin-top: 0.15rem;
     font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
-    color: rgba(255,255,255,0.28); white-space: nowrap; text-transform: uppercase;
+    color: rgba(255,255,255,0.28); text-transform: uppercase;
   }
   .cta {
     margin-top: 3rem; font-size: 0.9rem; color: rgba(255,255,255,0.45);

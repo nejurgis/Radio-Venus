@@ -1,0 +1,31 @@
+{
+  "additions": [
+    {
+      "name": "Sarin Sunday",
+      "birthDate": "2000-06-15",
+      "genres": [
+        "idm"
+      ],
+      "subgenres": [],
+      "youtubeId": "OvYOA2onUzM",
+      "enTags": [],
+      "spotifyId": null,
+      "cosineUrl": "https://cosine.club/track/763939-sarin-sunday-malachite",
+      "cosineSimilarity": 90
+    },
+    {
+      "name": "Beaumont Hannant",
+      "birthDate": "1957-04-05",
+      "genres": [
+        "idm"
+      ],
+      "subgenres": [],
+      "youtubeId": "H8rcZJaPhHw",
+      "enTags": [],
+      "spotifyId": "6DvcKNW1Fs3B4aAktmpb2S",
+      "cosineUrl": "https://cosine.club/track/660099-beaumont-hannant-nocturnal-calling",
+      "cosineSimilarity": 90
+    }
+  ],
+  "patches": []
+}

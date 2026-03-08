@@ -35,7 +35,7 @@ const artistArg = args.find(a => !a.startsWith('--'));
 if (!artistArg) {
   console.error([
     'Usage: node scripts/cosine-discover.mjs "Artist Name" [options]',
-    '  --min-similarity=N    minimum similarity % to include (default: 90)',
+    '  --min-similarity=N    minimum similarity % to include (default: 91)',
     '  --top-n=N             max similar artists to process (default: 50)',
     '  --track="name"        use a specific track instead of first search result',
     '  --scan                quick preview: list candidates without enrichment',
@@ -45,9 +45,10 @@ if (!artistArg) {
   process.exit(1);
 }
 
-const minSimilarity = parseInt(args.find(a => a.startsWith('--min-similarity='))?.split('=')[1] ?? '90');
+const minSimilarity = parseInt(args.find(a => a.startsWith('--min-similarity='))?.split('=')[1] ?? '91');
 const topN          = parseInt(args.find(a => a.startsWith('--top-n='))?.split('=')[1]          ?? '50');
 const trackHint     = args.find(a => a.startsWith('--track='))?.slice(8) ?? null;
+const trackUrl_     = args.find(a => a.startsWith('--url='))?.slice(6) ?? null;
 const scanOnly      = args.includes('--scan');
 const dryRun        = args.includes('--dry-run');
 const outputFlag    = args.find(a => a.startsWith('--output='))?.split('=')[1] ?? null;
@@ -237,6 +238,39 @@ async function lookupOnEN(artistName) {
   }
 }
 
+// Submit a Bandcamp/SoundCloud/YouTube URL to cosine.club, return the resulting /track/ path
+async function findTrackUrlBySubmission(submissionUrl) {
+  const browser = await getBrowser();
+  const page    = await browser.newPage();
+  try {
+    await page.setExtraHTTPHeaders(COSINE_HEADERS);
+    await page.goto('https://cosine.club', { waitUntil: 'domcontentloaded', timeout: 30000 });
+
+    // Paste the URL — cosine.club: / → /?q=URL → /submission/ID
+    // The submission page IS the results page (source track row 1, similar tracks after)
+    await page.fill('#search', submissionUrl);
+    await page.keyboard.press('Enter');
+
+    await page.waitForURL(
+      url => url.href.includes('/submission/') || url.href.includes('/track/'),
+      { timeout: 30000 }
+    );
+
+    // Wait for similar track rows to load
+    await page.waitForSelector('.flex.flex-row.border.border-border', { timeout: 60000 });
+    await page.waitForLoadState('networkidle', { timeout: 5000 }).catch(() => {});
+
+    const path = new URL(page.url()).pathname;
+    console.log(`  → https://cosine.club${path}`);
+    return path;
+  } catch (e) {
+    console.error(`  URL submission failed: ${e.message}`);
+    return null;
+  } finally {
+    await page.close().catch(() => {});
+  }
+}
+
 // Search cosine.club for an artist, return the URL of their best matching track
 async function findTrackUrl(artistName, trackHint) {
   const browser = await getBrowser();
@@ -248,6 +282,8 @@ async function findTrackUrl(artistName, trackHint) {
     // Type into search — fires htmx request updating #search-results-list
     await page.fill('#search', artistName);
     await page.waitForSelector('#search-results-list li a[href^="/track/"]', { timeout: 15000 });
+    // Wait for htmx to finish populating the full list (not just the first result)
+    await page.waitForLoadState('networkidle', { timeout: 5000 }).catch(() => {});
 
     // Results are "Artist - Track Name" link text inside #search-results-list
     const results = await page.$$eval('#search-results-list li a[href^="/track/"]', els =>
@@ -264,11 +300,16 @@ async function findTrackUrl(artistName, trackHint) {
 
     // Priority 1: matches both artist and specific track hint
     if (hintLower) {
+      if (process.env.DEBUG_COSINE) {
+        console.log(`  [debug] ${results.length} search results, looking for "${trackHint}":`);
+        for (const r of results.slice(0, 10)) console.log(`    ${r.text}`);
+      }
       const match = results.find(r => {
         const t = r.text.toLowerCase();
         return t.includes(artistLower) && t.includes(hintLower);
       });
       if (match) return match.href;
+      console.log(`  ⚠ Track "${trackHint}" not found in search results — falling back to first artist match`);
     }
 
     // Priority 2: artist name matches start of result text (before " - ")
@@ -302,8 +343,8 @@ async function scrapeSimilarTracks(trackPath) {
     // Wait for similar track rows
     await page.waitForSelector('.flex.flex-row.border.border-border', { timeout: 20000 });
 
-    // Extract source track info from JSON-LD
-    const sourceTrack = await page.$eval('script[type="application/ld+json"]', el => {
+    // Extract source track info: JSON-LD for /track/ pages, first row span for /submission/ pages
+    let sourceTrack = await page.$eval('script[type="application/ld+json"]', el => {
       try {
         const graph = JSON.parse(el.textContent)['@graph'] ?? [];
         const rec   = graph.find(n => n['@type'] === 'MusicRecording');
@@ -311,6 +352,20 @@ async function scrapeSimilarTracks(trackPath) {
         return { name: rec.name ?? '', artist: rec.byArtist?.name ?? '' };
       } catch { return null; }
     }).catch(() => null);
+
+    if (!sourceTrack) {
+      // Submission page: source track is first row's span text "Artist - Track Name"
+      const firstSpan = await page.$eval(
+        '.flex.flex-row.border.border-border span',
+        el => el.textContent.trim()
+      ).catch(() => null);
+      if (firstSpan) {
+        const dash = firstSpan.indexOf(' - ');
+        sourceTrack = dash > -1
+          ? { artist: firstSpan.slice(0, dash), name: firstSpan.slice(dash + 3) }
+          : { artist: firstSpan, name: '' };
+      }
+    }
 
     // Each similar track row: .flex.flex-row.border.border-border
     // First a[href^="/track/"] link text = "Artist - Track Name"
@@ -357,8 +412,14 @@ async function main() {
   console.log(`Seed: ${seed.length} artists\n`);
 
   // Step 1: find the artist's track on cosine.club
-  console.log(`Searching cosine.club for "${artistArg}"${trackHint ? ` — track: "${trackHint}"` : ''}...`);
-  const trackUrl = await findTrackUrl(artistArg, trackHint);
+  let trackUrl;
+  if (trackUrl_) {
+    console.log(`Submitting URL to cosine.club: ${trackUrl_}`);
+    trackUrl = await findTrackUrlBySubmission(trackUrl_);
+  } else {
+    console.log(`Searching cosine.club for "${artistArg}"${trackHint ? ` — track: "${trackHint}"` : ''}...`);
+    trackUrl = await findTrackUrl(artistArg, trackHint);
+  }
   if (!trackUrl) {
     console.error(`✗ Could not find "${artistArg}" on cosine.club.`);
     console.error(`  Try --track="specific track name" to narrow the search.`);
@@ -399,6 +460,12 @@ async function main() {
     .slice(0, topN);
 
   console.log(`\n${candidates.length} new artists (≥${minSimilarity}% similarity, not in DB):`);
+
+  if (!candidates.length) {
+    console.log(`  Nothing above ${minSimilarity}% — skipping. Try a different seed track or artist.`);
+    await closeBrowser();
+    return;
+  }
 
   if (scanOnly) {
     for (const c of candidates) {
