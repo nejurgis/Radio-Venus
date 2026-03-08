@@ -210,6 +210,11 @@ export function matchMoon(moonLongitude, limit = 10) {
   return pool.sort((a, b) => b.similarity - a.similarity || a.name.localeCompare(b.name)).slice(0, limit);
 }
 
+export function matchSun(sunLongitude, limit = 10) {
+  const pool = db.filter(m => m.youtubeVideoId);
+  return sortBySimilarity(pool, sunLongitude).slice(0, limit);
+}
+
 function shuffle(arr) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {

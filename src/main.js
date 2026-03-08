@@ -1,8 +1,8 @@
 import { calculateVenus, calculateMoon, makeBirthDate } from './venus.js';
 import { GENRE_CATEGORIES, SUBGENRES } from './genres.js';
-import { loadDatabase, getDatabase, match, matchFavorites, matchMoon, getSubgenreCounts } from './matcher.js';
+import { loadDatabase, getDatabase, match, matchFavorites, matchMoon, matchSun, getSubgenreCounts } from './matcher.js';
 import { getFavorites, toggleFavorite, isFavorite } from './favorites.js';
-import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, setMoonPosition, setSunPosition, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, enableDragRotate, nudgeWheel, onNebulaHover, onNebulaClick, onRotation, onNeedleCross, onSignCross, onMoonHover } from './viz.js';
+import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, setMoonPosition, setSunPosition, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, enableDragRotate, nudgeWheel, onNebulaHover, onNebulaClick, onRotation, onNeedleCross, onSignCross, onMoonHover, onSunHover } from './viz.js';
 import { pluck, gong, setHarpEnabled, isHarpEnabled, pokeAudio } from './harp.js';
 import { loadYouTubeAPI, initPlayer, loadVideo, cueVideo, togglePlay, isPlaying, getDuration, getCurrentTime, seekTo, getVideoTitle, isMuted, unMute } from './player.js';
 import {
@@ -165,8 +165,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     renderArtistIndex(db);
   });
   document.getElementById('btn-back-about').addEventListener('click', () => history.back());
+  document.addEventListener('click', e => {
+    if (e.target.closest('.resonance-info-btn')) {
+      showScreen('about');
+      document.getElementById('about-resonance')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
   document.getElementById('btn-lyre').addEventListener('click', () => {
     setHarpEnabled(true);
+    showToast('Lyre mode activated');
     const elements = ['fire', 'water', 'earth', 'air'];
     const el = elements[Math.floor(Math.random() * 4)];
     pluck(Math.random(), el, 0.5 + Math.random() * 0.3);
@@ -273,6 +280,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
   document.getElementById('btn-moon-playlist').addEventListener('click', () => {
     launchMoonPlaylist();
+  });
+  onSunHover(active => {
+    document.getElementById('btn-sun-playlist').classList.toggle('visible', active);
+  });
+  document.getElementById('btn-sun-playlist').addEventListener('click', () => {
+    launchSunPlaylist();
   });
   onNeedleCross(({ radialFrac, element, speed }) => {
     const velocity = Math.min(1, 0.2 + speed * 0.8);
@@ -417,6 +430,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (window.location.hash === '#moon' && dbResult.status === 'fulfilled') {
     history.replaceState({ screen: 'portal' }, '', window.location.pathname);
     launchMoonPlaylist();
+  }
+
+  // ── Handle #sun link (Today's Sun) ──
+  if (window.location.hash === '#sun' && dbResult.status === 'fulfilled') {
+    history.replaceState({ screen: 'portal' }, '', window.location.pathname);
+    launchSunPlaylist();
   }
 
   // ── Handle shared link (?vid=...&t=...&artist=...) ──
@@ -687,7 +706,7 @@ function rebuildGenreGrid() {
 
   if (!cachedShuffledGenres) {
     // 1. Extract special genres
-    const special = ['valentine', 'moon'];
+    const special = ['valentine', 'moon', 'sun'];
     const pinned = special.map(id => GENRE_CATEGORIES.find(c => c.id === id)).filter(Boolean);
     // 2. Get all others
     const others = GENRE_CATEGORIES.filter(c => !special.includes(c.id));
@@ -728,9 +747,14 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
 
   // 1. DEFINE SHARE PERMISSION
   // This enables the button for Moon, Valentine, and Favorites
-  const playlistShareFn = (genreId === 'valentine' || genreId === 'favorites' || genreId === 'moon') 
-    ? sharePlaylist 
+  const playlistShareFn = (genreId === 'valentine' || genreId === 'favorites' || genreId === 'moon' || genreId === 'sun')
+    ? sharePlaylist
     : undefined;
+
+  const playlistDescription =
+    genreId === 'moon' ? 'The immediate emotional weather. This playlist tracks the Moon\'s rapid movement, capturing the fleeting, intuitive mood of the next 48 hours.' :
+    genreId === 'sun'  ? 'A living playlist that expresses the current astrological season, evolving in real-time with the transit of the Sun.' :
+    null;
 
   // 2. SETUP CONTEXT
   const effectiveLong = tunedLongitude != null ? tunedLongitude : (venus ? venus.longitude : 0);
@@ -751,8 +775,7 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
 
   // 3. OPTIMIZATION: If clicking the active genre, just re-render and return.
   if (tracks.length > 0 && genreId === playingGenreId && subgenreId === playingSubgenreId) {
-    // PASS playlistShareFn HERE
-    renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()), playlistShareFn);
+    renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()), playlistShareFn, playlistDescription);
     return tracks;
   }
 
@@ -765,16 +788,24 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
   else if (genreId === 'moon') {
     // ── MOON LOGIC ──
     const now = new Date();
-    const moonData = calculateMoon(now); 
-    
+    const moonData = calculateMoon(now);
+
     // Update Header
-    const moonSign = moonData.sign; 
+    const moonSign = moonData.sign;
     const moonDeg = Math.round(moonData.longitude % 30);
     renderRadioHeader(moonSign, `Moon in ${moonSign} ${moonDeg}°`);
-    
+
     // Find Artists
     candidateTracks = matchMoon(moonData.longitude);
-  } 
+  }
+  else if (genreId === 'sun') {
+    // ── SUN LOGIC ──
+    const sunData = calculateMoon(new Date());
+    const sunSign = sunData.sunSign;
+    const sunDeg = Math.round(sunData.sunLongitude % 30);
+    renderRadioHeader(sunSign, `Sun in ${sunSign} ${sunDeg}°`);
+    candidateTracks = matchSun(sunData.sunLongitude);
+  }
   else {
     // ── STANDARD LOGIC ──
     candidateTracks = match(effectiveSign, genreId, effectiveElement, {
@@ -807,7 +838,7 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
       failedIds.clear();
       trackVideoIndex.clear();
       playTrack(i);
-    }, new Set(), new Set(getFavorites()), playlistShareFn); // <--- PASSED HERE
+    }, new Set(), new Set(getFavorites()), playlistShareFn, playlistDescription);
   } else {
     tracks = candidateTracks;
     playingGenreId = genreId;
@@ -815,9 +846,8 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
     activeGenreLabel = newLabel;
     failedIds.clear();
     trackVideoIndex.clear();
-    
-    // <--- PASSED HERE
-    renderTrackList(tracks, 0, i => playTrack(i), failedIds, new Set(getFavorites()), playlistShareFn);
+
+    renderTrackList(tracks, 0, i => playTrack(i), failedIds, new Set(getFavorites()), playlistShareFn, playlistDescription);
     playTrack(0);
   }
 
@@ -927,7 +957,8 @@ function launchMoonPlaylist() {
   failedIds.clear();
   trackVideoIndex.clear();
 
-  renderTrackList(tracks, 0, i => playTrack(i), failedIds, new Set(getFavorites()), sharePlaylist);
+  renderTrackList(tracks, 0, i => playTrack(i), failedIds, new Set(getFavorites()), sharePlaylist,
+    'The immediate emotional weather. This playlist tracks the Moon\'s rapid movement, capturing the fleeting, intuitive mood of the next 48 hours.');
 
   if (tracks.length > 0) {
     updateNowPlaying(tracks[0].name);
@@ -938,6 +969,50 @@ function launchMoonPlaylist() {
 
   const signIndex = ZODIAC_SIGNS.indexOf(moonSign);
   if (signIndex >= 0) zoomToSign(signIndex, { duration: 2500, targetDeg: moonData.longitude });
+  updateNowPlayingButton(false);
+}
+
+function launchSunPlaylist() {
+  const moonData = calculateMoon(new Date());
+  const sunSign = moonData.sunSign;
+  const sunDeg = Math.round(moonData.sunLongitude % 30);
+  const el = ZODIAC_ELEMENTS[sunSign] || 'fire';
+
+  setElementTheme(el);
+  renderRadioHeader(sunSign, `Sun in ${sunSign} ${sunDeg}°`);
+  showScreen('radio');
+  showNebula(true);
+
+  const nebulaCont = document.getElementById('nebula-container');
+  if (nebulaCont) {
+    nebulaCont.classList.add('is-dimmed');
+    nebulaCont.classList.add('is-deep-dimmed');
+    nebulaCont.classList.add('is-zoomed');
+  }
+  dimNebula(true);
+  deepDimNebula(true);
+  setZoomDrift(true);
+  history.pushState({ screen: 'radio' }, '');
+
+  tracks = matchSun(moonData.sunLongitude);
+  playingGenreId = 'sun';
+  activeGenreLabel = "Today's Sun";
+  currentTrackIndex = 0;
+  failedIds.clear();
+  trackVideoIndex.clear();
+
+  renderTrackList(tracks, 0, i => playTrack(i), failedIds, new Set(getFavorites()), sharePlaylist,
+    'A living playlist that expresses the current astrological season, evolving in real-time with the transit of the Sun.');
+
+  if (tracks.length > 0) {
+    updateNowPlaying(tracks[0].name);
+    updateFavoriteButton(isFavorite(tracks[0].name));
+    ensurePlayerReady().then(() => cueVideo(tracks[0].youtubeVideoId));
+    updatePlayButton(false);
+  }
+
+  const signIndex = ZODIAC_SIGNS.indexOf(sunSign);
+  if (signIndex >= 0) zoomToSign(signIndex, { duration: 2500, targetDeg: moonData.sunLongitude });
   updateNowPlayingButton(false);
 }
 
@@ -1104,6 +1179,7 @@ document.addEventListener('click', e => {
   if (e.target.id === 'btn-harp' || e.target.closest('#btn-harp')) {
     const on = !isHarpEnabled();
     setHarpEnabled(on);
+    showToast(on ? 'Lyre mode activated' : 'Lyre mode deactivated');
     document.getElementById('btn-harp').classList.toggle('is-active', on);
     nudgeWheel(on ? 3 : -4);
     // TRACKING
@@ -1114,15 +1190,33 @@ document.addEventListener('click', e => {
   }
   if (e.target.id === 'btn-fav' || e.target.closest('#btn-fav')) {
     const track = tracks[currentTrackIndex];
+    const isFirst = getFavorites().length === 0;
     const nowFav = toggleFavorite(track.name);
     trackFavorite(track.name, nowFav ? 'add' : 'remove');
     updateFavoriteButton(nowFav);
+    if (nowFav) showToast(isFirst ? 'Favorites playlist created' : 'Added to favorites playlist');
+    else showToast('Removed from favorites playlist');
 
     // FIND the active track in the list and toggle the class to trigger CSS transition
     const activeItem = document.querySelector('.track-item.active');
     if (activeItem) {
       activeItem.classList.toggle('is-favorited', nowFav);
     }
+  }
+  const favContainer = e.target.closest('.track-fav-container');
+  if (favContainer) {
+    const item = favContainer.closest('.track-item');
+    if (!item) return;
+    const idx = parseInt(item.dataset.index, 10);
+    if (isNaN(idx) || !tracks[idx]) return;
+    const track = tracks[idx];
+    const isFirst = getFavorites().length === 0;
+    const nowFav = toggleFavorite(track.name);
+    trackFavorite(track.name, nowFav ? 'add' : 'remove');
+    item.classList.toggle('is-favorited', nowFav);
+    if (idx === currentTrackIndex) updateFavoriteButton(nowFav);
+    if (nowFav) showToast(isFirst ? 'Favorites playlist created' : 'Added to favorites playlist');
+    else showToast('Removed from favorites playlist');
   }
 });
 
@@ -1147,7 +1241,7 @@ async function copyAndToast(url, toast) {
 }
 
 function getPlaylistShareFn() {
-  return (playingGenreId === 'valentine' || playingGenreId === 'favorites' || playingGenreId === 'moon') ? sharePlaylist : undefined;
+  return (playingGenreId === 'valentine' || playingGenreId === 'favorites' || playingGenreId === 'moon' || playingGenreId === 'sun') ? sharePlaylist : undefined;
 }
 
 // Dashboard share button — always shares the individual song
@@ -1174,7 +1268,7 @@ async function shareCurrentTrack() {
   });
 
   trackShare(genreId, 'track_link');
-  await copyAndToast(`${base}?${params}`, 'Link copied');
+  await copyAndToast(`${base}?${params}`, 'Current track link copied');
 }
 
 // Playlist share button — shares the whole valentine or favorites playlist
@@ -1200,10 +1294,13 @@ async function sharePlaylist() {
     trackPlaylistShare('favorites', tracks.length);
     
   } else if (genreId === 'moon') {
-    // ── NEW MOON LOGIC ──
     shareUrl = `${base}?utm_source=share&utm_medium=clipboard&utm_campaign=moon#moon`;
     toast = 'Moon playlist copied';
     trackPlaylistShare('moon', tracks.length);
+  } else if (genreId === 'sun') {
+    shareUrl = `${base}?utm_source=share&utm_medium=clipboard&utm_campaign=sun#sun`;
+    toast = 'Sun playlist copied';
+    trackPlaylistShare('sun', tracks.length);
   } else {
     // 🛑 Stops here or generic genres
     return;

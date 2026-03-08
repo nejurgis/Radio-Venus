@@ -187,24 +187,31 @@ export function updateFavoriteButton(isFav) {
   ui.favBtn.appendChild(star);
 }
 
-export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new Set(), favSet = new Set(), onSharePlaylist) {
+export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new Set(), favSet = new Set(), onSharePlaylist, description = null) {
   if (!ui.trackList) return;
   trackSelectCallback = onSelect;
   ui.trackList.innerHTML = '';
 
   // 1. Playlist header with share button (valentine + favorites only)
   const isValentine = onSharePlaylist && tracks.length > 0 && tracks.every(t => t.genres && t.genres.includes('valentine'));
+  const isFavorites = onSharePlaylist && !isValentine && !description;
   if (onSharePlaylist) {
     const header = document.createElement('div');
     header.className = 'playlist-curator-credit';
-
     const curatorHtml = isValentine
       ? `<span class="curator-label">Curated by</span>
          <span class="curator-name"><a href="https://docs.google.com/document/d/1We4r9SyEyWY0rM8Njdcw7gkAy8e4lpBFb7aFTA7xtWY/edit?usp=sharing" target="_blank" rel="noopener">최진영</a></span>`
+      : isFavorites
+      ? `<span class="curator-label">Your favorited <span class="star-toggle active" style="width:10px;height:10px;margin:0 2px;vertical-align:middle"></span> tracks</span>`
+      : '';
+
+    const descHtml = description
+      ? `<span class="playlist-description">${description}</span>`
       : '';
 
     header.innerHTML = `
     ${curatorHtml}
+    ${descHtml}
     <button id="btn-share-playlist" class="btn-share-mini" title="Share Playlist">
         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
@@ -243,7 +250,15 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
     ui.trackList.appendChild(header);
   }
 
-  // 2. Standard Track Rendering
+  // 2. Resonance note (once, if scores present — regular genre playlists only)
+  if (!onSharePlaylist && tracks.some(t => t.similarity != null)) {
+    const note = document.createElement('div');
+    note.className = 'track-resonance-note';
+    note.innerHTML = `<span>Artists sorted by their Venus resonance with your natal zodiac.</span><button class="resonance-info-btn">learn more</button>`;
+    ui.trackList.appendChild(note);
+  }
+
+  // 3. Standard Track Rendering
   // No per-item listeners — delegated handler on #track-list covers all clicks
   const makeItem = (track, i) => {
     const failed = failedIds.has(i);
@@ -322,39 +337,40 @@ export function markTrackFailed(index) {
 // ─── PLAYER UI (OPTIMIZED) ──────────────────────────────────────────────────
 
 export function updateNowPlaying(name, title) {
-  const label = title ? `${name} — ${title}` : name || '';
+  let displayTitle = title;
+  if (title && name) {
+    const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    displayTitle = title.replace(new RegExp(`^${escaped}\\s*[-–—·:]\\s*`, 'i'), '');
+  }
+  const label = displayTitle ? `${name} — ${displayTitle}` : name || '';
   if (ui.npLabel) ui.npLabel.textContent = label;
 
-  // Measure overflow and set bounce-scroll if needed
-  if (ui.npMarquee && ui.nowPlaying) {
-    // Reset animation to measure true width
-    ui.npMarquee.style.animation = 'none';
-    ui.npMarquee.offsetHeight;
-
-    const textWidth = ui.npMarquee.scrollWidth;
-    const containerWidth = ui.nowPlaying.clientWidth;
-    const overflow = textWidth - containerWidth;
-
-    if (overflow > 0) {
-      const duration = Math.max(8, overflow / 10);
-      ui.npMarquee.style.setProperty('--scroll-distance', `-${overflow}px`);
-      ui.npMarquee.style.setProperty('--scroll-duration', `${duration}s`);
-      ui.npMarquee.style.setProperty('--scroll-state', 'running');
-    } else {
-      ui.npMarquee.style.setProperty('--scroll-state', 'paused');
-    }
-
-    ui.npMarquee.style.animation = '';
+  if (ui.npMarquee && ui.nowPlaying && ui.npLabel) {
+    ui.npMarquee.getAnimations().forEach(a => a.cancel());
+    // Use setTimeout to ensure layout is committed after textContent update
+    setTimeout(() => {
+      const textWidth = ui.npLabel.getBoundingClientRect().width;
+      const containerWidth = ui.nowPlaying.getBoundingClientRect().width;
+      const overflow = textWidth - containerWidth;
+      if (overflow > 2) {
+        const duration = Math.max(24000, overflow * 150);
+        ui.npMarquee.animate([
+          { transform: 'translateX(0)',               offset: 0,    easing: 'linear'       },
+          { transform: 'translateX(0)',               offset: 0.05, easing: 'ease-in-out'  },
+          { transform: `translateX(-${overflow}px)`,  offset: 0.45, easing: 'linear'       },
+          { transform: `translateX(-${overflow}px)`,  offset: 0.55, easing: 'ease-in-out'  },
+          { transform: 'translateX(0)',               offset: 0.95, easing: 'linear'       },
+          { transform: 'translateX(0)',               offset: 1    },
+        ], { duration, iterations: Infinity, easing: 'linear' });
+      }
+    }, 70);
   }
 }
 
 export function setNowPlayingPaused(name, title) {
   const label = title ? `[PAUSED] ${name} — ${title}` : `[PAUSED] ${name}` || '';
   if (ui.npLabel) ui.npLabel.textContent = label;
-  if (ui.npMarquee) {
-    ui.npMarquee.style.animation = 'none';
-    ui.npMarquee.style.setProperty('--scroll-state', 'paused');
-  }
+  if (ui.npMarquee) ui.npMarquee.getAnimations().forEach(a => a.cancel());
 }
 
 // Cached spinner string to avoid creating it every time

@@ -17,6 +17,7 @@ export const GENRE_CATEGORIES = [
   { id: 'intercelestial', label: 'Inter-Celestial' },
   { id: 'valentine', label: "Valentine's day special" },
   { id: 'moon', label: "Today's Moon playlist" },
+  { id: 'sun',  label: "Today's Sun playlist" },
 ];
 
 // ── Subgenre vocabulary (Discogs-derived) ────────────────────────────────────

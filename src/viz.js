@@ -179,6 +179,8 @@ let hoverCallback = null;  // called with { name, genres } or null
 let clickCallback = null;  // called with { name, genres } when dot clicked in zoom
 let moonHoverCallback = null; // called with boolean when moon hover state changes
 let wasMoonActive = false;
+let sunHoverCallback  = null; // called with boolean when sun hover state changes
+let wasSunActive  = false;
 let rotationCallback = null; // called with tuned longitude each frame
 let zoomTargetDeg = null;    // exact degree to center on (null = sign center)
 let dragRotateEnabled = false;
@@ -486,6 +488,7 @@ export function setSunPosition(longitude) {
 export function onNebulaHover(callback) { hoverCallback = callback; }
 export function onNebulaClick(callback) { clickCallback = callback; }
 export function onMoonHover(callback) { moonHoverCallback = callback; }
+export function onSunHover(callback)  { sunHoverCallback  = callback; }
 export function onRotation(callback) { rotationCallback = callback; }
 export function onNeedleCross(callback) { needleCrossCallback = callback; }
 export function onSignCross(callback) { signCrossCallback = callback; }
@@ -1126,13 +1129,28 @@ if (sunDot) {
   if (isZoomed) {
     ctx.save();
     ctx.globalCompositeOperation = 'source-over';
-    ctx.font         = '1.4px sans-serif'; 
+    ctx.font         = '1.4px sans-serif';
     ctx.textAlign    = 'center';
     ctx.textBaseline = 'top';
     ctx.fillStyle    = 'rgba(255, 180, 100, 0.85)'; // Warm gold text
     ctx.fillText('☉ Sun', sx, sy + sunR * 1.6);
     ctx.restore();
   }
+
+  // Sun active: mouse proximity OR needle alignment
+  const sunHitR = 3;
+  const sdx = hitX - sx, sdy = hitY - sy;
+  const isMouseOnSun  = mouseX >= 0 && (sdx * sdx + sdy * sdy) < sunHitR * sunHitR;
+  const sunAngDist    = Math.abs(sunDot.deg - needleDeg);
+  const isNeedleOnSun = needleDeg >= 0 && (sunAngDist > 180 ? 360 - sunAngDist : sunAngDist) < 5;
+  const nowSunActive  = isMouseOnSun || isNeedleOnSun;
+  if (nowSunActive !== wasSunActive) {
+    wasSunActive = nowSunActive;
+    if (sunHoverCallback) sunHoverCallback(nowSunActive);
+  }
+} else if (wasSunActive) {
+  wasSunActive = false;
+  if (sunHoverCallback) sunHoverCallback(false);
 }
 
   // ── Moon dot ─────────────────────────────────────────────────────────────────
@@ -1151,7 +1169,7 @@ if (sunDot) {
     const my = cy + midR * Math.sin(mAngle);
 
     // Moon active: mouse proximity OR needle alignment (works on mobile too)
-    const moonHitR = 5;
+    const moonHitR = 3;
     const mdx = hitX - mx, mdy = hitY - my;
     const isMouseOnMoon = mouseX >= 0 && (mdx * mdx + mdy * mdy) < moonHitR * moonHitR;
     const moonAngDist = Math.abs(moonDot.deg - needleDeg);
