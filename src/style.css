@@ -1518,12 +1518,13 @@ p a:hover {
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%) translateY(1rem);
-  background: none;
+  background: rgba(0, 0, 0, .6);
   color: #e0e0e0;
   font-family: var(--font-mono);
   font-size: 0.7rem;
   letter-spacing: 0.12em;
   text-transform: lowercase;
+  white-space: nowrap;
   padding: 0.5rem 1.4rem;
   border: none;
   border-radius: 2rem;
@@ -1649,8 +1650,7 @@ p a:hover {
   font-family: var(--font-mono);
   font-size: 0.55rem;
   letter-spacing: 0.04em;
-  color: rgba(255, 255, 255, 0.28);
-  font-style: italic;
+  color: rgba(255, 255, 255, 0.35);
   text-align: center;
   display: flex;
   align-items: center;

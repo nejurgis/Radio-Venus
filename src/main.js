@@ -28,6 +28,9 @@ let tracks = [];
 let currentTrackIndex = 0;
 let playingGenreId = null;
 let playingSubgenreId = null;
+let displayedGenreId = null;   // what's currently shown in the track list (may differ from playingGenreId while music plays)
+let displayedTracks = null;    // non-null only when displayed list differs from tracks (preview mode)
+let currentPlayingTrack = null; // the actual track object playing (survives tracks[] reshuffles)
 let progressInterval = null;
 const failedIds = new Set();       // track indices that failed
 const trackVideoIndex = new Map(); // trackIndex → which video ID we're trying
@@ -761,6 +764,7 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
   const effectiveSign = signFromLongitude(effectiveLong);
   const effectiveElement = ZODIAC_ELEMENTS[effectiveSign] || 'air';
 
+  displayedGenreId = genreId;
   renderRadioHeader(effectiveSign, genreLabel, subgenreId);
   enableDragRotate(false);
   updateNowPlayingButton(false);
@@ -1033,6 +1037,7 @@ function playTrack(index) {
 
   currentTrackIndex = ((index % tracks.length) + tracks.length) % tracks.length;
   const track = tracks[currentTrackIndex];
+  currentPlayingTrack = track;
 
   trackSongStart(track.name, playingGenreId);
 
@@ -1189,7 +1194,7 @@ document.addEventListener('click', e => {
     shareCurrentTrack();
   }
   if (e.target.id === 'btn-fav' || e.target.closest('#btn-fav')) {
-    const track = tracks[currentTrackIndex];
+    const track = currentPlayingTrack || tracks[currentTrackIndex];
     const isFirst = getFavorites().length === 0;
     const nowFav = toggleFavorite(track.name);
     trackFavorite(track.name, nowFav ? 'add' : 'remove');
@@ -1199,17 +1204,19 @@ document.addEventListener('click', e => {
 
     // FIND the active track in the list and toggle the class to trigger CSS transition
     const activeItem = document.querySelector('.track-item.active');
-    if (activeItem) {
-      activeItem.classList.toggle('is-favorited', nowFav);
-    }
+    if (activeItem) activeItem.classList.toggle('is-favorited', nowFav);
+
+    // If favorites playlist is displayed, re-render it to reflect the change
+    if (displayedGenreId === 'favorites') refreshFavoritesDisplay();
   }
   const favContainer = e.target.closest('.track-fav-container');
   if (favContainer) {
     const item = favContainer.closest('.track-item');
     if (!item) return;
     const idx = parseInt(item.dataset.index, 10);
-    if (isNaN(idx) || !tracks[idx]) return;
-    const track = tracks[idx];
+    const trackList = displayedTracks || tracks;
+    if (isNaN(idx) || !trackList[idx]) return;
+    const track = trackList[idx];
     const isFirst = getFavorites().length === 0;
     const nowFav = toggleFavorite(track.name);
     trackFavorite(track.name, nowFav ? 'add' : 'remove');
@@ -1217,8 +1224,36 @@ document.addEventListener('click', e => {
     if (idx === currentTrackIndex) updateFavoriteButton(nowFav);
     if (nowFav) showToast(isFirst ? 'Favorites playlist created' : 'Added to favorites playlist');
     else showToast('Removed from favorites playlist');
+
+    if (displayedGenreId === 'favorites') refreshFavoritesDisplay();
   }
 });
+
+function refreshFavoritesDisplay() {
+  const elong = tunedLongitude != null ? tunedLongitude : (venus ? venus.longitude : 0);
+  const freshTracks = matchFavorites(getFavorites(), elong);
+  if (playingGenreId === 'favorites') {
+    // Favorites is also the playing list — update tracks and re-render in place
+    tracks = freshTracks;
+    displayedTracks = null;
+    // Resync currentTrackIndex to follow the playing track object through list changes
+    const newIdx = currentPlayingTrack ? tracks.findIndex(t => t.name === currentPlayingTrack.name) : -1;
+    if (newIdx >= 0) currentTrackIndex = newIdx;
+    renderTrackList(tracks, newIdx, i => playTrack(i), failedIds, new Set(getFavorites()), getPlaylistShareFn());
+  } else {
+    // Favorites displayed but different genre playing — re-render preview list
+    displayedTracks = freshTracks;
+    renderTrackList(freshTracks, -1, (i) => {
+      tracks = freshTracks;
+      displayedTracks = null;
+      playingGenreId = 'favorites';
+      playingSubgenreId = null;
+      failedIds.clear();
+      trackVideoIndex.clear();
+      playTrack(i);
+    }, new Set(), new Set(getFavorites()), sharePlaylist);
+  }
+}
 
 async function copyAndToast(url, toast) {
   isLinkRecentlyCopied = true;
