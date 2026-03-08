@@ -14255,5 +14255,108 @@
       "collage pop",
       "hypnagogic pop"
     ]
+  },
+  {
+    "name": "Oli XL",
+    "birthDate": "1995-03-03",
+    "genres": [
+      "idm",
+      "ambient"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "youtubeId": "i-f4Slxqw3U",
+    "enTags": [
+      "deconstructed club",
+      "new isolationism"
+    ],
+    "spotifyId": "3L3ejltt5dmjXkES4YSGKX",
+    "spotifyFollowers": 31374,
+    "youtubeNeedsVerify": true
+  },
+  {
+    "name": "King Krule",
+    "birthDate": "1994-08-24",
+    "genres": [
+      "hiphop",
+      "jazz",
+      "altrock",
+      "artpop"
+    ],
+    "subgenres": [
+      "jazz-rap",
+      "post-punk"
+    ],
+    "youtubeId": "JwnEA-X3h6g",
+    "enTags": [
+      "jazz rap",
+      "uk post-punk",
+      "art punk",
+      "art pop"
+    ],
+    "spotifyId": "2pLvihTVAElhBCw7HcrIUC",
+    "spotifyFollowers": 102565,
+    "youtubeNeedsVerify": true
+  },
+  {
+    "name": "Sassy 009",
+    "birthDate": "1976-05-11",
+    "genres": [
+      "idm",
+      "artpop",
+      "techno"
+    ],
+    "subgenres": [],
+    "youtubeId": "pxH5bqfHu24",
+    "enTags": [
+      "electra"
+    ],
+    "spotifyId": "30gJ2CPCeUvghTg6TkfA4L",
+    "spotifyFollowers": 54010,
+    "youtubeNeedsVerify": true
+  },
+  {
+    "name": "A. G. Cook",
+    "birthDate": "1990-08-23",
+    "genres": [
+      "artpop",
+      "idm",
+      "electronica"
+    ],
+    "subgenres": [
+      "hyperpop",
+      "experimental"
+    ],
+    "youtubeId": "nEMN8FiXIMI",
+    "enTags": [
+      "proto-hyperpop",
+      "bubblegum bass",
+      "escape room",
+      "hyperpop"
+    ],
+    "spotifyId": "335TWGWGFan4vaacJzSiU8",
+    "spotifyFollowers": 226337,
+    "youtubeNeedsVerify": true
+  },
+  {
+    "name": "Delroy Edwards",
+    "birthDate": "1990-03-29",
+    "genres": [
+      "techno",
+      "electronica"
+    ],
+    "subgenres": [
+      "house",
+      "lo-fi"
+    ],
+    "youtubeId": "yn_K3-JvGrY",
+    "enTags": [
+      "outsider house",
+      "lo-fi house"
+    ],
+    "spotifyId": "683gIqfxdjjg2sowYxBHIQ",
+    "spotifyFollowers": 29359,
+    "youtubeNeedsVerify": true
   }
 ]

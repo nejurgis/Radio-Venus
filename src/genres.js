@@ -13,7 +13,7 @@ export const GENRE_CATEGORIES = [
   { id: 'folk',       label: 'Folk / Neofolk' },
   { id: 'jazz',       label: 'Jazz / Spiritual' },
   { id: 'classical',  label: 'Classical / Orchestral' },
-  // { id: 'hiphop',         label: 'Hip-Hop / R&B' },
+  { id: 'hiphop',         label: 'Hip-Hop / R&B' },
   { id: 'intercelestial', label: 'Inter-Celestial' },
   { id: 'valentine', label: "Valentine's day special" },
   { id: 'moon', label: "Today's Moon playlist" },
@@ -79,6 +79,8 @@ const GENRE_MAP = {
   'tech house': ['techno'],
   'dub techno': ['techno', 'ambient'],
   'microhouse': ['techno'],
+  'outsider house': ['techno', 'electronica'],  // Delroy Edwards, lo-fi/experimental house
+  'lo-fi house': ['techno', 'electronica'],
   'electro': ['techno'],
   'trance': ['techno'],
   'progressive house': ['techno'],
@@ -124,6 +126,7 @@ const GENRE_MAP = {
   'folktronica': ['electronica', 'folk'],
   'deconstructed club': ['idm'],
   'hyperpop': ['idm'],
+  'proto-hyperpop': ['artpop', 'idm'],  // PC Music early cluster: A.G. Cook, SOPHIE, etc.
   'vaporwave': ['idm'],
   'braindance': ['idm'],           // core IDM tag — Aphex Twin, Bradley Strider, etc.
   'abstract hip hop': ['hiphop', 'idm', 'triphop'],  // Alias, Boom Bip, Odd Nosdam, Sole, etc.
@@ -207,6 +210,7 @@ const GENRE_MAP = {
   'psychedelic pop': ['indiepop', 'artpop'],
   'psych pop': ['indiepop', 'artpop'],
   'lo-fi indie': ['indiepop', 'electronica'],
+  'experimental indie': ['indiepop', 'idm'],
   'jangle pop': ['indiepop'],
   'twee pop': ['indiepop'],
   'slacker rock': ['indiepop'],
@@ -233,6 +237,8 @@ const GENRE_MAP = {
   'britpop': ['altrock'],
   'madchester': ['altrock', 'electronica'],
   'post-punk revival': ['altrock'],
+  'uk post-punk': ['altrock', 'darkwave'],
+  'art punk': ['altrock', 'artpop'],
   'post-rock': ['altrock'],
   'shoegaze': ['altrock', 'indiepop'],
   'noise rock': ['altrock', 'industrial'],

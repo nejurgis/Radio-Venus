@@ -174,9 +174,16 @@
   },
   "A. G. Cook": {
     "genres": [
+      "artpop",
       "idm",
+      "electronica"
+    ]
+  },
+  "King Krule": {
+    "genres": [
       "hiphop",
-      "dnb",
+      "jazz",
+      "altrock",
       "artpop"
     ]
   },
