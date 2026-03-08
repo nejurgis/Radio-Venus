@@ -347,10 +347,22 @@ async function main() {
     console.log(`  ${candidates.length} total, ${fresh.length} new (≥${minFollowers.toLocaleString()} followers, not in DB)`);
 
     if (scanOnly) {
+      let belowThreshold = 0;
       for (const c of candidates.filter(c => c.followers >= minFollowers && c.tags.length > 0)) {
         const inDB = existingNames.has(c.name.toLowerCase()) || existingSpIds.has(c.spotifyId);
         const tags = c.tags.slice(0, 3).join(', ');
+        if (!inDB && minTagOverlap > 0 && seedTags.size > 0) {
+          const shared = c.tags.filter(t => seedTags.has(t));
+          if (shared.length < minTagOverlap) {
+            belowThreshold++;
+            console.log(`  ✗ FILT  ${c.name.padEnd(32)} ${c.followers.toLocaleString().padStart(8)}  [${tags}]`);
+            continue;
+          }
+        }
         console.log(`  ${inDB ? '✓ in DB' : '★ NEW  '} ${c.name.padEnd(32)} ${c.followers.toLocaleString().padStart(8)}  [${tags}]`);
+      }
+      if (belowThreshold > 0) {
+        console.log(`  ↳ ${belowThreshold} filtered by --min-tag-overlap=${minTagOverlap} — rerun with --min-tag-overlap=0 to include`);
       }
       continue;
     }
@@ -404,6 +416,13 @@ async function main() {
       if (!birthDate) {
         console.log(`    ✗ Birth date not found — skipping`);
         continue;
+      }
+
+      // Sanity check: flag suspiciously old dates for non-classical/jazz artists
+      const birthYear = parseInt(birthDate.slice(0, 4));
+      const isClassicalJazz = genres.some(g => ['classical', 'jazz'].includes(g));
+      if (birthYear < 1940 && !isClassicalJazz) {
+        console.log(`    ⚠ SUSPICIOUS DATE (${birthYear}) — likely wrong MusicBrainz match, verify before merge`);
       }
 
       // YouTube
