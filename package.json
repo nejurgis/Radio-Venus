@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/generate-sign-pages.mjs",
+    "build": "vite build && node scripts/generate-sign-pages.mjs && node scripts/generate-artist-pages.mjs",
     "build:db": "node scripts/build-db.mjs",
     "db:import": "node scripts/db-import.mjs",
     "db:stats": "node scripts/db-stats.mjs",

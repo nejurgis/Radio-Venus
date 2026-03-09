@@ -1279,31 +1279,26 @@ function getPlaylistShareFn() {
   return (playingGenreId === 'valentine' || playingGenreId === 'favorites' || playingGenreId === 'moon' || playingGenreId === 'sun') ? sharePlaylist : undefined;
 }
 
+function toArtistSlug(name) {
+  return name.toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
 // Dashboard share button — always shares the individual song
 async function shareCurrentTrack() {
   const track = tracks[currentTrackIndex];
   if (!track) return;
 
-  const videoId = getVideoIds(track)[trackVideoIndex.get(currentTrackIndex) || 0];
-  const sign = venus ? venus.sign : '';
-  const genre = activeGenreLabel || '';
   const time = Math.floor(getCurrentTime());
-  const genreId = playingGenreId || '';
-  const base = window.location.origin + window.location.pathname;
+  const slug = toArtistSlug(track.name) || track.youtubeVideoId;
+  const shareUrl = `${window.location.origin}/artist/${slug}?t=${time}`;
 
-  const params = new URLSearchParams({
-    vid: videoId,
-    artist: track.name,
-    gid: genreId,
-    t: time,
-    utm_source: 'share',
-    utm_medium: 'clipboard',
-    ...(sign && { sign }),
-    ...(genre && { genre }),
-  });
-
-  trackShare(genreId, 'track_link');
-  await copyAndToast(`${base}?${params}`, 'Current track link copied');
+  trackShare(playingGenreId || '', 'track_link');
+  await copyAndToast(shareUrl, 'Current track link copied');
 }
 
 // Playlist share button — shares the whole valentine or favorites playlist
