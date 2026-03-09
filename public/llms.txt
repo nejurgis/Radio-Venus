@@ -10,9 +10,22 @@ Radio Venus maps musicians by their natal Venus position — the astrological pl
 
 - User inputs date of birth
 - App calculates Venus position (sign, degree, decan) using astronomy-engine
-- Matches against a curated database of musicians with verified birth data
+- Matches against a curated database of ~730 musicians with verified birth data
+- Artists are ranked by Venus proximity: same decan = highest match, same sign = high, same element/modality = moderate
 - User can filter by musical genre/subgenre
-- Returns matched musicians with embedded YouTube playback
+- Returns matched musicians as an infinite radio stream via YouTube embeds
+- An interactive nebula visualization shows all artists as stars — proximity to center = Venus similarity
+
+## Artist pages
+
+Every artist has a shareable page at `/artist/[slug]/` with Open Graph tags. Sharing from a specific genre playlist generates a genre-specific card at `/artist/[slug]/[genre]/` — so two people sharing the same artist from different genre contexts get different cards.
+
+## Genre and sign pages
+
+- `/sign/[sign]/` — all artists for a Venus sign (e.g. `/sign/scorpio/`)
+- `/sign/[sign]/[genre]/` — filtered by genre within a sign
+- `/about/` — full artist roster and site stats
+- Sitemap: https://radio-venus.club/sitemap.xml (~830 URLs)
 
 ## Astrological premise
 
