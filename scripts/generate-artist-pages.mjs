@@ -59,7 +59,7 @@ for (const [slug, artist] of slugMap) {
   const canonicalUrl  = `https://radio-venus.club/artist/${slug}`;
   const thumbUrl      = `https://i.ytimg.com/vi/${artist.youtubeVideoId}/maxresdefault.jpg`;
   const title         = `${artist.name} — Radio Venus`;
-  const description   = `Venus in ${sign} ${degree}° · ${genres}`;
+  const description   = `Venus in ${sign} ${degree}° ⊹ ${genres}`;
 
   const html = `<!DOCTYPE html>
 <html lang="en">
