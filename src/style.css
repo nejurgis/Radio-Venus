@@ -2199,10 +2199,21 @@ body.element-water  { --accent: var(--water); }
 }
 
 /* Specific fix for buttons that might have their own transforms (like the wheel) */
-button.is-pressed svg, 
+button.is-pressed svg,
 .btn-shuffle.is-pressed svg {
   transform: scale(0.9) !important;
   transition: transform 0.05s ease-out !important;
+}
+
+/* Moon/sun playlist buttons are absolutely positioned with translateX(-50%) for centering.
+   :active and .is-pressed must preserve that offset or the button drifts right. */
+.btn-moon-playlist:active:not(:disabled),
+.btn-sun-playlist:active:not(:disabled) {
+  transform: translateX(-50%) translateY(2px) scale(0.98);
+}
+.btn-moon-playlist.is-pressed,
+.btn-sun-playlist.is-pressed {
+  transform: translateX(-50%) translateY(2px) scale(0.96) !important;
 }
 /* Curator credit — compact vertical stack */
 .playlist-curator-credit {
