@@ -109,3 +109,20 @@ for (const [slug, artist] of slugMap) {
 }
 
 console.log(`Generated ${totalPages} artist pages → dist/artist/`);
+
+// ── Append canonical artist URLs to sitemap.xml ───────────────────────────
+const SITEMAP_PATH = './dist/sitemap.xml';
+if (fs.existsSync(SITEMAP_PATH)) {
+  const today       = new Date().toISOString().split('T')[0];
+  const artistUrls  = [...slugMap.keys()].map(slug => `  <url>
+    <loc>https://radio-venus.club/artist/${slug}/</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>`).join('\n');
+
+  const existing = fs.readFileSync(SITEMAP_PATH, 'utf8');
+  const updated  = existing.replace('</urlset>', `${artistUrls}\n</urlset>`);
+  fs.writeFileSync(SITEMAP_PATH, updated);
+  console.log(`  sitemap.xml +${slugMap.size} artist URLs (${slugMap.size + existing.split('<url>').length - 1} total)`);
+}
