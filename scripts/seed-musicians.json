@@ -1387,7 +1387,7 @@
       "idm",
       "darkwave"
     ],
-    "youtubeVideoId": "vIi57zhDl78",
+    "youtubeVideoId": null,
     "spotifyId": "4yuvRDaF5kWkFLq6q1Fev4"
   },
   {
@@ -11186,7 +11186,8 @@
       "fourth world",
       "ambient"
     ],
-    "spotifyId": "7JCthCuu5Wmxv2avqVFolo"
+    "spotifyId": "7JCthCuu5Wmxv2avqVFolo",
+    "youtubeVideoId": null
   },
   {
     "name": "Cluster",
@@ -11216,7 +11217,8 @@
       "compositional ambient",
       "drift"
     ],
-    "spotifyId": "1FTBjo6ovfmw3HWkD8sZTs"
+    "spotifyId": "1FTBjo6ovfmw3HWkD8sZTs",
+    "youtubeVideoId": null
   },
   {
     "name": "Eraldo Bernocchi",
@@ -13014,7 +13016,7 @@
     "mbid": "57961a97-3796-4bf7-9f02-a985a8979ae9",
     "genres": [],
     "subgenres": [],
-    "youtubeVideoId": "Q27xL4mPkSI",
+    "youtubeVideoId": null,
     "backupVideoIds": [],
     "handpicked": true,
     "handpickedTrack": "В темную нічку",
@@ -14290,7 +14292,8 @@
     "enTags": [
       "experimental indie"
     ],
-    "spotifyId": "4PxPpid4wSQJ630DTqZ046"
+    "spotifyId": "4PxPpid4wSQJ630DTqZ046",
+    "youtubeVideoId": null
   },
   {
     "name": "Oli XL",
@@ -14309,7 +14312,8 @@
     ],
     "spotifyId": "3L3ejltt5dmjXkES4YSGKX",
     "spotifyFollowers": 31374,
-    "youtubeNeedsVerify": true
+    "youtubeNeedsVerify": true,
+    "youtubeVideoId": null
   },
   {
     "name": "King Krule",
