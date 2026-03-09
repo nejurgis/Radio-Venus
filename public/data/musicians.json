@@ -50,29 +50,6 @@
     ]
   },
   {
-    "name": "500",
-    "birthDate": "1962-12-09",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 12.9,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "idm",
-      "techno"
-    ],
-    "subgenres": [
-      "experimental"
-    ],
-    "enTags": [
-      "deconstructed club",
-      "hypertrance"
-    ],
-    "youtubeVideoId": null,
-    "backupVideoIds": []
-  },
-  {
     "name": "6 Senz",
     "birthDate": "2017-10-31",
     "venus": {
@@ -1394,7 +1371,7 @@
       "bristol indie",
       "new weird america"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "m0UAqJWzsZE",
     "backupVideoIds": []
   },
   {
@@ -2241,7 +2218,7 @@
     "subgenres": [
       "ambient"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "BffZsOEN6NU",
     "backupVideoIds": []
   },
   {
@@ -2634,7 +2611,7 @@
       "idm",
       "darkwave"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "FxmCvdY4NZQ",
     "backupVideoIds": [
       "Wv3G_nPgR4s",
       "lHSdQ6ZOzQY"
@@ -2996,7 +2973,7 @@
       "compositional ambient",
       "drift"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "DHoG24STYwE",
     "backupVideoIds": []
   },
   {
@@ -3648,29 +3625,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Children of Alice",
-    "birthDate": "2017-02-24",
-    "venus": {
-      "sign": "Aries",
-      "degree": 11.9,
-      "decan": 2,
-      "element": "fire"
-    },
-    "genres": [
-      "idm",
-      "ambient"
-    ],
-    "subgenres": [
-      "experimental",
-      "ambient"
-    ],
-    "youtubeVideoId": null,
-    "backupVideoIds": [
-      "GZoazol8NJE",
-      "P3-9jILAvGQ"
-    ]
-  },
-  {
     "name": "Christ.",
     "birthDate": "2002-07-09",
     "venus": {
@@ -3987,7 +3941,7 @@
       "krautrock",
       "berlin school"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "L2n7ZueDbWg",
     "backupVideoIds": []
   },
   {
@@ -4238,7 +4192,7 @@
       "ethereal wave",
       "shoegaze"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "L8QE4k0T980",
     "backupVideoIds": []
   },
   {
@@ -5137,32 +5091,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Deakin",
-    "birthDate": "1952-06-15",
-    "venus": {
-      "sign": "Gemini",
-      "degree": 21.7,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "ambient",
-      "indiepop",
-      "artpop",
-      "folk",
-      "idm",
-      "jazz"
-    ],
-    "subgenres": [
-      "ambient",
-      "folk-rock",
-      "idm",
-      "spiritual-jazz"
-    ],
-    "youtubeVideoId": null,
-    "backupVideoIds": []
-  },
-  {
     "name": "Dean Blunt",
     "birthDate": "1984-02-08",
     "venus": {
@@ -5454,50 +5382,6 @@
     ]
   },
   {
-    "name": "Detritus",
-    "birthDate": "1978-01-01",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 5.8,
-      "decan": 1,
-      "element": "earth",
-      "dateApprox": true
-    },
-    "genres": [
-      "dnb",
-      "industrial",
-      "idm"
-    ],
-    "subgenres": [
-      "breakcore",
-      "industrial",
-      "idm"
-    ],
-    "youtubeVideoId": null,
-    "backupVideoIds": [
-      "Cq2Q9lP5Yj0",
-      "7arQH6ldri8"
-    ]
-  },
-  {
-    "name": "Dharma Gaia",
-    "birthDate": "1997-09-29",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 20,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "ambient"
-    ],
-    "subgenres": [
-      "ambient"
-    ],
-    "youtubeVideoId": null,
-    "backupVideoIds": []
-  },
-  {
     "name": "Dialect",
     "birthDate": "1995-06-15",
     "venus": {
@@ -5542,30 +5426,6 @@
     ],
     "youtubeVideoId": "KsUJKPhd7BE",
     "backupVideoIds": []
-  },
-  {
-    "name": "Digit",
-    "birthDate": "1984-01-01",
-    "venus": {
-      "sign": "Sagittarius",
-      "degree": 0.5,
-      "decan": 1,
-      "element": "fire",
-      "dateApprox": true
-    },
-    "genres": [
-      "darkwave",
-      "idm"
-    ],
-    "subgenres": [
-      "electro",
-      "experimental"
-    ],
-    "youtubeVideoId": null,
-    "backupVideoIds": [
-      "XMfWLviRKOQ",
-      "FCne9_9yCoM"
-    ]
   },
   {
     "name": "Diplo",
@@ -7259,25 +7119,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "flat7",
-    "birthDate": "2005-06-15",
-    "venus": {
-      "sign": "Cancer",
-      "degree": 14.5,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "artpop",
-      "ambient"
-    ],
-    "subgenres": [
-      "ambient"
-    ],
-    "youtubeVideoId": null,
-    "backupVideoIds": []
-  },
-  {
     "name": "Fleeting Joys",
     "birthDate": "1992-08-06",
     "venus": {
@@ -7391,28 +7232,6 @@
       "lo-fi house"
     ],
     "youtubeVideoId": "C414Gzk8ttw",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Flowdan",
-    "birthDate": "1980-03-17",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 11.9,
-      "decan": 2,
-      "element": "earth"
-    },
-    "genres": [
-      "dnb"
-    ],
-    "subgenres": [
-      "grime",
-      "dub"
-    ],
-    "enTags": [
-      "grime"
-    ],
-    "youtubeVideoId": null,
     "backupVideoIds": []
   },
   {
@@ -7833,22 +7652,6 @@
       "aB6ajF1IM5I",
       "7rVSuhSdPUA"
     ]
-  },
-  {
-    "name": "Gal Go",
-    "birthDate": "2021-02-23",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 27.4,
-      "decan": 3,
-      "element": "air"
-    },
-    "genres": [
-      "intercelestial"
-    ],
-    "subgenres": [],
-    "youtubeVideoId": null,
-    "backupVideoIds": []
   },
   {
     "name": "Gary Numan",
@@ -8681,31 +8484,6 @@
     ]
   },
   {
-    "name": "His Name Is Alive",
-    "birthDate": "1985-00-00",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 24.9,
-      "decan": 3,
-      "element": "earth",
-      "dateApprox": true
-    },
-    "genres": [
-      "altrock",
-      "artpop",
-      "indiepop"
-    ],
-    "subgenres": [
-      "art-pop"
-    ],
-    "enTags": [
-      "dream pop",
-      "shoegaze"
-    ],
-    "youtubeVideoId": null,
-    "backupVideoIds": []
-  },
-  {
     "name": "Hollie Kenniff",
     "birthDate": "1981-10-09",
     "venus": {
@@ -9066,108 +8844,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Ill Blu",
-    "birthDate": "1988-01-01",
-    "venus": {
-      "sign": "Aquarius",
-      "degree": 12.6,
-      "decan": 2,
-      "element": "air",
-      "dateApprox": true
-    },
-    "genres": [
-      "dnb",
-      "hiphop"
-    ],
-    "subgenres": [
-      "uk-garage",
-      "house",
-      "hip-hop",
-      "trip-hop",
-      "rnb",
-      "folk-rock",
-      "industrial",
-      "jungle",
-      "lo-fi",
-      "progressive-house",
-      "trance",
-      "trap",
-      "indietronica",
-      "soul",
-      "spiritual-jazz",
-      "experimental",
-      "indie-pop",
-      "chillout"
-    ],
-    "enTags": [
-      "uk funky",
-      "uk hip hop",
-      "k-pop boy group",
-      "trip hop",
-      "covertronica",
-      "modern melodic hardcore",
-      "alternative hip hop",
-      "dark r&b",
-      "new italo disco",
-      "traditional southern folk",
-      "new york drill",
-      "bronx drill",
-      "bronx drill",
-      "anime drill",
-      "industrial pop",
-      "jungle",
-      "american post-punk",
-      "drill",
-      "danish alternative rock",
-      "lo-fi rap",
-      "progressive house",
-      "progressive trance",
-      "trance",
-      "uplifting trance",
-      "harlem hip hop",
-      "deep east coast hip hop",
-      "hardcore hip hop",
-      "conscious hip hop",
-      "deep east coast hip hop",
-      "bboy",
-      "asian american hip hop",
-      "deep east coast hip hop",
-      "deep east coast hip hop",
-      "trap argentino",
-      "japanese beats",
-      "deep dnb",
-      "bristol electronic",
-      "liquid funk",
-      "nz hip hop",
-      "nigerian hip hop",
-      "igbo rap",
-      "afrobeats",
-      "nigerian pop",
-      "jazz saxophone",
-      "portland hip hop",
-      "battle rap",
-      "trap soul",
-      "dark r&b",
-      "punk blues",
-      "musique nigerienne",
-      "tuareg guitar",
-      "western saharan folk",
-      "mallsoft",
-      "vaporwave",
-      "italo disco",
-      "dark r&b",
-      "new italo disco",
-      "chill house",
-      "tropical house",
-      "thai indie rock",
-      "new jersey rap",
-      "new jersey underground rap",
-      "chill lounge"
-    ],
-    "youtubeVideoId": null,
-    "backupVideoIds": []
-  },
-  {
     "name": "illi mel",
     "birthDate": "1925-09-13",
     "venus": {
@@ -9255,28 +8931,6 @@
       "gauze pop"
     ],
     "youtubeVideoId": "CsewLteZIio",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Isabel's Dream",
-    "birthDate": "1977-09-20",
-    "venus": {
-      "sign": "Leo",
-      "degree": 27.4,
-      "decan": 3,
-      "element": "fire"
-    },
-    "genres": [
-      "altrock",
-      "indiepop"
-    ],
-    "subgenres": [
-      "art-pop"
-    ],
-    "enTags": [
-      "indie shoegaze"
-    ],
-    "youtubeVideoId": null,
     "backupVideoIds": []
   },
   {
@@ -9420,22 +9074,6 @@
       "suVh3alr9VI",
       "3-9dRLOiGOM"
     ]
-  },
-  {
-    "name": "JAY-Z",
-    "birthDate": "1969-12-04",
-    "venus": {
-      "sign": "Scorpio",
-      "degree": 29.9,
-      "decan": 3,
-      "element": "water"
-    },
-    "genres": [
-      "hiphop"
-    ],
-    "subgenres": [],
-    "youtubeVideoId": null,
-    "backupVideoIds": []
   },
   {
     "name": "Jayla Kai",
@@ -10306,7 +9944,7 @@
       "experimental ambient",
       "fourth world"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "qw7PBba8fis",
     "backupVideoIds": []
   },
   {
@@ -11583,7 +11221,7 @@
       "abstractro",
       "russian electronic"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "vfEnCRBs9SQ",
     "backupVideoIds": [
       "nLIu4B0xTCM",
       "e0SCUe5PsJw"
@@ -11700,7 +11338,7 @@
       "american shoegaze",
       "slowcore"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "3M-vZSEkqGM",
     "backupVideoIds": []
   },
   {
@@ -12324,7 +11962,7 @@
       "gaian doom",
       "post-metal"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "2Ogd6ow7dr8",
     "backupVideoIds": []
   },
   {
@@ -12555,7 +12193,7 @@
       "grimewave",
       "deconstructed club"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "1Xem9YptyKk",
     "backupVideoIds": []
   },
   {
@@ -12579,7 +12217,7 @@
       "shoegaze",
       "nu gaze"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "UfDTMuYpylY",
     "backupVideoIds": []
   },
   {
@@ -12788,32 +12426,6 @@
       "F6lA0JV7wBo",
       "fAwCbjfMXY0"
     ]
-  },
-  {
-    "name": "Midwife",
-    "birthDate": "2025-10-01",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 14.7,
-      "decan": 2,
-      "element": "earth"
-    },
-    "genres": [
-      "altrock",
-      "idm",
-      "indiepop"
-    ],
-    "subgenres": [
-      "experimental",
-      "art-pop"
-    ],
-    "enTags": [
-      "experimental guitar",
-      "nu gaze",
-      "american shoegaze"
-    ],
-    "youtubeVideoId": null,
-    "backupVideoIds": []
   },
   {
     "name": "Milan W.",
@@ -21244,7 +20856,7 @@
       "stoner metal",
       "instrumental rock"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "NINjd9zthIY",
     "backupVideoIds": []
   },
   {

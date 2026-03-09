@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // ── YouTube Review: Interactive verification of auto-searched video IDs ──────
 //
-// Two modes:
+// Modes:
 //
 //   File mode (review before merging — recommended):
 //     node scripts/review-youtube.mjs --input=discovered.json
@@ -12,6 +12,11 @@
 //     node scripts/review-youtube.mjs
 //     s = leave flag in place (verify later)
 //
+//   Recovery mode (assign IDs to null-video artists):
+//     node scripts/review-youtube.mjs --recover
+//     Opens YouTube search for each. r = paste ID, s = skip, d = delete from seed
+//     Reads suggestions from scripts/yt-suggestions.json if present.
+//
 //   node scripts/review-youtube.mjs --dry-run [--input=file.json]
 
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
@@ -20,11 +25,13 @@ import { fileURLToPath }                           from 'node:url';
 import { createInterface }                         from 'node:readline';
 import { exec }                                    from 'node:child_process';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const SEED_PATH = join(__dirname, 'seed-musicians.json');
-const dryRun    = process.argv.includes('--dry-run');
-const inputArg  = process.argv.find(a => a.startsWith('--input='));
-const inputFile = inputArg ? resolve(process.cwd(), inputArg.slice(8)) : null;
+const __dirname   = dirname(fileURLToPath(import.meta.url));
+const SEED_PATH   = join(__dirname, 'seed-musicians.json');
+const SUGGEST_PATH = join(__dirname, 'yt-suggestions.json');
+const dryRun      = process.argv.includes('--dry-run');
+const recoverMode = process.argv.includes('--recover');
+const inputArg    = process.argv.find(a => a.startsWith('--input='));
+const inputFile   = inputArg ? resolve(process.cwd(), inputArg.slice(8)) : null;
 
 function ytUrl(id) { return `https://youtu.be/${id}`; }
 
@@ -45,6 +52,8 @@ function prompt(rl, question) {
 }
 
 async function main() {
+  if (recoverMode) return recover();
+
   // ── File mode ─────────────────────────────────────────────────────────────
   if (inputFile) {
     if (!existsSync(inputFile)) {
@@ -203,6 +212,91 @@ async function main() {
     console.log('\nNext steps:');
     console.log('  node scripts/build-db.mjs');
     console.log('  git add scripts/seed-musicians.json public/data/musicians.json && git commit');
+  }
+}
+
+async function recover() {
+  const DB_PATH     = join(__dirname, '../public/data/musicians.json');
+  const db          = JSON.parse(readFileSync(DB_PATH, 'utf-8'));
+  const seed        = JSON.parse(readFileSync(SEED_PATH, 'utf-8'));
+  const suggestions = existsSync(SUGGEST_PATH)
+    ? JSON.parse(readFileSync(SUGGEST_PATH, 'utf-8'))
+    : {};
+
+  // Work from musicians.json — it's the live DB and has the full picture
+  const pending = db.filter(a => a.youtubeVideoId == null && a.name !== '@');
+
+  if (!pending.length) { console.log('No null-video artists.'); return; }
+
+  console.log(`\n${pending.length} artists without YouTube IDs`);
+  console.log('  r = paste ID/URL   s = skip   d = delete from seed\n');
+
+  const rl = createInterface({ input: process.stdin, output: process.stdout });
+  let replaced = 0, skipped = 0, deleted = 0;
+  const toDelete = new Set();
+
+  for (let i = 0; i < pending.length; i++) {
+    const artist = pending[i];
+    const sug    = suggestions[artist.name];
+    const genres = (artist.genres || []).join(', ');
+
+    console.log(`\n[${i + 1}/${pending.length}] ${artist.name}`);
+    console.log(`  genres : ${genres || '—'}`);
+
+    if (sug && sug.track && !sug.track.startsWith('No info') && !sug.track.startsWith('-')) {
+      console.log(`  Groq   : "${sug.track}" — ${sug.note}`);
+      const searchUrl = sug.searchUrl || `https://www.youtube.com/results?search_query=${encodeURIComponent(artist.name + ' ' + sug.track)}`;
+      openInBrowser(searchUrl);
+    } else {
+      const searchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(artist.name)}`;
+      console.log(`  search : ${searchUrl}`);
+      openInBrowser(searchUrl);
+    }
+
+    const answer = await prompt(rl, '  [r]eplace / [s]kip / [d]elete → ');
+    const key    = answer.trim().toLowerCase()[0];
+
+    if (key === 'r') {
+      const raw   = await prompt(rl, '  Paste YouTube URL or ID → ');
+      const newId = parseYtId(raw);
+      if (newId) {
+        // Write to musicians.json
+        const dbIdx = db.indexOf(artist);
+        db[dbIdx].youtubeVideoId = newId;
+        // Write to seed if entry exists there
+        const seedEntry = seed.find(a => a.name === artist.name);
+        if (seedEntry) seedEntry.youtubeId = newId;
+        console.log(`  ✓ Set ${ytUrl(newId)}`);
+        replaced++;
+      } else {
+        console.log('  ✗ Could not parse ID — skipping');
+        skipped++;
+      }
+    } else if (key === 'd') {
+      toDelete.add(artist.name);
+      console.log('  ✗ Marked for deletion');
+      deleted++;
+    } else {
+      console.log('  → Skipped');
+      skipped++;
+    }
+  }
+
+  rl.close();
+
+  const finalDb   = db.filter(a => !toDelete.has(a.name));
+  const finalSeed = seed.filter(a => !toDelete.has(a.name));
+
+  if (!dryRun) {
+    writeFileSync(DB_PATH, JSON.stringify(finalDb, null, 2));
+    writeFileSync(SEED_PATH, JSON.stringify(finalSeed, null, 2));
+  }
+
+  console.log(`\n${'═'.repeat(50)}`);
+  console.log(`Replaced: ${replaced}  Skipped: ${skipped}  Deleted: ${deleted}`);
+  if (replaced > 0 || deleted > 0) {
+    console.log('\nNext steps:');
+    console.log('  git add scripts/seed-musicians.json public/data/musicians.json && git commit && git push');
   }
 }
 

@@ -34,19 +34,6 @@
     "spotifyId": "6i6WlGzQtXtz7GcC5H5st5"
   },
   {
-    "name": "500",
-    "birthDate": "1962-12-09",
-    "genres": [
-      "idm",
-      "techno"
-    ],
-    "enTags": [
-      "deconstructed club",
-      "hypertrance"
-    ],
-    "youtubeVideoId": null
-  },
-  {
     "name": "7038634357",
     "birthDate": "1995-06-15",
     "genres": [
@@ -1388,7 +1375,8 @@
       "darkwave"
     ],
     "youtubeVideoId": null,
-    "spotifyId": "4yuvRDaF5kWkFLq6q1Fev4"
+    "spotifyId": "4yuvRDaF5kWkFLq6q1Fev4",
+    "youtubeId": "FxmCvdY4NZQ"
   },
   {
     "name": "Blue Lake",
@@ -1859,20 +1847,6 @@
     "spotifyId": "4G1ZsxfEEztbE1VcnNInPg"
   },
   {
-    "name": "Children of Alice",
-    "birthDate": "2017-02-24",
-    "genres": [
-      "idm",
-      "ambient"
-    ],
-    "subgenres": [
-      "experimental",
-      "ambient"
-    ],
-    "youtubeVideoId": null,
-    "spotifyId": "2OOXmKexjZQCmqLYJk4FMa"
-  },
-  {
     "name": "Christ.",
     "birthDate": "2002-07-09",
     "genres": [
@@ -2117,7 +2091,8 @@
       "ethereal wave",
       "shoegaze"
     ],
-    "spotifyId": "5q2ehaRqAFmM6tLl4vaVwP"
+    "spotifyId": "5q2ehaRqAFmM6tLl4vaVwP",
+    "youtubeId": "L8QE4k0T980"
   },
   {
     "name": "Croatian Amor",
@@ -2930,22 +2905,6 @@
     "spotifyId": "0v6N0xV7AfHHKVcgUOjC51"
   },
   {
-    "name": "Detritus",
-    "birthDate": "1978-01-01",
-    "genres": [
-      "dnb",
-      "industrial",
-      "idm"
-    ],
-    "subgenres": [
-      "breakcore",
-      "industrial",
-      "idm"
-    ],
-    "youtubeVideoId": null,
-    "spotifyId": "52wfSt1JSMJijtjSAwgXme"
-  },
-  {
     "name": "Dif Juz",
     "birthDate": "1980-00-00",
     "genres": [
@@ -2956,19 +2915,6 @@
       "dream pop"
     ],
     "spotifyId": "1iVd0LTjfJ6xROplaIBApL"
-  },
-  {
-    "name": "Digit",
-    "birthDate": "1984-01-01",
-    "genres": [
-      "darkwave",
-      "idm"
-    ],
-    "subgenres": [
-      "electro",
-      "experimental"
-    ],
-    "youtubeVideoId": null
   },
   {
     "name": "DJ Rashad",
@@ -3649,15 +3595,6 @@
     "spotifyId": "6nB0iY1cjSY1KyhYyuIIKH"
   },
   {
-    "name": "flat7",
-    "birthDate": "2005-06-15",
-    "genres": [
-      "artpop",
-      "ambient"
-    ],
-    "spotifyId": "6qWQ49hbX08ZLyRABxaasl"
-  },
-  {
     "name": "Fleeting Joys",
     "birthDate": "1992-08-06",
     "genres": [
@@ -3715,22 +3652,6 @@
       "intelligent dance music"
     ],
     "spotifyId": "2AR42Ur9PcchQDtEdwkv4L"
-  },
-  {
-    "name": "Flowdan",
-    "birthDate": "1980-03-17",
-    "genres": [
-      "dnb"
-    ],
-    "subgenres": [
-      "grime",
-      "dub"
-    ],
-    "youtubeVideoId": null,
-    "enTags": [
-      "grime"
-    ],
-    "spotifyId": "07CimrZi5vs9iEao47TNQ4"
   },
   {
     "name": "Flying Lotus",
@@ -4362,20 +4283,6 @@
     "spotifyId": "1DGpHnPOpMYY780hcQHmPB"
   },
   {
-    "name": "His Name Is Alive",
-    "birthDate": "1985-00-00",
-    "genres": [
-      "altrock",
-      "artpop",
-      "indiepop"
-    ],
-    "enTags": [
-      "dream pop",
-      "shoegaze"
-    ],
-    "spotifyId": "4LMQqMZYbFJgvxBOzshZVL"
-  },
-  {
     "name": "Hollie Kenniff",
     "birthDate": "1981-10-09",
     "genres": [
@@ -4562,85 +4469,6 @@
     "spotifyId": "1GbZUOowT6BhrI9QVoUniG"
   },
   {
-    "name": "Ill Blu",
-    "birthDate": "1988-01-01",
-    "genres": [
-      "techno",
-      "dnb"
-    ],
-    "subgenres": [
-      "uk-garage",
-      "house"
-    ],
-    "youtubeVideoId": null,
-    "enTags": [
-      "uk funky",
-      "uk hip hop",
-      "k-pop boy group",
-      "trip hop",
-      "covertronica",
-      "modern melodic hardcore",
-      "alternative hip hop",
-      "dark r&b",
-      "new italo disco",
-      "traditional southern folk",
-      "new york drill",
-      "bronx drill",
-      "bronx drill",
-      "anime drill",
-      "industrial pop",
-      "jungle",
-      "american post-punk",
-      "drill",
-      "danish alternative rock",
-      "lo-fi rap",
-      "progressive house",
-      "progressive trance",
-      "trance",
-      "uplifting trance",
-      "harlem hip hop",
-      "deep east coast hip hop",
-      "hardcore hip hop",
-      "conscious hip hop",
-      "deep east coast hip hop",
-      "bboy",
-      "asian american hip hop",
-      "deep east coast hip hop",
-      "deep east coast hip hop",
-      "trap argentino",
-      "japanese beats",
-      "deep dnb",
-      "bristol electronic",
-      "liquid funk",
-      "nz hip hop",
-      "nigerian hip hop",
-      "igbo rap",
-      "afrobeats",
-      "nigerian pop",
-      "jazz saxophone",
-      "portland hip hop",
-      "battle rap",
-      "trap soul",
-      "dark r&b",
-      "punk blues",
-      "musique nigerienne",
-      "tuareg guitar",
-      "western saharan folk",
-      "mallsoft",
-      "vaporwave",
-      "italo disco",
-      "dark r&b",
-      "new italo disco",
-      "chill house",
-      "tropical house",
-      "thai indie rock",
-      "new jersey rap",
-      "new jersey underground rap",
-      "chill lounge"
-    ],
-    "spotifyId": "550Zxz0BTZi3yd8gX9QINw"
-  },
-  {
     "name": "Inga Copeland",
     "birthDate": "1985-01-01",
     "genres": [
@@ -4657,18 +4485,6 @@
       "gauze pop"
     ],
     "spotifyId": "1ZdoULgEhBXOV2g3j3Zhhi"
-  },
-  {
-    "name": "Isabel's Dream",
-    "birthDate": "1977-09-20",
-    "genres": [
-      "altrock",
-      "indiepop"
-    ],
-    "enTags": [
-      "indie shoegaze"
-    ],
-    "youtubeVideoId": null
   },
   {
     "name": "James Ferraro",
@@ -5122,7 +4938,8 @@
       "fourth world"
     ],
     "spotifyId": "2t1feKJJZgzieczJ0oDmiP",
-    "youtubeVideoId": null
+    "youtubeVideoId": null,
+    "youtubeId": "qw7PBba8fis"
   },
   {
     "name": "Joy Division",
@@ -5657,7 +5474,8 @@
       "russian experimental electronic",
       "abstractro",
       "russian electronic"
-    ]
+    ],
+    "youtubeId": "vfEnCRBs9SQ"
   },
   {
     "name": "Love Spirals Downwards",
@@ -5707,7 +5525,8 @@
       "slowcore"
     ],
     "spotifyId": "2feOOr1Yjovo67byuxvjZv",
-    "youtubeVideoId": null
+    "youtubeVideoId": null,
+    "youtubeId": "3M-vZSEkqGM"
   },
   {
     "name": "LTJ Bukem",
@@ -6121,7 +5940,8 @@
       "deconstructed club"
     ],
     "spotifyId": "4poYOxVqlpDTelhhiJcSrW",
-    "youtubeVideoId": null
+    "youtubeVideoId": null,
+    "youtubeId": "1Xem9YptyKk"
   },
   {
     "name": "Medicine",
@@ -6134,7 +5954,8 @@
       "rock kapak",
       "shoegaze",
       "nu gaze"
-    ]
+    ],
+    "youtubeId": "UfDTMuYpylY"
   },
   {
     "name": "Mega Drive",
@@ -10270,7 +10091,8 @@
     "handpicked": true,
     "handpickedTrack": "Notice the Direction of Fires - felicita live remix",
     "spotifyId": "68fiKpJLoB94P1fLMZTZbC",
-    "youtubeVideoId": null
+    "youtubeVideoId": null,
+    "youtubeId": "NINjd9zthIY"
   },
   {
     "name": "yes/and",
@@ -10516,22 +10338,8 @@
       "post-metal"
     ],
     "spotifyId": "7lAYeGtgIQjUZ5mw0XxEZ2",
-    "youtubeVideoId": null
-  },
-  {
-    "name": "Midwife",
-    "birthDate": "2025-10-01",
-    "genres": [
-      "altrock",
-      "idm",
-      "indiepop"
-    ],
-    "enTags": [
-      "experimental guitar",
-      "nu gaze",
-      "american shoegaze"
-    ],
-    "spotifyId": "5vjIHa1u3TnOlDvVDR9qQa"
+    "youtubeVideoId": null,
+    "youtubeId": "2Ogd6ow7dr8"
   },
   {
     "name": "Esben and the Witch",
@@ -10938,7 +10746,8 @@
       "new weird america"
     ],
     "spotifyId": "0ByXP3asBR2dISiGEl2Mcx",
-    "youtubeVideoId": null
+    "youtubeVideoId": null,
+    "youtubeId": "m0UAqJWzsZE"
   },
   {
     "name": "Ought",
@@ -10947,21 +10756,6 @@
       "altrock"
     ],
     "spotifyId": "2VhVBXSB8n2KxuzKVZNxTY"
-  },
-  {
-    "name": "Deakin",
-    "birthDate": "1952-06-15",
-    "mbid": "e1fef17a-273f-4ff2-9858-37389843f91c",
-    "genres": [
-      "ambient",
-      "indiepop",
-      "artpop",
-      "folk",
-      "idm",
-      "jazz"
-    ],
-    "spotifyId": "3UE3Ip75Xi3lJyYx3tjSXj",
-    "youtubeVideoId": null
   },
   {
     "name": "Preoccupations",
@@ -11023,7 +10817,8 @@
       "ambient"
     ],
     "spotifyId": "3ekUIJNMmdW9bAYSKDzNNk",
-    "youtubeVideoId": null
+    "youtubeVideoId": null,
+    "youtubeId": "BffZsOEN6NU"
   },
   {
     "name": "Maria Duhova Trevor",
@@ -11043,16 +10838,6 @@
       "ambient"
     ],
     "spotifyId": "7EUwSjmuVB6O8MVce7ceWq"
-  },
-  {
-    "name": "Dharma Gaia",
-    "birthDate": "1997-09-29",
-    "mbid": "210efc30-fed4-4413-bb06-25b016ce39d6",
-    "genres": [
-      "ambient"
-    ],
-    "spotifyId": "4zS7xfa3yRhsGysVOA8wHp",
-    "youtubeVideoId": null
   },
   {
     "name": "Johannes Brahms",
@@ -11203,7 +10988,8 @@
       "berlin school"
     ],
     "spotifyId": "5mNY0NPszdalbrb4ITO3M8",
-    "youtubeVideoId": null
+    "youtubeVideoId": null,
+    "youtubeId": "L2n7ZueDbWg"
   },
   {
     "name": "Brian McBride",
@@ -11220,7 +11006,8 @@
       "drift"
     ],
     "spotifyId": "1FTBjo6ovfmw3HWkD8sZTs",
-    "youtubeVideoId": null
+    "youtubeVideoId": null,
+    "youtubeId": "DHoG24STYwE"
   },
   {
     "name": "Eraldo Bernocchi",
@@ -11727,16 +11514,6 @@
     "handpicked": true,
     "handpickedTrack": "Gush Forth My Tears",
     "spotifyId": "5Kvo1gV5usYbYwY4XkBFDV"
-  },
-  {
-    "name": "JAY-Z",
-    "birthDate": "1969-12-04",
-    "genres": [],
-    "subgenres": [],
-    "youtubeVideoId": null,
-    "backupVideoIds": [],
-    "handpicked": true,
-    "handpickedTrack": "Numb / Encore"
   },
   {
     "name": "Ragnar Johnson",
@@ -13287,16 +13064,6 @@
     "backupVideoIds": [],
     "handpicked": true,
     "handpickedTrack": "Sweet Harmony"
-  },
-  {
-    "name": "Gal Go",
-    "birthDate": "2021-02-23",
-    "genres": [],
-    "subgenres": [],
-    "youtubeVideoId": null,
-    "backupVideoIds": [],
-    "handpicked": true,
-    "handpickedTrack": "FLAMA"
   },
   {
     "name": "Dmitry Evgrafov",
