@@ -585,7 +585,7 @@ const ABOUT_CSS = `
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | Radio Venus — Your astrology, rendered in sound</title>
+  <title>About | Radio Venus — Your astrology, rendered in sound ݁ . ⊹ ₊ ݁.</title>
   <meta name="description" content="Radio Venus maps musicians by their natal Venus sign. Enter your birthday, discover your placement, and hear the music that resonates with your chart.">
   <link rel="canonical" href="https://radio-venus.club/about/" />
   <meta property="og:title" content="About | Radio Venus">
