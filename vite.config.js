@@ -65,12 +65,13 @@ function artistPageDevPlugin() {
     name: 'artist-page-dev',
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
-        const m = req.url?.match(/^\/artist\/([^/?#]+)([?#].*)?$/);
+        const m = req.url?.match(/^\/artist\/([^/?#]+)(?:\/([^/?#]+))?([?#].*)?$/);
         if (!m) return next();
 
-        const slug = m[1];
-        const qs   = m[2] || '';
-        const t    = new URLSearchParams(qs.startsWith('?') ? qs.slice(1) : '').get('t') || '0';
+        const slug      = m[1];
+        const gidFromUrl = m[2]; // optional genre segment
+        const qs        = m[3] || '';
+        const t         = new URLSearchParams(qs.startsWith('?') ? qs.slice(1) : '').get('t') || '0';
 
         const db     = JSON.parse(fs.readFileSync('./public/data/musicians.json', 'utf8'));
         const artist = db.find(a => {
@@ -89,7 +90,7 @@ function artistPageDevPlugin() {
           triphop: 'Trip-Hop', industrial: 'Industrial', jazz: 'Jazz',
           hiphop: 'Hip-Hop', dnb: 'Drum & Bass', intercelestial: 'Intercelestial',
         };
-        const gid    = artist.genres?.[0] ?? '';
+        const gid    = gidFromUrl || (artist.genres?.[0] ?? '');
         const params = new URLSearchParams({
           vid: artist.youtubeVideoId, artist: artist.name, gid,
           sign:  (artist.venus?.sign ?? '').toLowerCase(),

@@ -40,15 +40,11 @@ for (const artist of db) {
 
 fs.mkdirSync('./dist/artist', { recursive: true });
 
-for (const [slug, artist] of slugMap) {
-  const gid     = artist.genres?.[0] ?? '';
-  const genreLabel = GENRE_LABELS[gid] || gid;
-  const sign    = artist.venus.sign;
-  const degree  = Math.round(artist.venus.degree ?? 0);
-  const genres  = (artist.genres || []).map(g => GENRE_LABELS[g] || g).join(', ');
-
-  // Base redirect URL — t is injected dynamically from ?t= query param
-  const baseParams = new URLSearchParams({
+function generatePage(dir, slug, artist, gid) {
+  const genreLabel    = GENRE_LABELS[gid] || gid;
+  const sign          = artist.venus.sign;
+  const degree        = Math.round(artist.venus.degree ?? 0);
+  const baseParams    = new URLSearchParams({
     vid:    artist.youtubeVideoId,
     artist: artist.name,
     gid,
@@ -59,7 +55,7 @@ for (const [slug, artist] of slugMap) {
   const canonicalUrl  = `https://radio-venus.club/artist/${slug}`;
   const thumbUrl      = `https://i.ytimg.com/vi/${artist.youtubeVideoId}/maxresdefault.jpg`;
   const title         = `${artist.name} — Radio Venus`;
-  const description   = `Venus in ${sign} ${degree}° ⊹ ${genres}`;
+  const description   = `Venus in ${sign} ${degree}° ⊹ ${genreLabel}`;
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -92,9 +88,24 @@ for (const [slug, artist] of slugMap) {
 </body>
 </html>`;
 
-  const dir = `./dist/artist/${slug}`;
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(`${dir}/index.html`, html);
 }
 
-console.log(`Generated ${slugMap.size} artist pages → dist/artist/`);
+let totalPages = 0;
+for (const [slug, artist] of slugMap) {
+  const genres   = artist.genres?.length ? artist.genres : [];
+  const firstGid = genres[0] ?? '';
+
+  // Canonical page at /artist/[slug]/ — uses first genre
+  generatePage(`./dist/artist/${slug}`, slug, artist, firstGid);
+  totalPages++;
+
+  // Genre-specific pages at /artist/[slug]/[gid]/ — single genre for context-specific sharing
+  for (const gid of genres) {
+    generatePage(`./dist/artist/${slug}/${gid}`, slug, artist, gid);
+    totalPages++;
+  }
+}
+
+console.log(`Generated ${totalPages} artist pages → dist/artist/`);

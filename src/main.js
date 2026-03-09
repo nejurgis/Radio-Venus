@@ -1295,7 +1295,12 @@ async function shareCurrentTrack() {
 
   const time = Math.floor(getCurrentTime());
   const slug = toArtistSlug(track.name) || track.youtubeVideoId;
-  const shareUrl = `${window.location.origin}/artist/${slug}?t=${time}`;
+  // Use the active genre for context-specific OG tags; fall back to artist's first genre
+  const specialGenres = new Set(['valentine', 'favorites', 'moon', 'sun']);
+  const gid = (!specialGenres.has(playingGenreId) && playingGenreId)
+    ? playingGenreId
+    : (track.genres?.[0] ?? '');
+  const shareUrl = `${window.location.origin}/artist/${slug}${gid ? `/${gid}` : ''}?t=${time}`;
 
   trackShare(playingGenreId || '', 'track_link');
   await copyAndToast(shareUrl, 'Current track link copied');
