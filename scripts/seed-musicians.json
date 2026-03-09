@@ -3726,7 +3726,7 @@
       "grime",
       "dub"
     ],
-    "youtubeVideoId": "-yyHn0eGObk",
+    "youtubeVideoId": null,
     "enTags": [
       "grime"
     ],
@@ -9670,7 +9670,8 @@
       "ethereal wave",
       "uk post-punk"
     ],
-    "spotifyId": "5OK8j1JnhoBlivN32G7yOO"
+    "spotifyId": "5OK8j1JnhoBlivN32G7yOO",
+    "youtubeVideoId": null
   },
   {
     "name": "This Will Destroy You",
@@ -11050,7 +11051,8 @@
     "genres": [
       "ambient"
     ],
-    "spotifyId": "4zS7xfa3yRhsGysVOA8wHp"
+    "spotifyId": "4zS7xfa3yRhsGysVOA8wHp",
+    "youtubeVideoId": null
   },
   {
     "name": "Johannes Brahms",
@@ -11731,7 +11733,7 @@
     "birthDate": "1969-12-04",
     "genres": [],
     "subgenres": [],
-    "youtubeVideoId": "_1oO4wzPCmE",
+    "youtubeVideoId": null,
     "backupVideoIds": [],
     "handpicked": true,
     "handpickedTrack": "Numb / Encore"
@@ -12540,7 +12542,7 @@
       "bubble trance",
       "hands up"
     ],
-    "youtubeVideoId": "cDYatzcHl2g",
+    "youtubeVideoId": null,
     "backupVideoIds": [],
     "handpicked": true,
     "handpickedTrack": "It's A Dream - DJ Manian Vs. Yanou Vocal Radio Cut",
@@ -13291,7 +13293,7 @@
     "birthDate": "2021-02-23",
     "genres": [],
     "subgenres": [],
-    "youtubeVideoId": "SRm_bof3blc",
+    "youtubeVideoId": null,
     "backupVideoIds": [],
     "handpicked": true,
     "handpickedTrack": "FLAMA"
@@ -14276,7 +14278,8 @@
       "experimental hip hop",
       "collage pop",
       "hypnagogic pop"
-    ]
+    ],
+    "youtubeVideoId": null
   },
   {
     "name": "OTTO",
