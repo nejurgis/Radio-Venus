@@ -1,19 +1,26 @@
 name: Import Spotify Playlist
 
 # Imports a hand-curated Spotify playlist (exported as CSV via exportify.net)
-# into seed-musicians.json. Runs two parallel workers to halve the runtime,
-# then merges results and commits the updated seed.
+# into seed-musicians.json + rebuilds musicians.json.
 #
 # Before running:
 #   1. Export your playlist at https://exportify.net
-#   2. Copy the CSV to data/playlist.csv in the repo and commit it
-#   3. Trigger this workflow from the Actions tab
+#   2. Commit the CSV anywhere in the repo (e.g. data/my-playlist.csv)
+#   3. Trigger this workflow from the Actions tab, set csv_path accordingly
 
 on:
   workflow_dispatch:
     inputs:
+      csv_path:
+        description: 'Repo path to the Exportify CSV (e.g. data/deep-voices-2025.csv)'
+        default: 'data/playlist.csv'
+        required: true
+      random:
+        description: 'Pick N random new artists (0 = import all new artists)'
+        type: number
+        default: 0
       dry_run:
-        description: 'Dry run — show what would change without modifying seed'
+        description: 'Dry run — log what would change without touching seed'
         type: boolean
         default: true
 
@@ -21,8 +28,86 @@ permissions:
   contents: write
 
 jobs:
-  # ── Two parallel workers processing different halves of the artist list ───────
+  # ── Pre-process: cross-check seed, optionally pick N random new artists ───────
+  preprocess:
+    runs-on: ubuntu-latest
+    outputs:
+      total: ${{ steps.filter.outputs.total }}
+      half: ${{ steps.filter.outputs.half }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm install
+
+      - name: Filter to new artists + optional random selection
+        id: filter
+        run: |
+          node --input-type=module << 'JSEOF'
+          import { readFileSync, writeFileSync } from 'fs';
+
+          const csvPath = process.env.CSV_PATH;
+          const randomN = parseInt(process.env.RANDOM_N || '0', 10);
+
+          const csv  = readFileSync(csvPath, 'utf8').replace(/^\uFEFF/, '');
+          const seed = JSON.parse(readFileSync('scripts/seed-musicians.json', 'utf8'));
+          const seedNames = new Set(seed.map(a => a.name.toLowerCase().trim()));
+
+          const lines = csv.split(/\r?\n/).filter(l => l.trim());
+          const header = lines[0];
+          const seen = new Set();
+          const newRows = [];
+
+          for (const line of lines.slice(1)) {
+            let i = 0, col = 0, inQ = false, val = '';
+            while (i < line.length) {
+              const c = line[i];
+              if (c === '"') inQ = !inQ;
+              else if (c === ',' && !inQ) { if (col === 3) break; col++; val = ''; i++; continue; }
+              else val += c;
+              i++;
+            }
+            const artist = val.split(';')[0].trim();
+            if (!artist || seen.has(artist.toLowerCase())) continue;
+            seen.add(artist.toLowerCase());
+            if (!seedNames.has(artist.toLowerCase())) newRows.push({ artist, line });
+          }
+
+          console.log(`CSV new artists available: ${newRows.length}`);
+
+          let selected = newRows;
+          if (randomN > 0 && randomN < newRows.length) {
+            selected = newRows.sort(() => Math.random() - 0.5).slice(0, randomN);
+            console.log(`Random selection: ${selected.length}`);
+          }
+
+          selected.forEach(r => console.log(`  + ${r.artist}`));
+
+          const out = [header, ...selected.map(r => r.line)].join('\n');
+          writeFileSync('data/to-import.csv', out);
+
+          const total = selected.length;
+          const half  = Math.ceil(total / 2);
+          const fs2   = await import('fs');
+          fs2.appendFileSync(process.env.GITHUB_OUTPUT, `total=${total}\nhalf=${half}\n`);
+          JSEOF
+        env:
+          CSV_PATH: ${{ inputs.csv_path }}
+          RANDOM_N: ${{ inputs.random }}
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: to-import-${{ github.run_number }}
+          path: data/to-import.csv
+          retention-days: 7
+
+  # ── Two parallel workers processing each half ─────────────────────────────────
   import:
+    needs: preprocess
     runs-on: ubuntu-latest
     timeout-minutes: 120
     strategy:
@@ -31,10 +116,8 @@ jobs:
         include:
           - part: 1
             offset: 0
-            limit: 82
           - part: 2
-            offset: 82
-            limit: 82
+            offset: ${{ needs.preprocess.outputs.half }}
 
     steps:
       - uses: actions/checkout@v4
@@ -46,15 +129,23 @@ jobs:
 
       - run: npm install
 
-      - name: Install Playwright browsers
+      - name: Install Playwright + Chromium
         run: npx playwright install chromium --with-deps
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: to-import-${{ github.run_number }}
+          path: data/
 
       - name: Run import (part ${{ matrix.part }})
         run: |
-          node scripts/import-spotify.mjs data/playlist.csv \
+          LIMIT=${{ needs.preprocess.outputs.half }}
+          DRY=${{ inputs.dry_run && '--dry-run' || '' }}
+          node scripts/import-spotify.mjs data/to-import.csv \
             --offset=${{ matrix.offset }} \
-            --limit=${{ matrix.limit }} \
-            --output=import-part-${{ matrix.part }}.json
+            --limit=${LIMIT} \
+            --output=import-part-${{ matrix.part }}.json \
+            ${DRY}
 
       - uses: actions/upload-artifact@v4
         if: always()
@@ -63,7 +154,7 @@ jobs:
           path: import-part-${{ matrix.part }}.json
           retention-days: 7
 
-  # ── Merge job: combine parts → seed, rebuild DB, commit ──────────────────────
+  # ── Merge: combine parts → seed → rebuild DB → commit ────────────────────────
   merge:
     needs: import
     runs-on: ubuntu-latest
@@ -95,10 +186,10 @@ jobs:
       - name: Rebuild DB
         run: node scripts/build-db.mjs
 
-      - name: Commit updated seed + DB
+      - name: Commit seed + musicians.json
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add scripts/seed-musicians.json
-          git diff --cached --quiet || git commit -m "feat: import handpicked playlist artists [bot]"
+          git add scripts/seed-musicians.json public/data/musicians.json
+          git diff --cached --quiet || git commit -m "feat: import playlist artists [bot] (${{ inputs.csv_path }})"
           git push
