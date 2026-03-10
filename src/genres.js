@@ -133,6 +133,8 @@ const GENRE_MAP = {
   'electra': ['idm', 'artpop', 'techno'],  // EN cluster: Helena Hauff, Arca, Kaitlyn Aurelia Smith
   'escape room': ['artpop', 'idm'],// EN cluster: SOPHIE, Oklou, Caroline Polachek, etc.
   'weightless': ['idm'],           // EN cluster: UK experimental bass
+  'mandible': ['idm'],             // EN hyper-niche: Raime, Logos, Demdike Stare adjacent
+  'grimewave': ['idm', 'electronic'], // EN cluster: grime-influenced experimental
   'italian occult psychedelia': ['ambient', 'idm'],  // Lino Capra Vaccina, Alessandro Cortini
 
   // ── Industrial / Noise ──
@@ -387,6 +389,9 @@ const GENRE_MAP = {
   'lowercase': ['ambient', 'idm'],
   'hauntology': ['ambient', 'idm'],
   'new isolationism': ['ambient', 'idm'],
+  'utopian virtual': ['intercelestial', 'idm'],  // EN: Jadelain, Elysia Crampton, etc.
+  'epic collage': ['intercelestial', 'idm'],      // EN: layered/cinematic experimental
+  'hypnagogic pop': ['indiepop', 'ambient'],      // EN: hazy lo-fi dreamlike pop
   'prepared piano': ['classical', 'idm'],
 
   // ── Additional classical micro-genres ──
