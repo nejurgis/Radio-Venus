@@ -14514,5 +14514,1206 @@
     "backupVideoIds": [],
     "handpicked": true,
     "handpickedTrack": "9mm Goes Bang"
+  },
+  {
+    "name": "Ron Carter",
+    "birthDate": "1937-05-04",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz",
+      "jazz-fusion"
+    ],
+    "enTags": [
+      "jazz double bass",
+      "contemporary post-bop",
+      "jazz",
+      "jazz fusion",
+      "hard bop",
+      "electric bass"
+    ],
+    "youtubeVideoId": "x0Dha675_CU",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Light Blue"
+  },
+  {
+    "name": "Sonny Clark",
+    "birthDate": "1931-07-21",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "hard bop",
+      "jazz piano",
+      "bebop",
+      "contemporary post-bop",
+      "jazz"
+    ],
+    "youtubeVideoId": "miD4EklScxM",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Gee Baby, Ain't I Good To You"
+  },
+  {
+    "name": "Christian McBride",
+    "birthDate": "1972-05-31",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz",
+      "jazz-fusion"
+    ],
+    "enTags": [
+      "straight-ahead jazz",
+      "jazz double bass",
+      "contemporary post-bop",
+      "contemporary jazz",
+      "jazz",
+      "jazz fusion",
+      "electric bass",
+      "hard bop"
+    ],
+    "youtubeVideoId": "HZyA4cIXnhQ",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Bass Duo #1"
+  },
+  {
+    "name": "Bobby Timmons",
+    "birthDate": "1935-12-19",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz piano",
+      "hard bop",
+      "bebop"
+    ],
+    "youtubeVideoId": "3aAzFiEbXFw",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Autumn in New York - Bonus Track"
+  },
+  {
+    "name": "Cliff Jordan",
+    "birthDate": "1931-09-02",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "enTags": [
+      "hard bop"
+    ],
+    "youtubeVideoId": "Ssnq17bM814",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Bo-Fill"
+  },
+  {
+    "name": "Charlie Parker Quartet",
+    "birthDate": "1920-08-29",
+    "dateType": "birth",
+    "mbid": "c7356af9-9ea6-4a78-a55b-c73775716312",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz quartet",
+      "bebop",
+      "jazz",
+      "hard bop"
+    ],
+    "youtubeVideoId": "_18jgv3DTXM",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Laird Baird"
+  },
+  {
+    "name": "Hank Mobley",
+    "birthDate": "1930-07-07",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "hard bop",
+      "bebop",
+      "jazz saxophone",
+      "jazz"
+    ],
+    "youtubeVideoId": "IyRWhz0UtBI",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Dig Dis - Remastered 1999/Rudy Van Gelder Edition"
+  },
+  {
+    "name": "Donald Byrd",
+    "birthDate": "1932-12-09",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "soul",
+      "soul-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz funk",
+      "soul jazz",
+      "hard bop",
+      "jazz trumpet",
+      "bebop",
+      "jazz"
+    ],
+    "youtubeVideoId": "wsVsUkwvWco",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "I'm A Fool To Want You - Remastered 2006"
+  },
+  {
+    "name": "Eastern Rebellion",
+    "birthDate": "2001-06-15",
+    "dateType": "birth",
+    "mbid": "3762cf03-0992-4d9b-a50e-8ae2e1cc5522",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "enTags": [
+      "hard bop"
+    ],
+    "youtubeVideoId": "YQ0bWDz4sig",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "5/4 Thing"
+  },
+  {
+    "name": "Jack Wilson",
+    "birthDate": "1934-06-09",
+    "dateType": "birth",
+    "mbid": "f0bf4fa0-028e-452f-82d3-7d4375e105dd",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "enTags": [
+      "hard bop"
+    ],
+    "youtubeVideoId": "AaIcTQ65bic",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Do It - Remastered 2004"
+  },
+  {
+    "name": "Red Garland Trio",
+    "birthDate": "1923-05-13",
+    "dateType": "birth",
+    "mbid": "d9399921-2d82-437e-825e-16daff591a0c",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz trio",
+      "hard bop",
+      "bebop"
+    ],
+    "youtubeVideoId": "TYOu_xHyYPA",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "'Tis Autumn"
+  },
+  {
+    "name": "Sonny Stitt",
+    "birthDate": "1924-02-02",
+    "dateType": "birth",
+    "mbid": "d7828cdd-7d63-49c0-b09b-cf3df7ecaf80",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz saxophone",
+      "hard bop",
+      "bebop"
+    ],
+    "youtubeVideoId": "6PicmrotlZg",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Alone Together"
+  },
+  {
+    "name": "Walter Smith III",
+    "birthDate": "1980-09-24",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "contemporary jazz",
+      "contemporary post-bop",
+      "jazz"
+    ],
+    "youtubeVideoId": "E8R0nG9dPZI",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Mother Stands for Comfort"
+  },
+  {
+    "name": "Blue Mitchell",
+    "birthDate": "1930-03-13",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "soul-jazz"
+    ],
+    "enTags": [
+      "jazz trumpet",
+      "soul jazz",
+      "hard bop",
+      "bebop"
+    ],
+    "youtubeVideoId": "NlVPDaYu5EQ",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "I'll Close My Eyes"
+  },
+  {
+    "name": "Clifford Brown",
+    "birthDate": "1930-10-30",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "bebop",
+      "jazz trumpet",
+      "jazz",
+      "hard bop"
+    ],
+    "youtubeVideoId": "dnK6OHPQZbA",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Joy Spring"
+  },
+  {
+    "name": "Art Blakey",
+    "birthDate": "1919-10-11",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "bebop",
+      "jazz",
+      "jazz drums",
+      "hard bop",
+      "contemporary post-bop"
+    ],
+    "youtubeVideoId": "YjzgEnHr750",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Minority"
+  },
+  {
+    "name": "Larry Young",
+    "birthDate": "1945-11-12",
+    "dateType": "birth",
+    "mbid": "75167b8b-44e4-407b-9d35-effe87b223cf",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "soul-jazz",
+      "free-jazz",
+      "soul"
+    ],
+    "enTags": [
+      "jazz organ",
+      "soul jazz",
+      "hard bop",
+      "jazz funk",
+      "contemporary post-bop"
+    ],
+    "youtubeVideoId": "IwOIVQVVhwg",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "The Moontrane - Rudy Van Gelder 24Bit Mastering/Digital Remaster/1998"
+  },
+  {
+    "name": "Booker Ervin",
+    "birthDate": "1930-10-31",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "hard bop",
+      "jazz saxophone"
+    ],
+    "youtubeVideoId": "v07SDgJLHOs",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Come Sunday"
+  },
+  {
+    "name": "Freddie Redd",
+    "birthDate": "1928-05-29",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "soul-jazz"
+    ],
+    "enTags": [
+      "hard bop",
+      "soul jazz"
+    ],
+    "youtubeVideoId": "oKrymaBk8f0",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Dawn Mist"
+  },
+  {
+    "name": "Duke Pearson",
+    "birthDate": "1932-08-17",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "soul-jazz",
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "soul jazz",
+      "jazz piano",
+      "hard bop"
+    ],
+    "youtubeVideoId": "M8p8nBHXFI0",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Black Coffee"
+  },
+  {
+    "name": "Tommy Turrentine",
+    "birthDate": "1928-04-22",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "enTags": [
+      "hard bop"
+    ],
+    "youtubeVideoId": "OEUoKq52Xq0",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Parisian Sketches - The Caves"
+  },
+  {
+    "name": "Stanley Turrentine & The Three Sounds",
+    "birthDate": "1934-04-05",
+    "dateType": "birth",
+    "mbid": "51e0df97-1fe2-401c-ba92-9f854b7831c3",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "soul-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "soul jazz",
+      "hard bop"
+    ],
+    "youtubeVideoId": "-AJHLr7dJfE",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Willow Weep For Me - Remastered/2000"
+  },
+  {
+    "name": "John Coltrane Quartet",
+    "birthDate": "1926-09-23",
+    "dateType": "birth",
+    "mbid": "b625448e-bf4a-41c3-a421-72ad46cdb831",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz quartet",
+      "jazz",
+      "bebop",
+      "hard bop",
+      "contemporary post-bop",
+      "jazz saxophone"
+    ],
+    "youtubeVideoId": "Mmrpb8aQFQY",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "It's Easy To Remember"
+  },
+  {
+    "name": "Eddie \"Lockjaw\" Davis",
+    "birthDate": "1922-03-02",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz",
+      "soul-jazz"
+    ],
+    "enTags": [
+      "jazz saxophone",
+      "hard bop",
+      "soul jazz"
+    ],
+    "youtubeVideoId": "zMusKkN2MJU",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Lester Leaps In - Remastered 2007/Rudy Van Gelder Edition"
+  },
+  {
+    "name": "Art Taylor",
+    "birthDate": "1989-12-13",
+    "dateType": "birth",
+    "mbid": "20244d07-534f-4eff-b4d4-930878889970",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz drums",
+      "hard bop",
+      "bebop"
+    ],
+    "youtubeVideoId": "r0mZNDlc0m8",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Syeeda's Song Flute - Remastered 2006 / Rudy Van Gelder Edition"
+  },
+  {
+    "name": "Duke Jordan",
+    "birthDate": "1922-04-01",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz piano",
+      "hard bop"
+    ],
+    "youtubeVideoId": "qpbVRdPDYCM",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Everything happens to me"
+  },
+  {
+    "name": "Dizzy Reece",
+    "birthDate": "1931-01-05",
+    "dateType": "birth",
+    "mbid": "cbde4132-ce04-4368-b859-22c440f23961",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "jazz trumpet",
+      "hard bop",
+      "british jazz"
+    ],
+    "youtubeVideoId": "Mr5g72pYKjA",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "The Things We Did Last Summer"
+  },
+  {
+    "name": "Lucky Thompson",
+    "birthDate": "1924-06-16",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "soul-jazz"
+    ],
+    "enTags": [
+      "hard bop",
+      "soul jazz",
+      "bebop"
+    ],
+    "youtubeVideoId": "iK5fgbbWj9k",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Tricotism"
+  },
+  {
+    "name": "Johnny Griffin",
+    "birthDate": "1928-04-24",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "hard bop",
+      "jazz saxophone"
+    ],
+    "youtubeVideoId": "ph_oXqYf_kk",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Lover Man - Remastered 2006/Rudy Van Gelder Edition"
+  },
+  {
+    "name": "Miles Davis",
+    "birthDate": "1926-05-26",
+    "dateType": "birth",
+    "genres": [
+      "jazz",
+      "hiphop",
+      "triphop"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "jazz-fusion",
+      "free-jazz",
+      "soul"
+    ],
+    "enTags": [
+      "cool jazz",
+      "jazz",
+      "vocal jazz",
+      "jazz fusion",
+      "jazz trumpet",
+      "hard bop",
+      "soul"
+    ],
+    "youtubeVideoId": "TLDflhhdPCg",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Blue in Green (feat. John Coltrane & Bill Evans)"
+  },
+  {
+    "name": "Wynton Kelly",
+    "birthDate": "1931-12-02",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz piano",
+      "hard bop",
+      "bebop",
+      "jazz"
+    ],
+    "youtubeVideoId": "UPB9UdJ6SDA",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Softly As In A Morning Sunrise"
+  },
+  {
+    "name": "Art Farmer & Benny Golson Jazztet",
+    "birthDate": "1929-01-25",
+    "dateType": "birth",
+    "mbid": "486bfccd-e9d5-4d7e-96b1-b9bbc6218743",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "enTags": [
+      "hard bop"
+    ],
+    "youtubeVideoId": "fDNZkaW-ieo",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Five Spot After Dark"
+  },
+  {
+    "name": "Thelonious Monk Septet",
+    "birthDate": "1917-10-10",
+    "dateType": "birth",
+    "mbid": "8e8c7417-c905-46b1-b42a-5260b4274ed4",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "bebop",
+      "jazz",
+      "hard bop",
+      "contemporary post-bop"
+    ],
+    "youtubeVideoId": "6liAgg4SN88",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Ruby, My Dear"
+  },
+  {
+    "name": "McCoy Tyner",
+    "birthDate": "1938-12-11",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz",
+      "contemporary post-bop",
+      "jazz piano"
+    ],
+    "youtubeVideoId": "frYLvC0mM50",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "When Sunny Gets Blue"
+  },
+  {
+    "name": "James Moody",
+    "birthDate": "1925-03-26",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "soul-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "soul jazz",
+      "hard bop",
+      "bebop",
+      "contemporary post-bop"
+    ],
+    "youtubeVideoId": "iryEyHxNii4",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Disappointed"
+  },
+  {
+    "name": "Bobby Hutcherson",
+    "birthDate": "1941-01-27",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz",
+      "soul"
+    ],
+    "enTags": [
+      "jazz vibraphone",
+      "mallet",
+      "contemporary post-bop",
+      "jazz funk",
+      "hard bop",
+      "free jazz",
+      "jazz"
+    ],
+    "youtubeVideoId": "LgGXAOn2gNU",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Stardust"
+  },
+  {
+    "name": "Lou Donaldson",
+    "birthDate": "1926-11-01",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "soul-jazz",
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "soul jazz",
+      "hard bop",
+      "jazz saxophone",
+      "bebop"
+    ],
+    "youtubeVideoId": "CGpMhyP4JrI",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Autumn Nocturne"
+  },
+  {
+    "name": "The Three Sounds",
+    "birthDate": "1956-01-01",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "soul-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "soul jazz",
+      "hard bop"
+    ],
+    "youtubeVideoId": "30PxSKa-_Vk",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Repeat After Me"
+  },
+  {
+    "name": "Elmo Hope",
+    "birthDate": "1923-06-27",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz piano",
+      "hard bop"
+    ],
+    "youtubeVideoId": "VYBczFDIVgE",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "It's A Lovely Day Today"
+  },
+  {
+    "name": "Charles Earland",
+    "birthDate": "1941-05-24",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "soul-jazz",
+      "spiritual-jazz",
+      "soul",
+      "free-jazz"
+    ],
+    "enTags": [
+      "soul jazz",
+      "jazz funk",
+      "jazz organ",
+      "hard bop"
+    ],
+    "youtubeVideoId": "qq579tk1Zko",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "The Mighty Burner - Rudy Van Gelder Remaster"
+  },
+  {
+    "name": "Milt Jackson",
+    "birthDate": "1923-01-01",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz",
+      "soul-jazz"
+    ],
+    "enTags": [
+      "jazz vibraphone",
+      "contemporary post-bop",
+      "soul jazz",
+      "hard bop",
+      "bebop",
+      "jazz"
+    ],
+    "youtubeVideoId": "w3TMe98FJDw",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Bags' Groove"
+  },
+  {
+    "name": "Tadd Dameron",
+    "birthDate": "1917-02-21",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "enTags": [
+      "hard bop",
+      "bebop"
+    ],
+    "youtubeVideoId": "MrB7HCUoYtc",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Soultrane - Rudy Van Gelder Remaster"
+  },
+  {
+    "name": "Lee Morgan",
+    "birthDate": "1938-07-10",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "bebop",
+      "jazz trumpet",
+      "jazz",
+      "hard bop"
+    ],
+    "youtubeVideoId": "y-0i-ianljw",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Since I Fell For You - Rudy Van Gelder Edition / 2007 / Digital Remaster"
+  },
+  {
+    "name": "Cannonball Adderley",
+    "birthDate": "1928-09-15",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "cool jazz",
+      "bebop",
+      "jazz",
+      "jazz blues",
+      "hard bop"
+    ],
+    "youtubeVideoId": "y7FFLYXEOqA",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Mercy, Mercy, Mercy"
+  },
+  {
+    "name": "Louis Smith",
+    "birthDate": "1969-08-06",
+    "dateType": "birth",
+    "mbid": "03ad1736-b7c9-412a-b442-82536d63a5c4",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "enTags": [
+      "hard bop"
+    ],
+    "youtubeVideoId": "KpLxQWzg_xY",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Ande - Digitally Remastered"
+  },
+  {
+    "name": "Junior Mance",
+    "birthDate": "1928-10-10",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "soul-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "stride",
+      "soul jazz",
+      "hard bop"
+    ],
+    "youtubeVideoId": "c4oPMPqNFDE",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Lilacs In The Rain"
+  },
+  {
+    "name": "Wes Montgomery",
+    "birthDate": "1923-03-06",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz",
+      "hard bop",
+      "jazz guitar"
+    ],
+    "youtubeVideoId": "KKh9a-0FQn8",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "While We're Young"
+  },
+  {
+    "name": "Freddie Hubbard",
+    "birthDate": "1938-04-07",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "bebop",
+      "jazz trumpet",
+      "contemporary post-bop",
+      "jazz",
+      "hard bop"
+    ],
+    "youtubeVideoId": "k-pKQq8q9qw",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Dedicated To You"
+  },
+  {
+    "name": "Pepper Adams Quintet",
+    "birthDate": "1930-10-08",
+    "dateType": "birth",
+    "mbid": "98fb6594-5984-4280-be19-9813bbb016e8",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "enTags": [
+      "hard bop"
+    ],
+    "youtubeVideoId": "zyT72ALFFIg",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Unforgettable"
+  },
+  {
+    "name": "Kenny Drew",
+    "birthDate": "1928-08-28",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "hard bop",
+      "jazz piano",
+      "bebop"
+    ],
+    "youtubeVideoId": "Bxv9-PKynu8",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Many Miles Away"
+  },
+  {
+    "name": "Philly Joe Jones",
+    "birthDate": "1923-07-15",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz drums",
+      "hard bop",
+      "bebop"
+    ],
+    "youtubeVideoId": "TGQYPY-p5BU",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Two Bass Hit"
+  },
+  {
+    "name": "Milt Jackson & John Coltrane",
+    "birthDate": "1926-09-23",
+    "dateType": "birth",
+    "mbid": "b625448e-bf4a-41c3-a421-72ad46cdb831",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "enTags": [
+      "hard bop"
+    ],
+    "youtubeVideoId": "nlhXYaecE8Q",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Bags & Trane - Remastered"
+  },
+  {
+    "name": "Max Roach",
+    "birthDate": "1924-01-10",
+    "dateType": "birth",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "bebop",
+      "jazz drums",
+      "free jazz",
+      "contemporary post-bop",
+      "jazz",
+      "hard bop",
+      "avant-garde jazz"
+    ],
+    "youtubeVideoId": "Ci9zyYJwGW0",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Lonesome Lover"
+  },
+  {
+    "name": "Ronnie Cuber",
+    "birthDate": "1941-12-25",
+    "dateType": "birth",
+    "mbid": "b999b126-d2a0-4f42-b820-e3c115787d4b",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "enTags": [
+      "hard bop"
+    ],
+    "youtubeVideoId": "LAgDwH2oNho",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Passion Fruit"
+  },
+  {
+    "name": "Von Freeman",
+    "birthDate": "1923-10-03",
+    "dateType": "birth",
+    "mbid": "be025726-954d-4712-b7fb-c4aa6d206188",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "hard bop",
+      "jazz saxophone"
+    ],
+    "youtubeVideoId": "Ubh5ezvnzac",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Blue Pres"
   }
 ]
