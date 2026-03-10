@@ -110,13 +110,13 @@ Radio-Venus/
     db-import.mjs                   # One-time / re-sync: musicians.json → musicians.db
     db-stats.mjs                    # SQLite dashboard: sign/genre distribution, gaps, anchors
     verify-genres.mjs               # Playwright: check genres against Everynoise, save enTags
-    seed-musicians.json             # ~580 hand-curated artists with verified video IDs
+    seed-musicians.json             # ~884 hand-curated artists with verified video IDs
     musicians.db                    # SQLite DB (gitignored) — for ad-hoc queries
     manual-overrides.json           # Birth dates + genre overrides for artists invisible to all DBs
   data/
     playlist.csv                    # Exportify export of hand-curated Spotify playlist (for GH Actions import)
   public/
-    data/musicians.json             # Live database served to the site (718 artists, tracked in git)
+    data/musicians.json             # Live database served to the site (884 artists, tracked in git)
     favicon.svg                     # Venus glyph
   .github/workflows/
     deploy.yml                      # Auto-deploy to GitHub Pages on push to master
@@ -176,28 +176,28 @@ Everynoise "fans also like" ──┤  scrobble co-listening vs Spotify data
 
 ## Database
 
-**718 musicians** across all 12 Venus signs and 16 genres.
+**884 musicians** across all 12 Venus signs and 16 genres.
 
 | Genre | Artists |
 |-------|---------|
-| IDM / Experimental | 304 |
-| Ambient / Drone | 297 |
-| Art Pop | 192 |
-| Techno / House | 171 |
-| Synthwave / Darkwave | 145 |
-| Electronica | 126 |
-| Hip-Hop / R&B | 72 |
-| Classical / Orchestral | 83 |
-| Alt-Rock / Indie | 78 |
-| Indie Pop | 78 |
-| Trip-Hop / Downtempo | 76 |
-| Folk | 76 |
+| IDM / Experimental | 353 |
+| Ambient / Drone | 332 |
+| Art Pop | 206 |
+| Techno / House | 172 |
+| Synthwave / Darkwave | 142 |
+| Electronica | 152 |
+| Jazz | 122 |
+| Trip-Hop / Downtempo | 101 |
+| Alt-Rock / Indie | 97 |
+| Indie Pop | 97 |
+| Hip-Hop / R&B | 89 |
+| Folk | 71 |
 | Industrial / Noise | 69 |
-| Jazz | 66 |
-| Drum & Bass / Jungle | 54 |
-| Inter-Celestial | 14 |
+| Classical / Orchestral | 68 |
+| Drum & Bass / Jungle | 46 |
+| Inter-Celestial | 20 |
 
-The seed file contains **~580 artists** with verified embeddable YouTube video IDs and hand-assigned subgenres. Wikidata and Spotify playlist import supplement this with additional musicians. The build script auto-derives subgenres for all artists using `categorizeSubgenres()`. Classical is intentionally curated: only minimalists, impressionists, 20th-century avant-garde, and household icons — not the full Wikidata dump. The build processes artists in parallel batches of 5.
+The seed file contains **~884 artists** with verified embeddable YouTube video IDs and hand-assigned subgenres. Wikidata and Spotify playlist import supplement this with additional musicians. The build script auto-derives subgenres for all artists using `categorizeSubgenres()`. Classical is intentionally curated: only minimalists, impressionists, 20th-century avant-garde, and household icons — not the full Wikidata dump. The build processes artists in parallel batches of 5.
 
 ### Data model
 
@@ -412,6 +412,9 @@ Tracks manual additions and discovery runs — who was added, when, and what pro
 | 2026-02-20 | **128 artists** via Spotify playlist import (`import-spotify.mjs` + GH Actions parallel run + `merge-import.mjs`). Techno/House: Diplo, Fred again.., Takkyu Ishino, DJ Dean, La Bouche, Leila K, Torn Hawk, Lichtenfels, post-hudba, Courtesy. IDM: death's dynamic shroud, Mega Bog, Palmistry, Oxhy, Blackhaine, Kelsey Lu, Triad God, Dali Muru & The Polyphonic Swarm. Ambient: Marina Herlop, Tarta Relena, A Lily, Pieter Nooten, Patrick O'Hearn. Folk: Buffy Sainte-Marie, Tom Waits, John Denver, Sibylle Baier, Ruphay. Darkwave: Molchat Doma, Seal, The Durutti Column, The Wedding Present, Mekons. Cross-genre: Arthur Russell, The Velvet Underground, Iggy Pop, Sigur Rós, Spacemen 3, Spiritualized, Thom Yorke, Panda Bear, James Blake, Death Grips, Alan Vega, Psychic TV, The Jesus and Mary Chain, Yo La Tengo, The Brian Jonestown Massacre, TOBACCO, Forest Swords, Amnesia Scanner, Lorenzo Senni, Kedr Livanskiy, Avalon Emerson, Aimee Mann, Imogen Heap, Kelly Moran, The Cinematic Orchestra, Mary Lattimore, Minnie Riperton, Morton Feldman, Hans Zimmer, Daniel Pemberton, Paul Bley, Emahoy Tsege Mariam Gebru, Colin Stetson, + more. | Hand-curated Spotify playlist (Exportify CSV) |
 | 2026-02-20 | **14 Inter-Celestial artists** (new genre): Ragnar Johnson, Zainaba, Gosti iz Budushchego, Flash and the Pan, Stine Janvin, illi mel, Osonnya Choir, HONESTY, DJH, Sasha Vosk, Davishmar, Gal Go, Jayla Kai, @ | Manually seeded — world/outsider/unclassifiable artists from the hand-curated playlist with no matching Radio Venus genre |
 | 2026-03-06 | Lingua Ignota, Coil (2 total) | `en-discover.mjs "Anna von Hausswolff"` — gaian doom / death industrial / neofolk cluster |
+| 2026-03-09 | **55 jazz artists** (jazz now 111 total): Cannonball Adderley, Wayne Shorter, Herbie Hancock, McCoy Tyner, Bill Evans, Sonny Rollins, Ornette Coleman, Eric Dolphy, Archie Shepp, Alice Coltrane, Pharoah Sanders, Sun Ra, Joe Henderson, Booker Little, Lee Morgan, Woody Shaw, Freddie Hubbard, Art Farmer, Donald Byrd, Kenny Dorham, Clifford Brown, Wes Montgomery, Grant Green, Kenny Burrell, Jim Hall, Joe Pass, Barney Kessel, Tal Farlow, Sal Nistico, Jimmy Giuffre, Paul Desmond, Gerry Mulligan, Art Pepper, Zoot Sims, Al Cohn, Stan Getz, Jimmy Smith, Shirley Scott, Jack McDuff, Don Patterson, Richard "Groove" Holmes, Roland Kirk, Charles Mingus, Max Roach, Art Blakey, Elvin Jones, Roy Haynes, Tony Williams, Philly Joe Jones, Paul Chambers, Ron Carter, Oscar Pettiford, Ray Brown, Scott LaFaro, Hank Mobley | From `The_Sound_of_Hard_Bop.csv` — random selection via `import-spotify.mjs` + GH Actions |
+| 2026-03-09 | **15 hip-hop artists** (hiphop now 65 total): A Tribe Called Quest, De La Soul, Gang Starr, Pete Rock & CL Smooth, Black Moon, Jeru the Damaja, Group Home, O.C., Smif-N-Wessun, Heltah Skeltah, Originoo Gunn Clappaz, Blahzay Blahzay, Cella Dwellas, Buckshot Shorty, M.O.P. | From `The_Sound_of_Hip_Hop.csv` — random 15 via `import-spotify.mjs` |
+| 2026-03-11 | **~84 artists** from Deep Voices – 100 Best Songs of 2025 playlist: Elaine Howley, mark william lewis, Jadelain, AV Moves, Gajek, great area, Spriitzz, Semi Trucks, Eterna, 16:9 ratio, Orcutt Shelley Miller, goat (JP), Ocean Moon, Kiji Suedo, VS--55, Quiet Light, TR Gobrazy, snuggle, Raisa K, feeo, Alireza Mortazavi, JJJJJerome Ellis, YHWH Nailgun, PVAS, Car Culture, Jaan, All Seeing Dolls, Laurie Torres, Andrew Aged, Annahstasia, Kingdom Molongi, Horsepower, Raphael Roginski, Mija Milovic, Real Lies, RIP Swirl, Deer park, shinetiac, Aasthma, Voice Actor, Betty Hammerschlag, Maria Usbeck, Hussain Bokhari, Claire M Singer, Moin, Addison Rae + more | GH Actions `import-spotify.yml` + `fix-missing-genres.mjs` (Spotify ID → EN artist profile) |
 
 ## Deployment
 
