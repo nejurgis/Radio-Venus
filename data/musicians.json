@@ -1807,6 +1807,77 @@
     ]
   },
   {
+    "name": "Art Blakey",
+    "birthDate": "1919-10-11",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 12.1,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "bebop",
+      "jazz",
+      "jazz drums",
+      "hard bop",
+      "contemporary post-bop"
+    ],
+    "youtubeVideoId": "YjzgEnHr750",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Art Farmer & Benny Golson Jazztet",
+    "birthDate": "1929-01-25",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 21.4,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "enTags": [
+      "hard bop"
+    ],
+    "youtubeVideoId": "fDNZkaW-ieo",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Art Taylor",
+    "birthDate": "1989-12-13",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 1.9,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz drums",
+      "hard bop",
+      "bebop"
+    ],
+    "youtubeVideoId": "r0mZNDlc0m8",
+    "backupVideoIds": []
+  },
+  {
     "name": "Arthur Russell",
     "birthDate": "1951-05-21",
     "venus": {
@@ -2690,6 +2761,31 @@
     "backupVideoIds": []
   },
   {
+    "name": "Blue Mitchell",
+    "birthDate": "1930-03-13",
+    "venus": {
+      "sign": "Aries",
+      "degree": 0.7,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "soul-jazz"
+    ],
+    "enTags": [
+      "jazz trumpet",
+      "soul jazz",
+      "hard bop",
+      "bebop"
+    ],
+    "youtubeVideoId": "NlVPDaYu5EQ",
+    "backupVideoIds": []
+  },
+  {
     "name": "Bluematter",
     "birthDate": "2023-07-07",
     "venus": {
@@ -2764,6 +2860,59 @@
       "9S7cVCFUqE8",
       "SM4tQcUt_mQ"
     ]
+  },
+  {
+    "name": "Bobby Hutcherson",
+    "birthDate": "1941-01-27",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 17,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz",
+      "soul"
+    ],
+    "enTags": [
+      "jazz vibraphone",
+      "mallet",
+      "contemporary post-bop",
+      "jazz funk",
+      "hard bop",
+      "free jazz",
+      "jazz"
+    ],
+    "youtubeVideoId": "LgGXAOn2gNU",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Bobby Timmons",
+    "birthDate": "1935-12-19",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 12.4,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz piano",
+      "hard bop",
+      "bebop"
+    ],
+    "youtubeVideoId": "3aAzFiEbXFw",
+    "backupVideoIds": []
   },
   {
     "name": "Bochum Welt",
@@ -2890,6 +3039,29 @@
       "gangster rap"
     ],
     "youtubeVideoId": "eJXbZ-1YQTI",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Booker Ervin",
+    "birthDate": "1930-10-31",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 7.3,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "hard bop",
+      "jazz saxophone"
+    ],
+    "youtubeVideoId": "v07SDgJLHOs",
     "backupVideoIds": []
   },
   {
@@ -3163,6 +3335,32 @@
       "wKeoWtqVNcg",
       "fvPUSW6HnYk"
     ]
+  },
+  {
+    "name": "Cannonball Adderley",
+    "birthDate": "1928-09-15",
+    "venus": {
+      "sign": "Libra",
+      "degree": 13,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "cool jazz",
+      "bebop",
+      "jazz",
+      "jazz blues",
+      "hard bop"
+    ],
+    "youtubeVideoId": "y7FFLYXEOqA",
+    "backupVideoIds": []
   },
   {
     "name": "Carbon Based Lifeforms",
@@ -3564,6 +3762,33 @@
     ]
   },
   {
+    "name": "Charles Earland",
+    "birthDate": "1941-05-24",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 12.2,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "soul-jazz",
+      "spiritual-jazz",
+      "soul",
+      "free-jazz"
+    ],
+    "enTags": [
+      "soul jazz",
+      "jazz funk",
+      "jazz organ",
+      "hard bop"
+    ],
+    "youtubeVideoId": "qq579tk1Zko",
+    "backupVideoIds": []
+  },
+  {
     "name": "Charli xcx",
     "birthDate": "1992-08-02",
     "venus": {
@@ -3592,6 +3817,31 @@
       "Eb2Nk3OHHhc",
       "E6oq5HCzG4c"
     ]
+  },
+  {
+    "name": "Charlie Parker Quartet",
+    "birthDate": "1920-08-29",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 21.4,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz quartet",
+      "bebop",
+      "jazz",
+      "hard bop"
+    ],
+    "youtubeVideoId": "_18jgv3DTXM",
+    "backupVideoIds": []
   },
   {
     "name": "Chelsea Wolfe",
@@ -3705,6 +3955,36 @@
       "XA65Wu_Lk4o",
       "16iaMUvSnpI"
     ]
+  },
+  {
+    "name": "Christian McBride",
+    "birthDate": "1972-05-31",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 4.4,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz",
+      "jazz-fusion"
+    ],
+    "enTags": [
+      "straight-ahead jazz",
+      "jazz double bass",
+      "contemporary post-bop",
+      "contemporary jazz",
+      "jazz",
+      "jazz fusion",
+      "electric bass",
+      "hard bop"
+    ],
+    "youtubeVideoId": "HZyA4cIXnhQ",
+    "backupVideoIds": []
   },
   {
     "name": "Chrome",
@@ -3918,6 +4198,52 @@
       "WKU8DJzipW4",
       "rWSqT-7g6gA"
     ]
+  },
+  {
+    "name": "Cliff Jordan",
+    "birthDate": "1931-09-02",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 7.5,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "enTags": [
+      "hard bop"
+    ],
+    "youtubeVideoId": "Ssnq17bM814",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Clifford Brown",
+    "birthDate": "1930-10-30",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 7.2,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "bebop",
+      "jazz trumpet",
+      "jazz",
+      "hard bop"
+    ],
+    "youtubeVideoId": "dnK6OHPQZbA",
+    "backupVideoIds": []
   },
   {
     "name": "Clock DVA",
@@ -5563,6 +5889,30 @@
     "backupVideoIds": []
   },
   {
+    "name": "Dizzy Reece",
+    "birthDate": "1931-01-05",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 1.1,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "jazz trumpet",
+      "hard bop",
+      "british jazz"
+    ],
+    "youtubeVideoId": "Mr5g72pYKjA",
+    "backupVideoIds": []
+  },
+  {
     "name": "DJ Dean",
     "birthDate": "1975-10-25",
     "venus": {
@@ -5840,6 +6190,35 @@
     "backupVideoIds": []
   },
   {
+    "name": "Donald Byrd",
+    "birthDate": "1932-12-09",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 15.4,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "soul",
+      "soul-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz funk",
+      "soul jazz",
+      "hard bop",
+      "jazz trumpet",
+      "bebop",
+      "jazz"
+    ],
+    "youtubeVideoId": "wsVsUkwvWco",
+    "backupVideoIds": []
+  },
+  {
     "name": "Doon Kanda",
     "birthDate": "1987-06-23",
     "venus": {
@@ -6031,6 +6410,54 @@
     "backupVideoIds": []
   },
   {
+    "name": "Duke Jordan",
+    "birthDate": "1922-04-01",
+    "venus": {
+      "sign": "Aries",
+      "degree": 23.6,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz piano",
+      "hard bop"
+    ],
+    "youtubeVideoId": "qpbVRdPDYCM",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Duke Pearson",
+    "birthDate": "1932-08-17",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 10.6,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "soul-jazz",
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "soul jazz",
+      "jazz piano",
+      "hard bop"
+    ],
+    "youtubeVideoId": "M8p8nBHXFI0",
+    "backupVideoIds": []
+  },
+  {
     "name": "Duran Duran",
     "birthDate": "1978-06-15",
     "venus": {
@@ -6198,6 +6625,27 @@
     ]
   },
   {
+    "name": "Eastern Rebellion",
+    "birthDate": "2001-06-15",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 8.8,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "enTags": [
+      "hard bop"
+    ],
+    "youtubeVideoId": "YQ0bWDz4sig",
+    "backupVideoIds": []
+  },
+  {
     "name": "Echospace",
     "birthDate": "1969-07-28",
     "venus": {
@@ -6242,6 +6690,31 @@
       "noise pop"
     ],
     "youtubeVideoId": "g6GHXCg7qSA",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Eddie \"Lockjaw\" Davis",
+    "birthDate": "1922-03-02",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 16.3,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz",
+      "soul-jazz"
+    ],
+    "enTags": [
+      "jazz saxophone",
+      "hard bop",
+      "soul jazz"
+    ],
+    "youtubeVideoId": "zMusKkN2MJU",
     "backupVideoIds": []
   },
   {
@@ -6312,6 +6785,29 @@
       "electra"
     ],
     "youtubeVideoId": "18etGza55G4",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Elmo Hope",
+    "birthDate": "1923-06-27",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 14.6,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz piano",
+      "hard bop"
+    ],
+    "youtubeVideoId": "VYBczFDIVgE",
     "backupVideoIds": []
   },
   {
@@ -7680,6 +8176,55 @@
     "backupVideoIds": []
   },
   {
+    "name": "Freddie Hubbard",
+    "birthDate": "1938-04-07",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 2.4,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "bebop",
+      "jazz trumpet",
+      "contemporary post-bop",
+      "jazz",
+      "hard bop"
+    ],
+    "youtubeVideoId": "k-pKQq8q9qw",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Freddie Redd",
+    "birthDate": "1928-05-29",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 28.8,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "soul-jazz"
+    ],
+    "enTags": [
+      "hard bop",
+      "soul jazz"
+    ],
+    "youtubeVideoId": "oKrymaBk8f0",
+    "backupVideoIds": []
+  },
+  {
     "name": "Frédéric Chopin",
     "birthDate": "1810-03-01",
     "venus": {
@@ -8329,6 +8874,31 @@
       "chamber pop"
     ],
     "youtubeVideoId": "4Hzc6FSHPp8",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Hank Mobley",
+    "birthDate": "1930-07-07",
+    "venus": {
+      "sign": "Leo",
+      "degree": 21.6,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "hard bop",
+      "bebop",
+      "jazz saxophone",
+      "jazz"
+    ],
+    "youtubeVideoId": "IyRWhz0UtBI",
     "backupVideoIds": []
   },
   {
@@ -9131,6 +9701,27 @@
     "backupVideoIds": []
   },
   {
+    "name": "Jack Wilson",
+    "birthDate": "1934-06-09",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 8.1,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "enTags": [
+      "hard bop"
+    ],
+    "youtubeVideoId": "AaIcTQ65bic",
+    "backupVideoIds": []
+  },
+  {
     "name": "James Blake",
     "birthDate": "1988-09-26",
     "venus": {
@@ -9211,6 +9802,31 @@
       "ambient"
     ],
     "youtubeVideoId": "FhpIE3uCn2E",
+    "backupVideoIds": []
+  },
+  {
+    "name": "James Moody",
+    "birthDate": "1925-03-26",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 28,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "soul-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "soul jazz",
+      "hard bop",
+      "bebop",
+      "contemporary post-bop"
+    ],
+    "youtubeVideoId": "iryEyHxNii4",
     "backupVideoIds": []
   },
   {
@@ -9746,6 +10362,33 @@
     ]
   },
   {
+    "name": "John Coltrane Quartet",
+    "birthDate": "1926-09-23",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 14.6,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz quartet",
+      "jazz",
+      "bebop",
+      "hard bop",
+      "contemporary post-bop",
+      "jazz saxophone"
+    ],
+    "youtubeVideoId": "Mmrpb8aQFQY",
+    "backupVideoIds": []
+  },
+  {
     "name": "John Denver",
     "birthDate": "1943-12-31",
     "venus": {
@@ -9849,6 +10492,29 @@
       "noise pop"
     ],
     "youtubeVideoId": "K1F6zXmOFdA",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Johnny Griffin",
+    "birthDate": "1928-04-24",
+    "venus": {
+      "sign": "Aries",
+      "degree": 15.9,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "hard bop",
+      "jazz saxophone"
+    ],
+    "youtubeVideoId": "ph_oXqYf_kk",
     "backupVideoIds": []
   },
   {
@@ -10239,6 +10905,30 @@
     "backupVideoIds": []
   },
   {
+    "name": "Junior Mance",
+    "birthDate": "1928-10-10",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 13.8,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "soul-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "stride",
+      "soul jazz",
+      "hard bop"
+    ],
+    "youtubeVideoId": "c4oPMPqNFDE",
+    "backupVideoIds": []
+  },
+  {
     "name": "Kaitlyn Aurelia Smith",
     "birthDate": "1987-00-00",
     "venus": {
@@ -10573,6 +11263,30 @@
       "west coast rap"
     ],
     "youtubeVideoId": "H58vbez_m4E",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Kenny Drew",
+    "birthDate": "1928-08-28",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 20.8,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "hard bop",
+      "jazz piano",
+      "bebop"
+    ],
+    "youtubeVideoId": "Bxv9-PKynu8",
     "backupVideoIds": []
   },
   {
@@ -10960,6 +11674,34 @@
     "backupVideoIds": []
   },
   {
+    "name": "Larry Young",
+    "birthDate": "1945-11-12",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 0.3,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "soul-jazz",
+      "free-jazz",
+      "soul"
+    ],
+    "enTags": [
+      "jazz organ",
+      "soul jazz",
+      "hard bop",
+      "jazz funk",
+      "contemporary post-bop"
+    ],
+    "youtubeVideoId": "IwOIVQVVhwg",
+    "backupVideoIds": []
+  },
+  {
     "name": "Laurel Halo",
     "birthDate": "1985-06-03",
     "venus": {
@@ -11091,6 +11833,31 @@
       "J-YR5idVGn8",
       "1vdEagR_TWM"
     ]
+  },
+  {
+    "name": "Lee Morgan",
+    "birthDate": "1938-07-10",
+    "venus": {
+      "sign": "Leo",
+      "degree": 25.7,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "bebop",
+      "jazz trumpet",
+      "jazz",
+      "hard bop"
+    ],
+    "youtubeVideoId": "y-0i-ianljw",
+    "backupVideoIds": []
   },
   {
     "name": "Leila K",
@@ -11375,6 +12142,53 @@
     ]
   },
   {
+    "name": "Lou Donaldson",
+    "birthDate": "1926-11-01",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 3.3,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "soul-jazz",
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "soul jazz",
+      "hard bop",
+      "jazz saxophone",
+      "bebop"
+    ],
+    "youtubeVideoId": "CGpMhyP4JrI",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Louis Smith",
+    "birthDate": "1969-08-06",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 3.7,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "enTags": [
+      "hard bop"
+    ],
+    "youtubeVideoId": "KpLxQWzg_xY",
+    "backupVideoIds": []
+  },
+  {
     "name": "Love and Rockets",
     "birthDate": "1985-06-15",
     "venus": {
@@ -11604,6 +12418,30 @@
       "7Xfogas8p_M",
       "YYWYDG3Ump0"
     ]
+  },
+  {
+    "name": "Lucky Thompson",
+    "birthDate": "1924-06-16",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 16.7,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "soul-jazz"
+    ],
+    "enTags": [
+      "hard bop",
+      "soul jazz",
+      "bebop"
+    ],
+    "youtubeVideoId": "iK5fgbbWj9k",
+    "backupVideoIds": []
   },
   {
     "name": "Lucrecia Dalt",
@@ -12344,6 +13182,34 @@
     "backupVideoIds": []
   },
   {
+    "name": "Max Roach",
+    "birthDate": "1924-01-10",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 18.8,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "bebop",
+      "jazz drums",
+      "free jazz",
+      "contemporary post-bop",
+      "jazz",
+      "hard bop",
+      "avant-garde jazz"
+    ],
+    "youtubeVideoId": "Ci9zyYJwGW0",
+    "backupVideoIds": []
+  },
+  {
     "name": "Mazzy Star",
     "birthDate": "1989-00-00",
     "venus": {
@@ -12370,6 +13236,30 @@
       "shoegaze"
     ],
     "youtubeVideoId": "ImKY6TZEyrI",
+    "backupVideoIds": []
+  },
+  {
+    "name": "McCoy Tyner",
+    "birthDate": "1938-12-11",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 19.6,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz",
+      "contemporary post-bop",
+      "jazz piano"
+    ],
+    "youtubeVideoId": "frYLvC0mM50",
     "backupVideoIds": []
   },
   {
@@ -12649,6 +13539,38 @@
     "backupVideoIds": []
   },
   {
+    "name": "Miles Davis",
+    "birthDate": "1926-05-26",
+    "venus": {
+      "sign": "Aries",
+      "degree": 21.7,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "jazz",
+      "hiphop",
+      "triphop"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "jazz-fusion",
+      "free-jazz",
+      "soul"
+    ],
+    "enTags": [
+      "cool jazz",
+      "jazz",
+      "vocal jazz",
+      "jazz fusion",
+      "jazz trumpet",
+      "hard bop",
+      "soul"
+    ],
+    "youtubeVideoId": "TLDflhhdPCg",
+    "backupVideoIds": []
+  },
+  {
     "name": "Miles Tilmann",
     "birthDate": "2000-01-01",
     "venus": {
@@ -12674,6 +13596,56 @@
       "wcaObFbTbBI",
       "AKwS7tpDoVs"
     ]
+  },
+  {
+    "name": "Milt Jackson",
+    "birthDate": "1923-01-01",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 29.5,
+      "decan": 3,
+      "element": "water",
+      "dateApprox": true
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz",
+      "soul-jazz"
+    ],
+    "enTags": [
+      "jazz vibraphone",
+      "contemporary post-bop",
+      "soul jazz",
+      "hard bop",
+      "bebop",
+      "jazz"
+    ],
+    "youtubeVideoId": "w3TMe98FJDw",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Milt Jackson & John Coltrane",
+    "birthDate": "1926-09-23",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 14.6,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "enTags": [
+      "hard bop"
+    ],
+    "youtubeVideoId": "nlhXYaecE8Q",
+    "backupVideoIds": []
   },
   {
     "name": "Minnie Riperton",
@@ -14645,6 +15617,27 @@
     "backupVideoIds": []
   },
   {
+    "name": "Pepper Adams Quintet",
+    "birthDate": "1930-10-08",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 27.6,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "enTags": [
+      "hard bop"
+    ],
+    "youtubeVideoId": "zyT72ALFFIg",
+    "backupVideoIds": []
+  },
+  {
     "name": "Perfume Genius",
     "birthDate": "1981-09-25",
     "venus": {
@@ -14831,6 +15824,30 @@
       "9ODkIhKL2fY",
       "1pMN3QZpdiA"
     ]
+  },
+  {
+    "name": "Philly Joe Jones",
+    "birthDate": "1923-07-15",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 6.5,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz drums",
+      "hard bop",
+      "bebop"
+    ],
+    "youtubeVideoId": "TGQYPY-p5BU",
+    "backupVideoIds": []
   },
   {
     "name": "Photek",
@@ -15841,6 +16858,30 @@
     "backupVideoIds": []
   },
   {
+    "name": "Red Garland Trio",
+    "birthDate": "1923-05-13",
+    "venus": {
+      "sign": "Aries",
+      "degree": 20.2,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz trio",
+      "hard bop",
+      "bebop"
+    ],
+    "youtubeVideoId": "TYOu_xHyYPA",
+    "backupVideoIds": []
+  },
+  {
     "name": "Red Sparowes",
     "birthDate": "2003-00-00",
     "venus": {
@@ -16251,6 +17292,34 @@
     "backupVideoIds": []
   },
   {
+    "name": "Ron Carter",
+    "birthDate": "1937-05-04",
+    "venus": {
+      "sign": "Aries",
+      "degree": 19.9,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz",
+      "jazz-fusion"
+    ],
+    "enTags": [
+      "jazz double bass",
+      "contemporary post-bop",
+      "jazz",
+      "jazz fusion",
+      "hard bop",
+      "electric bass"
+    ],
+    "youtubeVideoId": "x0Dha675_CU",
+    "backupVideoIds": []
+  },
+  {
     "name": "Roni Size",
     "birthDate": "1969-10-29",
     "venus": {
@@ -16278,6 +17347,27 @@
       "cwI0gbGEyuI",
       "MfY9ev1kdII"
     ]
+  },
+  {
+    "name": "Ronnie Cuber",
+    "birthDate": "1941-12-25",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 15.1,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "enTags": [
+      "hard bop"
+    ],
+    "youtubeVideoId": "LAgDwH2oNho",
+    "backupVideoIds": []
   },
   {
     "name": "Ruphay",
@@ -17617,6 +18707,32 @@
     "backupVideoIds": []
   },
   {
+    "name": "Sonny Clark",
+    "birthDate": "1931-07-21",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 14.5,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "hard bop",
+      "jazz piano",
+      "bebop",
+      "contemporary post-bop",
+      "jazz"
+    ],
+    "youtubeVideoId": "miD4EklScxM",
+    "backupVideoIds": []
+  },
+  {
     "name": "Sonny Sharrock",
     "birthDate": "1940-08-27",
     "venus": {
@@ -17643,6 +18759,30 @@
       "Eb4VbIfTstE",
       "71yj-C-v9Bk"
     ]
+  },
+  {
+    "name": "Sonny Stitt",
+    "birthDate": "1924-02-02",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 17.1,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz saxophone",
+      "hard bop",
+      "bebop"
+    ],
+    "youtubeVideoId": "6PicmrotlZg",
+    "backupVideoIds": []
   },
   {
     "name": "SOPHIE",
@@ -17902,6 +19042,29 @@
       "hypnagogic pop"
     ],
     "youtubeVideoId": "_VKN8hTiEo4",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Stanley Turrentine & The Three Sounds",
+    "birthDate": "1934-04-05",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 29.2,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "soul-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "soul jazz",
+      "hard bop"
+    ],
+    "youtubeVideoId": "-AJHLr7dJfE",
     "backupVideoIds": []
   },
   {
@@ -18919,6 +20082,28 @@
     "backupVideoIds": []
   },
   {
+    "name": "Tadd Dameron",
+    "birthDate": "1917-02-21",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 16.2,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "enTags": [
+      "hard bop",
+      "bebop"
+    ],
+    "youtubeVideoId": "MrB7HCUoYtc",
+    "backupVideoIds": []
+  },
+  {
     "name": "Takkyu Ishino",
     "birthDate": "1967-12-26",
     "venus": {
@@ -19758,6 +20943,30 @@
     ]
   },
   {
+    "name": "The Three Sounds",
+    "birthDate": "1956-01-01",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 10.2,
+      "decan": 2,
+      "element": "air",
+      "dateApprox": true
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "soul-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "soul jazz",
+      "hard bop"
+    ],
+    "youtubeVideoId": "30PxSKa-_Vk",
+    "backupVideoIds": []
+  },
+  {
     "name": "The Tuss",
     "birthDate": "1971-08-18",
     "venus": {
@@ -19888,6 +21097,31 @@
       "swiss rock"
     ],
     "youtubeVideoId": "C2jKTKG9Tao",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Thelonious Monk Septet",
+    "birthDate": "1917-10-10",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 28.3,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "bebop",
+      "jazz",
+      "hard bop",
+      "contemporary post-bop"
+    ],
+    "youtubeVideoId": "6liAgg4SN88",
     "backupVideoIds": []
   },
   {
@@ -20221,6 +21455,27 @@
       "fourth world"
     ],
     "youtubeVideoId": "szNVumy5JUA",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Tommy Turrentine",
+    "birthDate": "1928-04-22",
+    "venus": {
+      "sign": "Aries",
+      "degree": 13.4,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz"
+    ],
+    "enTags": [
+      "hard bop"
+    ],
+    "youtubeVideoId": "OEUoKq52Xq0",
     "backupVideoIds": []
   },
   {
@@ -20931,6 +22186,29 @@
     "backupVideoIds": []
   },
   {
+    "name": "Von Freeman",
+    "birthDate": "1923-10-03",
+    "venus": {
+      "sign": "Libra",
+      "degree": 15.4,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "free-jazz",
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "hard bop",
+      "jazz saxophone"
+    ],
+    "youtubeVideoId": "Ubh5ezvnzac",
+    "backupVideoIds": []
+  },
+  {
     "name": "Von Sudenfed",
     "birthDate": "1957-03-05",
     "venus": {
@@ -20991,6 +22269,30 @@
     ]
   },
   {
+    "name": "Walter Smith III",
+    "birthDate": "1980-09-24",
+    "venus": {
+      "sign": "Leo",
+      "degree": 18.1,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "contemporary jazz",
+      "contemporary post-bop",
+      "jazz"
+    ],
+    "youtubeVideoId": "E8R0nG9dPZI",
+    "backupVideoIds": []
+  },
+  {
     "name": "Waveshaper",
     "birthDate": "1984-09-26",
     "venus": {
@@ -21006,6 +22308,30 @@
       "darkwave"
     ],
     "youtubeVideoId": "TBrR-IsYP0I",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Wes Montgomery",
+    "birthDate": "1923-03-06",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 0.3,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz",
+      "hard bop",
+      "jazz guitar"
+    ],
+    "youtubeVideoId": "KKh9a-0FQn8",
     "backupVideoIds": []
   },
   {
@@ -21204,6 +22530,31 @@
       "east coast hip hop"
     ],
     "youtubeVideoId": "PBwAxmrE194",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Wynton Kelly",
+    "birthDate": "1931-12-02",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 1,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz"
+    ],
+    "enTags": [
+      "jazz piano",
+      "hard bop",
+      "bebop",
+      "jazz"
+    ],
+    "youtubeVideoId": "UPB9UdJ6SDA",
     "backupVideoIds": []
   },
   {
