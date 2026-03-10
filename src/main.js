@@ -2,7 +2,7 @@ import { calculateVenus, calculateMoon, makeBirthDate } from './venus.js';
 import { GENRE_CATEGORIES, SUBGENRES } from './genres.js';
 import { loadDatabase, getDatabase, match, matchFavorites, matchMoon, matchSun, getSubgenreCounts } from './matcher.js';
 import { getFavorites, toggleFavorite, isFavorite } from './favorites.js';
-import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, setMoonPosition, setSunPosition, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, enableDragRotate, nudgeWheel, onNebulaHover, onNebulaClick, onRotation, onNeedleCross, onSignCross, onMoonHover, onSunHover } from './viz.js';
+import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, setMoonPosition, setSunPosition, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, enableDragRotate, nudgeWheel, resetDrift, onNebulaHover, onNebulaClick, onRotation, onNeedleCross, onSignCross, onMoonHover, onSunHover } from './viz.js';
 import { pluck, gong, setHarpEnabled, isHarpEnabled, pokeAudio } from './harp.js';
 import { loadYouTubeAPI, initPlayer, loadVideo, cueVideo, togglePlay, isPlaying, getDuration, getCurrentTime, seekTo, getVideoTitle, isMuted, unMute } from './player.js';
 import {
@@ -156,6 +156,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     history.pushState({ screen: 'genre' }, '');
   });
   document.getElementById('btn-back-reveal').addEventListener('click', () => history.back());
+  document.getElementById('your-venus').addEventListener('click', () => {
+    if (!venus) return;
+    tunedLongitude = venus.longitude;
+    updateTunedDisplay(venus.longitude);
+    resetDrift(1400);
+  });
   document.getElementById('btn-back-genre').addEventListener('click', () => history.back());
   document.getElementById('btn-info').addEventListener('click', async () => {
     showScreen('about');
@@ -309,8 +315,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     gong(element, velocity);
   });
   onRotation(longitude => {
-    tunedLongitude = longitude;
+    // Only update tunedLongitude from manual drag (reveal screen active).
+    // During radio the nebula drifts — that should not shift the user's Venus position.
     if (document.getElementById('screen-reveal').classList.contains('active')) {
+      tunedLongitude = longitude;
       updateTunedDisplay(longitude);
     }
   });
@@ -663,6 +671,16 @@ function updateTunedDisplay(longitude) {
   const detail = document.getElementById('reveal-detail');
   detail.textContent = element;
   detail.style.color = `var(--${element})`;
+
+  // Dim/brighten "Your" based on proximity to natal Venus
+  const yourEl = document.getElementById('your-venus');
+  if (yourEl && venus) {
+    let diff = Math.abs(longitude - venus.longitude);
+    if (diff > 180) diff = 360 - diff;
+    const isNatal = diff < 4;
+    yourEl.classList.toggle('is-natal', isNatal);
+    yourEl.style.color = isNatal ? `var(--${venus.element})` : '';
+  }
 }
 
 function signFromLongitude(lon) {
@@ -1447,7 +1465,10 @@ window.addEventListener('popstate', (e) => {
       showScreen('reveal');
       document.getElementById('btn-harp').classList.add('is-visible');
       updateNowPlayingButton(true, isPaused);
-      if (tunedLongitude != null) updateTunedDisplay(tunedLongitude);
+      if (tunedLongitude != null) {
+        updateTunedDisplay(tunedLongitude);
+        resetDrift(1800);
+      }
       break;
     case 'genre':
       rebuildGenreGrid();

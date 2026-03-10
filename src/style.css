@@ -472,6 +472,23 @@ p a:hover {
   user-select: none;
 }
 
+.your-venus {
+  opacity: 0.25;
+  cursor: pointer;
+  transition: opacity 0.4s ease, color 0.4s ease, text-shadow 0.4s ease;
+}
+
+.your-venus:hover {
+  opacity: 0.55;
+}
+
+.your-venus.is-natal {
+  opacity: 1;
+  text-shadow:
+    0 0 12px currentColor,
+    0 0 24px currentColor;
+}
+
 .venus-detail {
   font-family: var(--font-mono);
   font-size: 66.66%;

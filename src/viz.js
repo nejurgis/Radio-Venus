@@ -201,6 +201,12 @@ let zoomAnimDuration = 2000;
 let zoomRotStart = 0;      // rotation snapshot when animation starts
 let zoomResolve = null;    // promise resolver
 
+// Drift-reset animation state (return to Venus position without changing zoom)
+let driftResetAnimating = false;
+let driftResetStart = 0;
+let driftResetDuration = 1800;
+let driftResetFrom = 0;
+
 // ── OPTIMIZED SPRITE GENERATOR (High-Res + Soft Glow Filter) ──────────────
 
 const spriteCache = new Map();
@@ -403,7 +409,8 @@ export function renderNebula(musicians) {
     const genreSize = nGenres <= 1 ? 1.2 : nGenres === 2 ? 1.5 : nGenres === 3 ? 1.8 : 2.1;
     const genreAlpha = nGenres <= 1 ? 0.35 : nGenres === 2 ? 0.5 : nGenres === 3 ? 0.65 : 0.8;
 
-    const finalSize = genreSize + jS * 0.6;
+    const mobileScale = window.innerWidth < 640 ? 0.72 : 1;
+    const finalSize = (genreSize + jS * 0.6) * mobileScale;
     const finalAlpha = genreAlpha + jS * 0.1;
 
     dots.push({
@@ -536,6 +543,13 @@ export function showNebula(visible) { if (containerEl) containerEl.classList.tog
 export function dimNebula(dim) { if (containerEl) containerEl.classList.toggle('is-dimmed', dim); }
 export function deepDimNebula(deep) { if (containerEl) containerEl.classList.toggle('is-deep-dimmed', deep); }
 export function setZoomDrift(enabled) { zoomDriftEnabled = enabled; }
+export function resetDrift(duration = 1800) {
+  if (zoomDrift === 0) return;
+  driftResetFrom = zoomDrift;
+  driftResetStart = performance.now();
+  driftResetDuration = duration;
+  driftResetAnimating = true;
+}
 export function enableDragRotate(enabled) {
   dragRotateEnabled = enabled;
   if (!enabled) { dragging = false; dragVelocity = 0; }
@@ -642,7 +656,13 @@ function tick() {
     }
   }
 
-  if (!dragging && Math.abs(dragVelocity) > 0.01) {
+  if (driftResetAnimating) {
+    const raw = Math.min(1, (now - driftResetStart) / driftResetDuration);
+    const t = 1 - Math.pow(1 - raw, 3); // ease-out cubic
+    zoomDrift = driftResetFrom * (1 - t);
+    dragVelocity = 0;
+    if (raw >= 1) { zoomDrift = 0; driftResetAnimating = false; }
+  } else if (!dragging && Math.abs(dragVelocity) > 0.01) {
     zoomDrift += dragVelocity;
     dragVelocity *= 0.93;
   } else if (!dragging) {
@@ -1042,27 +1062,40 @@ function tick() {
     const x = cx + midR * Math.cos(angle);
     const y = cy + midR * Math.sin(angle);
 
-    const ballR = isZoomed ? 3.5 : 5.5;
-    const glowR = isZoomed ? 9 : 16;
+    const ballR = isZoomed ? 5 : Math.min(9, minDim * 0.018);
+    const glowR = isZoomed ? 14 : Math.min(28, minDim * 0.055);
+    const outerR = glowR * 2.2;
     const { r: ur, g: ug, b: ub } = userDot;
 
     ctx.save();
     ctx.globalCompositeOperation = 'lighter';
-    
+
+    // Outer haze ring
+    const outerGlow = ctx.createRadialGradient(x, y, glowR * 0.6, x, y, outerR * pulse);
+    outerGlow.addColorStop(0,   `rgba(${ur}, ${ug}, ${ub}, 0.18)`);
+    outerGlow.addColorStop(0.5, `rgba(${ur}, ${ug}, ${ub}, 0.06)`);
+    outerGlow.addColorStop(1,   `rgba(${ur}, ${ug}, ${ub}, 0)`);
+    ctx.beginPath();
+    ctx.arc(x, y, outerR * pulse, 0, Math.PI * 2);
+    ctx.fillStyle = outerGlow;
+    ctx.fill();
+
+    // Inner glow
     const glow = ctx.createRadialGradient(x, y, 0, x, y, glowR * pulse);
-    glow.addColorStop(0, `rgba(${ur}, ${ug}, ${ub}, 0.5)`);
+    glow.addColorStop(0, `rgba(${ur}, ${ug}, ${ub}, 0.7)`);
     glow.addColorStop(1, `rgba(${ur}, ${ug}, ${ub}, 0)`);
     ctx.beginPath();
     ctx.arc(x, y, glowR * pulse, 0, Math.PI * 2);
     ctx.fillStyle = glow;
     ctx.fill();
 
+    // Ball
     const ball = ctx.createRadialGradient(
       x - ballR * 0.35, y - ballR * 0.35, ballR * 0.05,
       x, y, ballR
     );
     ball.addColorStop(0, `rgba(255, 255, 255, 1)`);
-    ball.addColorStop(0.5, `rgba(${ur}, ${ug}, ${ub}, 0.9)`);
+    ball.addColorStop(0.5, `rgba(${ur}, ${ug}, ${ub}, 0.95)`);
     ball.addColorStop(1, `rgba(${Math.round(ur * 0.1)}, ${Math.round(ug * 0.1)}, ${Math.round(ub * 0.1)}, 0)`);
     ctx.beginPath();
     ctx.arc(x, y, ballR, 0, Math.PI * 2);
@@ -1073,18 +1106,23 @@ function tick() {
     ctx.save();
     ctx.globalCompositeOperation = 'source-over';
     if (isZoomed) {
-      ctx.font = '1.8px monospace';
-      ctx.fillStyle = `rgba(${userDot.r}, ${userDot.g}, ${userDot.b}, 0.8)`;
+      ctx.font = `${Math.max(2, ballR * 0.55)}px monospace`;
+      ctx.fillStyle = `rgba(255, 255, 255, 0.9)`;
+      ctx.shadowBlur = 6;
+      ctx.shadowColor = `rgba(${ur}, ${ug}, ${ub}, 0.8)`;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'top';
       ctx.fillText('You', x, y + glowR * pulse + 1);
     } else {
-      ctx.font = '9px monospace';
-      ctx.fillStyle = `rgba(${userDot.r}, ${userDot.g}, ${userDot.b}, 0.7)`;
+      ctx.font = '10px monospace';
+      ctx.fillStyle = `rgba(255, 255, 255, 0.85)`;
+      ctx.shadowBlur = 8;
+      ctx.shadowColor = `rgba(${ur}, ${ug}, ${ub}, 0.9)`;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'top';
       ctx.fillText('You', x, y + glowR * pulse + 3);
     }
+    ctx.shadowBlur = 0;
     ctx.restore();
   }
 
