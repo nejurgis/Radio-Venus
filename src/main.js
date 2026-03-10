@@ -14,6 +14,7 @@ import {
   updateProgress, resetProgress, glideToPosition,
   showBuffering, hideBuffering,
   renderArtistIndex,
+  updateArtistIndexPlaying,
 } from './ui.js';
 import {
   startHeartbeat, stopHeartbeat,
@@ -166,11 +167,20 @@ document.addEventListener('DOMContentLoaded', async () => {
       db = getDatabase();
     }
     renderArtistIndex(db);
+    updateArtistIndexPlaying(currentPlayingTrack?.name);
+    updateNowPlayingButton(true, isPaused);
   });
   document.getElementById('btn-back-about').addEventListener('click', () => history.back());
+  document.getElementById('artist-index').addEventListener('click', e => {
+    const span = e.target.closest('.index-artist');
+    if (!span) return;
+    playArtistFromIndex(span.dataset.name);
+  });
   document.addEventListener('click', e => {
     if (e.target.closest('.resonance-info-btn')) {
       showScreen('about');
+      updateNowPlayingButton(true, isPaused);
+      updateArtistIndexPlaying(currentPlayingTrack?.name);
       document.getElementById('about-resonance')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
@@ -334,7 +344,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     .catch(e => ({ status: 'rejected', reason: e }));
 
   // If user landed on #about, render the index now that DB is loaded
-  if (cameFromAbout) renderArtistIndex(getDatabase());
+  if (cameFromAbout) {
+    renderArtistIndex(getDatabase());
+    updateArtistIndexPlaying(currentPlayingTrack?.name);
+  }
 
   // Pre-warm YouTube player during idle time (before user needs it)
   if ('requestIdleCallback' in window) {
@@ -709,7 +722,7 @@ function rebuildGenreGrid() {
 
   if (!cachedShuffledGenres) {
     // 1. Extract special genres
-    const special = ['valentine', 'moon', 'sun'];
+    const special = ['moon', 'sun'];
     const pinned = special.map(id => GENRE_CATEGORIES.find(c => c.id === id)).filter(Boolean);
     // 2. Get all others
     const others = GENRE_CATEGORIES.filter(c => !special.includes(c.id));
@@ -745,7 +758,7 @@ function rebuildGenreGrid() {
   );
 }
 
-function startRadio(genreId, genreLabel, subgenreId = null) {
+function startRadio(genreId, genreLabel, subgenreId = null, targetArtistName = null) {
   trackGenreSelect(genreId, subgenreId);
 
   // 1. DEFINE SHARE PERMISSION
@@ -833,7 +846,20 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
   document.getElementById('btn-shuffle').classList.remove('is-active');
 
   // 6. PLAY & RENDER
-  if (isPlaying() && hasPlayed) {
+  if (targetArtistName || !(isPlaying() && hasPlayed)) {
+    tracks = candidateTracks;
+    playingGenreId = genreId;
+    playingSubgenreId = subgenreId;
+    activeGenreLabel = newLabel;
+    failedIds.clear();
+    trackVideoIndex.clear();
+
+    const startIdx = targetArtistName
+      ? Math.max(0, tracks.findIndex(t => t.name === targetArtistName))
+      : 0;
+    renderTrackList(tracks, startIdx, i => playTrack(i), failedIds, new Set(getFavorites()), playlistShareFn, playlistDescription);
+    playTrack(startIdx);
+  } else {
     renderTrackList(candidateTracks, -1, (i) => {
       tracks = candidateTracks;
       playingGenreId = genreId;
@@ -843,16 +869,6 @@ function startRadio(genreId, genreLabel, subgenreId = null) {
       trackVideoIndex.clear();
       playTrack(i);
     }, new Set(), new Set(getFavorites()), playlistShareFn, playlistDescription);
-  } else {
-    tracks = candidateTracks;
-    playingGenreId = genreId;
-    playingSubgenreId = subgenreId;
-    activeGenreLabel = newLabel;
-    failedIds.clear();
-    trackVideoIndex.clear();
-
-    renderTrackList(tracks, 0, i => playTrack(i), failedIds, new Set(getFavorites()), playlistShareFn, playlistDescription);
-    playTrack(0);
   }
 
   return candidateTracks;
@@ -1039,6 +1055,7 @@ function playTrack(index) {
   const track = tracks[currentTrackIndex];
   currentPlayingTrack = track;
 
+  updateArtistIndexPlaying(track.name);
   trackSongStart(track.name, playingGenreId);
 
   clearInterval(progressInterval);
@@ -1066,6 +1083,25 @@ function skipToNextPlayable() {
     }
   }
   updateNowPlaying('No playable tracks found');
+}
+
+function playArtistFromIndex(artistName) {
+  // If the artist is already in the current playlist, just navigate and play
+  const idx = tracks.findIndex(t => t.name === artistName);
+  if (idx >= 0) {
+    showScreen('radio');
+    if (history.state?.screen !== 'radio') history.pushState({ screen: 'radio' }, '');
+    playTrack(idx);
+    return;
+  }
+  // Find the artist in DB, load their primary genre
+  const db = getDatabase();
+  const artist = db.find(a => a.name === artistName);
+  if (!artist?.genres?.length) return;
+  const genreId = artist.genres[0];
+  const genreCat = GENRE_CATEGORIES.find(g => g.id === genreId);
+  if (!genreCat) return;
+  startRadio(genreId, genreCat.label, null, artistName);
 }
 
 function shuffleTracks() {
@@ -1428,6 +1464,8 @@ window.addEventListener('popstate', (e) => {
       break;
     case 'about':
       showScreen('about');
+      updateNowPlayingButton(true, isPaused);
+      updateArtistIndexPlaying(currentPlayingTrack?.name);
       break;
   }
 });

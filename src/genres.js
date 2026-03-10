@@ -15,7 +15,6 @@ export const GENRE_CATEGORIES = [
   { id: 'classical',  label: 'Classical / Orchestral' },
   { id: 'hiphop',         label: 'Hip-Hop / R&B' },
   { id: 'intercelestial', label: 'Inter-Celestial' },
-  { id: 'valentine', label: "Valentine's day special" },
   { id: 'moon', label: "Today's Moon playlist" },
   { id: 'sun',  label: "Today's Sun playlist" },
 ];

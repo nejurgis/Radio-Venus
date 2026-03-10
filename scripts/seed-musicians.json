@@ -14164,5 +14164,355 @@
     ],
     "spotifyId": "683gIqfxdjjg2sowYxBHIQ",
     "spotifyFollowers": 29359
+  },
+  {
+    "name": "Elaine Howley",
+    "birthDate": "1977-11-19",
+    "genres": [],
+    "subgenres": [],
+    "youtubeId": null
+  },
+  {
+    "name": "Wu-Tang Clan",
+    "birthDate": "1993-11-09",
+    "genres": [
+      "hiphop",
+      "altrock",
+      "industrial"
+    ],
+    "subgenres": [
+      "hip-hop"
+    ],
+    "enTags": [
+      "hip hop",
+      "gangster rap",
+      "hardcore hip hop",
+      "rap",
+      "east coast hip hop"
+    ],
+    "youtubeVideoId": "PBwAxmrE194",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "C.R.E.A.M. (Cash Rules Everything Around Me)",
+    "dateType": "release"
+  },
+  {
+    "name": "Mos Def",
+    "birthDate": "1973-12-11",
+    "genres": [
+      "hiphop"
+    ],
+    "subgenres": [
+      "hip-hop"
+    ],
+    "enTags": [
+      "conscious hip hop",
+      "hip hop",
+      "east coast hip hop"
+    ],
+    "youtubeVideoId": "01yUzXQctcM",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Ms. Fat Booty"
+  },
+  {
+    "name": "Pusha T",
+    "birthDate": "1977-05-14",
+    "genres": [
+      "hiphop"
+    ],
+    "subgenres": [
+      "hip-hop",
+      "trap"
+    ],
+    "enTags": [
+      "virginia hip hop",
+      "rap",
+      "hip hop",
+      "gangster rap",
+      "southern hip hop",
+      "pop rap",
+      "trap"
+    ],
+    "youtubeVideoId": "UgGZJxI-fFA",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Nosetalgia"
+  },
+  {
+    "name": "N.W.A.",
+    "birthDate": "1986-06-15",
+    "genres": [
+      "hiphop"
+    ],
+    "subgenres": [
+      "hip-hop"
+    ],
+    "enTags": [
+      "gangster rap",
+      "hip hop",
+      "conscious hip hop",
+      "golden age hip hop",
+      "west coast rap",
+      "rap",
+      "old school hip hop"
+    ],
+    "youtubeVideoId": "qZuxPKUVGiw",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Fuck Tha Police"
+  },
+  {
+    "name": "Kendrick Lamar",
+    "birthDate": "1987-06-17",
+    "genres": [
+      "hiphop"
+    ],
+    "subgenres": [
+      "hip-hop"
+    ],
+    "enTags": [
+      "rap",
+      "hip hop",
+      "conscious hip hop",
+      "west coast rap"
+    ],
+    "youtubeVideoId": "H58vbez_m4E",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Not Like Us"
+  },
+  {
+    "name": "Common",
+    "birthDate": "1972-03-13",
+    "mbid": "c0a1179b-b14a-4d68-a3c1-1fdab16ed602",
+    "genres": [
+      "hiphop",
+      "altrock",
+      "industrial"
+    ],
+    "subgenres": [
+      "hip-hop"
+    ],
+    "enTags": [
+      "conscious hip hop",
+      "hip hop",
+      "political hip hop",
+      "hardcore hip hop",
+      "chicago rap",
+      "alternative hip hop"
+    ],
+    "youtubeVideoId": "YCe1gC5VaW4",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "GO!"
+  },
+  {
+    "name": "Eric B. & Rakim",
+    "birthDate": "1968-01-28",
+    "mbid": "2792b097-0b1d-4c50-97f6-f7f097f86438",
+    "genres": [
+      "hiphop"
+    ],
+    "subgenres": [
+      "hip-hop"
+    ],
+    "enTags": [
+      "hip hop",
+      "golden age hip hop",
+      "east coast hip hop",
+      "old school hip hop",
+      "bboy"
+    ],
+    "youtubeVideoId": "6Y1Emb7Jyks",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Don't Sweat The Technique"
+  },
+  {
+    "name": "Xzibit",
+    "birthDate": "1974-09-18",
+    "genres": [
+      "hiphop",
+      "altrock",
+      "industrial",
+      "electronica"
+    ],
+    "subgenres": [
+      "hip-hop",
+      "soul"
+    ],
+    "enTags": [
+      "gangster rap",
+      "hardcore hip hop",
+      "hip hop",
+      "west coast rap",
+      "g funk",
+      "detroit hip hop"
+    ],
+    "youtubeVideoId": "qJxk1leG1wY",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "X"
+  },
+  {
+    "name": "Snoop Dogg",
+    "birthDate": "1971-10-20",
+    "genres": [
+      "hiphop",
+      "electronica"
+    ],
+    "subgenres": [
+      "hip-hop",
+      "soul"
+    ],
+    "enTags": [
+      "gangster rap",
+      "hip hop",
+      "rap",
+      "g funk",
+      "pop rap",
+      "west coast rap"
+    ],
+    "youtubeVideoId": "Wa5B22KAkEk",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Young, Wild & Free (feat. Bruno Mars)"
+  },
+  {
+    "name": "2 Chainz",
+    "birthDate": "1977-09-12",
+    "genres": [
+      "hiphop"
+    ],
+    "subgenres": [
+      "hip-hop",
+      "trap"
+    ],
+    "enTags": [
+      "rap",
+      "trap",
+      "pop rap",
+      "southern hip hop",
+      "atl hip hop",
+      "hip hop"
+    ],
+    "youtubeVideoId": "tU3p6mz-uxU",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "It's A Vibe"
+  },
+  {
+    "name": "J. Cole",
+    "birthDate": "1985-01-28",
+    "genres": [
+      "hiphop"
+    ],
+    "subgenres": [
+      "hip-hop"
+    ],
+    "enTags": [
+      "rap",
+      "hip hop",
+      "conscious hip hop",
+      "north carolina hip hop"
+    ],
+    "youtubeVideoId": "0EnRK5YvBwU",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "No Role Modelz"
+  },
+  {
+    "name": "Ol' Dirty Bastard",
+    "birthDate": "1968-11-15",
+    "genres": [
+      "hiphop",
+      "altrock",
+      "industrial"
+    ],
+    "subgenres": [
+      "hip-hop"
+    ],
+    "enTags": [
+      "hardcore hip hop",
+      "hip hop",
+      "east coast hip hop"
+    ],
+    "youtubeVideoId": "XXTzm5GtqVo",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Got Your Money (feat. Kelis)"
+  },
+  {
+    "name": "ScHoolboy Q",
+    "birthDate": "1986-10-26",
+    "genres": [
+      "hiphop"
+    ],
+    "subgenres": [
+      "hip-hop",
+      "trap"
+    ],
+    "enTags": [
+      "rap",
+      "hip hop",
+      "gangster rap",
+      "pop rap",
+      "trap",
+      "southern hip hop"
+    ],
+    "youtubeVideoId": "_L2vJEb6lVE",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Collard Greens"
+  },
+  {
+    "name": "Earl Sweatshirt",
+    "birthDate": "1994-02-24",
+    "genres": [
+      "hiphop",
+      "idm",
+      "triphop"
+    ],
+    "subgenres": [
+      "hip-hop",
+      "experimental-hiphop"
+    ],
+    "enTags": [
+      "underground hip hop",
+      "drumless hip hop",
+      "experimental hip hop",
+      "hip hop",
+      "rap",
+      "alternative hip hop"
+    ],
+    "youtubeVideoId": "DoIHZXoxAhU",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Sunday (feat. Frank Ocean)"
+  },
+  {
+    "name": "Boogie Down Productions",
+    "birthDate": "1967-08-19",
+    "mbid": "b6cce5c4-fd73-4984-84fa-2d633ae96400",
+    "genres": [
+      "hiphop"
+    ],
+    "subgenres": [
+      "hip-hop"
+    ],
+    "enTags": [
+      "golden age hip hop",
+      "bronx hip hop",
+      "old school hip hop",
+      "conscious hip hop",
+      "east coast hip hop",
+      "hip hop",
+      "gangster rap"
+    ],
+    "youtubeVideoId": "eJXbZ-1YQTI",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "9mm Goes Bang"
   }
 ]

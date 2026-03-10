@@ -559,13 +559,27 @@ export function renderArtistIndex(db) {
     html += `<div class="index-artist-list">`;
     html += artists.map(a => {
       const deg = Math.round(a.venus?.degree || 0);
-      return `<span class="index-artist" title="${sign} ${deg}°">${a.name} ${deg}°</span>`;
+      return `<span class="index-artist" data-name="${a.name}" title="${sign} ${deg}°">${a.name} ${deg}°</span>`;
     }).join(' '); // <-- Change this to a space
     html += `</div></div>`;
   });
 
   container.innerHTML = html;
   artistIndexRendered = true;
+}
+
+export function updateArtistIndexPlaying(name) {
+  const container = document.getElementById('artist-index');
+  if (!container) return;
+  container.querySelector('.index-artist-playing')?.classList.remove('index-artist-playing');
+  if (name) {
+    for (const span of container.querySelectorAll('.index-artist')) {
+      if (span.dataset.name === name) {
+        span.classList.add('index-artist-playing');
+        break;
+      }
+    }
+  }
 }
 
 export function showEmptyState(show) {

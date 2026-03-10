@@ -432,7 +432,7 @@ async function main() {
       results.skipped.push(`${artistName} (no birth date)`);
       continue;
     }
-    const { date: birthDate, mbid } = birthResult;
+    const { date: birthDate, mbid, isReleaseDate } = birthResult;
     const year = parseInt(birthDate);
     if (year < 1901) {
       console.log(`${birthDate} — too old, skipping`);
@@ -464,6 +464,7 @@ async function main() {
     const entry = {
       name: artistName,
       birthDate,
+      dateType: isReleaseDate ? 'release' : 'birth',
       ...(mbid ? { mbid } : {}),
       genres,
       subgenres,

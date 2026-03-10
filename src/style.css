@@ -2310,18 +2310,33 @@ button.is-pressed svg,
 }
 
 .index-artist {
-  display: inline-block; 
-  white-space: nowrap;   
+  display: inline-block;
+  white-space: nowrap;
   font-family: var(--font-mono);
   font-size: 0.5rem;
   color: var(--text-dim);
   opacity: 0.6;
-  cursor: default;
+  cursor: pointer;
   font-weight: 500;
-  
+  transition: opacity 0.2s, color 0.2s;
+
   /* The two critical fixes */
-  line-height: 0.85;       
+  line-height: 0.85;
   vertical-align: middle;  /* Stops the baseline from pushing the row taller */
+}
+
+.index-artist:hover {
+  opacity: 1;
+  color: var(--text-bright);
+}
+
+.index-artist-playing {
+  opacity: 1;
+  color: var(--text-bright);
+  filter:
+    drop-shadow(0 0 6px rgba(255, 255, 255, 1))
+    drop-shadow(0 0 8px rgba(255, 200, 255, 0.9))
+    drop-shadow(0 6px 4px rgba(200, 150, 255, 0.7));
 }
 
 .index-artist::after {
@@ -2333,10 +2348,6 @@ button.is-pressed svg,
   content: '';
 }
 
-/* .index-artist:hover {
-  opacity: 1;
-  color: var(--text-bright);
-} */
 
 /* ── SEO-only content (in DOM for crawlers, visually hidden) ───────────────── */
 
