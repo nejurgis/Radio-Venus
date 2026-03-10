@@ -50,6 +50,33 @@
     ]
   },
   {
+    "name": "2 Chainz",
+    "birthDate": "1977-09-12",
+    "venus": {
+      "sign": "Leo",
+      "degree": 17.7,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "hiphop"
+    ],
+    "subgenres": [
+      "hip-hop",
+      "trap"
+    ],
+    "enTags": [
+      "rap",
+      "trap",
+      "pop rap",
+      "southern hip hop",
+      "atl hip hop",
+      "hip hop"
+    ],
+    "youtubeVideoId": "tU3p6mz-uxU",
+    "backupVideoIds": []
+  },
+  {
     "name": "6 Senz",
     "birthDate": "2017-10-31",
     "venus": {
@@ -2839,6 +2866,33 @@
     ]
   },
   {
+    "name": "Boogie Down Productions",
+    "birthDate": "1967-08-19",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 11.6,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "hiphop"
+    ],
+    "subgenres": [
+      "hip-hop"
+    ],
+    "enTags": [
+      "golden age hip hop",
+      "bronx hip hop",
+      "old school hip hop",
+      "conscious hip hop",
+      "east coast hip hop",
+      "hip hop",
+      "gangster rap"
+    ],
+    "youtubeVideoId": "eJXbZ-1YQTI",
+    "backupVideoIds": []
+  },
+  {
     "name": "Boom Bip",
     "birthDate": "1974-06-22",
     "venus": {
@@ -4097,6 +4151,34 @@
       "art pop"
     ],
     "youtubeVideoId": "k_scyVJqXMc",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Common",
+    "birthDate": "1972-03-13",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 7.1,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "hiphop",
+      "altrock",
+      "industrial"
+    ],
+    "subgenres": [
+      "hip-hop"
+    ],
+    "enTags": [
+      "conscious hip hop",
+      "hip hop",
+      "political hip hop",
+      "hardcore hip hop",
+      "chicago rap",
+      "alternative hip hop"
+    ],
+    "youtubeVideoId": "YCe1gC5VaW4",
     "backupVideoIds": []
   },
   {
@@ -5500,7 +5582,7 @@
       "bubble trance",
       "hands up"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "2BTx5afFgpg",
     "backupVideoIds": []
   },
   {
@@ -5921,7 +6003,7 @@
       "boston rock",
       "new england shoegaze"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "9d5j1klMYqw",
     "backupVideoIds": []
   },
   {
@@ -6054,6 +6136,35 @@
     "backupVideoIds": []
   },
   {
+    "name": "Earl Sweatshirt",
+    "birthDate": "1994-02-24",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 14.9,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "hiphop",
+      "idm",
+      "triphop"
+    ],
+    "subgenres": [
+      "hip-hop",
+      "experimental-hiphop"
+    ],
+    "enTags": [
+      "underground hip hop",
+      "drumless hip hop",
+      "experimental hip hop",
+      "hip hop",
+      "rap",
+      "alternative hip hop"
+    ],
+    "youtubeVideoId": "DoIHZXoxAhU",
+    "backupVideoIds": []
+  },
+  {
     "name": "Eartheater",
     "birthDate": "1989-03-16",
     "venus": {
@@ -6131,6 +6242,22 @@
       "noise pop"
     ],
     "youtubeVideoId": "g6GHXCg7qSA",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Elaine Howley",
+    "birthDate": "1977-11-19",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 11.7,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "intercelestial"
+    ],
+    "subgenres": [],
+    "youtubeVideoId": "kDj2wet0SPk",
     "backupVideoIds": []
   },
   {
@@ -6407,7 +6534,7 @@
       "art pop",
       "escape room"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "QR2HE0YyYOs",
     "backupVideoIds": []
   },
   {
@@ -6520,11 +6647,36 @@
     "subgenres": [
       "synth-pop"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "exoccHUgvsE",
     "backupVideoIds": [
       "wdiihv3Vl8w",
       "NGNd3E8xuIU"
     ]
+  },
+  {
+    "name": "Eric B. & Rakim",
+    "birthDate": "1968-01-28",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 2.2,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "hiphop"
+    ],
+    "subgenres": [
+      "hip-hop"
+    ],
+    "enTags": [
+      "hip hop",
+      "golden age hip hop",
+      "east coast hip hop",
+      "old school hip hop",
+      "bboy"
+    ],
+    "youtubeVideoId": "6Y1Emb7Jyks",
+    "backupVideoIds": []
   },
   {
     "name": "Eric Copeland",
@@ -6755,7 +6907,7 @@
       "german shoegaze",
       "experimental pop"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "ZOKwuBvhFqI",
     "backupVideoIds": []
   },
   {
@@ -7501,7 +7653,7 @@
       "early romantic era",
       "classical era"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "MKG_6BqnhpI",
     "backupVideoIds": []
   },
   {
@@ -7747,7 +7899,7 @@
     "enTags": [
       "dark clubbing"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "kHvGsaAtxMw",
     "backupVideoIds": [
       "_XhLIXjUtFg",
       "Z2KB7y0fdpk"
@@ -8952,6 +9104,30 @@
       "experimental pop"
     ],
     "youtubeVideoId": "SkW5h-zF2tM",
+    "backupVideoIds": []
+  },
+  {
+    "name": "J. Cole",
+    "birthDate": "1985-01-28",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 25.4,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "hiphop"
+    ],
+    "subgenres": [
+      "hip-hop"
+    ],
+    "enTags": [
+      "rap",
+      "hip hop",
+      "conscious hip hop",
+      "north carolina hip hop"
+    ],
+    "youtubeVideoId": "0EnRK5YvBwU",
     "backupVideoIds": []
   },
   {
@@ -10373,6 +10549,30 @@
       "alternative r&b"
     ],
     "youtubeVideoId": "SxdbSt5mnRs",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Kendrick Lamar",
+    "birthDate": "1987-06-17",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 7.6,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "hiphop"
+    ],
+    "subgenres": [
+      "hip-hop"
+    ],
+    "enTags": [
+      "rap",
+      "hip hop",
+      "conscious hip hop",
+      "west coast rap"
+    ],
+    "youtubeVideoId": "H58vbez_m4E",
     "backupVideoIds": []
   },
   {
@@ -12445,7 +12645,7 @@
     "enTags": [
       "belgian experimental"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "XdLrOhK-fgo",
     "backupVideoIds": []
   },
   {
@@ -12763,7 +12963,7 @@
       "dream pop",
       "slowcore"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "QR2HE0YyYOs",
     "backupVideoIds": []
   },
   {
@@ -12832,7 +13032,7 @@
     "subgenres": [
       "ambient"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "-r8Sg6pSenU",
     "backupVideoIds": []
   },
   {
@@ -13055,6 +13255,29 @@
       "drone"
     ],
     "youtubeVideoId": "Y8al_H6IRaQ",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Mos Def",
+    "birthDate": "1973-12-11",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 2.6,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "hiphop"
+    ],
+    "subgenres": [
+      "hip-hop"
+    ],
+    "enTags": [
+      "conscious hip hop",
+      "hip hop",
+      "east coast hip hop"
+    ],
+    "youtubeVideoId": "01yUzXQctcM",
     "backupVideoIds": []
   },
   {
@@ -13335,6 +13558,33 @@
       "etherpop"
     ],
     "youtubeVideoId": "CePpTXIuQzY",
+    "backupVideoIds": []
+  },
+  {
+    "name": "N.W.A.",
+    "birthDate": "1986-06-15",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 29.7,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "hiphop"
+    ],
+    "subgenres": [
+      "hip-hop"
+    ],
+    "enTags": [
+      "gangster rap",
+      "hip hop",
+      "conscious hip hop",
+      "golden age hip hop",
+      "west coast rap",
+      "rap",
+      "old school hip hop"
+    ],
+    "youtubeVideoId": "qZuxPKUVGiw",
     "backupVideoIds": []
   },
   {
@@ -13720,6 +13970,31 @@
     "backupVideoIds": []
   },
   {
+    "name": "Ol' Dirty Bastard",
+    "birthDate": "1968-11-15",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 0.7,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "hiphop",
+      "altrock",
+      "industrial"
+    ],
+    "subgenres": [
+      "hip-hop"
+    ],
+    "enTags": [
+      "hardcore hip hop",
+      "hip hop",
+      "east coast hip hop"
+    ],
+    "youtubeVideoId": "XXTzm5GtqVo",
+    "backupVideoIds": []
+  },
+  {
     "name": "Oli XL",
     "birthDate": "1995-03-03",
     "venus": {
@@ -13739,7 +14014,7 @@
       "deconstructed club",
       "new isolationism"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "i-f4Slxqw3U",
     "backupVideoIds": []
   },
   {
@@ -13950,7 +14225,7 @@
       "intercelestial"
     ],
     "subgenres": [],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "gnOsxMOPoog",
     "backupVideoIds": []
   },
   {
@@ -13972,7 +14247,7 @@
     "enTags": [
       "experimental indie"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "cHDelq2iInc",
     "backupVideoIds": []
   },
   {
@@ -14489,7 +14764,7 @@
     "subgenres": [
       "ambient"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "nb0athcO6pk",
     "backupVideoIds": []
   },
   {
@@ -14816,7 +15091,7 @@
       "indie hip hop",
       "japanese melodic punk"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "UWJ_P-TdEJ0",
     "backupVideoIds": []
   },
   {
@@ -15175,7 +15450,7 @@
       "dub",
       "dub-techno"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "5hTJrT1CIn4",
     "backupVideoIds": []
   },
   {
@@ -15298,6 +15573,34 @@
     ]
   },
   {
+    "name": "Pusha T",
+    "birthDate": "1977-05-14",
+    "venus": {
+      "sign": "Aries",
+      "degree": 13.3,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "hiphop"
+    ],
+    "subgenres": [
+      "hip-hop",
+      "trap"
+    ],
+    "enTags": [
+      "virginia hip hop",
+      "rap",
+      "hip hop",
+      "gangster rap",
+      "southern hip hop",
+      "pop rap",
+      "trap"
+    ],
+    "youtubeVideoId": "UgGZJxI-fFA",
+    "backupVideoIds": []
+  },
+  {
     "name": "Pyotr Ilyich Tchaikovsky",
     "birthDate": "1840-05-07",
     "venus": {
@@ -15344,7 +15647,7 @@
       "idm",
       "darkwave"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "aYZC301AE3g",
     "backupVideoIds": []
   },
   {
@@ -15863,7 +16166,7 @@
       "tape club",
       "sacramento indie"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "QR2HE0YyYOs",
     "backupVideoIds": []
   },
   {
@@ -15918,7 +16221,7 @@
       "fourth world",
       "ambient"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "vNwYtllyt3Q",
     "backupVideoIds": []
   },
   {
@@ -16346,6 +16649,33 @@
       "eurodance"
     ],
     "youtubeVideoId": "02vDkMEdIkY",
+    "backupVideoIds": []
+  },
+  {
+    "name": "ScHoolboy Q",
+    "birthDate": "1986-10-26",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 18.1,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "hiphop"
+    ],
+    "subgenres": [
+      "hip-hop",
+      "trap"
+    ],
+    "enTags": [
+      "rap",
+      "hip hop",
+      "gangster rap",
+      "pop rap",
+      "trap",
+      "southern hip hop"
+    ],
+    "youtubeVideoId": "_L2vJEb6lVE",
     "backupVideoIds": []
   },
   {
@@ -17059,6 +17389,34 @@
     ]
   },
   {
+    "name": "Snoop Dogg",
+    "birthDate": "1971-10-20",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 10.7,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "hiphop",
+      "electronica"
+    ],
+    "subgenres": [
+      "hip-hop",
+      "soul"
+    ],
+    "enTags": [
+      "gangster rap",
+      "hip hop",
+      "rap",
+      "g funk",
+      "pop rap",
+      "west coast rap"
+    ],
+    "youtubeVideoId": "Wa5B22KAkEk",
+    "backupVideoIds": []
+  },
+  {
     "name": "Soft Cell",
     "birthDate": "1980-06-15",
     "venus": {
@@ -17543,7 +17901,7 @@
       "collage pop",
       "hypnagogic pop"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "_VKN8hTiEo4",
     "backupVideoIds": []
   },
   {
@@ -17571,7 +17929,7 @@
       "american shoegaze",
       "nu gaze"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "PEQPp3FDPoo",
     "backupVideoIds": []
   },
   {
@@ -18535,7 +18893,7 @@
       "grungegaze",
       "nu gaze"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "D6Dc-SzuOE8",
     "backupVideoIds": []
   },
   {
@@ -19195,7 +19553,7 @@
     "subgenres": [
       "darkwave"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "qBfMoPvOSmc",
     "backupVideoIds": [
       "uPudE8nDog0",
       "qBfMoPvOSmc"
@@ -19580,7 +19938,7 @@
       "dark wave",
       "gothic rock"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "QR2HE0YyYOs",
     "backupVideoIds": []
   },
   {
@@ -19609,7 +19967,7 @@
       "ethereal wave",
       "uk post-punk"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "jKAA_INzDGo",
     "backupVideoIds": []
   },
   {
@@ -20768,7 +21126,7 @@
       "australian experimental",
       "fourth world"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "f2f-eua-7jo",
     "backupVideoIds": []
   },
   {
@@ -20818,7 +21176,64 @@
       "fourth world",
       "british experimental"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "uq5L6lBOjqc",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Wu-Tang Clan",
+    "birthDate": "1993-11-09",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 0.5,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "hiphop",
+      "altrock",
+      "industrial"
+    ],
+    "subgenres": [
+      "hip-hop"
+    ],
+    "enTags": [
+      "hip hop",
+      "gangster rap",
+      "hardcore hip hop",
+      "rap",
+      "east coast hip hop"
+    ],
+    "youtubeVideoId": "PBwAxmrE194",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Xzibit",
+    "birthDate": "1974-09-18",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 12.5,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "hiphop",
+      "altrock",
+      "industrial",
+      "electronica"
+    ],
+    "subgenres": [
+      "hip-hop",
+      "soul"
+    ],
+    "enTags": [
+      "gangster rap",
+      "hardcore hip hop",
+      "hip hop",
+      "west coast rap",
+      "g funk",
+      "detroit hip hop"
+    ],
+    "youtubeVideoId": "qJxk1leG1wY",
     "backupVideoIds": []
   },
   {
@@ -20880,7 +21295,7 @@
       "ambient country",
       "pastoral"
     ],
-    "youtubeVideoId": null,
+    "youtubeVideoId": "UwNZN_wTjCI",
     "backupVideoIds": []
   },
   {
