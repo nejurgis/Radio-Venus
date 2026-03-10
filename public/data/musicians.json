@@ -59,9 +59,15 @@
       "element": "earth"
     },
     "genres": [
-      "intercelestial"
+      "idm"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "experimental"
+    ],
+    "enTags": [
+      "portuguese experimental",
+      "hypertrance"
+    ],
     "youtubeVideoId": "N3ZfcaijhJc",
     "backupVideoIds": []
   },
@@ -254,9 +260,51 @@
       "element": "fire"
     },
     "genres": [
-      "intercelestial"
+      "techno",
+      "electronica",
+      "triphop",
+      "idm",
+      "ambient",
+      "artpop"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "techno",
+      "indietronica",
+      "dub",
+      "experimental",
+      "house",
+      "dub-techno",
+      "minimal",
+      "idm"
+    ],
+    "enTags": [
+      "mandible",
+      "swedish techno",
+      "swedish electronic",
+      "minimal dub",
+      "grimewave",
+      "uk experimental electronic",
+      "experimental electronic",
+      "minimal dnb",
+      "bristol electronic",
+      "drumfunk",
+      "irish experimental electronic",
+      "experimental techno",
+      "modular techno",
+      "weightless",
+      "deconstructed club",
+      "new isolationism",
+      "ambient dub",
+      "outsider house",
+      "electra",
+      "dub techno",
+      "minimal techno",
+      "techno",
+      "ambient techno",
+      "intelligent dance music",
+      "uk bass",
+      "vapor pop"
+    ],
     "youtubeVideoId": "DetSWbpy34A",
     "backupVideoIds": []
   },
@@ -332,11 +380,14 @@
       "element": "water"
     },
     "genres": [
-      "intercelestial"
+      "hiphop"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "hip-hop"
+    ],
     "enTags": [
-      "social media pop"
+      "social media pop",
+      "viral rap"
     ],
     "youtubeVideoId": "pn_uc5pZkwA",
     "backupVideoIds": []
@@ -640,9 +691,23 @@
       "element": "air"
     },
     "genres": [
-      "intercelestial"
+      "idm",
+      "ambient",
+      "jazz"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "experimental",
+      "ambient-jazz"
+    ],
+    "enTags": [
+      "persian neo-traditional",
+      "iranian experimental",
+      "persian traditional",
+      "tar",
+      "santur",
+      "traditional music",
+      "ambient jazz"
+    ],
     "youtubeVideoId": "k5VSdpwvYKk",
     "backupVideoIds": []
   },
@@ -682,9 +747,33 @@
       "element": "air"
     },
     "genres": [
-      "intercelestial"
+      "darkwave",
+      "indiepop",
+      "idm",
+      "altrock",
+      "ambient",
+      "industrial"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "experimental",
+      "art-pop",
+      "indie-pop",
+      "noise"
+    ],
+    "enTags": [
+      "psych gaze",
+      "american post-punk",
+      "experimental indie",
+      "new york shoegaze",
+      "neo-psicodelia brasileira",
+      "neo-psychedelic",
+      "irish indie rock",
+      "chicago indie",
+      "popgaze",
+      "spectra",
+      "modern noise rock",
+      "melbourne indie"
+    ],
     "youtubeVideoId": "sQ9hOLpn7zo",
     "backupVideoIds": []
   },
@@ -1071,9 +1160,23 @@
       "element": "earth"
     },
     "genres": [
-      "intercelestial"
+      "hiphop",
+      "triphop",
+      "indiepop"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "trap",
+      "soul",
+      "rnb",
+      "indie-pop",
+      "hip-hop"
+    ],
+    "enTags": [
+      "trap soul",
+      "alternative r&b",
+      "modern indie pop",
+      "indie hip hop"
+    ],
     "youtubeVideoId": "fi6--asHyEA",
     "backupVideoIds": []
   },
@@ -1602,9 +1705,27 @@
       "element": "fire"
     },
     "genres": [
-      "intercelestial"
+      "hiphop",
+      "triphop",
+      "idm"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "rnb",
+      "hip-hop",
+      "experimental-hiphop"
+    ],
+    "enTags": [
+      "uk contemporary r&b",
+      "alternative r&b",
+      "experimental r&b",
+      "rage rap",
+      "dutch r&b",
+      "indie r&b",
+      "sudanese pop",
+      "minnesota hip hop",
+      "experimental hip hop",
+      "hypnagogic pop"
+    ],
     "youtubeVideoId": "7on4WMXq3e8",
     "backupVideoIds": []
   },
@@ -2166,9 +2287,26 @@
       "element": "air"
     },
     "genres": [
-      "intercelestial"
+      "ambient",
+      "triphop",
+      "idm"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "dub",
+      "experimental",
+      "ambient"
+    ],
+    "enTags": [
+      "ambient dub",
+      "experimental percussion",
+      "ambient synth",
+      "experimental electronic",
+      "experimental ambient",
+      "spanish experimental",
+      "experimental synth",
+      "indonesian experimental",
+      "tribal ambient"
+    ],
     "youtubeVideoId": "RdJoZIJ4-20",
     "backupVideoIds": []
   },
@@ -2543,9 +2681,25 @@
       "element": "earth"
     },
     "genres": [
-      "intercelestial"
+      "idm",
+      "ambient",
+      "hiphop",
+      "dnb"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "experimental",
+      "cosmic-jazz"
+    ],
+    "enTags": [
+      "hypnagogic pop",
+      "deconstructed club",
+      "grimewave",
+      "new isolationism",
+      "bubblegum bass",
+      "experimental electronic",
+      "fourth world",
+      "experimental synth"
+    ],
     "youtubeVideoId": "sDt1KkTBAVo",
     "backupVideoIds": []
   },
@@ -3596,9 +3750,35 @@
       "element": "air"
     },
     "genres": [
-      "intercelestial"
+      "ambient",
+      "idm",
+      "triphop",
+      "electronica"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "ambient",
+      "experimental",
+      "cosmic-jazz",
+      "dub",
+      "indietronica"
+    ],
+    "enTags": [
+      "therapy",
+      "experimental ambient",
+      "fourth world",
+      "deconstructed club",
+      "new isolationism",
+      "grimewave",
+      "british experimental",
+      "nyc club",
+      "hypnagogic pop",
+      "experimental electronic",
+      "experimental dub",
+      "uk bass",
+      "outsider",
+      "experimental synth",
+      "uk experimental electronic"
+    ],
     "youtubeVideoId": "vrOCFDqP-rc",
     "backupVideoIds": []
   },
@@ -4350,9 +4530,58 @@
       "element": "fire"
     },
     "genres": [
-      "intercelestial"
+      "idm",
+      "ambient",
+      "artpop",
+      "techno",
+      "folk",
+      "electronica",
+      "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "experimental",
+      "drone",
+      "ambient",
+      "ambient-folk",
+      "indietronica",
+      "folk-rock",
+      "minimalist",
+      "glitch"
+    ],
+    "enTags": [
+      "swedish experimental",
+      "spectra",
+      "electra",
+      "drone",
+      "experimental ambient",
+      "new isolationism",
+      "field recording",
+      "sound art",
+      "lowercase",
+      "british experimental",
+      "hauntology",
+      "mandible",
+      "modern electroacoustic",
+      "british electroacoustic",
+      "experimental synth",
+      "canadian experimental",
+      "modular synth",
+      "pastoral",
+      "drone ambient",
+      "warm drone",
+      "uk experimental electronic",
+      "experimental folk",
+      "laboratorio",
+      "iranian experimental",
+      "persian neo-traditional",
+      "compositional ambient",
+      "ambient pop",
+      "ambient",
+      "minimalism",
+      "acousmatic",
+      "glitch ambient",
+      "tape music"
+    ],
     "youtubeVideoId": "OPLflNK_03M",
     "backupVideoIds": []
   },
@@ -6008,6 +6237,9 @@
       "intercelestial"
     ],
     "subgenres": [],
+    "enTags": [
+      "epic collage"
+    ],
     "youtubeVideoId": "5Bio-Jh7DzY",
     "backupVideoIds": []
   },
@@ -7146,9 +7378,37 @@
       "element": "water"
     },
     "genres": [
-      "intercelestial"
+      "idm",
+      "indiepop",
+      "altrock",
+      "jazz",
+      "ambient",
+      "folk",
+      "artpop",
+      "techno"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "experimental",
+      "indie-pop",
+      "free-jazz",
+      "ambient"
+    ],
+    "enTags": [
+      "australian experimental",
+      "hypnagogic pop",
+      "cork indie",
+      "irish indie rock",
+      "experimental jazz",
+      "spectra",
+      "irish singer-songwriter",
+      "irish experimental",
+      "electra",
+      "dublin indie",
+      "experimental electronic",
+      "galway indie",
+      "tribal ambient",
+      "experimental percussion"
+    ],
     "youtubeVideoId": "kDj2wet0SPk",
     "backupVideoIds": []
   },
@@ -7736,13 +7996,24 @@
       "element": "air"
     },
     "genres": [
-      "intercelestial"
+      "idm",
+      "ambient",
+      "electronica"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "experimental",
+      "glitch-pop"
+    ],
     "enTags": [
-      "brazilian power metal",
-      "metal cristao",
-      "brazilian metal"
+      "hypertrance",
+      "deconstructed club",
+      "grimewave",
+      "new isolationism",
+      "hypnagogic pop",
+      "glitch pop",
+      "epic collage",
+      "sound collage",
+      "shanghai indie"
     ],
     "youtubeVideoId": "pOtWfs6aBbE",
     "backupVideoIds": []
@@ -7987,9 +8258,21 @@
       "element": "earth"
     },
     "genres": [
-      "intercelestial"
+      "hiphop",
+      "idm",
+      "triphop"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "rnb",
+      "experimental"
+    ],
+    "enTags": [
+      "one-person band",
+      "experimental r&b",
+      "oxford indie",
+      "indie r&b",
+      "experimental"
+    ],
     "youtubeVideoId": "mOFEKL-tpnY",
     "backupVideoIds": []
   },
@@ -8793,9 +9076,57 @@
       "element": "water"
     },
     "genres": [
-      "intercelestial"
+      "idm",
+      "ambient",
+      "techno",
+      "electronica",
+      "artpop",
+      "dnb"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "glitch",
+      "ambient",
+      "experimental",
+      "techno",
+      "indietronica",
+      "idm",
+      "acid",
+      "breakbeat",
+      "glitch-pop",
+      "drone"
+    ],
+    "enTags": [
+      "glitch",
+      "mandible",
+      "uk bass",
+      "experimental ambient",
+      "weightless",
+      "swedish techno",
+      "scottish electronic",
+      "uk experimental electronic",
+      "deconstructed club",
+      "italian experimental",
+      "fluxwork",
+      "grimewave",
+      "british experimental",
+      "acid idm",
+      "drill and bass",
+      "deep idm",
+      "intelligent dance music",
+      "sound art",
+      "vaporwave",
+      "australian experimental",
+      "australian ambient",
+      "wonky",
+      "spectra",
+      "dutch experimental",
+      "warm drone",
+      "drone",
+      "ambient",
+      "electroacoustic",
+      "idm",
+      "experimental"
+    ],
     "youtubeVideoId": "54ISt3OAj1w",
     "backupVideoIds": []
   },
@@ -9030,9 +9361,22 @@
       "element": "fire"
     },
     "genres": [
-      "intercelestial"
+      "idm",
+      "ambient"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "experimental"
+    ],
+    "enTags": [
+      "modern electroacoustic",
+      "mandible",
+      "sound art",
+      "experimental percussion",
+      "peruvian experimental",
+      "peruvian indie",
+      "belgian experimental",
+      "electroacoustic"
+    ],
     "youtubeVideoId": "ivyRdPeNp48",
     "backupVideoIds": []
   },
@@ -9176,9 +9520,18 @@
       "element": "earth"
     },
     "genres": [
-      "intercelestial"
+      "idm",
+      "indiepop"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "experimental",
+      "lo-fi-indie"
+    ],
+    "enTags": [
+      "hypnagogic pop",
+      "australian experimental",
+      "slacker rock"
+    ],
     "youtubeVideoId": "ZcqP_6zE8Ck",
     "backupVideoIds": []
   },
@@ -9890,11 +10243,16 @@
       "element": "air"
     },
     "genres": [
-      "intercelestial"
+      "hiphop",
+      "indiepop"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "rnb",
+      "indie-pop"
+    ],
     "enTags": [
-      "finnish hard rock"
+      "chill r&b",
+      "nyc indie rock"
     ],
     "youtubeVideoId": "RelckmeGtNk",
     "backupVideoIds": []
@@ -9988,9 +10346,21 @@
       "element": "fire"
     },
     "genres": [
-      "intercelestial"
+      "altrock",
+      "indiepop",
+      "hiphop",
+      "triphop"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "bedroom-pop",
+      "rnb"
+    ],
+    "enTags": [
+      "glasgow indie",
+      "scottish indie",
+      "bedroom pop",
+      "alternative r&b"
+    ],
     "youtubeVideoId": "10glRrkBSZ8",
     "backupVideoIds": []
   },
@@ -10362,9 +10732,15 @@
       "element": "earth"
     },
     "genres": [
-      "intercelestial"
+      "idm"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "experimental"
+    ],
+    "enTags": [
+      "canadian experimental",
+      "sound collage"
+    ],
     "youtubeVideoId": "1bgmbGq-p4c",
     "backupVideoIds": []
   },
@@ -10402,6 +10778,10 @@
       "intercelestial"
     ],
     "subgenres": [],
+    "enTags": [
+      "epic collage",
+      "utopian virtual"
+    ],
     "youtubeVideoId": "t3o-gXE1Q4c",
     "backupVideoIds": []
   },
@@ -10801,9 +11181,64 @@
       "element": "water"
     },
     "genres": [
-      "intercelestial"
+      "electronica",
+      "idm",
+      "ambient",
+      "jazz",
+      "artpop",
+      "techno",
+      "hiphop",
+      "triphop",
+      "classical"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "indietronica",
+      "experimental",
+      "cosmic-jazz",
+      "spiritual-jazz",
+      "ambient",
+      "hip-hop",
+      "house",
+      "dub",
+      "classical",
+      "minimalist",
+      "contemporary"
+    ],
+    "enTags": [
+      "african electronic",
+      "hypnagogic pop",
+      "experimental percussion",
+      "spectra",
+      "multidisciplinary",
+      "uk experimental electronic",
+      "afrofuturism",
+      "mandible",
+      "deconstructed club",
+      "british experimental",
+      "spiritual jazz",
+      "modern electroacoustic",
+      "electra",
+      "sound art",
+      "irish experimental",
+      "field recording ambient",
+      "danish experimental",
+      "experimental ambient",
+      "new isolationism",
+      "indie hip hop",
+      "experimental synth",
+      "swedish experimental",
+      "outsider house",
+      "space ambient",
+      "ambient dub",
+      "experimental electronic",
+      "swiss experimental",
+      "african-american classical",
+      "minimalism",
+      "american contemporary classical",
+      "contemporary classical",
+      "electroacoustic",
+      "spoken word"
+    ],
     "youtubeVideoId": "uPiivfT5xNY",
     "backupVideoIds": []
   },
@@ -12170,9 +12605,53 @@
       "element": "air"
     },
     "genres": [
-      "intercelestial"
+      "electronica",
+      "ambient",
+      "techno",
+      "idm",
+      "triphop",
+      "jazz",
+      "dnb"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "indietronica",
+      "techno",
+      "experimental",
+      "dub",
+      "cosmic-jazz",
+      "house",
+      "ambient",
+      "minimal",
+      "future-garage",
+      "idm",
+      "acid",
+      "breakbeat"
+    ],
+    "enTags": [
+      "bristol electronic",
+      "ambient techno",
+      "experimental techno",
+      "modular synth",
+      "experimental dub",
+      "afrofuturism",
+      "outsider house",
+      "space ambient",
+      "ambient dub",
+      "scottish electronic",
+      "experimental house",
+      "float house",
+      "microhouse",
+      "future garage",
+      "nyc club",
+      "acid idm",
+      "braindance",
+      "abstract",
+      "intelligent dance music",
+      "drill and bass",
+      "deep idm",
+      "uk experimental electronic",
+      "deconstructed club"
+    ],
     "youtubeVideoId": "A8gDpqoLiHU",
     "backupVideoIds": []
   },
@@ -12238,9 +12717,20 @@
       "element": "air"
     },
     "genres": [
-      "intercelestial"
+      "electronica",
+      "idm",
+      "jazz"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "indietronica",
+      "experimental",
+      "jazz-fusion"
+    ],
+    "enTags": [
+      "african electronic",
+      "african experimental",
+      "afrobeat fusion"
+    ],
     "youtubeVideoId": "pzn5CN7XtVk",
     "backupVideoIds": []
   },
@@ -12654,9 +13144,37 @@
       "element": "air"
     },
     "genres": [
-      "intercelestial"
+      "idm",
+      "artpop",
+      "ambient",
+      "classical",
+      "folk",
+      "jazz"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "experimental",
+      "chamber-pop",
+      "classical",
+      "ambient-folk",
+      "ambient",
+      "cosmic-jazz",
+      "ambient-jazz"
+    ],
+    "enTags": [
+      "modern electroacoustic",
+      "chamber pop",
+      "spectra",
+      "modern chamber music",
+      "experimental synth",
+      "pastoral",
+      "ambient synth",
+      "modular synth",
+      "experimental ambient",
+      "australian ambient",
+      "australian experimental",
+      "fourth world",
+      "ambient jazz"
+    ],
     "youtubeVideoId": "WejvKUX23vo",
     "backupVideoIds": []
   },
@@ -13796,11 +14314,43 @@
       "element": "earth"
     },
     "genres": [
-      "intercelestial"
+      "electronica",
+      "artpop",
+      "hiphop",
+      "idm",
+      "triphop",
+      "techno",
+      "ambient"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "chillwave",
+      "art-pop",
+      "rnb",
+      "experimental-pop",
+      "soul",
+      "experimental"
+    ],
     "enTags": [
-      "ecuadorian indie"
+      "ecuadorian indie",
+      "classic girl group",
+      "chillwave",
+      "art pop",
+      "canadian electropop",
+      "experimental r&b",
+      "electra",
+      "hamilton on indie",
+      "spectra",
+      "deep latin alternative",
+      "experimental pop",
+      "vapor soul",
+      "canadian indie",
+      "norwegian experimental",
+      "latintronica",
+      "puerto rican indie",
+      "australian experimental",
+      "shimmer pop",
+      "latin indie",
+      "latin alternative"
     ],
     "youtubeVideoId": "yuCQ2BC_gW0",
     "backupVideoIds": []
@@ -13962,11 +14512,22 @@
       "element": "earth"
     },
     "genres": [
-      "intercelestial"
+      "indiepop",
+      "folk",
+      "hiphop",
+      "idm",
+      "triphop"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "lo-fi-indie",
+      "experimental-hiphop"
+    ],
     "enTags": [
-      "hypnagogic pop"
+      "hypnagogic pop",
+      "slacker rock",
+      "british singer-songwriter",
+      "experimental hip hop",
+      "minimal dnb"
     ],
     "youtubeVideoId": "YdNSZUJHFc4",
     "backupVideoIds": []
@@ -14541,9 +15102,19 @@
       "element": "air"
     },
     "genres": [
-      "intercelestial"
+      "idm",
+      "indiepop"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "experimental",
+      "indie-pop"
+    ],
+    "enTags": [
+      "danish experimental",
+      "danish punk",
+      "danish indie pop",
+      "musique concrète"
+    ],
     "youtubeVideoId": "293h0iBQqWY",
     "backupVideoIds": []
   },
@@ -14953,11 +15524,77 @@
       "element": "air"
     },
     "genres": [
-      "intercelestial"
+      "idm",
+      "ambient",
+      "industrial",
+      "triphop",
+      "techno",
+      "electronica",
+      "jazz",
+      "indiepop",
+      "artpop",
+      "darkwave",
+      "altrock"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "experimental",
+      "industrial",
+      "cosmic-jazz",
+      "dub",
+      "house",
+      "drone",
+      "ambient",
+      "free-jazz",
+      "indie-pop",
+      "indietronica",
+      "noise"
+    ],
     "enTags": [
-      "indian instrumental rock"
+      "experimental percussion",
+      "spectra",
+      "mandible",
+      "british industrial",
+      "fourth world",
+      "weightless",
+      "abstract",
+      "dub metal",
+      "outsider house",
+      "new isolationism",
+      "drone",
+      "ambient",
+      "hypnagogic pop",
+      "afrofuturism",
+      "space ambient",
+      "ambient dub",
+      "experimental synth",
+      "experimental electronic",
+      "experimental jazz",
+      "totalism",
+      "experimental indie rock",
+      "microtonal",
+      "baltimore indie",
+      "math rock",
+      "crank wave",
+      "electra",
+      "australian experimental",
+      "electroacoustic improvisation",
+      "modern electroacoustic",
+      "experimental guitar",
+      "sound art",
+      "australian ambient",
+      "lowercase",
+      "drone metal",
+      "russian electronic",
+      "canadian post-punk",
+      "canadian psychedelic rock",
+      "british experimental",
+      "experimental ambient",
+      "swedish experimental",
+      "uk experimental electronic",
+      "deconstructed club",
+      "melbourne indie",
+      "noise rock",
+      "spoken word"
     ],
     "youtubeVideoId": "MQZ1H7rTbF4",
     "backupVideoIds": []
@@ -15980,9 +16617,21 @@
       "element": "air"
     },
     "genres": [
-      "intercelestial"
+      "ambient"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "ambient",
+      "drone"
+    ],
+    "enTags": [
+      "organic ambient",
+      "field recording ambient",
+      "drone ambient",
+      "ambient synth",
+      "ambient guitar",
+      "j-ambient",
+      "ambient"
+    ],
     "youtubeVideoId": "MifSp4KmuYk",
     "backupVideoIds": []
   },
@@ -16268,9 +16917,39 @@
       "element": "air"
     },
     "genres": [
-      "intercelestial"
+      "industrial",
+      "altrock",
+      "jazz",
+      "classical",
+      "idm",
+      "ambient",
+      "folk"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "noise",
+      "dark-jazz",
+      "minimalist",
+      "free-jazz",
+      "drone",
+      "experimental",
+      "freak-folk"
+    ],
+    "enTags": [
+      "modern noise rock",
+      "dark jazz",
+      "totalism",
+      "post-minimalism",
+      "tzadik",
+      "laboratorio",
+      "drone rock",
+      "experimental percussion",
+      "avant-garde jazz",
+      "columbus ohio indie",
+      "freak folk",
+      "american primitive",
+      "uk americana",
+      "slovenian indie"
+    ],
     "youtubeVideoId": "rpx_kCcw-IQ",
     "backupVideoIds": []
   },
@@ -17851,9 +18530,23 @@
       "element": "water"
     },
     "genres": [
-      "intercelestial"
+      "ambient",
+      "triphop",
+      "techno",
+      "idm"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "dub",
+      "experimental",
+      "techno"
+    ],
+    "enTags": [
+      "grimewave",
+      "ambient dub",
+      "uk bass",
+      "experimental techno",
+      "modular synth"
+    ],
     "youtubeVideoId": "AWthU7yEgjc",
     "backupVideoIds": []
   },
@@ -17892,9 +18585,17 @@
       "element": "earth"
     },
     "genres": [
-      "intercelestial"
+      "hiphop"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "hip-hop"
+    ],
+    "enTags": [
+      "austin rock",
+      "texasgaze",
+      "austin hip hop",
+      "austindie"
+    ],
     "youtubeVideoId": "53LSB-qMrCw",
     "backupVideoIds": []
   },
@@ -18101,9 +18802,36 @@
       "element": "earth"
     },
     "genres": [
-      "intercelestial"
+      "artpop",
+      "idm",
+      "classical",
+      "ambient",
+      "jazz",
+      "darkwave",
+      "electronica"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "experimental-pop",
+      "experimental",
+      "free-jazz",
+      "synth-pop",
+      "indietronica"
+    ],
+    "enTags": [
+      "bubblegrunge",
+      "experimental pop",
+      "experimental",
+      "hypnagogic pop",
+      "uk alternative pop",
+      "british soundtrack",
+      "soundtrack",
+      "experimental synth",
+      "experimental jazz",
+      "spectra",
+      "french synthpop",
+      "early synthpop",
+      "vintage french electronic"
+    ],
     "youtubeVideoId": "x5qsEoRdmC8",
     "backupVideoIds": []
   },
@@ -18139,9 +18867,33 @@
       "element": "earth"
     },
     "genres": [
-      "intercelestial"
+      "jazz",
+      "ambient",
+      "electronica",
+      "idm",
+      "altrock",
+      "folk"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz",
+      "ambient",
+      "experimental",
+      "indietronica",
+      "ambient-folk"
+    ],
+    "enTags": [
+      "polish modern jazz",
+      "polish free jazz",
+      "polish jazz",
+      "polish ambient",
+      "polish experimental electronic",
+      "polish experimental",
+      "polish alternative rock",
+      "ambient folk",
+      "experimental jazz",
+      "free jazz"
+    ],
     "youtubeVideoId": "NbCHhGstOBc",
     "backupVideoIds": []
   },
@@ -18155,9 +18907,56 @@
       "element": "air"
     },
     "genres": [
-      "intercelestial"
+      "indiepop",
+      "techno",
+      "hiphop",
+      "ambient",
+      "dnb",
+      "electronica",
+      "idm",
+      "artpop"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "indie-pop",
+      "house",
+      "tech-house",
+      "hip-hop",
+      "future-garage",
+      "deep-house",
+      "minimal",
+      "indietronica",
+      "glitch-pop",
+      "lo-fi",
+      "techno",
+      "idm",
+      "experimental"
+    ],
+    "enTags": [
+      "english indie rock",
+      "minimal tech house",
+      "irish hip hop",
+      "ambient house",
+      "float house",
+      "uk house",
+      "future garage",
+      "deep house",
+      "microhouse",
+      "electronica",
+      "wonky",
+      "canadian electronic",
+      "lo-fi house",
+      "shiver pop",
+      "ambient techno",
+      "intelligent dance music",
+      "canadian house",
+      "uk alternative pop",
+      "experimental techno",
+      "scottish electronic",
+      "weightless",
+      "australian experimental",
+      "electra",
+      "spoken word"
+    ],
     "youtubeVideoId": "uo0SZumXLhE",
     "backupVideoIds": []
   },
@@ -18398,9 +19197,37 @@
       "element": "earth"
     },
     "genres": [
-      "intercelestial"
+      "idm",
+      "ambient",
+      "artpop",
+      "indiepop",
+      "techno",
+      "electronica",
+      "hiphop",
+      "triphop",
+      "altrock"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "experimental",
+      "ambient",
+      "lo-fi-indie",
+      "house",
+      "indie-pop",
+      "experimental-hiphop",
+      "art-pop"
+    ],
+    "enTags": [
+      "danish experimental",
+      "hypnagogic pop",
+      "ambient pop",
+      "slacker rock",
+      "outsider house",
+      "deconstructed club",
+      "new isolationism",
+      "danish indie pop",
+      "experimental hip hop",
+      "shoegaze"
+    ],
     "youtubeVideoId": "mc4HY-D46-w",
     "backupVideoIds": []
   },
@@ -19300,9 +20127,21 @@
       "element": "earth"
     },
     "genres": [
-      "intercelestial"
+      "indiepop"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "jangle-pop",
+      "twee-pop"
+    ],
+    "enTags": [
+      "modern power pop",
+      "modern jangle pop",
+      "stockholm indie",
+      "twee pop",
+      "c86",
+      "tape club",
+      "jangle pop"
+    ],
     "youtubeVideoId": "JUiUPj0eXn8",
     "backupVideoIds": []
   },
@@ -19454,9 +20293,25 @@
       "element": "fire"
     },
     "genres": [
-      "intercelestial"
+      "ambient",
+      "triphop",
+      "techno",
+      "idm"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "dub",
+      "experimental",
+      "house",
+      "ambient",
+      "idm"
+    ],
+    "enTags": [
+      "ambient dub",
+      "experimental house",
+      "experimental electronic",
+      "experimental ambient",
+      "idm"
+    ],
     "youtubeVideoId": "crcau7nw2Ho",
     "backupVideoIds": []
   },
@@ -19938,9 +20793,24 @@
       "element": "earth"
     },
     "genres": [
-      "intercelestial"
+      "altrock",
+      "darkwave",
+      "indiepop",
+      "hiphop",
+      "triphop"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "bedroom-pop",
+      "rnb"
+    ],
+    "enTags": [
+      "danish indie",
+      "danish punk",
+      "danish alternative rock",
+      "danish post-punk",
+      "bedroom pop",
+      "alternative r&b"
+    ],
     "youtubeVideoId": "gtUq6Tcithw",
     "backupVideoIds": []
   },
@@ -20422,9 +21292,25 @@
       "element": "water"
     },
     "genres": [
-      "intercelestial"
+      "techno",
+      "electronica"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "house",
+      "tech-house"
+    ],
+    "enTags": [
+      "uk dance",
+      "deep groove house",
+      "uk pop",
+      "australian electropop",
+      "uk house",
+      "house",
+      "tech house",
+      "circuit",
+      "post-disco",
+      "hard house"
+    ],
     "youtubeVideoId": "kJ1ykxdsz9w",
     "backupVideoIds": []
   },
@@ -23079,9 +23965,17 @@
       "element": "fire"
     },
     "genres": [
-      "intercelestial"
+      "hiphop"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "hip-hop"
+    ],
+    "enTags": [
+      "nottingham hip hop",
+      "uk drill",
+      "uk hip hop",
+      "uk alternative hip hop"
+    ],
     "youtubeVideoId": "8rpfxybcUts",
     "backupVideoIds": []
   },
@@ -23786,11 +24680,40 @@
       "element": "earth"
     },
     "genres": [
-      "intercelestial"
+      "indiepop",
+      "folk",
+      "idm",
+      "hiphop",
+      "triphop",
+      "ambient",
+      "artpop",
+      "techno",
+      "electronica"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "lo-fi-indie",
+      "experimental",
+      "rnb",
+      "ambient",
+      "experimental-hiphop",
+      "house"
+    ],
     "enTags": [
-      "hypnagogic pop"
+      "hypnagogic pop",
+      "slacker rock",
+      "british singer-songwriter",
+      "australian experimental",
+      "experimental r&b",
+      "ambient pop",
+      "experimental hip hop",
+      "outsider house",
+      "deconstructed club",
+      "new isolationism",
+      "experimental synth",
+      "gauze pop",
+      "spoken word",
+      "musique concrète",
+      "experimental"
     ],
     "youtubeVideoId": "kIFG56TSa8M",
     "backupVideoIds": []
@@ -23888,9 +24811,29 @@
       "element": "air"
     },
     "genres": [
-      "intercelestial"
+      "industrial",
+      "idm",
+      "altrock"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "industrial",
+      "power-electronics",
+      "experimental",
+      "noise"
+    ],
+    "enTags": [
+      "autonomous black metal",
+      "keller synth",
+      "british industrial",
+      "power electronics",
+      "british experimental",
+      "noise",
+      "uk noise rock",
+      "ukrainian black metal",
+      "drain",
+      "deconstructed club",
+      "black metal"
+    ],
     "youtubeVideoId": "S9A-rS5iCew",
     "backupVideoIds": []
   },
@@ -24325,9 +25268,27 @@
       "element": "air"
     },
     "genres": [
-      "intercelestial"
+      "indiepop",
+      "idm",
+      "altrock",
+      "artpop",
+      "industrial"
     ],
-    "subgenres": [],
+    "subgenres": [
+      "experimental",
+      "indie-pop",
+      "noise"
+    ],
+    "enTags": [
+      "experimental indie",
+      "hypnagogic pop",
+      "nyc indie rock",
+      "art punk",
+      "modern noise rock",
+      "epic collage",
+      "utopian virtual",
+      "noise rock"
+    ],
     "youtubeVideoId": "9HaaFx1t0Q0",
     "backupVideoIds": []
   },

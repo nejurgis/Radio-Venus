@@ -14170,7 +14170,23 @@
     "birthDate": "1977-11-19",
     "genres": [],
     "subgenres": [],
-    "youtubeId": null
+    "youtubeId": null,
+    "enTags": [
+      "australian experimental",
+      "hypnagogic pop",
+      "cork indie",
+      "irish indie rock",
+      "experimental jazz",
+      "spectra",
+      "irish singer-songwriter",
+      "irish experimental",
+      "electra",
+      "dublin indie",
+      "experimental electronic",
+      "galway indie",
+      "tribal ambient",
+      "experimental percussion"
+    ]
   },
   {
     "name": "Wu-Tang Clan",
@@ -15723,7 +15739,11 @@
     "genres": [],
     "subgenres": [],
     "enTags": [
-      "hypnagogic pop"
+      "hypnagogic pop",
+      "slacker rock",
+      "british singer-songwriter",
+      "experimental hip hop",
+      "minimal dnb"
     ],
     "youtubeVideoId": "YdNSZUJHFc4",
     "backupVideoIds": [],
@@ -15739,7 +15759,11 @@
     "youtubeVideoId": "t3o-gXE1Q4c",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Serena's Riff"
+    "handpickedTrack": "Serena's Riff",
+    "enTags": [
+      "epic collage",
+      "utopian virtual"
+    ]
   },
   {
     "name": "AV Moves",
@@ -15751,7 +15775,18 @@
     "youtubeVideoId": "RdJoZIJ4-20",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "77mph"
+    "handpickedTrack": "77mph",
+    "enTags": [
+      "ambient dub",
+      "experimental percussion",
+      "ambient synth",
+      "experimental electronic",
+      "experimental ambient",
+      "spanish experimental",
+      "experimental synth",
+      "indonesian experimental",
+      "tribal ambient"
+    ]
   },
   {
     "name": "Gajek",
@@ -15763,7 +15798,39 @@
     "youtubeVideoId": "54ISt3OAj1w",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Dig It All Up Again"
+    "handpickedTrack": "Dig It All Up Again",
+    "enTags": [
+      "glitch",
+      "mandible",
+      "uk bass",
+      "experimental ambient",
+      "weightless",
+      "swedish techno",
+      "scottish electronic",
+      "uk experimental electronic",
+      "deconstructed club",
+      "italian experimental",
+      "fluxwork",
+      "grimewave",
+      "british experimental",
+      "acid idm",
+      "drill and bass",
+      "deep idm",
+      "intelligent dance music",
+      "sound art",
+      "vaporwave",
+      "australian experimental",
+      "australian ambient",
+      "wonky",
+      "spectra",
+      "dutch experimental",
+      "warm drone",
+      "drone",
+      "ambient",
+      "electroacoustic",
+      "idm",
+      "experimental"
+    ]
   },
   {
     "name": "great area",
@@ -15775,7 +15842,12 @@
     "youtubeVideoId": "ZcqP_6zE8Ck",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Rain"
+    "handpickedTrack": "Rain",
+    "enTags": [
+      "hypnagogic pop",
+      "australian experimental",
+      "slacker rock"
+    ]
   },
   {
     "name": "Spriitzz",
@@ -15786,7 +15858,19 @@
     "youtubeVideoId": "kJ1ykxdsz9w",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Where R U - Live Mix"
+    "handpickedTrack": "Where R U - Live Mix",
+    "enTags": [
+      "uk dance",
+      "deep groove house",
+      "uk pop",
+      "australian electropop",
+      "uk house",
+      "house",
+      "tech house",
+      "circuit",
+      "post-disco",
+      "hard house"
+    ]
   },
   {
     "name": "Maria Somerville",
@@ -15820,7 +15904,16 @@
     "youtubeVideoId": "JUiUPj0eXn8",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Hey Lover"
+    "handpickedTrack": "Hey Lover",
+    "enTags": [
+      "modern power pop",
+      "modern jangle pop",
+      "stockholm indie",
+      "twee pop",
+      "c86",
+      "tape club",
+      "jangle pop"
+    ]
   },
   {
     "name": "Eterna",
@@ -15830,9 +15923,15 @@
     "genres": [],
     "subgenres": [],
     "enTags": [
-      "brazilian power metal",
-      "metal cristao",
-      "brazilian metal"
+      "hypertrance",
+      "deconstructed club",
+      "grimewave",
+      "new isolationism",
+      "hypnagogic pop",
+      "glitch pop",
+      "epic collage",
+      "sound collage",
+      "shanghai indie"
     ],
     "youtubeVideoId": "pOtWfs6aBbE",
     "backupVideoIds": [],
@@ -15849,7 +15948,11 @@
     "youtubeVideoId": "N3ZfcaijhJc",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Walking Emoji"
+    "handpickedTrack": "Walking Emoji",
+    "enTags": [
+      "portuguese experimental",
+      "hypertrance"
+    ]
   },
   {
     "name": "Tortoise",
@@ -15884,7 +15987,23 @@
     "youtubeVideoId": "rpx_kCcw-IQ",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "An L.A. Funeral"
+    "handpickedTrack": "An L.A. Funeral",
+    "enTags": [
+      "modern noise rock",
+      "dark jazz",
+      "totalism",
+      "post-minimalism",
+      "tzadik",
+      "laboratorio",
+      "drone rock",
+      "experimental percussion",
+      "avant-garde jazz",
+      "columbus ohio indie",
+      "freak folk",
+      "american primitive",
+      "uk americana",
+      "slovenian indie"
+    ]
   },
   {
     "name": "goat (JP)",
@@ -15896,7 +16015,17 @@
     "youtubeVideoId": "ivyRdPeNp48",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Quest"
+    "handpickedTrack": "Quest",
+    "enTags": [
+      "modern electroacoustic",
+      "mandible",
+      "sound art",
+      "experimental percussion",
+      "peruvian experimental",
+      "peruvian indie",
+      "belgian experimental",
+      "electroacoustic"
+    ]
   },
   {
     "name": "Brandee Younger",
@@ -15955,7 +16084,16 @@
     "youtubeVideoId": "MifSp4KmuYk",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Plains Of Paradise"
+    "handpickedTrack": "Plains Of Paradise",
+    "enTags": [
+      "organic ambient",
+      "field recording ambient",
+      "drone ambient",
+      "ambient synth",
+      "ambient guitar",
+      "j-ambient",
+      "ambient"
+    ]
   },
   {
     "name": "Blood Orange",
@@ -16021,7 +16159,32 @@
     "youtubeVideoId": "A8gDpqoLiHU",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Running Back Into Myself"
+    "handpickedTrack": "Running Back Into Myself",
+    "enTags": [
+      "bristol electronic",
+      "ambient techno",
+      "experimental techno",
+      "modular synth",
+      "experimental dub",
+      "afrofuturism",
+      "outsider house",
+      "space ambient",
+      "ambient dub",
+      "scottish electronic",
+      "experimental house",
+      "float house",
+      "microhouse",
+      "future garage",
+      "nyc club",
+      "acid idm",
+      "braindance",
+      "abstract",
+      "intelligent dance music",
+      "drill and bass",
+      "deep idm",
+      "uk experimental electronic",
+      "deconstructed club"
+    ]
   },
   {
     "name": "VS--55",
@@ -16033,7 +16196,20 @@
     "youtubeVideoId": "S9A-rS5iCew",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Solbacken / Gör allt till inget"
+    "handpickedTrack": "Solbacken / Gör allt till inget",
+    "enTags": [
+      "autonomous black metal",
+      "keller synth",
+      "british industrial",
+      "power electronics",
+      "british experimental",
+      "noise",
+      "uk noise rock",
+      "ukrainian black metal",
+      "drain",
+      "deconstructed club",
+      "black metal"
+    ]
   },
   {
     "name": "Quiet Light",
@@ -16045,7 +16221,13 @@
     "youtubeVideoId": "53LSB-qMrCw",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Bronco"
+    "handpickedTrack": "Bronco",
+    "enTags": [
+      "austin rock",
+      "texasgaze",
+      "austin hip hop",
+      "austindie"
+    ]
   },
   {
     "name": "NEW YORK",
@@ -16077,7 +16259,13 @@
     "youtubeVideoId": "8rpfxybcUts",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Mr.Cooke"
+    "handpickedTrack": "Mr.Cooke",
+    "enTags": [
+      "nottingham hip hop",
+      "uk drill",
+      "uk hip hop",
+      "uk alternative hip hop"
+    ]
   },
   {
     "name": "Vanessa Amara",
@@ -16130,7 +16318,15 @@
     "youtubeVideoId": "gtUq6Tcithw",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Marigold"
+    "handpickedTrack": "Marigold",
+    "enTags": [
+      "danish indie",
+      "danish punk",
+      "danish alternative rock",
+      "danish post-punk",
+      "bedroom pop",
+      "alternative r&b"
+    ]
   },
   {
     "name": "Raisa K",
@@ -16141,7 +16337,22 @@
     "youtubeVideoId": "x5qsEoRdmC8",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Step"
+    "handpickedTrack": "Step",
+    "enTags": [
+      "bubblegrunge",
+      "experimental pop",
+      "experimental",
+      "hypnagogic pop",
+      "uk alternative pop",
+      "british soundtrack",
+      "soundtrack",
+      "experimental synth",
+      "experimental jazz",
+      "spectra",
+      "french synthpop",
+      "early synthpop",
+      "vintage french electronic"
+    ]
   },
   {
     "name": "feeo",
@@ -16152,7 +16363,14 @@
     "youtubeVideoId": "mOFEKL-tpnY",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Win!"
+    "handpickedTrack": "Win!",
+    "enTags": [
+      "one-person band",
+      "experimental r&b",
+      "oxford indie",
+      "indie r&b",
+      "experimental"
+    ]
   },
   {
     "name": "Jürg Frey",
@@ -16206,7 +16424,16 @@
     "youtubeVideoId": "k5VSdpwvYKk",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "The Notes of Her Dreams"
+    "handpickedTrack": "The Notes of Her Dreams",
+    "enTags": [
+      "persian neo-traditional",
+      "iranian experimental",
+      "persian traditional",
+      "tar",
+      "santur",
+      "traditional music",
+      "ambient jazz"
+    ]
   },
   {
     "name": "JJJJJerome Ellis",
@@ -16218,7 +16445,42 @@
     "youtubeVideoId": "uPiivfT5xNY",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Evensong, part 1 (for and after June Kramer)"
+    "handpickedTrack": "Evensong, part 1 (for and after June Kramer)",
+    "enTags": [
+      "african electronic",
+      "hypnagogic pop",
+      "experimental percussion",
+      "spectra",
+      "multidisciplinary",
+      "uk experimental electronic",
+      "afrofuturism",
+      "mandible",
+      "deconstructed club",
+      "british experimental",
+      "spiritual jazz",
+      "modern electroacoustic",
+      "electra",
+      "sound art",
+      "irish experimental",
+      "field recording ambient",
+      "danish experimental",
+      "experimental ambient",
+      "new isolationism",
+      "indie hip hop",
+      "experimental synth",
+      "swedish experimental",
+      "outsider house",
+      "space ambient",
+      "ambient dub",
+      "experimental electronic",
+      "swiss experimental",
+      "african-american classical",
+      "minimalism",
+      "american contemporary classical",
+      "contemporary classical",
+      "electroacoustic",
+      "spoken word"
+    ]
   },
   {
     "name": "YHWH Nailgun",
@@ -16230,7 +16492,17 @@
     "youtubeVideoId": "9HaaFx1t0Q0",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Castrato Raw (Fullback)"
+    "handpickedTrack": "Castrato Raw (Fullback)",
+    "enTags": [
+      "experimental indie",
+      "hypnagogic pop",
+      "nyc indie rock",
+      "art punk",
+      "modern noise rock",
+      "epic collage",
+      "utopian virtual",
+      "noise rock"
+    ]
   },
   {
     "name": "J. Albert",
@@ -16262,7 +16534,14 @@
     "youtubeVideoId": "AWthU7yEgjc",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Terminal"
+    "handpickedTrack": "Terminal",
+    "enTags": [
+      "grimewave",
+      "ambient dub",
+      "uk bass",
+      "experimental techno",
+      "modular synth"
+    ]
   },
   {
     "name": "Mark Ernestus’ Ndagga Rhythm Force",
@@ -16293,7 +16572,24 @@
     "youtubeVideoId": "vrOCFDqP-rc",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Coping Mechanism"
+    "handpickedTrack": "Coping Mechanism",
+    "enTags": [
+      "therapy",
+      "experimental ambient",
+      "fourth world",
+      "deconstructed club",
+      "new isolationism",
+      "grimewave",
+      "british experimental",
+      "nyc club",
+      "hypnagogic pop",
+      "experimental electronic",
+      "experimental dub",
+      "uk bass",
+      "outsider",
+      "experimental synth",
+      "uk experimental electronic"
+    ]
   },
   {
     "name": "Jaan",
@@ -16305,7 +16601,11 @@
     "youtubeVideoId": "1bgmbGq-p4c",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "The Lush Greens Of This Restless Mind"
+    "handpickedTrack": "The Lush Greens Of This Restless Mind",
+    "enTags": [
+      "canadian experimental",
+      "sound collage"
+    ]
   },
   {
     "name": "gyrofield",
@@ -16400,7 +16700,21 @@
     "youtubeVideoId": "sQ9hOLpn7zo",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Blossoms In Her Mind"
+    "handpickedTrack": "Blossoms In Her Mind",
+    "enTags": [
+      "psych gaze",
+      "american post-punk",
+      "experimental indie",
+      "new york shoegaze",
+      "neo-psicodelia brasileira",
+      "neo-psychedelic",
+      "irish indie rock",
+      "chicago indie",
+      "popgaze",
+      "spectra",
+      "modern noise rock",
+      "melbourne indie"
+    ]
   },
   {
     "name": "NINA",
@@ -16456,7 +16770,22 @@
     "youtubeVideoId": "WejvKUX23vo",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Carnets"
+    "handpickedTrack": "Carnets",
+    "enTags": [
+      "modern electroacoustic",
+      "chamber pop",
+      "spectra",
+      "modern chamber music",
+      "experimental synth",
+      "pastoral",
+      "ambient synth",
+      "modular synth",
+      "experimental ambient",
+      "australian ambient",
+      "australian experimental",
+      "fourth world",
+      "ambient jazz"
+    ]
   },
   {
     "name": "Andrew Aged",
@@ -16468,7 +16797,13 @@
     "youtubeVideoId": "fi6--asHyEA",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "No famine"
+    "handpickedTrack": "No famine",
+    "enTags": [
+      "trap soul",
+      "alternative r&b",
+      "modern indie pop",
+      "indie hip hop"
+    ]
   },
   {
     "name": "Brighde Chaimbeul",
@@ -16640,7 +16975,19 @@
     "youtubeVideoId": "7on4WMXq3e8",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Be Kind"
+    "handpickedTrack": "Be Kind",
+    "enTags": [
+      "uk contemporary r&b",
+      "alternative r&b",
+      "experimental r&b",
+      "rage rap",
+      "dutch r&b",
+      "indie r&b",
+      "sudanese pop",
+      "minnesota hip hop",
+      "experimental hip hop",
+      "hypnagogic pop"
+    ]
   },
   {
     "name": "Kingdom Molongi",
@@ -16652,7 +16999,12 @@
     "youtubeVideoId": "pzn5CN7XtVk",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Boya Kotala"
+    "handpickedTrack": "Boya Kotala",
+    "enTags": [
+      "african electronic",
+      "african experimental",
+      "afrobeat fusion"
+    ]
   },
   {
     "name": "Lolina",
@@ -16681,7 +17033,8 @@
     "genres": [],
     "subgenres": [],
     "enTags": [
-      "finnish hard rock"
+      "chill r&b",
+      "nyc indie rock"
     ],
     "youtubeVideoId": "RelckmeGtNk",
     "backupVideoIds": [],
@@ -16698,7 +17051,19 @@
     "youtubeVideoId": "NbCHhGstOBc",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Ada Kaleh"
+    "handpickedTrack": "Ada Kaleh",
+    "enTags": [
+      "polish modern jazz",
+      "polish free jazz",
+      "polish jazz",
+      "polish ambient",
+      "polish experimental electronic",
+      "polish experimental",
+      "polish alternative rock",
+      "ambient folk",
+      "experimental jazz",
+      "free jazz"
+    ]
   },
   {
     "name": "Hayden Pedigo",
@@ -16769,7 +17134,13 @@
     "youtubeVideoId": "293h0iBQqWY",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Not Offended"
+    "handpickedTrack": "Not Offended",
+    "enTags": [
+      "danish experimental",
+      "danish punk",
+      "danish indie pop",
+      "musique concrète"
+    ]
   },
   {
     "name": "Real Lies",
@@ -16780,7 +17151,33 @@
     "youtubeVideoId": "uo0SZumXLhE",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Finding Money"
+    "handpickedTrack": "Finding Money",
+    "enTags": [
+      "english indie rock",
+      "minimal tech house",
+      "irish hip hop",
+      "ambient house",
+      "float house",
+      "uk house",
+      "future garage",
+      "deep house",
+      "microhouse",
+      "electronica",
+      "wonky",
+      "canadian electronic",
+      "lo-fi house",
+      "shiver pop",
+      "ambient techno",
+      "intelligent dance music",
+      "canadian house",
+      "uk alternative pop",
+      "experimental techno",
+      "scottish electronic",
+      "weightless",
+      "australian experimental",
+      "electra",
+      "spoken word"
+    ]
   },
   {
     "name": "RIP Swirl",
@@ -16792,7 +17189,19 @@
     "youtubeVideoId": "mc4HY-D46-w",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Spirals On My Tongue"
+    "handpickedTrack": "Spirals On My Tongue",
+    "enTags": [
+      "danish experimental",
+      "hypnagogic pop",
+      "ambient pop",
+      "slacker rock",
+      "outsider house",
+      "deconstructed club",
+      "new isolationism",
+      "danish indie pop",
+      "experimental hip hop",
+      "shoegaze"
+    ]
   },
   {
     "name": "Deer park",
@@ -16804,7 +17213,10 @@
     "youtubeVideoId": "5Bio-Jh7DzY",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Crystal"
+    "handpickedTrack": "Crystal",
+    "enTags": [
+      "epic collage"
+    ]
   },
   {
     "name": "Corbin",
@@ -16873,7 +17285,14 @@
     "youtubeVideoId": "crcau7nw2Ho",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Highway"
+    "handpickedTrack": "Highway",
+    "enTags": [
+      "ambient dub",
+      "experimental house",
+      "experimental electronic",
+      "experimental ambient",
+      "idm"
+    ]
   },
   {
     "name": "Aasthma",
@@ -16884,7 +17303,35 @@
     "youtubeVideoId": "DetSWbpy34A",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Pulteney Symphony"
+    "handpickedTrack": "Pulteney Symphony",
+    "enTags": [
+      "mandible",
+      "swedish techno",
+      "swedish electronic",
+      "minimal dub",
+      "grimewave",
+      "uk experimental electronic",
+      "experimental electronic",
+      "minimal dnb",
+      "bristol electronic",
+      "drumfunk",
+      "irish experimental electronic",
+      "experimental techno",
+      "modular techno",
+      "weightless",
+      "deconstructed club",
+      "new isolationism",
+      "ambient dub",
+      "outsider house",
+      "electra",
+      "dub techno",
+      "minimal techno",
+      "techno",
+      "ambient techno",
+      "intelligent dance music",
+      "uk bass",
+      "vapor pop"
+    ]
   },
   {
     "name": "Voice Actor",
@@ -16894,7 +17341,21 @@
     "genres": [],
     "subgenres": [],
     "enTags": [
-      "hypnagogic pop"
+      "hypnagogic pop",
+      "slacker rock",
+      "british singer-songwriter",
+      "australian experimental",
+      "experimental r&b",
+      "ambient pop",
+      "experimental hip hop",
+      "outsider house",
+      "deconstructed club",
+      "new isolationism",
+      "experimental synth",
+      "gauze pop",
+      "spoken word",
+      "musique concrète",
+      "experimental"
     ],
     "youtubeVideoId": "kIFG56TSa8M",
     "backupVideoIds": [],
@@ -16931,7 +17392,17 @@
     "youtubeVideoId": "sDt1KkTBAVo",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Charlotte & Pia"
+    "handpickedTrack": "Charlotte & Pia",
+    "enTags": [
+      "hypnagogic pop",
+      "deconstructed club",
+      "grimewave",
+      "new isolationism",
+      "bubblegum bass",
+      "experimental electronic",
+      "fourth world",
+      "experimental synth"
+    ]
   },
   {
     "name": "Maria Usbeck",
@@ -16941,7 +17412,26 @@
     "genres": [],
     "subgenres": [],
     "enTags": [
-      "ecuadorian indie"
+      "ecuadorian indie",
+      "classic girl group",
+      "chillwave",
+      "art pop",
+      "canadian electropop",
+      "experimental r&b",
+      "electra",
+      "hamilton on indie",
+      "spectra",
+      "deep latin alternative",
+      "experimental pop",
+      "vapor soul",
+      "canadian indie",
+      "norwegian experimental",
+      "latintronica",
+      "puerto rican indie",
+      "australian experimental",
+      "shimmer pop",
+      "latin indie",
+      "latin alternative"
     ],
     "youtubeVideoId": "yuCQ2BC_gW0",
     "backupVideoIds": [],
@@ -16958,7 +17448,13 @@
     "youtubeVideoId": "10glRrkBSZ8",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Into the Fall"
+    "handpickedTrack": "Into the Fall",
+    "enTags": [
+      "glasgow indie",
+      "scottish indie",
+      "bedroom pop",
+      "alternative r&b"
+    ]
   },
   {
     "name": "JakoJako",
@@ -17014,7 +17510,41 @@
     "youtubeVideoId": "OPLflNK_03M",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Rionnag a Tuath"
+    "handpickedTrack": "Rionnag a Tuath",
+    "enTags": [
+      "swedish experimental",
+      "spectra",
+      "electra",
+      "drone",
+      "experimental ambient",
+      "new isolationism",
+      "field recording",
+      "sound art",
+      "lowercase",
+      "british experimental",
+      "hauntology",
+      "mandible",
+      "modern electroacoustic",
+      "british electroacoustic",
+      "experimental synth",
+      "canadian experimental",
+      "modular synth",
+      "pastoral",
+      "drone ambient",
+      "warm drone",
+      "uk experimental electronic",
+      "experimental folk",
+      "laboratorio",
+      "iranian experimental",
+      "persian neo-traditional",
+      "compositional ambient",
+      "ambient pop",
+      "ambient",
+      "minimalism",
+      "acousmatic",
+      "glitch ambient",
+      "tape music"
+    ]
   },
   {
     "name": "Wicca Phase Springs Eternal",
@@ -17043,7 +17573,51 @@
     "genres": [],
     "subgenres": [],
     "enTags": [
-      "indian instrumental rock"
+      "experimental percussion",
+      "spectra",
+      "mandible",
+      "british industrial",
+      "fourth world",
+      "weightless",
+      "abstract",
+      "dub metal",
+      "outsider house",
+      "new isolationism",
+      "drone",
+      "ambient",
+      "hypnagogic pop",
+      "afrofuturism",
+      "space ambient",
+      "ambient dub",
+      "experimental synth",
+      "experimental electronic",
+      "experimental jazz",
+      "totalism",
+      "experimental indie rock",
+      "microtonal",
+      "baltimore indie",
+      "math rock",
+      "crank wave",
+      "electra",
+      "australian experimental",
+      "electroacoustic improvisation",
+      "modern electroacoustic",
+      "experimental guitar",
+      "sound art",
+      "australian ambient",
+      "lowercase",
+      "drone metal",
+      "russian electronic",
+      "canadian post-punk",
+      "canadian psychedelic rock",
+      "british experimental",
+      "experimental ambient",
+      "swedish experimental",
+      "uk experimental electronic",
+      "deconstructed club",
+      "melbourne indie",
+      "noise rock",
+      "spoken word"
     ],
     "youtubeVideoId": "MQZ1H7rTbF4",
     "backupVideoIds": [],
@@ -17069,7 +17643,8 @@
     "genres": [],
     "subgenres": [],
     "enTags": [
-      "social media pop"
+      "social media pop",
+      "viral rap"
     ],
     "youtubeVideoId": "pn_uc5pZkwA",
     "backupVideoIds": [],
