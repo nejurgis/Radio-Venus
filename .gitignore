@@ -5,3 +5,5 @@ dist/
 scripts/musicians.db
 scripts/genre-report*.json
 scripts/notfound-retry*.json
+import-part-*.json
+scripts/import-part-*.json
