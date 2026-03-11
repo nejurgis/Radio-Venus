@@ -48,7 +48,7 @@ let loadingAnimFrame = null;
 let loadStartTime = 0;
 const SILENT_FAIL_MS = 15000;
 const REPORT_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwDSNsMTMViSpOh4ZUZg8juXjI6MVY4Ptr8uu7ZWyjaiqP22hHouMkl7fqXEk1dEfVL/exec';
-const NEWSLETTER_ENDPOINT = 'YOUR_NEWSLETTER_APPS_SCRIPT_URL'; // new Apps Script with doGet writing email to sheet // paste deployed Google Apps Script web app URL here
+const NEWSLETTER_ENDPOINT = 'https://script.google.com/macros/s/AKfycbw3e83Z12sIjcW7uC3vJ9r1y5fzvYPLMD5W3mlKUVj0me3r4SI7Ixj4obBl-v68LnbO/exec'; // new Apps Script with doGet writing email to sheet // paste deployed Google Apps Script web app URL here
 let pendingSeekTime = 0;  // for shared links — seek once on first PLAYING
 
 let activeGenreLabel = null;       // label of the currently playing genre
