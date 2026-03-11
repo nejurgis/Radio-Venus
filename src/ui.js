@@ -450,16 +450,26 @@ let lastSecond = -1;
 let glideRaf = null;
 let isGliding = false;
 
+// Last-written SVG attribute values — skip setAttribute when unchanged
+// (each setAttribute call forces an SVG layout pass)
+let _lastArcCx = -1, _lastArcCy = -1, _lastClipW = -1;
+
 function setArcPosition(pct) {
-  const cx = pct * 10, cy = arcY(pct);
-  if (ui.progressClip) ui.progressClip.setAttribute('width', cx);
-  if (ui.playhead) {
+  const cx = Math.round(pct * 100) / 10;  // round to 1 decimal SVG unit
+  const cy = Math.round(arcY(pct) * 10) / 10;
+
+  if (ui.progressClip && cx !== _lastClipW) {
+    ui.progressClip.setAttribute('width', cx);
+    _lastClipW = cx;
+  }
+  if (ui.playhead && (cx !== _lastArcCx || cy !== _lastArcCy)) {
     ui.playhead.setAttribute('cx', cx);
     ui.playhead.setAttribute('cy', cy);
     if (ui.playheadHalo) {
       ui.playheadHalo.setAttribute('cx', cx);
       ui.playheadHalo.setAttribute('cy', cy);
     }
+    _lastArcCx = cx; _lastArcCy = cy;
   }
 }
 
@@ -515,6 +525,7 @@ export function resetProgress() {
     setArcPosition(0);
   }
 
+  _lastArcCx = -1; _lastArcCy = -1; _lastClipW = -1; // invalidate cache so next setArcPosition writes
   if (ui.bufferClip) ui.bufferClip.setAttribute('width', 0);
   if (ui.currentTime) ui.currentTime.textContent = '0:00';
   if (ui.duration) ui.duration.textContent = '0:00';

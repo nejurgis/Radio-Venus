@@ -32,7 +32,33 @@ let playingSubgenreId = null;
 let displayedGenreId = null;   // what's currently shown in the track list (may differ from playingGenreId while music plays)
 let displayedTracks = null;    // non-null only when displayed list differs from tracks (preview mode)
 let currentPlayingTrack = null; // the actual track object playing (survives tracks[] reshuffles)
-let progressInterval = null;
+// Progress loop — rAF-driven for smooth 60fps, polls YouTube API at 4Hz
+let _progressRaf   = null;
+let _progTime      = 0;   // last polled currentTime
+let _progDur       = 0;   // last polled duration
+let _progPollAt    = -Infinity; // performance.now() of last poll
+const _PROG_POLL_MS = 250; // poll YouTube API 4×/sec (fast enough, avoids IPC overhead)
+
+function startProgressLoop() {
+  if (_progressRaf) cancelAnimationFrame(_progressRaf);
+  function loop(now) {
+    _progressRaf = requestAnimationFrame(loop);
+    if (now - _progPollAt >= _PROG_POLL_MS || _progDur === 0) {
+      _progTime   = getCurrentTime();
+      _progDur    = getDuration();
+      _progPollAt = now;
+    }
+    // Linearly interpolate between polls; freeze when paused
+    const elapsed = isPaused ? 0 : Math.min((now - _progPollAt) / 1000, _PROG_POLL_MS / 1000);
+    updateProgress(_progTime + elapsed, _progDur);
+  }
+  _progressRaf = requestAnimationFrame(loop);
+}
+
+function stopProgressLoop() {
+  if (_progressRaf) cancelAnimationFrame(_progressRaf);
+  _progressRaf = null;
+}
 const failedIds = new Set();       // track indices that failed
 const trackVideoIndex = new Map(); // trackIndex → which video ID we're trying
 let hasPlayed = false;             // whether current video reached PLAYING
@@ -116,14 +142,10 @@ function ensurePlayerReady() {
           if (isMuted()) showUnmuteOverlay();
           updateNowPlayingButton(!document.getElementById('screen-radio').classList.contains('active'));
 
-          clearInterval(progressInterval);
-          progressInterval = setInterval(() => {
-            updateProgress(getCurrentTime(), getDuration());
-          }, 100);
+          startProgressLoop();
         } else {
           stopHeartbeat();
-          clearInterval(progressInterval);
-          progressInterval = null;
+          stopProgressLoop();
           if (hasPlayed && state === window.YT.PlayerState.BUFFERING) {
             const dur = getDuration();
             const cur = getCurrentTime();
@@ -1095,8 +1117,7 @@ function playTrack(index) {
   updateArtistIndexPlaying(track.name);
   trackSongStart(track.name, playingGenreId);
 
-  clearInterval(progressInterval);
-  progressInterval = null;
+  stopProgressLoop();
   resetProgress();
   // Pick a random video ID from all available (main + backups) for variety
   const allIds = getVideoIds(track).filter(Boolean);
