@@ -369,6 +369,12 @@ html, body {
   height: 24px;
 }
 
+body:has(#screen-reveal.active) .newsletter-footer,
+body:has(#screen-genre.active) .newsletter-footer,
+body:has(#screen-radio.active) .newsletter-footer {
+  display: none;
+}
+
 .newsletter-footer {
   position: fixed;
   bottom: 1.5rem;
