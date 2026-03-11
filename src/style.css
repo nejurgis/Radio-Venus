@@ -369,12 +369,13 @@ html, body {
   height: 24px;
 }
 
-.newsletter-portal {
+.newsletter-footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
+  margin-top: 4rem;
+  padding: 2rem 1rem 3rem;
+  border-top: 1px solid var(--border);
 }
 
 .newsletter-portal-label {
@@ -387,8 +388,8 @@ html, body {
   margin-bottom: 0.75rem;
 }
 
-.newsletter-portal .newsletter-form {
-  width: min(340px, 100%);
+.newsletter-footer .newsletter-form {
+  width: min(520px, 100%);
 }
 
 .newsletter-form {
