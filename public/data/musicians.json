@@ -1347,6 +1347,44 @@
     ]
   },
   {
+    "name": "Anthony Naples",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 18.8,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "techno",
+      "electronica",
+      "dnb",
+      "ambient",
+      "idm",
+      "artpop",
+      "triphop"
+    ],
+    "subgenres": [
+      "house",
+      "minimal",
+      "future-garage",
+      "techno",
+      "indietronica",
+      "dub-techno",
+      "footwork",
+      "dubstep",
+      "glitch-pop",
+      "ambient",
+      "experimental",
+      "lo-fi",
+      "drone",
+      "dub",
+      "idm",
+      "jungle"
+    ],
+    "youtubeVideoId": "plXqbFJ0BvA",
+    "backupVideoIds": []
+  },
+  {
     "name": "Anthony Rother",
     "venus": {
       "sign": "Gemini",
@@ -4297,6 +4335,33 @@
     "backupVideoIds": []
   },
   {
+    "name": "Celia Hollander",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 8.5,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "electronica",
+      "techno",
+      "jazz"
+    ],
+    "subgenres": [
+      "experimental",
+      "ambient",
+      "cosmic-jazz",
+      "glitch-pop",
+      "glitch",
+      "house",
+      "ambient-jazz"
+    ],
+    "youtubeVideoId": "MZaENBhBq9U",
+    "backupVideoIds": []
+  },
+  {
     "name": "chantssss",
     "venus": {
       "sign": "Libra",
@@ -5644,6 +5709,35 @@
       "boom-bap"
     ],
     "youtubeVideoId": "NJj0gB6R5kM",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Cylob",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 23.8,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "idm",
+      "dnb",
+      "techno",
+      "triphop",
+      "electronica",
+      "ambient"
+    ],
+    "subgenres": [
+      "breakbeat",
+      "idm",
+      "acid",
+      "breakcore",
+      "experimental",
+      "trip-hop",
+      "indietronica",
+      "ambient"
+    ],
+    "youtubeVideoId": "GLZFd2WX4nY",
     "backupVideoIds": []
   },
   {
@@ -8224,25 +8318,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Erwin Schulhoff",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 5.7,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical",
-      "intercelestial"
-    ],
-    "subgenres": [
-      "opera",
-      "classical"
-    ],
-    "youtubeVideoId": "VTU-kReSBN4",
-    "backupVideoIds": []
-  },
-  {
     "name": "Esben and the Witch",
     "venus": {
       "sign": "Cancer",
@@ -8757,6 +8832,29 @@
       "eJyCGK02OUA",
       "iHVxIjpycNc"
     ]
+  },
+  {
+    "name": "Flaer",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 14.5,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "jazz"
+    ],
+    "subgenres": [
+      "cosmic-jazz",
+      "ambient",
+      "experimental",
+      "free-jazz",
+      "ambient-jazz"
+    ],
+    "youtubeVideoId": "J-EDOxK99RE",
+    "backupVideoIds": []
   },
   {
     "name": "Flames Dot Malik",
@@ -9645,6 +9743,46 @@
     "backupVideoIds": []
   },
   {
+    "name": "Gigi Masin",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 14.3,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "electronica",
+      "idm",
+      "altrock",
+      "indiepop",
+      "techno",
+      "artpop",
+      "triphop",
+      "classical",
+      "jazz"
+    ],
+    "subgenres": [
+      "cosmic-jazz",
+      "experimental",
+      "indietronica",
+      "art-pop",
+      "ambient",
+      "house",
+      "lo-fi",
+      "drone",
+      "dub-techno",
+      "dub",
+      "techno",
+      "idm",
+      "minimalist",
+      "free-jazz",
+      "ambient-jazz"
+    ],
+    "youtubeVideoId": "OMFkgeoIOi8",
+    "backupVideoIds": []
+  },
+  {
     "name": "Gisle Røen Johansen",
     "venus": {
       "sign": "Sagittarius",
@@ -10072,6 +10210,34 @@
       "soul"
     ],
     "youtubeVideoId": "rNhLzr-OlWo",
+    "backupVideoIds": []
+  },
+  {
+    "name": "H.Takahashi",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 29.7,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "electronica",
+      "folk",
+      "artpop",
+      "techno"
+    ],
+    "subgenres": [
+      "ambient",
+      "experimental",
+      "cosmic-jazz",
+      "indietronica",
+      "idm",
+      "ambient-folk",
+      "drone"
+    ],
+    "youtubeVideoId": "tfiDMYKYX_Y",
     "backupVideoIds": []
   },
   {
@@ -13187,6 +13353,45 @@
     "backupVideoIds": []
   },
   {
+    "name": "Khotin",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 8.7,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "techno",
+      "idm",
+      "electronica",
+      "artpop",
+      "dnb",
+      "triphop",
+      "altrock",
+      "indiepop"
+    ],
+    "subgenres": [
+      "house",
+      "ambient",
+      "experimental",
+      "lo-fi",
+      "cosmic-jazz",
+      "minimal",
+      "future-garage",
+      "indietronica",
+      "techno",
+      "dub-techno",
+      "drone",
+      "dub",
+      "idm",
+      "glitch-pop",
+      "art-pop"
+    ],
+    "youtubeVideoId": "eicWuyvIwyw",
+    "backupVideoIds": []
+  },
+  {
     "name": "Kid Spatula",
     "venus": {
       "sign": "Libra",
@@ -13982,6 +14187,44 @@
       "house"
     ],
     "youtubeVideoId": "q3k58kZCRlM",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Leon Vynehall",
+    "venus": {
+      "sign": "Virgo",
+      "degree": 22.2,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "techno",
+      "dnb",
+      "electronica",
+      "idm",
+      "triphop",
+      "jazz"
+    ],
+    "subgenres": [
+      "house",
+      "future-garage",
+      "deep-house",
+      "minimal",
+      "indietronica",
+      "glitch-pop",
+      "idm",
+      "dub-techno",
+      "dub",
+      "lo-fi",
+      "tech-house",
+      "techno",
+      "experimental",
+      "spiritual-jazz",
+      "dubstep",
+      "footwork"
+    ],
+    "youtubeVideoId": "aa427YvSb4I",
     "backupVideoIds": []
   },
   {
@@ -14976,6 +15219,36 @@
     "backupVideoIds": []
   },
   {
+    "name": "Lynn Avery",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 16.4,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "intercelestial",
+      "techno",
+      "electronica",
+      "folk",
+      "classical",
+      "jazz"
+    ],
+    "subgenres": [
+      "experimental",
+      "house",
+      "ambient",
+      "ambient-folk",
+      "classical",
+      "cosmic-jazz",
+      "ambient-jazz"
+    ],
+    "youtubeVideoId": "H9hbal1WCqs",
+    "backupVideoIds": []
+  },
+  {
     "name": "M. Sage",
     "venus": {
       "sign": "Gemini",
@@ -15576,6 +15849,97 @@
     "backupVideoIds": []
   },
   {
+    "name": "Masahiro Sugaya",
+    "venus": {
+      "sign": "Leo",
+      "degree": 8.8,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "classical",
+      "jazz"
+    ],
+    "subgenres": [
+      "cosmic-jazz",
+      "ambient",
+      "idm",
+      "minimalist",
+      "spiritual-jazz",
+      "experimental",
+      "drone"
+    ],
+    "youtubeVideoId": "roYw26mE04E",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Masahiro Takahashi",
+    "venus": {
+      "sign": "Libra",
+      "degree": 19.8,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "electronica",
+      "idm",
+      "jazz"
+    ],
+    "subgenres": [
+      "ambient",
+      "cosmic-jazz",
+      "indietronica",
+      "drone",
+      "experimental",
+      "spiritual-jazz",
+      "ambient-jazz"
+    ],
+    "youtubeVideoId": "W4ws67F3tsM",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Masayoshi Fujita",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 13.3,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "techno",
+      "triphop",
+      "artpop",
+      "folk",
+      "electronica",
+      "classical"
+    ],
+    "subgenres": [
+      "ambient",
+      "experimental",
+      "cosmic-jazz",
+      "glitch",
+      "minimal",
+      "idm",
+      "drone",
+      "dub",
+      "ambient-folk",
+      "indietronica",
+      "house",
+      "dub-techno",
+      "art-pop",
+      "techno",
+      "minimalist",
+      "neo-classical"
+    ],
+    "youtubeVideoId": "pK4GP8G5LK0",
+    "backupVideoIds": []
+  },
+  {
     "name": "Mason Lindahl",
     "venus": {
       "sign": "Gemini",
@@ -16101,6 +16465,37 @@
       "ambient"
     ],
     "youtubeVideoId": "h1fbsRiPPHA",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Michel Banabila",
+    "venus": {
+      "sign": "Aries",
+      "degree": 18.7,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "idm",
+      "ambient",
+      "triphop",
+      "folk",
+      "industrial",
+      "classical",
+      "artpop"
+    ],
+    "subgenres": [
+      "experimental",
+      "cosmic-jazz",
+      "dub",
+      "ambient",
+      "drone",
+      "glitch",
+      "ambient-folk",
+      "industrial",
+      "avant-garde-pop"
+    ],
+    "youtubeVideoId": "cMge3I55K0k",
     "backupVideoIds": []
   },
   {
@@ -17755,6 +18150,32 @@
       "ambient-folk"
     ],
     "youtubeVideoId": "83-JtdGJiqg",
+    "backupVideoIds": []
+  },
+  {
+    "name": "OCA",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 4,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "triphop",
+      "electronica",
+      "techno"
+    ],
+    "subgenres": [
+      "ambient",
+      "experimental",
+      "dub",
+      "cosmic-jazz",
+      "indietronica",
+      "house"
+    ],
+    "youtubeVideoId": "xo9nk7pqcGk",
     "backupVideoIds": []
   },
   {
@@ -19793,6 +20214,34 @@
     "backupVideoIds": []
   },
   {
+    "name": "Radioactive Man",
+    "venus": {
+      "sign": "Libra",
+      "degree": 4.1,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "techno",
+      "idm",
+      "electronica",
+      "ambient",
+      "dnb"
+    ],
+    "subgenres": [
+      "electro",
+      "idm",
+      "acid",
+      "experimental",
+      "house",
+      "techno",
+      "indietronica",
+      "breakbeat"
+    ],
+    "youtubeVideoId": "VGHwH0RbkR8",
+    "backupVideoIds": []
+  },
+  {
     "name": "Rafael Toral",
     "venus": {
       "sign": "Leo",
@@ -20037,6 +20486,42 @@
       "ambient"
     ],
     "youtubeVideoId": "5XWuD6UsM9Y",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Rei Harakami",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 11.5,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "electronica",
+      "idm",
+      "ambient",
+      "techno",
+      "folk",
+      "altrock",
+      "indiepop",
+      "artpop",
+      "hiphop",
+      "triphop"
+    ],
+    "subgenres": [
+      "indietronica",
+      "idm",
+      "ambient",
+      "experimental",
+      "glitch",
+      "techno",
+      "folk-rock",
+      "art-pop",
+      "indie-pop",
+      "soul",
+      "rnb"
+    ],
+    "youtubeVideoId": "D-GIi5YG3p8",
     "backupVideoIds": []
   },
   {
@@ -21539,6 +22024,30 @@
     "backupVideoIds": []
   },
   {
+    "name": "Shiho Yabuki",
+    "venus": {
+      "sign": "Sagittarius",
+      "degree": 21.8,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "jazz"
+    ],
+    "subgenres": [
+      "cosmic-jazz",
+      "ambient",
+      "idm",
+      "experimental",
+      "spiritual-jazz",
+      "new-age"
+    ],
+    "youtubeVideoId": "rgU0vmz-6Ec",
+    "backupVideoIds": []
+  },
+  {
     "name": "shinetiac",
     "venus": {
       "sign": "Aries",
@@ -22899,6 +23408,43 @@
     "backupVideoIds": []
   },
   {
+    "name": "SUGAI KEN",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 27.6,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "idm",
+      "ambient",
+      "triphop",
+      "techno",
+      "dnb",
+      "artpop",
+      "electronica",
+      "darkwave",
+      "altrock",
+      "jazz"
+    ],
+    "subgenres": [
+      "experimental",
+      "ambient",
+      "cosmic-jazz",
+      "dub",
+      "drone",
+      "idm",
+      "house",
+      "footwork",
+      "glitch",
+      "indietronica",
+      "free-jazz",
+      "avant-garde-pop"
+    ],
+    "youtubeVideoId": "-3DQnTRkU-M",
+    "backupVideoIds": []
+  },
+  {
     "name": "Sugar Billy",
     "venus": {
       "sign": "Taurus",
@@ -23374,6 +23920,47 @@
       "glitch"
     ],
     "youtubeVideoId": "RSikdZswhoA",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Teebs",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 15.4,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "electronica",
+      "idm",
+      "hiphop",
+      "triphop",
+      "dnb",
+      "jazz",
+      "techno",
+      "artpop",
+      "ambient"
+    ],
+    "subgenres": [
+      "glitch-pop",
+      "hip-hop",
+      "future-garage",
+      "glitch",
+      "idm",
+      "chillwave",
+      "indietronica",
+      "downtempo",
+      "footwork",
+      "spiritual-jazz",
+      "jazz-fusion",
+      "lo-fi",
+      "house",
+      "minimal",
+      "soul",
+      "neo-soul",
+      "experimental"
+    ],
+    "youtubeVideoId": "W16_HQ0QtLY",
     "backupVideoIds": []
   },
   {
@@ -24001,6 +24588,28 @@
       "house"
     ],
     "youtubeVideoId": "lAyoa2Y1N4Y",
+    "backupVideoIds": []
+  },
+  {
+    "name": "The Kyoto Connection",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 14.5,
+      "decan": 2,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "experimental",
+      "cosmic-jazz",
+      "drone",
+      "idm"
+    ],
+    "youtubeVideoId": "cKekzMxxgBE",
     "backupVideoIds": []
   },
   {
@@ -24787,6 +25396,44 @@
       "rnb"
     ],
     "youtubeVideoId": "nCCSAa8n24k",
+    "backupVideoIds": []
+  },
+  {
+    "name": "To Rococo Rot",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 5.9,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "electronica",
+      "altrock",
+      "idm",
+      "techno",
+      "ambient",
+      "triphop",
+      "indiepop",
+      "darkwave",
+      "classical"
+    ],
+    "subgenres": [
+      "indietronica",
+      "idm",
+      "glitch",
+      "dub-techno",
+      "dub",
+      "drone",
+      "techno",
+      "ambient",
+      "experimental",
+      "minimal",
+      "glitch-pop",
+      "art-pop",
+      "krautrock",
+      "neo-classical"
+    ],
+    "youtubeVideoId": "OQpuu20TTRQ",
     "backupVideoIds": []
   },
   {
@@ -26343,6 +26990,41 @@
       "soul"
     ],
     "youtubeVideoId": "qJxk1leG1wY",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Yasuaki Shimizu",
+    "venus": {
+      "sign": "Libra",
+      "degree": 0.5,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "idm",
+      "ambient",
+      "jazz",
+      "darkwave",
+      "electronica",
+      "classical",
+      "techno",
+      "folk"
+    ],
+    "subgenres": [
+      "experimental",
+      "cosmic-jazz",
+      "spiritual-jazz",
+      "new-wave",
+      "ambient",
+      "indietronica",
+      "idm",
+      "drone",
+      "techno",
+      "folk-rock",
+      "free-jazz",
+      "minimalist"
+    ],
+    "youtubeVideoId": "8z461mUTDBQ",
     "backupVideoIds": []
   },
   {
