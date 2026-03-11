@@ -394,13 +394,14 @@ html, body {
 }
 
 .newsletter-footer .newsletter-form {
-  width: min(520px, 100%);
+  width: 270px;
   pointer-events: auto;
+  margin-top: 0;
 }
 
 .newsletter-form {
   display: flex;
-  margin-top: 1.5rem;
+  margin-top: 1.5rem; /* overridden to 0 inside .newsletter-footer */
   border: 1px solid var(--border);
   border-radius: 2rem;
   overflow: hidden;
