@@ -8836,10 +8836,10 @@
   {
     "name": "Flaer",
     "venus": {
-      "sign": "Cancer",
-      "degree": 14.5,
-      "decan": 2,
-      "element": "water"
+      "sign": "Leo",
+      "degree": 25.6,
+      "decan": 3,
+      "element": "fire"
     },
     "genres": [
       "ambient",
@@ -14192,10 +14192,10 @@
   {
     "name": "Leon Vynehall",
     "venus": {
-      "sign": "Virgo",
-      "degree": 22.2,
-      "decan": 3,
-      "element": "earth"
+      "sign": "Aquarius",
+      "degree": 10.4,
+      "decan": 2,
+      "element": "air"
     },
     "genres": [
       "ambient",
@@ -18155,9 +18155,9 @@
   {
     "name": "OCA",
     "venus": {
-      "sign": "Aquarius",
-      "degree": 4,
-      "decan": 1,
+      "sign": "Libra",
+      "degree": 17,
+      "decan": 2,
       "element": "air"
     },
     "genres": [
@@ -23410,10 +23410,10 @@
   {
     "name": "SUGAI KEN",
     "venus": {
-      "sign": "Gemini",
-      "degree": 27.6,
-      "decan": 3,
-      "element": "air"
+      "sign": "Cancer",
+      "degree": 10.7,
+      "decan": 2,
+      "element": "water"
     },
     "genres": [
       "idm",
@@ -24593,10 +24593,10 @@
   {
     "name": "The Kyoto Connection",
     "venus": {
-      "sign": "Cancer",
-      "degree": 14.5,
-      "decan": 2,
-      "element": "water"
+      "sign": "Capricorn",
+      "degree": 6,
+      "decan": 1,
+      "element": "earth"
     },
     "genres": [
       "ambient",
