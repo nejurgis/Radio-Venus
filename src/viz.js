@@ -459,6 +459,7 @@ function resize() {
 export function renderNebula(musicians) {
   dots = [];
   spriteCache.clear();
+  _tickCacheW = 0; _tickCacheH = 0; // force dot geometry pre-bake on next tick
   const mobileScale = window.innerWidth < 640 ? 0.52 : 1;
 
   for (const m of musicians) {
