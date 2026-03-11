@@ -3,7 +3,25 @@
 
 function send(event, params) {
   if (typeof gtag === 'function') {
-    gtag('event', event, params);
+    // 1. Create a shallow copy so we can mutate it
+    const safeParams = { ...params };
+    
+    // 2. Catch actual undefined, null, or the literal string "undefined"
+    if (!safeParams.artist || String(safeParams.artist) === 'undefined') {
+      // If the artist is missing entirely on a song event, it's a ghost fire. 
+      // It is better to abort the tracking call than log junk data.
+      if (['song_start', 'song_complete', 'song_skip', 'favorite'].includes(event)) {
+        console.warn(`GA4 Blocked: Attempted to fire ${event} without an artist.`);
+        return; 
+      }
+      safeParams.artist = 'Unknown Artist';
+    }
+
+    if (!safeParams.genre || String(safeParams.genre) === 'undefined') {
+      safeParams.genre = 'Unknown Genre';
+    }
+
+    gtag('event', event, safeParams);
   }
 }
 
