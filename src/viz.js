@@ -435,9 +435,7 @@ export function initNebula(containerId) {
 
 function resize() {
   if (!canvas) return;
-  // Cap DPR at 1.5 on touch devices — halves pixel fill on Retina iPads
-  const rawDpr = window.devicePixelRatio || 1;
-  const dpr = ('ontouchstart' in window) ? Math.min(rawDpr, 1.5) : rawDpr;
+  const dpr = window.devicePixelRatio || 1;
   const rect = canvas.parentElement.getBoundingClientRect();
   canvas.width = rect.width * dpr;
   canvas.height = rect.height * dpr;
