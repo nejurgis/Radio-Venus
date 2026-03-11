@@ -227,8 +227,38 @@ let driftResetFrom = 0;
 
 // ── OPTIMIZED SPRITE GENERATOR (High-Res + Soft Glow Filter) ──────────────
 
+const DEG_PER_RAD = 180 / Math.PI; // constant — avoid recomputing in hot loops
+
 const spriteCache = new Map();
 const SPRITE_SCALE = 4; // 4× is crisp at 2–3× DPR and creates sprites ~4× faster than 8×
+
+// ── Highlight sprite cache (hovered / needle dots) ────────────────────────────
+// Avoids createRadialGradient in the hot dot loop — keyed by color + hover state
+const _highlightCache = new Map();
+
+function getHighlightSprite(r, g, b, isHovered) {
+  const key = `${r},${g},${b},${isHovered ? 1 : 0}`;
+  if (_highlightCache.has(key)) return _highlightCache.get(key);
+  const drawSize = isHovered ? 7 : 5;
+  const dim = drawSize * 2 + 2;
+  const c   = dim / 2;
+  const sCanvas = document.createElement('canvas');
+  sCanvas.width = sCanvas.height = dim;
+  const sCtx = sCanvas.getContext('2d');
+  const grad = sCtx.createRadialGradient(
+    c - drawSize * 0.35, c - drawSize * 0.35, drawSize * 0.05,
+    c, c, drawSize
+  );
+  grad.addColorStop(0,   'rgba(255,255,255,1)');
+  grad.addColorStop(0.5, `rgba(${r},${g},${b},0.9)`);
+  grad.addColorStop(1,   `rgba(${Math.round(r*0.1)},${Math.round(g*0.1)},${Math.round(b*0.1)},0)`);
+  sCtx.fillStyle = grad;
+  sCtx.beginPath();
+  sCtx.arc(c, c, drawSize, 0, Math.PI * 2);
+  sCtx.fill();
+  _highlightCache.set(key, sCanvas);
+  return sCanvas;
+}
 
 function getDotSprite(r, g, b, size, alpha) {
   // Coarser quantisation → fewer unique canvases in the cache
@@ -989,7 +1019,7 @@ function tick() {
     // 2. Angular Clamp: Keep dot within its 30-degree sector
     // Convert dot size to degrees at this radius (Arc Length formula: s = r*theta -> theta = s/r)
     // We add a safety buffer of ~1.5 degrees so it doesn't touch the spoke
-    const degPadding = (margin / r) * (180 / Math.PI); 
+    const degPadding = (margin / r) * DEG_PER_RAD;
     
     const signStart = dot.signIndex * 30;
     const signEnd = (dot.signIndex + 1) * 30;
@@ -1042,15 +1072,9 @@ function tick() {
     const isHighlighted = isHovered || isOnNeedle;
 
     if (isHighlighted) {
-      const drawSize = isHovered ? 7 : 5;
-      const grad = ctx.createRadialGradient(x - drawSize*0.35, y - drawSize*0.35, drawSize*0.05, x, y, drawSize);
-      grad.addColorStop(0,   'rgba(255,255,255,1)');
-      grad.addColorStop(0.5, `rgba(${dot.r},${dot.g},${dot.b},0.9)`);
-      grad.addColorStop(1,   `rgba(${Math.round(dot.r*0.1)},${Math.round(dot.g*0.1)},${Math.round(dot.b*0.1)},0)`);
-      ctx.fillStyle = grad;
-      ctx.beginPath();
-      ctx.arc(x, y, drawSize, 0, Math.PI*2);
-      ctx.fill();
+      const spr  = getHighlightSprite(dot.r, dot.g, dot.b, isHovered);
+      const half = spr.width / 2;
+      ctx.drawImage(spr, x - half, y - half);
     } else if (dot.sprite) {
       // Fade in over 400ms from when the sprite was first created
       const fadeAlpha = Math.min(1, (now - dot.spriteBirth) / 400);
@@ -1066,47 +1090,6 @@ function tick() {
   prevOnNeedle.clear();
   for (const idx of curOnNeedle) prevOnNeedle.add(idx);
   curOnNeedle.clear();
-
-  // Render Labels
-  if (isZoomed) {
-      ctx.save();
-      ctx.globalCompositeOperation = 'source-over';
-      
-      for (let i = 0; i < dots.length; i++) {
-        const dot = dots[i];
-        if (dot === hoveredDot) continue;
-        if (dot.alpha <= 0.3) continue;
-
-        const x = dot._x;
-        const y = dot._y;
-        
-        ctx.font = '1.3px monospace';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'top';
-        ctx.fillStyle = `rgba(${dot.r}, ${dot.g}, ${dot.b}, ${dot.alpha})`;
-        ctx.fillText(dot.name, x, y + dot.size*1.5 + 0.95);
-      }
-      
-      // Draw Hovered Label
-      if (closestDot) {
-        const dot = closestDot;
-        const x = dot._x;
-        const y = dot._y;
-        
-        const degInSign = Math.round((dot.deg % 30) * 10) / 10;
-        
-        ctx.font = '2.2px monospace';
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'top';
-        ctx.fillText(dot.name, x, y + 7 + 0.8);
-        ctx.font = '1.8px monospace';
-        ctx.fillStyle = `rgba(${dot.r}, ${dot.g}, ${dot.b}, 1)`;
-        ctx.fillText(`${dot.sign} ${degInSign}°`, x, y + 7 + 2.8);
-      }
-      
-      ctx.restore();
-  }
 
   const prevHovered = hoveredDot;
   hoveredDot = closestDot;
@@ -1352,6 +1335,33 @@ if (sunDot) {
     if (moonHoverCallback) moonHoverCallback(false);
   }
 
+
+  // ── Dot labels (source-over, drawn last so they sit above all glows) ────────
+  if (isZoomed) {
+    ctx.save();
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.font = '1.3px monospace';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'top';
+    for (let i = 0; i < dots.length; i++) {
+      const dot = dots[i];
+      if (dot === hoveredDot) continue;
+      if (dot.alpha <= 0.3) continue;
+      ctx.fillStyle = `rgba(${dot.r}, ${dot.g}, ${dot.b}, ${dot.alpha})`;
+      ctx.fillText(dot.name, dot._x, dot._y + dot.size * 1.5 + 0.95);
+    }
+    if (closestDot) {
+      const dot = closestDot;
+      const degInSign = Math.round((dot.deg % 30) * 10) / 10;
+      ctx.font = '2.2px monospace';
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+      ctx.fillText(dot.name, dot._x, dot._y + 7 + 0.8);
+      ctx.font = '1.8px monospace';
+      ctx.fillStyle = `rgba(${dot.r}, ${dot.g}, ${dot.b}, 1)`;
+      ctx.fillText(`${dot.sign} ${degInSign}°`, dot._x, dot._y + 7 + 2.8);
+    }
+    ctx.restore();
+  }
 
   if (isZoomed) ctx.restore(); // final restore for zoom transform
 
