@@ -3,21 +3,23 @@
 
 function send(event, params) {
   if (typeof gtag === 'function') {
-    // 1. Create a shallow copy so we can mutate it
     const safeParams = { ...params };
     
-    // 2. Catch actual undefined, null, or the literal string "undefined"
-    if (!safeParams.artist || String(safeParams.artist) === 'undefined') {
-      // If the artist is missing entirely on a song event, it's a ghost fire. 
-      // It is better to abort the tracking call than log junk data.
+    // Catch undefined, null, or empty strings that GA4 turns into (not set)
+    if (!safeParams.artist || safeParams.artist.trim() === '') {
+      
+      // If it's a core playback event, a missing artist means the player 
+      // fired a ghost event. We should kill it entirely so it doesn't skew your data.
       if (['song_start', 'song_complete', 'song_skip', 'favorite'].includes(event)) {
-        console.warn(`GA4 Blocked: Attempted to fire ${event} without an artist.`);
+        console.warn(`GA4 Blocked: Ghost ${event} prevented (No artist data).`);
         return; 
       }
+      
+      // For other events, give it a readable fallback instead of (not set)
       safeParams.artist = 'Unknown Artist';
     }
 
-    if (!safeParams.genre || String(safeParams.genre) === 'undefined') {
+    if (!safeParams.genre || safeParams.genre.trim() === '') {
       safeParams.genre = 'Unknown Genre';
     }
 
