@@ -307,14 +307,16 @@ const crosshairCursor = (() => {
 })();
 
 function buildZodiacCanvases() {
-  // Pre-render each zodiac glyph to a 28×28 offscreen canvas (24px icon + 2px padding).
-  // In tick() we use drawImage instead of re-stroking Path2D commands every frame.
-  const PAD = 2, ICON = 24, SIZE = ICON + PAD * 2;
+  // Render each glyph at full DPR resolution so drawImage stays crisp.
+  const dpr  = window.devicePixelRatio || 1;
+  const PAD  = 2, ICON = 24, CSS = ICON + PAD * 2;   // 28 CSS px
+  const PHYS = Math.ceil(CSS * dpr);                  // physical pixels
   _zodiacCanvases = ZODIAC_PATHS.map(paths => {
     const c = document.createElement('canvas');
-    c.width = c.height = SIZE;
+    c.width = c.height = PHYS;
     const gc = c.getContext('2d');
-    const g = gc.createLinearGradient(0, 0, 0, SIZE);
+    gc.scale(dpr, dpr);  // render in CSS coords at device resolution
+    const g = gc.createLinearGradient(0, 0, 0, CSS);
     g.addColorStop(0,   '#2a4a4a');
     g.addColorStop(0.5, '#c8ece8');
     g.addColorStop(1,   '#2a4a4a');
@@ -706,11 +708,13 @@ function tick() {
     _metalGrad.addColorStop(0.5, '#a0d4cc');
     _metalGrad.addColorStop(1, '#0a1a1a');
 
-    // ── Rebuild rings offscreen canvas ────────────────────────────────────
+    // ── Rebuild rings offscreen canvas at full DPR resolution ─────────────
+    const dpr = window.devicePixelRatio || 1;
     if (!_ringsCanvas) _ringsCanvas = document.createElement('canvas');
-    _ringsCanvas.width  = Math.ceil(w);
-    _ringsCanvas.height = Math.ceil(h);
+    _ringsCanvas.width  = Math.ceil(w * dpr);
+    _ringsCanvas.height = Math.ceil(h * dpr);
     const rc = _ringsCanvas.getContext('2d');
+    rc.setTransform(dpr, 0, 0, dpr, 0, 0); // draw in CSS coords, render at device res
 
     const rc_tealRing = rc.createLinearGradient(cx - outerR, cy, cx + outerR, cy);
     rc_tealRing.addColorStop(0, '#2a4a4a');
