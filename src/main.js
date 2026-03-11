@@ -47,7 +47,7 @@ let isPaused = false;                // whether playback is currently paused
 let loadingAnimFrame = null;        
 let loadStartTime = 0;
 const SILENT_FAIL_MS = 15000;
-const REPORT_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'; // replace after creating form at formspree.io
+const REPORT_ENDPOINT = 'YOUR_APPS_SCRIPT_URL'; // paste deployed Google Apps Script web app URL here
 let pendingSeekTime = 0;  // for shared links — seek once on first PLAYING
 
 let activeGenreLabel = null;       // label of the currently playing genre
@@ -1274,7 +1274,8 @@ document.addEventListener('click', e => {
     showToast('reported! — thank you');
     fetch(REPORT_ENDPOINT, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ artist: name, timestamp: new Date().toISOString() }),
     }).catch(() => {}); // fire-and-forget
     return;
