@@ -269,6 +269,7 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
       + (failed ? ' is-failed' : '')
       + (isFav ? ' is-favorited' : '');
     item.dataset.index = i;
+    item.dataset.name = track.name;
     const simHtml = track.similarity != null
       ? `<span class="track-similarity">${track.similarity}%</span>` : '';
     const deg = (track.venus && track.venus.degree != null) ? ` ${Math.round(track.venus.degree * 10) / 10}°` : '';
@@ -283,6 +284,7 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
         ${simHtml}
         <span class="track-item-sign" style="color:var(--${el})">${sign}${deg}</span>
       </span>
+      ${failed ? `<button class="btn-report" data-name="${track.name.replace(/"/g, '&quot;')}">report error</button>` : ''}
     `;
     return item;
   };
@@ -330,6 +332,10 @@ export function markTrackFailed(index) {
     const nameSpan = item.querySelector('span');
     if (nameSpan && !nameSpan.querySelector('.track-restricted')) {
       nameSpan.insertAdjacentHTML('beforeend', ' <span class="track-restricted">restricted</span>');
+    }
+    if (!item.querySelector('.btn-report')) {
+      const name = item.dataset.name || '';
+      item.insertAdjacentHTML('beforeend', `<button class="btn-report" data-name="${name.replace(/"/g, '&quot;')}">report error</button>`);
     }
   }
 }

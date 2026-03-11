@@ -1266,6 +1266,16 @@ document.addEventListener('click', e => {
     // If favorites playlist is displayed, re-render it to reflect the change
     if (displayedGenreId === 'favorites') refreshFavoritesDisplay();
   }
+  const reportBtn = e.target.closest('.btn-report');
+  if (reportBtn) {
+    const name = reportBtn.dataset.name;
+    const reports = JSON.parse(localStorage.getItem('rv_error_reports') || '[]');
+    reports.push({ name, timestamp: new Date().toISOString() });
+    localStorage.setItem('rv_error_reports', JSON.stringify(reports));
+    reportBtn.remove();
+    showToast('reported! — thank you');
+    return;
+  }
   const favContainer = e.target.closest('.track-fav-container');
   if (favContainer) {
     const item = favContainer.closest('.track-item');

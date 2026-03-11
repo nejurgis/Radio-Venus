@@ -1736,7 +1736,7 @@ p a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  position: relative;
 }
 
 .track-item:hover {
@@ -1780,13 +1780,45 @@ p a:hover {
 }
 
 .track-item.is-failed {
+  cursor: default;
+}
+
+.track-item.is-failed .track-name,
+.track-item.is-failed .track-meta {
   opacity: 0.25;
   text-decoration: line-through;
-  cursor: default;
 }
 
 .track-item.is-failed:hover {
   color: var(--text-dim);
+}
+
+.btn-report {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.75rem;
+  background: none;
+  color: var(--text-dim);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+  z-index: 1;
+}
+
+.btn-report:hover {
+  color: var(--text-bright);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-report:active {
+  transform: translate(-50%, calc(-50% + 2px)) scale(0.98);
 }
 
 .track-restricted {
