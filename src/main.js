@@ -47,7 +47,8 @@ let isPaused = false;                // whether playback is currently paused
 let loadingAnimFrame = null;        
 let loadStartTime = 0;
 const SILENT_FAIL_MS = 15000;
-const REPORT_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwDSNsMTMViSpOh4ZUZg8juXjI6MVY4Ptr8uu7ZWyjaiqP22hHouMkl7fqXEk1dEfVL/exec'; // paste deployed Google Apps Script web app URL here
+const REPORT_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwDSNsMTMViSpOh4ZUZg8juXjI6MVY4Ptr8uu7ZWyjaiqP22hHouMkl7fqXEk1dEfVL/exec';
+const NEWSLETTER_ENDPOINT = 'YOUR_NEWSLETTER_APPS_SCRIPT_URL'; // new Apps Script with doGet writing email to sheet // paste deployed Google Apps Script web app URL here
 let pendingSeekTime = 0;  // for shared links — seek once on first PLAYING
 
 let activeGenreLabel = null;       // label of the currently playing genre
@@ -145,6 +146,23 @@ function ensurePlayerReady() {
 
 document.addEventListener('DOMContentLoaded', async () => {
   initScreens();
+
+  // Newsletter form
+  document.querySelectorAll('.newsletter-form').forEach(form => {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const input = form.querySelector('.newsletter-input');
+      const email = input.value.trim();
+      if (!email || !email.includes('@')) { input.focus(); return; }
+      input.value = '';
+      input.blur();
+      showToast('subscribed! — thank you ✶');
+      const url = new URL(NEWSLETTER_ENDPOINT);
+      url.searchParams.set('email', email);
+      url.searchParams.set('timestamp', new Date().toISOString());
+      fetch(url.toString(), { mode: 'no-cors' }).catch(() => {});
+    });
+  });
 
   // Static button listeners (registered once, not per date submit)
   document.getElementById('btn-choose-genre').addEventListener('click', () => {

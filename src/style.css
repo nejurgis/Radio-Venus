@@ -369,6 +369,79 @@ html, body {
   height: 24px;
 }
 
+.newsletter-portal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.newsletter-portal-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: lowercase;
+  color: var(--text-dim);
+  opacity: 0.5;
+  margin-bottom: 0.75rem;
+}
+
+.newsletter-portal .newsletter-form {
+  width: min(340px, 100%);
+}
+
+.newsletter-form {
+  display: flex;
+  margin-top: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.newsletter-form:focus-within {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.newsletter-input {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  padding: 0.75rem 1.25rem;
+}
+
+.newsletter-input::placeholder {
+  color: var(--text-dim);
+  opacity: 0.45;
+}
+
+.newsletter-submit {
+  background: none;
+  border: none;
+  border-left: 1px solid var(--border);
+  padding: 0.75rem 1.1rem;
+  color: var(--text-dim);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+  flex-shrink: 0;
+}
+
+.newsletter-submit:hover {
+  color: var(--text-bright);
+}
+
+.newsletter-submit:active {
+  transform: scale(0.92);
+}
+
 .about-heading {
   font-weight: 400;
   font-size: 0.6rem;

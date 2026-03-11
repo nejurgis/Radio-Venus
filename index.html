@@ -102,6 +102,19 @@
 
         <p class="about-footnote">Built by <a href="https://jurgis.info" target="_blank" rel="noopener">Jurgis Lietunovas</a>. For astrology readings, visit <a href="https://jurgis.info/astrology" target="_blank" rel="noopener">jurgis.info/astrology</a>.</p>
       </article>
+
+      <div class="newsletter-portal">
+        <p class="newsletter-portal-label">Newsletter</p>
+        <form class="newsletter-form" novalidate>
+          <input class="newsletter-input" type="email" placeholder="enter your email address" autocomplete="email">
+          <button type="submit" class="newsletter-submit" aria-label="Subscribe">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </form>
+      </div>
     </div>
     <button id="btn-info" class="btn-control btn-info" aria-label="About">
       <svg width="18" height="18" viewBox="250 -20 680 1280" fill="currentColor" stroke="none">
@@ -164,14 +177,20 @@
         <span class="star-toggle active"></span>
       </div>
 
-      <h2 class="about-heading">Report Error — Test</h2>
-      <div class="track-item is-failed" style="margin-bottom: 2rem;">
-        <span class="track-name" style="display:flex;align-items:center;">
-          <div class="track-fav-container"></div>
-          Demo Artist <span class="track-restricted">restricted</span>
-        </span>
-        <span class="track-meta"><span class="track-item-sign">♀</span></span>
-        <button class="btn-report" data-name="Demo Artist (test)">report error</button>
+      <h2 class="about-heading">Newsletter</h2>
+      <p>New playlists, Venus transits, and rare finds — when they're worth sending.</p>
+      <form id="newsletter-form" class="newsletter-form" novalidate>
+        <input id="newsletter-email" class="newsletter-input" type="email" placeholder="enter your email address" autocomplete="email">
+        <button type="submit" class="newsletter-submit" aria-label="Subscribe">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </form>
+
+      <div class="about-star">
+        <span class="star-toggle active"></span>
       </div>
 
       <h2 class="about-heading">Stats</h2>
