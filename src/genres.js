@@ -135,6 +135,30 @@ const GENRE_MAP = {
   'weightless': ['idm'],           // EN cluster: UK experimental bass
   'mandible': ['idm'],             // EN hyper-niche: Raime, Logos, Demdike Stare adjacent
   'grimewave': ['idm', 'electronic'], // EN cluster: grime-influenced experimental
+  'hypertrance': ['techno', 'electronica'],
+  'singeli': ['techno', 'idm'],    // hyper-fast Tanzanian dance/gabber (200bpm+)
+  'nyc club': ['electronica'],
+  'uk bass': ['dnb', 'electronica'],
+  'breaks': ['dnb', 'electronica'],
+  'substep': ['dnb', 'electronica'],
+  'uk funky': ['electronica'],
+  'vogue': ['electronica'],
+  'skweee': ['electronica'],
+  'balearic': ['electronica'],
+  'drain': ['hiphop', 'intercelestial'], // Drain Gang — cloud rap / internet haze
+  'plunderphonics': ['idm', 'intercelestial'],
+  'collage pop': ['idm', 'intercelestial'],
+  'abstract': ['idm'],
+  'abstractro': ['idm'],
+  'flashcore': ['idm'],
+  'mashcore': ['idm'],
+  'glitchcore': ['idm'],
+  'glitchbreak': ['idm'],
+  'acousmatic': ['idm', 'intercelestial'],
+  'musique concrete': ['idm', 'classical'],
+  'field recording': ['ambient'],
+  'drift': ['ambient'],
+  'nu age': ['ambient'],
   'italian occult psychedelia': ['ambient', 'idm'],  // Lino Capra Vaccina, Alessandro Cortini
 
   // ── Industrial / Noise ──
@@ -248,6 +272,21 @@ const GENRE_MAP = {
   'scottish indie': ['altrock'],
   'irish indie': ['altrock'],
   'dance rock': ['altrock', 'electronica'],
+  'neo-psychedelic': ['altrock', 'indiepop'],
+  'garage psych': ['altrock'],
+  'chamber psych': ['altrock'],
+  'neo-kraut': ['altrock', 'artpop'],
+  'shimmer psych': ['indiepop', 'altrock'],
+  'no wave': ['altrock', 'industrial'],
+  'punk': ['altrock'],
+  'riot grrrl': ['altrock'],
+  'permanent wave': ['altrock'],
+  'classic rock': ['altrock'],
+  'piano rock': ['altrock'],
+  'math rock': ['altrock'],
+  'gbvfi': ['altrock'],                          // Guided By Voices fan interest cluster
+  'garage rock': ['altrock'],
+  'punk blues': ['altrock'],
 
   // ── Art Pop / Avant-Garde ──
   'art pop': ['artpop'],
@@ -259,6 +298,24 @@ const GENRE_MAP = {
   'art rock': ['artpop'],
   'glam rock': ['artpop'],
   'dream pop': ['indiepop', 'artpop'],
+  'dreamo': ['indiepop'],
+  'nu gaze': ['indiepop'],
+  'zoomergaze': ['indiepop'],
+  'texasgaze': ['indiepop'],
+  'grungegaze': ['indiepop', 'altrock'],
+  'dreamgaze': ['indiepop'],
+  'shimmer pop': ['indiepop'],
+  'shiver pop': ['indiepop'],
+  'transpop': ['indiepop'],
+  'small room': ['indiepop'],           // lo-fi intimate acoustic — Molina, Florist
+  'c86': ['indiepop'],
+  'tape club': ['indiepop'],
+  '5th wave emo': ['altrock'],
+  'diy emo': ['altrock'],
+  'bedroom skramz': ['altrock'],
+  'midwest emo': ['altrock'],
+  'indie punk': ['altrock', 'indiepop'],
+  'indie surf': ['indiepop', 'altrock'],
   'ethereal wave': ['artpop', 'darkwave'],
   'avant-garde': ['artpop'],
 
@@ -404,6 +461,13 @@ const GENRE_MAP = {
   'ambient pop': ['ambient', 'artpop'],
   'musica andina': ['folk'],
   'folklore boliviano': ['folk'],
+  'alternative country': ['folk'],
+  'alt country': ['folk'],
+  'alternative americana': ['folk'],
+  'american primitive': ['folk'],       // Fahey/Takoma school — fingerpicked instrumental
+  'cosmic american': ['folk'],
+  'free improvisation': ['jazz'],
+  'totalism': ['classical', 'intercelestial'], // Rhys Chatham/Glenn Branca — post-minimalist
 
   // ── Classical / Orchestral ──
   'medieval': ['classical'],       // Pérotin, Hildegard von Bingen, etc.

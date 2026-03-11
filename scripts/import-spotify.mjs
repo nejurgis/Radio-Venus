@@ -68,6 +68,7 @@ function parseExportifyCSV(csvText) {
   const artistCol  = header.findIndex(h => h.includes('artist name'));
   const trackCol   = header.findIndex(h => h === 'track name' || h.includes('track name'));
   const releaseCol = header.findIndex(h => h.includes('release date'));
+  const uriCol     = header.findIndex(h => h.includes('track uri'));
 
   if (artistCol === -1 || trackCol === -1) {
     throw new Error(`Cannot find Artist Name / Track Name columns in CSV header: ${lines[0]}`);
@@ -82,7 +83,11 @@ function parseExportifyCSV(csvText) {
     const trackName   = cols[trackCol]?.trim();
     // Release date as final birth date fallback (per app policy for bands)
     const releaseDate = releaseCol >= 0 ? cols[releaseCol]?.trim() : undefined;
-    if (artistName && trackName) tracks.push({ artistName, trackName, releaseDate });
+    // Spotify track ID for direct EN artist profile lookup (faster than name search)
+    const trackId = uriCol >= 0
+      ? (cols[uriCol]?.trim().replace('spotify:track:', '') || undefined)
+      : undefined;
+    if (artistName && trackName) tracks.push({ artistName, trackName, releaseDate, trackId });
   }
   return tracks;
 }
@@ -174,28 +179,67 @@ async function closePlaywright() {
   _browser = null;
 }
 
-async function getEverynoiseGenres(artistName) {
+async function getSpotifyArtistId(page, trackId) {
+  for (const url of [
+    `https://open.spotify.com/embed/track/${trackId}`,
+    `https://open.spotify.com/track/${trackId}`,
+  ]) {
+    try {
+      await page.goto(url, { waitUntil: 'networkidle', timeout: 25000 });
+      const href = await page.$eval('a[href*="/artist/"]', a => a.getAttribute('href')).catch(() => null);
+      if (href) { const m = href.match(/\/artist\/([A-Za-z0-9]+)/); if (m) return m[1]; }
+      const html = await page.content();
+      const m = html.match(/"https:\/\/open\.spotify\.com\/artist\/([A-Za-z0-9]+)"/);
+      if (m) return m[1];
+    } catch { /* try next */ }
+  }
+  return null;
+}
+
+async function scrapeENProfile(page, artistId) {
+  await page.goto(`https://everynoise.com/artistprofile.cgi?id=${artistId}`, {
+    waitUntil: 'domcontentloaded', timeout: 25000,
+  });
+  let genres = await page.$$eval(
+    'a[href*="mode=genre"]',
+    els => els.map(a => a.textContent.trim().toLowerCase()).filter(Boolean),
+  ).catch(() => []);
+  const spotifyTags = await page.$eval(
+    'span[title="Spotify genre-ish tags"]',
+    span => span.textContent.trim().split(',').map(t => t.trim().replace(/^#/, '')).filter(Boolean),
+  ).catch(() => []);
+  return [...new Set([...genres, ...spotifyTags])];
+}
+
+async function getEverynoiseGenres(artistName, trackId) {
   const browser = await getPlaywrightBrowser();
   if (!browser) return { genres: [], tags: [] };
 
   let page;
   try {
     page = await browser.newPage();
+
+    // Fast path: Spotify track ID → artist ID → EN artist profile directly
+    if (trackId) {
+      const artistId = await getSpotifyArtistId(page, trackId);
+      if (artistId) {
+        const tags = await scrapeENProfile(page, artistId);
+        if (tags.length) return { genres: [], tags };
+      }
+    }
+
+    // Fallback: EN name search (slower, misses niche artists)
     await page.setExtraHTTPHeaders({
       'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
     });
-
     const resUrl = `https://everynoise.com/research.cgi?name=${encodeURIComponent(artistName)}&mode=artist`;
     await page.goto(resUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
-
-    // EN is JS-rendered and slow for niche artists — use waitForSelector, not fixed delay
     await page.waitForSelector('#exact + div', { timeout: 20000 }).catch(() => {});
 
     const genres = await page.$$eval(
       '#exact + div .note a[href*="mode=genre"]',
       els => els.map(el => el.textContent.trim()).filter(Boolean),
     ).catch(() => []);
-
     const tagsRaw = await page.$eval(
       '#exact + div span[title="Spotify genre-ish tags"]',
       el => el.textContent.trim(),
@@ -393,7 +437,7 @@ async function main() {
   const outputPatches   = [];  // { name, handpicked, handpickedTrack } for existing artists
 
   for (let i = 0; i < artists.length; i++) {
-    const { artistName, trackName, releaseDate } = artists[i];
+    const { artistName, trackName, releaseDate, trackId } = artists[i];
     const key = artistName.toLowerCase();
     console.log(`[${i + 1}/${artists.length}] ${artistName} — "${trackName}"`);
 
@@ -443,7 +487,7 @@ async function main() {
 
     // 2. Genres from Everynoise (source of truth — same as smart-match + verify-genres)
     process.stdout.write(`  Everynoise... `);
-    const { genres: enGenres, tags: enTags } = await getEverynoiseGenres(artistName);
+    const { genres: enGenres, tags: enTags } = await getEverynoiseGenres(artistName, trackId);
     // Prefer micro-tags for categorization (more granular); fall back to linked genre names
     const rawTags   = enTags.length ? enTags : enGenres;
     const genres    = categorizeGenres(rawTags);
