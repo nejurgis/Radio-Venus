@@ -1121,7 +1121,6 @@ function playTrack(index) {
   const track = tracks[currentTrackIndex];
   currentPlayingTrack = track;
 
-  updateArtistIndexPlaying(track.name);
   trackSongStart(track.name, playingGenreId);
 
   stopProgressLoop();
@@ -1142,6 +1141,7 @@ function playTrack(index) {
   requestAnimationFrame(() => {
     updateNowPlaying('Loading...'); // cancels + restarts marquee WAAPI — defer so it doesn't block repaint
     updateFavoriteButton(isFavorite(track.name)); // rebuilds DOM — defer too
+    updateArtistIndexPlaying(track.name); // querySelector over 1200+ elements — defer
   });
 }
 

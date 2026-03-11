@@ -633,12 +633,11 @@ export function updateArtistIndexPlaying(name) {
   if (!container) return;
   container.querySelector('.index-artist-playing')?.classList.remove('index-artist-playing');
   if (name) {
-    for (const span of container.querySelectorAll('.index-artist')) {
-      if (span.dataset.name === name) {
-        span.classList.add('index-artist-playing');
-        break;
-      }
-    }
+    // Attribute selector is handled by the browser's native CSS engine — much faster
+    // than querySelectorAll('.index-artist') + JS loop over 1200+ elements
+    const escaped = name.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+    container.querySelector(`.index-artist[data-name="${escaped}"]`)
+      ?.classList.add('index-artist-playing');
   }
 }
 
