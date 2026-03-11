@@ -299,11 +299,9 @@ async function main() {
 
         return {
           name: entry.name,
-          birthDate: entry.birthDate,
           venus,
           genres,
           subgenres,
-          ...(entry.enTags?.length && { enTags: entry.enTags }),
           youtubeVideoId: videoId,
           backupVideoIds: entry.backupVideoIds || [],
         };

@@ -160,6 +160,8 @@ function nameHash(name, seed = 0) {
 let canvas = null;
 let ctx = null;
 let animId = null;
+let frameRequested = false;
+let fadeDeadline = 0; // timestamp after which all fade-ins are complete
 let rotation = 0;
 let zoomDrift = 0;
 let zoomDriftEnabled = false;
@@ -313,11 +315,13 @@ export function initNebula(containerId) {
     const rect = canvas.getBoundingClientRect();
     mouseX = e.clientX - rect.left;
     mouseY = e.clientY - rect.top;
+    requestFrame();
   });
   document.addEventListener('mouseleave', () => {
     mouseX = mouseY = -1;
     hoveredDot = null;
     document.body.style.cursor = '';
+    requestFrame();
   });
   document.addEventListener('click', (e) => {
     if (!hoveredDot || !clickCallback || zoomSign == null || isHarpEnabled()) return;
@@ -347,6 +351,7 @@ export function initNebula(containerId) {
     zoomDrift += delta;
     dragVelocity = delta;
     dragLastX = x;
+    requestFrame();
   }
 
   function dragEnd() {
@@ -387,7 +392,8 @@ function resize() {
 
 export function renderNebula(musicians) {
   dots = [];
-  spriteCache.clear(); 
+  spriteCache.clear();
+  const mobileScale = window.innerWidth < 640 ? 0.72 : 1;
 
   for (const m of musicians) {
     if (!m.venus || !m.venus.sign) continue;
@@ -409,7 +415,6 @@ export function renderNebula(musicians) {
     const genreSize = nGenres <= 1 ? 1.2 : nGenres === 2 ? 1.5 : nGenres === 3 ? 1.8 : 2.1;
     const genreAlpha = nGenres <= 1 ? 0.35 : nGenres === 2 ? 0.5 : nGenres === 3 ? 0.65 : 0.8;
 
-    const mobileScale = window.innerWidth < 640 ? 0.72 : 1;
     const finalSize = (genreSize + jS * 0.6) * mobileScale;
     const finalAlpha = genreAlpha + jS * 0.1;
 
@@ -431,9 +436,12 @@ export function renderNebula(musicians) {
     });
   }
 
+  // Fade-in takes ~300ms lead + 884/12 batches × 32ms + 800ms fade = ~4s total
+  fadeDeadline = performance.now() + 4500;
+
   // Start the animation loop immediately — dots are invisible until their sprite
   // arrives, then fade in, so the nebula appears without any blocking delay.
-  if (!animId) tick();
+  requestFrame();
 
   // Zodiac glyphs twinkle in one by one in shuffled order, ~80ms apart
   signBirths.fill(0);
@@ -476,21 +484,25 @@ export function setUserVenus(longitude, element) {
   const [r, g, b] = ELEMENT_COLORS[element] || ELEMENT_COLORS.air;
   userDot = { deg: longitude, r, g, b, birth: performance.now() };
   previewDot = null;
+  requestFrame();
 }
 
-export function clearUserVenus() { userDot = null; }
+export function clearUserVenus() { userDot = null; requestFrame(); }
 
 export function setPreviewVenus(longitude, element) {
   const [r, g, b] = ELEMENT_COLORS[element] || ELEMENT_COLORS.air;
   previewDot = { deg: longitude, r, g, b };
+  requestFrame();
 }
 
-export function clearPreviewVenus() { previewDot = null; }
+export function clearPreviewVenus() { previewDot = null; requestFrame(); }
 export function setMoonPosition(longitude, phaseAngle = 45) {
   moonDot = { deg: longitude, phaseAngle, birth: performance.now() };
+  requestFrame();
 }
 export function setSunPosition(longitude) {
   sunDot = { deg: longitude, birth: performance.now() };
+  requestFrame();
 }
 export function onNebulaHover(callback) { hoverCallback = callback; }
 export function onNebulaClick(callback) { clickCallback = callback; }
@@ -515,10 +527,12 @@ export function zoomToSign(signIndex, { duration = 2000, animate = true, targetD
     zoomAnimDuration = duration;
     zoomAnimating = true;
     zoomProgress = 0;
+    requestFrame();
     return new Promise(r => { zoomResolve = r; });
   } else {
     zoomProgress = 1;
     zoomAnimating = false;
+    requestFrame();
     return Promise.resolve();
   }
 }
@@ -529,6 +543,7 @@ export function zoomOut({ duration = 1800, animate = true } = {}) {
     zoomAnimDuration = duration;
     zoomAnimating = 'out';
     zoomProgress = 1;
+    requestFrame();
     return new Promise(r => { zoomResolve = r; });
   }
   zoomSign = null;
@@ -536,27 +551,31 @@ export function zoomOut({ duration = 1800, animate = true } = {}) {
   zoomProgress = 0;
   zoomAnimating = false;
   if (containerEl) containerEl.classList.remove('is-zoomed');
+  requestFrame();
   return Promise.resolve();
 }
 
 export function showNebula(visible) { if (containerEl) containerEl.classList.toggle('is-hidden', !visible); }
 export function dimNebula(dim) { if (containerEl) containerEl.classList.toggle('is-dimmed', dim); }
 export function deepDimNebula(deep) { if (containerEl) containerEl.classList.toggle('is-deep-dimmed', deep); }
-export function setZoomDrift(enabled) { zoomDriftEnabled = enabled; }
+export function setZoomDrift(enabled) { zoomDriftEnabled = enabled; requestFrame(); }
 export function resetDrift(duration = 1800) {
   if (zoomDrift === 0) return;
   driftResetFrom = zoomDrift;
   driftResetStart = performance.now();
   driftResetDuration = duration;
   driftResetAnimating = true;
+  requestFrame();
 }
 export function enableDragRotate(enabled) {
   dragRotateEnabled = enabled;
   if (!enabled) { dragging = false; dragVelocity = 0; }
+  requestFrame();
 }
 
 export function nudgeWheel(degrees = 15) {
   dragVelocity += degrees;
+  requestFrame();
 }
 
 // ── Render loop ───────────────────────────────────────────────────────────────
@@ -565,8 +584,16 @@ export function nudgeWheel(degrees = 15) {
 let _gradW = 0, _gradH = 0;
 let _centerGlow, _tealRing, _thinRing, _iconGrad, _tubeGrad, _outerFade, _metalGrad;
 
+function requestFrame() {
+  if (!frameRequested) {
+    frameRequested = true;
+    animId = requestAnimationFrame(tick);
+  }
+}
+
 function tick() {
-  animId = requestAnimationFrame(tick);
+  frameRequested = false;
+  animId = null;
   if (!ctx || !canvas) return;
 
   const now = performance.now(); // cached once — used for all fade/pulse calculations
@@ -1267,6 +1294,19 @@ if (sunDot) {
 
 
   if (isZoomed) ctx.restore(); // final restore for zoom transform
+
+  // ── Schedule next frame only if something still needs updating ───────────
+  const perpetual =
+    zoomSign === null ||                              // unzoomed ring always rotates
+    (zoomDriftEnabled && !dragRotateEnabled) ||       // music playing — auto-drift
+    dragging ||                                       // active drag
+    Math.abs(dragVelocity) > 0.01 ||                  // inertia still decaying
+    zoomAnimating !== false ||                        // zoom animation in progress
+    driftResetAnimating ||                            // drift-reset animation
+    !!previewDot ||                                   // preview dot pulses
+    now < fadeDeadline;                               // fade-in still running
+  if (perpetual) requestFrame();
+  // else: idle — loop stops. requestFrame() called again by any state-changing export.
 }
 
 export function destroyNebula() {
