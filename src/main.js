@@ -1493,6 +1493,7 @@ document.getElementById('seeker').addEventListener('input', e => {
     showBuffering(targetPct);
     glideToPosition(targetPct);
     seekTo(duration * e.target.value / 1000);
+    _progPollAt = -Infinity; // force immediate re-poll so interpolation starts from new position
   }
 });
 
