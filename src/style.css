@@ -398,7 +398,7 @@ body:has(#screen-radio.active) .newsletter-footer {
 }
 
 .newsletter-footer .newsletter-form {
-  width: 200px;
+  width: 230px;
   max-width: calc(100% - 80px); /* keep clear of btn-info on small screens */
   pointer-events: auto;
   margin-top: 0;
