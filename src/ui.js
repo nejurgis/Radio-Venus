@@ -75,6 +75,16 @@ export function initScreens() {
   ui.radioControls = document.querySelector('.radio-controls');
   ui.nowPlaying = document.getElementById('now-playing');
 
+  // Immediate press feedback on pointerdown — item highlights before click fires
+  ui.trackList.addEventListener('pointerdown', e => {
+    const item = e.target.closest('.track-item');
+    if (!item || item.classList.contains('is-failed') || e.target.closest('.star-toggle')) return;
+    item.classList.add('is-pressing');
+    const clear = () => item.classList.remove('is-pressing');
+    item.addEventListener('pointerup',    clear, { once: true, passive: true });
+    item.addEventListener('pointercancel', clear, { once: true, passive: true });
+  }, { passive: true });
+
   // Delegated click handler for track list (single listener instead of per-track)
   ui.trackList.addEventListener('click', e => {
     if (e.target.closest('.star-toggle')) return; // fav star — don't select track
@@ -352,7 +362,7 @@ export function setActiveTrack(index) {
   }
   if (next) {
     next.classList.add('active');
-    next.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    next.scrollIntoView({ behavior: 'instant', block: 'nearest' });
   }
 }
 

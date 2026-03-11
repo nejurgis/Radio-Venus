@@ -1129,10 +1129,13 @@ function playTrack(index) {
     startSilentFailTimer();
   });
   startLoadingProgress();
-  updateNowPlaying('Loading...');
-  updateFavoriteButton(isFavorite(track.name));
+  // Paint the active-track highlight first, then defer heavier UI work to next frame
   setActiveTrack(currentTrackIndex);
   updatePlayButton('buffering');
+  requestAnimationFrame(() => {
+    updateNowPlaying('Loading...'); // cancels + restarts marquee WAAPI — defer so it doesn't block repaint
+    updateFavoriteButton(isFavorite(track.name)); // rebuilds DOM — defer too
+  });
 }
 
 function skipToNextPlayable() {
