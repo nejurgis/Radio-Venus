@@ -1781,6 +1781,8 @@ p a:hover {
 
 .track-item.is-failed {
   cursor: default;
+  /* Disable clicks on the item itself; btn-report re-enables its own pointer events */
+  pointer-events: none;
 }
 
 .track-item.is-failed .track-name,
@@ -1794,31 +1796,44 @@ p a:hover {
 }
 
 .btn-report {
+  /* Center without transform — avoids iOS tap & sliding bugs */
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  inset: 0;
+  margin: auto;
+  width: fit-content;
+  height: fit-content;
+  /* Style — matches .btn-primary pill shape */
   font-family: var(--font-mono);
   font-size: 0.65rem;
-  letter-spacing: 0.08em;
-  padding: 0.3rem 0.75rem;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 1rem;
   background: none;
   color: var(--text-dim);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 3px;
+  border: none;
+  border-radius: 2rem;
+  box-shadow:
+    inset -1px -1px 1px 1px rgb(255 255 255 / 14%),
+    inset 0px -2px 0px 0px rgba(255, 255, 255, 0.07),
+    6px 6px 6px rgba(0, 0, 0, 0.3);
   cursor: pointer;
+  touch-action: manipulation;
+  pointer-events: auto;
   white-space: nowrap;
-  transition: color 0.2s, border-color 0.2s;
+  text-transform: lowercase;
+  transition: color 0.15s, box-shadow 0.15s, transform 0.15s;
   z-index: 1;
 }
 
 .btn-report:hover {
   color: var(--text-bright);
-  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .btn-report:active {
-  transform: translate(-50%, calc(-50% + 2px)) scale(0.98);
+  transform: translateY(2px) scale(0.98);
+  box-shadow:
+    inset 2px 2px 3px rgba(0, 0, 0, 0.5),
+    inset -1px -1px 1px rgba(255, 255, 255, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .track-restricted {

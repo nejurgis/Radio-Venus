@@ -1270,7 +1270,9 @@ document.addEventListener('click', e => {
   const reportBtn = e.target.closest('.btn-report');
   if (reportBtn) {
     const name = reportBtn.dataset.name;
-    reportBtn.remove();
+    const trackItem = reportBtn.closest('.track-item');
+    if (trackItem) trackItem.remove();
+    else reportBtn.remove();
     showToast('reported! — thank you');
     const url = new URL(REPORT_ENDPOINT);
     url.searchParams.set('artist', name);

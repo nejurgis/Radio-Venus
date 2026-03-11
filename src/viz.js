@@ -393,7 +393,7 @@ function resize() {
 export function renderNebula(musicians) {
   dots = [];
   spriteCache.clear();
-  const mobileScale = window.innerWidth < 640 ? 0.72 : 1;
+  const mobileScale = window.innerWidth < 640 ? 0.52 : 1;
 
   for (const m of musicians) {
     if (!m.venus || !m.venus.sign) continue;
