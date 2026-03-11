@@ -805,6 +805,9 @@ function tick() {
     rot = rotation;
   }
 
+  // Compute once — reused for spokes, glyphs, dot angles (avoids per-call multiply)
+  const rotRad = rot * RAD_PER_DEG;
+
   // Fire tuner callback with longitude at the 12-o'clock needle
   if (zoomSign != null && rotationCallback) {
     rotationCallback(((rot % 360) + 360) % 360);
@@ -875,7 +878,7 @@ function tick() {
     _tickMajorPath = new Path2D();
     _tickMinorPath = new Path2D();
     for (let deg = 0; deg < 360; deg++) {
-      const a = (-deg - 90) * Math.PI / 180;
+      const a = (-deg - 90) * RAD_PER_DEG;
       const cA = Math.cos(a), sA = Math.sin(a);
       const isMajor = deg % 5 === 0;
       const len = isMajor ? majorLen2 : minorLen2;
@@ -883,13 +886,28 @@ function tick() {
       path.moveTo(glyphR * cA,        glyphR * sA);
       path.lineTo((glyphR + len) * cA, (glyphR + len) * sA);
     }
+
+    // Pre-bake per-dot geometry (constrainedDeg, baseAngle, _r) —
+    // depends on innerR/glyphR/dotBand which only change on resize.
+    // baseAngle = angle at rot=0; in tick() just add rotRad.
+    for (const dot of dots) {
+      const margin = dot.size + 1;
+      const minR = innerR + margin;
+      const maxR = glyphR - margin;
+      dot._r = Math.max(minR, Math.min(maxR, innerR + dot.jR * dotBand));
+      const degPadding = (margin / dot._r) * DEG_PER_RAD;
+      const signStart = dot.signIndex * 30;
+      const signEnd   = (dot.signIndex + 1) * 30;
+      dot._constrainedDeg = Math.max(signStart + degPadding, Math.min(signEnd - degPadding, dot.deg));
+      dot._baseAngle = (-dot._constrainedDeg - 90) * RAD_PER_DEG;
+    }
   }
 
   // ── Spokes — apply rotation as a single canvas transform ─────────────────
   {
     ctx.save();
     ctx.translate(cx, cy);
-    ctx.rotate(rot * Math.PI / 180);
+    ctx.rotate(rotRad);
     ctx.fillStyle = _metalGrad;
     ctx.fill(_spokePath);
     ctx.restore();
@@ -941,7 +959,7 @@ function tick() {
   for (let sign = 0; sign < 12; sign++) {
     if (signBirths[sign] === 0) continue;
 
-    const centerAngle = (-(sign * 30 + 15) - 90 + rot) * Math.PI / 180;
+    const centerAngle = (-(sign * 30 + 15) - 90) * RAD_PER_DEG + rotRad;
     const ix = cx + iconR * Math.cos(centerAngle);
     const iy = cy + iconR * Math.sin(centerAngle);
 
@@ -964,7 +982,7 @@ function tick() {
   {
     ctx.save();
     ctx.translate(cx, cy);
-    ctx.rotate(rot * Math.PI / 180);
+    ctx.rotate(rotRad);
     ctx.strokeStyle = 'rgba(100, 162, 155, 0.4)';
     ctx.lineWidth = 0.8;
     ctx.stroke(_tickMajorPath);
@@ -1011,43 +1029,18 @@ function tick() {
     hitY = (mouseY - (focusY + ty)) / scale + focusY;
   }
 
+  let _curAlpha = 1; // track globalAlpha — only write when it changes
   for (let i = 0; i < dots.length; i++) {
     const dot = dots[i];
 
-    // ── BOUNDARY CLAMPING LOGIC ─────────────────────────────
-    // 1. Radial Clamp: Keep dot between Inner Ring and Glyph Ring
-    // Add margin (dot size + 1px)
-    const margin = dot.size + 1;
-    const minR = innerR + margin;
-    const maxR = glyphR - margin;
-    let r = innerR + dot.jR * dotBand;
-    // Force r to stay within safe zone
-    r = Math.max(minR, Math.min(maxR, r));
+    // Pre-baked geometry (updated on resize): _r, _baseAngle, _constrainedDeg
+    const r     = dot._r;
+    const angle = dot._baseAngle + rotRad;
 
-    // 2. Angular Clamp: Keep dot within its 30-degree sector
-    // Convert dot size to degrees at this radius (Arc Length formula: s = r*theta -> theta = s/r)
-    // We add a safety buffer of ~1.5 degrees so it doesn't touch the spoke
-    const degPadding = (margin / r) * DEG_PER_RAD;
-    
-    const signStart = dot.signIndex * 30;
-    const signEnd = (dot.signIndex + 1) * 30;
-    
-    // Apply jitter to original degree
-    let rawDeg = dot.deg + dot.jA;
-    
-    // Clamp degree between (Start + Padding) and (End - Padding)
-    // We must handle the 0/360 wrap-around carefully if sign is Pisces, but 
-    // since dot.deg is stored as 0-360 linear, standard min/max works fine.
-    const constrainedDeg = Math.max(signStart + degPadding, Math.min(signEnd - degPadding, rawDeg));
-    
-    // Convert to render angle
-    const angle = (-(constrainedDeg) - 90 + rot) * Math.PI / 180;
-    
     // Calculate final X/Y and cache on dot for label pass
     const x = cx + r * Math.cos(angle);
     const y = cy + r * Math.sin(angle);
     dot._x = x; dot._y = y;
-    // ────────────────────────────────────────────────────────
 
     // Hit Test
     if (hitX >= 0) {
@@ -1065,7 +1058,7 @@ function tick() {
     // Needle proximity — highlight dots the red line passes through
     let isOnNeedle = false;
     if (needleDeg >= 0) {
-      const angDist = Math.abs(constrainedDeg - needleDeg);
+      const angDist = Math.abs(dot._constrainedDeg - needleDeg);
       isOnNeedle = (angDist > 180 ? 360 - angDist : angDist) < 1;
     }
 
@@ -1082,17 +1075,19 @@ function tick() {
     if (isHighlighted) {
       const spr  = getHighlightSprite(dot.r, dot.g, dot.b, isHovered);
       const half = spr._cssSize / 2;
+      // Highlighted dots drawn at full alpha — restore if we left it changed
+      if (_curAlpha !== 1) { ctx.globalAlpha = 1; _curAlpha = 1; }
       ctx.drawImage(spr, x - half, y - half, spr._cssSize, spr._cssSize);
     } else if (dot.sprite) {
       // Fade in over 400ms from when the sprite was first created
       const fadeAlpha = Math.min(1, (now - dot.spriteBirth) / 400);
-      ctx.globalAlpha = fadeAlpha;
+      if (fadeAlpha !== _curAlpha) { ctx.globalAlpha = fadeAlpha; _curAlpha = fadeAlpha; }
       ctx.drawImage(dot.sprite, x - dot.spriteOffset, y - dot.spriteOffset, dot.spriteDrawSize, dot.spriteDrawSize);
-      ctx.globalAlpha = 1;
     }
     // null sprite → dot is invisible until its batch arrives (twinkling-in effect)
     if (isOnNeedle) curOnNeedle.add(i);
   }
+  if (_curAlpha !== 1) ctx.globalAlpha = 1; // restore after loop
 
   // Swap needle tracking sets
   prevOnNeedle.clear();
