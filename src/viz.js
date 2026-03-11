@@ -228,6 +228,7 @@ let driftResetFrom = 0;
 // ── OPTIMIZED SPRITE GENERATOR (High-Res + Soft Glow Filter) ──────────────
 
 const DEG_PER_RAD = 180 / Math.PI; // constant — avoid recomputing in hot loops
+const RAD_PER_DEG = Math.PI / 180; // inverse — degrees → radians
 
 const spriteCache = new Map();
 const SPRITE_SCALE = 4; // 4× is crisp at 2–3× DPR and creates sprites ~4× faster than 8×
@@ -235,6 +236,9 @@ const SPRITE_SCALE = 4; // 4× is crisp at 2–3× DPR and creates sprites ~4× 
 // ── Highlight sprite cache (hovered / needle dots) ────────────────────────────
 // Avoids createRadialGradient in the hot dot loop — keyed by color + hover state
 const _highlightCache = new Map();
+
+// Cursor state — avoid DOM write every frame when cursor hasn't changed
+let _lastCursorMode = ''; // '', 'crosshair', or 'pointer'
 
 function getHighlightSprite(r, g, b, isHovered) {
   const key = `${r},${g},${b},${isHovered ? 1 : 0}`;
@@ -1093,190 +1097,81 @@ function tick() {
 
   const prevHovered = hoveredDot;
   hoveredDot = closestDot;
-  if (hoveredDot) {
-    document.body.style.cursor = crosshairCursor;
-  } else if (wasMoonActive) {
-    document.body.style.cursor = 'pointer';
-  } else if (document.body.style.cursor) {
-    document.body.style.cursor = '';
+
+  // Cursor — only write to DOM when state changes
+  const wantCursor = hoveredDot ? crosshairCursor : wasMoonActive ? 'pointer' : '';
+  if (wantCursor !== _lastCursorMode) {
+    document.body.style.cursor = wantCursor;
+    _lastCursorMode = wantCursor;
   }
+
   if (hoverCallback && hoveredDot !== prevHovered) {
     hoverCallback(hoveredDot ? { name: hoveredDot.name, genres: hoveredDot.genres } : null);
   }
 
   ctx.restore(); // End Dots save
 
-  // ── User's Venus / Preview ──────────────────────────────
+  // ── Pre-calculate celestial positions & hit-test (no drawing yet) ────────────
+  let pvx = 0, pvy = 0, pvGlowR = 0, pvBreath = 0;
   if (previewDot && !userDot) {
-    const angle = (-(previewDot.deg) - 90 + rot) * Math.PI / 180;
-    const x = cx + midR * Math.cos(angle);
-    const y = cy + midR * Math.sin(angle);
-    ctx.save();
-    ctx.globalCompositeOperation = 'lighter';
-    const breath = 0.3 + 0.15 * Math.sin(now / 600);
-    const glowR = isZoomed ? 8 : 16;
-    const grad = ctx.createRadialGradient(x, y, 0, x, y, glowR);
-    grad.addColorStop(0, `rgba(${previewDot.r}, ${previewDot.g}, ${previewDot.b}, ${breath})`);
-    grad.addColorStop(1, `rgba(${previewDot.r}, ${previewDot.g}, ${previewDot.b}, 0)`);
-    ctx.beginPath();
-    ctx.arc(x, y, glowR, 0, Math.PI * 2);
-    ctx.fillStyle = grad;
-    ctx.fill();
-    ctx.restore();
+    const a = (-(previewDot.deg) - 90 + rot) * RAD_PER_DEG;
+    pvx = cx + midR * Math.cos(a);
+    pvy = cy + midR * Math.sin(a);
+    pvGlowR = isZoomed ? 8 : 16;
+    pvBreath = 0.3 + 0.15 * Math.sin(now / 600);
   }
 
+  let ux = 0, uy = 0, uBallR = 0, uGlowR = 0, uOuterR = 0, uPulse = 0;
+  let ur = 0, ug = 0, ub = 0;
   if (userDot) {
     const t = (now - userDot.birth) / 1000;
-    const pulse = 1 + 0.15 * Math.sin(t * 0.8);
-    const angle = (-(userDot.deg) - 90 + rot) * Math.PI / 180;
-    const x = cx + midR * Math.cos(angle);
-    const y = cy + midR * Math.sin(angle);
+    uPulse = 1 + 0.15 * Math.sin(t * 0.8);
+    const a = (-(userDot.deg) - 90 + rot) * RAD_PER_DEG;
+    ux = cx + midR * Math.cos(a);
+    uy = cy + midR * Math.sin(a);
+    uBallR = isZoomed ? 5 : Math.min(9, minDim * 0.018);
+    uGlowR = isZoomed ? 14 : Math.min(28, minDim * 0.055);
+    uOuterR = uGlowR * 2.2;
+    ur = userDot.r; ug = userDot.g; ub = userDot.b;
+  }
 
-    const ballR = isZoomed ? 5 : Math.min(9, minDim * 0.018);
-    const glowR = isZoomed ? 14 : Math.min(28, minDim * 0.055);
-    const outerR = glowR * 2.2;
-    const { r: ur, g: ug, b: ub } = userDot;
+  let sx = 0, sy = 0, sunR = 0, coronaR = 0;
+  if (sunDot) {
+    const a = (-(sunDot.deg) - 90 + rot) * RAD_PER_DEG;
+    sx = cx + midR * Math.cos(a);
+    sy = cy + midR * Math.sin(a);
+    sunR   = isZoomed ? 6 : Math.min(12, minDim * 0.025);
+    coronaR = sunR * 5.0;
 
-    ctx.save();
-    ctx.globalCompositeOperation = 'lighter';
-
-    // Outer haze ring
-    const outerGlow = ctx.createRadialGradient(x, y, glowR * 0.6, x, y, outerR * pulse);
-    outerGlow.addColorStop(0,   `rgba(${ur}, ${ug}, ${ub}, 0.18)`);
-    outerGlow.addColorStop(0.5, `rgba(${ur}, ${ug}, ${ub}, 0.06)`);
-    outerGlow.addColorStop(1,   `rgba(${ur}, ${ug}, ${ub}, 0)`);
-    ctx.beginPath();
-    ctx.arc(x, y, outerR * pulse, 0, Math.PI * 2);
-    ctx.fillStyle = outerGlow;
-    ctx.fill();
-
-    // Inner glow
-    const glow = ctx.createRadialGradient(x, y, 0, x, y, glowR * pulse);
-    glow.addColorStop(0, `rgba(${ur}, ${ug}, ${ub}, 0.7)`);
-    glow.addColorStop(1, `rgba(${ur}, ${ug}, ${ub}, 0)`);
-    ctx.beginPath();
-    ctx.arc(x, y, glowR * pulse, 0, Math.PI * 2);
-    ctx.fillStyle = glow;
-    ctx.fill();
-
-    // Ball
-    const ball = ctx.createRadialGradient(
-      x - ballR * 0.35, y - ballR * 0.35, ballR * 0.05,
-      x, y, ballR
-    );
-    ball.addColorStop(0, `rgba(255, 255, 255, 1)`);
-    ball.addColorStop(0.5, `rgba(${ur}, ${ug}, ${ub}, 0.95)`);
-    ball.addColorStop(1, `rgba(${Math.round(ur * 0.1)}, ${Math.round(ug * 0.1)}, ${Math.round(ub * 0.1)}, 0)`);
-    ctx.beginPath();
-    ctx.arc(x, y, ballR, 0, Math.PI * 2);
-    ctx.fillStyle = ball;
-    ctx.fill();
-    ctx.restore();
-
-    ctx.save();
-    ctx.globalCompositeOperation = 'source-over';
-    if (isZoomed) {
-      ctx.font = `${Math.max(2, ballR * 0.55)}px monospace`;
-      ctx.fillStyle = `rgba(255, 255, 255, 0.9)`;
-      ctx.shadowBlur = 6;
-      ctx.shadowColor = `rgba(${ur}, ${ug}, ${ub}, 0.8)`;
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'top';
-      ctx.fillText('You', x, y + glowR * pulse + 1);
-    } else {
-      ctx.font = '10px monospace';
-      ctx.fillStyle = `rgba(255, 255, 255, 0.85)`;
-      ctx.shadowBlur = 8;
-      ctx.shadowColor = `rgba(${ur}, ${ug}, ${ub}, 0.9)`;
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'top';
-      ctx.fillText('You', x, y + glowR * pulse + 3);
+    // Sun hit-test (non-drawing)
+    const sunHitR = 3;
+    const sdx = hitX - sx, sdy = hitY - sy;
+    const isMouseOnSun  = mouseX >= 0 && (sdx * sdx + sdy * sdy) < sunHitR * sunHitR;
+    const sunAngDist    = Math.abs(sunDot.deg - needleDeg);
+    const isNeedleOnSun = needleDeg >= 0 && (sunAngDist > 180 ? 360 - sunAngDist : sunAngDist) < 5;
+    const nowSunActive  = isMouseOnSun || isNeedleOnSun;
+    if (nowSunActive !== wasSunActive) {
+      wasSunActive = nowSunActive;
+      if (sunHoverCallback) sunHoverCallback(nowSunActive);
     }
-    ctx.shadowBlur = 0;
-    ctx.restore();
+  } else if (wasSunActive) {
+    wasSunActive = false;
+    if (sunHoverCallback) sunHoverCallback(false);
   }
 
-// ── Sun dot ──────────────────────────────────────────────────────────────────
-if (sunDot) {
-  const sAngle = (-(sunDot.deg) - 90 + rot) * Math.PI / 180;
-  const sx = cx + midR * Math.cos(sAngle);
-  const sy = cy + midR * Math.sin(sAngle);
+  let mx = 0, my = 0, moonR = 0, hazeR = 0, mPulse = 1, moonFade = 0, phaseAngle = 0;
+  const hasMoon = moonDot && moonBirth > 0;
+  if (hasMoon) {
+    moonFade = Math.min(1, (now - moonBirth) / 500);
+    phaseAngle = moonDot.phaseAngle ?? 45;
+    mPulse = isZoomed ? 1 + 0.12 * Math.sin((now - moonDot.birth) / 1250) : 1;
+    const a = (-(moonDot.deg) - 90 + rot) * RAD_PER_DEG;
+    mx = cx + midR * Math.cos(a);
+    my = cy + midR * Math.sin(a);
+    moonR = isZoomed ? 5.5 : Math.min(15, minDim * 0.032);
+    hazeR = (isZoomed ? 18 : moonR * 3.5) * mPulse;
 
-  const sunR   = isZoomed ? 6 : Math.min(12, minDim * 0.025);
-  const coronaR = sunR * 5.0;
-
-  // 1. Outer Corona Haze (Warm Burnt Orange)
-  ctx.save();
-  ctx.globalCompositeOperation = 'screen'; 
-  const coronaG = ctx.createRadialGradient(sx, sy, 0, sx, sy, coronaR);
-  coronaG.addColorStop(0,   'rgba(255, 160,  60, 0.55)'); // Golden-orange
-  coronaG.addColorStop(0.3, 'rgba(255, 100,  20, 0.30)'); // Deep orange
-  coronaG.addColorStop(0.7, 'rgba(180,  50,  10, 0.10)'); // Soft rust/red-orange
-  coronaG.addColorStop(1,   'rgba(100,  20,   0, 0)');
-  ctx.fillStyle = coronaG;
-  ctx.beginPath();
-  ctx.arc(sx, sy, coronaR, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.restore();
-
-  // 2. Inner Solar Disc (White core bleeding into golden-fire)
-  ctx.save();
-  ctx.globalCompositeOperation = 'lighter'; 
-  const discG = ctx.createRadialGradient(sx - sunR * 0.2, sy - sunR * 0.2, 0, sx, sy, sunR * 1.3);
-  discG.addColorStop(0,   'rgba(255, 250, 240, 1.00)'); // Bright hot core
-  discG.addColorStop(0.2, 'rgba(255, 180,  80, 0.95)'); // Bright gold
-  discG.addColorStop(0.6, 'rgba(255,  80,  20, 0.70)'); // Fiery orange
-  discG.addColorStop(1,   'rgba(200,  40,   0, 0)');    // Fade into background
-  ctx.fillStyle = discG;
-  ctx.beginPath();
-  ctx.arc(sx, sy, sunR * 1.3, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.restore();
-
-  // 3. Label
-  if (isZoomed) {
-    ctx.save();
-    ctx.globalCompositeOperation = 'source-over';
-    ctx.font         = '1.4px sans-serif';
-    ctx.textAlign    = 'center';
-    ctx.textBaseline = 'top';
-    ctx.fillStyle    = 'rgba(255, 180, 100, 0.85)'; // Warm gold text
-    ctx.fillText('☉ Sun', sx, sy + sunR * 1.6);
-    ctx.restore();
-  }
-
-  // Sun active: mouse proximity OR needle alignment
-  const sunHitR = 3;
-  const sdx = hitX - sx, sdy = hitY - sy;
-  const isMouseOnSun  = mouseX >= 0 && (sdx * sdx + sdy * sdy) < sunHitR * sunHitR;
-  const sunAngDist    = Math.abs(sunDot.deg - needleDeg);
-  const isNeedleOnSun = needleDeg >= 0 && (sunAngDist > 180 ? 360 - sunAngDist : sunAngDist) < 5;
-  const nowSunActive  = isMouseOnSun || isNeedleOnSun;
-  if (nowSunActive !== wasSunActive) {
-    wasSunActive = nowSunActive;
-    if (sunHoverCallback) sunHoverCallback(nowSunActive);
-  }
-} else if (wasSunActive) {
-  wasSunActive = false;
-  if (sunHoverCallback) sunHoverCallback(false);
-}
-
-  // ── Moon dot ─────────────────────────────────────────────────────────────────
-  if (moonDot && moonBirth > 0) {
-    const moonFade = Math.min(1, (now - moonBirth) / 500);
-    ctx.save();
-    ctx.globalAlpha = moonFade; // all sub-saves inherit this; restored at the end
-    const phaseAngle = moonDot.phaseAngle ?? 45;
-    // Pulse only when zoomed — on the rotating full ring it makes the moon look nervous
-    const mPulse = isZoomed
-      ? 1 + 0.12 * Math.sin((now - moonDot.birth) / 1250)
-      : 1;
-
-    const mAngle = (-(moonDot.deg) - 90 + rot) * Math.PI / 180;
-    const mx = cx + midR * Math.cos(mAngle);
-    const my = cy + midR * Math.sin(mAngle);
-
-    // Moon active: mouse proximity OR needle alignment (works on mobile too)
+    // Moon hit-test (non-drawing)
     const moonHitR = 3;
     const mdx = hitX - mx, mdy = hitY - my;
     const isMouseOnMoon = mouseX >= 0 && (mdx * mdx + mdy * mdy) < moonHitR * moonHitR;
@@ -1287,14 +1182,72 @@ if (sunDot) {
       wasMoonActive = nowMoonActive;
       if (moonHoverCallback) moonHoverCallback(nowMoonActive);
     }
+  } else if (wasMoonActive) {
+    wasMoonActive = false;
+    if (moonHoverCallback) moonHoverCallback(false);
+  }
 
-    // moonR: scale with canvas size so it's reasonable on small phone screens
-    const moonR = isZoomed ? 5.5 : Math.min(15, minDim * 0.032);
-    const hazeR = (isZoomed ? 18 : moonR * 3.5) * mPulse;
+  // ── Phase 1: lighter — all additive glows in one block ───────────────────────
+  ctx.save();
+  ctx.globalCompositeOperation = 'lighter';
 
-    // 1. Faint atmospheric halo — center stays dark, just a soft ring at the edges
-    ctx.save();
-    ctx.globalCompositeOperation = 'lighter';
+  if (previewDot && !userDot) {
+    const grad = ctx.createRadialGradient(pvx, pvy, 0, pvx, pvy, pvGlowR);
+    grad.addColorStop(0, `rgba(${previewDot.r}, ${previewDot.g}, ${previewDot.b}, ${pvBreath})`);
+    grad.addColorStop(1, `rgba(${previewDot.r}, ${previewDot.g}, ${previewDot.b}, 0)`);
+    ctx.beginPath();
+    ctx.arc(pvx, pvy, pvGlowR, 0, Math.PI * 2);
+    ctx.fillStyle = grad;
+    ctx.fill();
+  }
+
+  if (userDot) {
+    // Outer haze ring
+    const outerGlow = ctx.createRadialGradient(ux, uy, uGlowR * 0.6, ux, uy, uOuterR * uPulse);
+    outerGlow.addColorStop(0,   `rgba(${ur}, ${ug}, ${ub}, 0.18)`);
+    outerGlow.addColorStop(0.5, `rgba(${ur}, ${ug}, ${ub}, 0.06)`);
+    outerGlow.addColorStop(1,   `rgba(${ur}, ${ug}, ${ub}, 0)`);
+    ctx.beginPath();
+    ctx.arc(ux, uy, uOuterR * uPulse, 0, Math.PI * 2);
+    ctx.fillStyle = outerGlow;
+    ctx.fill();
+    // Inner glow
+    const glow = ctx.createRadialGradient(ux, uy, 0, ux, uy, uGlowR * uPulse);
+    glow.addColorStop(0, `rgba(${ur}, ${ug}, ${ub}, 0.7)`);
+    glow.addColorStop(1, `rgba(${ur}, ${ug}, ${ub}, 0)`);
+    ctx.beginPath();
+    ctx.arc(ux, uy, uGlowR * uPulse, 0, Math.PI * 2);
+    ctx.fillStyle = glow;
+    ctx.fill();
+    // Ball
+    const ball = ctx.createRadialGradient(
+      ux - uBallR * 0.35, uy - uBallR * 0.35, uBallR * 0.05,
+      ux, uy, uBallR
+    );
+    ball.addColorStop(0,   `rgba(255, 255, 255, 1)`);
+    ball.addColorStop(0.5, `rgba(${ur}, ${ug}, ${ub}, 0.95)`);
+    ball.addColorStop(1,   `rgba(${Math.round(ur * 0.1)}, ${Math.round(ug * 0.1)}, ${Math.round(ub * 0.1)}, 0)`);
+    ctx.beginPath();
+    ctx.arc(ux, uy, uBallR, 0, Math.PI * 2);
+    ctx.fillStyle = ball;
+    ctx.fill();
+  }
+
+  if (sunDot) {
+    // Inner solar disc
+    const discG = ctx.createRadialGradient(sx - sunR * 0.2, sy - sunR * 0.2, 0, sx, sy, sunR * 1.3);
+    discG.addColorStop(0,   'rgba(255, 250, 240, 1.00)');
+    discG.addColorStop(0.2, 'rgba(255, 180,  80, 0.95)');
+    discG.addColorStop(0.6, 'rgba(255,  80,  20, 0.70)');
+    discG.addColorStop(1,   'rgba(200,  40,   0, 0)');
+    ctx.fillStyle = discG;
+    ctx.beginPath();
+    ctx.arc(sx, sy, sunR * 1.3, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  if (hasMoon) {
+    ctx.globalAlpha = moonFade;
     const mGlow = ctx.createRadialGradient(mx, my, moonR * 0.9, mx, my, hazeR);
     mGlow.addColorStop(0,   'rgba(200, 220, 255, 0.12)');
     mGlow.addColorStop(0.5, 'rgba(140, 180, 255, 0.05)');
@@ -1303,46 +1256,78 @@ if (sunDot) {
     ctx.beginPath();
     ctx.arc(mx, my, hazeR, 0, Math.PI * 2);
     ctx.fill();
-    ctx.restore();
+    ctx.globalAlpha = 1;
+  }
 
-    // 2. Phase disc — blurred so the boundary dissolves into the surrounding haze
-    // phCanvas is 400×400 with an inner radius of 160; we crop the 320×320 centre
-    const phCanvas = getMoonPhaseCanvas(phaseAngle);
+  ctx.restore(); // end lighter
+
+  // ── Phase 2: screen — sun corona only ────────────────────────────────────────
+  if (sunDot) {
     ctx.save();
-    ctx.filter               = `blur(${Math.max(0.6, moonR * 0.25)}px)`;
-    ctx.globalCompositeOperation = 'source-over';
-    ctx.shadowBlur           = moonR * 3.5;
-    ctx.shadowColor          = 'rgba(210, 230, 200, 0.55)';
+    ctx.globalCompositeOperation = 'screen';
+    const coronaG = ctx.createRadialGradient(sx, sy, 0, sx, sy, coronaR);
+    coronaG.addColorStop(0,   'rgba(255, 160,  60, 0.55)');
+    coronaG.addColorStop(0.3, 'rgba(255, 100,  20, 0.30)');
+    coronaG.addColorStop(0.7, 'rgba(180,  50,  10, 0.10)');
+    coronaG.addColorStop(1,   'rgba(100,  20,   0, 0)');
+    ctx.fillStyle = coronaG;
+    ctx.beginPath();
+    ctx.arc(sx, sy, coronaR, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  // ── Phase 3: source-over — moon disc + all labels ────────────────────────────
+  ctx.save();
+  ctx.globalCompositeOperation = 'source-over';
+
+  // Moon phase disc
+  if (hasMoon) {
+    ctx.save();
+    ctx.globalAlpha = moonFade;
+    const phCanvas = getMoonPhaseCanvas(phaseAngle);
+    ctx.filter     = `blur(${Math.max(0.6, moonR * 0.25)}px)`;
+    ctx.shadowBlur  = moonR * 3.5;
+    ctx.shadowColor = 'rgba(210, 230, 200, 0.55)';
     ctx.drawImage(phCanvas, 40, 40, 320, 320, mx - moonR, my - moonR, moonR * 2, moonR * 2);
     ctx.shadowBlur = 0;
     ctx.filter     = 'none';
     ctx.restore();
+  }
 
-    // 4. Label
-    if (isZoomed) {
+  if (isZoomed) {
+    ctx.textAlign    = 'center';
+    ctx.textBaseline = 'top';
+
+    // "You" label
+    if (userDot) {
+      ctx.font        = `${Math.max(2, uBallR * 0.55)}px monospace`;
+      ctx.fillStyle   = `rgba(255, 255, 255, 0.9)`;
+      ctx.shadowBlur  = 6;
+      ctx.shadowColor = `rgba(${ur}, ${ug}, ${ub}, 0.8)`;
+      ctx.fillText('You', ux, uy + uGlowR * uPulse + 1);
+      ctx.shadowBlur  = 0;
+    }
+
+    // Sun label
+    if (sunDot) {
+      ctx.font      = '1.4px sans-serif';
+      ctx.fillStyle = 'rgba(255, 180, 100, 0.85)';
+      ctx.fillText('☉ Sun', sx, sy + sunR * 1.6);
+    }
+
+    // Moon label
+    if (hasMoon) {
       ctx.save();
-      ctx.globalCompositeOperation = 'source-over';
-      ctx.font         = '1.3px monospace';
-      ctx.textAlign    = 'center';
-      ctx.textBaseline = 'top';
-      ctx.fillStyle    = 'rgba(180, 210, 255, 0.9)';
+      ctx.globalAlpha = moonFade;
+      ctx.font        = '1.3px monospace';
+      ctx.fillStyle   = 'rgba(180, 210, 255, 0.9)';
       ctx.fillText("Today's Moon", mx, my + moonR * 1.5 + 0.95);
       ctx.restore();
     }
-    ctx.restore(); // restore moonFade globalAlpha
-  } else if (wasMoonActive) {
-    wasMoonActive = false;
-    if (moonHoverCallback) moonHoverCallback(false);
-  }
 
-
-  // ── Dot labels (source-over, drawn last so they sit above all glows) ────────
-  if (isZoomed) {
-    ctx.save();
-    ctx.globalCompositeOperation = 'source-over';
+    // Dot labels
     ctx.font = '1.3px monospace';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'top';
     for (let i = 0; i < dots.length; i++) {
       const dot = dots[i];
       if (dot === hoveredDot) continue;
@@ -1353,15 +1338,16 @@ if (sunDot) {
     if (closestDot) {
       const dot = closestDot;
       const degInSign = Math.round((dot.deg % 30) * 10) / 10;
-      ctx.font = '2.2px monospace';
+      ctx.font      = '2.2px monospace';
       ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
       ctx.fillText(dot.name, dot._x, dot._y + 7 + 0.8);
-      ctx.font = '1.8px monospace';
+      ctx.font      = '1.8px monospace';
       ctx.fillStyle = `rgba(${dot.r}, ${dot.g}, ${dot.b}, 1)`;
       ctx.fillText(`${dot.sign} ${degInSign}°`, dot._x, dot._y + 7 + 2.8);
     }
-    ctx.restore();
   }
+
+  ctx.restore(); // end source-over
 
   if (isZoomed) ctx.restore(); // final restore for zoom transform
 
