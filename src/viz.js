@@ -161,6 +161,21 @@ let canvas = null;
 let ctx = null;
 let animId = null;
 let frameRequested = false;
+
+// ── FPS counter ────────────────────────────────────────────────────────────────
+let _fpsEl = null;
+let _fpsFrameCount = 0;
+let _fpsLastTime = 0;
+
+// ── Tick path cache (rebuilt on resize, applied with canvas rotate) ───────────
+let _tickMajorPath = null;
+let _tickMinorPath = null;
+let _spokePath = null;
+let _tickCacheW = 0, _tickCacheH = 0;
+
+// ── Frame throttle: 30fps when idle, 60fps during interaction ─────────────────
+let _lastTickTime = 0;
+const _IDLE_INTERVAL = 1000 / 30; // ms between frames at idle rate
 let fadeDeadline = 0; // timestamp after which all fade-ins are complete
 let rotation = 0;
 let zoomDrift = 0;
@@ -298,6 +313,16 @@ export function initNebula(containerId) {
   ctx.imageSmoothingEnabled = true;
   ctx.imageSmoothingQuality = 'high'; // Critical for downscaling high-res sprites
 
+  // FPS counter — toggle with ?fps or localStorage.fpsCounter='1'
+  const showFps = new URLSearchParams(location.search).has('fps') ||
+                  localStorage.getItem('fpsCounter') === '1';
+  if (showFps) {
+    _fpsEl = document.createElement('div');
+    _fpsEl.style.cssText = 'position:fixed;top:8px;left:8px;color:#0f0;background:rgba(0,0,0,.6);' +
+      'font:12px monospace;padding:2px 6px;border-radius:4px;z-index:9999;pointer-events:none';
+    document.body.appendChild(_fpsEl);
+  }
+
   resize();
   window.addEventListener('resize', resize);
 
@@ -381,13 +406,17 @@ export function initNebula(containerId) {
 
 function resize() {
   if (!canvas) return;
-  const dpr = window.devicePixelRatio || 1;
+  // Cap DPR at 1.5 on touch devices — halves pixel fill on Retina iPads
+  const rawDpr = window.devicePixelRatio || 1;
+  const dpr = ('ontouchstart' in window) ? Math.min(rawDpr, 1.5) : rawDpr;
   const rect = canvas.parentElement.getBoundingClientRect();
   canvas.width = rect.width * dpr;
   canvas.height = rect.height * dpr;
   canvas.style.width = rect.width + 'px';
   canvas.style.height = rect.height + 'px';
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  // Invalidate tick cache on resize
+  _tickCacheW = 0; _tickCacheH = 0;
 }
 
 export function renderNebula(musicians) {
@@ -598,6 +627,30 @@ function tick() {
 
   const now = performance.now(); // cached once — used for all fade/pulse calculations
 
+  // ── FPS counter ──────────────────────────────────────────────────────────
+  if (_fpsEl) {
+    _fpsFrameCount++;
+    if (now - _fpsLastTime >= 1000) {
+      _fpsCurrent = _fpsFrameCount;
+      _fpsFrameCount = 0;
+      _fpsLastTime = now;
+      _fpsEl.textContent = `${_fpsCurrent} fps`;
+    }
+  }
+
+  // ── Idle throttle: 30fps when nothing is animating ───────────────────────
+  const isIdle = !zoomAnimating && !dragging && Math.abs(dragVelocity) < 0.01 &&
+                 !driftResetAnimating && now > fadeDeadline && hoveredDot == null;
+  if (isIdle) {
+    const elapsed = now - _lastTickTime;
+    if (elapsed < _IDLE_INTERVAL) {
+      frameRequested = true;
+      animId = requestAnimationFrame(tick);
+      return;
+    }
+  }
+  _lastTickTime = now;
+
   const w = canvas.style.width ? parseFloat(canvas.style.width) : canvas.width;
   const h = canvas.style.height ? parseFloat(canvas.style.height) : canvas.height;
   const cx = w / 2;
@@ -762,21 +815,46 @@ function tick() {
     ctx.restore();
   }
 
-  // ── Spokes (drawn before rings so they appear behind the dial face) ────────
-  {
-    ctx.fillStyle = _metalGrad;
-    ctx.beginPath();
+  // ── Build tick + spoke Path2D cache (rot=0, centered at origin) ─────────
+  if (w !== _tickCacheW || h !== _tickCacheH) {
+    _tickCacheW = w; _tickCacheH = h;
+
+    // Spokes (12 trapezoids)
+    _spokePath = new Path2D();
     for (let i = 0; i < 12; i++) {
-      const angle = (-(i * 30) - 90 + rot) * Math.PI / 180;
-      const cA = Math.cos(angle);
-      const sA = Math.sin(angle);
-      // Rotate (innerR, ±1.5) and (outerR, ±0.3) around center
-      ctx.moveTo(cx + innerR * cA - 1.5 * sA, cy + innerR * sA + 1.5 * cA);
-      ctx.lineTo(cx + outerR * cA - 0.3 * sA, cy + outerR * sA + 0.3 * cA);
-      ctx.lineTo(cx + outerR * cA + 0.3 * sA, cy + outerR * sA - 0.3 * cA);
-      ctx.lineTo(cx + innerR * cA + 1.5 * sA, cy + innerR * sA - 1.5 * cA);
+      const a = (-(i * 30) - 90) * Math.PI / 180;
+      const cA = Math.cos(a), sA = Math.sin(a);
+      _spokePath.moveTo(innerR * cA - 1.5 * sA, innerR * sA + 1.5 * cA);
+      _spokePath.lineTo(outerR * cA - 0.3 * sA, outerR * sA + 0.3 * cA);
+      _spokePath.lineTo(outerR * cA + 0.3 * sA, outerR * sA - 0.3 * cA);
+      _spokePath.lineTo(innerR * cA + 1.5 * sA, innerR * sA - 1.5 * cA);
     }
-    ctx.fill();
+
+    // Tick marks (360 lines, major every 5°)
+    const glyphBandW2 = outerR - glyphR;
+    const majorLen2 = glyphBandW2 * 0.25;
+    const minorLen2 = glyphBandW2 * 0.15;
+    _tickMajorPath = new Path2D();
+    _tickMinorPath = new Path2D();
+    for (let deg = 0; deg < 360; deg++) {
+      const a = (-deg - 90) * Math.PI / 180;
+      const cA = Math.cos(a), sA = Math.sin(a);
+      const isMajor = deg % 5 === 0;
+      const len = isMajor ? majorLen2 : minorLen2;
+      const path = isMajor ? _tickMajorPath : _tickMinorPath;
+      path.moveTo(glyphR * cA,        glyphR * sA);
+      path.lineTo((glyphR + len) * cA, (glyphR + len) * sA);
+    }
+  }
+
+  // ── Spokes — apply rotation as a single canvas transform ─────────────────
+  {
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.rotate(rot * Math.PI / 180);
+    ctx.fillStyle = _metalGrad;
+    ctx.fill(_spokePath);
+    ctx.restore();
   }
 
   ctx.save();
@@ -819,7 +897,6 @@ function tick() {
 
   // ── Ticks & Icons ────────────────────────────────
   const glyphBandW = outerR - glyphR;
-  const tickInner = glyphR;
   const iconScale = glyphBandW * 0.6 / 24;
   const iconR = glyphR + glyphBandW * 0.55;
 
@@ -852,27 +929,17 @@ function tick() {
     ctx.restore();
   }
 
-  // ── Batched tick marks (2 draw calls instead of 360) ──
+  // ── Tick marks — cached paths rotated via canvas transform ──
   {
-    const majorLen = glyphBandW * 0.25;
-    const minorLen = glyphBandW * 0.15;
-    const majorPath = new Path2D();
-    const minorPath = new Path2D();
-    for (let deg = 0; deg < 360; deg++) {
-      const angle = (-deg - 90 + rot) * Math.PI / 180;
-      const cA = Math.cos(angle);
-      const sA = Math.sin(angle);
-      const isMajor = deg % 5 === 0;
-      const len = isMajor ? majorLen : minorLen;
-      const path = isMajor ? majorPath : minorPath;
-      path.moveTo(cx + tickInner * cA, cy + tickInner * sA);
-      path.lineTo(cx + (tickInner + len) * cA, cy + (tickInner + len) * sA);
-    }
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.rotate(rot * Math.PI / 180);
     ctx.strokeStyle = 'rgba(100, 162, 155, 0.4)';
     ctx.lineWidth = 0.8;
-    ctx.stroke(majorPath);
+    ctx.stroke(_tickMajorPath);
     ctx.lineWidth = 0.4;
-    ctx.stroke(minorPath);
+    ctx.stroke(_tickMinorPath);
+    ctx.restore();
   }
   
   ctx.restore(); // End ring drawing
