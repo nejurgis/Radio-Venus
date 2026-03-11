@@ -1298,12 +1298,14 @@ if (sunDot) {
   // ── Schedule next frame only if something still needs updating ───────────
   const perpetual =
     zoomSign === null ||                              // unzoomed ring always rotates
-    (zoomDriftEnabled && !dragRotateEnabled) ||       // music playing — auto-drift
+    (zoomDriftEnabled && !dragRotateEnabled) ||       // music playing — auto-drift (playlist bg)
     dragging ||                                       // active drag
     Math.abs(dragVelocity) > 0.01 ||                  // inertia still decaying
     zoomAnimating !== false ||                        // zoom animation in progress
     driftResetAnimating ||                            // drift-reset animation
     !!previewDot ||                                   // preview dot pulses
+    !!userDot ||                                      // user Venus dot breathes continuously
+    !!moonDot ||                                      // moon dot pulses
     now < fadeDeadline;                               // fade-in still running
   if (perpetual) requestFrame();
   // else: idle — loop stops. requestFrame() called again by any state-changing export.
