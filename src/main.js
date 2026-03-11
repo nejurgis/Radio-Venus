@@ -836,6 +836,13 @@ function startRadio(genreId, genreLabel, subgenreId = null, targetArtistName = n
   const effectiveSign = signFromLongitude(effectiveLong);
   const effectiveElement = ZODIAC_ELEMENTS[effectiveSign] || 'air';
 
+  // Venus position note for the resonance label in regular genre playlists
+  const isUserVenus = venus && Math.abs(effectiveLong - venus.longitude) < 0.5;
+  const _deg = (effectiveLong % 30).toFixed(1);
+  const venusNote = isUserVenus
+    ? `Artists sorted by their Venus resonance with your natal Venus at ${effectiveSign} ${_deg}°`
+    : `Artists sorted by their Venus resonance with Venus at ${effectiveSign} ${_deg}°`;
+
   displayedGenreId = genreId;
   renderRadioHeader(effectiveSign, genreLabel, subgenreId);
   enableDragRotate(false);
@@ -851,7 +858,7 @@ function startRadio(genreId, genreLabel, subgenreId = null, targetArtistName = n
 
   // 3. OPTIMIZATION: If clicking the active genre, just re-render and return.
   if (tracks.length > 0 && genreId === playingGenreId && subgenreId === playingSubgenreId) {
-    renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()), playlistShareFn, playlistDescription);
+    renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()), playlistShareFn, playlistDescription, venusNote);
     return tracks;
   }
 
@@ -916,7 +923,7 @@ function startRadio(genreId, genreLabel, subgenreId = null, targetArtistName = n
     const startIdx = targetArtistName
       ? Math.max(0, tracks.findIndex(t => t.name === targetArtistName))
       : 0;
-    renderTrackList(tracks, startIdx, i => playTrack(i), failedIds, new Set(getFavorites()), playlistShareFn, playlistDescription);
+    renderTrackList(tracks, startIdx, i => playTrack(i), failedIds, new Set(getFavorites()), playlistShareFn, playlistDescription, venusNote);
     playTrack(startIdx);
   } else {
     renderTrackList(candidateTracks, -1, (i) => {
@@ -927,7 +934,7 @@ function startRadio(genreId, genreLabel, subgenreId = null, targetArtistName = n
       failedIds.clear();
       trackVideoIndex.clear();
       playTrack(i);
-    }, new Set(), new Set(getFavorites()), playlistShareFn, playlistDescription);
+    }, new Set(), new Set(getFavorites()), playlistShareFn, playlistDescription, venusNote);
   }
 
   return candidateTracks;

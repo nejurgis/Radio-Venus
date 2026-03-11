@@ -199,7 +199,7 @@ export function updateFavoriteButton(isFav) {
   ui.favBtn.appendChild(star);
 }
 
-export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new Set(), favSet = new Set(), onSharePlaylist, description = null) {
+export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new Set(), favSet = new Set(), onSharePlaylist, description = null, venusNote = null) {
   if (!ui.trackList) return;
   trackSelectCallback = onSelect;
   ui.trackList.innerHTML = '';
@@ -266,7 +266,8 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
   if (!onSharePlaylist && tracks.some(t => t.similarity != null)) {
     const note = document.createElement('div');
     note.className = 'track-resonance-note';
-    note.innerHTML = `<span>Artists sorted by their Venus resonance with your natal zodiac.</span><button class="resonance-info-btn">learn more</button>`;
+    const noteText = venusNote || 'Artists sorted by their Venus resonance with your natal zodiac.';
+    note.innerHTML = `<span>${noteText}</span><button class="resonance-info-btn">learn more</button>`;
     ui.trackList.appendChild(note);
   }
 
