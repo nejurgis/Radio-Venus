@@ -173,11 +173,6 @@ let _tickMinorPath = null;
 let _spokePath = null;
 let _tickCacheW = 0, _tickCacheH = 0;
 
-// ── Static rings offscreen canvas (rebuilt on resize) ─────────────────────────
-let _ringsCanvas = null;
-
-// ── Zodiac glyph sprites (built once at init) ─────────────────────────────────
-let _zodiacCanvases = null;
 
 // ── Frame throttle: 30fps when idle, 60fps during interaction ─────────────────
 let _lastTickTime = 0;
@@ -306,30 +301,6 @@ const crosshairCursor = (() => {
   return `url(${cur.toDataURL()}) ${c} ${c}, crosshair`;
 })();
 
-function buildZodiacCanvases() {
-  // Render each glyph at full DPR resolution so drawImage stays crisp.
-  const dpr  = window.devicePixelRatio || 1;
-  const PAD  = 2, ICON = 24, CSS = ICON + PAD * 2;   // 28 CSS px
-  const PHYS = Math.ceil(CSS * dpr);                  // physical pixels
-  _zodiacCanvases = ZODIAC_PATHS.map(paths => {
-    const c = document.createElement('canvas');
-    c.width = c.height = PHYS;
-    const gc = c.getContext('2d');
-    gc.scale(dpr, dpr);  // render in CSS coords at device resolution
-    const g = gc.createLinearGradient(0, 0, 0, CSS);
-    g.addColorStop(0,   '#2a4a4a');
-    g.addColorStop(0.5, '#c8ece8');
-    g.addColorStop(1,   '#2a4a4a');
-    gc.strokeStyle = g;
-    gc.lineWidth = 2;
-    gc.lineCap = 'round';
-    gc.lineJoin = 'round';
-    gc.translate(PAD, PAD);
-    for (const path of paths) gc.stroke(path);
-    return c;
-  });
-}
-
 export function initNebula(containerId) {
   containerEl = document.getElementById(containerId);
   if (!containerEl) return;
@@ -353,7 +324,6 @@ export function initNebula(containerId) {
     document.body.appendChild(_fpsEl);
   }
 
-  buildZodiacCanvases();
   resize();
   window.addEventListener('resize', resize);
 
@@ -640,7 +610,7 @@ export function nudgeWheel(degrees = 15) {
 
 // Gradient cache — rebuilt only when canvas dimensions change
 let _gradW = 0, _gradH = 0;
-let _centerGlow, _metalGrad;
+let _centerGlow, _tealRing, _thinRing, _iconGrad, _tubeGrad, _outerFade, _metalGrad;
 
 function requestFrame() {
   if (!frameRequested) {
@@ -703,73 +673,36 @@ function tick() {
 
     const outerBandW = minDim * 0.018;
 
+    _tealRing = ctx.createLinearGradient(cx - outerR, cy, cx + outerR, cy);
+    _tealRing.addColorStop(0, '#2a4a4a');
+    _tealRing.addColorStop(0.3, '#a0d4d4');
+    _tealRing.addColorStop(0.7, '#c8ece8');
+    _tealRing.addColorStop(1, '#2a4a4a');
+
+    _thinRing = ctx.createLinearGradient(cx - outerR, cy, cx + outerR, cy);
+    _thinRing.addColorStop(0, '#3a5858');
+    _thinRing.addColorStop(0.5, '#4a7070');
+    _thinRing.addColorStop(1, '#3a5858');
+
+    _iconGrad = ctx.createLinearGradient(0, 0, 0, 24);
+    _iconGrad.addColorStop(0, '#2a4a4a');
+    _iconGrad.addColorStop(0.5, '#c8ece8');
+    _iconGrad.addColorStop(1, '#2a4a4a');
+
+    _tubeGrad = ctx.createRadialGradient(cx, cy, outerR - outerBandW / 2, cx, cy, outerR + outerBandW / 2);
+    _tubeGrad.addColorStop(0, '#1a3838');
+    _tubeGrad.addColorStop(0.5, '#c8ece8');
+    _tubeGrad.addColorStop(1, '#1a3838');
+
+    const fadeW = outerBandW * 2.5;
+    _outerFade = ctx.createRadialGradient(cx, cy, outerR + outerBandW / 2, cx, cy, outerR + outerBandW / 2 + fadeW);
+    _outerFade.addColorStop(0, 'rgba(0,0,0,0.7)');
+    _outerFade.addColorStop(1, 'rgba(0,0,0,0)');
+
     _metalGrad = ctx.createLinearGradient(0, -2, 0, 2);
     _metalGrad.addColorStop(0, '#0a1a1a');
     _metalGrad.addColorStop(0.5, '#a0d4cc');
     _metalGrad.addColorStop(1, '#0a1a1a');
-
-    // ── Rebuild rings offscreen canvas at full DPR resolution ─────────────
-    const dpr = window.devicePixelRatio || 1;
-    if (!_ringsCanvas) _ringsCanvas = document.createElement('canvas');
-    _ringsCanvas.width  = Math.ceil(w * dpr);
-    _ringsCanvas.height = Math.ceil(h * dpr);
-    const rc = _ringsCanvas.getContext('2d');
-    rc.setTransform(dpr, 0, 0, dpr, 0, 0); // draw in CSS coords, render at device res
-
-    const rc_tealRing = rc.createLinearGradient(cx - outerR, cy, cx + outerR, cy);
-    rc_tealRing.addColorStop(0, '#2a4a4a');
-    rc_tealRing.addColorStop(0.3, '#a0d4d4');
-    rc_tealRing.addColorStop(0.7, '#c8ece8');
-    rc_tealRing.addColorStop(1, '#2a4a4a');
-
-    const rc_thinRing = rc.createLinearGradient(cx - outerR, cy, cx + outerR, cy);
-    rc_thinRing.addColorStop(0, '#3a5858');
-    rc_thinRing.addColorStop(0.5, '#4a7070');
-    rc_thinRing.addColorStop(1, '#3a5858');
-
-    const rc_tubeGrad = rc.createRadialGradient(cx, cy, outerR - outerBandW / 2, cx, cy, outerR + outerBandW / 2);
-    rc_tubeGrad.addColorStop(0, '#1a3838');
-    rc_tubeGrad.addColorStop(0.5, '#c8ece8');
-    rc_tubeGrad.addColorStop(1, '#1a3838');
-
-    const rc_fadeW = outerBandW * 2.5;
-    const rc_outerFade = rc.createRadialGradient(cx, cy, outerR + outerBandW / 2, cx, cy, outerR + outerBandW / 2 + rc_fadeW);
-    rc_outerFade.addColorStop(0, 'rgba(0,0,0,0.7)');
-    rc_outerFade.addColorStop(1, 'rgba(0,0,0,0)');
-
-    // Outer tube ring
-    rc.beginPath();
-    rc.arc(cx, cy, outerR + outerBandW / 2, 0, Math.PI * 2);
-    rc.arc(cx, cy, outerR - outerBandW / 2, 0, Math.PI * 2);
-    rc.fillStyle = rc_tubeGrad;
-    rc.fill('evenodd');
-
-    rc.beginPath();
-    rc.arc(cx, cy, outerR, 0, Math.PI * 2);
-    rc.strokeStyle = rc_tealRing;
-    rc.lineWidth = outerBandW * 0.9;
-    rc.globalAlpha = 0.3;
-    rc.stroke();
-    rc.globalAlpha = 1;
-
-    // Outer fade
-    rc.beginPath();
-    rc.arc(cx, cy, outerR + outerBandW / 2 + rc_fadeW, 0, Math.PI * 2);
-    rc.arc(cx, cy, outerR + outerBandW / 2, 0, Math.PI * 2);
-    rc.fillStyle = rc_outerFade;
-    rc.fill('evenodd');
-
-    // Inner rings
-    rc.beginPath();
-    rc.arc(cx, cy, glyphR, 0, Math.PI * 2);
-    rc.strokeStyle = rc_thinRing;
-    rc.lineWidth = 1.5;
-    rc.stroke();
-
-    rc.beginPath();
-    rc.arc(cx, cy, innerR, 0, Math.PI * 2);
-    rc.lineWidth = 2;
-    rc.stroke();
   }
 
   ctx.clearRect(0, 0, w, h);
@@ -924,34 +857,73 @@ function tick() {
     ctx.restore();
   }
 
-  // ── Static rings: single drawImage (pre-rendered on resize) ─────────────
+  ctx.save();
+
+  // ── Thick outer ring ──────────────────────────────
   const outerBandW = minDim * 0.018;
-  if (_ringsCanvas) ctx.drawImage(_ringsCanvas, 0, 0, w, h);
+  ctx.beginPath();
+  ctx.arc(cx, cy, outerR + outerBandW / 2, 0, Math.PI * 2);
+  ctx.arc(cx, cy, outerR - outerBandW / 2, 0, Math.PI * 2);
+  ctx.fillStyle = _tubeGrad;
+  ctx.fill('evenodd');
 
-  // ── Zodiac icons + ticks — both need rotation, share one transform block ──
+  ctx.beginPath();
+  ctx.arc(cx, cy, outerR, 0, Math.PI * 2);
+  ctx.strokeStyle = _tealRing;
+  ctx.lineWidth = outerBandW * 0.9;
+  ctx.globalAlpha = 0.3;
+  ctx.stroke();
+  ctx.globalAlpha = 1;
+
+  // Dark fuzzy outer edge
+  const fadeW = outerBandW * 2.5;
+  ctx.beginPath();
+  ctx.arc(cx, cy, outerR + outerBandW / 2 + fadeW, 0, Math.PI * 2);
+  ctx.arc(cx, cy, outerR + outerBandW / 2, 0, Math.PI * 2);
+  ctx.fillStyle = _outerFade;
+  ctx.fill('evenodd');
+
+  // ── Inner rings ──────────────────────────────────
+  ctx.beginPath();
+  ctx.arc(cx, cy, glyphR, 0, Math.PI * 2);
+  ctx.strokeStyle = _thinRing;
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.arc(cx, cy, innerR, 0, Math.PI * 2);
+  ctx.lineWidth = 2;
+  ctx.stroke();
+
+  // ── Zodiac icons ─────────────────────────────────
+  const glyphBandW = outerR - glyphR;
+  const iconScale = glyphBandW * 0.6 / 24;
+  const iconR = glyphR + glyphBandW * 0.55;
+
+  for (let sign = 0; sign < 12; sign++) {
+    if (signBirths[sign] === 0) continue;
+
+    const centerAngle = (-(sign * 30 + 15) - 90 + rot) * Math.PI / 180;
+    const ix = cx + iconR * Math.cos(centerAngle);
+    const iy = cy + iconR * Math.sin(centerAngle);
+
+    ctx.save();
+    ctx.globalAlpha = Math.min(1, (now - signBirths[sign]) / 400);
+    ctx.translate(ix, iy);
+    ctx.rotate(centerAngle + Math.PI / 2);
+    ctx.scale(iconScale, iconScale);
+    ctx.translate(-12, -12);
+    ctx.strokeStyle = _iconGrad;
+    ctx.lineWidth = 2;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    const paths = ZODIAC_PATHS[sign];
+    for (let k = 0; k < paths.length; k++) ctx.stroke(paths[k]);
+    ctx.restore();
+  }
+
+  // ── Tick marks — cached paths rotated via canvas transform ──
   {
-    const glyphBandW = outerR - glyphR;
-    const iconScale  = glyphBandW * 0.6 / 24;
-    const iconR      = glyphR + glyphBandW * 0.55;
-    const SPRITE_SZ  = 28; // 24px icon + 2px padding each side
-    const HALF_SZ    = SPRITE_SZ / 2;
-
-    for (let sign = 0; sign < 12; sign++) {
-      if (signBirths[sign] === 0) continue;
-      const alpha = Math.min(1, (now - signBirths[sign]) / 400);
-      const centerAngle = (-(sign * 30 + 15) - 90 + rot) * Math.PI / 180;
-      const ix = cx + iconR * Math.cos(centerAngle);
-      const iy = cy + iconR * Math.sin(centerAngle);
-      ctx.save();
-      ctx.globalAlpha = alpha;
-      ctx.translate(ix, iy);
-      ctx.rotate(centerAngle + Math.PI / 2);
-      ctx.scale(iconScale, iconScale);
-      ctx.drawImage(_zodiacCanvases[sign], -HALF_SZ, -HALF_SZ);
-      ctx.restore();
-    }
-
-    // Ticks share the same rotation — one combined transform
     ctx.save();
     ctx.translate(cx, cy);
     ctx.rotate(rot * Math.PI / 180);
@@ -962,6 +934,8 @@ function tick() {
     ctx.stroke(_tickMinorPath);
     ctx.restore();
   }
+
+  ctx.restore(); // End ring drawing
 
   // ── Artist dots ──────────────────────────────────
   ctx.save();
