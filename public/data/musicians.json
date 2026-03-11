@@ -2261,24 +2261,6 @@
     ]
   },
   {
-    "name": "Be Safe",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 25.4,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "altrock",
-      "industrial"
-    ],
-    "subgenres": [
-      "industrial"
-    ],
-    "youtubeVideoId": "TD4QoSdaCsI",
-    "backupVideoIds": []
-  },
-  {
     "name": "Beat Happening",
     "venus": {
       "sign": "Taurus",
