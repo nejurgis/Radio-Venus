@@ -47,7 +47,7 @@ let isPaused = false;                // whether playback is currently paused
 let loadingAnimFrame = null;        
 let loadStartTime = 0;
 const SILENT_FAIL_MS = 15000;
-const REPORT_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwqKJ-7Yd_rwXUC6fmol018Ykwiz3NCtbHx5xFdsIEcP1Y95L7WEWLjSmcs3XIezrKZvQ/exec'; // paste deployed Google Apps Script web app URL here
+const REPORT_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwDSNsMTMViSpOh4ZUZg8juXjI6MVY4Ptr8uu7ZWyjaiqP22hHouMkl7fqXEk1dEfVL/exec'; // paste deployed Google Apps Script web app URL here
 let pendingSeekTime = 0;  // for shared links — seek once on first PLAYING
 
 let activeGenreLabel = null;       // label of the currently playing genre
