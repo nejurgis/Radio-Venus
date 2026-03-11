@@ -1079,10 +1079,13 @@ function playTrack(index) {
   clearInterval(progressInterval);
   progressInterval = null;
   resetProgress();
-  trackVideoIndex.set(currentTrackIndex, 0);
+  // Pick a random video ID from all available (main + backups) for variety
+  const allIds = getVideoIds(track).filter(Boolean);
+  const startIdx = allIds.length > 1 ? Math.floor(Math.random() * allIds.length) : 0;
+  trackVideoIndex.set(currentTrackIndex, startIdx);
 
   ensurePlayerReady().then(() => {
-    loadVideo(getVideoIds(track)[0]);
+    loadVideo(allIds[startIdx]);
     startSilentFailTimer();
   });
   startLoadingProgress();

@@ -48,8 +48,16 @@ for (const file of inputFiles) {
   for (const patch of patches) {
     const entry = seedByName.get(patch.name.toLowerCase());
     if (entry) {
-      if (patch.handpicked && !entry.handpicked)         { entry.handpicked = true;                  totalPatched++; }
-      if (patch.handpickedTrack && !entry.handpickedTrack) entry.handpickedTrack = patch.handpickedTrack;
+      if (patch.handpicked && !entry.handpicked)           { entry.handpicked = true; totalPatched++; }
+      if (patch.handpickedTrack && !entry.handpickedTrack)  entry.handpickedTrack = patch.handpickedTrack;
+      if (patch.addBackupVideoId) {
+        if (!entry.backupVideoIds) entry.backupVideoIds = [];
+        if (!entry.backupVideoIds.includes(patch.addBackupVideoId) &&
+            patch.addBackupVideoId !== entry.youtubeId) {
+          entry.backupVideoIds.push(patch.addBackupVideoId);
+          totalPatched++;
+        }
+      }
     }
   }
 }

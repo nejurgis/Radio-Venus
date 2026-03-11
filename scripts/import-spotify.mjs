@@ -446,14 +446,29 @@ async function main() {
       const entry = seedByName.get(key);
       const needsHandpicked = !entry.handpicked;
       const needsTrack      = !entry.handpickedTrack;
-      if (needsHandpicked || needsTrack) {
+      // New track from a different playlist — search YouTube and add to backupVideoIds
+      const isNewTrack = entry.handpickedTrack && entry.handpickedTrack !== trackName;
+      if (needsHandpicked || needsTrack || isNewTrack) {
         const changes = [];
         if (needsHandpicked) changes.push('handpicked=true');
         if (needsTrack)      changes.push(`track="${trackName}"`);
-        console.log(`  ✓ existing — ${changes.join(', ')}`);
+        if (isNewTrack) {
+          process.stdout.write(`  ✓ existing — new track "${trackName}", searching YouTube... `);
+          const newVideoId = await searchYouTubeForTrack(artistName, trackName);
+          console.log(newVideoId ?? 'not found');
+          if (newVideoId) {
+            const existing = entry.backupVideoIds || [];
+            if (!existing.includes(newVideoId) && newVideoId !== entry.youtubeVideoId) {
+              changes.push(`backup "${trackName}"`);
+              outputPatches.push({ name: artistName, addBackupVideoId: newVideoId });
+            }
+          }
+        } else {
+          console.log(`  ✓ existing — ${changes.join(', ')}`);
+        }
         if (outputPath) {
-          // Defer patch to merge step
-          outputPatches.push({ name: artistName, handpicked: true, handpickedTrack: trackName });
+          if (needsHandpicked || needsTrack)
+            outputPatches.push({ name: artistName, handpicked: true, handpickedTrack: trackName });
         } else {
           if (needsHandpicked) entry.handpicked = true;
           if (needsTrack)      entry.handpickedTrack = trackName;
