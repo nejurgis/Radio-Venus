@@ -63,8 +63,8 @@
   <script type="importmap">
     { "imports": { "astronomy-engine": "/node_modules/astronomy-engine/esm/astronomy.js" } }
   </script>
-  <script type="module" crossorigin src="/assets/index-B2sIgJw0.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-C5Jak8YW.css">
+  <script type="module" crossorigin src="/assets/index-NxNuXUv-.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-N_So7rRU.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Musicians by Venus Sign — Radio Venus","url":"https://radio-venus.club","hasPart":[{"@type":"WebPage","name":"Venus in Aries Musicians","url":"https://radio-venus.club/sign/aries/"},{"@type":"WebPage","name":"Venus in Taurus Musicians","url":"https://radio-venus.club/sign/taurus/"},{"@type":"WebPage","name":"Venus in Gemini Musicians","url":"https://radio-venus.club/sign/gemini/"},{"@type":"WebPage","name":"Venus in Cancer Musicians","url":"https://radio-venus.club/sign/cancer/"},{"@type":"WebPage","name":"Venus in Leo Musicians","url":"https://radio-venus.club/sign/leo/"},{"@type":"WebPage","name":"Venus in Virgo Musicians","url":"https://radio-venus.club/sign/virgo/"},{"@type":"WebPage","name":"Venus in Libra Musicians","url":"https://radio-venus.club/sign/libra/"},{"@type":"WebPage","name":"Venus in Scorpio Musicians","url":"https://radio-venus.club/sign/scorpio/"},{"@type":"WebPage","name":"Venus in Sagittarius Musicians","url":"https://radio-venus.club/sign/sagittarius/"},{"@type":"WebPage","name":"Venus in Capricorn Musicians","url":"https://radio-venus.club/sign/capricorn/"},{"@type":"WebPage","name":"Venus in Aquarius Musicians","url":"https://radio-venus.club/sign/aquarius/"},{"@type":"WebPage","name":"Venus in Pisces Musicians","url":"https://radio-venus.club/sign/pisces/"}]}</script>
 </head>
 <body>
@@ -105,6 +105,19 @@
 
         <p class="about-footnote">Built by <a href="https://jurgis.info" target="_blank" rel="noopener">Jurgis Lietunovas</a>. For astrology readings, visit <a href="https://jurgis.info/astrology" target="_blank" rel="noopener">jurgis.info/astrology</a>.</p>
       </article>
+
+      <div class="newsletter-portal">
+        <p class="newsletter-portal-label">Newsletter</p>
+        <form class="newsletter-form" novalidate>
+          <input class="newsletter-input" type="email" placeholder="enter your email address" autocomplete="email">
+          <button type="submit" class="newsletter-submit" aria-label="Subscribe">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </form>
+      </div>
     </div>
     <button id="btn-info" class="btn-control btn-info" aria-label="About">
       <svg width="18" height="18" viewBox="250 -20 680 1280" fill="currentColor" stroke="none">
@@ -167,14 +180,20 @@
         <span class="star-toggle active"></span>
       </div>
 
-      <h2 class="about-heading">Report Error — Test</h2>
-      <div class="track-item is-failed" style="margin-bottom: 2rem;">
-        <span class="track-name" style="display:flex;align-items:center;">
-          <div class="track-fav-container"></div>
-          Demo Artist <span class="track-restricted">restricted</span>
-        </span>
-        <span class="track-meta"><span class="track-item-sign">♀</span></span>
-        <button class="btn-report" data-name="Demo Artist (test)">report error</button>
+      <h2 class="about-heading">Newsletter</h2>
+      <p>New playlists, Venus transits, and rare finds — when they're worth sending.</p>
+      <form id="newsletter-form" class="newsletter-form" novalidate>
+        <input id="newsletter-email" class="newsletter-input" type="email" placeholder="enter your email address" autocomplete="email">
+        <button type="submit" class="newsletter-submit" aria-label="Subscribe">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </form>
+
+      <div class="about-star">
+        <span class="star-toggle active"></span>
       </div>
 
       <h2 class="about-heading">Stats</h2>
