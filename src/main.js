@@ -667,7 +667,7 @@ function updateTunedDisplay(longitude) {
   const element = ZODIAC_ELEMENTS[sign];
 
   document.getElementById('reveal-sign').textContent =
-    `venus in ${deg}° ${sign}`;
+    `${deg}° ${sign}`;
   const detail = document.getElementById('reveal-detail');
   detail.textContent = element;
   detail.style.color = `var(--${element})`;
