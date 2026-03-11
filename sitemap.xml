@@ -139,6 +139,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/sign/aries/folk/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/sign/aries/triphop/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -152,6 +158,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/sign/aries/hiphop/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/sign/aries/intercelestial/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -247,6 +259,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/sign/taurus/intercelestial/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/sign/gemini/idm/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -284,6 +302,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/sign/gemini/altrock/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/sign/gemini/classical/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -577,6 +601,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/sign/virgo/folk/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/sign/virgo/triphop/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -590,6 +620,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/sign/virgo/hiphop/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/sign/virgo/intercelestial/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -631,6 +667,30 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/sign/libra/altrock/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/sign/libra/folk/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/sign/libra/triphop/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/sign/libra/industrial/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/sign/libra/jazz/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -644,6 +704,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/sign/libra/dnb/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/sign/libra/intercelestial/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -775,6 +841,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/sign/sagittarius/indiepop/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/sign/sagittarius/folk/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/sign/sagittarius/triphop/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -782,6 +860,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/sign/sagittarius/jazz/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/sign/sagittarius/hiphop/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -931,6 +1015,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/sign/aquarius/indiepop/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/sign/aquarius/folk/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -1009,6 +1099,30 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/sign/pisces/altrock/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/sign/pisces/classical/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/sign/pisces/indiepop/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/sign/pisces/folk/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/sign/pisces/triphop/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -1033,7 +1147,19 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/ilkmoney/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/10cc/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/15-15/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1046,6 +1172,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/2-chainz/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/504-aquatic/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1141,7 +1273,25 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/aja-monet/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/akai-solo/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/akira-rabelais/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/alabaster-deplume/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1160,6 +1310,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/alessandro-cortini/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/alex-g/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1279,6 +1435,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/angelo-arce/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/anika/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -1286,6 +1448,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/animal-collective/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/ankhlejohn/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1310,6 +1478,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/anni-hogan/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/anteloper/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1369,7 +1543,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/areliz-ramos/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/ariel-kalma/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/armani-white/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1406,6 +1592,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/arvo-p-rt/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/asake/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1471,6 +1663,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/b-cool-aid/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/baba-stiltz/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -1483,13 +1681,31 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/badbadnotgood/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/bar-italia/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/barry-miles/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/bartosz-kruczy-ski/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/basher/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1543,7 +1759,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/ben-lamar-gay/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/ben-lukas-boysen/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/bennie-maupin/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1579,7 +1807,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/bill-nace/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/bill-orcutt/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/billy-woods/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1615,6 +1855,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/black-country-new-road/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/black-tape-for-a-blue-girl/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -1622,6 +1868,18 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/blackhaine/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/bladee/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/blanche-blanche-blanche/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1723,6 +1981,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/boldy-james/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/bonobo/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -1765,7 +2029,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/braxe-falcon/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/brian-eno/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/brian-harnetty/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1777,7 +2053,25 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/bridget-st-john/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/brighde-chaimbeul/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/brooklynn-skye/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/buddy-terry/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1795,6 +2089,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/built-to-spill/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/burial/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -1802,6 +2102,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/cabaret-voltaire/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/cam-ron/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1837,7 +2143,37 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/carl-stone/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/carlos-ni-o-friends/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/carmen-villain/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/caroline/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/caroline-polachek/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/caroline-shaw/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1915,6 +2251,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/c-cile-mclorin-salvant/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/chantssss/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -1922,6 +2264,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/charles-earland/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/charles-stepney/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1939,7 +2287,31 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/chat-pile/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/che/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/chelsea-wolfe/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/cheri-knight/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/ches-smith/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1951,13 +2323,31 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/chief-keef/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/chihei-hatakeyama/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/chris-abrahams/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/chris-cohen/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/chris-crack/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1970,6 +2360,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/christian-mcbride/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/christina-vantzou/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2000,6 +2396,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/cities-aviv/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/cktrl/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2083,6 +2485,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/cola/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/cole-pulice/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/colin-potter/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -2101,7 +2515,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/colpitts/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/common/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/congotronics-international/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2137,6 +2563,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/craig-finn/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/cranes/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -2155,6 +2587,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/cs-kreme/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/curren-y/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/d-k/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -2162,6 +2606,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/dale-cooper-quartet-the-dictaphones/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/d-lek/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2185,7 +2635,25 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/daniel-bachman/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/daniel-pemberton/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/danielle-haim/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/daphni/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2317,7 +2785,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/deradoorian/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/derrick-may/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/destroyer/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2377,6 +2857,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/dj-jeeh-fdc/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/dj-manny/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/dj-mikeyg/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/dj-python/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -2389,6 +2887,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/dj-roc/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/dj-shadow/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -2396,6 +2900,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/dj-spooky/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/dj-stainless/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2432,6 +2942,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/domenique-dumont/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/domi-jd-beck/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2479,6 +2995,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/drake/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/drew-mcdowall/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -2521,6 +3043,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/dunn/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/duran-duran/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -2534,6 +3062,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/dynatron/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/e-l-u-c-i-d/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2587,6 +3121,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/eiko-ishibashi/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/elaine-howley/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -2594,6 +3134,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/electronic/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/eli-winter/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2659,6 +3205,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/emma-jean-thackray/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/empress-of/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -2695,7 +3247,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/eri-yamamoto/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/eric-b-rakim/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/eric-chenaux/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2725,6 +3289,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/erwin-schulhoff/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/esben-and-the-witch/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -2738,6 +3308,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/eugen-thomass/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/everest-magma/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2815,6 +3391,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/fendida-rappa/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/fennesz/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -2822,6 +3404,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/fhloston-paradigm/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/fievel-is-glauque/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2840,6 +3428,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/fka-twigs/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/flames-dot-malik/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2869,6 +3463,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/flora-purim/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/florian-kupfer/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -2876,6 +3476,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/florist/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/fly-anakin/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2971,6 +3577,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/fresh-pepper/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/fridayy/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/fripp-eno/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -3001,6 +3619,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/gard-nilssen-acoustic-unity/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/gary-numan/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -3008,6 +3632,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/gas/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/gavil-n-rayna-russom/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3038,6 +3668,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/gidge/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/gisle-r-en-johansen/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3133,6 +3769,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/gui-konket/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/gustav-mahler/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -3199,6 +3841,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/hatis-noit/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/hayden-pedigo/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -3218,6 +3866,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/heaven-17/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/heiner-goebbels/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3271,6 +3925,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/homeboy-sandman/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/honesty/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -3289,6 +3949,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/horse-lords/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/horsepower/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -3302,6 +3968,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/htrk/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/hudson-mohawke/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3331,7 +4003,25 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/i-am/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/iasos/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/iblss/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/ice-spice/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3373,7 +4063,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/immanuel-wilkins/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/imogen-heap/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/infinity-knives/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3386,6 +4088,18 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/inter-alia/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/isaiah-hull/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/islurwhenitalk/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3409,6 +4123,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/j-sands/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/jaan/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -3422,6 +4142,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/jadelain/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/jake-acosta/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3458,6 +4184,18 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/jan-jelinek/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/jana-rush/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/jason-hogans/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3500,6 +4238,18 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/jenny-hval/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/jeremiah-chiu/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/jeremy-cunningham/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3631,6 +4381,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/john-mcguire/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/john-p-l-inderberg-trio/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/johnny-griffin/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -3733,6 +4495,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/julian-sartorius/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/julianna-barwick/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -3740,6 +4508,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/julie/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/junglepussy/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3764,6 +4538,18 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/k-freund/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/ka/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/kahil-el-zabar/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3842,6 +4628,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/kendrick-lamar/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/kenny-beats/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3943,7 +4735,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/kurt-vile/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/la-bouche/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/laddio-bolocko/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3973,7 +4777,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/latto/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/laurel-halo/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/laurie-anderson/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -4009,6 +4825,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/lee-tracy/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/leikeli47/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/leila-k/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -4033,6 +4861,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/lil-baby/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/lil-yachty/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/lim-orion/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/lingua-ignota/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -4051,7 +4897,25 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/linqua-franqa/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/liquid/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/lisa-lerkenfeldt/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/liturgy/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -4081,6 +4945,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/lord-kayso/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/lorenzo-senni/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -4094,6 +4964,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/lou-donaldson/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/lou-reed/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -4171,6 +5047,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/lucy-liyou/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/ludwig-van-beethoven/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -4207,6 +5089,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/lute/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/lycia/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -4219,7 +5107,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/m-i-a/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/mabe-fratti/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/mach-hommy/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -4237,7 +5137,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/makaya-mccraven/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/malcolm-ironton/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/mamaleek/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -4309,6 +5221,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/marquis-hill/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/marriages/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -4316,6 +5234,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/martin-l-gore/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/marty-holoubek/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -4345,6 +5269,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/matchess/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/maurice-ravel/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -4363,7 +5293,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/maxine-funke/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/mazzy-star/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/mc-lckaiique/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -4381,7 +5323,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/medhane/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/medicine/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/medicine-singers/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -4441,6 +5395,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/michel-laurent/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/midori-takada/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -4448,6 +5408,24 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/mija-milovic/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/mike/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/mike-cooper/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/mike-ladd/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -4507,6 +5485,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/mj-lenderman/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/ml-buch/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -4514,6 +5498,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/model-500/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/model-home/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -4561,6 +5551,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/molly-joyce/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/monaco/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -4574,6 +5570,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/monolake/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/moor-mother/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -4711,6 +5713,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/nelson-bandela/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/neo-griot-the-afrocentric-prince/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/new-order/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -4736,6 +5750,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/nick-le-n/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/nicola-cruz/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -4778,6 +5798,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/nitzer-ebb/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/nocap/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -4831,6 +5857,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/olan-monk/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/oli-xl/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -4844,6 +5876,18 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/oneohtrix-point-never/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/oort-smog/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/open-mike-eagle/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -4891,6 +5935,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/otm/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/otoboke-beaver/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/otto/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -4898,6 +5954,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/ought/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/oumou-diabat/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -4963,6 +6025,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/papo2oo4/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/patricia-wolf/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -4970,6 +6038,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/patrick-o-hearn/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/patrick-shiroishi/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -5000,6 +6074,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/pearl-city/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/pedro-lima/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -5047,7 +6127,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/pgf-nuk/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/pharoah-sanders/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/phelimuncasi/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -5078,6 +6170,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/pink-must/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/pink-siifu/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -5155,6 +6253,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/premrock/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/preoccupations/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -5209,6 +6313,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/qasim-naqvi/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/quelle-chris/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/quiet-light/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -5222,6 +6338,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/r-stevie-moore/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/r-a-p-ferreira/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -5275,6 +6397,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/rayonbase/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/raz-fresco/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/real-lies/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -5300,6 +6434,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/rhythm-sound/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/richard-dawson/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -5365,6 +6505,30 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/robinson/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/robocobra-quartet/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/robyn/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/roc-marciano/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/rocketship/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -5413,7 +6577,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/runhild-gammels-ter/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/ruphay/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/rxknephew/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -5443,6 +6619,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/sad-eyed-beatniks/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/salem/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -5455,7 +6637,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/sam-gendel/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/samiyam/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/samora-pinderhughes/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -5467,7 +6661,25 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/sandy-denny/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/sarah-davachi/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/sarah-vaughan/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/sarahsson/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -5498,6 +6710,18 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/satoshi-ashikawa/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/sauce-walka/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/sault/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -5569,6 +6793,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/serengeti/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/sergei-prokofiev/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -5593,6 +6823,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/shabaka/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/shannon-wright/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -5606,6 +6842,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/shinichi-atobe/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/shrapknel/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -5635,6 +6877,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/silvia-tarozzi/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/sin-ad-o-connor/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -5648,6 +6896,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/sissi-rada/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/skaiwater/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -5702,6 +6956,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/smerz/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/smoke-dza/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -5779,6 +7039,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/soul-glo/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/soul-whirling-somewhere/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -5827,6 +7093,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/st47ic/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/standing-on-the-corner/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -5864,6 +7136,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/steve-hauschildt/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/steve-lacy/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -5929,6 +7207,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/sugar-billy/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/suicide/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -5947,6 +7231,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/surprise-chef/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/suso-saiz/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -5960,6 +7250,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/suzanne-ciani/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/suzi-analogue/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -6001,6 +7297,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/tara-clerkin-trio/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/taraneh/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -6013,7 +7315,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/tata/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/taylor-deupree/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/tegh/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -6056,6 +7370,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/the-american-dollar/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/the-bad-plus/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -6121,6 +7441,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/the-ecstasy-of-gold/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/the-end-of-the-ocean/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -6157,7 +7483,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/the-kahil-el-zabar-quartet/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/the-kilimanjaro-darkjazz-ensemble/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/the-koreatown-oddity/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -6175,6 +7513,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/the-necks/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/the-normal/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -6182,6 +7526,18 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/the-orb/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/the-pyramids/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/the-reds-pinks-and-purples/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -6200,6 +7556,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/the-sugarcubes/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/the-tempters/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -6229,6 +7591,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/the-weather-station/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/the-wedding-present/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -6248,6 +7616,18 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/themselves/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/theo-parrish/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/they-are-gutting-a-body-of-water/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -6283,6 +7663,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/thomas-whitfield/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/throbbing-gristle/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -6302,6 +7688,18 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/tim-story/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/time-wharp/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/tinariwen/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -6409,7 +7807,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/tr-nco/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/tryph-me/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/tsvi/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -6428,6 +7838,18 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/turnstile/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/two-shell/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/ty-segall/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -6505,6 +7927,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/valee/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/valentina-magaletti/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -6571,6 +7999,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/void-patrol/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/von-freeman/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -6595,6 +8029,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/wadada-leo-smith/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/walter-smith-iii/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -6614,6 +8054,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/wes-montgomery/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/westside-gunn/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -6644,6 +8090,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/wicca-phase-springs-eternal/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/wiki/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -6715,6 +8167,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/ye-dry/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/yhwh-nailgun/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -6722,6 +8180,18 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/yo-la-tengo/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/yoko-ono/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/young-nudy/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -6740,6 +8210,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/zainaba/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/zhero/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
