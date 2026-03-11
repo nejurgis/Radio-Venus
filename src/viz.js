@@ -241,14 +241,18 @@ const _highlightCache = new Map();
 let _lastCursorMode = ''; // '', 'crosshair', or 'pointer'
 
 function getHighlightSprite(r, g, b, isHovered) {
-  const key = `${r},${g},${b},${isHovered ? 1 : 0}`;
+  const dpr = window.devicePixelRatio || 1;
+  const key = `${r},${g},${b},${isHovered ? 1 : 0},${dpr}`;
   if (_highlightCache.has(key)) return _highlightCache.get(key);
   const drawSize = isHovered ? 7 : 5;
-  const dim = drawSize * 2 + 2;
-  const c   = dim / 2;
+  const dim = drawSize * 2 + 2;            // CSS pixels
+  const physDim = Math.round(dim * dpr);   // physical pixels
+  const c = dim / 2;                       // CSS centre (used with dpr scale)
   const sCanvas = document.createElement('canvas');
-  sCanvas.width = sCanvas.height = dim;
+  sCanvas.width = sCanvas.height = physDim;
+  sCanvas._cssSize = dim; // stored so drawImage can use CSS dimensions
   const sCtx = sCanvas.getContext('2d');
+  sCtx.scale(dpr, dpr); // draw in CSS-pixel coordinates for full sharpness
   const grad = sCtx.createRadialGradient(
     c - drawSize * 0.35, c - drawSize * 0.35, drawSize * 0.05,
     c, c, drawSize
@@ -1077,8 +1081,8 @@ function tick() {
 
     if (isHighlighted) {
       const spr  = getHighlightSprite(dot.r, dot.g, dot.b, isHovered);
-      const half = spr.width / 2;
-      ctx.drawImage(spr, x - half, y - half);
+      const half = spr._cssSize / 2;
+      ctx.drawImage(spr, x - half, y - half, spr._cssSize, spr._cssSize);
     } else if (dot.sprite) {
       // Fade in over 400ms from when the sprite was first created
       const fadeAlpha = Math.min(1, (now - dot.spriteBirth) / 400);
