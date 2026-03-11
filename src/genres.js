@@ -167,6 +167,9 @@ const GENRE_MAP = {
   'noise music': ['industrial'],
   'noise': ['industrial'],
   'power electronics': ['industrial'],
+  'black metal': ['industrial'],
+  'autonomous black metal': ['industrial'],
+  'ukrainian black metal': ['industrial'],
   'death industrial': ['industrial'],
   'harsh noise': ['industrial'],
   'noise rock': ['industrial'],
@@ -219,6 +222,8 @@ const GENRE_MAP = {
   'breakbeat': ['dnb'],
   'uk garage': ['dnb'],
   'dubstep': ['dnb'],
+  'minimal dnb': ['dnb'],
+  'drumfunk': ['dnb'],
   'grime': ['dnb'],
   'footwork': ['dnb'],
   'juke': ['dnb'],
@@ -449,6 +454,33 @@ const GENRE_MAP = {
   'utopian virtual': ['intercelestial', 'idm'],  // EN: Jadelain, Elysia Crampton, etc.
   'epic collage': ['intercelestial', 'idm'],      // EN: layered/cinematic experimental
   'hypnagogic pop': ['indiepop', 'ambient'],      // EN: hazy lo-fi dreamlike pop
+  'spoken word': ['intercelestial'],
+  'laboratorio': ['idm'],                         // EN: Musica Moderna experimental cluster
+  'microtonal': ['intercelestial', 'classical'],
+  'gauze pop': ['indiepop'],
+  'social media pop': ['indiepop'],
+  'uk alternative pop': ['indiepop'],
+  'psych gaze': ['indiepop', 'altrock'],
+  'neo-psicodelia brasileira': ['indiepop', 'altrock'],
+  'uk drill': ['hiphop'],
+  'new york drill': ['hiphop'],
+  'bronx drill': ['hiphop'],
+  'drill': ['hiphop'],
+  'brooklyn drill': ['hiphop'],
+  'sexy drill': ['hiphop'],
+  'persian neo-traditional': ['intercelestial'],
+  'persian traditional': ['intercelestial'],
+  'tar': ['intercelestial'],
+  'santur': ['intercelestial'],
+  'traditional music': ['intercelestial'],
+  'gwoka': ['intercelestial'],                    // Guadeloupean African-derived music
+  'maloya': ['intercelestial'],                   // Réunion Island creole music
+  'musique guadeloupe': ['intercelestial'],
+  'latin alternative': ['intercelestial', 'artpop'],
+  'latin indie': ['intercelestial', 'artpop'],
+  'latintronica': ['electronica', 'intercelestial'],
+  'deep latin alternative': ['intercelestial', 'artpop'],
+  'desert blues': ['folk', 'intercelestial'],
   'prepared piano': ['classical', 'idm'],
 
   // ── Additional classical micro-genres ──
