@@ -2,6 +2,8 @@ import { trackScreenView } from "./analytics";
 
 // ─── CACHED ELEMENTS (The Speed Boost) ──────────────────────────────────────
 let trackSelectCallback = null; // delegated click handler for track list
+let _tlObserver = null;        // IntersectionObserver for infinite scroll
+let _tlLoadMore = null;        // function to load next batch (used by setActiveTrack)
 
 const ui = {
   // We will populate these once in initScreens()
@@ -289,27 +291,51 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
     return item;
   };
 
-  // Render first 80 immediately, lazy-load the rest to avoid blocking the main thread
-  const BATCH = 80;
-  const firstFrag = document.createDocumentFragment();
-  tracks.slice(0, BATCH).forEach((track, i) => firstFrag.appendChild(makeItem(track, i)));
-  ui.trackList.appendChild(firstFrag);
+  // Infinite scroll — render 20 at a time, load more when sentinel enters viewport
+  const BATCH = 20;
+  let rendered = 0;
 
-  if (tracks.length > BATCH) {
-    const appendRest = (start) => {
-      if (!ui.trackList || start >= tracks.length) return;
-      const frag = document.createDocumentFragment();
-      tracks.slice(start, start + BATCH).forEach((track, i) => frag.appendChild(makeItem(track, start + i)));
+  if (_tlObserver) { _tlObserver.disconnect(); _tlObserver = null; }
+
+  const loadMore = () => {
+    if (!ui.trackList) return;
+    if (_tlObserver) { _tlObserver.disconnect(); _tlObserver = null; }
+    const sentinel = ui.trackList.querySelector('.track-list-sentinel');
+    if (sentinel) sentinel.remove();
+
+    const start = rendered;
+    const end = Math.min(start + BATCH, tracks.length);
+    if (start >= tracks.length) return;
+
+    const frag = document.createDocumentFragment();
+    for (let i = start; i < end; i++) frag.appendChild(makeItem(tracks[i], i));
+    rendered = end;
+
+    if (rendered < tracks.length) {
+      const s = document.createElement('div');
+      s.className = 'track-list-sentinel';
+      frag.appendChild(s);
       ui.trackList.appendChild(frag);
-      // Scroll active item into view the moment its chunk lands in the DOM
-      if (currentIndex >= start && currentIndex < start + BATCH) {
-        const active = ui.trackList.querySelector('.track-item.active');
-        if (active) active.scrollIntoView({ behavior: 'instant', block: 'center' });
-      }
-      setTimeout(() => appendRest(start + BATCH), 0);
-    };
-    setTimeout(() => appendRest(BATCH), 0);
-  }
+      _tlObserver = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) loadMore();
+      }, { rootMargin: '300px' });
+      _tlObserver.observe(ui.trackList.querySelector('.track-list-sentinel'));
+    } else {
+      ui.trackList.appendChild(frag);
+    }
+
+    // Scroll active item into view if it just landed in the DOM
+    if (currentIndex >= start && currentIndex < end) {
+      const active = ui.trackList.querySelector('.track-item.active');
+      if (active) active.scrollIntoView({ behavior: 'instant', block: 'center' });
+    }
+  };
+
+  _tlLoadMore = loadMore;
+
+  // If active item is beyond first batch, pre-render enough batches to include it (max 3)
+  const initialBatches = currentIndex >= BATCH ? Math.min(Math.ceil((currentIndex + 1) / BATCH), 3) : 1;
+  for (let b = 0; b < initialBatches; b++) loadMore();
 }
 
 // Lightweight active-track update — avoids full list re-render on every track skip
@@ -317,7 +343,13 @@ export function setActiveTrack(index) {
   if (!ui.trackList) return;
   const prev = ui.trackList.querySelector('.track-item.active');
   if (prev) prev.classList.remove('active');
-  const next = ui.trackList.querySelector(`[data-index="${index}"]`);
+  let next = ui.trackList.querySelector(`[data-index="${index}"]`);
+  // Item not rendered yet — load more batches until it appears
+  while (!next && _tlLoadMore) {
+    _tlLoadMore();
+    next = ui.trackList.querySelector(`[data-index="${index}"]`);
+    if (!_tlObserver) break; // all items rendered, stop
+  }
   if (next) {
     next.classList.add('active');
     next.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
