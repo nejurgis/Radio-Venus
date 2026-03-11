@@ -47,7 +47,7 @@ let isPaused = false;                // whether playback is currently paused
 let loadingAnimFrame = null;        
 let loadStartTime = 0;
 const SILENT_FAIL_MS = 15000;
-const REPORT_ENDPOINT = 'YOUR_APPS_SCRIPT_URL'; // paste deployed Google Apps Script web app URL here
+const REPORT_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwqKJ-7Yd_rwXUC6fmol018Ykwiz3NCtbHx5xFdsIEcP1Y95L7WEWLjSmcs3XIezrKZvQ/exec'; // paste deployed Google Apps Script web app URL here
 let pendingSeekTime = 0;  // for shared links — seek once on first PLAYING
 
 let activeGenreLabel = null;       // label of the currently playing genre
@@ -1272,12 +1272,10 @@ document.addEventListener('click', e => {
     const name = reportBtn.dataset.name;
     reportBtn.remove();
     showToast('reported! — thank you');
-    fetch(REPORT_ENDPOINT, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ artist: name, timestamp: new Date().toISOString() }),
-    }).catch(() => {}); // fire-and-forget
+    const url = new URL(REPORT_ENDPOINT);
+    url.searchParams.set('artist', name);
+    url.searchParams.set('timestamp', new Date().toISOString());
+    fetch(url.toString(), { mode: 'no-cors' }).catch(() => {}); // fire-and-forget
     return;
   }
   const favContainer = e.target.closest('.track-fav-container');
