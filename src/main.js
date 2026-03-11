@@ -47,6 +47,7 @@ let isPaused = false;                // whether playback is currently paused
 let loadingAnimFrame = null;        
 let loadStartTime = 0;
 const SILENT_FAIL_MS = 15000;
+const REPORT_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'; // replace after creating form at formspree.io
 let pendingSeekTime = 0;  // for shared links — seek once on first PLAYING
 
 let activeGenreLabel = null;       // label of the currently playing genre
@@ -1269,11 +1270,13 @@ document.addEventListener('click', e => {
   const reportBtn = e.target.closest('.btn-report');
   if (reportBtn) {
     const name = reportBtn.dataset.name;
-    const reports = JSON.parse(localStorage.getItem('rv_error_reports') || '[]');
-    reports.push({ name, timestamp: new Date().toISOString() });
-    localStorage.setItem('rv_error_reports', JSON.stringify(reports));
     reportBtn.remove();
     showToast('reported! — thank you');
+    fetch(REPORT_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ artist: name, timestamp: new Date().toISOString() }),
+    }).catch(() => {}); // fire-and-forget
     return;
   }
   const favContainer = e.target.closest('.track-fav-container');
