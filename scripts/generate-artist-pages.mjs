@@ -53,7 +53,7 @@ function generatePage(dir, slug, artist, gid) {
   });
   const baseRedirect  = `/?${baseParams}`;
   const canonicalUrl  = `https://radio-venus.club/artist/${slug}`;
-  const thumbUrl      = `https://i.ytimg.com/vi/${artist.youtubeVideoId}/maxresdefault.jpg`;
+  const thumbUrl      = `https://i.ytimg.com/vi/${artist.youtubeVideoId}/hqdefault.jpg`;
   const title         = `${artist.name} — Radio Venus`;
   const description   = `Venus in ${sign} ${degree}° ⊹ ${genreLabel}`;
 
@@ -67,8 +67,8 @@ function generatePage(dir, slug, artist, gid) {
   <meta property="og:title" content="${esc(title)}">
   <meta property="og:description" content="${esc(description)}">
   <meta property="og:image" content="${thumbUrl}">
-  <meta property="og:image:width" content="1280">
-  <meta property="og:image:height" content="720">
+  <meta property="og:image:width" content="480">
+  <meta property="og:image:height" content="360">
   <meta property="og:url" content="${canonicalUrl}">
   <meta property="og:type" content="music.song">
   <meta property="og:site_name" content="Radio Venus">
