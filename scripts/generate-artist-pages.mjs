@@ -26,12 +26,12 @@ function esc(s) {
 }
 
 const db = JSON.parse(fs.readFileSync('./public/data/musicians.json', 'utf8'))
-  .filter(a => a.name !== '@' && a.venus?.sign && a.youtubeVideoId);
+  .filter(a => a.name !== '@' && a.venus?.sign);
 
 // Build slug → artist map with collision handling
 const slugMap = new Map();
 for (const artist of db) {
-  let base = toSlug(artist.name) || artist.spotifyId || artist.youtubeVideoId;
+  let base = toSlug(artist.name) || artist.spotifyId || artist.youtubeVideoId || 'artist';
   let slug = base;
   let n = 2;
   while (slugMap.has(slug)) slug = `${base}-${n++}`;
@@ -53,7 +53,9 @@ function generatePage(dir, slug, artist, gid) {
   });
   const baseRedirect  = `/?${baseParams}`;
   const canonicalUrl  = `https://radio-venus.club/artist/${slug}`;
-  const thumbUrl      = `https://i.ytimg.com/vi/${artist.youtubeVideoId}/hqdefault.jpg`;
+  const thumbUrl      = artist.youtubeVideoId
+    ? `https://i.ytimg.com/vi/${artist.youtubeVideoId}/hqdefault.jpg`
+    : `https://radio-venus.club/assets/social-card.jpg`;
   const title         = `${artist.name} — Radio Venus`;
   const description   = `Venus in ${sign} ${degree}° ⊹ ${genreLabel}`;
 
