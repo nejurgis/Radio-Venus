@@ -6925,43 +6925,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "DjRUM",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 12.7,
-      "decan": 2,
-      "element": "earth"
-    },
-    "genres": [
-      "electronica",
-      "idm",
-      "dnb",
-      "techno",
-      "ambient",
-      "triphop"
-    ],
-    "subgenres": [
-      "experimental",
-      "indietronica",
-      "future-garage",
-      "glitch-pop",
-      "idm",
-      "house",
-      "minimal",
-      "dub-techno",
-      "dub",
-      "techno",
-      "jungle",
-      "footwork",
-      "dubstep",
-      "downtempo",
-      "ambient",
-      "breakbeat"
-    ],
-    "youtubeVideoId": "zyMDZZ8-qKg",
-    "backupVideoIds": []
-  },
-  {
     "name": "Dmitri Shostakovich",
     "venus": {
       "sign": "Scorpio",
