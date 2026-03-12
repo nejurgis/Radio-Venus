@@ -929,6 +929,7 @@ function startRadio(genreId, genreLabel, subgenreId = null, targetArtistName = n
 
   if (targetArtistName || !(isPlaying() && hasPlayed) || isCelestialPlaylist) {
     tracks = candidateTracks;
+    displayedTracks = null; // committed — displayed list == playing list
     playingGenreId = genreId;
     playingSubgenreId = subgenreId;
     activeGenreLabel = newLabel;
@@ -952,8 +953,10 @@ function startRadio(genreId, genreLabel, subgenreId = null, targetArtistName = n
       playTrack(startIdx);
     }
   } else {
+    displayedTracks = candidateTracks; // preview mode — displayed list differs from playing list
     renderTrackList(candidateTracks, -1, (i) => {
       tracks = candidateTracks;
+      displayedTracks = null; // committing — displayed list becomes playing list
       playingGenreId = genreId;
       playingSubgenreId = subgenreId;
       activeGenreLabel = newLabel;
@@ -1080,7 +1083,12 @@ function playTrack(index) {
   });
   startLoadingProgress();
   // Paint the active-track highlight first, then defer heavier UI work to next frame
-  setActiveTrack(currentTrackIndex);
+  // In preview mode displayedTracks differs from tracks[] — find by name so we never
+  // highlight the wrong row in a different list.
+  const highlightIdx = displayedTracks
+    ? displayedTracks.findIndex(t => t.name === track.name)
+    : currentTrackIndex;
+  setActiveTrack(highlightIdx);
   updatePlayButton('buffering');
   requestAnimationFrame(() => {
     updateNowPlaying('Loading...'); // cancels + restarts marquee WAAPI — defer so it doesn't block repaint
