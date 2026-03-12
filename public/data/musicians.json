@@ -8300,6 +8300,25 @@
     "backupVideoIds": []
   },
   {
+    "name": "Erwin Schulhoff",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 5.7,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "classical",
+      "intercelestial"
+    ],
+    "subgenres": [
+      "opera",
+      "classical"
+    ],
+    "youtubeVideoId": "VTU-kReSBN4",
+    "backupVideoIds": []
+  },
+  {
     "name": "Esben and the Witch",
     "venus": {
       "sign": "Cancer",
@@ -13814,6 +13833,24 @@
       "krautrock"
     ],
     "youtubeVideoId": "P7L1X2P_WaE",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Lady Gaga",
+    "venus": {
+      "sign": "Aries",
+      "degree": 24,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "artpop",
+      "electronica"
+    ],
+    "subgenres": [
+      "indietronica"
+    ],
+    "youtubeVideoId": "nWW4tFuzxGE",
     "backupVideoIds": []
   },
   {
@@ -22927,32 +22964,6 @@
     "backupVideoIds": [
       "y1M-_EdJ5s0",
       "O0nab_d9w3M"
-    ]
-  },
-  {
-    "name": "St. Vincent",
-    "venus": {
-      "sign": "Virgo",
-      "degree": 25.6,
-      "decan": 3,
-      "element": "earth"
-    },
-    "genres": [
-      "artpop",
-      "darkwave",
-      "electronica",
-      "indiepop"
-    ],
-    "subgenres": [
-      "art-pop",
-      "indie-pop",
-      "indietronica",
-      "synth-pop"
-    ],
-    "youtubeVideoId": "nWW4tFuzxGE",
-    "backupVideoIds": [
-      "9tw2LMnxvW0",
-      "jKAA_INzDGo"
     ]
   },
   {

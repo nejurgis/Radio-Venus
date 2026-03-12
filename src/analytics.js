@@ -139,6 +139,21 @@ export function trackShuffle(state) {
   });
 }
 
+export function trackChartCalculated(sign, element) {
+  send('chart_calculated', {
+    event_category: 'engagement',
+    sign,
+    element,
+  });
+}
+
+export function trackNewsletterSubscribe() {
+  send('generate_lead', {
+    event_category: 'conversion',
+    method: 'newsletter',
+  });
+}
+
 export function trackNebulaInteraction(action) {
   // action: 'drag_rotate', 'click_sign', 'zoom_sign'
   send('nebula_interaction', {

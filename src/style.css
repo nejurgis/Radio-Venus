@@ -377,7 +377,8 @@ body:has(#screen-radio.active) .newsletter-footer {
 
 .newsletter-footer {
   position: fixed;
-  bottom: calc(1.5rem + 6.5px); /* aligns form center with btn-info (37px) center */
+  opacity: 0.5;
+  bottom: 0;
   left: 0;
   right: 0;
   display: flex;
@@ -385,6 +386,9 @@ body:has(#screen-radio.active) .newsletter-footer {
   align-items: center;
   pointer-events: none;
   z-index: 2;
+  padding-bottom: calc(1.5rem + 6.5px); /* aligns form center with btn-info (37px) center */
+  padding-top: 3rem;
+  background: radial-gradient(ellipse 80% 50% at 50% 65%, var(--bg) 0%, var(--bg) 31%, transparent 75%)
 }
 
 .newsletter-portal-label {
@@ -412,7 +416,6 @@ body:has(#screen-radio.active) .newsletter-footer {
   border-radius: 2rem;
   overflow: hidden;
   transition: border-color 0.2s;
-  box-shadow: 0 0 28px 14px rgba(0, 0, 0, 0.55);
 }
 
 .newsletter-form:focus-within {
@@ -1770,9 +1773,8 @@ p a:hover {
 .track-resonance-note {
   padding: 1.9rem 0.75rem 0.75rem;
   font-family: var(--font-mono);
-  font-size: 0.45rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  font-size: 0.5rem;
+  letter-spacing: -0.04em;
   color: rgba(255, 255, 255, 0.35);
   text-align: center;
   display: flex;
@@ -1940,7 +1942,9 @@ p a:hover {
 }
 
 .track-thumb {
+  display: block;
   width: 34px;
+  min-width: 34px;
   height: 34px;
   border-radius: 50%;
   object-fit: cover;
@@ -2464,13 +2468,12 @@ button.is-pressed svg,
 
 .playlist-description {
   font-family: var(--font-mono);
-  font-size: 0.6rem;
+  font-size: 0.5rem;
   line-height: 1.6;
-  letter-spacing: 0.04em;
+  letter-spacing: -0.04em;
   color: rgba(255, 255, 255, 0.28);
   text-align: center;
   max-width: 80ch;
-  text-transform: uppercase;
 }
 
 /* ── Artist Index (About screen) ───────────────────────────────────────────── */

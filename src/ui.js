@@ -289,7 +289,7 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
     const sign = (track.venus && track.venus.sign) ? track.venus.sign : '';
     const el = (track.venus && SIGN_ELEMENTS[track.venus.sign]) || 'air';
     const thumbHtml = track.youtubeVideoId
-      ? `<img class="track-thumb" src="https://i.ytimg.com/vi/${track.youtubeVideoId}/hqdefault.jpg" alt="" loading="lazy" onerror="this.classList.add('track-thumb--missing')">`
+      ? `<img class="track-thumb" src="https://i.ytimg.com/vi/${track.youtubeVideoId}/mqdefault.jpg" alt="" loading="lazy" onerror="this.src='https://i.ytimg.com/vi/${track.youtubeVideoId}/hqdefault.jpg';this.onerror=null">`
       : `<div class="track-thumb track-thumb--missing"></div>`;
     item.innerHTML = `
       ${thumbHtml}

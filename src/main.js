@@ -21,6 +21,7 @@ import {
   startHeartbeat, stopHeartbeat,
   trackSongStart, trackSongComplete, trackSongSkip, trackSongError,
   trackShare, trackGenreSelect, trackFavorite, trackHarpToggle, trackPlaylistShare, trackShuffle,
+  trackChartCalculated, trackNewsletterSubscribe,
 } from './analytics.js';
 
 // ── State ───────────────────────────────────────────────────────────────────
@@ -171,6 +172,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   initScreens();
 
   // Newsletter form
+  const newsletterFooter = document.querySelector('.newsletter-footer');
+  if (localStorage.getItem('rv_subscribed')) {
+    if (newsletterFooter) newsletterFooter.style.display = 'none';
+  }
   document.querySelectorAll('.newsletter-form').forEach(form => {
     form.addEventListener('submit', e => {
       e.preventDefault();
@@ -180,6 +185,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       input.value = '';
       input.blur();
       showToast('subscribed! — thank you ✶');
+      localStorage.setItem('rv_subscribed', '1');
+      if (newsletterFooter) newsletterFooter.style.display = 'none';
+      trackNewsletterSubscribe();
       const url = new URL(NEWSLETTER_ENDPOINT);
       url.searchParams.set('email', email);
       url.searchParams.set('timestamp', new Date().toISOString());
@@ -368,25 +376,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!venus || !info.genres.length) return;
     const genreId = info.genres[0];
     const label = GENRE_CATEGORIES.find(c => c.id === genreId)?.label || genreId;
-
-    const trackList = startRadio(genreId, label);
-    if (!trackList || trackList.length === 0) return;
-
-    const idx = trackList.findIndex(t => t.name === info.name);
-    if (idx === -1) return;
-
-    if (isPlaying() && hasPlayed) {
-      setTimeout(() => {
-        const items = document.querySelectorAll('#track-list .track-item');
-        if (items[idx]) {
-          items[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
-          items[idx].style.background = 'rgba(255,255,255,0.08)';
-          setTimeout(() => { items[idx].style.background = ''; }, 1200);
-        }
-      }, 50);
-    } else {
-      playTrack(idx);
-    }
+    startRadio(genreId, label, null, info.name);
   });
 
   const dbResult = await loadDatabase()
@@ -736,6 +726,7 @@ function signFromLongitude(lon) {
 async function onDateSubmit(d, m, y) {
   const birthDate = makeBirthDate(d, m, y);
   venus = calculateVenus(birthDate);
+  trackChartCalculated(venus.sign, venus.element);
 
   setElementTheme(venus.element);
   setUserVenus(venus.longitude, venus.element);
