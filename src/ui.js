@@ -2,8 +2,10 @@ import { trackScreenView } from "./analytics";
 
 // ─── CACHED ELEMENTS (The Speed Boost) ──────────────────────────────────────
 let trackSelectCallback = null; // delegated click handler for track list
-let _tlObserver = null;        // IntersectionObserver for infinite scroll
+let _tlObserver = null;        // non-null = more items pending (used by setActiveTrack)
 let _tlLoadMore = null;        // function to load next batch (used by setActiveTrack)
+let _tlScrollHandler = null;   // current scroll listener (removed on next render)
+let _tlScrollRoot = null;      // element the scroll listener is attached to
 
 const ui = {
   // We will populate these once in initScreens()
@@ -306,18 +308,20 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
     return item;
   };
 
-  // Infinite scroll — render 20 at a time, load more when sentinel enters viewport
+  // Infinite scroll — render 20 at a time, load more when near bottom of scroll container
   const BATCH = 20;
   let rendered = 0;
+  const scrollRoot = ui.trackList;
 
-  if (_tlObserver) { _tlObserver.disconnect(); _tlObserver = null; }
+  if (_tlObserver) { _tlObserver = null; }
+  if (_tlScrollHandler && _tlScrollRoot) {
+    _tlScrollRoot.removeEventListener('scroll', _tlScrollHandler);
+    _tlScrollHandler = null;
+    _tlScrollRoot = null;
+  }
 
   const loadMore = () => {
     if (!ui.trackList) return;
-    if (_tlObserver) { _tlObserver.disconnect(); _tlObserver = null; }
-    const sentinel = ui.trackList.querySelector('.track-list-sentinel');
-    if (sentinel) sentinel.remove();
-
     const start = rendered;
     const end = Math.min(start + BATCH, tracks.length);
     if (start >= tracks.length) return;
@@ -325,19 +329,9 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
     const frag = document.createDocumentFragment();
     for (let i = start; i < end; i++) frag.appendChild(makeItem(tracks[i], i));
     rendered = end;
+    ui.trackList.appendChild(frag);
 
-    if (rendered < tracks.length) {
-      const s = document.createElement('div');
-      s.className = 'track-list-sentinel';
-      frag.appendChild(s);
-      ui.trackList.appendChild(frag);
-      _tlObserver = new IntersectionObserver(([entry]) => {
-        if (entry.isIntersecting) loadMore();
-      }, { root: ui.trackList.parentElement, rootMargin: '300px' });
-      _tlObserver.observe(ui.trackList.querySelector('.track-list-sentinel'));
-    } else {
-      ui.trackList.appendChild(frag);
-    }
+    if (rendered >= tracks.length) _tlObserver = null; // signal: all rendered
 
     // Scroll active item into view if it just landed in the DOM
     if (currentIndex >= start && currentIndex < end) {
@@ -345,6 +339,24 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
       if (active) active.scrollIntoView({ behavior: 'instant', block: 'center' });
     }
   };
+
+  _tlObserver = {}; // non-null = more items pending
+
+  const onScroll = () => {
+    if (rendered >= tracks.length) {
+      scrollRoot.removeEventListener('scroll', onScroll);
+      _tlScrollHandler = null;
+      _tlScrollRoot = null;
+      return;
+    }
+    if (scrollRoot.scrollTop + scrollRoot.clientHeight >= scrollRoot.scrollHeight - 400) {
+      loadMore();
+    }
+  };
+
+  _tlScrollHandler = onScroll;
+  _tlScrollRoot = scrollRoot;
+  scrollRoot.addEventListener('scroll', onScroll, { passive: true });
 
   _tlLoadMore = loadMore;
 

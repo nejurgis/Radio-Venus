@@ -31,6 +31,7 @@ let tracks = [];
 let currentTrackIndex = 0;
 let playingGenreId = null;
 let playingSubgenreId = null;
+let activeShareFn = null;      // share function for the currently playing playlist
 let displayedGenreId = null;   // what's currently shown in the track list (may differ from playingGenreId while music plays)
 let displayedTracks = null;    // non-null only when displayed list differs from tracks (preview mode)
 let currentPlayingTrack = null; // the actual track object playing (survives tracks[] reshuffles)
@@ -918,12 +919,16 @@ function startRadio(genreId, genreLabel, subgenreId = null, targetArtistName = n
   const isCelestialPlaylist = genreId === 'moon' || genreId === 'sun';
   const effectiveVenusNote = isCelestialPlaylist ? null : venusNote;
 
-  if (targetArtistName || !(isPlaying() && hasPlayed) || isCelestialPlaylist) {
+  const musicPlaying = isPlaying() && hasPlayed;
+
+  if (targetArtistName || !musicPlaying) {
+    // Commit immediately — nothing playing, or jumping to a specific artist
     tracks = candidateTracks;
-    displayedTracks = null; // committed — displayed list == playing list
+    displayedTracks = null;
     playingGenreId = genreId;
     playingSubgenreId = subgenreId;
     activeGenreLabel = newLabel;
+    activeShareFn = playlistShareFn;
     failedIds.clear();
     trackVideoIndex.clear();
 
@@ -933,26 +938,28 @@ function startRadio(genreId, genreLabel, subgenreId = null, targetArtistName = n
     renderTrackList(tracks, startIdx, i => playTrack(i), failedIds, new Set(getFavorites()), playlistShareFn, playlistDescription, effectiveVenusNote);
 
     if (isCelestialPlaylist) {
-      // Show list without disturbing current playback — user clicks to start
+      // Cue first track without autoplaying
       if (tracks.length > 0) {
-        if (!isPlaying() || !hasPlayed) {
-          updateNowPlaying(tracks[0].name);
-          updateFavoriteButton(isFavorite(tracks[0].name));
-          ensurePlayerReady().then(() => cueVideo(tracks[0].youtubeVideoId));
-          updatePlayButton(false);
-        }
+        updateNowPlaying(tracks[0].name);
+        updateFavoriteButton(isFavorite(tracks[0].name));
+        ensurePlayerReady().then(() => cueVideo(tracks[0].youtubeVideoId));
+        updatePlayButton(false);
       }
     } else {
       playTrack(startIdx);
     }
   } else {
-    displayedTracks = candidateTracks; // preview mode — displayed list differs from playing list
+    // View-only preview — music is playing, show list without replacing active playlist
+    // Applies to all playlist types (regular genres, celestial, favorites)
+    // User must click a track to commit and start the new playlist
+    displayedTracks = candidateTracks;
     renderTrackList(candidateTracks, -1, (i) => {
       tracks = candidateTracks;
-      displayedTracks = null; // committing — displayed list becomes playing list
+      displayedTracks = null;
       playingGenreId = genreId;
       playingSubgenreId = subgenreId;
       activeGenreLabel = newLabel;
+      activeShareFn = playlistShareFn;
       failedIds.clear();
       trackVideoIndex.clear();
       playTrack(i);
@@ -1203,6 +1210,11 @@ document.getElementById('btn-now-playing').addEventListener('click', goToRadio);
 document.getElementById('reveal-now-playing').addEventListener('click', goToRadio);
 
 function goToRadio() {
+  // If returning from an aborted preview, restore the real playing playlist
+  if (displayedTracks) {
+    displayedTracks = null;
+    renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()), activeShareFn, null, null);
+  }
   showScreen('radio');
   updateNowPlayingButton(false);
   showNebula(true);
