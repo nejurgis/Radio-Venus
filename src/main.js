@@ -933,12 +933,14 @@ function startRadio(genreId, genreLabel, subgenreId = null, targetArtistName = n
     renderTrackList(tracks, startIdx, i => playTrack(i), failedIds, new Set(getFavorites()), playlistShareFn, playlistDescription, effectiveVenusNote);
 
     if (isCelestialPlaylist) {
-      // Cue first track without autoplaying — user initiates playback
+      // Show list without disturbing current playback — user clicks to start
       if (tracks.length > 0) {
-        updateNowPlaying(tracks[0].name);
-        updateFavoriteButton(isFavorite(tracks[0].name));
-        ensurePlayerReady().then(() => cueVideo(tracks[0].youtubeVideoId));
-        updatePlayButton(false);
+        if (!isPlaying() || !hasPlayed) {
+          updateNowPlaying(tracks[0].name);
+          updateFavoriteButton(isFavorite(tracks[0].name));
+          ensurePlayerReady().then(() => cueVideo(tracks[0].youtubeVideoId));
+          updatePlayButton(false);
+        }
       }
     } else {
       playTrack(startIdx);

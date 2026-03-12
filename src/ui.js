@@ -333,7 +333,7 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
       ui.trackList.appendChild(frag);
       _tlObserver = new IntersectionObserver(([entry]) => {
         if (entry.isIntersecting) loadMore();
-      }, { rootMargin: '300px' });
+      }, { root: ui.trackList.parentElement, rootMargin: '300px' });
       _tlObserver.observe(ui.trackList.querySelector('.track-list-sentinel'));
     } else {
       ui.trackList.appendChild(frag);
