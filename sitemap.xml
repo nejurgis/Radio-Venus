@@ -3301,6 +3301,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://radio-venus.club/artist/erwin-schulhoff/</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://radio-venus.club/artist/esben-and-the-witch/</loc>
     <lastmod>2026-03-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -4778,6 +4784,12 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/laddio-bolocko/</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://radio-venus.club/artist/lady-gaga/</loc>
     <lastmod>2026-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -7166,12 +7178,6 @@
   </url>
   <url>
     <loc>https://radio-venus.club/artist/squarepusher/</loc>
-    <lastmod>2026-03-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://radio-venus.club/artist/st-vincent/</loc>
     <lastmod>2026-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
