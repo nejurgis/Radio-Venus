@@ -914,7 +914,8 @@ function startRadio(genreId, genreLabel, subgenreId = null, targetArtistName = n
   document.getElementById('btn-shuffle').classList.remove('is-active');
 
   // 6. PLAY & RENDER
-  if (targetArtistName || !(isPlaying() && hasPlayed)) {
+  const isSpecialPlaylist = genreId === 'moon' || genreId === 'sun';
+  if (targetArtistName || !(isPlaying() && hasPlayed) || isSpecialPlaylist) {
     tracks = candidateTracks;
     playingGenreId = genreId;
     playingSubgenreId = subgenreId;
