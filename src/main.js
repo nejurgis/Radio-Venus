@@ -1,4 +1,5 @@
 import { calculateVenus, calculateMoon, makeBirthDate } from './venus.js';
+import { toSlug } from './slug.js';
 import { GENRE_CATEGORIES, SUBGENRES } from './genres.js';
 import { loadDatabase, getDatabase, match, matchFavorites, matchMoon, matchSun, getSubgenreCounts } from './matcher.js';
 import { getFavorites, toggleFavorite, isFavorite } from './favorites.js';
@@ -339,13 +340,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('btn-moon-playlist').classList.toggle('visible', active);
   });
   document.getElementById('btn-moon-playlist').addEventListener('click', () => {
-    launchMoonPlaylist();
+    startRadio('moon', "Today's Moon");
   });
   onSunHover(active => {
     document.getElementById('btn-sun-playlist').classList.toggle('visible', active);
   });
   document.getElementById('btn-sun-playlist').addEventListener('click', () => {
-    launchSunPlaylist();
+    startRadio('sun', "Today's Sun");
   });
   onNeedleCross(({ radialFrac, element, speed }) => {
     const velocity = Math.min(1, 0.2 + speed * 0.8);
@@ -494,13 +495,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   // ── Handle #moon link (Today's Moon) ──
   if (window.location.hash === '#moon' && dbResult.status === 'fulfilled') {
     history.replaceState({ screen: 'portal' }, '', window.location.pathname);
-    launchMoonPlaylist();
+    startRadio('moon', "Today's Moon");
   }
 
   // ── Handle #sun link (Today's Sun) ──
   if (window.location.hash === '#sun' && dbResult.status === 'fulfilled') {
     history.replaceState({ screen: 'portal' }, '', window.location.pathname);
-    launchSunPlaylist();
+    startRadio('sun', "Today's Sun");
   }
 
   // ── Handle shared link (?vid=...&t=...&artist=...) ──
@@ -866,21 +867,24 @@ function startRadio(genreId, genreLabel, subgenreId = null, targetArtistName = n
 
   // 4. FIND TRACKS
   let candidateTracks;
+  let specialZoomSignIndex = -1;
+  let specialZoomTargetDeg = null;
 
   if (genreId === 'favorites') {
     candidateTracks = matchFavorites(getFavorites(), effectiveLong);
-  } 
+  }
   else if (genreId === 'moon') {
     // ── MOON LOGIC ──
-    const now = new Date();
-    const moonData = calculateMoon(now);
-
-    // Update Header
+    const moonData = calculateMoon(new Date());
     const moonSign = moonData.sign;
     const moonDeg = Math.round(moonData.longitude % 30);
     renderRadioHeader(moonSign, `Moon in ${moonSign} ${moonDeg}°`);
-
-    // Find Artists
+    setElementTheme(ZODIAC_ELEMENTS[moonSign] || 'water');
+    const nebulaCont = document.getElementById('nebula-container');
+    if (nebulaCont) nebulaCont.classList.add('is-dimmed', 'is-deep-dimmed', 'is-zoomed');
+    dimNebula(true);
+    specialZoomSignIndex = ZODIAC_SIGNS.indexOf(moonSign);
+    specialZoomTargetDeg = moonData.longitude;
     candidateTracks = matchMoon(moonData.longitude);
   }
   else if (genreId === 'sun') {
@@ -889,6 +893,12 @@ function startRadio(genreId, genreLabel, subgenreId = null, targetArtistName = n
     const sunSign = sunData.sunSign;
     const sunDeg = Math.round(sunData.sunLongitude % 30);
     renderRadioHeader(sunSign, `Sun in ${sunSign} ${sunDeg}°`);
+    setElementTheme(ZODIAC_ELEMENTS[sunSign] || 'fire');
+    const nebulaCont = document.getElementById('nebula-container');
+    if (nebulaCont) nebulaCont.classList.add('is-dimmed', 'is-deep-dimmed', 'is-zoomed');
+    dimNebula(true);
+    specialZoomSignIndex = ZODIAC_SIGNS.indexOf(sunSign);
+    specialZoomTargetDeg = sunData.sunLongitude;
     candidateTracks = matchSun(sunData.sunLongitude);
   }
   else {
@@ -914,8 +924,10 @@ function startRadio(genreId, genreLabel, subgenreId = null, targetArtistName = n
   document.getElementById('btn-shuffle').classList.remove('is-active');
 
   // 6. PLAY & RENDER
-  const isSpecialPlaylist = genreId === 'moon' || genreId === 'sun';
-  if (targetArtistName || !(isPlaying() && hasPlayed) || isSpecialPlaylist) {
+  const isCelestialPlaylist = genreId === 'moon' || genreId === 'sun';
+  const effectiveVenusNote = isCelestialPlaylist ? null : venusNote;
+
+  if (targetArtistName || !(isPlaying() && hasPlayed) || isCelestialPlaylist) {
     tracks = candidateTracks;
     playingGenreId = genreId;
     playingSubgenreId = subgenreId;
@@ -926,8 +938,19 @@ function startRadio(genreId, genreLabel, subgenreId = null, targetArtistName = n
     const startIdx = targetArtistName
       ? Math.max(0, tracks.findIndex(t => t.name === targetArtistName))
       : 0;
-    renderTrackList(tracks, startIdx, i => playTrack(i), failedIds, new Set(getFavorites()), playlistShareFn, playlistDescription, venusNote);
-    playTrack(startIdx);
+    renderTrackList(tracks, startIdx, i => playTrack(i), failedIds, new Set(getFavorites()), playlistShareFn, playlistDescription, effectiveVenusNote);
+
+    if (isCelestialPlaylist) {
+      // Cue first track without autoplaying — user initiates playback
+      if (tracks.length > 0) {
+        updateNowPlaying(tracks[0].name);
+        updateFavoriteButton(isFavorite(tracks[0].name));
+        ensurePlayerReady().then(() => cueVideo(tracks[0].youtubeVideoId));
+        updatePlayButton(false);
+      }
+    } else {
+      playTrack(startIdx);
+    }
   } else {
     renderTrackList(candidateTracks, -1, (i) => {
       tracks = candidateTracks;
@@ -937,8 +960,13 @@ function startRadio(genreId, genreLabel, subgenreId = null, targetArtistName = n
       failedIds.clear();
       trackVideoIndex.clear();
       playTrack(i);
-    }, new Set(), new Set(getFavorites()), playlistShareFn, playlistDescription, venusNote);
+    }, new Set(), new Set(getFavorites()), playlistShareFn, playlistDescription, effectiveVenusNote);
   }
+
+  if (specialZoomSignIndex >= 0) {
+    zoomToSign(specialZoomSignIndex, { duration: 2500, targetDeg: specialZoomTargetDeg });
+  }
+  updateNowPlayingButton(false);
 
   return candidateTracks;
 }
@@ -1017,93 +1045,6 @@ function stopLoadingProgress() {
   loadingAnimFrame = null;
 }
 
-function launchMoonPlaylist() {
-  const moonData = calculateMoon(new Date());
-  const moonSign = moonData.sign;
-  const moonDeg = Math.round(moonData.longitude % 30);
-  const el = ZODIAC_ELEMENTS[moonSign] || 'water';
-
-  setElementTheme(el);
-  renderRadioHeader(moonSign, `Moon in ${moonSign} ${moonDeg}°`);
-  showScreen('radio');
-  showNebula(true);
-
-  const nebulaCont = document.getElementById('nebula-container');
-  if (nebulaCont) {
-    nebulaCont.classList.add('is-dimmed');
-    nebulaCont.classList.add('is-deep-dimmed');
-    nebulaCont.classList.add('is-zoomed');
-  }
-  dimNebula(true);
-  deepDimNebula(true);
-  setZoomDrift(true);
-  history.pushState({ screen: 'radio' }, '');
-
-  tracks = matchMoon(moonData.longitude);
-  playingGenreId = 'moon';
-  activeGenreLabel = "Today's Moon";
-  currentTrackIndex = 0;
-  failedIds.clear();
-  trackVideoIndex.clear();
-
-  renderTrackList(tracks, 0, i => playTrack(i), failedIds, new Set(getFavorites()), sharePlaylist,
-    'The immediate emotional weather. This playlist tracks the Moon\'s rapid movement, capturing the fleeting, intuitive mood of the next 48 hours.');
-
-  if (tracks.length > 0) {
-    updateNowPlaying(tracks[0].name);
-    updateFavoriteButton(isFavorite(tracks[0].name));
-    ensurePlayerReady().then(() => cueVideo(tracks[0].youtubeVideoId));
-    updatePlayButton(false);
-  }
-
-  const signIndex = ZODIAC_SIGNS.indexOf(moonSign);
-  if (signIndex >= 0) zoomToSign(signIndex, { duration: 2500, targetDeg: moonData.longitude });
-  updateNowPlayingButton(false);
-}
-
-function launchSunPlaylist() {
-  const moonData = calculateMoon(new Date());
-  const sunSign = moonData.sunSign;
-  const sunDeg = Math.round(moonData.sunLongitude % 30);
-  const el = ZODIAC_ELEMENTS[sunSign] || 'fire';
-
-  setElementTheme(el);
-  renderRadioHeader(sunSign, `Sun in ${sunSign} ${sunDeg}°`);
-  showScreen('radio');
-  showNebula(true);
-
-  const nebulaCont = document.getElementById('nebula-container');
-  if (nebulaCont) {
-    nebulaCont.classList.add('is-dimmed');
-    nebulaCont.classList.add('is-deep-dimmed');
-    nebulaCont.classList.add('is-zoomed');
-  }
-  dimNebula(true);
-  deepDimNebula(true);
-  setZoomDrift(true);
-  history.pushState({ screen: 'radio' }, '');
-
-  tracks = matchSun(moonData.sunLongitude);
-  playingGenreId = 'sun';
-  activeGenreLabel = "Today's Sun";
-  currentTrackIndex = 0;
-  failedIds.clear();
-  trackVideoIndex.clear();
-
-  renderTrackList(tracks, 0, i => playTrack(i), failedIds, new Set(getFavorites()), sharePlaylist,
-    'A living playlist that expresses the current astrological season, evolving in real-time with the transit of the Sun.');
-
-  if (tracks.length > 0) {
-    updateNowPlaying(tracks[0].name);
-    updateFavoriteButton(isFavorite(tracks[0].name));
-    ensurePlayerReady().then(() => cueVideo(tracks[0].youtubeVideoId));
-    updatePlayButton(false);
-  }
-
-  const signIndex = ZODIAC_SIGNS.indexOf(sunSign);
-  if (signIndex >= 0) zoomToSign(signIndex, { duration: 2500, targetDeg: moonData.sunLongitude });
-  updateNowPlayingButton(false);
-}
 
 // ────────────────────────────────────────────────────────────────────────────
 
@@ -1402,14 +1343,6 @@ function getPlaylistShareFn() {
   return (playingGenreId === 'valentine' || playingGenreId === 'favorites' || playingGenreId === 'moon' || playingGenreId === 'sun') ? sharePlaylist : undefined;
 }
 
-function toArtistSlug(name) {
-  return name.toLowerCase()
-    .replace(/[^a-z0-9\s]/g, ' ')
-    .trim()
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '');
-}
 
 // Dashboard share button — always shares the individual song
 async function shareCurrentTrack() {
@@ -1417,7 +1350,7 @@ async function shareCurrentTrack() {
   if (!track) return;
 
   const time = Math.floor(getCurrentTime());
-  const slug = toArtistSlug(track.name) || track.youtubeVideoId;
+  const slug = toSlug(track.name) || track.youtubeVideoId;
   // Use the active genre for context-specific OG tags; fall back to artist's first genre
   const specialGenres = new Set(['valentine', 'favorites', 'moon', 'sun']);
   const gid = (!specialGenres.has(playingGenreId) && playingGenreId)

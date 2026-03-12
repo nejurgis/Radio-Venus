@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { toSlug } from '../src/slug.js';
 
 const GENRE_LABELS = {
   idm: 'IDM', ambient: 'Ambient', artpop: 'Art Pop', techno: 'Techno',
@@ -8,14 +9,6 @@ const GENRE_LABELS = {
   hiphop: 'Hip-Hop', dnb: 'Drum & Bass', intercelestial: 'Intercelestial',
 };
 
-export function toSlug(name) {
-  return name.toLowerCase()
-    .replace(/[^a-z0-9\s]/g, ' ')
-    .trim()
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '');
-}
 
 function esc(s) {
   return String(s)
