@@ -288,7 +288,11 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
     const deg = (track.venus && track.venus.degree != null) ? ` ${Math.round(track.venus.degree * 10) / 10}°` : '';
     const sign = (track.venus && track.venus.sign) ? track.venus.sign : '';
     const el = (track.venus && SIGN_ELEMENTS[track.venus.sign]) || 'air';
+    const thumbHtml = track.youtubeVideoId
+      ? `<img class="track-thumb" src="https://i.ytimg.com/vi/${track.youtubeVideoId}/hqdefault.jpg" alt="" loading="lazy" onerror="this.classList.add('track-thumb--missing')">`
+      : `<div class="track-thumb track-thumb--missing"></div>`;
     item.innerHTML = `
+      ${thumbHtml}
       <span class="track-name" style="display: flex; align-items: center;">
         <div class="track-fav-container"><div class="star-toggle active" style="width:12px; height:12px;"></div></div>
         ${track.name}${failed ? ' <span class="track-restricted">restricted</span>' : ''}

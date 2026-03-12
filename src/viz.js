@@ -914,6 +914,23 @@ function tick() {
     ctx.restore();
   }
 
+  // ── User Venus placement tick — behind the ring ──────────────────────────
+  if (userDot) {
+    const glyphBandW2 = outerR - glyphR;
+    const venusTickLen = glyphBandW2 * 0.38;
+    const a = (-userDot.deg - 90) * RAD_PER_DEG + rotRad;
+    const cA = Math.cos(a), sA = Math.sin(a);
+    ctx.save();
+    ctx.strokeStyle = 'rgba(210, 60, 70, 0.85)';
+    ctx.lineWidth = 1.2;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(cx + glyphR * cA, cy + glyphR * sA);
+    ctx.lineTo(cx + (glyphR + venusTickLen) * cA, cy + (glyphR + venusTickLen) * sA);
+    ctx.stroke();
+    ctx.restore();
+  }
+
   ctx.save();
 
   // ── Thick outer ring ──────────────────────────────
@@ -989,6 +1006,7 @@ function tick() {
     ctx.stroke(_tickMajorPath);
     ctx.lineWidth = 0.4;
     ctx.stroke(_tickMinorPath);
+
     ctx.restore();
   }
 

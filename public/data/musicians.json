@@ -17157,24 +17157,6 @@
     ]
   },
   {
-    "name": "Mono",
-    "venus": {
-      "sign": "Capricorn",
-      "degree": 0.4,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "ambient",
-      "triphop"
-    ],
-    "subgenres": [
-      "ambient"
-    ],
-    "youtubeVideoId": "-r8Sg6pSenU",
-    "backupVideoIds": []
-  },
-  {
     "name": "Monolake",
     "venus": {
       "sign": "Aries",

@@ -713,12 +713,14 @@ function updateTunedDisplay(longitude) {
   detail.textContent = element;
   detail.style.color = `var(--${element})`;
 
-  // Dim/brighten "Your" based on proximity to natal Venus
+  // Show "Your" only when dial is near natal Venus tick
   const yourEl = document.getElementById('your-venus');
   if (yourEl && venus) {
     let diff = Math.abs(longitude - venus.longitude);
     if (diff > 180) diff = 360 - diff;
-    const isNatal = diff < 4;
+    const opacity = Math.max(0, 1 - diff / 6);
+    yourEl.style.opacity = opacity;
+    const isNatal = diff < 2;
     yourEl.classList.toggle('is-natal', isNatal);
     yourEl.style.color = isNatal ? `var(--${venus.element})` : '';
   }

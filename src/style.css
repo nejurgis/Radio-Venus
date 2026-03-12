@@ -377,7 +377,7 @@ body:has(#screen-radio.active) .newsletter-footer {
 
 .newsletter-footer {
   position: fixed;
-  bottom: 1.5rem;
+  bottom: calc(1.5rem + 6.5px); /* aligns form center with btn-info (37px) center */
   left: 0;
   right: 0;
   display: flex;
@@ -389,17 +389,18 @@ body:has(#screen-radio.active) .newsletter-footer {
 
 .newsletter-portal-label {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   letter-spacing: 0.12em;
   text-transform: lowercase;
   color: var(--text-dim);
   opacity: 0.5;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.2rem;
 }
 
 .newsletter-footer .newsletter-form {
   width: 230px;
   max-width: calc(100% - 80px); /* keep clear of btn-info on small screens */
+  height: 1.5rem;
   pointer-events: auto;
   margin-top: 0;
 }
@@ -424,7 +425,7 @@ body:has(#screen-radio.active) .newsletter-footer {
   border: none;
   outline: none;
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.5rem;
   color: var(--text-dim);
   padding: 0.25rem 0.55rem;
 }
@@ -439,6 +440,7 @@ body:has(#screen-radio.active) .newsletter-footer {
   border: none;
   border-left: 1px solid var(--border);
   padding: 0.75rem 1.1rem;
+  font-size: 1.2rem;
   color: var(--text-dim);
   cursor: pointer;
   display: flex;
@@ -575,13 +577,13 @@ p a:hover {
 }
 
 .your-venus {
-  opacity: 0.25;
+  opacity: 0;
   cursor: pointer;
   transition: opacity 0.4s ease, color 0.4s ease, text-shadow 0.4s ease;
 }
 
 .your-venus:hover {
-  opacity: 0.55;
+  opacity: 0.7 !important;
 }
 
 .your-venus.is-natal {
@@ -1767,7 +1769,8 @@ p a:hover {
 .track-resonance-note {
   padding: 1.9rem 0.75rem 0.75rem;
   font-family: var(--font-mono);
-  font-size: 0.55rem;
+  font-size: 0.45rem;
+  text-transform: uppercase;
   letter-spacing: 0.04em;
   color: rgba(255, 255, 255, 0.35);
   text-align: center;
@@ -1933,6 +1936,28 @@ p a:hover {
   font-size: 66.66%;
   opacity: 0.6;
   font-style: italic;
+}
+
+.track-thumb {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  flex-shrink: 0;
+  margin-right: 0.65rem;
+  opacity: 0.55;
+  transition: opacity 0.15s ease;
+}
+
+.track-thumb--missing {
+  background: rgba(255, 255, 255, 0.06);
+  opacity: 1;
+}
+
+.track-item:hover .track-thumb,
+.track-item.active .track-thumb {
+  opacity: 1;
 }
 
 .track-name {

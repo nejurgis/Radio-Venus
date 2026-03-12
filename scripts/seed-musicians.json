@@ -6225,15 +6225,6 @@
     ]
   },
   {
-    "name": "Mono",
-    "birthDate": "1987-02-05",
-    "genres": [
-      "ambient",
-      "triphop"
-    ],
-    "youtubeVideoId": null
-  },
-  {
     "name": "Monolake",
     "birthDate": "1969-05-10",
     "genres": [
@@ -9145,7 +9136,8 @@
       "ambient",
       "krautrock"
     ],
-    "spotifyId": "1BGN1IdyiSR0ZYrkoKNchl"
+    "spotifyId": "1BGN1IdyiSR0ZYrkoKNchl",
+    "youtubeId": "Bk-k8RcLCUc"
   },
   {
     "name": "Taylor Deupree",
