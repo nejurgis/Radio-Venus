@@ -360,8 +360,8 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
 
   _tlLoadMore = loadMore;
 
-  // If active item is beyond first batch, pre-render enough batches to include it (max 3)
-  const initialBatches = currentIndex >= BATCH ? Math.min(Math.ceil((currentIndex + 1) / BATCH), 3) : 1;
+  // If active item is beyond first batch, pre-render enough batches to include it
+  const initialBatches = currentIndex >= BATCH ? Math.ceil((currentIndex + 1) / BATCH) : 1;
   for (let b = 0; b < initialBatches; b++) loadMore();
 }
 
