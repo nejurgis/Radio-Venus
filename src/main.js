@@ -1112,6 +1112,10 @@ function playArtistFromIndex(artistName) {
   // If the artist is already in the current playlist, just navigate and play
   const idx = tracks.findIndex(t => t.name === artistName);
   if (idx >= 0) {
+    showNebula(true);
+    dimNebula(false);
+    deepDimNebula(true);
+    setZoomDrift(true);
     showScreen('radio');
     if (history.state?.screen !== 'radio') history.pushState({ screen: 'radio' }, '');
     playTrack(idx);
