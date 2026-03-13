@@ -368,8 +368,7 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
 // Lightweight active-track update — avoids full list re-render on every track skip
 export function setActiveTrack(index) {
   if (!ui.trackList) return;
-  const prev = ui.trackList.querySelector('.track-item.active');
-  if (prev) prev.classList.remove('active');
+  ui.trackList.querySelectorAll('.track-item.active').forEach(el => el.classList.remove('active'));
   let next = ui.trackList.querySelector(`[data-index="${index}"]`);
   // Item not rendered yet — load more batches until it appears
   while (!next && _tlLoadMore) {
