@@ -362,11 +362,18 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
 
   // Always render first batch sync so something appears immediately
   loadMore();
-  // If active item is in a later batch, defer loading until after first paint
+  // Spread remaining batches across frames — one batch per frame keeps main thread clear
   if (currentIndex >= BATCH) {
-    requestAnimationFrame(() => {
-      while (rendered <= currentIndex && rendered < tracks.length) loadMore();
-    });
+    const loadNextBatch = () => {
+      if (rendered <= currentIndex && rendered < tracks.length) {
+        loadMore();
+        requestAnimationFrame(loadNextBatch);
+      } else {
+        const active = ui.trackList.querySelector('.track-item.active');
+        if (active) active.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    };
+    requestAnimationFrame(loadNextBatch);
   }
 }
 
