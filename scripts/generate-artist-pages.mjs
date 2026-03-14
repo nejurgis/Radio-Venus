@@ -33,7 +33,7 @@ for (const artist of db) {
 
 fs.mkdirSync('./dist/artist', { recursive: true });
 
-function generatePage(dir, slug, artist, gid) {
+function generatePage(dir, slug, artist, gid, isCanonical = false) {
   const genreLabel    = GENRE_LABELS[gid] || gid;
   const sign          = artist.venus.sign;
   const degree        = Math.round(artist.venus.degree ?? 0);
@@ -46,6 +46,7 @@ function generatePage(dir, slug, artist, gid) {
   });
   const baseRedirect  = `/?${baseParams}`;
   const canonicalUrl  = `https://radio-venus.club/artist/${slug}`;
+  const pageUrl       = isCanonical ? canonicalUrl : `https://radio-venus.club/artist/${slug}/${gid}`;
   const thumbUrl      = `https://i.ytimg.com/vi/${artist.youtubeVideoId}/hqdefault.jpg`;
   const title         = `${artist.name} — Radio Venus`;
   const description   = `Venus in ${sign} ${degree}° ⊹ ${genreLabel}`;
@@ -62,7 +63,8 @@ function generatePage(dir, slug, artist, gid) {
   <meta property="og:image" content="${thumbUrl}">
   <meta property="og:image:width" content="480">
   <meta property="og:image:height" content="360">
-  <meta property="og:url" content="${canonicalUrl}">
+  <meta property="og:image:alt" content="${esc(artist.name)}">
+  <meta property="og:url" content="${pageUrl}">
   <meta property="og:type" content="music.song">
   <meta property="og:site_name" content="Radio Venus">
   <meta name="twitter:card" content="summary_large_image">
@@ -91,12 +93,12 @@ for (const [slug, artist] of slugMap) {
   const firstGid = genres[0] ?? '';
 
   // Canonical page at /artist/[slug]/ — uses first genre
-  generatePage(`./dist/artist/${slug}`, slug, artist, firstGid);
+  generatePage(`./dist/artist/${slug}`, slug, artist, firstGid, true);
   totalPages++;
 
   // Genre-specific pages at /artist/[slug]/[gid]/ — single genre for context-specific sharing
   for (const gid of genres) {
-    generatePage(`./dist/artist/${slug}/${gid}`, slug, artist, gid);
+    generatePage(`./dist/artist/${slug}/${gid}`, slug, artist, gid, false);
     totalPages++;
   }
 }
