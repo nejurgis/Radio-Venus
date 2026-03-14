@@ -173,12 +173,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   initScreens();
 
   // ── Shared link: switch away from portal immediately (before DB loads) ──────
-  // Avoids the portal screen flashing while we await loadDatabase()
-  const _earlyParams = new URLSearchParams(window.location.search);
-  if (_earlyParams.has('vid')) {
-    const _sign = _earlyParams.get('sign') || 'aries';
+  // Reads window.__SHARE_STATE__ (injected by generate-artist-pages.mjs into artist pages)
+  // or falls back to ?vid= query params (old-style share URLs from the in-app share button).
+  const _ss = window.__SHARE_STATE__;
+  const _earlyVid = _ss?.vid || new URLSearchParams(window.location.search).get('vid');
+  if (_earlyVid) {
+    const _sign = (_ss?.sign || new URLSearchParams(window.location.search).get('sign')) || 'aries';
     setElementTheme(ZODIAC_ELEMENTS[_sign] || 'air');
-    renderRadioHeader(_sign, _earlyParams.get('genre') || '');
+    renderRadioHeader(_sign, (_ss?.genre || new URLSearchParams(window.location.search).get('genre')) || '');
     updateNowPlayingButton(false);
     // Apply nebula dim classes directly — viz not init'd yet so can't use dimNebula()
     document.getElementById('nebula-container')
@@ -511,15 +513,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     startRadio('sun', "Today's Sun");
   }
 
-  // ── Handle shared link (?vid=...&t=...&artist=...) ──
-  const shareParams = new URLSearchParams(window.location.search);
-  const sharedVid = shareParams.get('vid');
+  // ── Handle shared link ──
+  // Source 1: window.__SHARE_STATE__ (artist page — no double load, no redirect)
+  // Source 2: ?vid= query params (old-style in-app share URLs — backward compat)
+  // ?t= (seek time) always comes from query string even on artist pages.
+  const _shareState = window.__SHARE_STATE__;
+  const _qs = new URLSearchParams(window.location.search);
+  const sharedVid = _shareState?.vid || _qs.get('vid');
   if (sharedVid) {
-    const sharedArtist = shareParams.get('artist') || '';
-    const sharedSign = shareParams.get('sign') || '';
-    const sharedGenre = shareParams.get('genre') || '';
-    const sharedGenreId = shareParams.get('gid') || '';
-    const sharedTime = parseInt(shareParams.get('t')) || 0;
+    const sharedArtist  = _shareState?.artist || _qs.get('artist') || '';
+    const sharedSign    = _shareState?.sign   || _qs.get('sign')   || '';
+    const sharedGenre   = _shareState?.genre  || _qs.get('genre')  || '';
+    const sharedGenreId = _shareState?.gid    || _qs.get('gid')    || '';
+    const sharedTime    = parseInt(_qs.get('t')) || 0;
 
     // 1. History & Screen Setup
     history.replaceState({ screen: 'portal' }, '', window.location.pathname);

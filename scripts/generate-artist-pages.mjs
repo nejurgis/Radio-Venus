@@ -33,29 +33,29 @@ for (const artist of db) {
 
 fs.mkdirSync('./dist/artist', { recursive: true });
 
+// Read the built app shell once — artist pages ARE the app, no redirect
+const appShell = fs.readFileSync('./dist/index.html', 'utf-8');
+
 function generatePage(dir, slug, artist, gid, isCanonical = false) {
-  const genreLabel    = GENRE_LABELS[gid] || gid;
-  const sign          = artist.venus.sign;
-  const degree        = Math.round(artist.venus.degree ?? 0);
-  const baseParams    = new URLSearchParams({
+  const genreLabel   = GENRE_LABELS[gid] || gid;
+  const sign         = artist.venus.sign;
+  const degree       = Math.round(artist.venus.degree ?? 0);
+  const canonicalUrl = `https://radio-venus.club/artist/${slug}`;
+  const pageUrl      = isCanonical ? canonicalUrl : `https://radio-venus.club/artist/${slug}/${gid}`;
+  const thumbUrl     = `https://i.ytimg.com/vi/${artist.youtubeVideoId}/hqdefault.jpg`;
+  const title        = `${artist.name} — Radio Venus`;
+  const description  = `Venus in ${sign} ${degree}° ⊹ ${genreLabel}`;
+  const shareState   = {
     vid:    artist.youtubeVideoId,
     artist: artist.name,
-    gid,
     sign:   sign.toLowerCase(),
     genre:  genreLabel,
-  });
-  const baseRedirect  = `/?${baseParams}`;
-  const canonicalUrl  = `https://radio-venus.club/artist/${slug}`;
-  const pageUrl       = isCanonical ? canonicalUrl : `https://radio-venus.club/artist/${slug}/${gid}`;
-  const thumbUrl      = `https://i.ytimg.com/vi/${artist.youtubeVideoId}/hqdefault.jpg`;
-  const title         = `${artist.name} — Radio Venus`;
-  const description   = `Venus in ${sign} ${degree}° ⊹ ${genreLabel}`;
+    gid,
+  };
 
-  const html = `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  // Injected at top of <head> — scrapers pick up first occurrence of OG tags.
+  // __SHARE_STATE__ is an inline script so it runs before deferred module scripts.
+  const injection = `<script>window.__SHARE_STATE__=${JSON.stringify(shareState)};</script>
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(description)}">
   <meta property="og:title" content="${esc(title)}">
@@ -71,18 +71,9 @@ function generatePage(dir, slug, artist, gid, isCanonical = false) {
   <meta name="twitter:title" content="${esc(title)}">
   <meta name="twitter:description" content="${esc(description)}">
   <meta name="twitter:image" content="${thumbUrl}">
-  <link rel="canonical" href="${canonicalUrl}">
-  <meta http-equiv="refresh" content="0;url=${esc(baseRedirect)}&t=0">
-</head>
-<body style="background:#0a0a12;color:#a0a0c0;font-family:monospace;display:flex;align-items:center;justify-content:center;height:100vh;margin:0">
-  <p>Tuning to ${esc(artist.name)}…</p>
-  <script>
-    var t = new URLSearchParams(window.location.search).get('t') || '0';
-    window.location.replace(${JSON.stringify(baseRedirect)} + '&t=' + t + window.location.hash);
-  </script>
-</body>
-</html>`;
+  <link rel="canonical" href="${canonicalUrl}">`;
 
+  const html = appShell.replace('<head>', `<head>\n${injection}`);
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(`${dir}/index.html`, html);
 }
