@@ -172,6 +172,20 @@ function ensurePlayerReady() {
 document.addEventListener('DOMContentLoaded', async () => {
   initScreens();
 
+  // ── Shared link: switch away from portal immediately (before DB loads) ──────
+  // Avoids the portal screen flashing while we await loadDatabase()
+  const _earlyParams = new URLSearchParams(window.location.search);
+  if (_earlyParams.has('vid')) {
+    const _sign = _earlyParams.get('sign') || 'aries';
+    setElementTheme(ZODIAC_ELEMENTS[_sign] || 'air');
+    renderRadioHeader(_sign, _earlyParams.get('genre') || '');
+    updateNowPlayingButton(false);
+    // Apply nebula dim classes directly — viz not init'd yet so can't use dimNebula()
+    document.getElementById('nebula-container')
+      ?.classList.add('is-dimmed', 'is-deep-dimmed', 'is-zoomed');
+    showScreen('radio');
+  }
+
   // Newsletter form
   const newsletterFooter = document.querySelector('.newsletter-footer');
   if (localStorage.getItem('rv_subscribed')) {
