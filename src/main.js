@@ -184,6 +184,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('nebula-container')
       ?.classList.add('is-dimmed', 'is-deep-dimmed', 'is-zoomed');
     showScreen('radio');
+    // Kick off YouTube player init NOW — runs in parallel with DB fetch
+    ensurePlayerReady();
   }
 
   // Newsletter form
@@ -394,6 +396,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     startRadio(genreId, label, null, info.name);
   });
 
+  // Pre-warm YouTube player NOW — runs in parallel with DB fetch below
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => ensurePlayerReady(), { timeout: 300 });
+  } else {
+    setTimeout(() => ensurePlayerReady(), 0);
+  }
+
   const dbResult = await loadDatabase()
     .then(() => ({ status: 'fulfilled' }))
     .catch(e => ({ status: 'rejected', reason: e }));
@@ -402,13 +411,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (cameFromAbout) {
     renderArtistIndex(getDatabase());
     updateArtistIndexPlaying(currentPlayingTrack?.name);
-  }
-
-  // Pre-warm YouTube player during idle time (before user needs it)
-  if ('requestIdleCallback' in window) {
-    requestIdleCallback(() => ensurePlayerReady(), { timeout: 3000 });
-  } else {
-    setTimeout(() => ensurePlayerReady(), 1000);
   }
 
   // ── Handle #valentine link ──
