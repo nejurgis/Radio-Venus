@@ -624,7 +624,19 @@ export function zoomOut({ duration = 1800, animate = true } = {}) {
 
 export function showNebula(visible) { if (containerEl) containerEl.classList.toggle('is-hidden', !visible); }
 export function dimNebula(dim) { if (containerEl) containerEl.classList.toggle('is-dimmed', dim); }
-export function deepDimNebula(deep) { if (containerEl) containerEl.classList.toggle('is-deep-dimmed', deep); }
+export function deepDimNebula(deep) {
+  if (!containerEl) return;
+  containerEl.classList.toggle('is-deep-dimmed', deep);
+  if (deep) {
+    // Stop the canvas RAF entirely — nebula is invisible behind the dimmed overlay.
+    // Saves ~30fps of canvas compositing while the playlist is being scrolled.
+    if (animId) cancelAnimationFrame(animId);
+    animId = null;
+    frameRequested = false;
+  } else {
+    requestFrame(); // Resume painting as nebula fades back in
+  }
+}
 export function setZoomDrift(enabled) { zoomDriftEnabled = enabled; requestFrame(); }
 export function resetDrift(duration = 1800) {
   if (zoomDrift === 0) return;
@@ -652,10 +664,10 @@ let _gradW = 0, _gradH = 0;
 let _centerGlow, _tealRing, _thinRing, _iconGrad, _tubeGrad, _outerFade, _metalGrad;
 
 function requestFrame() {
-  if (!frameRequested) {
-    frameRequested = true;
-    animId = requestAnimationFrame(tick);
-  }
+  if (frameRequested) return;
+  if (containerEl?.classList.contains('is-deep-dimmed')) return; // invisible — stay paused
+  frameRequested = true;
+  animId = requestAnimationFrame(tick);
 }
 
 function tick() {
