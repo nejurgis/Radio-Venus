@@ -562,16 +562,18 @@ document.addEventListener('DOMContentLoaded', async () => {
 
           failedIds.clear();
           trackVideoIndex.clear();
-          
-          // Render tracks — no playlist share for individual shared links
-          renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()));
-          
-          updateNowPlaying(sharedArtist);
-          updateFavoriteButton(isFavorite(sharedArtist));
 
+          // Start audio immediately — don't wait for the track list to render
           pendingSeekTime = sharedTime;
           ensurePlayerReady().then(() => cueVideo(sharedVid));
+          updateNowPlaying(sharedArtist);
+          updateFavoriteButton(isFavorite(sharedArtist));
           updatePlayButton(false);
+
+          // Defer track list render so the player gets the main thread first
+          setTimeout(() => {
+            renderTrackList(tracks, currentTrackIndex, i => playTrack(i), failedIds, new Set(getFavorites()));
+          }, 0);
         }
       }
     }
