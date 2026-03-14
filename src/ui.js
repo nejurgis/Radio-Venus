@@ -360,9 +360,14 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
 
   _tlLoadMore = loadMore;
 
-  // If active item is beyond first batch, pre-render enough batches to include it
-  const initialBatches = currentIndex >= BATCH ? Math.ceil((currentIndex + 1) / BATCH) : 1;
-  for (let b = 0; b < initialBatches; b++) loadMore();
+  // Always render first batch sync so something appears immediately
+  loadMore();
+  // If active item is in a later batch, defer loading until after first paint
+  if (currentIndex >= BATCH) {
+    requestAnimationFrame(() => {
+      while (rendered <= currentIndex && rendered < tracks.length) loadMore();
+    });
+  }
 }
 
 // Lightweight active-track update — avoids full list re-render on every track skip
