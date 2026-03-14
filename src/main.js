@@ -528,7 +528,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const sharedTime    = parseInt(_qs.get('t')) || 0;
 
     // 1. History & Screen Setup
-    history.replaceState({ screen: 'portal' }, '', window.location.pathname);
+    // Normalize URL to '/' so back button lands cleanly at the portal, not
+    // at '/artist/[slug]/[gid]/' (which with the old approach would redirect again).
+    history.replaceState({ screen: 'portal' }, '', '/');
     history.pushState({ screen: 'radio' }, '');
 
     // 2. Theme & Basic Visuals
