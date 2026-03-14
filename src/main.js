@@ -579,7 +579,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const signIndex = ZODIAC_SIGNS.indexOf(formattedSign);
 
     if (signIndex >= 0) {
-      zoomToSign(signIndex, { duration: 2500 }); 
+      zoomToSign(signIndex, { animate: false });
     }
     
     updateNowPlayingButton(false);
