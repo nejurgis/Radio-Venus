@@ -390,7 +390,7 @@ export function setActiveTrack(index) {
   }
   if (next) {
     next.classList.add('active');
-    next.scrollIntoView({ behavior: 'instant', block: 'nearest' });
+    next.scrollIntoView({ behavior: 'instant', block: 'center' });
   }
 }
 

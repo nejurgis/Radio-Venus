@@ -1831,9 +1831,6 @@ p a:hover {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  /* Skip layout+paint for off-screen items — big win on long lists on slow devices */
-  content-visibility: auto;
-  contain-intrinsic-size: auto 88px;
 }
 
 .track-item:hover {
