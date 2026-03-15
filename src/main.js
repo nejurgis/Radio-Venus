@@ -1254,6 +1254,8 @@ function goToRadio() {
   if (history.state?.screen !== 'radio') {
     history.pushState({ screen: 'radio' }, '');
   }
+  // Scroll playing track into view — user may have navigated away and back
+  setActiveTrack(currentTrackIndex);
 }
 
 // ── Radio controls ──────────────────────────────────────────────────────────
