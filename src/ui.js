@@ -4,6 +4,7 @@ import { trackScreenView } from "./analytics";
 let trackSelectCallback = null; // delegated click handler for track list
 let _tlObserver = null;        // non-null = more items pending (used by setActiveTrack)
 let _tlLoadMore = null;        // function to load next batch (used by setActiveTrack)
+let _tlForceLoading = false;   // true while setActiveTrack is force-loading batches — suppresses loadMore scroll
 let _tlScrollHandler = null;   // current scroll listener (removed on next render)
 let _tlScrollRoot = null;      // element the scroll listener is attached to
 
@@ -99,12 +100,18 @@ export function initScreens() {
 
 // ─── NAVIGATION ─────────────────────────────────────────────────────────────
 
+let _onShowRadio = null;
+export function onShowRadio(fn) { _onShowRadio = fn; }
+
 export function showScreen(name) {
   if (ui.screens[currentScreen]) ui.screens[currentScreen].classList.remove('active');
   if (ui.screens[name]) ui.screens[name].classList.add('active');
   currentScreen = name;
 
   trackScreenView(name);
+  // Always scroll the playing track into view when entering the radio screen,
+  // regardless of which code path triggered the transition.
+  if (name === 'radio' && _onShowRadio) _onShowRadio();
 }
 
 export function showLoading(show) {
@@ -194,9 +201,6 @@ export function updateFavoriteButton(isFav) {
   const star = document.createElement('div');
   star.className = 'star-toggle';
   if (isFav) star.classList.add('active');
-  
-  const activeItem = document.querySelector('#track-list .track-item.active');
-  if (activeItem) activeItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
   
   ui.favBtn.appendChild(star);
 }
@@ -333,10 +337,10 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
 
     if (rendered >= tracks.length) _tlObserver = null; // signal: all rendered
 
-    // Scroll active item into view if it just landed in the DOM
-    if (currentIndex >= start && currentIndex < end) {
+    // Scroll active item into view if it just landed in the DOM (initial render only — not during forced batch load)
+    if (!_tlForceLoading && currentIndex >= start && currentIndex < end) {
       const active = ui.trackList.querySelector('.track-item.active');
-      if (active) active.scrollIntoView({ behavior: 'instant', block: 'center' });
+      if (active) active.scrollIntoView({ behavior: 'instant', block: 'start' });
     }
   };
 
@@ -368,9 +372,6 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
       if (rendered <= currentIndex && rendered < tracks.length) {
         loadMore();
         requestAnimationFrame(loadNextBatch);
-      } else {
-        const active = ui.trackList.querySelector('.track-item.active');
-        if (active) active.scrollIntoView({ behavior: 'instant', block: 'start' });
       }
     };
     requestAnimationFrame(loadNextBatch);
@@ -378,19 +379,22 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
 }
 
 // Lightweight active-track update — avoids full list re-render on every track skip
-export function setActiveTrack(index) {
+export function setActiveTrack(index, scroll = false) {
   if (!ui.trackList) return;
   ui.trackList.querySelectorAll('.track-item.active').forEach(el => el.classList.remove('active'));
   let next = ui.trackList.querySelector(`[data-index="${index}"]`);
   // Item not rendered yet — load more batches until it appears
+  // _tlForceLoading suppresses the loadMore scroll so stale .active items don't yank the viewport
+  _tlForceLoading = true;
   while (!next && _tlLoadMore) {
     _tlLoadMore();
     next = ui.trackList.querySelector(`[data-index="${index}"]`);
     if (!_tlObserver) break; // all items rendered, stop
   }
+  _tlForceLoading = false;
   if (next) {
     next.classList.add('active');
-    next.scrollIntoView({ behavior: 'instant', block: 'start' });
+    if (scroll) next.scrollIntoView({ behavior: 'instant', block: 'start' });
   }
 }
 

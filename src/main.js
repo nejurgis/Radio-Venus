@@ -7,7 +7,7 @@ import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVe
 import { pluck, gong, setHarpEnabled, isHarpEnabled, pokeAudio } from './harp.js';
 import { loadYouTubeAPI, initPlayer, loadVideo, cueVideo, togglePlay, isPlaying, getDuration, getCurrentTime, seekTo, getVideoTitle, isMuted, unMute } from './player.js';
 import {
-  initScreens, showScreen, setElementTheme,
+  initScreens, showScreen, setElementTheme, onShowRadio,
   renderReveal, renderGenreGrid, renderRadioHeader,
   renderTrackList, setActiveTrack, updateNowPlaying, setNowPlayingPaused, updatePlayButton, updateFavoriteButton, showEmptyState,
   markTrackFailed,
@@ -171,6 +171,7 @@ function ensurePlayerReady() {
 
 document.addEventListener('DOMContentLoaded', async () => {
   initScreens();
+  onShowRadio(() => requestAnimationFrame(() => setActiveTrack(currentTrackIndex, true)));
 
   // ── Shared link: switch away from portal immediately (before DB loads) ──────
   // Reads window.__SHARE_STATE__ (injected by generate-artist-pages.mjs into artist pages)
@@ -1254,8 +1255,6 @@ function goToRadio() {
   if (history.state?.screen !== 'radio') {
     history.pushState({ screen: 'radio' }, '');
   }
-  // Scroll playing track into view — user may have navigated away and back
-  setActiveTrack(currentTrackIndex);
 }
 
 // ── Radio controls ──────────────────────────────────────────────────────────
