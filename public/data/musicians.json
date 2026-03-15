@@ -1046,38 +1046,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Andy Stott",
-    "venus": {
-      "sign": "Pisces",
-      "degree": 15.3,
-      "decan": 2,
-      "element": "water"
-    },
-    "genres": [
-      "ambient",
-      "artpop",
-      "electronica",
-      "idm",
-      "techno",
-      "triphop"
-    ],
-    "subgenres": [
-      "techno",
-      "industrial",
-      "dub-techno",
-      "idm",
-      "ambient",
-      "minimal",
-      "glitch-pop",
-      "drone",
-      "art-pop",
-      "indietronica",
-      "dub"
-    ],
-    "youtubeVideoId": null,
-    "backupVideoIds": []
-  },
-  {
     "name": "Angel-Ho",
     "venus": {
       "sign": "Capricorn",
@@ -7282,7 +7250,7 @@
     "subgenres": [
       "art-pop"
     ],
-    "youtubeVideoId": "9d5j1klMYqw",
+    "youtubeVideoId": null,
     "backupVideoIds": []
   },
   {
@@ -13563,11 +13531,8 @@
       "berlin-school",
       "ambient"
     ],
-    "youtubeVideoId": "QeEzDAoInps",
-    "backupVideoIds": [
-      "zxquMyzVFlc",
-      "lI8cfo3IZzk"
-    ]
+    "youtubeVideoId": null,
+    "backupVideoIds": []
   },
   {
     "name": "Klein",
@@ -20503,7 +20468,7 @@
       "indietronica",
       "ambient"
     ],
-    "youtubeVideoId": "moClRVoXHK0",
+    "youtubeVideoId": null,
     "backupVideoIds": []
   },
   {
@@ -25238,11 +25203,8 @@
       "drone",
       "experimental"
     ],
-    "youtubeVideoId": "6E4zYGzxgnU",
-    "backupVideoIds": [
-      "fBXh8hVAet0",
-      "1NkZVWXK5jM"
-    ]
+    "youtubeVideoId": null,
+    "backupVideoIds": []
   },
   {
     "name": "Tim Story",

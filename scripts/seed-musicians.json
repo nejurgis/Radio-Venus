@@ -476,39 +476,6 @@
     "spotifyId": "2fSBHYgZUSIQPolv5skG5I"
   },
   {
-    "name": "Andy Stott",
-    "birthDate": "1981-03-12",
-    "genres": [
-      "ambient",
-      "artpop",
-      "electronica",
-      "idm",
-      "techno",
-      "triphop"
-    ],
-    "youtubeVideoId": "e-0rWeP8vMs",
-    "subgenres": [
-      "techno",
-      "industrial",
-      "dub-techno"
-    ],
-    "enTags": [
-      "fluxwork",
-      "intelligent dance music",
-      "ambient",
-      "microhouse",
-      "dub techno",
-      "wonky",
-      "drone",
-      "art pop",
-      "electronica",
-      "ambient dub"
-    ],
-    "spotifyId": "6BuDxEE5rfuYeyhxQsl53K",
-    "youtubeId": null,
-    "backupVideoIds": []
-  },
-  {
     "name": "Angel-Ho",
     "birthDate": "1994-01-01",
     "genres": [
@@ -3139,7 +3106,9 @@
       "new england shoegaze"
     ],
     "spotifyId": "1s5mUpjVtK0XAScRqlErSE",
-    "youtubeVideoId": null
+    "youtubeVideoId": null,
+    "youtubeId": null,
+    "backupVideoIds": []
   },
   {
     "name": "Duran Duran",
@@ -5203,7 +5172,9 @@
       "berlin-school",
       "ambient"
     ],
-    "spotifyId": "3U2U4TR03ZuStsizrv0EJB"
+    "spotifyId": "3U2U4TR03ZuStsizrv0EJB",
+    "youtubeId": null,
+    "backupVideoIds": []
   },
   {
     "name": "Klein",
@@ -7590,7 +7561,9 @@
       "oceania soundtrack",
       "compositional ambient"
     ],
-    "spotifyId": "0H1edn1doFZiHiu2INB2CT"
+    "spotifyId": "0H1edn1doFZiHiu2INB2CT",
+    "youtubeId": null,
+    "backupVideoIds": []
   },
   {
     "name": "Rhythm & Sound",
@@ -9536,7 +9509,9 @@
       "drone",
       "experimental"
     ],
-    "spotifyId": "1qiwaJwjKod5WhcYZ76O1B"
+    "spotifyId": "1qiwaJwjKod5WhcYZ76O1B",
+    "youtubeId": null,
+    "backupVideoIds": []
   },
   {
     "name": "Tim Story",

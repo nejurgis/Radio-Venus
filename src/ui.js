@@ -370,7 +370,7 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
         requestAnimationFrame(loadNextBatch);
       } else {
         const active = ui.trackList.querySelector('.track-item.active');
-        if (active) active.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (active) active.scrollIntoView({ behavior: 'instant', block: 'start' });
       }
     };
     requestAnimationFrame(loadNextBatch);
@@ -390,7 +390,7 @@ export function setActiveTrack(index) {
   }
   if (next) {
     next.classList.add('active');
-    next.scrollIntoView({ behavior: 'instant', block: 'center' });
+    next.scrollIntoView({ behavior: 'instant', block: 'start' });
   }
 }
 
