@@ -346,7 +346,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     history.pushState({ screen: 'about' }, '', '#about');
   }
 
-  // Defer nebula canvas to keep critical path clear — fires within 300ms for real users
+  // On share link pages the nebula is immediately deep-dimmed and invisible.
+  // Delay its init so player initialization and DB fetch get the main thread first.
+  const _isShareLink = !!(window.__SHARE_STATE__?.vid || new URLSearchParams(location.search).get('vid'));
   let nebulaReady = false;
   const startNebula = () => {
     initNebula('nebula-container');
@@ -354,7 +356,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     renderNebula(db.length ? db : []);
     nebulaReady = true;
   };
-  if ('requestIdleCallback' in window) {
+  if (_isShareLink) {
+    // Defer nebula well past player init — user can't see it anyway
+    setTimeout(startNebula, 1500);
+  } else if ('requestIdleCallback' in window) {
     requestIdleCallback(startNebula, { timeout: 300 });
   } else {
     setTimeout(startNebula, 50);
@@ -399,8 +404,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     startRadio(genreId, label, null, info.name);
   });
 
-  // Pre-warm YouTube player NOW — runs in parallel with DB fetch below
-  if ('requestIdleCallback' in window) {
+  // Pre-warm YouTube player — on share links start immediately so the player
+  // is ready before the user can interact; on normal visits defer to idle.
+  if (_isShareLink) {
+    ensurePlayerReady();
+  } else if ('requestIdleCallback' in window) {
     requestIdleCallback(() => ensurePlayerReady(), { timeout: 300 });
   } else {
     setTimeout(() => ensurePlayerReady(), 0);
