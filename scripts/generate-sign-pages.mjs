@@ -294,8 +294,8 @@ for (const sign of SIGNS) {
     },
   ]);
 
-  const metaDesc = `${artists.length} musicians with Venus in ${sign}. ${desc.slice(0, 130).replace(/"/g, '&quot;')}`;
-  const title = `Venus in ${sign} Musicians | Radio Venus`;
+  const metaDesc = `Explore music tailored for a Venus in ${sign} placement. Discover the astrological coordinates of your music taste.`;
+  const title = `${sign} Music — Astrological Discovery | Radio Venus`;
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -379,8 +379,8 @@ for (const sign of SIGNS) {
     },
     ]);
 
-    const title = `Venus in ${sign} — ${genreLabel} Musicians | Radio Venus`;
-    const metaDesc = `${artists.length} ${genreLabel} musicians with Venus in ${sign}. ${desc.slice(0, 110).replace(/"/g, '&quot;')}`;
+    const title = `${sign} ${genreLabel} Music — Astrological Discovery | Radio Venus`;
+    const metaDesc = `Explore ${genreLabel} music tailored for a Venus in ${sign} placement. Discover the astrological coordinates of your music taste.`;
 
     const siblingSection = siblingLinks ? `
     <nav class="sign-nav sibling-nav" aria-label="Same genre, other signs">
