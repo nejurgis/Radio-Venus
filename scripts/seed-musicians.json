@@ -848,7 +848,7 @@
     "spotifyId": "5eWbdoIDCRxrPyiv7TEtw8"
   },
   {
-    "name": "Antonín Dvořák",
+    "name": "Anton\u00edn Dvo\u0159\u00e1k",
     "birthDate": "1841-09-08",
     "genres": [
       "classical"
@@ -978,7 +978,7 @@
     ],
     "spotifyId": "1XDHnXR3sd1pGoc7vqUtBq",
     "handpicked": true,
-    "handpickedTrack": "Écoute Au Loin"
+    "handpickedTrack": "\u00c9coute Au Loin"
   },
   {
     "name": "Arovane",
@@ -1000,7 +1000,7 @@
     "spotifyId": "6wNOfYFlLoZxi37nmPIB0c"
   },
   {
-    "name": "Arvo Pärt",
+    "name": "Arvo P\u00e4rt",
     "birthDate": "1935-09-11",
     "genres": [
       "classical",
@@ -1167,7 +1167,7 @@
     "spotifyId": "5Bz8k8phXRsAtBB6xrIR83"
   },
   {
-    "name": "Béla Bartók",
+    "name": "B\u00e9la Bart\u00f3k",
     "birthDate": "1881-03-25",
     "genres": [
       "classical"
@@ -1220,7 +1220,7 @@
     "spotifyId": "0lYoJnsYMVaAitj1pZVqER"
   },
   {
-    "name": "Benoît Pioulard",
+    "name": "Beno\u00eet Pioulard",
     "birthDate": "1984-08-04",
     "genres": [
       "altrock",
@@ -1281,7 +1281,7 @@
     "spotifyId": "57ZB0kMmW6JLQAIaCzMG7I"
   },
   {
-    "name": "Björk",
+    "name": "Bj\u00f6rk",
     "birthDate": "1965-11-21",
     "genres": [
       "idm",
@@ -3354,7 +3354,7 @@
     "spotifyId": "459INk8vcC0ebEef82WjIK"
   },
   {
-    "name": "Erik Wøllo",
+    "name": "Erik W\u00f8llo",
     "birthDate": "1961-01-06",
     "genres": [
       "ambient",
@@ -3787,7 +3787,7 @@
     "spotifyId": "2p0UyoPfYfI76PCStuXfOP"
   },
   {
-    "name": "Frédéric Chopin",
+    "name": "Fr\u00e9d\u00e9ric Chopin",
     "birthDate": "1810-03-01",
     "genres": [
       "classical"
@@ -4089,7 +4089,7 @@
     "spotifyId": "2ANtgfhQkKpsW6EYSDqldz"
   },
   {
-    "name": "György Ligeti",
+    "name": "Gy\u00f6rgy Ligeti",
     "birthDate": "1923-05-28",
     "genres": [
       "ambient",
@@ -4882,7 +4882,7 @@
     "spotifyId": "4VnaEWTHIwbqbDCwNPpfde"
   },
   {
-    "name": "Jónsi",
+    "name": "J\u00f3nsi",
     "birthDate": "1975-04-23",
     "genres": [
       "ambient",
@@ -6412,7 +6412,7 @@
     "youtubeId": "gkVmd7oO_Vs"
   },
   {
-    "name": "múm",
+    "name": "m\u00fam",
     "birthDate": "1997-01-01",
     "genres": [
       "ambient",
@@ -6504,7 +6504,7 @@
     "spotifyId": "0yNLKJebCb8Aueb54LYya3"
   },
   {
-    "name": "Nick León",
+    "name": "Nick Le\u00f3n",
     "birthDate": "1988-05-06",
     "genres": [
       "idm"
@@ -6912,7 +6912,7 @@
     "spotifyId": "2ueoLVCXQ948OfhVvAy3Nn"
   },
   {
-    "name": "Pérotin",
+    "name": "P\u00e9rotin",
     "birthDate": "1160-01-01",
     "genres": [
       "classical"
@@ -8014,7 +8014,7 @@
     "spotifyId": "2UIaoezmAoyp2i3wWDwMYk"
   },
   {
-    "name": "Sinéad O'Connor",
+    "name": "Sin\u00e9ad O'Connor",
     "birthDate": "1966-12-08",
     "genres": [
       "artpop"
@@ -8449,7 +8449,7 @@
     "spotifyId": "36pCa1JHc6hlGbfEmLzJQc"
   },
   {
-    "name": "Stéphane Picq",
+    "name": "St\u00e9phane Picq",
     "birthDate": "1965-08-16",
     "genres": [
       "triphop",
@@ -9907,7 +9907,7 @@
     "spotifyId": "5E3H2KyR31E2Dj3K6vIUe9"
   },
   {
-    "name": "Von Südenfed",
+    "name": "Von S\u00fcdenfed",
     "birthDate": "1957-03-05",
     "genres": [
       "idm",
@@ -10146,7 +10146,7 @@
     ]
   },
   {
-    "name": "µ-Ziq",
+    "name": "\u00b5-Ziq",
     "birthDate": "1971-09-26",
     "genres": [
       "dnb",
@@ -10791,7 +10791,7 @@
     "spotifyId": "1moHmQ1eb3nFxuOXprU4Us"
   },
   {
-    "name": "Kristján Martinsson",
+    "name": "Kristj\u00e1n Martinsson",
     "birthDate": "1986-01-24",
     "mbid": "d4141adc-6ebd-48f4-b20b-b5060a08f564",
     "genres": [
@@ -10877,7 +10877,7 @@
     "spotifyId": "4LaimQU44rsz2kMWQmY6Bi"
   },
   {
-    "name": "Henryk Górecki",
+    "name": "Henryk G\u00f3recki",
     "birthDate": "1933-12-06",
     "genres": [
       "classical",
@@ -11191,7 +11191,7 @@
     "youtubeVideoId": "QTBGq-RyPFk",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Flimkien Ngħaddu Mill-Bieb"
+    "handpickedTrack": "Flimkien Ng\u0127addu Mill-Bieb"
   },
   {
     "name": "Elkka",
@@ -12123,7 +12123,7 @@
     "youtubeVideoId": "ujnxQlkGi28",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Беги от меня",
+    "handpickedTrack": "\u0411\u0435\u0433\u0438 \u043e\u0442 \u043c\u0435\u043d\u044f",
     "spotifyId": "64z2zAx3ll1sxdGwktocq8"
   },
   {
@@ -12417,7 +12417,7 @@
     "spotifyId": "5QOjimGl49GNSyWparu0lZ"
   },
   {
-    "name": "Sigur Rós",
+    "name": "Sigur R\u00f3s",
     "birthDate": "1994-06-15",
     "genres": [
       "artpop",
@@ -12586,7 +12586,7 @@
     "youtubeVideoId": "rabMiWMDVBE",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Krásný nový ráno",
+    "handpickedTrack": "Kr\u00e1sn\u00fd nov\u00fd r\u00e1no",
     "spotifyId": "3CIX3SArqMbEAsUiJI9Y5e"
   },
   {
@@ -12648,7 +12648,7 @@
     "youtubeVideoId": "ArLrXVjZ278",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Xосhesh?",
+    "handpickedTrack": "X\u043e\u0441hesh?",
     "spotifyId": "6O4oPZUpqjG4AZYenplGVf"
   },
   {
@@ -12758,7 +12758,7 @@
     "youtubeVideoId": null,
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "В темную нічку",
+    "handpickedTrack": "\u0412 \u0442\u0435\u043c\u043d\u0443\u044e \u043d\u0456\u0447\u043a\u0443",
     "spotifyId": "4wrXeaMAeHWAfc8ME49vpO"
   },
   {
@@ -12802,7 +12802,7 @@
     "youtubeVideoId": "WvJ9yLnunwQ",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Разрушительный круг",
+    "handpickedTrack": "\u0420\u0430\u0437\u0440\u0443\u0448\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0439 \u043a\u0440\u0443\u0433",
     "spotifyId": "7deuX0YejjlcB4uLcdgEDW"
   },
   {
@@ -13264,7 +13264,7 @@
     "youtubeVideoId": "CVy_-gF5M48",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "將愛"
+    "handpickedTrack": "\u5c07\u611b"
   },
   {
     "name": "Kelsey Lu",
@@ -13483,7 +13483,7 @@
     "youtubeVideoId": "-6G6AW7oApA",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Волны"
+    "handpickedTrack": "\u0412\u043e\u043b\u043d\u044b"
   },
   {
     "name": "Psychic TV",
@@ -16158,7 +16158,7 @@
     "youtubeVideoId": "S9A-rS5iCew",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Solbacken / Gör allt till inget",
+    "handpickedTrack": "Solbacken / G\u00f6r allt till inget",
     "enTags": [
       "autonomous black metal",
       "keller synth",
@@ -16335,7 +16335,7 @@
     ]
   },
   {
-    "name": "Jürg Frey",
+    "name": "J\u00fcrg Frey",
     "birthDate": "1953-01-01",
     "dateType": "birth",
     "genres": [
@@ -16506,7 +16506,7 @@
     ]
   },
   {
-    "name": "Mark Ernestus’ Ndagga Rhythm Force",
+    "name": "Mark Ernestus\u2019 Ndagga Rhythm Force",
     "birthDate": "1963-06-15",
     "dateType": "birth",
     "mbid": "6fb800e6-65db-4368-8472-b125e185f823",
@@ -16806,7 +16806,7 @@
     "handpickedTrack": "Deep Breath (An Ending)"
   },
   {
-    "name": "ROSALÍA",
+    "name": "ROSAL\u00cdA",
     "birthDate": "1992-09-25",
     "dateType": "birth",
     "genres": [
@@ -16887,7 +16887,7 @@
     "handpickedTrack": "someone else"
   },
   {
-    "name": "Nilüfer Yanya",
+    "name": "Nil\u00fcfer Yanya",
     "birthDate": "1996-01-01",
     "dateType": "birth",
     "genres": [
@@ -17101,7 +17101,7 @@
       "danish experimental",
       "danish punk",
       "danish indie pop",
-      "musique concrète"
+      "musique concr\u00e8te"
     ]
   },
   {
@@ -17316,7 +17316,7 @@
       "experimental synth",
       "gauze pop",
       "spoken word",
-      "musique concrète",
+      "musique concr\u00e8te",
       "experimental"
     ],
     "youtubeVideoId": "kIFG56TSa8M",
@@ -17434,7 +17434,7 @@
     "youtubeVideoId": "18p-AnfXfNM",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Lì xì"
+    "handpickedTrack": "L\u00ec x\u00ec"
   },
   {
     "name": "Nazar",
@@ -17735,7 +17735,7 @@
     "handpickedTrack": "Same Life Flowed"
   },
   {
-    "name": "Varg²™",
+    "name": "Varg\u00b2\u2122",
     "birthDate": "1986-06-15",
     "dateType": "birth",
     "mbid": "fd37b607-8190-4253-8add-a35616782d8a",
@@ -18250,7 +18250,7 @@
       "experimental",
       "electroacoustic",
       "dark ambient",
-      "musique concrète"
+      "musique concr\u00e8te"
     ],
     "youtubeVideoId": "SYBYoFsEFIk",
     "backupVideoIds": [],
@@ -18374,7 +18374,7 @@
     "youtubeVideoId": "dDHQaOhJvBA",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Farmer’s Song (Part A)"
+    "handpickedTrack": "Farmer\u2019s Song (Part A)"
   },
   {
     "name": "Ava Mendoza",
@@ -18422,7 +18422,7 @@
     "handpickedTrack": "Dust from the Mines"
   },
   {
-    "name": "Body Meπa",
+    "name": "Body Me\u03c0a",
     "birthDate": "2009-07-16",
     "dateType": "birth",
     "mbid": "d86d8546-589e-4e69-bd89-0bd609835f53",
@@ -19307,7 +19307,7 @@
     "youtubeVideoId": "1KykDdjRqzo",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Manovra Di Gravità"
+    "handpickedTrack": "Manovra Di Gravit\u00e0"
   },
   {
     "name": "Loula Yorke",
@@ -19355,7 +19355,7 @@
       "electroacoustic composition",
       "iranian experimental",
       "persian neo-traditional",
-      "musique concrète",
+      "musique concr\u00e8te",
       "ambient",
       "drone"
     ],
@@ -19698,7 +19698,7 @@
     "youtubeVideoId": "C5ylXGM_Sx8",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Today’s Iconoclast"
+    "handpickedTrack": "Today\u2019s Iconoclast"
   },
   {
     "name": "Nick Cave & The Bad Seeds",
@@ -19913,7 +19913,7 @@
     "handpickedTrack": "Watersprite"
   },
   {
-    "name": "Tryphème",
+    "name": "Tryph\u00e8me",
     "birthDate": "2024-06-21",
     "dateType": "release",
     "genres": [
@@ -20574,7 +20574,7 @@
     "handpickedTrack": "SM_FID"
   },
   {
-    "name": "Bartosz Kruczyński",
+    "name": "Bartosz Kruczy\u0144ski",
     "birthDate": "1980-09-28",
     "dateType": "birth",
     "mbid": "125b9d0c-7db7-4a47-9e24-cd7bc05a34f7",
@@ -21847,7 +21847,7 @@
       "electroacoustic composition",
       "plunderphonics",
       "electroacoustic",
-      "musique concrète",
+      "musique concr\u00e8te",
       "experimental"
     ],
     "youtubeVideoId": "41zuk0aHvfM",
@@ -22464,7 +22464,7 @@
     "youtubeVideoId": "DJv1dKhivtM",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Kimbé Rèd!"
+    "handpickedTrack": "Kimb\u00e9 R\u00e8d!"
   },
   {
     "name": "Michel Laurent",
@@ -22480,7 +22480,7 @@
     "youtubeVideoId": "Ip6jxEY5Oug",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Matla La Mouyé"
+    "handpickedTrack": "Matla La Mouy\u00e9"
   },
   {
     "name": "Colpitts",
@@ -24202,7 +24202,7 @@
     "handpickedTrack": "RAP JASM"
   },
   {
-    "name": "Carlos Niño & Friends",
+    "name": "Carlos Ni\u00f1o & Friends",
     "birthDate": "1977-02-16",
     "dateType": "birth",
     "mbid": "f6e8d274-e3f5-4491-bbea-bbf9a2119d95",
@@ -24570,7 +24570,7 @@
     "handpickedTrack": "home"
   },
   {
-    "name": "Cécile McLorin Salvant",
+    "name": "C\u00e9cile McLorin Salvant",
     "birthDate": "1989-08-28",
     "dateType": "birth",
     "genres": [
@@ -24710,7 +24710,7 @@
     "handpickedTrack": "Take Me Home"
   },
   {
-    "name": "Oumou Diabaté",
+    "name": "Oumou Diabat\u00e9",
     "birthDate": "1965-08-10",
     "dateType": "birth",
     "mbid": "b96ba7e7-d882-409a-9825-ed3d6dbb437d",
@@ -24943,13 +24943,10 @@
     ],
     "subgenres": [
       "noise",
-      "drone",
-      "hip-hop",
-      "experimental",
-      "industrial",
-      "dark-folk",
-      "dub",
-      "experimental-hiphop"
+      "noise-rock",
+      "sludge-metal",
+      "post-metal",
+      "hardcore"
     ],
     "enTags": [
       "noise rock",
@@ -25490,7 +25487,7 @@
     "handpickedTrack": "Cy8 Interlude"
   },
   {
-    "name": "dälek",
+    "name": "d\u00e4lek",
     "birthDate": "1998-06-15",
     "dateType": "birth",
     "genres": [
@@ -25596,7 +25593,7 @@
     "youtubeVideoId": "k9tTofoDQbA",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Glavi Funçon"
+    "handpickedTrack": "Glavi Fun\u00e7on"
   },
   {
     "name": "ShrapKnel",
@@ -25760,7 +25757,7 @@
     "handpickedTrack": "Quantum Leap"
   },
   {
-    "name": "Runhild Gammelsæter",
+    "name": "Runhild Gammels\u00e6ter",
     "birthDate": "1977-01-01",
     "dateType": "birth",
     "genres": [
@@ -25819,7 +25816,7 @@
       "sound art",
       "dark ambient",
       "experimental",
-      "musique concrète"
+      "musique concr\u00e8te"
     ],
     "youtubeVideoId": "YHxe8BzDpxg",
     "backupVideoIds": [],
@@ -26329,7 +26326,7 @@
     "youtubeVideoId": "yF-NC3eRsqc",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Munch (Feelin’ U)"
+    "handpickedTrack": "Munch (Feelin\u2019 U)"
   },
   {
     "name": "Valee",
@@ -26730,7 +26727,7 @@
     "youtubeVideoId": "X2qU47abjNA",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "संसार"
+    "handpickedTrack": "\u0938\u0902\u0938\u093e\u0930"
   },
   {
     "name": "Daphni",
@@ -27636,7 +27633,7 @@
     "handpickedTrack": "Holy Man"
   },
   {
-    "name": "Gisle Røen Johansen",
+    "name": "Gisle R\u00f8en Johansen",
     "birthDate": "1936-10-29",
     "dateType": "birth",
     "mbid": "0b5ca499-db0b-42fc-bd9f-3c260bdf97bb",
@@ -28491,7 +28488,7 @@
       "pastoral",
       "electroacoustic",
       "experimental jazz",
-      "musique concrète",
+      "musique concr\u00e8te",
       "experimental",
       "avant-garde"
     ],
@@ -28712,7 +28709,7 @@
     "handpickedTrack": "Drop Down Do A Split"
   },
   {
-    "name": "Gavilán Rayna Russom",
+    "name": "Gavil\u00e1n Rayna Russom",
     "birthDate": "1981-09-30",
     "dateType": "birth",
     "mbid": "e7c9548c-47b7-451f-b459-b93724fdd261",
@@ -28839,7 +28836,7 @@
     "handpickedTrack": "BLUE CRUSH ANGEL"
   },
   {
-    "name": "John Pål Inderberg Trio",
+    "name": "John P\u00e5l Inderberg Trio",
     "birthDate": "1950-08-06",
     "dateType": "birth",
     "mbid": "e6e7d9c1-447e-4815-9242-9781899b7015",
@@ -28995,7 +28992,7 @@
       "nordic ambient",
       "electroacoustic",
       "ambient",
-      "musique concrète",
+      "musique concr\u00e8te",
       "experimental"
     ],
     "youtubeVideoId": "TM3XfsoSpg4",
@@ -29174,7 +29171,7 @@
       "french contemporary classical",
       "vintage french electronic",
       "avant-garde",
-      "musique concrète",
+      "musique concr\u00e8te",
       "electroacoustic",
       "contemporary classical",
       "experimental",
@@ -29464,7 +29461,7 @@
       "alternative americana",
       "modular synth",
       "drone ambient",
-      "musique concrète",
+      "musique concr\u00e8te",
       "ambient folk",
       "spoken word",
       "anti-folk",
@@ -30103,7 +30100,7 @@
     "youtubeVideoId": "DVhlUAmxfiU",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Bad`a بدع"
+    "handpickedTrack": "Bad`a \u0628\u062f\u0639"
   },
   {
     "name": "FendiDa Rappa",
@@ -30136,7 +30133,7 @@
     "handpickedTrack": "Juke Song"
   },
   {
-    "name": "YEИDRY",
+    "name": "YE\u0418DRY",
     "birthDate": "1993-07-27",
     "dateType": "birth",
     "mbid": "1ed46818-3e2b-4ed8-8019-aea5d330d6e6",
@@ -30899,7 +30896,7 @@
     "handpickedTrack": "Nothing Tells Us So"
   },
   {
-    "name": "TRÓNCO",
+    "name": "TR\u00d3NCO",
     "birthDate": "1993-10-21",
     "dateType": "birth",
     "mbid": "c0a814eb-5535-4bc1-99aa-83d8c9a52e6b",
@@ -31064,7 +31061,7 @@
     "youtubeVideoId": "k90vomVHIBM",
     "backupVideoIds": [],
     "handpicked": true,
-    "handpickedTrack": "Quem Tá de Motão, Vou Sarrar Puta Na Marcone"
+    "handpickedTrack": "Quem T\u00e1 de Mot\u00e3o, Vou Sarrar Puta Na Marcone"
   },
   {
     "name": "DJ Jeeh FDC",
@@ -31563,7 +31560,7 @@
       "ambient",
       "drone",
       "minimalism",
-      "musique concrète"
+      "musique concr\u00e8te"
     ],
     "spotifyId": "0ZH37cF1gwuwRW86ueqau1"
   },
@@ -32020,7 +32017,7 @@
       "lowercase",
       "glitch",
       "electroacoustic",
-      "musique concrète",
+      "musique concr\u00e8te",
       "experimental",
       "avant-garde"
     ],
@@ -32150,7 +32147,7 @@
       "sound art",
       "german indie",
       "idm",
-      "musique concrète",
+      "musique concr\u00e8te",
       "post-rock",
       "krautrock",
       "neoclassical",
@@ -32262,7 +32259,7 @@
       "japanese post-punk",
       "experimental electronic",
       "electroacoustic",
-      "musique concrète",
+      "musique concr\u00e8te",
       "experimental",
       "experimental jazz",
       "avant-garde"

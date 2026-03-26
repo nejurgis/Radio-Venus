@@ -94,7 +94,7 @@
   "John Denver": {
     "birthDate": "1943-12-31"
   },
-  "Jónsi": {
+  "J\u00f3nsi": {
     "birthDate": "1975-04-23"
   },
   "Jonwayne": {
@@ -151,7 +151,7 @@
   "Sibylle Baier": {
     "birthDate": "1955-02-25"
   },
-  "Sinéad O'Connor": {
+  "Sin\u00e9ad O'Connor": {
     "birthDate": "1966-12-08"
   },
   "Steve Reich": {
@@ -194,7 +194,7 @@
       "indiepop"
     ]
   },
-  "Ólafur Arnalds": {
+  "\u00d3lafur Arnalds": {
     "genres": [
       "darkwave"
     ]
@@ -424,6 +424,12 @@
       "idm",
       "techno",
       "hiphop"
+    ]
+  },
+  "Chat Pile": {
+    "genres": [
+      "metal",
+      "altrock"
     ]
   }
 }
