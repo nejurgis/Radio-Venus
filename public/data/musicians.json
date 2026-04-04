@@ -1920,7 +1920,6 @@
       "jazz",
       "folk",
       "ambient",
-      "classical",
       "intercelestial"
     ],
     "subgenres": [
@@ -2189,7 +2188,6 @@
     },
     "genres": [
       "idm",
-      "classical",
       "intercelestial",
       "folk",
       "ambient",
@@ -2416,7 +2414,6 @@
     },
     "genres": [
       "jazz",
-      "classical",
       "ambient"
     ],
     "subgenres": [
@@ -2573,15 +2570,13 @@
     },
     "genres": [
       "idm",
-      "classical",
       "intercelestial",
       "folk",
       "ambient",
       "jazz",
       "industrial",
       "altrock",
-      "artpop",
-      "techno"
+      "artpop"
     ],
     "subgenres": [
       "experimental",
@@ -2609,7 +2604,6 @@
       "idm",
       "folk",
       "ambient",
-      "classical",
       "intercelestial"
     ],
     "subgenres": [
@@ -5417,7 +5411,6 @@
       "altrock",
       "industrial",
       "artpop",
-      "classical",
       "intercelestial",
       "jazz",
       "folk",
@@ -6226,7 +6219,6 @@
       "altrock",
       "artpop",
       "indiepop",
-      "classical",
       "intercelestial",
       "jazz",
       "metal"
@@ -7017,9 +7009,7 @@
       "indiepop",
       "triphop",
       "idm",
-      "electronica",
-      "intercelestial",
-      "classical"
+      "electronica"
     ],
     "subgenres": [
       "spiritual-jazz",
@@ -7657,7 +7647,6 @@
       "electronica",
       "darkwave",
       "artpop",
-      "classical",
       "intercelestial"
     ],
     "subgenres": [
@@ -7818,10 +7807,8 @@
     "genres": [
       "idm",
       "ambient",
-      "classical",
       "jazz",
-      "folk",
-      "electronic"
+      "intercelestial"
     ],
     "subgenres": [
       "experimental",
@@ -8157,7 +8144,6 @@
       "idm",
       "folk",
       "ambient",
-      "classical",
       "intercelestial",
       "artpop",
       "techno",
@@ -8913,7 +8899,6 @@
     },
     "genres": [
       "jazz",
-      "classical",
       "hiphop",
       "triphop"
     ],
@@ -10734,7 +10719,6 @@
       "element": "earth"
     },
     "genres": [
-      "classical",
       "intercelestial",
       "idm",
       "indiepop",
@@ -13767,7 +13751,6 @@
       "artpop",
       "idm",
       "darkwave",
-      "classical",
       "intercelestial",
       "triphop",
       "jazz",
@@ -14480,7 +14463,6 @@
     },
     "genres": [
       "idm",
-      "classical",
       "intercelestial",
       "altrock",
       "industrial",
@@ -14824,8 +14806,7 @@
     },
     "genres": [
       "artpop",
-      "darkwave",
-      "classical"
+      "darkwave"
     ],
     "subgenres": [
       "art-pop",
@@ -15446,7 +15427,6 @@
       "indiepop",
       "artpop",
       "hiphop",
-      "classical",
       "intercelestial",
       "triphop",
       "metal"
@@ -16216,7 +16196,6 @@
     "genres": [
       "jazz",
       "folk",
-      "classical",
       "intercelestial",
       "idm",
       "indiepop",
@@ -16770,8 +16749,7 @@
     },
     "genres": [
       "artpop",
-      "darkwave",
-      "classical"
+      "darkwave"
     ],
     "subgenres": [
       "art-pop",
@@ -17033,8 +17011,8 @@
       "indiepop",
       "jazz",
       "triphop",
-      "classical",
       "intercelestial",
+      "classical",
       "altrock",
       "artpop",
       "darkwave"
@@ -18404,7 +18382,6 @@
       "jazz",
       "industrial",
       "altrock",
-      "classical",
       "intercelestial",
       "artpop",
       "metal"
@@ -18508,8 +18485,8 @@
       "industrial",
       "altrock",
       "jazz",
-      "classical",
       "intercelestial",
+      "classical",
       "idm",
       "ambient",
       "folk"
@@ -19015,7 +18992,6 @@
       "folk",
       "ambient",
       "idm",
-      "classical",
       "intercelestial",
       "artpop",
       "techno",
@@ -20311,7 +20287,6 @@
       "idm",
       "indiepop",
       "ambient",
-      "classical",
       "jazz",
       "darkwave",
       "electronica"
@@ -20571,7 +20546,6 @@
     "genres": [
       "idm",
       "folk",
-      "classical",
       "intercelestial",
       "indiepop",
       "altrock",
@@ -20582,8 +20556,7 @@
       "industrial",
       "techno",
       "ambient",
-      "triphop",
-      "metal"
+      "triphop"
     ],
     "subgenres": [
       "experimental",
@@ -21449,8 +21422,7 @@
     "genres": [
       "jazz",
       "hiphop",
-      "triphop",
-      "classical"
+      "triphop"
     ],
     "subgenres": [
       "spiritual-jazz",
@@ -23251,7 +23223,6 @@
       "hiphop",
       "folk",
       "dnb",
-      "classical",
       "intercelestial"
     ],
     "subgenres": [
@@ -26456,8 +26427,7 @@
     "genres": [
       "jazz",
       "ambient",
-      "idm",
-      "classical"
+      "idm"
     ],
     "subgenres": [
       "free-jazz",
@@ -26571,7 +26541,6 @@
     "genres": [
       "jazz",
       "idm",
-      "classical",
       "artpop"
     ],
     "subgenres": [
@@ -26635,7 +26604,6 @@
       "jazz",
       "indiepop",
       "techno",
-      "classical",
       "intercelestial"
     ],
     "subgenres": [
@@ -26860,7 +26828,6 @@
     "genres": [
       "jazz",
       "idm",
-      "classical",
       "artpop"
     ],
     "subgenres": [

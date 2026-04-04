@@ -431,5 +431,77 @@
       "metal",
       "altrock"
     ]
+  },
+  "Laddio Bolocko": {
+    "genres": ["industrial","altrock","artpop","idm","darkwave","intercelestial","triphop","jazz","metal"]
+  },
+  "Raisa K": {
+    "genres": ["artpop","idm","indiepop","ambient","jazz","darkwave","electronica"]
+  },
+  "Miranda Sex Garden": {
+    "genres": ["artpop","darkwave"]
+  },
+  "Bill Nace": {
+    "genres": ["idm","intercelestial","folk","ambient","jazz","industrial","altrock","artpop"]
+  },
+  "Horse Lords": {
+    "genres": ["intercelestial","idm","indiepop","altrock","artpop","folk","ambient","industrial","jazz","darkwave"]
+  },
+  "Love Is Colder Than Death": {
+    "genres": ["artpop","darkwave"]
+  },
+  "Mamaleek": {
+    "genres": ["idm","ambient","folk","industrial","altrock","indiepop","artpop","hiphop","intercelestial","triphop","metal"]
+  },
+  "Oort Smog": {
+    "genres": ["ambient","idm","folk","jazz","industrial","altrock","intercelestial","artpop","metal"]
+  },
+  "Basher": {
+    "genres": ["idm","intercelestial","folk","ambient","darkwave","industrial","jazz","electronica"]
+  },
+  "William Parker": {
+    "genres": ["jazz","idm","artpop"]
+  },
+  "Wadada Leo Smith": {
+    "genres": ["jazz","idm","artpop"]
+  },
+  "Sarah Vaughan": {
+    "genres": ["jazz","hiphop","triphop"]
+  },
+  "Flora Purim": {
+    "genres": ["jazz","hiphop","triphop"]
+  },
+  "Eiko Ishibashi": {
+    "genres": ["idm","indiepop","ambient","folk","jazz","altrock","electronica","darkwave","artpop","intercelestial"]
+  },
+  "Congotronics International": {
+    "genres": ["idm","indiepop","altrock","industrial","artpop","intercelestial","jazz","folk","ambient","electronica"]
+  },
+  "Medicine Singers": {
+    "genres": ["jazz","folk","intercelestial","idm","indiepop","altrock","artpop","ambient","hiphop","triphop"]
+  },
+  "Bennie Maupin": {
+    "genres": ["jazz","ambient"]
+  },
+  "Liturgy": {
+    "genres": ["idm","intercelestial","altrock","industrial","artpop","ambient","folk","electronica","hiphop","indiepop","metal"]
+  },
+  "Patrick Shiroishi": {
+    "genres": ["folk","ambient","idm","intercelestial","artpop","techno","jazz"]
+  },
+  "Eric Chenaux": {
+    "genres": ["idm","folk","ambient","intercelestial","artpop","techno","jazz","altrock"]
+  },
+  "Richard Dawson": {
+    "genres": ["idm","folk","intercelestial","indiepop","altrock","artpop","jazz","electronica","darkwave","industrial","techno","ambient","triphop"]
+  },
+  "DOMi & JD BECK": {
+    "genres": ["jazz","hiphop","artpop","indiepop","triphop","idm","electronica"]
+  },
+  "Elysia Crampton": {
+    "genres": ["idm","ambient","jazz","intercelestial"]
+  },
+  "Void Patrol": {
+    "genres": ["jazz","ambient","idm"]
   }
 }

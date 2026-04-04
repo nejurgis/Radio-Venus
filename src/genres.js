@@ -534,7 +534,7 @@ const GENRE_MAP = {
   'american primitive': ['folk'],       // Fahey/Takoma school — fingerpicked instrumental
   'cosmic american': ['folk'],
   'free improvisation': ['jazz'],
-  'totalism': ['classical', 'intercelestial'], // Rhys Chatham/Glenn Branca — post-minimalist
+  'totalism': ['intercelestial'], // Rhys Chatham/Glenn Branca stay classical via minimalism/contemporary-classical tags
 
   // ── Classical / Orchestral ──
   'medieval': ['classical'],       // Pérotin, Hildegard von Bingen, etc.
