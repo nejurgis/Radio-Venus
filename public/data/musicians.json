@@ -5892,7 +5892,6 @@
       "element": "air"
     },
     "genres": [
-      "classical",
       "ambient"
     ],
     "subgenres": [
@@ -8245,6 +8244,25 @@
       "idm"
     ],
     "youtubeVideoId": "YJi5SMPiKqc",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Erwin Schulhoff",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 5.7,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "classical",
+      "intercelestial"
+    ],
+    "subgenres": [
+      "opera",
+      "classical"
+    ],
+    "youtubeVideoId": "VTU-kReSBN4",
     "backupVideoIds": []
   },
   {
@@ -25376,8 +25394,7 @@
       "ambient",
       "triphop",
       "indiepop",
-      "darkwave",
-      "classical"
+      "darkwave"
     ],
     "subgenres": [
       "indietronica",

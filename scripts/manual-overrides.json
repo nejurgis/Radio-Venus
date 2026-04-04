@@ -41,7 +41,8 @@
     "birthDate": "1975-03-03"
   },
   "Daniel Pemberton": {
-    "birthDate": "1977-11-03"
+    "birthDate": "1977-11-03",
+    "genres": ["ambient"]
   },
   "DEV": {
     "birthDate": "1989-07-02"
@@ -503,5 +504,8 @@
   },
   "Void Patrol": {
     "genres": ["jazz","ambient","idm"]
+  },
+  "To Rococo Rot": {
+    "genres": ["electronica","altrock","idm","techno","ambient","triphop","indiepop","darkwave"]
   }
 }
