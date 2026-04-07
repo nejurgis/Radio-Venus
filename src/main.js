@@ -21,7 +21,7 @@ import {
   startHeartbeat, stopHeartbeat,
   trackSongStart, trackSongComplete, trackSongSkip, trackSongError,
   trackShare, trackGenreSelect, trackFavorite, trackHarpToggle, trackPlaylistShare, trackShuffle,
-  trackChartCalculated, trackNewsletterSubscribe,
+  trackChartCalculated, trackNewsletterSubscribe, trackScreenView,
 } from './analytics.js';
 
 // ── State ───────────────────────────────────────────────────────────────────
@@ -235,6 +235,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('btn-back-genre').addEventListener('click', () => history.back());
   document.getElementById('btn-info').addEventListener('click', async () => {
     showScreen('about');
+    trackScreenView('about');
     history.pushState({ screen: 'about' }, '', '#about');
     // DB may still be loading — wait for it if needed
     let db = getDatabase();
@@ -255,6 +256,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.addEventListener('click', e => {
     if (e.target.closest('.resonance-info-btn')) {
       showScreen('about');
+      trackScreenView('about');
       updateNowPlayingButton(true, isPaused);
       updateArtistIndexPlaying(currentPlayingTrack?.name);
       document.getElementById('about-resonance')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1540,6 +1542,7 @@ window.addEventListener('popstate', (e) => {
       break;
     case 'about':
       showScreen('about');
+      trackScreenView('about');
       updateNowPlayingButton(true, isPaused);
       updateArtistIndexPlaying(currentPlayingTrack?.name);
       break;
