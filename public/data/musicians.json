@@ -454,6 +454,31 @@
     "backupVideoIds": []
   },
   {
+    "name": "Air",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 26.1,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "artpop",
+      "electronica",
+      "triphop"
+    ],
+    "subgenres": [
+      "downtempo",
+      "indietronica",
+      "ambient",
+      "trip-hop"
+    ],
+    "youtubeVideoId": "I0SVd_Q5wIg",
+    "backupVideoIds": [
+      "2RSVa_vF3NI"
+    ]
+  },
+  {
     "name": "aja monet",
     "venus": {
       "sign": "Taurus",
@@ -1551,6 +1576,23 @@
       "iJpV0jS7wYY",
       "uK76sWSmwMY"
     ]
+  },
+  {
+    "name": "Archive",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 17.1,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "triphop"
+    ],
+    "subgenres": [
+      "trip-hop"
+    ],
+    "youtubeVideoId": "5WR9mOh8HAA",
+    "backupVideoIds": []
   },
   {
     "name": "Areliz Ramos",
@@ -3362,6 +3404,22 @@
     "backupVideoIds": []
   },
   {
+    "name": "Bows",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 3.9,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "dreamo",
+      "triphop"
+    ],
+    "subgenres": [],
+    "youtubeVideoId": "H4sEdB1EsJE",
+    "backupVideoIds": []
+  },
+  {
     "name": "Bradley Strider",
     "venus": {
       "sign": "Leo",
@@ -3681,7 +3739,8 @@
     "youtubeVideoId": "IlEkvbRmfrA",
     "backupVideoIds": [
       "wRPHQzXD-5k",
-      "9hI4bSCy9iE"
+      "9hI4bSCy9iE",
+      "0mkLNYaCJns"
     ]
   },
   {
@@ -4625,6 +4684,30 @@
       "drone"
     ],
     "youtubeVideoId": "6JVDuaE1CrM",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Chris & Cosey",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 25.2,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "darkwave",
+      "idm",
+      "industrial",
+      "techno"
+    ],
+    "subgenres": [
+      "experimental",
+      "techno",
+      "industrial",
+      "ebm",
+      "synth-pop"
+    ],
+    "youtubeVideoId": "ai-6wVpG_mA",
     "backupVideoIds": []
   },
   {
@@ -6609,6 +6692,29 @@
     "backupVideoIds": []
   },
   {
+    "name": "Dijit",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 2.7,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "downtempo",
+      "electronica",
+      "triphop",
+      "idm",
+      "intercelestial"
+    ],
+    "subgenres": [
+      "downtempo",
+      "indietronica",
+      "idm"
+    ],
+    "youtubeVideoId": "dYGSOvHcm2s",
+    "backupVideoIds": []
+  },
+  {
     "name": "Diplo",
     "venus": {
       "sign": "Scorpio",
@@ -8230,25 +8336,6 @@
     "backupVideoIds": []
   },
   {
-    "name": "Erwin Schulhoff",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 5.7,
-      "decan": 1,
-      "element": "earth"
-    },
-    "genres": [
-      "classical",
-      "intercelestial"
-    ],
-    "subgenres": [
-      "opera",
-      "classical"
-    ],
-    "youtubeVideoId": "VTU-kReSBN4",
-    "backupVideoIds": []
-  },
-  {
     "name": "Esben and the Witch",
     "venus": {
       "sign": "Cancer",
@@ -9858,7 +9945,8 @@
     ],
     "youtubeVideoId": "YeawPUpTHJA",
     "backupVideoIds": [
-      "sBAS9hvSuQw"
+      "sBAS9hvSuQw",
+      "QPuJFbAf690"
     ]
   },
   {
@@ -13789,6 +13877,26 @@
     "backupVideoIds": []
   },
   {
+    "name": "Lamb",
+    "venus": {
+      "sign": "Leo",
+      "degree": 25.8,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "electronica",
+      "triphop"
+    ],
+    "subgenres": [
+      "trip-hop",
+      "indietronica",
+      "downtempo"
+    ],
+    "youtubeVideoId": "q4OW0RQ8fR0",
+    "backupVideoIds": []
+  },
+  {
     "name": "Lara Sarkissian",
     "venus": {
       "sign": "Taurus",
@@ -14123,6 +14231,27 @@
       "neo-soul"
     ],
     "youtubeVideoId": "71EoMtPsJ4w",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Leila",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 3.9,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "electronica",
+      "idm",
+      "triphop"
+    ],
+    "subgenres": [
+      "indietronica",
+      "idm",
+      "trip-hop"
+    ],
+    "youtubeVideoId": "oLyp-N1hnDg",
     "backupVideoIds": []
   },
   {
@@ -17691,6 +17820,27 @@
     "backupVideoIds": []
   },
   {
+    "name": "Natural Wonder Beauty Concept",
+    "venus": {
+      "sign": "Pisces",
+      "degree": 4.6,
+      "decan": 1,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "downtempo",
+      "electronica"
+    ],
+    "subgenres": [
+      "ambient",
+      "downtempo",
+      "indietronica"
+    ],
+    "youtubeVideoId": "mrryFTAE_lU",
+    "backupVideoIds": []
+  },
+  {
     "name": "Nazar",
     "venus": {
       "sign": "Scorpio",
@@ -19723,8 +19873,7 @@
     ],
     "youtubeVideoId": "yF-GvT8Clnk",
     "backupVideoIds": [
-      "7nxWP9BhI7w",
-      "4qQyUi4zfDs"
+      "wCAURNnKqFo"
     ]
   },
   {
@@ -23275,6 +23424,25 @@
     "backupVideoIds": []
   },
   {
+    "name": "Strange Cargo",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 24.7,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "ambient",
+      "electronica"
+    ],
+    "subgenres": [
+      "ambient",
+      "indietronica"
+    ],
+    "youtubeVideoId": "fc4P8eGGeII",
+    "backupVideoIds": []
+  },
+  {
     "name": "Stringtronics",
     "venus": {
       "sign": "Cancer",
@@ -24413,8 +24581,7 @@
     ],
     "youtubeVideoId": "TBloEUeOC40",
     "backupVideoIds": [
-      "YxDu_DKQ2-U",
-      "iIOZO7mXDNM"
+      "GmBybCZ8gZc"
     ]
   },
   {
@@ -25094,6 +25261,31 @@
     "backupVideoIds": []
   },
   {
+    "name": "Thievery Corporation",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 17.1,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "electronica",
+      "triphop",
+      "techno",
+      "jazz"
+    ],
+    "subgenres": [
+      "downtempo",
+      "indietronica",
+      "trip-hop",
+      "acid",
+      "spiritual-jazz",
+      "chillout"
+    ],
+    "youtubeVideoId": "sRbKzumSPVw",
+    "backupVideoIds": []
+  },
+  {
     "name": "This Ascension",
     "venus": {
       "sign": "Gemini",
@@ -25579,6 +25771,24 @@
       "experimental"
     ],
     "youtubeVideoId": "p2DZa3V5CQo",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Tosca Tango Orchestra",
+    "venus": {
+      "sign": "Leo",
+      "degree": 9.3,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient",
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz"
+    ],
+    "youtubeVideoId": "DINnoKcMLGE",
     "backupVideoIds": []
   },
   {

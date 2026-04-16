@@ -1523,7 +1523,8 @@
     ],
     "backupVideoIds": [
       "wRPHQzXD-5k",
-      "9hI4bSCy9iE"
+      "9hI4bSCy9iE",
+      "0mkLNYaCJns"
     ],
     "enTags": [
       "electronica",
@@ -3987,7 +3988,8 @@
     ],
     "youtubeVideoId": "YeawPUpTHJA",
     "backupVideoIds": [
-      "sBAS9hvSuQw"
+      "sBAS9hvSuQw",
+      "QPuJFbAf690"
     ],
     "enTags": [
       "neo-synthpop",
@@ -7351,7 +7353,10 @@
       "art pop",
       "alternative rock"
     ],
-    "spotifyId": "6liAMWkVf5LH7YR9yfFy1Y"
+    "spotifyId": "6liAMWkVf5LH7YR9yfFy1Y",
+    "backupVideoIds": [
+      "wCAURNnKqFo"
+    ]
   },
   {
     "name": "Power-Pill",
@@ -9288,7 +9293,10 @@
       "idm",
       "techno"
     ],
-    "spotifyId": "2qhmNI4ZHPpeDutdg473Z3"
+    "spotifyId": "2qhmNI4ZHPpeDutdg473Z3",
+    "backupVideoIds": [
+      "GmBybCZ8gZc"
+    ]
   },
   {
     "name": "The Hacker",
@@ -32588,5 +32596,175 @@
       "idm"
     ],
     "spotifyId": "20bB5IFRjHw1EIAHvZ3tgd"
+  },
+  {
+    "name": "Chris & Cosey",
+    "birthDate": "1953-01-28",
+    "dateType": "birth",
+    "genres": [
+      "darkwave",
+      "idm",
+      "industrial",
+      "techno"
+    ],
+    "youtubeId": "ai-6wVpG_mA",
+    "enTags": [
+      "british experimental",
+      "proto-techno",
+      "british industrial",
+      "industrial",
+      "cold wave",
+      "ebm",
+      "synthpop"
+    ]
+  },
+  {
+    "name": "Lamb",
+    "birthDate": "1996-09-30",
+    "dateType": "release",
+    "genres": [
+      "electronica",
+      "triphop"
+    ],
+    "youtubeId": "q4OW0RQ8fR0",
+    "enTags": [
+      "trip hop",
+      "electronica",
+      "jesus movement",
+      "downtempo"
+    ]
+  },
+  {
+    "name": "Air",
+    "birthDate": "1998-01-16",
+    "dateType": "release",
+    "genres": [
+      "ambient",
+      "artpop",
+      "electronica",
+      "triphop"
+    ],
+    "youtubeId": "I0SVd_Q5wIg",
+    "backupVideoIds": [
+      "2RSVa_vF3NI"
+    ],
+    "enTags": [
+      "downtempo",
+      "electronica",
+      "ambient pop",
+      "trip hop",
+      "indietronica",
+      "saxophone trio"
+    ]
+  },
+  {
+    "name": "Archive",
+    "birthDate": "1996-06-15",
+    "dateType": "release",
+    "genres": [
+      "triphop"
+    ],
+    "youtubeId": "5WR9mOh8HAA",
+    "enTags": [
+      "trip hop"
+    ]
+  },
+  {
+    "name": "Natural Wonder Beauty Concept",
+    "birthDate": "1987-04-01",
+    "dateType": "birth",
+    "genres": [
+      "ambient",
+      "downtempo",
+      "electronica"
+    ],
+    "youtubeId": "mrryFTAE_lU",
+    "enTags": []
+  },
+  {
+    "name": "Strange Cargo",
+    "birthDate": "1956-12-15",
+    "dateType": "birth",
+    "genres": [
+      "ambient",
+      "electronica"
+    ],
+    "youtubeId": "fc4P8eGGeII",
+    "enTags": []
+  },
+  {
+    "name": "Dijit",
+    "birthDate": "2023-04-13",
+    "dateType": "release",
+    "genres": [
+      "downtempo",
+      "electronica",
+      "triphop"
+    ],
+    "youtubeId": "dYGSOvHcm2s",
+    "enTags": [
+      "collage pop",
+      "otacore"
+    ]
+  },
+  {
+    "name": "Leila",
+    "birthDate": "1971-06-15",
+    "dateType": "birth",
+    "genres": [
+      "electronica",
+      "idm",
+      "triphop"
+    ],
+    "youtubeId": "oLyp-N1hnDg",
+    "enTags": [
+      "persian electronic",
+      "idm",
+      "trip hop"
+    ]
+  },
+  {
+    "name": "Tosca Tango Orchestra",
+    "birthDate": "1999-06-15",
+    "dateType": "release",
+    "genres": [
+      "ambient",
+      "jazz"
+    ],
+    "youtubeId": "DINnoKcMLGE",
+    "enTags": [
+      "nuevo tango",
+      "tango",
+      "indie jazz"
+    ]
+  },
+  {
+    "name": "Bows",
+    "birthDate": "1971-06-15",
+    "dateType": "birth",
+    "genres": [
+      "dreamo",
+      "triphop"
+    ],
+    "youtubeId": "H4sEdB1EsJE",
+    "enTags": []
+  },
+  {
+    "name": "Thievery Corporation",
+    "birthDate": "1996-06-15",
+    "dateType": "release",
+    "genres": [
+      "electronica",
+      "triphop"
+    ],
+    "youtubeId": "sRbKzumSPVw",
+    "enTags": [
+      "downtempo",
+      "electronica",
+      "trip hop",
+      "livetronica",
+      "acid jazz",
+      "lounge"
+    ]
   }
 ]
