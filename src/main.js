@@ -21,7 +21,7 @@ import {
   startHeartbeat, stopHeartbeat,
   trackSongStart, trackSongComplete, trackSongSkip, trackSongError,
   trackShare, trackGenreSelect, trackFavorite, trackHarpToggle, trackPlaylistShare, trackShuffle,
-  trackChartCalculated, trackNewsletterSubscribe, trackScreenView,
+  trackChartCalculated, trackNewsletterSubscribe, trackScreenView, trackOutboundClick,
 } from './analytics.js';
 
 // ── State ───────────────────────────────────────────────────────────────────
@@ -248,6 +248,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     updateNowPlayingButton(true, isPaused);
   });
   document.getElementById('btn-back-about').addEventListener('click', () => history.back());
+  document.addEventListener('click', e => {
+    const link = e.target.closest('a[href*="jurgis.info/astrology"]');
+    if (link) trackOutboundClick('jurgis.info/astrology');
+  });
   document.getElementById('artist-index').addEventListener('click', e => {
     const span = e.target.closest('.index-artist');
     if (!span) return;

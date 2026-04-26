@@ -154,6 +154,13 @@ export function trackNewsletterSubscribe() {
   });
 }
 
+export function trackOutboundClick(destination) {
+  send('outbound_click', {
+    event_category: 'outbound',
+    destination,
+  });
+}
+
 export function trackNebulaInteraction(action) {
   // action: 'drag_rotate', 'click_sign', 'zoom_sign'
   send('nebula_interaction', {

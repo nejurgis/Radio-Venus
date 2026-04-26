@@ -9,7 +9,6 @@ export const GENRE_CATEGORIES = [
   { id: 'dnb',        label: 'Drum & Bass / Jungle' },
   { id: 'indiepop',   label: 'Indie / Experimental' },
   { id: 'altrock',    label: 'Alt Rock / Post-Punk' },
-  { id: 'metal',      label: 'Metal' },
   { id: 'artpop',     label: 'Art Pop / Avant-Garde' },
   { id: 'folk',       label: 'Folk / Neofolk' },
   { id: 'jazz',       label: 'Jazz / Spiritual' },
