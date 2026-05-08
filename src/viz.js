@@ -460,10 +460,13 @@ export function renderNebula(musicians) {
   dots = [];
   spriteCache.clear();
   _tickCacheW = 0; _tickCacheH = 0; // force dot geometry pre-bake on next tick
-  const mobileScale = window.innerWidth < 640 ? 0.52 : 1;
+  const isMobile = window.innerWidth < 640;
+  const mobileScale = isMobile ? 0.52 : 1;
+  let mobileSkip = 0;
 
   for (const m of musicians) {
     if (!m.venus || !m.venus.sign) continue;
+    if (isMobile && mobileSkip++ % 2 !== 0) continue;
 
     const signIndex = SIGNS.indexOf(m.venus.sign);
     const element = ELEMENTS[m.venus.sign] || 'air';
