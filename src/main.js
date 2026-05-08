@@ -410,14 +410,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     startRadio(genreId, label, null, info.name);
   });
 
-  // Pre-warm YouTube player — on share links start immediately so the player
-  // is ready before the user can interact; on normal visits defer to idle.
+  // Pre-warm YouTube player on share links only — normal visits load it on demand.
   if (_isShareLink) {
     ensurePlayerReady();
-  } else if ('requestIdleCallback' in window) {
-    requestIdleCallback(() => ensurePlayerReady(), { timeout: 300 });
-  } else {
-    setTimeout(() => ensurePlayerReady(), 0);
   }
 
   const dbResult = await loadDatabase()
