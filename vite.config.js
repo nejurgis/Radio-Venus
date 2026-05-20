@@ -104,6 +104,42 @@ function artistPageDevPlugin() {
   };
 }
 
+// Convert the render-blocking <link rel="stylesheet"> injected by Vite into a
+// preloaded non-blocking load.  The critical CSS already inlined in index.html
+// prevents FOUC so the page is usable immediately.
+function deferCSSPlugin() {
+  return {
+    name: 'defer-css',
+    apply: 'build',
+    transformIndexHtml: {
+      order: 'post',
+      handler(html) {
+        return html.replace(
+          /<link rel="stylesheet" crossorigin href="(\/assets\/[^"]+\.css)">/g,
+          (_, href) =>
+            `<link rel="preload" as="style" href="${href}" onload="this.rel='stylesheet'">` +
+            `<noscript><link rel="stylesheet" href="${href}"></noscript>`
+        );
+      },
+    },
+  };
+}
+
+// Strip the importmap from production HTML — astronomy-engine is already bundled
+// by Vite at build time so the importmap is dead weight in the served page.
+function removeImportMapPlugin() {
+  return {
+    name: 'remove-importmap',
+    apply: 'build',
+    transformIndexHtml: {
+      order: 'post',
+      handler(html) {
+        return html.replace(/<script type="importmap">[\s\S]*?<\/script>\s*/g, '');
+      },
+    },
+  };
+}
+
 export default defineConfig({
   root: '.',
   publicDir: 'public',
@@ -111,5 +147,5 @@ export default defineConfig({
   build: {
     outDir: 'dist',
   },
-  plugins: [artistIndexPlugin(), artistPageDevPlugin()],
+  plugins: [artistIndexPlugin(), artistPageDevPlugin(), deferCSSPlugin(), removeImportMapPlugin()],
 });
