@@ -104,21 +104,22 @@ function artistPageDevPlugin() {
   };
 }
 
-// Convert the render-blocking <link rel="stylesheet"> injected by Vite into a
-// preloaded non-blocking load.  The critical CSS already inlined in index.html
-// prevents FOUC so the page is usable immediately.
-function deferCSSPlugin() {
+// Add an early preload hint so the browser starts fetching the CSS immediately,
+// while keeping the render-blocking <link rel="stylesheet"> so full styles apply
+// before first paint — no CLS from delayed stylesheet application.
+function preloadCSSPlugin() {
   return {
-    name: 'defer-css',
+    name: 'preload-css',
     apply: 'build',
     transformIndexHtml: {
       order: 'post',
       handler(html) {
+        const match = html.match(/<link rel="stylesheet" crossorigin href="(\/assets\/[^"]+\.css)">/);
+        if (!match) return html;
+        const href = match[1];
         return html.replace(
-          /<link rel="stylesheet" crossorigin href="(\/assets\/[^"]+\.css)">/g,
-          (_, href) =>
-            `<link rel="preload" as="style" href="${href}" onload="this.rel='stylesheet'">` +
-            `<noscript><link rel="stylesheet" href="${href}"></noscript>`
+          '<meta name="viewport"',
+          `<link rel="preload" href="${href}" as="style">\n  <meta name="viewport"`
         );
       },
     },
@@ -147,5 +148,5 @@ export default defineConfig({
   build: {
     outDir: 'dist',
   },
-  plugins: [artistIndexPlugin(), artistPageDevPlugin(), deferCSSPlugin(), removeImportMapPlugin()],
+  plugins: [artistIndexPlugin(), artistPageDevPlugin(), preloadCSSPlugin(), removeImportMapPlugin()],
 });
