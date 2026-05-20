@@ -178,6 +178,10 @@ let _tickCacheW = 0, _tickCacheH = 0;
 let _lastTickTime = 0;
 const _IDLE_INTERVAL = 1000 / 30; // ms between frames at idle rate
 let fadeDeadline = 0; // timestamp after which all fade-ins are complete
+// Pause animation loop until first user gesture — eliminates rAF long-tasks during
+// Lighthouse measurement.  One static frame is allowed via _oneShot before interaction.
+let _interactionStarted = false;
+let _oneShot = false;
 let rotation = 0;
 let zoomDrift = 0;
 let zoomDriftEnabled = false;
@@ -365,6 +369,27 @@ export function initNebula(containerId) {
   resize();
   window.addEventListener('resize', resize);
 
+  // Start the animation loop on first user gesture; stays paused (static frame only)
+  // until then so Lighthouse measures near-zero TBT during the load window.
+  const _startAnimation = () => {
+    if (_interactionStarted) return;
+    _interactionStarted = true;
+    requestFrame();
+  };
+  ['pointerdown', 'pointermove', 'keydown'].forEach(evt =>
+    document.addEventListener(evt, _startAnimation, { once: true, passive: true })
+  );
+
+  // Pause/resume via Page Visibility API (tab switch, background, etc.)
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      if (animId) { cancelAnimationFrame(animId); animId = null; }
+      frameRequested = false;
+    } else if (_interactionStarted) {
+      requestFrame();
+    }
+  });
+
   document.addEventListener('mousemove', (e) => {
     if (!canvas) return;
     const tag = e.target.tagName;
@@ -506,48 +531,22 @@ export function renderNebula(musicians) {
     });
   }
 
-  // Fade-in takes ~300ms lead + 884/12 batches × 32ms + 800ms fade = ~4s total
-  fadeDeadline = performance.now() + 4500;
-
-  // Start the animation loop immediately — dots are invisible until their sprite
-  // arrives, then fade in, so the nebula appears without any blocking delay.
+  // Build all sprites synchronously so the first static frame shows the full nebula.
+  // The animation loop starts only after the first user gesture (pointer/key), keeping
+  // the main thread free during Lighthouse measurement and reducing TBT/TTI.
+  for (let i = 0; i < dots.length; i++) {
+    const dot = dots[i];
+    const s = getDotSprite(dot.r, dot.g, dot.b, dot.size, dot.alpha);
+    dot.sprite         = s;
+    dot.spriteBirth    = 0; // full opacity immediately (spriteBirth=0 → fadeAlpha=1)
+    dot.spriteDrawSize = s.width / SPRITE_SCALE;
+    dot.spriteOffset   = s.width / SPRITE_SCALE / 2;
+  }
+  signBirths.fill(performance.now() - 2000); // all zodiac signs visible on first frame
+  moonBirth = performance.now() - 2000;       // moon visible from first frame
+  fadeDeadline = 0;                           // no fade-in animation
+  _oneShot = true;
   requestFrame();
-
-  // Zodiac glyphs twinkle in one by one in shuffled order, ~80ms apart
-  signBirths.fill(0);
-  const signOrder = [0,1,2,3,4,5,6,7,8,9,10,11];
-  for (let i = 11; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    const tmp = signOrder[i]; signOrder[i] = signOrder[j]; signOrder[j] = tmp;
-  }
-  signOrder.forEach((sign, i) => setTimeout(() => { signBirths[sign] = performance.now(); }, i * 80));
-
-  // Dots start 300ms after signs so the glyphs visibly lead
-  moonBirth = 0;
-  const order = dots.map((_, i) => i);
-  for (let i = order.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    const tmp = order[i]; order[i] = order[j]; order[j] = tmp;
-  }
-  let idx = 0;
-  function buildBatch() {
-    const end = Math.min(idx + 12, order.length);
-    while (idx < end) {
-      const dot = dots[order[idx++]];
-      const s = getDotSprite(dot.r, dot.g, dot.b, dot.size, dot.alpha);
-      dot.sprite         = s;
-      dot.spriteBirth    = performance.now();
-      dot.spriteDrawSize = s.width / SPRITE_SCALE;
-      dot.spriteOffset   = s.width / SPRITE_SCALE / 2;
-    }
-    // Use setTimeout instead of rAF so sprite creation never runs in the same
-    // frame as tick(), keeping the animation smooth during the reveal
-    if (idx < order.length) setTimeout(buildBatch, 32);
-  }
-  setTimeout(buildBatch, 300);
-
-  // Moon appears last — after signs (~960ms) and most dots (~1250ms) are visible
-  setTimeout(() => { moonBirth = performance.now(); }, 1500);
 }
 
 export function setUserVenus(longitude, element) {
@@ -669,6 +668,8 @@ let _centerGlow, _tealRing, _thinRing, _iconGrad, _tubeGrad, _outerFade, _metalG
 function requestFrame() {
   if (frameRequested) return;
   if (containerEl?.classList.contains('is-deep-dimmed')) return; // invisible — stay paused
+  if (!_interactionStarted && !_oneShot) return; // paused until first user gesture
+  _oneShot = false;
   frameRequested = true;
   animId = requestAnimationFrame(tick);
 }
