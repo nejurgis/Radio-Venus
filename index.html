@@ -47,26 +47,35 @@
   }
   </script>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KSY81MM0E6"></script>
+  <!-- Google Analytics — queue initialised inline; script loaded after page is interactive -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-KSY81MM0E6');
+    window.addEventListener('load', function() {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-KSY81MM0E6';
+      document.head.appendChild(s);
+    });
   </script>
   
-
-  
+  <!-- Critical CSS — just enough to show dark background and portal layout
+       before the full stylesheet (deferred via preload in prod) arrives. -->
+  <style>
+    *,*:before,*:after{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:#0a0a0c;color:#c8c8d0;overflow:hidden}
+    .screen{position:fixed;inset:0;opacity:0;pointer-events:none;display:flex;align-items:center;justify-content:center;overflow-y:auto}
+    .screen.active{opacity:1;pointer-events:auto}
+    .screen-inner{display:flex;flex-direction:column;align-items:center;width:100%;max-width:600px;margin:auto;padding:3.5rem 2rem 3rem;text-align:center}
+  </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=EB+Garamond:ital,wght@0,400;1,400&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=EB+Garamond:ital,wght@0,400;1,400&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
-  <script type="importmap">
-    { "imports": { "astronomy-engine": "/node_modules/astronomy-engine/esm/astronomy.js" } }
-  </script>
   <script type="module" crossorigin src="/assets/index-DGBU1W2x.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-D8CGb6mY.css">
+  <link rel="preload" as="style" href="/assets/index-D8CGb6mY.css" onload="this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/assets/index-D8CGb6mY.css"></noscript>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Musicians by Venus Sign — Radio Venus","url":"https://radio-venus.club","hasPart":[{"@type":"WebPage","name":"Venus in Aries Musicians","url":"https://radio-venus.club/sign/aries/"},{"@type":"WebPage","name":"Venus in Taurus Musicians","url":"https://radio-venus.club/sign/taurus/"},{"@type":"WebPage","name":"Venus in Gemini Musicians","url":"https://radio-venus.club/sign/gemini/"},{"@type":"WebPage","name":"Venus in Cancer Musicians","url":"https://radio-venus.club/sign/cancer/"},{"@type":"WebPage","name":"Venus in Leo Musicians","url":"https://radio-venus.club/sign/leo/"},{"@type":"WebPage","name":"Venus in Virgo Musicians","url":"https://radio-venus.club/sign/virgo/"},{"@type":"WebPage","name":"Venus in Libra Musicians","url":"https://radio-venus.club/sign/libra/"},{"@type":"WebPage","name":"Venus in Scorpio Musicians","url":"https://radio-venus.club/sign/scorpio/"},{"@type":"WebPage","name":"Venus in Sagittarius Musicians","url":"https://radio-venus.club/sign/sagittarius/"},{"@type":"WebPage","name":"Venus in Capricorn Musicians","url":"https://radio-venus.club/sign/capricorn/"},{"@type":"WebPage","name":"Venus in Aquarius Musicians","url":"https://radio-venus.club/sign/aquarius/"},{"@type":"WebPage","name":"Venus in Pisces Musicians","url":"https://radio-venus.club/sign/pisces/"}]}</script>
 </head>
 <body>
