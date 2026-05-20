@@ -47,19 +47,33 @@
   }
   </script>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KSY81MM0E6"></script>
+  <!-- Google Analytics — queue initialised inline; script loaded after page is interactive -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-KSY81MM0E6');
+    window.addEventListener('load', function() {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-KSY81MM0E6';
+      document.head.appendChild(s);
+    });
   </script>
   
   <script type="importmap">
     { "imports": { "astronomy-engine": "/node_modules/astronomy-engine/esm/astronomy.js" } }
   </script>
   
+  <!-- Critical CSS — just enough to show dark background and portal layout
+       before the full stylesheet (deferred via preload in prod) arrives. -->
+  <style>
+    *,*:before,*:after{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:#0a0a0c;color:#c8c8d0;overflow:hidden}
+    .screen{position:fixed;inset:0;opacity:0;pointer-events:none;display:flex;align-items:center;justify-content:center;overflow-y:auto}
+    .screen.active{opacity:1;pointer-events:auto}
+    .screen-inner{display:flex;flex-direction:column;align-items:center;width:100%;max-width:600px;margin:auto;padding:3.5rem 2rem 3rem;text-align:center}
+  </style>
   <link rel="stylesheet" href="/src/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
