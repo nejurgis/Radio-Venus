@@ -18,6 +18,21 @@ const GENRE_LABELS = {
 
 const MIN_ARTISTS = 5;
 
+const SIGN_META = {
+  Aries:       'Impulsive, raw, pioneering — Venus in Aries musicians hit before you can think. Discover artists who share this placement on Radio Venus.',
+  Taurus:      'Lush, sensual, unhurried — Venus in Taurus musicians build sound you can almost touch. Discover artists who share this placement on Radio Venus.',
+  Gemini:      'Restless, clever, shape-shifting — Venus in Gemini musicians can\'t sit still in one genre. Discover artists who share this placement on Radio Venus.',
+  Cancer:      'Nostalgic, intimate, protective — Venus in Cancer musicians make sound that feels like a memory. Discover artists who share this placement on Radio Venus.',
+  Leo:         'Dramatic, generous, radiant — Venus in Leo musicians command a stage and make you feel seen. Discover artists who share this placement on Radio Venus.',
+  Virgo:       'Precise, devoted, understated — Venus in Virgo musicians hear details nobody else catches. Discover artists who share this placement on Radio Venus.',
+  Libra:       'Harmonious, elegant, relational — Venus in Libra musicians are natural aesthetes. Discover artists who share this placement on Radio Venus.',
+  Scorpio:     'Intense, underground, transformative — Venus in Scorpio musicians are drawn to the edges. Discover artists who share this placement on Radio Venus.',
+  Sagittarius: 'Expansive, eclectic, philosophical — Venus in Sagittarius musicians borrow freely from every culture. Discover artists who share this placement on Radio Venus.',
+  Capricorn:   'Structured, austere, enduring — Venus in Capricorn musicians build cathedrals of sound. Discover artists who share this placement on Radio Venus.',
+  Aquarius:    'Experimental, detached, futuristic — Venus in Aquarius musicians hear sounds from tomorrow. Discover artists who share this placement on Radio Venus.',
+  Pisces:      'Ethereal, boundless, devotional — Venus in Pisces musicians dissolve the line between sound and feeling. Discover artists who share this placement on Radio Venus.',
+};
+
 const SIGN_ELEMENTS = {
   Aries: 'fire', Leo: 'fire', Sagittarius: 'fire',
   Taurus: 'earth', Virgo: 'earth', Capricorn: 'earth',
@@ -294,8 +309,8 @@ for (const sign of SIGNS) {
     },
   ]);
 
-  const metaDesc = `Explore music tailored for a Venus in ${sign} placement. Discover the astrological coordinates of your music taste.`;
-  const title = `${sign} Music — Astrological Discovery | Radio Venus`;
+  const metaDesc = SIGN_META[sign];
+  const title = `Venus in ${sign} Music — Artists & Playlist | Radio Venus`;
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -379,8 +394,8 @@ for (const sign of SIGNS) {
     },
     ]);
 
-    const title = `${sign} ${genreLabel} Music — Astrological Discovery | Radio Venus`;
-    const metaDesc = `Explore ${genreLabel} music tailored for a Venus in ${sign} placement. Discover the astrological coordinates of your music taste.`;
+    const title = `Venus in ${sign} ${genreLabel} — Artists & Playlist | Radio Venus`;
+    const metaDesc = `${SIGN_META[sign].split(' — ')[0]} — ${genreLabel} artists with Venus in ${sign}. Discover them on Radio Venus.`;
 
     const siblingSection = siblingLinks ? `
     <nav class="sign-nav sibling-nav" aria-label="Same genre, other signs">
