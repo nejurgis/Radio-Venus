@@ -698,4 +698,5 @@ ${sitemapUrls.map(({ url, priority, changefreq }) => `  <url>
 </urlset>`;
 
 fs.writeFileSync('./dist/sitemap.xml', sitemap);
+fs.writeFileSync('./public/sitemap.xml', sitemap);
 console.log(`  sitemap.xml updated (${sitemapUrls.length + 1} URLs)`);
