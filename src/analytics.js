@@ -168,3 +168,12 @@ export function trackNebulaInteraction(action) {
     action: action
   });
 }
+
+export function trackExplainerAction(action, sign) {
+  // action: 'close', 'read_more', 'astrology_link'
+  send('explainer_interaction', {
+    event_category: 'engagement',
+    action,
+    sign,
+  });
+}

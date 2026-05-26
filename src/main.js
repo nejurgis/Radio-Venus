@@ -22,6 +22,7 @@ import {
   trackSongStart, trackSongComplete, trackSongSkip, trackSongError,
   trackShare, trackGenreSelect, trackFavorite, trackHarpToggle, trackPlaylistShare, trackShuffle,
   trackChartCalculated, trackNewsletterSubscribe, trackScreenView, trackOutboundClick,
+  trackExplainerAction,
 } from './analytics.js';
 
 // ── State ───────────────────────────────────────────────────────────────────
@@ -807,16 +808,17 @@ function showVenusExplainer(venus) {
   overlay.classList.add('is-visible');
 
   document.getElementById('btn-explainer-close').onclick = () => {
-    gtag('event', 'explainer_close', { venus_sign: venus.sign });
+    trackExplainerAction('close', venus.sign);
     dismiss();
   };
   document.getElementById('btn-explainer-about').onclick = () => {
-    gtag('event', 'explainer_read_more', { venus_sign: venus.sign });
+    trackExplainerAction('read_more', venus.sign);
     dismiss();
     document.getElementById('btn-info').click();
   };
   document.getElementById('venus-explainer').querySelector('a[href*="jurgis.info"]').onclick = () => {
-    gtag('event', 'explainer_astrology_link', { venus_sign: venus.sign });
+    trackExplainerAction('astrology_link', venus.sign);
+    // trackOutboundClick already fires via the global click listener in main.js
   };
 }
 
