@@ -782,6 +782,35 @@ async function onDateSubmit(d, m, y) {
   history.pushState({ screen: 'reveal' }, '');
 
   rebuildGenreGrid();
+  setTimeout(() => showVenusExplainer(venus), 600);
+}
+
+function showVenusExplainer(venus) {
+  if (localStorage.getItem('rv_seen_explainer')) return;
+  const overlay = document.getElementById('venus-explainer');
+  if (!overlay) return;
+
+  const signEl = document.getElementById('explainer-sign-name');
+  if (signEl) {
+    signEl.textContent = venus.sign;
+    signEl.style.color = `var(--${venus.element})`;
+  }
+
+  function dismiss() {
+    overlay.classList.remove('is-visible');
+    localStorage.setItem('rv_seen_explainer', '1');
+    overlay.addEventListener('transitionend', () => { overlay.hidden = true; }, { once: true });
+  }
+
+  overlay.hidden = false;
+  overlay.offsetHeight; // force reflow for transition
+  overlay.classList.add('is-visible');
+
+  document.getElementById('btn-explainer-close').onclick = dismiss;
+  document.getElementById('btn-explainer-about').onclick = () => {
+    dismiss();
+    document.getElementById('btn-info').click();
+  };
 }
 
 async function zoomInToReveal() {

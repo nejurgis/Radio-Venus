@@ -1697,6 +1697,84 @@ p a:hover {
   opacity: 0.7;
 }
 
+/* ── Venus explainer popup ───────────────────────────────────────────────── */
+
+.venus-explainer {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(10, 10, 12, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s ease;
+}
+
+.venus-explainer.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.venus-explainer-card {
+  max-width: 360px;
+  width: 100%;
+  background: rgba(16, 16, 20, 0.07);
+  border: none;
+  border-radius: 5.1rem;
+  padding: 2rem 2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  box-shadow:
+    0 32px 80px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transform: translateY(10px);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.venus-explainer.is-visible .venus-explainer-card {
+  transform: translateY(0);
+}
+
+.explainer-body {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+.explainer-body--centered {
+  text-align: center;
+}
+
+.explainer-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--text-bright);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(200, 200, 208, 0.35);
+  cursor: pointer;
+  transition: text-decoration-color 0.2s;
+}
+
+.explainer-link:hover {
+  text-decoration-color: rgba(200, 200, 208, 0.8);
+}
+
+.explainer-btn-close {
+  margin-top: 0.4rem;
+  align-self: center;
+}
+
 /* Container for the star in the list THIS IS HERE SO THAT THE STAR WOULD ANIMATE WHEN ITS ADDED */ 
 .track-fav-container {
   display: flex;
