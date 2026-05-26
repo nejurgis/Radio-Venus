@@ -806,10 +806,17 @@ function showVenusExplainer(venus) {
   overlay.offsetHeight; // force reflow for transition
   overlay.classList.add('is-visible');
 
-  document.getElementById('btn-explainer-close').onclick = dismiss;
+  document.getElementById('btn-explainer-close').onclick = () => {
+    gtag('event', 'explainer_close', { venus_sign: venus.sign });
+    dismiss();
+  };
   document.getElementById('btn-explainer-about').onclick = () => {
+    gtag('event', 'explainer_read_more', { venus_sign: venus.sign });
     dismiss();
     document.getElementById('btn-info').click();
+  };
+  document.getElementById('venus-explainer').querySelector('a[href*="jurgis.info"]').onclick = () => {
+    gtag('event', 'explainer_astrology_link', { venus_sign: venus.sign });
   };
 }
 
