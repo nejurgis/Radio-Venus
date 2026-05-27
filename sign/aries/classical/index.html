@@ -66,9 +66,10 @@
     font-size: 5rem; display: block; line-height: 1;
     margin-bottom: 0.5rem; color: #fff;
   }
-  .sign-name {
+  h1.sign-name {
     display: block; font-size: 0.6rem; letter-spacing: 0.1em;
     text-transform: lowercase; color: #fff; text-align: center;
+    font-weight: 400; margin: 0; line-height: 1;
   }
   .sign-desc {
     font-size: 1rem; line-height: 1.4;
@@ -142,10 +143,10 @@
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
     <p class="breadcrumb"><a href="/sign/aries/">Venus in Aries</a><span>›</span>Classical</p>
-    <p class="sign-lead">
-      <span class="zodiac-char">A</span>
-      <span class="sign-name">Venus in Aries — Classical</span>
-    </p>
+    <div class="sign-lead">
+      <span class="zodiac-char" aria-hidden="true">A</span>
+      <h1 class="sign-name">Venus in Aries — Classical</h1>
+    </div>
     <p class="sign-desc">Impulsive, raw, pioneering. Venus in Aries musicians move fast and break first — their sound hits before you can think about it. Expect punk urgency, aggressive hooks, and music that starts in the middle of the action. Artists who share this placement cut through noise with sheer force of personality.</p>
     <nav class="genre-nav" aria-label="Filter by genre">
     <p class="nav-label">Filter by genre</p>
@@ -167,8 +168,9 @@
       <a href="/sign/aries/intercelestial/">Intercelestial (6)</a>
     </div>
   </nav>
-    <p class="artist-count">8 musicians in the database</p>
-    <ul class="artist-list">
+    <section aria-label="Classical artists with Venus in Aries">
+      <p class="artist-count">8 musicians in the database</p>
+      <ul class="artist-list">
     <li>
       <a class="artist-name" href="/?vid=TLMaE-kGr4k&artist=Anthony%20Braxton&gid=classical&t=0&sign=aries&genre=Classical">Anthony Braxton</a>
       <span class="artist-meta">30° Aries · classical, jazz</span>
@@ -201,7 +203,8 @@
       <a class="artist-name" href="/?vid=KDfGBmbNbMw&artist=Sergei%20Prokofiev&gid=classical&t=0&sign=aries&genre=Classical">Sergei Prokofiev</a>
       <span class="artist-meta">0° Aries · classical</span>
     </li>
-    </ul>
+      </ul>
+    </section>
     <div class="cta">
       <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
     </div>

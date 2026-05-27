@@ -66,9 +66,10 @@
     font-size: 5rem; display: block; line-height: 1;
     margin-bottom: 0.5rem; color: #fff;
   }
-  .sign-name {
+  h1.sign-name {
     display: block; font-size: 0.6rem; letter-spacing: 0.1em;
     text-transform: lowercase; color: #fff; text-align: center;
+    font-weight: 400; margin: 0; line-height: 1;
   }
   .sign-desc {
     font-size: 1rem; line-height: 1.4;
@@ -142,10 +143,10 @@
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
     <p class="breadcrumb"><a href="/sign/virgo/">Venus in Virgo</a><span>›</span>Ambient</p>
-    <p class="sign-lead">
-      <span class="zodiac-char">F</span>
-      <span class="sign-name">Venus in Virgo — Ambient</span>
-    </p>
+    <div class="sign-lead">
+      <span class="zodiac-char" aria-hidden="true">F</span>
+      <h1 class="sign-name">Venus in Virgo — Ambient</h1>
+    </div>
     <p class="sign-desc">Precise, devoted, understated. These musicians hear details nobody else catches — the perfect hi-hat placement, the lyric revised thirty times until it's inevitable. Their beauty is in craft, not spectacle. Music that reveals itself slowly, rewarding close attention.</p>
     <nav class="genre-nav" aria-label="Filter by genre">
     <p class="nav-label">Filter by genre</p>
@@ -167,8 +168,9 @@
       <a href="/sign/virgo/intercelestial/">Intercelestial (7)</a>
     </div>
   </nav>
-    <p class="artist-count">27 musicians in the database</p>
-    <ul class="artist-list">
+    <section aria-label="Ambient artists with Venus in Virgo">
+      <p class="artist-count">27 musicians in the database</p>
+      <ul class="artist-list">
     <li>
       <a class="artist-name" href="/?vid=TJJpOabDPMc&artist=Arvo%20P%C3%A4rt&gid=classical&t=0&sign=virgo&genre=Classical">Arvo Pärt</a>
       <span class="artist-meta">13° Virgo · classical, ambient</span>
@@ -277,7 +279,8 @@
       <a class="artist-name" href="/?vid=AaXT3raG5gY&artist=The%20Orb&gid=ambient&t=0&sign=virgo&genre=Ambient">The Orb</a>
       <span class="artist-meta">26° Virgo · ambient, techno</span>
     </li>
-    </ul>
+      </ul>
+    </section>
     <div class="cta">
       <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
     </div>

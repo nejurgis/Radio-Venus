@@ -66,9 +66,10 @@
     font-size: 5rem; display: block; line-height: 1;
     margin-bottom: 0.5rem; color: #fff;
   }
-  .sign-name {
+  h1.sign-name {
     display: block; font-size: 0.6rem; letter-spacing: 0.1em;
     text-transform: lowercase; color: #fff; text-align: center;
+    font-weight: 400; margin: 0; line-height: 1;
   }
   .sign-desc {
     font-size: 1rem; line-height: 1.4;
@@ -142,10 +143,10 @@
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
     <p class="breadcrumb"><a href="/sign/scorpio/">Venus in Scorpio</a><span>›</span>Electronica</p>
-    <p class="sign-lead">
-      <span class="zodiac-char">H</span>
-      <span class="sign-name">Venus in Scorpio — Electronica</span>
-    </p>
+    <div class="sign-lead">
+      <span class="zodiac-char" aria-hidden="true">H</span>
+      <h1 class="sign-name">Venus in Scorpio — Electronica</h1>
+    </div>
     <p class="sign-desc">Intense, underground, transformative. Venus in Scorpio musicians are drawn to the edges — darkwave, industrial, music that confronts what others avoid. Their aesthetic is magnetic precisely because it refuses to be comfortable. Beauty found in depth, obsession, and catharsis.</p>
     <nav class="genre-nav" aria-label="Filter by genre">
     <p class="nav-label">Filter by genre</p>
@@ -169,8 +170,9 @@
       <a href="/sign/scorpio/intercelestial/">Intercelestial (8)</a>
     </div>
   </nav>
-    <p class="artist-count">28 musicians in the database</p>
-    <ul class="artist-list">
+    <section aria-label="Electronica artists with Venus in Scorpio">
+      <p class="artist-count">28 musicians in the database</p>
+      <ul class="artist-list">
     <li>
       <a class="artist-name" href="/?vid=h3l8bNhJKfU&artist=Actress&gid=dnb&t=0&sign=scorpio&genre=Drum%20%26%20Bass">Actress</a>
       <span class="artist-meta">25° Scorpio · dnb, electronica, idm, techno, artpop, ambient</span>
@@ -283,7 +285,8 @@
       <a class="artist-name" href="/?vid=VCHH4Tvjrhk&artist=Zsela&gid=hiphop&t=0&sign=scorpio&genre=Hip-Hop">Zsela</a>
       <span class="artist-meta">24° Scorpio · hiphop, idm, triphop, artpop, techno, ambient, indiepop, electronica, jazz</span>
     </li>
-    </ul>
+      </ul>
+    </section>
     <div class="cta">
       <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
     </div>

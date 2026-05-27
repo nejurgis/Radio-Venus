@@ -66,9 +66,10 @@
     font-size: 5rem; display: block; line-height: 1;
     margin-bottom: 0.5rem; color: #fff;
   }
-  .sign-name {
+  h1.sign-name {
     display: block; font-size: 0.6rem; letter-spacing: 0.1em;
     text-transform: lowercase; color: #fff; text-align: center;
+    font-weight: 400; margin: 0; line-height: 1;
   }
   .sign-desc {
     font-size: 1rem; line-height: 1.4;
@@ -142,10 +143,10 @@
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
     <p class="breadcrumb"><a href="/sign/libra/">Venus in Libra</a><span>›</span>Jazz</p>
-    <p class="sign-lead">
-      <span class="zodiac-char">G</span>
-      <span class="sign-name">Venus in Libra — Jazz</span>
-    </p>
+    <div class="sign-lead">
+      <span class="zodiac-char" aria-hidden="true">G</span>
+      <h1 class="sign-name">Venus in Libra — Jazz</h1>
+    </div>
     <p class="sign-desc">Harmonious, elegant, relational. Venus rules Libra, and musicians here are natural aesthetes — every element balanced, every collaboration elevated. Expect beautiful arrangements, sophisticated chord progressions, and an instinct for what sounds right together.</p>
     <nav class="genre-nav" aria-label="Filter by genre">
     <p class="nav-label">Filter by genre</p>
@@ -167,8 +168,9 @@
       <a href="/sign/libra/industrial/">Industrial (5)</a>
     </div>
   </nav>
-    <p class="artist-count">15 musicians in the database</p>
-    <ul class="artist-list">
+    <section aria-label="Jazz artists with Venus in Libra">
+      <p class="artist-count">15 musicians in the database</p>
+      <ul class="artist-list">
     <li>
       <a class="artist-name" href="/?vid=k5VSdpwvYKk&artist=Alireza%20Mortazavi&gid=intercelestial&t=0&sign=libra&genre=Intercelestial">Alireza Mortazavi</a>
       <span class="artist-meta">19° Libra · intercelestial, idm, ambient, jazz</span>
@@ -229,7 +231,8 @@
       <a class="artist-name" href="/?vid=8z461mUTDBQ&artist=Yasuaki%20Shimizu&gid=idm&t=0&sign=libra&genre=IDM">Yasuaki Shimizu</a>
       <span class="artist-meta">1° Libra · idm, ambient, jazz, darkwave, electronica, classical, techno, folk</span>
     </li>
-    </ul>
+      </ul>
+    </section>
     <div class="cta">
       <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
     </div>

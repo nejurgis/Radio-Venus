@@ -66,9 +66,10 @@
     font-size: 5rem; display: block; line-height: 1;
     margin-bottom: 0.5rem; color: #fff;
   }
-  .sign-name {
+  h1.sign-name {
     display: block; font-size: 0.6rem; letter-spacing: 0.1em;
     text-transform: lowercase; color: #fff; text-align: center;
+    font-weight: 400; margin: 0; line-height: 1;
   }
   .sign-desc {
     font-size: 1rem; line-height: 1.4;
@@ -141,10 +142,10 @@
 <body>
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
-    <p class="sign-lead">
-      <span class="zodiac-char">A</span>
-      <span class="sign-name">Venus in Aries</span>
-    </p>
+    <div class="sign-lead">
+      <span class="zodiac-char" aria-hidden="true">A</span>
+      <h1 class="sign-name">Venus in Aries</h1>
+    </div>
     <p class="sign-desc">Impulsive, raw, pioneering. Venus in Aries musicians move fast and break first — their sound hits before you can think about it. Expect punk urgency, aggressive hooks, and music that starts in the middle of the action. Artists who share this placement cut through noise with sheer force of personality.</p>
     <section class="sign-astro">
       <h2>What does Venus in Aries mean?</h2>
@@ -172,8 +173,9 @@
       <a href="/sign/aries/intercelestial/">Intercelestial (6)</a>
     </div>
   </nav>
-    <p class="artist-count">90 musicians in the database</p>
-    <ul class="artist-list">
+    <section aria-label="Artists with Venus in Aries">
+      <p class="artist-count">90 musicians in the database</p>
+      <ul class="artist-list">
     <li>
       <a class="artist-name" href="/?vid=QTBGq-RyPFk&artist=A%20Lily&gid=ambient&t=0&sign=aries&genre=Ambient">A Lily</a>
       <span class="artist-meta">7° Aries · ambient</span>
@@ -534,7 +536,8 @@
       <a class="artist-name" href="/?vid=f2f-eua-7jo&artist=Wilson%20Tanner&gid=ambient&t=0&sign=aries&genre=Ambient">Wilson Tanner</a>
       <span class="artist-meta">3° Aries · ambient, idm</span>
     </li>
-    </ul>
+      </ul>
+    </section>
     <div class="cta">
       <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
     </div>

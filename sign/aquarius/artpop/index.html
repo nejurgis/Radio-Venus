@@ -66,9 +66,10 @@
     font-size: 5rem; display: block; line-height: 1;
     margin-bottom: 0.5rem; color: #fff;
   }
-  .sign-name {
+  h1.sign-name {
     display: block; font-size: 0.6rem; letter-spacing: 0.1em;
     text-transform: lowercase; color: #fff; text-align: center;
+    font-weight: 400; margin: 0; line-height: 1;
   }
   .sign-desc {
     font-size: 1rem; line-height: 1.4;
@@ -142,10 +143,10 @@
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
     <p class="breadcrumb"><a href="/sign/aquarius/">Venus in Aquarius</a><span>›</span>Art Pop</p>
-    <p class="sign-lead">
-      <span class="zodiac-char">L</span>
-      <span class="sign-name">Venus in Aquarius — Art Pop</span>
-    </p>
+    <div class="sign-lead">
+      <span class="zodiac-char" aria-hidden="true">L</span>
+      <h1 class="sign-name">Venus in Aquarius — Art Pop</h1>
+    </div>
     <p class="sign-desc">Experimental, detached, futuristic. These musicians hear sounds from tomorrow — electronic pioneers, avant-garde provocateurs, artists who would rather invent a genre than join one. Their beauty is cerebral and strange, and it often takes years for everyone else to catch up.</p>
     <nav class="genre-nav" aria-label="Filter by genre">
     <p class="nav-label">Filter by genre</p>
@@ -169,8 +170,9 @@
       <a href="/sign/aquarius/intercelestial/">Intercelestial (9)</a>
     </div>
   </nav>
-    <p class="artist-count">21 musicians in the database</p>
-    <ul class="artist-list">
+    <section aria-label="Art Pop artists with Venus in Aquarius">
+      <p class="artist-count">21 musicians in the database</p>
+      <ul class="artist-list">
     <li>
       <a class="artist-name" href="/?vid=vzOEJJWuIaw&artist=Anni%20Hogan&gid=ambient&t=0&sign=aquarius&genre=Ambient">Anni Hogan</a>
       <span class="artist-meta">26° Aquarius · ambient, darkwave, artpop</span>
@@ -255,7 +257,8 @@
       <a class="artist-name" href="/?vid=yF-AULThopw&artist=Yoko%20Ono&gid=idm&t=0&sign=aquarius&genre=IDM">Yoko Ono</a>
       <span class="artist-meta">14° Aquarius · idm, artpop, folk, altrock, darkwave, ambient, industrial, indiepop</span>
     </li>
-    </ul>
+      </ul>
+    </section>
     <div class="cta">
       <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
     </div>

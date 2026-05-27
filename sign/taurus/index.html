@@ -66,9 +66,10 @@
     font-size: 5rem; display: block; line-height: 1;
     margin-bottom: 0.5rem; color: #fff;
   }
-  .sign-name {
+  h1.sign-name {
     display: block; font-size: 0.6rem; letter-spacing: 0.1em;
     text-transform: lowercase; color: #fff; text-align: center;
+    font-weight: 400; margin: 0; line-height: 1;
   }
   .sign-desc {
     font-size: 1rem; line-height: 1.4;
@@ -141,10 +142,10 @@
 <body>
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
-    <p class="sign-lead">
-      <span class="zodiac-char">B</span>
-      <span class="sign-name">Venus in Taurus</span>
-    </p>
+    <div class="sign-lead">
+      <span class="zodiac-char" aria-hidden="true">B</span>
+      <h1 class="sign-name">Venus in Taurus</h1>
+    </div>
     <p class="sign-desc">Lush, sensual, unhurried. Venus is at home in Taurus, and musicians with this placement build sound you can almost touch — rich textures, warm bass, voices like velvet. Their work rewards patience and repeat listening. This is music made for bodies, not just ears.</p>
     <section class="sign-astro">
       <h2>What does Venus in Taurus mean?</h2>
@@ -174,8 +175,9 @@
       <a href="/sign/taurus/dnb/">Drum & Bass (10)</a>
     </div>
   </nav>
-    <p class="artist-count">130 musicians in the database</p>
-    <ul class="artist-list">
+    <section aria-label="Artists with Venus in Taurus">
+      <p class="artist-count">130 musicians in the database</p>
+      <ul class="artist-list">
     <li>
       <a class="artist-name" href="/?vid=N3ZfcaijhJc&artist=16%3A9%20ratio&gid=idm&t=0&sign=taurus&genre=IDM">16:9 ratio</a>
       <span class="artist-meta">9° Taurus · idm, techno, electronica</span>
@@ -696,7 +698,8 @@
       <a class="artist-name" href="/?vid=R9EaahLe69I&artist=Zosha%20Warpeha&gid=classical&t=0&sign=taurus&genre=Classical">Zosha Warpeha</a>
       <span class="artist-meta">9° Taurus · classical, artpop, intercelestial</span>
     </li>
-    </ul>
+      </ul>
+    </section>
     <div class="cta">
       <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
     </div>

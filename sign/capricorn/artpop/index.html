@@ -66,9 +66,10 @@
     font-size: 5rem; display: block; line-height: 1;
     margin-bottom: 0.5rem; color: #fff;
   }
-  .sign-name {
+  h1.sign-name {
     display: block; font-size: 0.6rem; letter-spacing: 0.1em;
     text-transform: lowercase; color: #fff; text-align: center;
+    font-weight: 400; margin: 0; line-height: 1;
   }
   .sign-desc {
     font-size: 1rem; line-height: 1.4;
@@ -142,10 +143,10 @@
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
     <p class="breadcrumb"><a href="/sign/capricorn/">Venus in Capricorn</a><span>›</span>Art Pop</p>
-    <p class="sign-lead">
-      <span class="zodiac-char">K</span>
-      <span class="sign-name">Venus in Capricorn — Art Pop</span>
-    </p>
+    <div class="sign-lead">
+      <span class="zodiac-char" aria-hidden="true">K</span>
+      <h1 class="sign-name">Venus in Capricorn — Art Pop</h1>
+    </div>
     <p class="sign-desc">Structured, austere, enduring. Venus in Capricorn musicians build cathedrals — compositions with architecture, albums that function as complete statements. Expect discipline in the craft, respect for tradition, and a seriousness that ages into timelessness.</p>
     <nav class="genre-nav" aria-label="Filter by genre">
     <p class="nav-label">Filter by genre</p>
@@ -169,8 +170,9 @@
       <a href="/sign/capricorn/dnb/">Drum & Bass (5)</a>
     </div>
   </nav>
-    <p class="artist-count">23 musicians in the database</p>
-    <ul class="artist-list">
+    <section aria-label="Art Pop artists with Venus in Capricorn">
+      <p class="artist-count">23 musicians in the database</p>
+      <ul class="artist-list">
     <li>
       <a class="artist-name" href="/?vid=I0SVd_Q5wIg&artist=Air&gid=ambient&t=0&sign=capricorn&genre=Ambient">Air</a>
       <span class="artist-meta">26° Capricorn · ambient, artpop, electronica, triphop</span>
@@ -263,7 +265,8 @@
       <a class="artist-name" href="/?vid=kIFG56TSa8M&artist=Voice%20Actor&gid=indiepop&t=0&sign=capricorn&genre=Indie%20Pop">Voice Actor</a>
       <span class="artist-meta">12° Capricorn · indiepop, ambient, folk, idm, hiphop, triphop, artpop, techno, electronica, intercelestial</span>
     </li>
-    </ul>
+      </ul>
+    </section>
     <div class="cta">
       <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
     </div>

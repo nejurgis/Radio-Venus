@@ -66,9 +66,10 @@
     font-size: 5rem; display: block; line-height: 1;
     margin-bottom: 0.5rem; color: #fff;
   }
-  .sign-name {
+  h1.sign-name {
     display: block; font-size: 0.6rem; letter-spacing: 0.1em;
     text-transform: lowercase; color: #fff; text-align: center;
+    font-weight: 400; margin: 0; line-height: 1;
   }
   .sign-desc {
     font-size: 1rem; line-height: 1.4;
@@ -142,10 +143,10 @@
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
     <p class="breadcrumb"><a href="/sign/pisces/">Venus in Pisces</a><span>›</span>Indie Pop</p>
-    <p class="sign-lead">
-      <span class="zodiac-char">M</span>
-      <span class="sign-name">Venus in Pisces — Indie Pop</span>
-    </p>
+    <div class="sign-lead">
+      <span class="zodiac-char" aria-hidden="true">M</span>
+      <h1 class="sign-name">Venus in Pisces — Indie Pop</h1>
+    </div>
     <p class="sign-desc">Ethereal, boundless, devotional. Venus is exalted in Pisces, and musicians here dissolve the line between sound and feeling — ambient, shoegaze, sacred music, anything that erases edges. Their art is an act of surrender, and listening to it feels like floating.</p>
     <nav class="genre-nav" aria-label="Filter by genre">
     <p class="nav-label">Filter by genre</p>
@@ -167,8 +168,9 @@
       <a href="/sign/pisces/folk/">Folk (5)</a>
     </div>
   </nav>
-    <p class="artist-count">6 musicians in the database</p>
-    <ul class="artist-list">
+    <section aria-label="Indie Pop artists with Venus in Pisces">
+      <p class="artist-count">6 musicians in the database</p>
+      <ul class="artist-list">
     <li>
       <a class="artist-name" href="/?vid=GnrnxGF3LVM&artist=Adelyn%20Strei&gid=folk&t=0&sign=pisces&genre=Folk">Adelyn Strei</a>
       <span class="artist-meta">18° Pisces · folk, indiepop, idm, ambient, artpop, techno, altrock</span>
@@ -193,7 +195,8 @@
       <a class="artist-name" href="/?vid=RAc36S8iEhg&artist=MJ%20Lenderman&gid=folk&t=0&sign=pisces&genre=Folk">MJ Lenderman</a>
       <span class="artist-meta">9° Pisces · folk, indiepop, electronica, altrock, artpop, darkwave</span>
     </li>
-    </ul>
+      </ul>
+    </section>
     <div class="cta">
       <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
     </div>

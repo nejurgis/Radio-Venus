@@ -66,9 +66,10 @@
     font-size: 5rem; display: block; line-height: 1;
     margin-bottom: 0.5rem; color: #fff;
   }
-  .sign-name {
+  h1.sign-name {
     display: block; font-size: 0.6rem; letter-spacing: 0.1em;
     text-transform: lowercase; color: #fff; text-align: center;
+    font-weight: 400; margin: 0; line-height: 1;
   }
   .sign-desc {
     font-size: 1rem; line-height: 1.4;
@@ -142,10 +143,10 @@
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
     <p class="breadcrumb"><a href="/sign/gemini/">Venus in Gemini</a><span>›</span>Trip-Hop</p>
-    <p class="sign-lead">
-      <span class="zodiac-char">C</span>
-      <span class="sign-name">Venus in Gemini — Trip-Hop</span>
-    </p>
+    <div class="sign-lead">
+      <span class="zodiac-char" aria-hidden="true">C</span>
+      <h1 class="sign-name">Venus in Gemini — Trip-Hop</h1>
+    </div>
     <p class="sign-desc">Restless, clever, shape-shifting. Venus in Gemini musicians can't sit still in one genre — they sample everything, talk fast, and make connections nobody else sees. Expect wit in the lyrics, unexpected genre-blending, and an intellectual sparkle that keeps you guessing.</p>
     <nav class="genre-nav" aria-label="Filter by genre">
     <p class="nav-label">Filter by genre</p>
@@ -169,8 +170,9 @@
       <a href="/sign/gemini/classical/">Classical (6)</a>
     </div>
   </nav>
-    <p class="artist-count">35 musicians in the database</p>
-    <ul class="artist-list">
+    <section aria-label="Trip-Hop artists with Venus in Gemini">
+      <p class="artist-count">35 musicians in the database</p>
+      <ul class="artist-list">
     <li>
       <a class="artist-name" href="/?vid=5WR9mOh8HAA&artist=Archive&gid=triphop&t=0&sign=gemini&genre=Trip-Hop">Archive</a>
       <span class="artist-meta">17° Gemini · triphop</span>
@@ -311,7 +313,8 @@
       <a class="artist-name" href="/?vid=7_mWE_xahxY&artist=YE%D0%98DRY&gid=hiphop&t=0&sign=gemini&genre=Hip-Hop">YEИDRY</a>
       <span class="artist-meta">24° Gemini · hiphop, triphop, artpop, intercelestial, electronica</span>
     </li>
-    </ul>
+      </ul>
+    </section>
     <div class="cta">
       <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
     </div>

@@ -66,9 +66,10 @@
     font-size: 5rem; display: block; line-height: 1;
     margin-bottom: 0.5rem; color: #fff;
   }
-  .sign-name {
+  h1.sign-name {
     display: block; font-size: 0.6rem; letter-spacing: 0.1em;
     text-transform: lowercase; color: #fff; text-align: center;
+    font-weight: 400; margin: 0; line-height: 1;
   }
   .sign-desc {
     font-size: 1rem; line-height: 1.4;
@@ -142,10 +143,10 @@
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
     <p class="breadcrumb"><a href="/sign/sagittarius/">Venus in Sagittarius</a><span>›</span>Indie Pop</p>
-    <p class="sign-lead">
-      <span class="zodiac-char">J</span>
-      <span class="sign-name">Venus in Sagittarius — Indie Pop</span>
-    </p>
+    <div class="sign-lead">
+      <span class="zodiac-char" aria-hidden="true">J</span>
+      <h1 class="sign-name">Venus in Sagittarius — Indie Pop</h1>
+    </div>
     <p class="sign-desc">Expansive, eclectic, philosophical. These musicians borrow freely from every culture and tradition they encounter — world music, fusion, genre-defying experiments driven by genuine curiosity. Their sound has horizon in it, always pointing somewhere you haven't been.</p>
     <nav class="genre-nav" aria-label="Filter by genre">
     <p class="nav-label">Filter by genre</p>
@@ -163,8 +164,9 @@
       <a href="/sign/sagittarius/indiepop/" class="current">Indie Pop (5)</a>
     </div>
   </nav>
-    <p class="artist-count">5 musicians in the database</p>
-    <ul class="artist-list">
+    <section aria-label="Indie Pop artists with Venus in Sagittarius">
+      <p class="artist-count">5 musicians in the database</p>
+      <ul class="artist-list">
     <li>
       <a class="artist-name" href="/?vid=eW8XoovSlsM&artist=Cassandra%20Jenkins&gid=folk&t=0&sign=sagittarius&genre=Folk">Cassandra Jenkins</a>
       <span class="artist-meta">1° Sagittarius · folk, indiepop</span>
@@ -185,7 +187,8 @@
       <a class="artist-name" href="/?vid=Q249Zkhgkx8&artist=Maxine%20Funke&gid=idm&t=0&sign=sagittarius&genre=IDM">Maxine Funke</a>
       <span class="artist-meta">25° Sagittarius · idm, jazz, ambient, folk, indiepop</span>
     </li>
-    </ul>
+      </ul>
+    </section>
     <div class="cta">
       <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
     </div>

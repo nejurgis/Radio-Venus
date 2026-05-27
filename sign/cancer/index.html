@@ -66,9 +66,10 @@
     font-size: 5rem; display: block; line-height: 1;
     margin-bottom: 0.5rem; color: #fff;
   }
-  .sign-name {
+  h1.sign-name {
     display: block; font-size: 0.6rem; letter-spacing: 0.1em;
     text-transform: lowercase; color: #fff; text-align: center;
+    font-weight: 400; margin: 0; line-height: 1;
   }
   .sign-desc {
     font-size: 1rem; line-height: 1.4;
@@ -141,10 +142,10 @@
 <body>
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
-    <p class="sign-lead">
-      <span class="zodiac-char">D</span>
-      <span class="sign-name">Venus in Cancer</span>
-    </p>
+    <div class="sign-lead">
+      <span class="zodiac-char" aria-hidden="true">D</span>
+      <h1 class="sign-name">Venus in Cancer</h1>
+    </div>
     <p class="sign-desc">Nostalgic, intimate, protective. These musicians make sound that feels like a memory you can't quite place — home recordings, confessional songwriting, melodies that ache. Their beauty lives in vulnerability and the courage to be tender in public.</p>
     <section class="sign-astro">
       <h2>What does Venus in Cancer mean?</h2>
@@ -173,8 +174,9 @@
       <a href="/sign/cancer/intercelestial/">Intercelestial (12)</a>
     </div>
   </nav>
-    <p class="artist-count">120 musicians in the database</p>
-    <ul class="artist-list">
+    <section aria-label="Artists with Venus in Cancer">
+      <p class="artist-count">120 musicians in the database</p>
+      <ul class="artist-list">
     <li>
       <a class="artist-name" href="/?vid=xWsIG5sNq1Q&artist=Albert%20Ayler&gid=jazz&t=0&sign=cancer&genre=Jazz">Albert Ayler</a>
       <span class="artist-meta">25° Cancer · jazz</span>
@@ -655,7 +657,8 @@
       <a class="artist-name" href="/?vid=CnEV27cm9Sc&artist=Westside%20Gunn&gid=hiphop&t=0&sign=cancer&genre=Hip-Hop">Westside Gunn</a>
       <span class="artist-meta">8° Cancer · hiphop, idm, triphop, jazz</span>
     </li>
-    </ul>
+      </ul>
+    </section>
     <div class="cta">
       <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
     </div>

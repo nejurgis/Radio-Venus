@@ -66,9 +66,10 @@
     font-size: 5rem; display: block; line-height: 1;
     margin-bottom: 0.5rem; color: #fff;
   }
-  .sign-name {
+  h1.sign-name {
     display: block; font-size: 0.6rem; letter-spacing: 0.1em;
     text-transform: lowercase; color: #fff; text-align: center;
+    font-weight: 400; margin: 0; line-height: 1;
   }
   .sign-desc {
     font-size: 1rem; line-height: 1.4;
@@ -141,10 +142,10 @@
 <body>
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
-    <p class="sign-lead">
-      <span class="zodiac-char">F</span>
-      <span class="sign-name">Venus in Virgo</span>
-    </p>
+    <div class="sign-lead">
+      <span class="zodiac-char" aria-hidden="true">F</span>
+      <h1 class="sign-name">Venus in Virgo</h1>
+    </div>
     <p class="sign-desc">Precise, devoted, understated. These musicians hear details nobody else catches — the perfect hi-hat placement, the lyric revised thirty times until it's inevitable. Their beauty is in craft, not spectacle. Music that reveals itself slowly, rewarding close attention.</p>
     <section class="sign-astro">
       <h2>What does Venus in Virgo mean?</h2>
@@ -172,8 +173,9 @@
       <a href="/sign/virgo/intercelestial/">Intercelestial (7)</a>
     </div>
   </nav>
-    <p class="artist-count">71 musicians in the database</p>
-    <ul class="artist-list">
+    <section aria-label="Artists with Venus in Virgo">
+      <p class="artist-count">71 musicians in the database</p>
+      <ul class="artist-list">
     <li>
       <a class="artist-name" href="/?vid=YjzgEnHr750&artist=Art%20Blakey&gid=jazz&t=0&sign=virgo&genre=Jazz">Art Blakey</a>
       <span class="artist-meta">12° Virgo · jazz</span>
@@ -458,7 +460,8 @@
       <a class="artist-name" href="/?vid=qJxk1leG1wY&artist=Xzibit&gid=hiphop&t=0&sign=virgo&genre=Hip-Hop">Xzibit</a>
       <span class="artist-meta">13° Virgo · hiphop, altrock, industrial, electronica</span>
     </li>
-    </ul>
+      </ul>
+    </section>
     <div class="cta">
       <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
     </div>

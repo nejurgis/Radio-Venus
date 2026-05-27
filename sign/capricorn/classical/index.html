@@ -66,9 +66,10 @@
     font-size: 5rem; display: block; line-height: 1;
     margin-bottom: 0.5rem; color: #fff;
   }
-  .sign-name {
+  h1.sign-name {
     display: block; font-size: 0.6rem; letter-spacing: 0.1em;
     text-transform: lowercase; color: #fff; text-align: center;
+    font-weight: 400; margin: 0; line-height: 1;
   }
   .sign-desc {
     font-size: 1rem; line-height: 1.4;
@@ -142,10 +143,10 @@
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
     <p class="breadcrumb"><a href="/sign/capricorn/">Venus in Capricorn</a><span>›</span>Classical</p>
-    <p class="sign-lead">
-      <span class="zodiac-char">K</span>
-      <span class="sign-name">Venus in Capricorn — Classical</span>
-    </p>
+    <div class="sign-lead">
+      <span class="zodiac-char" aria-hidden="true">K</span>
+      <h1 class="sign-name">Venus in Capricorn — Classical</h1>
+    </div>
     <p class="sign-desc">Structured, austere, enduring. Venus in Capricorn musicians build cathedrals — compositions with architecture, albums that function as complete statements. Expect discipline in the craft, respect for tradition, and a seriousness that ages into timelessness.</p>
     <nav class="genre-nav" aria-label="Filter by genre">
     <p class="nav-label">Filter by genre</p>
@@ -169,8 +170,9 @@
       <a href="/sign/capricorn/dnb/">Drum & Bass (5)</a>
     </div>
   </nav>
-    <p class="artist-count">8 musicians in the database</p>
-    <ul class="artist-list">
+    <section aria-label="Classical artists with Venus in Capricorn">
+      <p class="artist-count">8 musicians in the database</p>
+      <ul class="artist-list">
     <li>
       <a class="artist-name" href="/?vid=c5KCfomUgVE&artist=Emahoy%20Tsege%20Mariam%20Gebru&gid=jazz&t=0&sign=capricorn&genre=Jazz">Emahoy Tsege Mariam Gebru</a>
       <span class="artist-meta">13° Capricorn · jazz, classical</span>
@@ -203,7 +205,8 @@
       <a class="artist-name" href="/?vid=4Gyhe7LpEqw&artist=Qasim%20Naqvi&gid=classical&t=0&sign=capricorn&genre=Classical">Qasim Naqvi</a>
       <span class="artist-meta">16° Capricorn · classical, jazz, ambient, idm, folk, electronica, artpop, techno</span>
     </li>
-    </ul>
+      </ul>
+    </section>
     <div class="cta">
       <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
     </div>

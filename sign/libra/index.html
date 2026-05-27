@@ -66,9 +66,10 @@
     font-size: 5rem; display: block; line-height: 1;
     margin-bottom: 0.5rem; color: #fff;
   }
-  .sign-name {
+  h1.sign-name {
     display: block; font-size: 0.6rem; letter-spacing: 0.1em;
     text-transform: lowercase; color: #fff; text-align: center;
+    font-weight: 400; margin: 0; line-height: 1;
   }
   .sign-desc {
     font-size: 1rem; line-height: 1.4;
@@ -141,10 +142,10 @@
 <body>
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
-    <p class="sign-lead">
-      <span class="zodiac-char">G</span>
-      <span class="sign-name">Venus in Libra</span>
-    </p>
+    <div class="sign-lead">
+      <span class="zodiac-char" aria-hidden="true">G</span>
+      <h1 class="sign-name">Venus in Libra</h1>
+    </div>
     <p class="sign-desc">Harmonious, elegant, relational. Venus rules Libra, and musicians here are natural aesthetes — every element balanced, every collaboration elevated. Expect beautiful arrangements, sophisticated chord progressions, and an instinct for what sounds right together.</p>
     <section class="sign-astro">
       <h2>What does Venus in Libra mean?</h2>
@@ -172,8 +173,9 @@
       <a href="/sign/libra/industrial/">Industrial (5)</a>
     </div>
   </nav>
-    <p class="artist-count">57 musicians in the database</p>
-    <ul class="artist-list">
+    <section aria-label="Artists with Venus in Libra">
+      <p class="artist-count">57 musicians in the database</p>
+      <ul class="artist-list">
     <li>
       <a class="artist-name" href="/?vid=__NKhRAPfDI&artist=6%20Senz&gid=hiphop&t=0&sign=libra&genre=Hip-Hop">6 Senz</a>
       <span class="artist-meta">21° Libra · hiphop</span>
@@ -402,7 +404,8 @@
       <a class="artist-name" href="/?vid=XHtbU-lHb-s&artist=%C2%B5-Ziq&gid=dnb&t=0&sign=libra&genre=Drum%20%26%20Bass">µ-Ziq</a>
       <span class="artist-meta">11° Libra · dnb, electronica, idm, techno</span>
     </li>
-    </ul>
+      </ul>
+    </section>
     <div class="cta">
       <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
     </div>
