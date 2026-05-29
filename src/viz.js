@@ -542,8 +542,8 @@ export function renderNebula(musicians) {
     dot.spriteDrawSize = s.width / SPRITE_SCALE;
     dot.spriteOffset   = s.width / SPRITE_SCALE / 2;
   }
-  signBirths.fill(performance.now() - 2000); // all zodiac signs visible on first frame
-  moonBirth = performance.now() - 2000;       // moon visible from first frame
+  signBirths.fill(Math.max(1, performance.now() - 2000)); // all zodiac signs visible on first frame
+  moonBirth = Math.max(1, performance.now() - 2000);     // moon visible from first frame (must be > 0)
   fadeDeadline = 0;                           // no fade-in animation
   _oneShot = true;
   requestFrame();
@@ -1174,7 +1174,8 @@ function tick() {
     const a = (-(sunDot.deg) - 90 + rot) * RAD_PER_DEG;
     sx = cx + midR * Math.cos(a);
     sy = cy + midR * Math.sin(a);
-    sunR   = isZoomed ? 6 : Math.min(12, minDim * 0.025);
+    const _dpr = window.devicePixelRatio || 1;
+    sunR   = isZoomed ? 6 * _dpr : Math.min(12 * _dpr, minDim * 0.025);
     coronaR = sunR * 5.0;
 
     // Sun hit-test (non-drawing)
@@ -1202,8 +1203,9 @@ function tick() {
     const a = (-(moonDot.deg) - 90 + rot) * RAD_PER_DEG;
     mx = cx + midR * Math.cos(a);
     my = cy + midR * Math.sin(a);
-    moonR = isZoomed ? 5.5 : Math.min(15, minDim * 0.032);
-    hazeR = (isZoomed ? 18 : moonR * 3.5) * mPulse;
+    const _moonDpr = window.devicePixelRatio || 1;
+    moonR = isZoomed ? 5.5 * _moonDpr : Math.min(15 * _moonDpr, minDim * 0.032);
+    hazeR = (isZoomed ? 18 * _moonDpr : moonR * 3.5) * mPulse;
 
     // Moon hit-test (non-drawing)
     const moonHitR = 3;
