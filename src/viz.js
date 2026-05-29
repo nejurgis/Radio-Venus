@@ -1195,7 +1195,7 @@ function tick() {
   }
 
   let mx = 0, my = 0, moonR = 0, hazeR = 0, mPulse = 1, moonFade = 0, phaseAngle = 0;
-  const hasMoon = moonDot && moonBirth > 0;
+  const hasMoon = moonDot && moonBirth !== 0;
   if (hasMoon) {
     moonFade = Math.min(1, (now - moonBirth) / 500);
     phaseAngle = moonDot.phaseAngle ?? 45;
