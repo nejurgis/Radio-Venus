@@ -66,13 +66,12 @@
     font-size: 5rem; display: block; line-height: 1;
     margin-bottom: 0.5rem; color: #fff;
   }
-  h1.sign-name {
+  .sign-name {
     display: block; font-size: 0.6rem; letter-spacing: 0.1em;
     text-transform: lowercase; color: #fff; text-align: center;
-    font-weight: 400; margin: 0; line-height: 1;
   }
   .sign-desc {
-    font-size: 1rem; line-height: 1.4; font-weight: 500;
+    font-size: 1rem; line-height: 1.4;
     color: rgba(255,255,255,0.7); text-indent: 1.5em; margin-bottom: 2rem;
   }
   .artist-count {
@@ -89,28 +88,6 @@
     font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
     color: rgba(255,255,255,0.28); text-transform: uppercase;
   }
-  .sign-astro {
-    margin: 2rem 0 2.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-  .sign-astro h2 {
-    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: rgba(255,255,255,0.3); margin-bottom: 1.25rem; font-weight: 400;
-  }
-  .sign-astro-p {
-    font-family: 'EB Garamond', Georgia, serif;
-    font-size: 1.3rem; line-height: 1.45;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 1rem;
-  }
-  .notable-artists {
-    font-size: 0.72rem; line-height: 1.6;
-    color: rgba(255,255,255,0.35);
-    margin-top: 1.25rem;
-    font-family: 'IBM Plex Mono', monospace;
-  }
-  .notable-artists strong { color: rgba(255,255,255,0.5); font-weight: 400; }
   .cta {
     margin-top: 3rem; font-size: 0.9rem; color: rgba(255,255,255,0.45);
     border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem;
@@ -142,17 +119,11 @@
 <body>
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
-    <div class="sign-lead">
-      <span class="zodiac-char" aria-hidden="true">F</span>
-      <h1 class="sign-name">Venus in Virgo</h1>
-    </div>
+    <p class="sign-lead">
+      <span class="zodiac-char">F</span>
+      <span class="sign-name">Venus in Virgo</span>
+    </p>
     <p class="sign-desc">Precise, devoted, understated. These musicians hear details nobody else catches — the perfect hi-hat placement, the lyric revised thirty times until it's inevitable. Their beauty is in craft, not spectacle. Music that reveals itself slowly, rewarding close attention.</p>
-    <section class="sign-astro">
-      <h2>What does Venus in Virgo mean?</h2>
-      <p class="sign-astro-p">Venus in Virgo is the placement of the perfectionist who has learned to love the process. Virgo's instinct is to analyze, to refine, to find the single note or word that is exactly right rather than approximately right. In music, this produces artists who hear what everyone else misses — the hi-hat that is five milliseconds off, the breath before the lyric, the frequency that makes the whole mix click into place. Their attention is a form of devotion.</p>
-    <p class="sign-astro-p">This is often an underrated placement. Venus in Virgo musicians tend toward understatement; they would rather prove their point once, precisely, than repeat it loudly. Their work rewards close listening and resists casual consumption. The weakness of this placement is the tendency to over-refine — to work the life out of something in pursuit of the perfect version. The artists who navigate this best tend to set constraints for themselves and commit to them. Listeners with Venus in Virgo tend to be the ones who notice what other people don't, and love music for the things it does quietly.</p>
-      <p class="notable-artists"><strong>Musicians with Venus in Virgo:</strong> Art Blakey, Arvo Pärt, Astrel K, Boogie Down Productions, Bug Bus Piano, Celia Hollander, Charlie Parker Quartet, Cliff Jordan, and 63 more.</p>
-    </section>
     <nav class="genre-nav" aria-label="Filter by genre">
     <p class="nav-label">Filter by genre</p>
     <div class="genre-links">
@@ -173,9 +144,8 @@
       <a href="/sign/virgo/intercelestial/">Intercelestial (7)</a>
     </div>
   </nav>
-    <section aria-label="Artists with Venus in Virgo">
-      <p class="artist-count">71 musicians in the database</p>
-      <ul class="artist-list">
+    <p class="artist-count">71 musicians in the database</p>
+    <ul class="artist-list">
     <li>
       <a class="artist-name" href="/?vid=YjzgEnHr750&artist=Art%20Blakey&gid=jazz&t=0&sign=virgo&genre=Jazz">Art Blakey</a>
       <span class="artist-meta">12° Virgo · jazz</span>
@@ -460,8 +430,7 @@
       <a class="artist-name" href="/?vid=qJxk1leG1wY&artist=Xzibit&gid=hiphop&t=0&sign=virgo&genre=Hip-Hop">Xzibit</a>
       <span class="artist-meta">13° Virgo · hiphop, altrock, industrial, electronica</span>
     </li>
-      </ul>
-    </section>
+    </ul>
     <div class="cta">
       <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
     </div>

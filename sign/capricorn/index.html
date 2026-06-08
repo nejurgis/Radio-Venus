@@ -66,13 +66,12 @@
     font-size: 5rem; display: block; line-height: 1;
     margin-bottom: 0.5rem; color: #fff;
   }
-  h1.sign-name {
+  .sign-name {
     display: block; font-size: 0.6rem; letter-spacing: 0.1em;
     text-transform: lowercase; color: #fff; text-align: center;
-    font-weight: 400; margin: 0; line-height: 1;
   }
   .sign-desc {
-    font-size: 1rem; line-height: 1.4; font-weight: 500;
+    font-size: 1rem; line-height: 1.4;
     color: rgba(255,255,255,0.7); text-indent: 1.5em; margin-bottom: 2rem;
   }
   .artist-count {
@@ -89,28 +88,6 @@
     font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
     color: rgba(255,255,255,0.28); text-transform: uppercase;
   }
-  .sign-astro {
-    margin: 2rem 0 2.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-  .sign-astro h2 {
-    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: rgba(255,255,255,0.3); margin-bottom: 1.25rem; font-weight: 400;
-  }
-  .sign-astro-p {
-    font-family: 'EB Garamond', Georgia, serif;
-    font-size: 1.3rem; line-height: 1.45;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 1rem;
-  }
-  .notable-artists {
-    font-size: 0.72rem; line-height: 1.6;
-    color: rgba(255,255,255,0.35);
-    margin-top: 1.25rem;
-    font-family: 'IBM Plex Mono', monospace;
-  }
-  .notable-artists strong { color: rgba(255,255,255,0.5); font-weight: 400; }
   .cta {
     margin-top: 3rem; font-size: 0.9rem; color: rgba(255,255,255,0.45);
     border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem;
@@ -142,17 +119,11 @@
 <body>
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
-    <div class="sign-lead">
-      <span class="zodiac-char" aria-hidden="true">K</span>
-      <h1 class="sign-name">Venus in Capricorn</h1>
-    </div>
+    <p class="sign-lead">
+      <span class="zodiac-char">K</span>
+      <span class="sign-name">Venus in Capricorn</span>
+    </p>
     <p class="sign-desc">Structured, austere, enduring. Venus in Capricorn musicians build cathedrals — compositions with architecture, albums that function as complete statements. Expect discipline in the craft, respect for tradition, and a seriousness that ages into timelessness.</p>
-    <section class="sign-astro">
-      <h2>What does Venus in Capricorn mean?</h2>
-      <p class="sign-astro-p">Venus in Capricorn is the placement of the long game. Capricorn's relationship to creativity is structural — these musicians think in terms of what will last, what is being built, how this work will hold up in five or ten years rather than how it sounds in the current moment. Their catalogs tend to be disciplined and purposeful, with a consistency of vision that can take years to become apparent.</p>
-    <p class="sign-astro-p">This is often a late-blooming placement. Venus in Capricorn artists tend to improve with age in a way that defies the usual arc of a music career — they find their depth after other artists have peaked, and their most important work is often not their earliest. The austerity that can read as coldness early on reveals itself as restraint: a refusal to offer more than what is true. If you have Venus in Capricorn, you distrust easy beauty. What moves you has earned the right to, through craft, through patience, through the willingness to wait for the right note rather than settle for the available one.</p>
-      <p class="notable-artists"><strong>Musicians with Venus in Capricorn:</strong> 504 Aquatic, Air, Angel-Ho, Anika, Anteloper, assassin, Astrid Sonne, Babyfather, and 75 more.</p>
-    </section>
     <nav class="genre-nav" aria-label="Filter by genre">
     <p class="nav-label">Filter by genre</p>
     <div class="genre-links">
@@ -175,9 +146,8 @@
       <a href="/sign/capricorn/dnb/">Drum & Bass (5)</a>
     </div>
   </nav>
-    <section aria-label="Artists with Venus in Capricorn">
-      <p class="artist-count">83 musicians in the database</p>
-      <ul class="artist-list">
+    <p class="artist-count">83 musicians in the database</p>
+    <ul class="artist-list">
     <li>
       <a class="artist-name" href="/?vid=W2uBgRWBhwk&artist=504%20Aquatic&gid=dnb&t=0&sign=capricorn&genre=Drum%20%26%20Bass">504 Aquatic</a>
       <span class="artist-meta">27° Capricorn · dnb, electronica</span>
@@ -510,8 +480,7 @@
       <a class="artist-name" href="/?vid=UPB9UdJ6SDA&artist=Wynton%20Kelly&gid=jazz&t=0&sign=capricorn&genre=Jazz">Wynton Kelly</a>
       <span class="artist-meta">1° Capricorn · jazz</span>
     </li>
-      </ul>
-    </section>
+    </ul>
     <div class="cta">
       <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
     </div>

@@ -66,13 +66,12 @@
     font-size: 5rem; display: block; line-height: 1;
     margin-bottom: 0.5rem; color: #fff;
   }
-  h1.sign-name {
+  .sign-name {
     display: block; font-size: 0.6rem; letter-spacing: 0.1em;
     text-transform: lowercase; color: #fff; text-align: center;
-    font-weight: 400; margin: 0; line-height: 1;
   }
   .sign-desc {
-    font-size: 1rem; line-height: 1.4; font-weight: 500;
+    font-size: 1rem; line-height: 1.4;
     color: rgba(255,255,255,0.7); text-indent: 1.5em; margin-bottom: 2rem;
   }
   .artist-count {
@@ -89,28 +88,6 @@
     font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
     color: rgba(255,255,255,0.28); text-transform: uppercase;
   }
-  .sign-astro {
-    margin: 2rem 0 2.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-  .sign-astro h2 {
-    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: rgba(255,255,255,0.3); margin-bottom: 1.25rem; font-weight: 400;
-  }
-  .sign-astro-p {
-    font-family: 'EB Garamond', Georgia, serif;
-    font-size: 1.3rem; line-height: 1.45;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 1rem;
-  }
-  .notable-artists {
-    font-size: 0.72rem; line-height: 1.6;
-    color: rgba(255,255,255,0.35);
-    margin-top: 1.25rem;
-    font-family: 'IBM Plex Mono', monospace;
-  }
-  .notable-artists strong { color: rgba(255,255,255,0.5); font-weight: 400; }
   .cta {
     margin-top: 3rem; font-size: 0.9rem; color: rgba(255,255,255,0.45);
     border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem;
@@ -142,17 +119,11 @@
 <body>
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
-    <div class="sign-lead">
-      <span class="zodiac-char" aria-hidden="true">B</span>
-      <h1 class="sign-name">Venus in Taurus</h1>
-    </div>
+    <p class="sign-lead">
+      <span class="zodiac-char">B</span>
+      <span class="sign-name">Venus in Taurus</span>
+    </p>
     <p class="sign-desc">Lush, sensual, unhurried. Venus is at home in Taurus, and musicians with this placement build sound you can almost touch — rich textures, warm bass, voices like velvet. Their work rewards patience and repeat listening. This is music made for bodies, not just ears.</p>
-    <section class="sign-astro">
-      <h2>What does Venus in Taurus mean?</h2>
-      <p class="sign-astro-p">Venus rules Taurus, which makes this one of its most natural homes. Musicians with Venus in Taurus are builders — they construct sound the way a craftsperson builds furniture: with patience, with attention to material, with an understanding that the thing needs to hold weight. The result is music that rewards repeat listening, that reveals new layers slowly, that feels physical in a way that purely cerebral music does not.</p>
-    <p class="sign-astro-p">The Taurus relationship to beauty is sensory before it is intellectual. These artists are drawn to warmth, texture, bass that you feel in your chest, voices like worn velvet. They are in no hurry. A Venus in Taurus album takes as long as it takes. The commercial pressure to produce quickly tends to produce their worst work; given time, they make things that last. If you have Venus in Taurus, you know the difference between music you hear and music you inhabit.</p>
-      <p class="notable-artists"><strong>Musicians with Venus in Taurus:</strong> 16:9 ratio, A Certain Ratio, A.R.T. Wilson, aja monet, AKAI SOLO, Alessandro Cortini, Amiina, Ammonite, and 122 more.</p>
-    </section>
     <nav class="genre-nav" aria-label="Filter by genre">
     <p class="nav-label">Filter by genre</p>
     <div class="genre-links">
@@ -175,9 +146,8 @@
       <a href="/sign/taurus/dnb/">Drum & Bass (10)</a>
     </div>
   </nav>
-    <section aria-label="Artists with Venus in Taurus">
-      <p class="artist-count">130 musicians in the database</p>
-      <ul class="artist-list">
+    <p class="artist-count">130 musicians in the database</p>
+    <ul class="artist-list">
     <li>
       <a class="artist-name" href="/?vid=N3ZfcaijhJc&artist=16%3A9%20ratio&gid=idm&t=0&sign=taurus&genre=IDM">16:9 ratio</a>
       <span class="artist-meta">9° Taurus · idm, techno, electronica</span>
@@ -698,8 +668,7 @@
       <a class="artist-name" href="/?vid=R9EaahLe69I&artist=Zosha%20Warpeha&gid=classical&t=0&sign=taurus&genre=Classical">Zosha Warpeha</a>
       <span class="artist-meta">9° Taurus · classical, artpop, intercelestial</span>
     </li>
-      </ul>
-    </section>
+    </ul>
     <div class="cta">
       <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
     </div>

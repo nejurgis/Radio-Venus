@@ -66,13 +66,12 @@
     font-size: 5rem; display: block; line-height: 1;
     margin-bottom: 0.5rem; color: #fff;
   }
-  h1.sign-name {
+  .sign-name {
     display: block; font-size: 0.6rem; letter-spacing: 0.1em;
     text-transform: lowercase; color: #fff; text-align: center;
-    font-weight: 400; margin: 0; line-height: 1;
   }
   .sign-desc {
-    font-size: 1rem; line-height: 1.4; font-weight: 500;
+    font-size: 1rem; line-height: 1.4;
     color: rgba(255,255,255,0.7); text-indent: 1.5em; margin-bottom: 2rem;
   }
   .artist-count {
@@ -89,28 +88,6 @@
     font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
     color: rgba(255,255,255,0.28); text-transform: uppercase;
   }
-  .sign-astro {
-    margin: 2rem 0 2.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-  .sign-astro h2 {
-    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: rgba(255,255,255,0.3); margin-bottom: 1.25rem; font-weight: 400;
-  }
-  .sign-astro-p {
-    font-family: 'EB Garamond', Georgia, serif;
-    font-size: 1.3rem; line-height: 1.45;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 1rem;
-  }
-  .notable-artists {
-    font-size: 0.72rem; line-height: 1.6;
-    color: rgba(255,255,255,0.35);
-    margin-top: 1.25rem;
-    font-family: 'IBM Plex Mono', monospace;
-  }
-  .notable-artists strong { color: rgba(255,255,255,0.5); font-weight: 400; }
   .cta {
     margin-top: 3rem; font-size: 0.9rem; color: rgba(255,255,255,0.45);
     border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem;
@@ -142,17 +119,11 @@
 <body>
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
-    <div class="sign-lead">
-      <span class="zodiac-char" aria-hidden="true">H</span>
-      <h1 class="sign-name">Venus in Scorpio</h1>
-    </div>
+    <p class="sign-lead">
+      <span class="zodiac-char">H</span>
+      <span class="sign-name">Venus in Scorpio</span>
+    </p>
     <p class="sign-desc">Intense, underground, transformative. Venus in Scorpio musicians are drawn to the edges — darkwave, industrial, music that confronts what others avoid. Their aesthetic is magnetic precisely because it refuses to be comfortable. Beauty found in depth, obsession, and catharsis.</p>
-    <section class="sign-astro">
-      <h2>What does Venus in Scorpio mean?</h2>
-      <p class="sign-astro-p">Venus in Scorpio does not do things by halves. Scorpio's relationship to love and creation is total, obsessive, and uninterested in surfaces — these musicians go to places that other people approach and then turn back from. Their sound tends toward the extreme edges: the darkest frequencies, the most exposed vulnerability, the place where beauty and something more uncomfortable become indistinguishable from each other.</p>
-    <p class="sign-astro-p">This is not an easy placement to live with, but it produces music that other people cannot forget. Venus in Scorpio artists have a particular relationship to loss, to intensity, to the emotional undertow that most pop music carefully avoids. Their catalogs often contain at least one work that changed how someone understood their own experience. As a listener, if you have Venus in Scorpio, surface music bores you. You are drawn to what is underneath, to what cost something to make, to the music that knows what it is like to be in the dark and went there anyway.</p>
-      <p class="notable-artists"><strong>Musicians with Venus in Scorpio:</strong> $ilkMoney, Actress, Addison Rae, Alva Noto, Alvin Curran, Amirtha Kidambi, Ann Annie, Armani White, and 96 more.</p>
-    </section>
     <nav class="genre-nav" aria-label="Filter by genre">
     <p class="nav-label">Filter by genre</p>
     <div class="genre-links">
@@ -175,9 +146,8 @@
       <a href="/sign/scorpio/intercelestial/">Intercelestial (8)</a>
     </div>
   </nav>
-    <section aria-label="Artists with Venus in Scorpio">
-      <p class="artist-count">104 musicians in the database</p>
-      <ul class="artist-list">
+    <p class="artist-count">104 musicians in the database</p>
+    <ul class="artist-list">
     <li>
       <a class="artist-name" href="/?vid=BERfCHgwHNc&artist=%24ilkMoney&gid=hiphop&t=0&sign=scorpio&genre=Hip-Hop">$ilkMoney</a>
       <span class="artist-meta">29° Scorpio · hiphop, idm, triphop, techno, jazz</span>
@@ -594,8 +564,7 @@
       <a class="artist-name" href="/?vid=VCHH4Tvjrhk&artist=Zsela&gid=hiphop&t=0&sign=scorpio&genre=Hip-Hop">Zsela</a>
       <span class="artist-meta">24° Scorpio · hiphop, idm, triphop, artpop, techno, ambient, indiepop, electronica, jazz</span>
     </li>
-      </ul>
-    </section>
+    </ul>
     <div class="cta">
       <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
     </div>

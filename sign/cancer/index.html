@@ -66,13 +66,12 @@
     font-size: 5rem; display: block; line-height: 1;
     margin-bottom: 0.5rem; color: #fff;
   }
-  h1.sign-name {
+  .sign-name {
     display: block; font-size: 0.6rem; letter-spacing: 0.1em;
     text-transform: lowercase; color: #fff; text-align: center;
-    font-weight: 400; margin: 0; line-height: 1;
   }
   .sign-desc {
-    font-size: 1rem; line-height: 1.4; font-weight: 500;
+    font-size: 1rem; line-height: 1.4;
     color: rgba(255,255,255,0.7); text-indent: 1.5em; margin-bottom: 2rem;
   }
   .artist-count {
@@ -89,28 +88,6 @@
     font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
     color: rgba(255,255,255,0.28); text-transform: uppercase;
   }
-  .sign-astro {
-    margin: 2rem 0 2.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-  .sign-astro h2 {
-    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: rgba(255,255,255,0.3); margin-bottom: 1.25rem; font-weight: 400;
-  }
-  .sign-astro-p {
-    font-family: 'EB Garamond', Georgia, serif;
-    font-size: 1.3rem; line-height: 1.45;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 1rem;
-  }
-  .notable-artists {
-    font-size: 0.72rem; line-height: 1.6;
-    color: rgba(255,255,255,0.35);
-    margin-top: 1.25rem;
-    font-family: 'IBM Plex Mono', monospace;
-  }
-  .notable-artists strong { color: rgba(255,255,255,0.5); font-weight: 400; }
   .cta {
     margin-top: 3rem; font-size: 0.9rem; color: rgba(255,255,255,0.45);
     border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem;
@@ -142,17 +119,11 @@
 <body>
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
-    <div class="sign-lead">
-      <span class="zodiac-char" aria-hidden="true">D</span>
-      <h1 class="sign-name">Venus in Cancer</h1>
-    </div>
+    <p class="sign-lead">
+      <span class="zodiac-char">D</span>
+      <span class="sign-name">Venus in Cancer</span>
+    </p>
     <p class="sign-desc">Nostalgic, intimate, protective. These musicians make sound that feels like a memory you can't quite place — home recordings, confessional songwriting, melodies that ache. Their beauty lives in vulnerability and the courage to be tender in public.</p>
-    <section class="sign-astro">
-      <h2>What does Venus in Cancer mean?</h2>
-      <p class="sign-astro-p">Venus in Cancer is the placement most likely to produce music that makes you cry without knowing why. Cancer rules memory, the body before language, the emotional residue of things that happened long ago. Musicians with this placement seem to have direct access to the part of feeling that predates words — the atmosphere of a childhood home, the specific quality of light on a particular afternoon, the way a voice can carry grief it has never named.</p>
-    <p class="sign-astro-p">This is an intensely private placement made public through art. Venus in Cancer musicians often describe their most personal work as the most universal — listeners find themselves in it, recognizing their own unmapped feeling. The vulnerability is the point. These artists tend to build small, devoted audiences rather than large casual ones, because what they offer is too specific for surface listening. If you have Venus in Cancer, music is not entertainment — it is a way of staying connected to what you most need to feel.</p>
-      <p class="notable-artists"><strong>Musicians with Venus in Cancer:</strong> Albert Ayler, Alice Coltrane, Alice Glass, Amnesia Scanner, Angelo Arce, Antonina Nowacka, Arthur Russell, Bennie Maupin, and 112 more.</p>
-    </section>
     <nav class="genre-nav" aria-label="Filter by genre">
     <p class="nav-label">Filter by genre</p>
     <div class="genre-links">
@@ -174,9 +145,8 @@
       <a href="/sign/cancer/intercelestial/">Intercelestial (12)</a>
     </div>
   </nav>
-    <section aria-label="Artists with Venus in Cancer">
-      <p class="artist-count">120 musicians in the database</p>
-      <ul class="artist-list">
+    <p class="artist-count">120 musicians in the database</p>
+    <ul class="artist-list">
     <li>
       <a class="artist-name" href="/?vid=xWsIG5sNq1Q&artist=Albert%20Ayler&gid=jazz&t=0&sign=cancer&genre=Jazz">Albert Ayler</a>
       <span class="artist-meta">25° Cancer · jazz</span>
@@ -657,8 +627,7 @@
       <a class="artist-name" href="/?vid=CnEV27cm9Sc&artist=Westside%20Gunn&gid=hiphop&t=0&sign=cancer&genre=Hip-Hop">Westside Gunn</a>
       <span class="artist-meta">8° Cancer · hiphop, idm, triphop, jazz</span>
     </li>
-      </ul>
-    </section>
+    </ul>
     <div class="cta">
       <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
     </div>

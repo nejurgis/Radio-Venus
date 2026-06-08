@@ -66,13 +66,12 @@
     font-size: 5rem; display: block; line-height: 1;
     margin-bottom: 0.5rem; color: #fff;
   }
-  h1.sign-name {
+  .sign-name {
     display: block; font-size: 0.6rem; letter-spacing: 0.1em;
     text-transform: lowercase; color: #fff; text-align: center;
-    font-weight: 400; margin: 0; line-height: 1;
   }
   .sign-desc {
-    font-size: 1rem; line-height: 1.4; font-weight: 500;
+    font-size: 1rem; line-height: 1.4;
     color: rgba(255,255,255,0.7); text-indent: 1.5em; margin-bottom: 2rem;
   }
   .artist-count {
@@ -89,28 +88,6 @@
     font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
     color: rgba(255,255,255,0.28); text-transform: uppercase;
   }
-  .sign-astro {
-    margin: 2rem 0 2.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-  .sign-astro h2 {
-    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: rgba(255,255,255,0.3); margin-bottom: 1.25rem; font-weight: 400;
-  }
-  .sign-astro-p {
-    font-family: 'EB Garamond', Georgia, serif;
-    font-size: 1.3rem; line-height: 1.45;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 1rem;
-  }
-  .notable-artists {
-    font-size: 0.72rem; line-height: 1.6;
-    color: rgba(255,255,255,0.35);
-    margin-top: 1.25rem;
-    font-family: 'IBM Plex Mono', monospace;
-  }
-  .notable-artists strong { color: rgba(255,255,255,0.5); font-weight: 400; }
   .cta {
     margin-top: 3rem; font-size: 0.9rem; color: rgba(255,255,255,0.45);
     border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem;
@@ -142,17 +119,11 @@
 <body>
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
-    <div class="sign-lead">
-      <span class="zodiac-char" aria-hidden="true">E</span>
-      <h1 class="sign-name">Venus in Leo</h1>
-    </div>
+    <p class="sign-lead">
+      <span class="zodiac-char">E</span>
+      <span class="sign-name">Venus in Leo</span>
+    </p>
     <p class="sign-desc">Dramatic, generous, radiant. Venus in Leo musicians command a stage and make you feel like the show is just for you. Big voices, theatrical arrangements, golden production — their art is an act of self-expression so total it becomes universal.</p>
-    <section class="sign-astro">
-      <h2>What does Venus in Leo mean?</h2>
-      <p class="sign-astro-p">Venus in Leo is the placement of the grand gesture. Leo's relationship to creativity is total — art is not something these musicians do, it is something they are, and they approach it with a generosity and drama that can fill a room before they have played a note. The best Venus in Leo artists do not perform for an audience so much as they perform with one, turning the listening experience into something participatory and lit from within.</p>
-    <p class="sign-astro-p">This is not a modest placement, but it is not a shallow one either. Leo's theatricality is in service of genuine emotion — the scale is large because the feeling is large. Venus in Leo musicians tend to be extraordinarily committed to the live experience, to the moment when the song and the audience meet. Their recorded work can sometimes feel like it is waiting to be performed. If you have Venus in Leo, you know what it is like to feel a song claim you — to feel, for three minutes, that the artist is singing directly at you.</p>
-      <p class="notable-artists"><strong>Musicians with Venus in Leo:</strong> 2 Chainz, A. G. Cook, AFX, Alan Vega, An April March, Animal Collective, Antonín Dvořák, Aphex Twin, and 135 more.</p>
-    </section>
     <nav class="genre-nav" aria-label="Filter by genre">
     <p class="nav-label">Filter by genre</p>
     <div class="genre-links">
@@ -175,9 +146,8 @@
       <a href="/sign/leo/intercelestial/">Intercelestial (8)</a>
     </div>
   </nav>
-    <section aria-label="Artists with Venus in Leo">
-      <p class="artist-count">143 musicians in the database</p>
-      <ul class="artist-list">
+    <p class="artist-count">143 musicians in the database</p>
+    <ul class="artist-list">
     <li>
       <a class="artist-name" href="/?vid=tU3p6mz-uxU&artist=2%20Chainz&gid=hiphop&t=0&sign=leo&genre=Hip-Hop">2 Chainz</a>
       <span class="artist-meta">18° Leo · hiphop</span>
@@ -750,8 +720,7 @@
       <a class="artist-name" href="/?vid=ZO7WvCdAbpY&artist=Zulu&gid=altrock&t=0&sign=leo&genre=Alternative%20Rock">Zulu</a>
       <span class="artist-meta">9° Leo · altrock, industrial, metal</span>
     </li>
-      </ul>
-    </section>
+    </ul>
     <div class="cta">
       <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
     </div>

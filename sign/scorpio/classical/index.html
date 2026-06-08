@@ -66,13 +66,12 @@
     font-size: 5rem; display: block; line-height: 1;
     margin-bottom: 0.5rem; color: #fff;
   }
-  h1.sign-name {
+  .sign-name {
     display: block; font-size: 0.6rem; letter-spacing: 0.1em;
     text-transform: lowercase; color: #fff; text-align: center;
-    font-weight: 400; margin: 0; line-height: 1;
   }
   .sign-desc {
-    font-size: 1rem; line-height: 1.4; font-weight: 500;
+    font-size: 1rem; line-height: 1.4;
     color: rgba(255,255,255,0.7); text-indent: 1.5em; margin-bottom: 2rem;
   }
   .artist-count {
@@ -89,28 +88,6 @@
     font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
     color: rgba(255,255,255,0.28); text-transform: uppercase;
   }
-  .sign-astro {
-    margin: 2rem 0 2.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-  .sign-astro h2 {
-    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: rgba(255,255,255,0.3); margin-bottom: 1.25rem; font-weight: 400;
-  }
-  .sign-astro-p {
-    font-family: 'EB Garamond', Georgia, serif;
-    font-size: 1.3rem; line-height: 1.45;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 1rem;
-  }
-  .notable-artists {
-    font-size: 0.72rem; line-height: 1.6;
-    color: rgba(255,255,255,0.35);
-    margin-top: 1.25rem;
-    font-family: 'IBM Plex Mono', monospace;
-  }
-  .notable-artists strong { color: rgba(255,255,255,0.5); font-weight: 400; }
   .cta {
     margin-top: 3rem; font-size: 0.9rem; color: rgba(255,255,255,0.45);
     border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem;
@@ -143,10 +120,10 @@
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
     <p class="breadcrumb"><a href="/sign/scorpio/">Venus in Scorpio</a><span>›</span>Classical</p>
-    <div class="sign-lead">
-      <span class="zodiac-char" aria-hidden="true">H</span>
-      <h1 class="sign-name">Venus in Scorpio — Classical</h1>
-    </div>
+    <p class="sign-lead">
+      <span class="zodiac-char">H</span>
+      <span class="sign-name">Venus in Scorpio — Classical</span>
+    </p>
     <p class="sign-desc">Intense, underground, transformative. Venus in Scorpio musicians are drawn to the edges — darkwave, industrial, music that confronts what others avoid. Their aesthetic is magnetic precisely because it refuses to be comfortable. Beauty found in depth, obsession, and catharsis.</p>
     <nav class="genre-nav" aria-label="Filter by genre">
     <p class="nav-label">Filter by genre</p>
@@ -170,9 +147,8 @@
       <a href="/sign/scorpio/intercelestial/">Intercelestial (8)</a>
     </div>
   </nav>
-    <section aria-label="Classical artists with Venus in Scorpio">
-      <p class="artist-count">12 musicians in the database</p>
-      <ul class="artist-list">
+    <p class="artist-count">12 musicians in the database</p>
+    <ul class="artist-list">
     <li>
       <a class="artist-name" href="/?vid=vXbAfntiisI&artist=Alvin%20Curran&gid=artpop&t=0&sign=scorpio&genre=Art%20Pop">Alvin Curran</a>
       <span class="artist-meta">20° Scorpio · artpop, classical, idm, jazz</span>
@@ -221,8 +197,7 @@
       <a class="artist-name" href="/?vid=ZXJWO2FQ16c&artist=Steve%20Reich&gid=ambient&t=0&sign=scorpio&genre=Ambient">Steve Reich</a>
       <span class="artist-meta">6° Scorpio · ambient, electronica, classical</span>
     </li>
-      </ul>
-    </section>
+    </ul>
     <div class="cta">
       <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
     </div>
