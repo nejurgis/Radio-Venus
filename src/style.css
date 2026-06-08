@@ -280,7 +280,6 @@ html, body {
 .btn-sun-playlist.visible {
   opacity: 1;
   pointer-events: auto;
-  font-weight: 600;
 }
 
 .btn-enter {
@@ -603,6 +602,7 @@ p a:hover {
 .venus-detail {
   font-family: var(--font-mono);
   font-size: 66.66%;
+  font-weight: 600;
   color: var(--text-dim);
   margin-bottom: 2.5rem;
   letter-spacing: 0.08em;
