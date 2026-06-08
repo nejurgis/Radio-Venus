@@ -1337,7 +1337,13 @@ function tick() {
     // softness is baked into the phase canvas (blur), glow comes from the mGlow
     // haze drawn above. See commit cdcc21f.
     const phCanvas = getMoonPhaseCanvas(phaseAngle);
-    ctx.drawImage(phCanvas, 40, 40, 320, 320, mx - moonR, my - moonR, moonR * 2, moonR * 2);
+    // Draw the FULL 400px source, not a 320 centre crop: the baked blur halo
+    // lives in the margin (pixels 360→400) and must fade to transparent at the
+    // canvas edge. Cropping at 320 cuts the halo mid-bright → square box.
+    // Disc radius inside the 400px source is 160 (0.4·width), so a dest box of
+    // moonR*2.5 keeps the visible disc at radius moonR.
+    const mHalf = moonR * 1.25;
+    ctx.drawImage(phCanvas, 0, 0, 400, 400, mx - mHalf, my - mHalf, mHalf * 2, mHalf * 2);
     ctx.restore();
   }
 
