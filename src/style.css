@@ -280,6 +280,7 @@ html, body {
 .btn-sun-playlist.visible {
   opacity: 1;
   pointer-events: auto;
+  font-weight: 600;
 }
 
 .btn-enter {
