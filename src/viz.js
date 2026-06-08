@@ -81,7 +81,7 @@ const getMoonPhaseCanvas = (phaseAngle) => {
 
   // 3. Soft rim — destination-in radial mask fades edge to transparent
   mc.globalCompositeOperation = 'destination-in';
-  const rimFade = mc.createRadialGradient(c, c, R * 0.85, c, c, R);
+  const rimFade = mc.createRadialGradient(c, c, R * 0.92, c, c, R);
   rimFade.addColorStop(0, 'rgba(0, 0, 0, 1)');  // fully opaque inside
   rimFade.addColorStop(1, 'rgba(0, 0, 0, 0)');  // fade to transparent at edge
   mc.fillStyle = rimFade;
@@ -89,6 +89,19 @@ const getMoonPhaseCanvas = (phaseAngle) => {
   mc.arc(c, c, R, 0, Math.PI * 2);
   mc.fill();
   mc.globalCompositeOperation = 'source-over';
+
+  // 4. Bake the edge-softening blur into the cached canvas so the main canvas
+  // never needs ctx.filter OR ctx.shadowBlur on its drawImage — BOTH render
+  // against the image's bounding box on mobile Safari, producing a visible
+  // rectangle around the moon. (Regressed once before; see commit cdcc21f.)
+  // Runs once per 0.5° phase cache miss (~every 1.6h real time), not per frame.
+  const blurred = document.createElement('canvas');
+  blurred.width = SIZE; blurred.height = SIZE;
+  const bc = blurred.getContext('2d');
+  bc.filter = 'blur(48px)';
+  bc.drawImage(_moonPhaseCanvas, 0, 0);
+  mc.clearRect(0, 0, SIZE, SIZE);
+  mc.drawImage(blurred, 0, 0);
 
   return _moonPhaseCanvas;
 };
@@ -1319,15 +1332,12 @@ function tick() {
   if (hasMoon) {
     ctx.save();
     ctx.globalAlpha = moonFade;
+    // Plain drawImage — no ctx.filter, no ctx.shadowBlur. BOTH render against
+    // the image's bounding box on mobile Safari → visible square box. Edge
+    // softness is baked into the phase canvas (blur), glow comes from the mGlow
+    // haze drawn above. See commit cdcc21f.
     const phCanvas = getMoonPhaseCanvas(phaseAngle);
-    // No ctx.filter blur: unsupported on iOS canvas 2D and, when combined with
-    // shadowBlur, makes WebKit trace the shadow around the image's bounding
-    // rect (a visible square box). Edge softness is baked into the phase
-    // canvas rim fade instead; shadowBlur alone gives a circular halo.
-    ctx.shadowBlur  = moonR * 3.5;
-    ctx.shadowColor = 'rgba(210, 230, 200, 0.55)';
     ctx.drawImage(phCanvas, 40, 40, 320, 320, mx - moonR, my - moonR, moonR * 2, moonR * 2);
-    ctx.shadowBlur = 0;
     ctx.restore();
   }
 
