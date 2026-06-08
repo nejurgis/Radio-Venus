@@ -1320,12 +1320,14 @@ function tick() {
     ctx.save();
     ctx.globalAlpha = moonFade;
     const phCanvas = getMoonPhaseCanvas(phaseAngle);
-    ctx.filter     = `blur(${Math.max(0.6, moonR * 0.25)}px)`;
+    // No ctx.filter blur: unsupported on iOS canvas 2D and, when combined with
+    // shadowBlur, makes WebKit trace the shadow around the image's bounding
+    // rect (a visible square box). Edge softness is baked into the phase
+    // canvas rim fade instead; shadowBlur alone gives a circular halo.
     ctx.shadowBlur  = moonR * 3.5;
     ctx.shadowColor = 'rgba(210, 230, 200, 0.55)';
     ctx.drawImage(phCanvas, 40, 40, 320, 320, mx - moonR, my - moonR, moonR * 2, moonR * 2);
     ctx.shadowBlur = 0;
-    ctx.filter     = 'none';
     ctx.restore();
   }
 
