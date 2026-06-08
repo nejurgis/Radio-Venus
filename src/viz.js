@@ -81,7 +81,7 @@ const getMoonPhaseCanvas = (phaseAngle) => {
 
   // 3. Soft rim — destination-in radial mask fades edge to transparent
   mc.globalCompositeOperation = 'destination-in';
-  const rimFade = mc.createRadialGradient(c, c, R * 0.92, c, c, R);
+  const rimFade = mc.createRadialGradient(c, c, R * 0.85, c, c, R);
   rimFade.addColorStop(0, 'rgba(0, 0, 0, 1)');  // fully opaque inside
   rimFade.addColorStop(1, 'rgba(0, 0, 0, 0)');  // fade to transparent at edge
   mc.fillStyle = rimFade;
@@ -1174,8 +1174,7 @@ function tick() {
     const a = (-(sunDot.deg) - 90 + rot) * RAD_PER_DEG;
     sx = cx + midR * Math.cos(a);
     sy = cy + midR * Math.sin(a);
-    const _dpr = window.devicePixelRatio || 1;
-    sunR   = isZoomed ? 6 * _dpr : Math.min(12 * _dpr, minDim * 0.025);
+    sunR   = isZoomed ? 6 : Math.min(12, minDim * 0.025);
     coronaR = sunR * 5.0;
 
     // Sun hit-test (non-drawing)
@@ -1203,9 +1202,8 @@ function tick() {
     const a = (-(moonDot.deg) - 90 + rot) * RAD_PER_DEG;
     mx = cx + midR * Math.cos(a);
     my = cy + midR * Math.sin(a);
-    const _moonDpr = window.devicePixelRatio || 1;
-    moonR = isZoomed ? 5.5 * _moonDpr : Math.min(15 * _moonDpr, minDim * 0.032);
-    hazeR = (isZoomed ? 18 * _moonDpr : moonR * 3.5) * mPulse;
+    moonR = isZoomed ? 5.5 : Math.min(15, minDim * 0.032);
+    hazeR = (isZoomed ? 18 : moonR * 3.5) * mPulse;
 
     // Moon hit-test (non-drawing)
     const moonHitR = 3;
