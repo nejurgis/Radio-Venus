@@ -32766,5 +32766,103 @@
       "acid jazz",
       "lounge"
     ]
+  },
+  {
+    "name": "Tashi Wada",
+    "birthDate": "1962-05-05",
+    "mbid": "9df481a9-04b5-4dd7-ae85-39a6bebd9f60",
+    "genres": [
+      "ambient",
+      "idm",
+      "classical",
+      "electronica"
+    ],
+    "subgenres": [
+      "drone",
+      "experimental",
+      "contemporary",
+      "indietronica",
+      "ambient",
+      "classical"
+    ],
+    "enTags": [
+      "drone",
+      "experimental",
+      "contemporary classical",
+      "electronic",
+      "american",
+      "japanese",
+      "ambient",
+      "composer",
+      "instrumental",
+      "Classical"
+    ],
+    "youtubeVideoId": "fIbkbwliaOU",
+    "backupVideoIds": [],
+    "spotifyId": "6pDLBDQwtLpoG0YIUfM3O2",
+    "handpicked": true,
+    "handpickedTrack": "Grand Trine"
+  },
+  {
+    "name": "Ellen Arkbro",
+    "birthDate": "1990-01-01",
+    "genres": [
+      "ambient",
+      "classical",
+      "idm",
+      "electronica"
+    ],
+    "subgenres": [
+      "drone",
+      "minimalist",
+      "modern-classical",
+      "classical",
+      "contemporary",
+      "experimental",
+      "indietronica"
+    ],
+    "enTags": [
+      "drone",
+      "minimalism",
+      "modern classical",
+      "chamber music",
+      "contemporary classical",
+      "experimental",
+      "electronic",
+      "composer",
+      "organ music",
+      "Classical"
+    ],
+    "youtubeVideoId": "9n69Ur6w20k",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Tristan Kasten-Krause",
+    "birthDate": "1970-06-21",
+    "mbid": "f13e48d7-b644-4340-aecc-9652793a773d",
+    "genres": [
+      "ambient",
+      "electronica",
+      "idm",
+      "classical"
+    ],
+    "subgenres": [
+      "ambient",
+      "indietronica",
+      "experimental",
+      "drone",
+      "modern-classical"
+    ],
+    "enTags": [
+      "ambient",
+      "electronic",
+      "Brooklyn",
+      "experimental",
+      "drone",
+      "electroacoustic",
+      "modern classical"
+    ],
+    "youtubeVideoId": "jVevdGeZrQQ",
+    "backupVideoIds": []
   }
 ]
