@@ -194,6 +194,32 @@ export async function resolveFromUrl(rawUrl) {
   throw new Error('Link is not a recognized YouTube or Spotify URL');
 }
 
+// Accepts either a link (delegates to resolveFromUrl) or free text —
+// "Artist - Song" or just an artist name — resolved via Last.fm's track
+// search instead. Same output shape either way.
+export async function resolveInput(input) {
+  const trimmed = input.trim();
+  if (/^https?:\/\//i.test(trimmed) || /^spotify:artist:/i.test(trimmed)) {
+    return resolveFromUrl(trimmed);
+  }
+
+  const hit = await lastfmSearchTrack(trimmed);
+  if (!hit) throw new Error(`No Last.fm match for "${trimmed}"`);
+
+  // Best-effort Spotify ID for the artist (not required — Last.fm/cosine/
+  // birth-date lookups all key off the name, this just enriches spotifyId).
+  const search = await spotifyGet(`/search?q=${encodeURIComponent(hit.artistName)}&type=artist&limit=1`);
+  const match = search?.artists?.items?.[0];
+
+  return {
+    artistName: hit.artistName,
+    trackName: hit.trackName,
+    spotifyId: match?.name?.toLowerCase() === hit.artistName.toLowerCase() ? match.id : null,
+    spotifyFollowers: match?.followers?.total ?? null,
+    youtubeVideoId: null,
+  };
+}
+
 // ── Birth date lookup chain (Wikidata → MusicBrainz → Wikipedia) ─────────────
 
 const MUSIC_OCCUPATIONS = [
@@ -341,6 +367,20 @@ export async function getLastfmTags(artistName) {
   const data = await lastfmCall({ method: 'artist.gettoptags', artist: artistName });
   const tags = data?.toptags?.tag ?? [];
   return tags.map(t => t.name).filter(Boolean);
+}
+
+// Free-text search — "Artist - Song" (or just an artist name) → best match.
+// Used when the admin types a search instead of pasting a link.
+export async function lastfmSearchTrack(query) {
+  const dashSplit = query.split(/\s[-–]\s/);
+  const params = dashSplit.length >= 2
+    ? { method: 'track.search', track: dashSplit.slice(1).join(' - ').trim(), artist: dashSplit[0].trim(), limit: '5' }
+    : { method: 'track.search', track: query, limit: '5' };
+  const data = await lastfmCall(params);
+  const hits = data?.results?.trackmatches?.track;
+  const list = Array.isArray(hits) ? hits : hits ? [hits] : [];
+  if (!list.length) return null;
+  return { artistName: list[0].artist, trackName: list[0].name };
 }
 
 // Similar artists via Last.fm's scrobble-graph — replaces EN "fans also like".

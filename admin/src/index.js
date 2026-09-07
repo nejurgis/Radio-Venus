@@ -236,7 +236,7 @@ function renderApp() {
 <main>
   <section id="tab-add" class="tab-panel">
     <section class="lookup">
-      <input id="link-input" type="text" placeholder="Paste a YouTube or Spotify artist/track link…" autofocus>
+      <input id="link-input" type="text" placeholder="Paste a link, or search &quot;Artist - Song&quot; / just an artist name…" autofocus>
       <button id="lookup-btn">Look up</button>
     </section>
 

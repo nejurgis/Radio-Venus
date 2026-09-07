@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 // ── admin-resolve.mjs ────────────────────────────────────────────────────────
-// "Add artist from a link" — lookup half of the admin web tool's pipeline.
-// Given a YouTube or Spotify URL, resolves the artist, its birth date, genre
-// tags (Last.fm), and TWO similar-artist axes for the preview UI:
+// "Add artist from a link (or search)" — lookup half of the admin web tool's
+// pipeline. Input is either a YouTube/Spotify URL or free text ("Artist -
+// Song", or just an artist name, resolved via Last.fm's track search).
+// Resolves the artist, its birth date, genre tags (Last.fm), and TWO
+// similar-artist axes for the preview UI:
 //   - "similar"      — Last.fm's scrobble-graph (artist.getsimilar)
 //   - "similarAudio" — cosine.club's audio-similarity model (track-level)
 // Each candidate carries a songUrl so the admin can listen before adding.
@@ -13,13 +15,14 @@
 //
 // Usage (local testing, prints JSON to stdout):
 //   node scripts/admin-resolve.mjs --url="https://open.spotify.com/artist/..."
+//   node scripts/admin-resolve.mjs --url="Burial - Archangel"
 //
 // Usage (from GH Actions — posts result to the admin Worker instead):
 //   node scripts/admin-resolve.mjs --url="..." --job=ID --callback=URL --secret=TOKEN
 //
 import { categorizeGenres, categorizeSubgenres } from '../src/genres.js';
 import {
-  loadEnv, SEED_PATH, resolveFromUrl, getBirthDate, calculateVenus,
+  loadEnv, SEED_PATH, resolveInput, getBirthDate, calculateVenus,
   getLastfmTags, getLastfmSimilar, cosineFindTrack, cosineSimilarTracks,
   findYouTubeId, postJSON,
 } from './lib/enrich.mjs';
@@ -119,7 +122,7 @@ async function main() {
   const seedSpotifyIds  = new Set(seed.map(a => a.spotifyId).filter(Boolean));
 
   console.log(`Resolving: ${url}`);
-  const resolved = await resolveFromUrl(url);
+  const resolved = await resolveInput(url);
   console.log(`  → ${resolved.artistName}${resolved.trackName ? ` — "${resolved.trackName}"` : ''}`);
 
   const alreadyInSeed =
