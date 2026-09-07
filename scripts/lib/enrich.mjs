@@ -167,14 +167,21 @@ export async function resolveFromUrl(rawUrl) {
   if (youtubeVideo) {
     const videoId = youtubeVideo[1];
     const oembed = await fetchJSON(`https://www.youtube.com/oembed?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${videoId}`)}&format=json`);
-    // oembed.author_name is usually the channel name (often the artist / VEVO channel).
-    // oembed.title is often "Artist - Track" or just the track title.
-    let artistName = oembed.author_name?.replace(/\s*-\s*Topic$/i, '').replace(/VEVO$/i, '').trim();
-    let trackName  = oembed.title;
+    // Prefer "Artist - Track" parsed from the title over the channel name —
+    // full-album/compilation uploads are very often on a reuploader's channel
+    // that has nothing to do with the artist (e.g. a channel named "DJ基礎知識"
+    // hosting "Éliane Radigue - Occam Ocean 3 (2021) FULL ALBUM"), while the
+    // title itself reliably names the real artist. Officially-uploaded videos
+    // (author "Artist - Topic", title just the track name) have no dash to
+    // split on, so they fall through to the channel-name path unaffected.
+    let artistName, trackName;
     const dashSplit = oembed.title?.split(/\s[-–]\s/);
     if (dashSplit?.length >= 2) {
-      trackName = dashSplit.slice(1).join(' - ').trim();
-      if (!artistName) artistName = dashSplit[0].trim();
+      artistName = dashSplit[0].trim();
+      trackName  = dashSplit.slice(1).join(' - ').trim();
+    } else {
+      artistName = oembed.author_name?.replace(/\s*-\s*Topic$/i, '').replace(/VEVO$/i, '').trim();
+      trackName  = oembed.title;
     }
     if (!artistName) throw new Error('Could not determine artist name from YouTube video');
 
