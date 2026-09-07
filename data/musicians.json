@@ -7845,6 +7845,33 @@
     "backupVideoIds": []
   },
   {
+    "name": "Ellen Arkbro",
+    "venus": {
+      "sign": "Aquarius",
+      "degree": 6.2,
+      "decan": 1,
+      "element": "air",
+      "dateApprox": true
+    },
+    "genres": [
+      "ambient",
+      "classical",
+      "idm",
+      "electronica"
+    ],
+    "subgenres": [
+      "drone",
+      "minimalist",
+      "modern-classical",
+      "classical",
+      "contemporary",
+      "experimental",
+      "indietronica"
+    ],
+    "youtubeVideoId": "9n69Ur6w20k",
+    "backupVideoIds": []
+  },
+  {
     "name": "Elmo Hope",
     "venus": {
       "sign": "Gemini",
@@ -8333,6 +8360,25 @@
       "idm"
     ],
     "youtubeVideoId": "YJi5SMPiKqc",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Erwin Schulhoff",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 5.7,
+      "decan": 1,
+      "element": "earth"
+    },
+    "genres": [
+      "classical",
+      "intercelestial"
+    ],
+    "subgenres": [
+      "opera",
+      "classical"
+    ],
+    "youtubeVideoId": "WFP5nguGTAI",
     "backupVideoIds": []
   },
   {
@@ -24018,6 +24064,31 @@
     "backupVideoIds": []
   },
   {
+    "name": "Tashi Wada",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 8.7,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "classical",
+      "electronica"
+    ],
+    "subgenres": [
+      "drone",
+      "experimental",
+      "contemporary",
+      "indietronica",
+      "ambient",
+      "classical"
+    ],
+    "youtubeVideoId": "fIbkbwliaOU",
+    "backupVideoIds": []
+  },
+  {
     "name": "TaTa",
     "venus": {
       "sign": "Scorpio",
@@ -25898,6 +25969,30 @@
       "experimental"
     ],
     "youtubeVideoId": "ATMGBt53bS4",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Tristan Kasten-Krause",
+    "venus": {
+      "sign": "Leo",
+      "degree": 5.6,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient",
+      "electronica",
+      "idm",
+      "classical"
+    ],
+    "subgenres": [
+      "ambient",
+      "indietronica",
+      "experimental",
+      "drone",
+      "modern-classical"
+    ],
+    "youtubeVideoId": "jVevdGeZrQQ",
     "backupVideoIds": []
   },
   {
