@@ -305,90 +305,66 @@ export async function getBirthDate(name, releaseDate) {
   return null;
 }
 
-// ── Everynoise (Playwright — same approach as import-spotify.mjs) ────────────
+// ── Last.fm: genre tags + similar-artist discovery ────────────────────────────
+// Replaces Everynoise as of 2026-09-07 (EN's artistprofile.cgi/research.cgi
+// started returning 403 site-wide — see memory logs/2026-09-07-en-artistprofile-blocked.md).
+// Plain REST, no browser automation needed.
 
-let _browser = null;
+const LASTFM_BASE = 'https://ws.audioscrobbler.com/2.0/';
 
-export async function getBrowser() {
-  if (_browser) return _browser;
-  const { chromium } = await import('playwright');
-  _browser = await chromium.launch({ headless: true });
-  return _browser;
-}
-
-export async function closeBrowser() {
-  if (!_browser) return;
-  await _browser.close().catch(() => {});
-  _browser = null;
-}
-
-const EN_HEADERS = {
-  'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-};
-
-// Resolve an artist's EN/Spotify ID by name when we don't already have one.
-export async function resolveSpotifyIdViaEN(artistName) {
-  const browser = await getBrowser();
-  const page = await browser.newPage();
+async function lastfmCall(params) {
+  const key = process.env.LASTFM_API_KEY;
+  if (!key) return null;
+  const qs = new URLSearchParams({ ...params, api_key: key, format: 'json' });
   try {
-    await page.setExtraHTTPHeaders(EN_HEADERS);
-    await page.goto(
-      `https://everynoise.com/research.cgi?name=${encodeURIComponent(artistName)}&mode=artist`,
-      { waitUntil: 'domcontentloaded', timeout: 45000 }
-    );
-    await page.waitForSelector('#exact + div .artistname a[href*="artistprofile.cgi"]', { timeout: 20000 }).catch(() => {});
-    const href = await page.$eval(
-      '#exact + div .artistname a[href*="artistprofile.cgi"]',
-      el => el.getAttribute('href')
-    ).catch(() => null);
-    const m = href?.match(/[?&]id=([A-Za-z0-9]+)/);
-    return m ? m[1] : null;
+    const data = await fetchJSON(`${LASTFM_BASE}?${qs}`);
+    if (data.error) return null;
+    return data;
   } catch { return null; }
-  finally { await page.close().catch(() => {}); }
 }
 
-// EN artist profile: own genre tags + "fans also like" candidates in one pass.
-export async function scrapeENProfile(spotifyId) {
-  const browser = await getBrowser();
-  const page = await browser.newPage();
+// Genre tags for an artist — Last.fm's community tag cloud, same role EN's
+// "Spotify genre-ish tags" played. Feed straight into categorizeGenres/Subgenres.
+export async function getLastfmTags(artistName) {
+  const data = await lastfmCall({ method: 'artist.gettoptags', artist: artistName });
+  const tags = data?.toptags?.tag ?? [];
+  return tags.map(t => t.name).filter(Boolean);
+}
+
+// Similar artists via Last.fm's scrobble-graph — replaces EN "fans also like".
+export async function getLastfmSimilar(artistName, limit = 15) {
+  const data = await lastfmCall({ method: 'artist.getsimilar', artist: artistName, limit: String(limit) });
+  const artists = data?.similarartists?.artist ?? [];
+  return artists.map(a => ({ name: a.name, match: parseFloat(a.match) || 0 })).filter(a => a.name);
+}
+
+// ── cosine.club: audio-similarity + direct YouTube track resolution ──────────
+
+const COSINE_BASE = 'https://cosine.club/api/v1';
+
+async function cosineCall(path, params = {}) {
+  const key = process.env.COSINE_API_KEY;
+  if (!key) return null;
+  const qs = new URLSearchParams(params);
   try {
-    await page.setExtraHTTPHeaders(EN_HEADERS);
-    await page.goto(`https://everynoise.com/artistprofile.cgi?id=${spotifyId}`, {
-      waitUntil: 'domcontentloaded', timeout: 45000,
-    });
-    await page.waitForSelector('#falcell', { timeout: 20000 }).catch(() => {});
+    return await fetchJSON(`${COSINE_BASE}${path}?${qs}`, { Authorization: `Bearer ${key}` });
+  } catch { return null; }
+}
 
-    const genreLinks = await page.$$eval(
-      'a[href*="mode=genre"]',
-      els => els.map(a => a.textContent.trim().toLowerCase()).filter(Boolean),
-    ).catch(() => []);
-    const spotifyTags = await page.$$eval(
-      'span[title="Spotify genre-ish tags"]',
-      els => els.flatMap(el => el.textContent.split(',').map(t => t.trim().replace(/^#/, '')).filter(Boolean)),
-    ).catch(() => []);
-    const tags = [...new Set([...genreLinks, ...spotifyTags])];
+// Best-effort track match for an artist (used to grab a YouTube video_id
+// without a separate yt-search call). Not a precise "official track" pick —
+// just the top search hit for the artist name.
+export async function cosineFindTrack(artistName, trackHint) {
+  const q = trackHint ? `${artistName} ${trackHint}` : artistName;
+  const data = await cosineCall('/search', { q, limit: '5' });
+  const hits = data?.data ?? [];
+  const match = hits.find(h => h.artist?.toLowerCase() === artistName.toLowerCase()) ?? hits[0];
+  return match ?? null;
+}
 
-    const candidates = await page.$$eval('#falcell .falbox', boxes =>
-      boxes.map(box => {
-        const nameEl    = box.querySelector('.falname a');
-        const name      = nameEl?.textContent.trim() ?? '';
-        const href      = nameEl?.getAttribute('href') ?? '';
-        const idMatch   = href.match(/[?&]id=([A-Za-z0-9]+)/);
-        const spotifyId = idMatch ? idMatch[1] : null;
-        const followerNote = Array.from(box.querySelectorAll('.note'))
-          .find(n => n.textContent.includes('followers'));
-        const followers = parseInt(followerNote?.textContent.replace(/[^0-9]/g, '') ?? '0') || 0;
-        const boxTags = Array.from(box.querySelectorAll('.genres a')).map(a => a.textContent.trim()).filter(Boolean);
-        return { name, spotifyId, followers, tags: boxTags };
-      }).filter(e => e.name && e.spotifyId)
-    ).catch(() => []);
-
-    return { tags, candidates };
-  } catch {
-    return { tags: [], candidates: [] };
-  } finally {
-    await page.close().catch(() => {});
-  }
+export async function cosineLookupByUrl(url) {
+  const data = await cosineCall('/tracks/lookup', { url });
+  return data?.data?.[0] ?? null;
 }
 
 // ── YouTube search ────────────────────────────────────────────────────────────

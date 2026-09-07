@@ -2,8 +2,14 @@
 // ── admin-resolve.mjs ────────────────────────────────────────────────────────
 // "Add artist from a link" — lookup half of the admin web tool's pipeline.
 // Given a YouTube or Spotify URL, resolves the artist, its birth date,
-// Everynoise genres, and a shortlist of EN "fans also like" similar artists
-// (each fully enriched) so the admin UI can preview before committing.
+// genre tags + similar artists (Last.fm), and a YouTube video per candidate
+// (cosine.club, falling back to yt-search) so the admin UI can preview
+// before committing.
+//
+// Everynoise was the original genre/similarity source but started returning
+// 403 site-wide as of 2026-09-07 (see memory logs/2026-09-07-en-artistprofile-blocked.md).
+// Last.fm (artist.gettoptags / artist.getsimilar) + cosine.club replace it —
+// plain REST APIs, no browser automation needed.
 //
 // Usage (local testing, prints JSON to stdout):
 //   node scripts/admin-resolve.mjs --url="https://open.spotify.com/artist/..."
@@ -14,8 +20,7 @@
 import { categorizeGenres, categorizeSubgenres } from '../src/genres.js';
 import {
   loadEnv, SEED_PATH, resolveFromUrl, getBirthDate, calculateVenus,
-  resolveSpotifyIdViaEN, scrapeENProfile, findYouTubeId,
-  closeBrowser, postJSON,
+  getLastfmTags, getLastfmSimilar, cosineFindTrack, findYouTubeId, postJSON,
 } from './lib/enrich.mjs';
 import { readFileSync } from 'node:fs';
 
@@ -49,9 +54,17 @@ function loadSeed() {
   return JSON.parse(readFileSync(SEED_PATH, 'utf-8'));
 }
 
-async function enrichCandidate(seed, seedNames, seedSpotifyIds, cand) {
-  const genres    = categorizeGenres(cand.tags);
-  const subgenres = categorizeSubgenres(cand.tags);
+async function resolveYouTubeId(artistName, trackHint, directId) {
+  if (directId) return directId;
+  const cosineHit = await cosineFindTrack(artistName, trackHint);
+  if (cosineHit?.video_id) return cosineHit.video_id;
+  return findYouTubeId(artistName, trackHint);
+}
+
+async function enrichCandidate(seedNames, seedSpotifyIds, cand) {
+  const tags = await getLastfmTags(cand.name);
+  const genres    = categorizeGenres(tags);
+  const subgenres = categorizeSubgenres(tags);
   if (!genres.length) return null;
 
   const birth = await getBirthDate(cand.name);
@@ -59,7 +72,7 @@ async function enrichCandidate(seed, seedNames, seedSpotifyIds, cand) {
   const year = parseInt(birth.date);
   if (year < 1901) return null;
 
-  const youtubeVideoId = await findYouTubeId(cand.name);
+  const youtubeVideoId = await resolveYouTubeId(cand.name, null, null);
 
   return {
     name: cand.name,
@@ -68,11 +81,11 @@ async function enrichCandidate(seed, seedNames, seedSpotifyIds, cand) {
     mbid: birth.mbid ?? null,
     venus: calculateVenus(birth.date),
     genres, subgenres,
-    enTags: cand.tags,
-    spotifyId: cand.spotifyId,
-    spotifyFollowers: cand.followers,
+    enTags: tags,
+    tagSource: 'lastfm',
+    lastfmMatch: cand.match,
     youtubeVideoId,
-    alreadyInSeed: seedNames.has(cand.name.toLowerCase()) || seedSpotifyIds.has(cand.spotifyId),
+    alreadyInSeed: seedNames.has(cand.name.toLowerCase()),
   };
 }
 
@@ -89,21 +102,8 @@ async function main() {
     seedNames.has(resolved.artistName.toLowerCase()) ||
     (resolved.spotifyId && seedSpotifyIds.has(resolved.spotifyId));
 
-  // Spotify ID: use what we resolved directly, else fall back to EN name search.
-  let spotifyId = resolved.spotifyId;
-  if (!spotifyId) {
-    console.log('  Resolving Spotify ID via Everynoise...');
-    spotifyId = await resolveSpotifyIdViaEN(resolved.artistName);
-  }
-
-  if (!spotifyId) {
-    await report({ status: 'error', message: `Could not resolve "${resolved.artistName}" on Everynoise or Spotify.` });
-    await closeBrowser();
-    return;
-  }
-
-  console.log('  Scraping Everynoise profile (genres + fans also like)...');
-  const { tags, candidates } = await scrapeENProfile(spotifyId);
+  console.log('  Last.fm tags...');
+  const tags = await getLastfmTags(resolved.artistName);
   const genres    = categorizeGenres(tags);
   const subgenres = categorizeSubgenres(tags);
 
@@ -111,15 +111,10 @@ async function main() {
   const birth = await getBirthDate(resolved.artistName);
   if (!birth) {
     await report({ status: 'error', message: `Could not find a birth date for "${resolved.artistName}".` });
-    await closeBrowser();
     return;
   }
 
-  let youtubeVideoId = resolved.youtubeVideoId;
-  if (!youtubeVideoId) {
-    console.log('  Searching YouTube...');
-    youtubeVideoId = await findYouTubeId(resolved.artistName, resolved.trackName);
-  }
+  const youtubeVideoId = await resolveYouTubeId(resolved.artistName, resolved.trackName, resolved.youtubeVideoId);
 
   const artist = {
     name: resolved.artistName,
@@ -129,7 +124,8 @@ async function main() {
     venus: calculateVenus(birth.date),
     genres, subgenres,
     enTags: tags,
-    spotifyId,
+    tagSource: 'lastfm',
+    spotifyId: resolved.spotifyId,
     spotifyFollowers: resolved.spotifyFollowers ?? null,
     youtubeVideoId: youtubeVideoId ?? null,
     handpickedTrack: resolved.trackName ?? null,
@@ -138,29 +134,31 @@ async function main() {
 
   console.log(`  Venus: ${artist.venus} — genres: [${genres.join(', ') || 'none'}]`);
 
-  // Shortlist similar artists: not already known, has mappable genres, top by followers.
-  const shortlist = candidates
-    .filter(c => !seedNames.has(c.name.toLowerCase()) && !seedSpotifyIds.has(c.spotifyId))
-    .filter(c => categorizeGenres(c.tags).length > 0)
-    .sort((a, b) => b.followers - a.followers)
+  console.log('  Last.fm similar artists...');
+  const rawSimilar = await getLastfmSimilar(resolved.artistName, 25);
+  // Drop collab-credit entries ("X & Y", "X vs Y", "X feat. Y") — Last.fm's
+  // similarity graph surfaces these as if they were standalone artists, but
+  // they're not a real single entity with their own identity/birth date.
+  const isCollabCredit = name => /\s(&|vs\.?|x|feat\.?|featuring)\s/i.test(name);
+  const shortlist = rawSimilar
+    .filter(c => !seedNames.has(c.name.toLowerCase()))
+    .filter(c => !isCollabCredit(c.name))
     .slice(0, MAX_SIMILAR);
 
   console.log(`  Enriching ${shortlist.length} similar-artist candidates...`);
   const similar = [];
   for (const cand of shortlist) {
-    console.log(`    ▸ ${cand.name}`);
-    const enriched = await enrichCandidate(seed, seedNames, seedSpotifyIds, cand);
+    console.log(`    ▸ ${cand.name} (match ${cand.match.toFixed(2)})`);
+    const enriched = await enrichCandidate(seedNames, seedSpotifyIds, cand);
     if (enriched) similar.push(enriched);
   }
 
-  await closeBrowser();
   await report({ status: 'done', artist, similar });
   console.log(`Done — ${similar.length} similar artists ready for preview.`);
 }
 
 main().catch(async e => {
   console.error('Fatal:', e);
-  await closeBrowser();
   await report({ status: 'error', message: e.message });
   process.exit(1);
 });

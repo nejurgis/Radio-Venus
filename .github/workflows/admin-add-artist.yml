@@ -45,11 +45,12 @@ jobs:
           node-version: '20'
           cache: 'npm'
       - run: npm install
-      - run: npx playwright install chromium --with-deps
       - name: Resolve artist + similar artists
         env:
           SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
           SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+          LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
+          COSINE_API_KEY: ${{ secrets.COSINE_API_KEY }}
           CALLBACK_SECRET: ${{ secrets.ADMIN_CALLBACK_SECRET }}
         run: |
           ARGS=(--url="${{ inputs.url }}")
