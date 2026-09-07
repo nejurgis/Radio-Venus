@@ -281,7 +281,12 @@ export function loadOverrides() {
   catch { return {}; }
 }
 
-export async function getBirthDate(name, releaseDate) {
+// Wikidata/MusicBrainz occasionally rate-limit or hiccup transiently — the
+// same artist can succeed on one call and fail on the very next (observed
+// directly: "Tashi Wada" resolved, then failed twice in immediate succession
+// with no code change between calls). One retry after a backoff recovers
+// most of these without masking a genuinely-nonexistent birth date.
+async function getBirthDateOnce(name, releaseDate) {
   const overrides = loadOverrides();
   const ov = overrides[name] ?? overrides[name.toLowerCase()];
   if (ov?.birthDate) return { date: ov.birthDate, mbid: null };
@@ -303,6 +308,13 @@ export async function getBirthDate(name, releaseDate) {
     return { date: normalized, mbid: null, isReleaseDate: true };
   }
   return null;
+}
+
+export async function getBirthDate(name, releaseDate) {
+  const first = await getBirthDateOnce(name, releaseDate);
+  if (first) return first;
+  await delay(1500);
+  return getBirthDateOnce(name, releaseDate);
 }
 
 // ── Last.fm: genre tags + similar-artist discovery ────────────────────────────
@@ -365,6 +377,20 @@ export async function cosineFindTrack(artistName, trackHint) {
 export async function cosineLookupByUrl(url) {
   const data = await cosineCall('/tracks/lookup', { url });
   return data?.data?.[0] ?? null;
+}
+
+// Audio-similarity candidates for a track — separate discovery axis from
+// Last.fm's scrobble-graph similarity. Each hit already carries a YouTube
+// video_id, so no separate yt-search/cosineFindTrack call needed per candidate.
+export async function cosineSimilarTracks(trackId, limit = 15) {
+  const data = await cosineCall(`/tracks/${trackId}/similar`, { limit: String(limit) });
+  const hits = data?.data?.similar_tracks ?? [];
+  return hits.map(t => ({
+    name: t.artist,
+    matchedTrack: t.track,
+    youtubeVideoId: t.video_id ?? null,
+    match: t.score ?? 0,
+  })).filter(h => h.name);
 }
 
 // ── YouTube search ────────────────────────────────────────────────────────────

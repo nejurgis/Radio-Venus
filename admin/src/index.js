@@ -216,8 +216,11 @@ function renderApp() {
     <h2>Artist</h2>
     <div id="main-card"></div>
 
-    <h2>Similar artists <span id="similar-count" class="muted"></span></h2>
+    <h2>Similar artists — Last.fm <span id="similar-count" class="muted"></span></h2>
     <div id="similar-grid" class="grid"></div>
+
+    <h2>Similar sounding — cosine.club <span id="similar-audio-count" class="muted"></span></h2>
+    <div id="similar-audio-grid" class="grid"></div>
 
     <div class="commit-bar">
       <button id="commit-btn">Add selected</button>
@@ -268,7 +271,14 @@ h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; colo
   display: flex; gap: 14px; align-items: center; background: var(--card); border: 1px solid var(--border);
   border-radius: 10px; padding: 12px 14px;
 }
-.card img { width: 64px; height: 48px; border-radius: 6px; object-fit: cover; flex-shrink: 0; background: #000; }
+.card a.thumb { position: relative; flex-shrink: 0; display: block; }
+.card a.thumb img { width: 64px; height: 48px; border-radius: 6px; object-fit: cover; display: block; background: #000; }
+.card a.thumb::after {
+  content: "▶"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 0.7rem; background: rgba(0,0,0,0.25); border-radius: 6px; opacity: 0; transition: opacity 0.15s;
+}
+.card a.thumb:hover::after { opacity: 1; }
+.card .info .listen { font-size: 0.78rem; }
 .card .info { flex: 1; min-width: 0; }
 .card .info .name { font-weight: 600; }
 .card .info .meta { color: var(--muted); font-size: 0.82rem; margin-top: 2px; }
@@ -287,10 +297,12 @@ function appJS() {
   return `
 const $ = sel => document.querySelector(sel);
 const linkInput = $('#link-input'), lookupBtn = $('#lookup-btn'), statusEl = $('#status');
-const resultEl = $('#result'), mainCard = $('#main-card'), similarGrid = $('#similar-grid'), similarCount = $('#similar-count');
+const resultEl = $('#result'), mainCard = $('#main-card');
+const similarGrid = $('#similar-grid'), similarCount = $('#similar-count');
+const similarAudioGrid = $('#similar-audio-grid'), similarAudioCount = $('#similar-audio-count');
 const commitBtn = $('#commit-btn'), commitStatus = $('#commit-status');
 
-let currentArtist = null, currentSimilar = [];
+let currentArtist = null, currentSimilar = [], currentSimilarAudio = [];
 
 function setStatus(msg, isError) {
   statusEl.hidden = !msg;
@@ -322,29 +334,42 @@ function tagsHTML(genres) {
   return (genres || []).map(g => '<span class="tag">' + g + '</span>').join('');
 }
 
+function thumbHTML(a) {
+  if (!a.youtubeVideoId) return '';
+  const img = '<img src="' + thumb(a.youtubeVideoId) + '">';
+  return a.songUrl
+    ? '<a class="thumb" href="' + a.songUrl + '" target="_blank" rel="noopener">' + img + '</a>'
+    : img;
+}
+
+function listenLinkHTML(a) {
+  return a.songUrl ? ' · <a class="listen" href="' + a.songUrl + '" target="_blank" rel="noopener">listen ↗</a>' : '';
+}
+
 function renderMainCard(artist) {
   const disabled = artist.alreadyInSeed;
   mainCard.innerHTML = \`
     <div class="card \${disabled ? 'disabled' : ''}">
       <input type="checkbox" id="main-check" \${disabled ? 'disabled' : 'checked'}>
-      \${artist.youtubeVideoId ? '<img src="' + thumb(artist.youtubeVideoId) + '">' : ''}
+      \${thumbHTML(artist)}
       <div class="info">
         <div class="name">\${artist.name} \${disabled ? '<span class="already">already in library</span>' : ''}</div>
-        <div class="meta">\${artist.birthDate} · Venus in \${artist.venus}\${artist.handpickedTrack ? ' · "' + artist.handpickedTrack + '"' : ''}</div>
+        <div class="meta">\${artist.birthDate} · Venus in \${artist.venus}\${artist.handpickedTrack ? ' · "' + artist.handpickedTrack + '"' : ''}\${listenLinkHTML(artist)}</div>
         <div class="tags">\${tagsHTML(artist.genres)}</div>
       </div>
     </div>\`;
 }
 
-function renderSimilar(list) {
-  similarCount.textContent = '(' + list.length + ')';
-  similarGrid.innerHTML = list.map((a, i) => \`
+function renderGrid(gridEl, countEl, checkClass, list) {
+  countEl.textContent = '(' + list.length + ')';
+  if (!list.length) { gridEl.innerHTML = '<p class="muted">No candidates found.</p>'; return; }
+  gridEl.innerHTML = list.map((a, i) => \`
     <div class="card">
-      <input type="checkbox" class="similar-check" data-i="\${i}">
-      \${a.youtubeVideoId ? '<img src="' + thumb(a.youtubeVideoId) + '">' : ''}
+      <input type="checkbox" class="\${checkClass}" data-i="\${i}">
+      \${thumbHTML(a)}
       <div class="info">
         <div class="name">\${a.name}</div>
-        <div class="meta">\${a.birthDate} · Venus in \${a.venus} · match \${(a.lastfmMatch * 100).toFixed(0)}%</div>
+        <div class="meta">\${a.birthDate} · Venus in \${a.venus} · match \${(a.match * 100).toFixed(0)}%\${a.matchedTrack ? ' · via "' + a.matchedTrack + '"' : ''}\${listenLinkHTML(a)}</div>
         <div class="tags">\${tagsHTML(a.genres)}</div>
       </div>
     </div>\`).join('');
@@ -367,8 +392,10 @@ lookupBtn.addEventListener('click', async () => {
       setStatus('');
       currentArtist = data.artist;
       currentSimilar = data.similar || [];
+      currentSimilarAudio = data.similarAudio || [];
       renderMainCard(currentArtist);
-      renderSimilar(currentSimilar);
+      renderGrid(similarGrid, similarCount, 'similar-check', currentSimilar);
+      renderGrid(similarAudioGrid, similarAudioCount, 'similar-audio-check', currentSimilarAudio);
       resultEl.hidden = false;
     });
   } catch (e) {
@@ -382,6 +409,7 @@ commitBtn.addEventListener('click', async () => {
   const mainCheck = document.getElementById('main-check');
   if (mainCheck && mainCheck.checked) entries.push(currentArtist);
   document.querySelectorAll('.similar-check:checked').forEach(cb => entries.push(currentSimilar[parseInt(cb.dataset.i, 10)]));
+  document.querySelectorAll('.similar-audio-check:checked').forEach(cb => entries.push(currentSimilarAudio[parseInt(cb.dataset.i, 10)]));
 
   if (!entries.length) { commitStatus.textContent = 'Nothing selected.'; return; }
 
