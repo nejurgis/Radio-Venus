@@ -44,6 +44,7 @@ async function handle(request, env) {
   if (pathname === '/api/lookup' && request.method === 'POST') return handleLookup(request, env, url);
   if (pathname === '/api/commit' && request.method === 'POST') return handleCommit(request, env, url);
   if (pathname.startsWith('/api/jobs/') && request.method === 'GET') return handleJobGet(request, env, pathname);
+  if (pathname === '/api/log' && request.method === 'GET') return handleLog(env);
 
   return new Response('Not found', { status: 404 });
 }
@@ -159,6 +160,30 @@ async function handleJobResult(request, env, pathname) {
   return json({ ok: true });
 }
 
+// scripts/addition-log.jsonl, read straight from GitHub — the Worker never
+// writes it (GH Actions does, at commit time), just displays it.
+async function handleLog(env) {
+  const res = await fetch(
+    `https://api.github.com/repos/${OWNER}/${REPO}/contents/scripts/addition-log.jsonl?ref=${REF}`,
+    {
+      headers: {
+        Authorization: `Bearer ${env.GITHUB_TOKEN}`,
+        Accept: 'application/vnd.github.raw+json',
+        'User-Agent': 'radio-venus-admin-worker',
+      },
+    }
+  );
+  if (res.status === 404) return json({ entries: [] }); // no additions logged yet
+  if (!res.ok) return json({ error: `GitHub fetch failed (${res.status})` }, 502);
+
+  const text = await res.text();
+  const entries = text.split('\n').filter(Boolean).map(line => {
+    try { return JSON.parse(line); } catch { return null; }
+  }).filter(Boolean).reverse(); // newest first
+
+  return json({ entries });
+}
+
 // ── Responses ────────────────────────────────────────────────────────────────
 
 function json(data, status = 200) {
@@ -201,31 +226,49 @@ function renderApp() {
 </head><body>
 <header>
   <h1>⊹ Radio Venus Admin</h1>
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="add">Add artist</button>
+    <button class="tab-btn" data-tab="log">Log</button>
+  </nav>
   <form method="POST" action="/logout"><button class="ghost" type="submit">Log out</button></form>
 </header>
 
 <main>
-  <section class="lookup">
-    <input id="link-input" type="text" placeholder="Paste a YouTube or Spotify artist/track link…" autofocus>
-    <button id="lookup-btn">Look up</button>
+  <section id="tab-add" class="tab-panel">
+    <section class="lookup">
+      <input id="link-input" type="text" placeholder="Paste a YouTube or Spotify artist/track link…" autofocus>
+      <button id="lookup-btn">Look up</button>
+    </section>
+
+    <section id="status" class="status" hidden></section>
+
+    <section id="result" hidden>
+      <h2>Artist</h2>
+      <div id="main-card"></div>
+
+      <h2>Similar artists — Last.fm <span id="similar-count" class="muted"></span></h2>
+      <div id="similar-grid" class="grid"></div>
+
+      <h2>Similar sounding — cosine.club <span id="similar-audio-count" class="muted"></span></h2>
+      <div id="similar-audio-grid" class="grid"></div>
+
+      <div class="commit-bar">
+        <button id="commit-btn">Add selected</button>
+        <span id="commit-status" class="muted"></span>
+      </div>
+    </section>
   </section>
 
-  <section id="status" class="status" hidden></section>
-
-  <section id="result" hidden>
-    <h2>Artist</h2>
-    <div id="main-card"></div>
-
-    <h2>Similar artists — Last.fm <span id="similar-count" class="muted"></span></h2>
-    <div id="similar-grid" class="grid"></div>
-
-    <h2>Similar sounding — cosine.club <span id="similar-audio-count" class="muted"></span></h2>
-    <div id="similar-audio-grid" class="grid"></div>
-
-    <div class="commit-bar">
-      <button id="commit-btn">Add selected</button>
-      <span id="commit-status" class="muted"></span>
+  <section id="tab-log" class="tab-panel" hidden>
+    <div class="log-toolbar">
+      <label class="muted">Since <input id="log-since" type="date"></label>
+      <button id="log-draft-btn" class="ghost">Generate newsletter draft</button>
     </div>
+
+    <textarea id="log-draft" hidden readonly rows="14"></textarea>
+
+    <h2>Additions <span id="log-count" class="muted"></span></h2>
+    <div id="log-list"></div>
   </section>
 </main>
 
@@ -290,6 +333,21 @@ h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; colo
 .grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
 @media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; } }
 .commit-bar { display: flex; align-items: center; gap: 14px; margin: 24px 0 60px; }
+
+.tabs { display: flex; gap: 4px; }
+.tab-btn { background: transparent; color: var(--muted); font-weight: 600; padding: 6px 12px; border-radius: 6px; }
+.tab-btn.active { background: var(--card); color: var(--fg); border: 1px solid var(--border); }
+
+.log-toolbar { display: flex; align-items: center; gap: 14px; margin-top: 8px; }
+.log-toolbar label { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; }
+.log-toolbar input[type=date] { background: var(--card); color: var(--fg); border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; }
+#log-draft { width: 100%; margin: 16px 0; background: var(--card); color: var(--fg); border: 1px solid var(--border); border-radius: 8px; padding: 12px; font: 13px/1.5 ui-monospace, monospace; }
+#log-list { display: flex; flex-direction: column; gap: 6px; }
+.log-row { display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; font-size: 0.88rem; }
+.log-row .log-date { color: var(--muted); font-size: 0.78rem; flex-shrink: 0; width: 78px; }
+.log-row .log-name { font-weight: 600; flex-shrink: 0; }
+.log-row .log-meta { color: var(--muted); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.log-row .log-source { font-size: 0.7rem; color: var(--accent); flex-shrink: 0; }
 `;
 }
 
@@ -432,5 +490,96 @@ commitBtn.addEventListener('click', async () => {
 });
 
 linkInput.addEventListener('keydown', e => { if (e.key === 'Enter') lookupBtn.click(); });
+
+// ── Tabs ─────────────────────────────────────────────────────────────────────
+
+const tabBtns = document.querySelectorAll('.tab-btn');
+const tabPanels = { add: $('#tab-add'), log: $('#tab-log') };
+let logLoaded = false;
+
+tabBtns.forEach(btn => btn.addEventListener('click', () => {
+  tabBtns.forEach(b => b.classList.toggle('active', b === btn));
+  Object.entries(tabPanels).forEach(([name, el]) => { el.hidden = name !== btn.dataset.tab; });
+  if (btn.dataset.tab === 'log' && !logLoaded) loadLog();
+}));
+
+// ── Log ──────────────────────────────────────────────────────────────────────
+
+const logSince = $('#log-since'), logDraftBtn = $('#log-draft-btn'), logDraft = $('#log-draft');
+const logList = $('#log-list'), logCount = $('#log-count');
+let logEntries = [];
+
+const GENRE_LABELS = {
+  ambient: 'Ambient', dnb: 'Drum & Bass', idm: 'IDM', electronica: 'Electronica',
+  techno: 'Techno', house: 'House', dubstep: 'Dubstep', triphop: 'Trip-Hop',
+  classical: 'Classical', experimental: 'Experimental', pop: 'Pop', rock: 'Rock',
+  folk: 'Folk', jazz: 'Jazz', hiphop: 'Hip-Hop',
+};
+const genreLabel = g => GENRE_LABELS[g] || (g.charAt(0).toUpperCase() + g.slice(1));
+
+async function loadLog() {
+  logList.innerHTML = '<p class="muted">Loading…</p>';
+  try {
+    const res = await fetch('/api/log');
+    const data = await res.json();
+    if (data.error) throw new Error(data.error);
+    logEntries = data.entries || [];
+    logLoaded = true;
+    renderLogList(logEntries);
+  } catch (e) {
+    logList.innerHTML = '<p class="muted">Failed to load: ' + e.message + '</p>';
+  }
+}
+
+function renderLogList(entries) {
+  logCount.textContent = '(' + entries.length + ')';
+  if (!entries.length) { logList.innerHTML = '<p class="muted">Nothing logged yet.</p>'; return; }
+  logList.innerHTML = entries.map(e => {
+    const date = e.timestamp ? e.timestamp.slice(0, 10) : '';
+    const genres = (e.genres || []).join(', ');
+    const listen = e.youtubeVideoId ? ' · <a href="https://www.youtube.com/watch?v=' + e.youtubeVideoId + '" target="_blank" rel="noopener">listen ↗</a>' : '';
+    return '<div class="log-row">' +
+      '<span class="log-date">' + date + '</span>' +
+      '<span class="log-name">' + e.name + '</span>' +
+      '<span class="log-meta">' + (e.venus ? 'Venus in ' + e.venus + ' · ' : '') + genres + listen + '</span>' +
+      '<span class="log-source">' + e.source + '</span>' +
+      '</div>';
+  }).join('');
+}
+
+logSince.addEventListener('change', () => {
+  const since = logSince.value ? new Date(logSince.value) : null;
+  renderLogList(since ? logEntries.filter(e => new Date(e.timestamp) >= since) : logEntries);
+});
+
+logDraftBtn.addEventListener('click', () => {
+  const since = logSince.value ? new Date(logSince.value) : new Date(0);
+  const filtered = logEntries.filter(e => new Date(e.timestamp) >= since);
+  if (!filtered.length) { logDraft.hidden = false; logDraft.value = 'No additions in this range.'; return; }
+
+  const byGenre = {};
+  for (const e of filtered) {
+    const primary = (e.genres && e.genres[0]) || 'other';
+    (byGenre[primary] = byGenre[primary] || []).push(e);
+  }
+  const genreKeys = Object.keys(byGenre).sort((a, b) => byGenre[b].length - byGenre[a].length);
+
+  let md = '# Radio Venus — new arrivals\\n\\n';
+  md += filtered.length + ' artist' + (filtered.length === 1 ? '' : 's') + ' added\\n\\n';
+  for (const key of genreKeys) {
+    md += '## ' + genreLabel(key) + '\\n\\n';
+    for (const e of byGenre[key].sort((a, b) => a.name.localeCompare(b.name))) {
+      const venusPart = e.venus ? ' — Venus in ' + e.venus : '';
+      const listenPart = e.youtubeVideoId ? ' — [listen](https://www.youtube.com/watch?v=' + e.youtubeVideoId + ')' : '';
+      const trackPart = e.handpickedTrack ? ' ("' + e.handpickedTrack + '")' : '';
+      md += '- **' + e.name + '**' + trackPart + venusPart + listenPart + '\\n';
+    }
+    md += '\\n';
+  }
+  logDraft.hidden = false;
+  logDraft.value = md;
+  logDraft.focus();
+  logDraft.select();
+});
 `;
 }

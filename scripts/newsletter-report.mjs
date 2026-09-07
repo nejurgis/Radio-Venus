@@ -105,7 +105,7 @@ const sortedGenres = [...byGenre.entries()].sort((a, b) => b[1].length - a[1].le
 for (const [genreKey, list] of sortedGenres) {
   md += `## ${label(genreKey)}\n\n`;
   for (const e of list.sort((a, b) => a.name.localeCompare(b.name))) {
-    const venus = e.birthDate ? calculateVenus(e.birthDate) : null;
+    const venus = e.venus ?? (e.birthDate ? calculateVenus(e.birthDate) : null);
     const venusPart = venus ? ` — Venus in ${venus}` : '';
     const listenPart = e.youtubeVideoId ? ` — [listen](https://www.youtube.com/watch?v=${e.youtubeVideoId})` : '';
     const trackPart = e.handpickedTrack ? ` ("${e.handpickedTrack}")` : '';

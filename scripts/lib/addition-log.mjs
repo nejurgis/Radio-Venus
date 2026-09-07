@@ -10,6 +10,7 @@
 import { appendFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { calculateVenus } from './enrich.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 export const ADDITION_LOG_PATH = join(__dirname, '..', 'addition-log.jsonl');
@@ -17,6 +18,9 @@ export const ADDITION_LOG_PATH = join(__dirname, '..', 'addition-log.jsonl');
 // entries: array of seed-shaped artist objects (must have at least name).
 // source: short machine tag, e.g. 'admin-tool' | 'csv-import' | 'en-discover' | 'en-radio' | 'cosine-discover'.
 // context: free text — the link pasted, CSV filename, seed artist name used for discovery, etc. Optional.
+//
+// venus is computed and stored at write time (not left for readers to derive)
+// so the admin Worker can display the log without bundling astronomy-engine.
 export function logAdditions(entries, source, context = null) {
   if (!entries?.length) return;
   const now = new Date().toISOString();
@@ -26,6 +30,7 @@ export function logAdditions(entries, source, context = null) {
     genres: e.genres ?? [],
     subgenres: e.subgenres ?? [],
     birthDate: e.birthDate ?? null,
+    venus: e.birthDate ? calculateVenus(e.birthDate) : null,
     youtubeVideoId: e.youtubeVideoId ?? e.youtubeId ?? null,
     handpickedTrack: e.handpickedTrack ?? null,
     source,
