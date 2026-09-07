@@ -45,6 +45,7 @@ async function handle(request, env) {
   if (pathname === '/api/commit' && request.method === 'POST') return handleCommit(request, env, url);
   if (pathname.startsWith('/api/jobs/') && request.method === 'GET') return handleJobGet(request, env, pathname);
   if (pathname === '/api/log' && request.method === 'GET') return handleLog(env);
+  if (pathname === '/api/suggest' && request.method === 'GET') return handleSuggest(env, url);
 
   return new Response('Not found', { status: 404 });
 }
@@ -184,6 +185,27 @@ async function handleLog(env) {
   return json({ entries });
 }
 
+// Live typeahead — calls Last.fm directly (fast) rather than going through
+// the GH Actions lookup pipeline (30-90s, way too slow for autosuggest).
+async function handleSuggest(env, url) {
+  const q = (url.searchParams.get('q') ?? '').trim();
+  if (q.length < 2 || !env.LASTFM_API_KEY) return json({ suggestions: [] });
+
+  const qs = new URLSearchParams({
+    method: 'artist.search', artist: q, limit: '8',
+    api_key: env.LASTFM_API_KEY, format: 'json',
+  });
+  const res = await fetch(`https://ws.audioscrobbler.com/2.0/?${qs}`);
+  if (!res.ok) return json({ suggestions: [] });
+
+  const data = await res.json();
+  const raw = data?.results?.artistmatches?.artist;
+  const list = Array.isArray(raw) ? raw : raw ? [raw] : [];
+  return json({
+    suggestions: list.map(a => ({ name: a.name, listeners: parseInt(a.listeners, 10) || 0 })),
+  });
+}
+
 // ── Responses ────────────────────────────────────────────────────────────────
 
 function json(data, status = 200) {
@@ -236,7 +258,10 @@ function renderApp() {
 <main>
   <section id="tab-add" class="tab-panel">
     <section class="lookup">
-      <input id="link-input" type="text" placeholder="Paste a link, or search &quot;Artist - Song&quot; / just an artist name…" autofocus>
+      <div class="lookup-input-wrap">
+        <input id="link-input" type="text" autocomplete="off" placeholder="Paste a link, or search &quot;Artist - Song&quot; / just an artist name…" autofocus>
+        <div id="suggest-list" class="suggest-list" hidden></div>
+      </div>
       <button id="lookup-btn">Look up</button>
     </section>
 
@@ -307,6 +332,15 @@ header h1 { font-size: 1rem; margin: 0; }
 main { max-width: 900px; margin: 0 auto; padding: 24px; }
 .lookup { display: flex; gap: 10px; }
 .lookup button { flex-shrink: 0; }
+.lookup-input-wrap { position: relative; flex: 1; min-width: 0; }
+.suggest-list {
+  position: absolute; top: calc(100% + 4px); left: 0; right: 0; z-index: 10;
+  background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+  max-height: 260px; overflow-y: auto; box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+.suggest-item { display: flex; justify-content: space-between; gap: 10px; padding: 9px 14px; cursor: pointer; font-size: 0.9rem; }
+.suggest-item:hover, .suggest-item.active { background: var(--border); }
+.suggest-item .listeners { color: var(--muted); font-size: 0.78rem; flex-shrink: 0; }
 .status { margin: 20px 0; padding: 14px 16px; border-radius: 8px; background: var(--card); border: 1px solid var(--border); font-size: 0.9rem; }
 .status.error { border-color: #e5484d; color: #e5484d; }
 h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 28px 0 10px; }
@@ -433,7 +467,74 @@ function renderGrid(gridEl, countEl, checkClass, list) {
     </div>\`).join('');
 }
 
+// ── Autosuggest ──────────────────────────────────────────────────────────────
+
+const suggestList = $('#suggest-list');
+let suggestions = [], suggestActive = -1, suggestTimer = null, suggestAbort = null;
+
+function hideSuggestions() {
+  suggestList.hidden = true;
+  suggestList.innerHTML = '';
+  suggestions = [];
+  suggestActive = -1;
+}
+
+function renderSuggestions() {
+  if (!suggestions.length) { hideSuggestions(); return; }
+  suggestList.hidden = false;
+  suggestList.innerHTML = suggestions.map((s, i) => \`
+    <div class="suggest-item\${i === suggestActive ? ' active' : ''}" data-i="\${i}">
+      <span>\${s.name}</span>
+      <span class="listeners">\${s.listeners ? s.listeners.toLocaleString() + ' listeners' : ''}</span>
+    </div>\`).join('');
+}
+
+function pickSuggestion(i) {
+  const s = suggestions[i];
+  if (!s) return;
+  linkInput.value = s.name;
+  hideSuggestions();
+  lookupBtn.click();
+}
+
+linkInput.addEventListener('input', () => {
+  const q = linkInput.value.trim();
+  clearTimeout(suggestTimer);
+  if (q.length < 2 || /^https?:\\/\\//i.test(q)) { hideSuggestions(); return; }
+  suggestTimer = setTimeout(async () => {
+    if (suggestAbort) suggestAbort.abort();
+    suggestAbort = new AbortController();
+    try {
+      const res = await fetch('/api/suggest?q=' + encodeURIComponent(q), { signal: suggestAbort.signal });
+      const data = await res.json();
+      suggestions = data.suggestions || [];
+      suggestActive = -1;
+      renderSuggestions();
+    } catch (e) { if (e.name !== 'AbortError') hideSuggestions(); }
+  }, 250);
+});
+
+linkInput.addEventListener('keydown', e => {
+  if (!suggestList.hidden) {
+    if (e.key === 'ArrowDown') { e.preventDefault(); suggestActive = Math.min(suggestActive + 1, suggestions.length - 1); renderSuggestions(); return; }
+    if (e.key === 'ArrowUp') { e.preventDefault(); suggestActive = Math.max(suggestActive - 1, 0); renderSuggestions(); return; }
+    if (e.key === 'Escape') { hideSuggestions(); return; }
+    if (e.key === 'Enter' && suggestActive >= 0) { e.preventDefault(); pickSuggestion(suggestActive); return; }
+  }
+  if (e.key === 'Enter') lookupBtn.click();
+});
+
+suggestList.addEventListener('click', e => {
+  const row = e.target.closest('.suggest-item');
+  if (row) pickSuggestion(parseInt(row.dataset.i, 10));
+});
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('.lookup-input-wrap')) hideSuggestions();
+});
+
 lookupBtn.addEventListener('click', async () => {
+  hideSuggestions();
   const url = linkInput.value.trim();
   if (!url) return;
   lookupBtn.disabled = true;
@@ -488,8 +589,6 @@ commitBtn.addEventListener('click', async () => {
     commitStatus.textContent = e.message;
   }
 });
-
-linkInput.addEventListener('keydown', e => { if (e.key === 'Enter') lookupBtn.click(); });
 
 // ── Tabs ─────────────────────────────────────────────────────────────────────
 
