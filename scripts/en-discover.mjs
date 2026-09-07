@@ -19,6 +19,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import https from 'node:https';
 import { categorizeGenres, categorizeSubgenres } from '../src/genres.js';
+import { logAdditions } from './lib/addition-log.mjs';
 
 const require   = createRequire(import.meta.url);
 const ytSearch  = require('yt-search');
@@ -544,6 +545,7 @@ async function main() {
   } else {
     const updated = [...seed, ...additions];
     writeFileSync(SEED_PATH, JSON.stringify(updated, null, 2));
+    logAdditions(additions, 'en-discover', artistArg);
     console.log(`\nAdded ${additions.length} artists to seed-musicians.json`);
     console.log('Next steps:');
     console.log('  1. Verify YouTube IDs above');

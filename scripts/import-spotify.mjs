@@ -19,6 +19,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import https from 'node:https';
 import { categorizeGenres, categorizeSubgenres } from '../src/genres.js';
+import { logAdditions } from './lib/addition-log.mjs';
 
 // ── Load .env ────────────────────────────────────────────────────────────────
 
@@ -435,6 +436,7 @@ async function main() {
   // For --output mode: collect changes without touching seed on disk
   const outputAdditions = [];  // new artist entries
   const outputPatches   = [];  // { name, handpicked, handpickedTrack } for existing artists
+  const directlyAddedEntries = []; // new artist entries actually pushed to seed (direct-write mode)
 
   for (let i = 0; i < artists.length; i++) {
     const { artistName, trackName, releaseDate, trackId } = artists[i];
@@ -543,6 +545,7 @@ async function main() {
     } else if (!DRY_RUN) {
       seed.push(entry);
       seedByName.set(key, entry);
+      directlyAddedEntries.push(entry);
     }
 
     await delay(500);
@@ -566,6 +569,7 @@ async function main() {
     console.log('Run "node scripts/merge-import.mjs" to merge into seed.');
   } else if (!DRY_RUN && (results.updated.length || results.added.length)) {
     writeFileSync(SEED_PATH, JSON.stringify(seed, null, 2));
+    logAdditions(directlyAddedEntries, 'csv-import', csvPath);
     console.log(`\nWrote ${seed.length} total artists to ${SEED_PATH}`);
     console.log('Run "node scripts/build-db.mjs" to rebuild the database.');
   } else if (DRY_RUN) {

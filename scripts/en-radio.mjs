@@ -18,6 +18,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import https from 'node:https';
 import { categorizeGenres, categorizeSubgenres } from '../src/genres.js';
+import { logAdditions } from './lib/addition-log.mjs';
 
 const require   = createRequire(import.meta.url);
 const ytSearch  = require('yt-search');
@@ -431,15 +432,16 @@ async function main() {
   } else {
     const seed2 = JSON.parse(readFileSync(SEED_PATH, 'utf-8'));
     const nameSet = new Set(seed2.map(a => a.name.toLowerCase()));
-    let added = 0;
+    const written = [];
     for (const entry of additions) {
       if (!nameSet.has(entry.name.toLowerCase())) {
         seed2.push(entry);
-        added++;
+        written.push(entry);
       }
     }
     writeFileSync(SEED_PATH, JSON.stringify(seed2, null, 2));
-    console.log(`\nAdded ${added} artists to seed. Run "node scripts/build-db.mjs" to rebuild.`);
+    logAdditions(written, 'en-radio', artistArg);
+    console.log(`\nAdded ${written.length} artists to seed. Run "node scripts/build-db.mjs" to rebuild.`);
   }
 }
 

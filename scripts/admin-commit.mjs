@@ -13,6 +13,7 @@
 //
 import { readFileSync, writeFileSync } from 'node:fs';
 import { SEED_PATH } from './lib/enrich.mjs';
+import { logAdditions } from './lib/addition-log.mjs';
 
 const args        = process.argv.slice(2);
 const arg         = name => args.find(a => a.startsWith(`--${name}=`))?.slice(name.length + 3);
@@ -53,6 +54,7 @@ const seedNames = new Set(seed.map(a => a.name.toLowerCase()));
 const seedSpotifyIds = new Set(seed.map(a => a.spotifyId).filter(Boolean));
 
 const added = [];
+const addedEntries = [];
 const skipped = [];
 
 for (const raw of rawEntries) {
@@ -67,9 +69,11 @@ for (const raw of rawEntries) {
   seedNames.add(key);
   if (entry.spotifyId) seedSpotifyIds.add(entry.spotifyId);
   added.push(raw.name);
+  addedEntries.push(entry);
 }
 
 writeFileSync(SEED_PATH, JSON.stringify(seed, null, 2));
+logAdditions(addedEntries, 'admin-tool');
 
 console.log(`Added: ${added.length}`);
 added.forEach(n => console.log(`  + ${n}`));

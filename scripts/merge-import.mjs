@@ -9,6 +9,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { logAdditions } from './lib/addition-log.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SEED_PATH = join(__dirname, 'seed-musicians.json');
@@ -26,6 +27,7 @@ const seedBySpotify  = new Map(seed.filter(a => a.spotifyId).map(a => [a.spotify
 
 let totalAdded   = 0;
 let totalPatched = 0;
+const addedEntries = [];
 
 for (const file of inputFiles) {
   const { additions = [], patches = [] } = JSON.parse(readFileSync(file, 'utf-8'));
@@ -39,6 +41,7 @@ for (const file of inputFiles) {
       seedByName.set(key, entry);
       if (entry.spotifyId) seedBySpotify.set(entry.spotifyId, entry);
       totalAdded++;
+      addedEntries.push(entry);
     } else {
       const reason = seedByName.has(key) ? entry.name : `Spotify ID ${entry.spotifyId} → "${existing.name}"`;
       console.log(`  skip duplicate: ${reason}`);
@@ -63,5 +66,6 @@ for (const file of inputFiles) {
 }
 
 writeFileSync(SEED_PATH, JSON.stringify(seed, null, 2));
+logAdditions(addedEntries, 'csv-import', inputFiles.join(', '));
 console.log(`\nMerged: +${totalAdded} new, ${totalPatched} patched → ${seed.length} total artists`);
 console.log('Run "node scripts/build-db.mjs" to rebuild the database.');

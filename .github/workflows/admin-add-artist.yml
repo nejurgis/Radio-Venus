@@ -86,7 +86,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add scripts/seed-musicians.json public/data/musicians.json
+          touch scripts/addition-log.jsonl
+          git add scripts/seed-musicians.json public/data/musicians.json scripts/addition-log.jsonl
           if git diff --cached --quiet; then
             echo "sha=none" >> "$GITHUB_OUTPUT"
           else
