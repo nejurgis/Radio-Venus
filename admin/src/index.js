@@ -1,0 +1,408 @@
+// ── Radio Venus Admin ────────────────────────────────────────────────────────
+// Password-gated tool: paste a YouTube/Spotify link, preview the resolved
+// artist + Last.fm-similar candidates, pick which to add, commit to seed.
+// Orchestrates the .github/workflows/admin-add-artist.yml GH Actions job —
+// this Worker never scrapes/enriches itself, it just dispatches + polls.
+
+const OWNER = 'nejurgis';
+const REPO = 'Radio-Venus';
+const WORKFLOW_FILE = 'admin-add-artist.yml';
+const REF = 'master';
+const SESSION_MAX_AGE = 60 * 60 * 24 * 30; // 30 days
+
+export default {
+  async fetch(request, env) {
+    try {
+      return await handle(request, env);
+    } catch (err) {
+      return json({ error: err.message ?? 'Internal error' }, 500);
+    }
+  },
+};
+
+async function handle(request, env) {
+  const url = new URL(request.url);
+  const { pathname } = url;
+
+  // Callback from GH Actions — bearer-secret authed, not cookie-authed.
+  if (pathname.startsWith('/api/jobs/') && pathname.endsWith('/result') && request.method === 'POST') {
+    return handleJobResult(request, env, pathname);
+  }
+
+  if (pathname === '/login' && request.method === 'POST') return handleLogin(request, env);
+  if (pathname === '/logout' && request.method === 'POST') return handleLogout();
+
+  const authed = await isAuthed(request, env);
+
+  if (pathname === '/' ) {
+    return authed ? htmlResponse(renderApp()) : htmlResponse(renderLogin(url.searchParams.get('error')));
+  }
+
+  // Everything else requires a session cookie.
+  if (!authed) return json({ error: 'Unauthorized' }, 401);
+
+  if (pathname === '/api/lookup' && request.method === 'POST') return handleLookup(request, env, url);
+  if (pathname === '/api/commit' && request.method === 'POST') return handleCommit(request, env, url);
+  if (pathname.startsWith('/api/jobs/') && request.method === 'GET') return handleJobGet(request, env, pathname);
+
+  return new Response('Not found', { status: 404 });
+}
+
+// ── Auth ───────────────────────────────────────────────────────────────────
+
+async function hmac(secret, message) {
+  const enc = new TextEncoder();
+  const key = await crypto.subtle.importKey('raw', enc.encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+  const sig = await crypto.subtle.sign('HMAC', key, enc.encode(message));
+  return btoa(String.fromCharCode(...new Uint8Array(sig))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
+
+function getCookie(request, name) {
+  const header = request.headers.get('Cookie') ?? '';
+  const match = header.match(new RegExp(`(?:^|;\\s*)${name}=([^;]*)`));
+  return match ? decodeURIComponent(match[1]) : null;
+}
+
+async function isAuthed(request, env) {
+  const cookie = getCookie(request, 'session');
+  if (!cookie) return false;
+  const [expiry, sig] = cookie.split('.');
+  if (!expiry || !sig) return false;
+  if (Date.now() > parseInt(expiry, 10)) return false;
+  const expected = await hmac(env.SESSION_SECRET, expiry);
+  return timingSafeEqual(sig, expected);
+}
+
+function timingSafeEqual(a, b) {
+  if (a.length !== b.length) return false;
+  let diff = 0;
+  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return diff === 0;
+}
+
+async function handleLogin(request, env) {
+  const form = await request.formData();
+  const password = form.get('password') ?? '';
+  if (!timingSafeEqual(String(password), env.ADMIN_PASSWORD)) {
+    return Response.redirect(new URL('/?error=1', request.url), 302);
+  }
+  const expiry = String(Date.now() + SESSION_MAX_AGE * 1000);
+  const sig = await hmac(env.SESSION_SECRET, expiry);
+  const cookie = `session=${encodeURIComponent(`${expiry}.${sig}`)}; HttpOnly; Secure; SameSite=Lax; Path=/; Max-Age=${SESSION_MAX_AGE}`;
+  return new Response(null, { status: 302, headers: { Location: '/', 'Set-Cookie': cookie } });
+}
+
+function handleLogout() {
+  return new Response(null, {
+    status: 302,
+    headers: { Location: '/', 'Set-Cookie': 'session=; HttpOnly; Secure; SameSite=Lax; Path=/; Max-Age=0' },
+  });
+}
+
+// ── GitHub Actions orchestration ────────────────────────────────────────────
+
+async function dispatchWorkflow(env, inputs) {
+  const res = await fetch(
+    `https://api.github.com/repos/${OWNER}/${REPO}/actions/workflows/${WORKFLOW_FILE}/dispatches`,
+    {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${env.GITHUB_TOKEN}`,
+        Accept: 'application/vnd.github+json',
+        'User-Agent': 'radio-venus-admin-worker',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ ref: REF, inputs }),
+    }
+  );
+  if (!res.ok) {
+    const body = await res.text();
+    throw new Error(`GitHub dispatch failed (${res.status}): ${body.slice(0, 300)}`);
+  }
+}
+
+async function handleLookup(request, env, url) {
+  const { url: link } = await request.json();
+  if (!link || typeof link !== 'string') return json({ error: 'Missing url' }, 400);
+
+  const jobId = crypto.randomUUID();
+  await env.JOBS.put(`job:${jobId}`, JSON.stringify({ status: 'pending' }), { expirationTtl: 3600 });
+  await dispatchWorkflow(env, { mode: 'lookup', job_id: jobId, url: link, callback_url: url.origin });
+  return json({ job_id: jobId });
+}
+
+async function handleCommit(request, env, url) {
+  const { entries } = await request.json();
+  if (!Array.isArray(entries) || !entries.length) return json({ error: 'No entries selected' }, 400);
+
+  const jobId = crypto.randomUUID();
+  await env.JOBS.put(`job:${jobId}`, JSON.stringify({ status: 'pending' }), { expirationTtl: 3600 });
+  await dispatchWorkflow(env, { mode: 'commit', job_id: jobId, payload: JSON.stringify(entries), callback_url: url.origin });
+  return json({ job_id: jobId });
+}
+
+async function handleJobGet(request, env, pathname) {
+  const id = pathname.split('/').pop();
+  const raw = await env.JOBS.get(`job:${id}`);
+  if (!raw) return json({ status: 'unknown' }, 404);
+  return new Response(raw, { headers: { 'content-type': 'application/json' } });
+}
+
+async function handleJobResult(request, env, pathname) {
+  const auth = request.headers.get('Authorization') ?? '';
+  if (!timingSafeEqual(auth.replace(/^Bearer\s+/, ''), env.CALLBACK_SECRET)) {
+    return json({ error: 'Unauthorized' }, 401);
+  }
+  const id = pathname.split('/')[3]; // /api/jobs/{id}/result
+  const body = await request.text();
+  await env.JOBS.put(`job:${id}`, body, { expirationTtl: 3600 });
+  return json({ ok: true });
+}
+
+// ── Responses ────────────────────────────────────────────────────────────────
+
+function json(data, status = 200) {
+  return new Response(JSON.stringify(data), { status, headers: { 'content-type': 'application/json' } });
+}
+
+function htmlResponse(html) {
+  return new Response(html, { headers: { 'content-type': 'text/html; charset=utf-8' } });
+}
+
+// ── Pages ────────────────────────────────────────────────────────────────────
+
+function renderLogin(error) {
+  return `<!doctype html>
+<html><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radio Venus Admin</title>
+<style>${baseCSS()}
+.login-box { max-width: 320px; margin: 18vh auto; padding: 32px; }
+.login-box h1 { font-size: 1.1rem; margin: 0 0 24px; letter-spacing: 0.02em; }
+</style>
+</head><body>
+<div class="login-box">
+  <h1>⊹ Radio Venus Admin</h1>
+  ${error ? '<p class="error">Wrong password.</p>' : ''}
+  <form method="POST" action="/login">
+    <input type="password" name="password" placeholder="Password" autofocus required>
+    <button type="submit">Enter</button>
+  </form>
+</div>
+</body></html>`;
+}
+
+function renderApp() {
+  return `<!doctype html>
+<html><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radio Venus Admin</title>
+<style>${baseCSS()}${appCSS()}</style>
+</head><body>
+<header>
+  <h1>⊹ Radio Venus Admin</h1>
+  <form method="POST" action="/logout"><button class="ghost" type="submit">Log out</button></form>
+</header>
+
+<main>
+  <section class="lookup">
+    <input id="link-input" type="text" placeholder="Paste a YouTube or Spotify artist/track link…" autofocus>
+    <button id="lookup-btn">Look up</button>
+  </section>
+
+  <section id="status" class="status" hidden></section>
+
+  <section id="result" hidden>
+    <h2>Artist</h2>
+    <div id="main-card"></div>
+
+    <h2>Similar artists <span id="similar-count" class="muted"></span></h2>
+    <div id="similar-grid" class="grid"></div>
+
+    <div class="commit-bar">
+      <button id="commit-btn">Add selected</button>
+      <span id="commit-status" class="muted"></span>
+    </div>
+  </section>
+</main>
+
+<script>${appJS()}</script>
+</body></html>`;
+}
+
+function baseCSS() {
+  return `
+:root { color-scheme: light dark; --bg:#0d0d12; --fg:#eee; --muted:#888; --card:#1a1a22; --accent:#c9a9ff; --border:#2a2a35; }
+@media (prefers-color-scheme: light) {
+  :root { --bg:#faf9fc; --fg:#161616; --muted:#777; --card:#fff; --accent:#7c4fd6; --border:#e3e0ea; }
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0; }
+input, button { font: inherit; }
+input[type=text], input[type=password] {
+  background: var(--card); color: var(--fg); border: 1px solid var(--border); border-radius: 8px;
+  padding: 10px 14px; width: 100%;
+}
+button {
+  background: var(--accent); color: #fff; border: none; border-radius: 8px; padding: 10px 18px;
+  cursor: pointer; font-weight: 600;
+}
+button:disabled { opacity: 0.5; cursor: default; }
+button.ghost { background: transparent; color: var(--muted); border: 1px solid var(--border); font-weight: 400; }
+.error { color: #e5484d; margin: 0 0 12px; font-size: 0.9rem; }
+.muted { color: var(--muted); font-size: 0.85rem; font-weight: 400; }
+`;
+}
+
+function appCSS() {
+  return `
+header { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; border-bottom: 1px solid var(--border); }
+header h1 { font-size: 1rem; margin: 0; }
+main { max-width: 900px; margin: 0 auto; padding: 24px; }
+.lookup { display: flex; gap: 10px; }
+.lookup button { flex-shrink: 0; }
+.status { margin: 20px 0; padding: 14px 16px; border-radius: 8px; background: var(--card); border: 1px solid var(--border); font-size: 0.9rem; }
+.status.error { border-color: #e5484d; color: #e5484d; }
+h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 28px 0 10px; }
+.card {
+  display: flex; gap: 14px; align-items: center; background: var(--card); border: 1px solid var(--border);
+  border-radius: 10px; padding: 12px 14px;
+}
+.card img { width: 64px; height: 48px; border-radius: 6px; object-fit: cover; flex-shrink: 0; background: #000; }
+.card .info { flex: 1; min-width: 0; }
+.card .info .name { font-weight: 600; }
+.card .info .meta { color: var(--muted); font-size: 0.82rem; margin-top: 2px; }
+.card .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.tag { background: var(--border); border-radius: 4px; padding: 1px 6px; font-size: 0.72rem; color: var(--muted); }
+.card input[type=checkbox] { width: 20px; height: 20px; flex-shrink: 0; }
+.card.disabled { opacity: 0.45; }
+.card .already { font-size: 0.75rem; color: var(--accent); }
+.grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
+@media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; } }
+.commit-bar { display: flex; align-items: center; gap: 14px; margin: 24px 0 60px; }
+`;
+}
+
+function appJS() {
+  return `
+const $ = sel => document.querySelector(sel);
+const linkInput = $('#link-input'), lookupBtn = $('#lookup-btn'), statusEl = $('#status');
+const resultEl = $('#result'), mainCard = $('#main-card'), similarGrid = $('#similar-grid'), similarCount = $('#similar-count');
+const commitBtn = $('#commit-btn'), commitStatus = $('#commit-status');
+
+let currentArtist = null, currentSimilar = [];
+
+function setStatus(msg, isError) {
+  statusEl.hidden = !msg;
+  statusEl.textContent = msg;
+  statusEl.classList.toggle('error', !!isError);
+}
+
+async function pollJob(jobId, onDone) {
+  const started = Date.now();
+  const tick = async () => {
+    const res = await fetch('/api/jobs/' + jobId);
+    const data = await res.json();
+    if (data.status === 'pending' || data.status === 'unknown') {
+      const secs = Math.round((Date.now() - started) / 1000);
+      setStatus('Working… (' + secs + 's, this runs on GitHub Actions and usually takes 30–90s)');
+      setTimeout(tick, 2500);
+      return;
+    }
+    onDone(data);
+  };
+  tick();
+}
+
+function thumb(videoId) {
+  return videoId ? 'https://img.youtube.com/vi/' + videoId + '/mqdefault.jpg' : '';
+}
+
+function tagsHTML(genres) {
+  return (genres || []).map(g => '<span class="tag">' + g + '</span>').join('');
+}
+
+function renderMainCard(artist) {
+  const disabled = artist.alreadyInSeed;
+  mainCard.innerHTML = \`
+    <div class="card \${disabled ? 'disabled' : ''}">
+      <input type="checkbox" id="main-check" \${disabled ? 'disabled' : 'checked'}>
+      \${artist.youtubeVideoId ? '<img src="' + thumb(artist.youtubeVideoId) + '">' : ''}
+      <div class="info">
+        <div class="name">\${artist.name} \${disabled ? '<span class="already">already in library</span>' : ''}</div>
+        <div class="meta">\${artist.birthDate} · Venus in \${artist.venus}\${artist.handpickedTrack ? ' · "' + artist.handpickedTrack + '"' : ''}</div>
+        <div class="tags">\${tagsHTML(artist.genres)}</div>
+      </div>
+    </div>\`;
+}
+
+function renderSimilar(list) {
+  similarCount.textContent = '(' + list.length + ')';
+  similarGrid.innerHTML = list.map((a, i) => \`
+    <div class="card">
+      <input type="checkbox" class="similar-check" data-i="\${i}">
+      \${a.youtubeVideoId ? '<img src="' + thumb(a.youtubeVideoId) + '">' : ''}
+      <div class="info">
+        <div class="name">\${a.name}</div>
+        <div class="meta">\${a.birthDate} · Venus in \${a.venus} · match \${(a.lastfmMatch * 100).toFixed(0)}%</div>
+        <div class="tags">\${tagsHTML(a.genres)}</div>
+      </div>
+    </div>\`).join('');
+}
+
+lookupBtn.addEventListener('click', async () => {
+  const url = linkInput.value.trim();
+  if (!url) return;
+  lookupBtn.disabled = true;
+  resultEl.hidden = true;
+  setStatus('Starting lookup…');
+
+  try {
+    const res = await fetch('/api/lookup', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url }) });
+    if (!res.ok) throw new Error((await res.json()).error || 'Lookup failed to start');
+    const { job_id } = await res.json();
+    pollJob(job_id, data => {
+      lookupBtn.disabled = false;
+      if (data.status === 'error') { setStatus(data.message || 'Lookup failed', true); return; }
+      setStatus('');
+      currentArtist = data.artist;
+      currentSimilar = data.similar || [];
+      renderMainCard(currentArtist);
+      renderSimilar(currentSimilar);
+      resultEl.hidden = false;
+    });
+  } catch (e) {
+    lookupBtn.disabled = false;
+    setStatus(e.message, true);
+  }
+});
+
+commitBtn.addEventListener('click', async () => {
+  const entries = [];
+  const mainCheck = document.getElementById('main-check');
+  if (mainCheck && mainCheck.checked) entries.push(currentArtist);
+  document.querySelectorAll('.similar-check:checked').forEach(cb => entries.push(currentSimilar[parseInt(cb.dataset.i, 10)]));
+
+  if (!entries.length) { commitStatus.textContent = 'Nothing selected.'; return; }
+
+  commitBtn.disabled = true;
+  commitStatus.textContent = 'Starting…';
+
+  try {
+    const res = await fetch('/api/commit', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ entries }) });
+    if (!res.ok) throw new Error((await res.json()).error || 'Commit failed to start');
+    const { job_id } = await res.json();
+    pollJob(job_id, data => {
+      commitBtn.disabled = false;
+      if (data.status === 'error') { commitStatus.textContent = 'Failed: ' + (data.message || 'unknown error'); return; }
+      commitStatus.textContent = 'Done — ' + entries.length + ' artist(s) added' + (data.sha && data.sha !== 'none' ? ' (' + data.sha.slice(0, 7) + ')' : ' (site rebuilding, live shortly)') + '.';
+    });
+  } catch (e) {
+    commitBtn.disabled = false;
+    commitStatus.textContent = e.message;
+  }
+});
+
+linkInput.addEventListener('keydown', e => { if (e.key === 'Enter') lookupBtn.click(); });
+`;
+}
