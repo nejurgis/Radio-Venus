@@ -218,11 +218,18 @@ function htmlResponse(html) {
 
 // ── Pages ────────────────────────────────────────────────────────────────────
 
+// Small colored-dot SVG, used as a status favicon (idle/searching/done/error).
+function faviconDataUri(color) {
+  return `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='42' fill='${color}'/%3E%3C/svg%3E`;
+}
+const FAVICON_IDLE = faviconDataUri('%23a78bfa');
+
 function renderLogin(error) {
   return `<!doctype html>
 <html><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Radio Venus Admin</title>
+<link rel="icon" href="${FAVICON_IDLE}">
 <style>${baseCSS()}
 .login-box { max-width: 320px; margin: 18vh auto; padding: 32px; }
 .login-box h1 { font-size: 1.1rem; margin: 0 0 24px; letter-spacing: 0.02em; }
@@ -244,6 +251,7 @@ function renderApp() {
 <html><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Radio Venus Admin</title>
+<link rel="icon" id="favicon" href="${FAVICON_IDLE}">
 <style>${baseCSS()}${appCSS()}</style>
 </head><body>
 <header>
@@ -402,6 +410,11 @@ function setStatus(msg, isError) {
   statusEl.classList.toggle('error', !!isError);
 }
 
+function setFavicon(color) {
+  const el = document.getElementById('favicon');
+  if (el) el.href = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Ccircle cx="50" cy="50" r="42" fill="' + color + '"/%3E%3C/svg%3E';
+}
+
 async function pollJob(jobId, onDone) {
   const started = Date.now();
   const tick = async () => {
@@ -540,6 +553,7 @@ lookupBtn.addEventListener('click', async () => {
   lookupBtn.disabled = true;
   resultEl.hidden = true;
   setStatus('Starting lookup…');
+  setFavicon('orange');
 
   try {
     const res = await fetch('/api/lookup', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url }) });
@@ -547,8 +561,9 @@ lookupBtn.addEventListener('click', async () => {
     const { job_id } = await res.json();
     pollJob(job_id, data => {
       lookupBtn.disabled = false;
-      if (data.status === 'error') { setStatus(data.message || 'Lookup failed', true); return; }
+      if (data.status === 'error') { setStatus(data.message || 'Lookup failed', true); setFavicon('crimson'); return; }
       setStatus('');
+      setFavicon('green');
       currentArtist = data.artist;
       currentSimilar = data.similar || [];
       currentSimilarAudio = data.similarAudio || [];
@@ -560,6 +575,7 @@ lookupBtn.addEventListener('click', async () => {
   } catch (e) {
     lookupBtn.disabled = false;
     setStatus(e.message, true);
+    setFavicon('crimson');
   }
 });
 
@@ -574,6 +590,7 @@ commitBtn.addEventListener('click', async () => {
 
   commitBtn.disabled = true;
   commitStatus.textContent = 'Starting…';
+  setFavicon('orange');
 
   try {
     const res = await fetch('/api/commit', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ entries }) });
@@ -581,11 +598,13 @@ commitBtn.addEventListener('click', async () => {
     const { job_id } = await res.json();
     pollJob(job_id, data => {
       commitBtn.disabled = false;
-      if (data.status === 'error') { commitStatus.textContent = 'Failed: ' + (data.message || 'unknown error'); return; }
+      if (data.status === 'error') { commitStatus.textContent = 'Failed: ' + (data.message || 'unknown error'); setFavicon('crimson'); return; }
+      setFavicon('green');
       commitStatus.textContent = 'Done — ' + entries.length + ' artist(s) added' + (data.sha && data.sha !== 'none' ? ' (' + data.sha.slice(0, 7) + ')' : ' (site rebuilding, live shortly)') + '.';
     });
   } catch (e) {
     commitBtn.disabled = false;
+    setFavicon('crimson');
     commitStatus.textContent = e.message;
   }
 });
