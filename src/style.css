@@ -1755,6 +1755,55 @@ p a:hover {
   text-align: center;
 }
 
+#explainer-sign-name {
+  font-weight: 700;
+}
+
+.explainer-lunarlog-icon-wrap {
+  display: block;
+  position: relative;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+  background: radial-gradient(circle at 50% 42%, #141b2e 0%, #0a0e18 75%);
+  cursor: pointer;
+}
+
+.explainer-lunarlog-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 108%;
+  height: 108%;
+  transform: translate(-50%, -50%);
+  display: block;
+}
+
+.explainer-lunarlog-icon-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.65) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  animation: lunarlog-shimmer 5.5s ease-in-out infinite;
+}
+
+@keyframes lunarlog-shimmer {
+  0%   { left: -150%; }
+  40%  { left: 150%; }
+  100% { left: 150%; }
+}
+
 .explainer-link {
   background: none;
   border: none;
@@ -1773,9 +1822,24 @@ p a:hover {
   text-decoration-color: rgba(200, 200, 208, 0.8);
 }
 
-.explainer-btn-close {
+.explainer-actions {
   margin-top: 0.4rem;
-  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.explainer-btn-primary {
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  text-transform: none;
+}
+
+.explainer-btn-secondary {
+  font-size: 0.85rem;
+  opacity: 0.75;
 }
 
 /* Container for the star in the list THIS IS HERE SO THAT THE STAR WOULD ANIMATE WHEN ITS ADDED */ 

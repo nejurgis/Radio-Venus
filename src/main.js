@@ -253,6 +253,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     const link = e.target.closest('a[href*="jurgis.info/astrology"]');
     if (link) trackOutboundClick('jurgis.info/astrology');
   });
+  document.addEventListener('click', e => {
+    const link = e.target.closest('a[href*="apps.apple.com"]');
+    if (link) trackOutboundClick('lunarlog_app_store');
+  });
   document.getElementById('artist-index').addEventListener('click', e => {
     const span = e.target.closest('.index-artist');
     if (!span) return;
@@ -816,9 +820,15 @@ function showVenusExplainer(venus) {
     dismiss();
     document.getElementById('btn-info').click();
   };
-  document.getElementById('venus-explainer').querySelector('a[href*="jurgis.info"]').onclick = () => {
-    trackExplainerAction('astrology_link', venus.sign);
+  document.getElementById('btn-explainer-lunarlog').onclick = () => {
+    trackExplainerAction('show_lunarlog', venus.sign);
     // trackOutboundClick already fires via the global click listener in main.js
+  };
+  overlay.querySelector('.explainer-lunarlog-icon-wrap').onclick = () => {
+    trackExplainerAction('lunarlog_icon', venus.sign);
+  };
+  overlay.querySelector('.explainer-body a[href*="apps.apple.com"]').onclick = () => {
+    trackExplainerAction('lunarlog_inline_link', venus.sign);
   };
 }
 

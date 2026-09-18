@@ -170,7 +170,7 @@ export function trackNebulaInteraction(action) {
 }
 
 export function trackExplainerAction(action, sign) {
-  // action: 'close', 'read_more', 'astrology_link'
+  // action: 'close', 'read_more', 'show_lunarlog', 'lunarlog_icon', 'lunarlog_inline_link'
   send('explainer_interaction', {
     event_category: 'engagement',
     action,
