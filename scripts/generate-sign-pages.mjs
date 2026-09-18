@@ -40,6 +40,32 @@ const SIGN_ELEMENTS = {
   Cancer: 'water', Scorpio: 'water', Pisces: 'water',
 };
 
+const SIGN_ASTRO = {
+  Aries: `Venus in Aries is the placement of the first move. In astrology, Venus governs what we love and how we create — and in Aries, that impulse is fast, direct, and allergic to hesitation. Musicians with this placement tend to operate by instinct: the first take, the raw version, the sound that arrived before anyone had time to refine it into something safer. There is a confrontational beauty to Venus in Aries music — it comes at you rather than waiting to be found.\n\nThis is not an easy placement for patience. Venus in Aries artists thrive on beginnings: new projects, new collaborators, the charge of something not yet finished. Their weakness is follow-through; their strength is the kind of nerve that produces work other people were too cautious to make. As a listener, if you have Venus in Aries, you are drawn to music that moves first and explains itself later.`,
+
+  Taurus: `Venus rules Taurus, which makes this one of its most natural homes. Musicians with Venus in Taurus are builders — they construct sound the way a craftsperson builds furniture: with patience, with attention to material, with an understanding that the thing needs to hold weight. The result is music that rewards repeat listening, that reveals new layers slowly, that feels physical in a way that purely cerebral music does not.\n\nThe Taurus relationship to beauty is sensory before it is intellectual. These artists are drawn to warmth, texture, bass that you feel in your chest, voices like worn velvet. They are in no hurry. A Venus in Taurus album takes as long as it takes. The commercial pressure to produce quickly tends to produce their worst work; given time, they make things that last. If you have Venus in Taurus, you know the difference between music you hear and music you inhabit.`,
+
+  Gemini: `Venus in Gemini musicians are students of sound before they are masters of it. Gemini is the sign of the curious mind — always sampling, comparing, moving between registers — and Venus here produces artists who cannot be contained in a single genre or a single mood. Their catalogs tend to be unpredictable, their influences dizzyingly wide, their best work happening at the intersection of things that had no obvious reason to go together.\n\nThis is a social Venus placement. These musicians tend to be highly aware of their audience, quick to adapt, skilled at reading a room. The risk is superficiality — Gemini's speed can produce music that is clever without being deep. The artists who transcend this tend to be the ones who found something that genuinely obsessed them and let the Gemini restlessness work in service of that obsession rather than against it. Listeners with Venus in Gemini need variety the way others need repetition.`,
+
+  Cancer: `Venus in Cancer is the placement most likely to produce music that makes you cry without knowing why. Cancer rules memory, the body before language, the emotional residue of things that happened long ago. Musicians with this placement seem to have direct access to the part of feeling that predates words — the atmosphere of a childhood home, the specific quality of light on a particular afternoon, the way a voice can carry grief it has never named.\n\nThis is an intensely private placement made public through art. Venus in Cancer musicians often describe their most personal work as the most universal — listeners find themselves in it, recognizing their own unmapped feeling. The vulnerability is the point. These artists tend to build small, devoted audiences rather than large casual ones, because what they offer is too specific for surface listening. If you have Venus in Cancer, music is not entertainment — it is a way of staying connected to what you most need to feel.`,
+
+  Leo: `Venus in Leo is the placement of the grand gesture. Leo's relationship to creativity is total — art is not something these musicians do, it is something they are, and they approach it with a generosity and drama that can fill a room before they have played a note. The best Venus in Leo artists do not perform for an audience so much as they perform with one, turning the listening experience into something participatory and lit from within.\n\nThis is not a modest placement, but it is not a shallow one either. Leo's theatricality is in service of genuine emotion — the scale is large because the feeling is large. Venus in Leo musicians tend to be extraordinarily committed to the live experience, to the moment when the song and the audience meet. Their recorded work can sometimes feel like it is waiting to be performed. If you have Venus in Leo, you know what it is like to feel a song claim you — to feel, for three minutes, that the artist is singing directly at you.`,
+
+  Virgo: `Venus in Virgo is the placement of the perfectionist who has learned to love the process. Virgo's instinct is to analyze, to refine, to find the single note or word that is exactly right rather than approximately right. In music, this produces artists who hear what everyone else misses — the hi-hat that is five milliseconds off, the breath before the lyric, the frequency that makes the whole mix click into place. Their attention is a form of devotion.\n\nThis is often an underrated placement. Venus in Virgo musicians tend toward understatement; they would rather prove their point once, precisely, than repeat it loudly. Their work rewards close listening and resists casual consumption. The weakness of this placement is the tendency to over-refine — to work the life out of something in pursuit of the perfect version. The artists who navigate this best tend to set constraints for themselves and commit to them. Listeners with Venus in Virgo tend to be the ones who notice what other people don't, and love music for the things it does quietly.`,
+
+  Libra: `Venus rules Libra as it rules Taurus, but the relationship to beauty here is aesthetic and relational rather than sensory. Venus in Libra musicians are natural aesthetes — they think in terms of balance, in tension and resolution, in the conversation between elements that creates something neither could produce alone. Their music tends to be beautifully constructed, harmonically rich, and deeply attuned to how the listener will receive it.\n\nThis is a collaborative placement. Venus in Libra artists often do their best work with others — as producers, as members of duos or bands, in the interplay between two voices or two instruments that find their shape in relation to each other. The risk is the people-pleasing instinct that can sand down edges and produce work that is lovely but not necessary. The strongest Venus in Libra musicians are the ones who learned to hold the tension without resolving it too quickly. If you have Venus in Libra, you hear music as relationship — as a negotiation between sound and silence, between what is offered and what is withheld.`,
+
+  Scorpio: `Venus in Scorpio does not do things by halves. Scorpio's relationship to love and creation is total, obsessive, and uninterested in surfaces — these musicians go to places that other people approach and then turn back from. Their sound tends toward the extreme edges: the darkest frequencies, the most exposed vulnerability, the place where beauty and something more uncomfortable become indistinguishable from each other.\n\nThis is not an easy placement to live with, but it produces music that other people cannot forget. Venus in Scorpio artists have a particular relationship to loss, to intensity, to the emotional undertow that most pop music carefully avoids. Their catalogs often contain at least one work that changed how someone understood their own experience. As a listener, if you have Venus in Scorpio, surface music bores you. You are drawn to what is underneath, to what cost something to make, to the music that knows what it is like to be in the dark and went there anyway.`,
+
+  Sagittarius: `Venus in Sagittarius is the placement of the musician who has been everywhere and sounds like it. Sagittarius is the sign of the long journey — not just physical travel but the intellectual and spiritual movement across maps of culture, tradition, and belief. Musicians with this placement are voracious borrowers, synthesizers, enthusiasts who bring the energy of genuine discovery to whatever they touch, and whose catalogs read like a log of everything that has excited them.\n\nThe risk here is restlessness — the tendency to move on before anything has been fully inhabited. The best Venus in Sagittarius artists are the ones who found a philosophy, a way of organizing the world's abundance into something coherent, and let that philosophy become the through-line of a body of work that covers enormous ground. Their music tends to feel generous and large-spirited, oriented toward expansion rather than conclusion. If you have Venus in Sagittarius, you are probably still looking for the record that contains everything you love at once, and you have come closer to it than most.`,
+
+  Capricorn: `Venus in Capricorn is the placement of the long game. Capricorn's relationship to creativity is structural — these musicians think in terms of what will last, what is being built, how this work will hold up in five or ten years rather than how it sounds in the current moment. Their catalogs tend to be disciplined and purposeful, with a consistency of vision that can take years to become apparent.\n\nThis is often a late-blooming placement. Venus in Capricorn artists tend to improve with age in a way that defies the usual arc of a music career — they find their depth after other artists have peaked, and their most important work is often not their earliest. The austerity that can read as coldness early on reveals itself as restraint: a refusal to offer more than what is true. If you have Venus in Capricorn, you distrust easy beauty. What moves you has earned the right to, through craft, through patience, through the willingness to wait for the right note rather than settle for the available one.`,
+
+  Aquarius: `Venus in Aquarius is the placement of the artist who arrived from somewhere else. Aquarius's relationship to beauty is conceptual before it is sensory — these musicians tend to hear music as a system, a set of relationships and rules that can be followed or broken, and their most characteristic work is the work that breaks the rules in a way that reveals why the rules existed. They are often ahead of their moment by a margin that makes them invisible until suddenly they are the template everyone is working from.\n\nThis is a placement that tends to produce cult artists and visionaries rather than immediate hits. Venus in Aquarius musicians are often more comfortable with ideas than with feelings, and their emotional expression tends to be oblique, architectural, arriving through structure rather than declaration. The detachment can be its own intimacy — a kind of radical honesty about the distance between two people that turns out to describe the distance inside each of them. Listeners with Venus in Aquarius tend to be loyal in exact proportion to how strange the music is.`,
+
+  Pisces: `Venus is exalted in Pisces — meaning this is one of the placements where it operates with the least resistance and the most power. Pisces's relationship to beauty is dissolving: these musicians do not so much create sound as they become permeable to it, and the music that results has a quality of having arrived from somewhere beyond the person making it. Boundaries — between genres, between what is beautiful and what is painful, between the artist and the audience — become thin.\n\nThis is the placement most associated with transcendence in music. Venus in Pisces artists make work that people describe in spiritual terms even when neither the artist nor the listener is particularly religious. The vulnerability here is total, and the risk is losing oneself entirely — in the work, in others, in the escape that music can offer from the difficulty of being solid. The artists who navigate it best tend to have found some other placement in their chart that provides structure, a container for the boundlessness. If you have Venus in Pisces, music is not one thing among many. It is the clearest channel you have to what cannot be said.`,
+};
+
 const db = JSON.parse(fs.readFileSync('./public/data/musicians.json', 'utf8'))
   .filter(a => a.name !== '@' && a.venus?.sign);
 
@@ -158,12 +184,13 @@ const CSS = `
     font-size: 5rem; display: block; line-height: 1;
     margin-bottom: 0.5rem; color: #fff;
   }
-  .sign-name {
+  h1.sign-name {
     display: block; font-size: 0.6rem; letter-spacing: 0.1em;
     text-transform: lowercase; color: #fff; text-align: center;
+    font-weight: 400; margin: 0; line-height: 1;
   }
   .sign-desc {
-    font-size: 1rem; line-height: 1.4;
+    font-size: 1rem; line-height: 1.4; font-weight: 500;
     color: rgba(255,255,255,0.7); text-indent: 1.5em; margin-bottom: 2rem;
   }
   .artist-count {
@@ -180,6 +207,28 @@ const CSS = `
     font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
     color: rgba(255,255,255,0.28); text-transform: uppercase;
   }
+  .sign-astro {
+    margin: 2rem 0 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .sign-astro h2 {
+    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.3); margin-bottom: 1.25rem; font-weight: 400;
+  }
+  .sign-astro-p {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.3rem; line-height: 1.45;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 1rem;
+  }
+  .notable-artists {
+    font-size: 0.72rem; line-height: 1.6;
+    color: rgba(255,255,255,0.35);
+    margin-top: 1.25rem;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .notable-artists strong { color: rgba(255,255,255,0.5); font-weight: 400; }
   .cta {
     margin-top: 3rem; font-size: 0.9rem; color: rgba(255,255,255,0.45);
     border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem;
@@ -312,22 +361,37 @@ for (const sign of SIGNS) {
   const metaDesc = SIGN_META[sign];
   const title = `Venus in ${sign} Music — Artists & Playlist | Radio Venus`;
 
+  // Pick up to 8 notable artists with YouTube videos for the callout
+  const notableArtists = artists.filter(a => a.youtubeVideoId).slice(0, 8).map(a => a.name);
+  const notableHtml = notableArtists.length
+    ? `<p class="notable-artists"><strong>Musicians with Venus in ${sign}:</strong> ${notableArtists.join(', ')}${artists.length > 8 ? `, and ${artists.length - 8} more` : ''}.</p>`
+    : '';
+
+  const astroText = (SIGN_ASTRO[sign] || '').split('\n\n').map(p => `<p class="sign-astro-p">${p}</p>`).join('\n    ');
+
   const html = `<!DOCTYPE html>
 <html lang="en">
 ${head(title, metaDesc, url, schema)}
 <body>
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
-    <p class="sign-lead">
-      <span class="zodiac-char">${glyph}</span>
-      <span class="sign-name">Venus in ${sign}</span>
-    </p>
+    <div class="sign-lead">
+      <span class="zodiac-char" aria-hidden="true">${glyph}</span>
+      <h1 class="sign-name">Venus in ${sign}</h1>
+    </div>
     <p class="sign-desc">${desc}</p>
+    <section class="sign-astro">
+      <h2>What does Venus in ${sign} mean?</h2>
+      ${astroText}
+      ${notableHtml}
+    </section>
     ${genreNav(sign)}
-    <p class="artist-count">${artists.length} musicians in the database</p>
-    <ul class="artist-list">
+    <section aria-label="Artists with Venus in ${sign}">
+      <p class="artist-count">${artists.length} musicians in the database</p>
+      <ul class="artist-list">
 ${artistList(artists, sign)}
-    </ul>
+      </ul>
+    </section>
     <div class="cta">
       <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
     </div>
@@ -412,16 +476,18 @@ ${head(title, metaDesc, url, faqSchema)}
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
     <p class="breadcrumb"><a href="/sign/${slug}/">Venus in ${sign}</a><span>›</span>${genreLabel}</p>
-    <p class="sign-lead">
-      <span class="zodiac-char">${glyph}</span>
-      <span class="sign-name">Venus in ${sign} — ${genreLabel}</span>
-    </p>
+    <div class="sign-lead">
+      <span class="zodiac-char" aria-hidden="true">${glyph}</span>
+      <h1 class="sign-name">Venus in ${sign} — ${genreLabel}</h1>
+    </div>
     <p class="sign-desc">${desc}</p>
     ${genreNav(sign, genre)}
-    <p class="artist-count">${artists.length} musicians in the database</p>
-    <ul class="artist-list">
+    <section aria-label="${genreLabel} artists with Venus in ${sign}">
+      <p class="artist-count">${artists.length} musicians in the database</p>
+      <ul class="artist-list">
 ${artistList(artists, sign)}
-    </ul>
+      </ul>
+    </section>
     <div class="cta">
       <p>Enter your birthday at <a href="/">Radio Venus</a> to discover your Venus sign and hear the music that resonates with your chart.</p>
     </div>
