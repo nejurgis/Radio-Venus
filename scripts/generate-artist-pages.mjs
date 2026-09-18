@@ -33,18 +33,24 @@ for (const artist of db) {
 
 fs.mkdirSync('./dist/artist', { recursive: true });
 
-// Read the built app shell once — artist pages ARE the app, no redirect
-const appShell = fs.readFileSync('./dist/index.html', 'utf-8');
+// Read the built app shell once — strip homepage-specific head tags so they
+// don't duplicate the artist-specific ones we inject per page.
+const rawShell = fs.readFileSync('./dist/index.html', 'utf-8');
+const appShell = rawShell
+  .replace(/\s*<!--\s*Primary SEO\s*-->\s*/gi, '')
+  .replace(/<title>[^<]*<\/title>/i, '')
+  .replace(/<meta\s+name="description"[^>]*>/i, '')
+  .replace(/<link\s+rel="canonical"[^>]*>/i, '');
 
 function generatePage(dir, slug, artist, gid, isCanonical = false) {
   const genreLabel   = GENRE_LABELS[gid] || gid;
   const sign         = artist.venus.sign;
   const degree       = Math.round(artist.venus.degree ?? 0);
-  const canonicalUrl = `https://radio-venus.club/artist/${slug}`;
+  const canonicalUrl = `https://radio-venus.club/artist/${slug}/`;
   const pageUrl      = isCanonical ? canonicalUrl : `https://radio-venus.club/artist/${slug}/${gid}`;
   const thumbUrl     = `https://i.ytimg.com/vi/${artist.youtubeVideoId}/hqdefault.jpg`;
-  const title        = `${artist.name} — Radio Venus`;
-  const description  = `Venus in ${sign} ${degree}° ⊹ ${genreLabel}`;
+  const title        = `${artist.name} — Venus in ${sign} | Radio Venus`;
+  const description  = `${artist.name} has Venus in ${sign} at ${degree}°. Discover their ${genreLabel} music alongside other Venus in ${sign} artists on Radio Venus.`;
   const shareState   = {
     vid:    artist.youtubeVideoId,
     artist: artist.name,
