@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="preload" href="/assets/astrochord-BhJKMPkz.css" as="style">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <title>Your Birth Chart as a Chord — Radio Venus</title>
+  <meta name="description" content="Hear your birth chart. Each planet's sign becomes a note on the circle of fifths: the Sun is the root, Venus sings on top, and the outer planets shimmer above.">
+  <link rel="canonical" href="https://radio-venus.club/astrochord/" />
+
+  <meta property="og:site_name" content="Radio Venus">
+  <meta property="og:title" content="Your Birth Chart as a Chord — Radio Venus">
+  <meta property="og:description" content="Hear your birth chart. Each planet's sign becomes a note on the circle of fifths: the Sun is the root, Venus sings on top.">
+  <meta property="og:image" content="https://radio-venus.club/assets/social-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://radio-venus.club/astrochord/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://radio-venus.club/assets/social-card.jpg">
+
+  <!-- Google Analytics — queue initialised inline; script loaded after page is interactive -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KSY81MM0E6');
+    window.addEventListener('load', function() {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-KSY81MM0E6';
+      document.head.appendChild(s);
+    });
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/assets/astrochord-D3oBTEQk.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/harp-Br8TRnI2.js">
+  <link rel="stylesheet" crossorigin href="/assets/astrochord-BhJKMPkz.css">
+</head>
+<body>
+  <main class="cp">
+    <header class="cp-header">
+      <a class="cp-home" href="/">&#x27F5; radio venus</a>
+      <h1 class="cp-title" id="cp-title">your chart, as a chord</h1>
+      <div class="cp-seg cp-mode" role="radiogroup" aria-label="Mode">
+        <button type="button" class="cp-seg-btn cp-mode-btn" role="radio" aria-checked="true" data-mode="single">just you</button>
+        <button type="button" class="cp-seg-btn cp-mode-btn" role="radio" aria-checked="false" data-mode="pair">compatibility</button>
+      </div>
+      <form id="cp-form" class="cp-form" autocomplete="off">
+        <span class="cp-form-person">
+          <label class="cp-date-label" for="cp-date" id="cp-date-label">born</label>
+          <input id="cp-date" class="cp-date" type="date" min="1900-01-01" max="2100-12-31" required>
+          <span class="cp-time-fields" hidden>
+            <input id="cp-time" class="cp-date cp-time" type="time" aria-label="Your birth time">
+            <select id="cp-tz" class="cp-date cp-tz" aria-label="Your birthplace: the city nearest where you were born (sets the time zone too)" title="Pick the city nearest where you were born"></select>
+          </span>
+        </span>
+        <span class="cp-form-person cp-them-field" hidden>
+          <label class="cp-date-label" for="cp-pair-date">them</label>
+          <input id="cp-pair-date" class="cp-date" type="date" min="1900-01-01" max="2100-12-31">
+          <span class="cp-time-fields" hidden>
+            <input id="cp-pair-time" class="cp-date cp-time" type="time" aria-label="Their birth time">
+            <select id="cp-pair-tz" class="cp-date cp-tz" aria-label="Their birthplace: the city nearest where they were born (sets the time zone too)" title="Pick the city nearest where they were born"></select>
+          </span>
+        </span>
+        <label class="cp-time-toggle"><input id="cp-time-toggle" type="checkbox"> exact time</label>
+        <button type="submit" class="cp-btn">show</button>
+      </form>
+      <div class="cp-settings">
+        <div class="cp-seg cp-tuning" role="radiogroup" aria-label="Tuning">
+          <button type="button" class="cp-seg-btn cp-tuning-btn" role="radio" aria-checked="true" data-tuning="fifths" title="Circle of fifths, equal-tempered"><span class="cp-long">circle of </span>fifths</button>
+          <button type="button" class="cp-seg-btn cp-tuning-btn" role="radio" aria-checked="false" data-tuning="pythagorean" title="Circle of fifths in pure 3:2 fifths">pythagorean</button>
+          <button type="button" class="cp-seg-btn cp-tuning-btn" role="radio" aria-checked="false" data-tuning="chromatic" title="Chromatic · Musical Astrology">chromatic<span class="cp-long"> · musical astrology</span></button>
+        </div>
+        <div class="cp-seg cp-voicing" role="radiogroup" aria-label="Voicing">
+          <button type="button" class="cp-seg-btn cp-voicing-btn" role="radio" aria-checked="true" data-voicing="classic" title="The Sun is the root in the bass, Venus sings on top, outer planets shimmer above">sun root</button>
+          <button type="button" class="cp-seg-btn cp-voicing-btn" role="radio" aria-checked="false" data-voicing="orbit" title="Slow planets low, fast planets high: Pluto, Neptune and Uranus in the bass, the Moon on top">slow = low</button>
+        </div>
+      </div>
+    </header>
+
+    <section class="cp-stage">
+      <div class="cp-wheel-wrap">
+        <svg id="cp-wheel" class="cp-wheel" viewBox="-230 -230 460 460" role="img" aria-labelledby="cp-wheel-title">
+          <title id="cp-wheel-title">Zodiac wheel laid over the circle of fifths, with your planets placed on it</title>
+        </svg>
+        <p id="cp-now" class="cp-now" aria-live="polite">&nbsp;</p>
+        <p class="cp-aspect-legend" id="cp-aspect-legend">
+          <span class="cp-legend-item is-flowing">trine · sextile</span>
+          <span class="cp-legend-item is-tense">square · opposition</span>
+        </p>
+      </div>
+
+      <div class="cp-side">
+        <p class="cp-chord-label" id="cp-when"></p>
+        <h2 id="cp-chord-name" class="cp-chord-name"></h2>
+        <p id="cp-chord-them" class="cp-chord-them" hidden></p>
+        <p class="cp-chord-caption" id="cp-chord-caption">the Sun is the root · Venus sings on top · outer planets shimmer above</p>
+        <div class="cp-controls">
+          <button id="cp-play-walk" class="cp-btn cp-btn-primary" type="button">&#9654;&#xFE0E; play planet by planet</button>
+          <button id="cp-play-chord" class="cp-btn" type="button">strum the chord</button>
+          <button id="cp-play-you" class="cp-btn cp-solo cp-solo-you" type="button" hidden>&#9654;&#xFE0E; play you</button>
+          <button id="cp-play-them" class="cp-btn cp-solo cp-solo-them" type="button" hidden>&#9654;&#xFE0E; play them</button>
+        </div>
+        <div class="cp-arp" role="group" aria-label="Arpeggiator">
+          <button id="cp-arp-toggle" class="cp-btn cp-arp-toggle" type="button" aria-pressed="false">arpeggiate</button>
+          <label class="cp-arp-field cp-arp-tempo">
+            <span>tempo</span>
+            <input id="cp-arp-tempo" type="range" min="60" max="220" step="1" value="120" title="Arpeggiator speed">
+            <output id="cp-arp-bpm" for="cp-arp-tempo">120</output>
+          </label>
+          <label class="cp-arp-field">
+            <span>pattern</span>
+            <select id="cp-arp-pattern">
+              <option value="planets">planet order</option>
+              <option value="up">low → high</option>
+              <option value="down">high → low</option>
+              <option value="updown">up &amp; down</option>
+              <option value="random">random</option>
+            </select>
+          </label>
+          <label class="cp-arp-field">
+            <span>repeat</span>
+            <select id="cp-arp-repeats">
+              <option value="2">2×</option>
+              <option value="4" selected>4×</option>
+              <option value="8">8×</option>
+              <option value="0">∞</option>
+            </select>
+          </label>
+          <label class="cp-arp-field cp-arp-check">
+            <input id="cp-arp-outer" type="checkbox" checked>
+            <span title="Uranus, Neptune and Pluto — the three furthest planets">♅ ♆ ♇ outer three</span>
+          </label>
+        </div>
+        <ol id="cp-planets" class="cp-planets"></ol>
+      </div>
+    </section>
+
+    <section class="cp-pair" id="cp-pair" aria-labelledby="cp-pair-title" hidden>
+      <h3 id="cp-pair-title" class="cp-pair-title">you &amp; them</h3>
+      <p class="cp-pair-lede" id="cp-pair-lede">A relationship, read as the space between two birthdays: the interval your Suns make, and your Venuses.</p>
+      <div id="cp-pair-result" class="cp-pair-result" hidden>
+        <div class="cp-pair-grid">
+          <article class="cp-pair-card" data-pair="sun">
+            <p class="cp-pair-kicker">&#9737; birthdays · Sun to Sun</p>
+            <p class="cp-pair-notes"></p>
+            <div class="cp-pair-role cp-pair-you">
+              <p class="cp-pair-role-label">you as the root</p>
+              <p class="cp-pair-name"></p>
+              <p><span class="cp-pair-tag"></span> <span class="cp-pair-text"></span></p>
+            </div>
+            <div class="cp-pair-role cp-pair-them">
+              <p class="cp-pair-role-label">them as the root</p>
+              <p class="cp-pair-name"></p>
+              <p><span class="cp-pair-tag"></span> <span class="cp-pair-text"></span></p>
+            </div>
+          </article>
+          <article class="cp-pair-card" data-pair="venus">
+            <p class="cp-pair-kicker">&#9792;&#xFE0E; Venus to Venus</p>
+            <p class="cp-pair-notes"></p>
+            <div class="cp-pair-role cp-pair-you">
+              <p class="cp-pair-role-label">you as the root</p>
+              <p class="cp-pair-name"></p>
+              <p><span class="cp-pair-tag"></span> <span class="cp-pair-text"></span></p>
+            </div>
+            <div class="cp-pair-role cp-pair-them">
+              <p class="cp-pair-role-label">them as the root</p>
+              <p class="cp-pair-name"></p>
+              <p><span class="cp-pair-tag"></span> <span class="cp-pair-text"></span></p>
+            </div>
+          </article>
+        </div>
+        <p class="cp-pair-note">Every interval has two sides: whoever is the lower note, the root, is the grounded one in that moment; the upper note is the free, playful one. The roles swap all the time.</p>
+        <button id="cp-pair-play" class="cp-btn cp-btn-primary" type="button">&#9654;&#xFE0E; hear the two of you</button>
+      </div>
+    </section>
+
+    <section class="cp-explain">
+      <h3>how it works</h3>
+      <p>The twelve signs become the twelve notes, and each planet plays the note of the sign it was in when you were born. The Sun's note is the root of the chord.</p>
+      <p>Either way round the wheel, the zodiac's own groupings turn into the symmetric chords of music. Signs of one element (a trine) form an <em>augmented triad</em>. Signs of one modality (a square) form a <em>diminished seventh</em>. Opposite signs are a <em>tritone</em>, and every other sign (a sextile) is a <em>whole tone</em>.</p>
+      <p><em>Circle of fifths</em> starts Aries on C and steps up a fifth per sign, so neighbouring signs are the most consonant interval. Each planet's degree nudges its note only a few cents, a light shimmer.</p>
+      <p><em>Chromatic · musical astrology</em> follows the Musical Astrology system: Aquarius on C and a semitone per sign. A sign spans 100 cents over 30°, so every degree is 3.33 cents and the exact note sits at 15°. Pitch then flows continuously around the whole sky, and most planets land between two notes, in the microtonal space between the keys.</p>
+      <p><em>The root</em> is the Sun unless you give a birth time. With a time, the root becomes your <em>Ascendant</em>, the degree of the zodiac rising on the eastern horizon at the moment you were born. It changes sign about every two hours, so the same planets can sound like a quite different chord over a different bass. The Ascendant also depends on where you were born: pick the city nearest your birthplace in the list next to the time.</p>
+      <p><em>Voicing</em> decides which octave each planet sings in. <em>Sun root</em> puts the Sun in the bass as the chord's root, Venus on top, and the slow outer planets as a quiet shimmer above. <em>Slow = low</em> follows Kepler's planetary choir in <em>Harmonices Mundi</em> (1619): the slower a planet moves, the lower it sings. Pluto, Neptune and Uranus are the bass, Saturn and Jupiter the tenor, Mars, the Sun, Venus and Mercury the alto, and the Moon the soprano. The notes stay the same either way; only their octaves change.</p>
+      <p><em>Aspects</em> are counted by whole sign, the way Hellenistic astrologers did, so each aspect line on the wheel is also an interval in your chord. Traditional astrology recognised only Ptolemy's five: conjunction, sextile, square, trine and opposition. Signs one or five apart, the semi-sextile and quincunx, were said to be <em>in aversion</em>: they can't see each other. This page follows that tradition: those pairs are marked "in aversion" and get no aspect line.</p>
+      <p><em>Pythagorean</em> is the circle of fifths built the ancient way, from perfectly pure 3:2 fifths, the tuning behind the old idea of the music of the spheres. Every step between neighbouring signs is a pure fifth, and thirds come out bright and wide. But twelve pure fifths overshoot the octave by a sliver (the Pythagorean comma, 23.5 cents), so one fifth has to absorb it: the sour <em>wolf</em> between Pisces and Aries, where the zodiac year fails to close.</p>
+      <p>Either way, starting on C is only a convention. The chord's character comes entirely from where your planets sit relative to your Sun.</p>
+      <p class="cp-explain-note">Without a birth time the Moon is placed at noon, so a Moon that changed sign that day may be one note off.</p>
+      <a class="cp-btn cp-btn-primary cp-cta" href="/">find musicians who share your Venus sign</a>
+    </section>
+  </main>
+
+</body>
+</html>
