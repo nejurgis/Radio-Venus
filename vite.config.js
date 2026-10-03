@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import fs from 'fs';
+import path from 'path';
 
 const SIGN_ORDER = [
   'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo',
@@ -11,7 +12,9 @@ function artistIndexPlugin() {
     name: 'artist-index',
     transformIndexHtml: {
       order: 'post',
-      handler(html) {
+      handler(html, ctx) {
+        // Only the main app page carries the artist index — not /astrochord/ etc.
+        if (path.resolve(ctx.filename) !== path.resolve('index.html')) return html;
         const db = JSON.parse(fs.readFileSync('./public/data/musicians.json', 'utf8'));
 
         const bySign = {};
@@ -147,6 +150,12 @@ export default defineConfig({
   base: '/',
   build: {
     outDir: 'dist',
+    rollupOptions: {
+      input: {
+        main: path.resolve('index.html'),
+        astrochord: path.resolve('astrochord/index.html'),
+      },
+    },
   },
   plugins: [artistIndexPlugin(), artistPageDevPlugin(), preloadCSSPlugin(), removeImportMapPlugin()],
 });

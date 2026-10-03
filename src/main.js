@@ -1,14 +1,15 @@
 import { calculateVenus, calculateMoon, makeBirthDate } from './venus.js';
+import { calculateChartChord } from './chord.js';
 import { toSlug } from './slug.js';
 import { GENRE_CATEGORIES, SUBGENRES } from './genres.js';
 import { loadDatabase, getDatabase, match, matchFavorites, matchMoon, matchSun, getSubgenreCounts } from './matcher.js';
 import { getFavorites, toggleFavorite, isFavorite } from './favorites.js';
 import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, setMoonPosition, setSunPosition, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, enableDragRotate, nudgeWheel, resetDrift, onNebulaHover, onNebulaClick, onRotation, onNeedleCross, onSignCross, onMoonHover, onSunHover } from './viz.js';
-import { pluck, gong, setHarpEnabled, isHarpEnabled, pokeAudio } from './harp.js';
+import { pluck, gong, strum, setHarpEnabled, isHarpEnabled, pokeAudio } from './harp.js';
 import { loadYouTubeAPI, initPlayer, loadVideo, cueVideo, togglePlay, isPlaying, getDuration, getCurrentTime, seekTo, getVideoTitle, isMuted, unMute } from './player.js';
 import {
   initScreens, showScreen, setElementTheme, onShowRadio,
-  renderReveal, renderGenreGrid, renderRadioHeader,
+  renderReveal, renderChartChord, renderGenreGrid, renderRadioHeader,
   renderTrackList, setActiveTrack, updateNowPlaying, setNowPlayingPaused, updatePlayButton, updateFavoriteButton, showEmptyState,
   markTrackFailed,
   highlightGenres,
@@ -22,12 +23,14 @@ import {
   trackSongStart, trackSongComplete, trackSongSkip, trackSongError,
   trackShare, trackGenreSelect, trackFavorite, trackHarpToggle, trackPlaylistShare, trackShuffle,
   trackChartCalculated, trackNewsletterSubscribe, trackScreenView, trackOutboundClick,
-  trackExplainerAction,
+  trackExplainerAction, trackChartChord,
 } from './analytics.js';
 
 // ── State ───────────────────────────────────────────────────────────────────
 
 let venus = null;
+let chartChord = null;
+let chordGlowTimer = null;
 let tracks = [];
 let currentTrackIndex = 0;
 let playingGenreId = null;
@@ -768,11 +771,13 @@ function signFromLongitude(lon) {
 async function onDateSubmit(d, m, y) {
   const birthDate = makeBirthDate(d, m, y);
   venus = calculateVenus(birthDate);
+  chartChord = calculateChartChord(birthDate);
   trackChartCalculated(venus.sign, venus.element);
 
   setElementTheme(venus.element);
   setUserVenus(venus.longitude, venus.element);
   renderReveal(venus);
+  renderChartChord(chartChord, venus.element, `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`);
 
   const signIndex = ['Aries','Taurus','Gemini','Cancer','Leo','Virgo',
     'Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'].indexOf(venus.sign);
@@ -788,6 +793,17 @@ async function onDateSubmit(d, m, y) {
 
   rebuildGenreGrid();
   setTimeout(() => showVenusExplainer(venus), 600);
+}
+
+function playChartChord() {
+  if (!chartChord || !venus) return;
+  const seconds = strum(chartChord.notes, venus.element);
+  const wrap = document.getElementById('chart-chord');
+  wrap.classList.add('is-playing');
+  document.getElementById('chart-chord-notes').classList.add('is-visible');
+  clearTimeout(chordGlowTimer);
+  chordGlowTimer = setTimeout(() => wrap.classList.remove('is-playing'), seconds * 1000);
+  trackChartChord(chartChord.name, venus.sign);
 }
 
 function showVenusExplainer(venus) {
@@ -1341,6 +1357,9 @@ document.addEventListener('click', e => {
     nudgeWheel(on ? 3 : -4);
     // TRACKING
     trackHarpToggle(on ? 'enabled' : 'disabled');
+  }
+  if (e.target.closest('#btn-chart-chord')) {
+    playChartChord();
   }
   if (e.target.id === 'btn-share' || e.target.closest('#btn-share')) {
     shareCurrentTrack();

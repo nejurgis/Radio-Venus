@@ -9,6 +9,10 @@ let audioCtx = null;
 let masterGain = null;
 let enabled = false;
 let silentAudio = null;
+let strumReleaseTimer = null;
+const strumVoices = new Set();
+// Strums start slightly ahead of "now" so every string in the chord is scheduled in time
+export const STRUM_LEAD = 0.05;
 
 // Rate limiting — minimum ms between plucks so notes can breathe
 const MIN_INTERVAL = 35;
@@ -127,11 +131,22 @@ export function pluck(radialFrac, element = 'air', velocity = 0.5) {
   const noteIdx = Math.floor(Math.min(0.999, radialFrac) * chord.length);
   const freq = chord[noteIdx];
 
-  // Karplus-Strong parameters
-  const sampleRate = audioCtx.sampleRate;
   // Lower notes ring longer (up to 2s), higher notes shorter (1s)
   // Reverb tail adds sustain, so buffers can be short
   const duration = 1.0 + (1 - radialFrac) * 1.0;
+  playString(freq, element, velocity, duration, audioCtx.currentTime);
+}
+
+/**
+ * Karplus-Strong plucked string at an exact frequency.
+ * @param {number} freq - Hz
+ * @param {string} element - fire|water|earth|air → decay & tone colour
+ * @param {number} velocity - 0 to 1 → loudness & brightness
+ * @param {number} duration - seconds of buffer to render
+ * @param {number} when - AudioContext time to start
+ */
+function playString(freq, element, velocity, duration, when) {
+  const sampleRate = audioCtx.sampleRate;
   const samples = Math.floor(sampleRate * duration);
   const period = Math.round(sampleRate / freq);
   const decay = ELEMENT_DECAY[element] || 0.996;
@@ -180,8 +195,161 @@ export function pluck(radialFrac, element = 'air', velocity = 0.5) {
   source.onended = () => {
     if (bufferPool.length < MAX_POOL) bufferPool.push(buffer);
   };
-  source.start();
-  source.stop(audioCtx.currentTime + duration);
+  source.start(when);
+  source.stop(when + duration);
+}
+
+// ── Piano voice (chart chord) ────────────────────────────────────────────────
+// Additive synthesis on oscillators, so all the work happens on the audio
+// thread: slightly stretched (inharmonic) partials like real piano strings,
+// a doubled, faintly detuned fundamental for the chorus of a piano's unison
+// strings, a short hammer thump, and a lowpass that darkens as the note decays.
+
+const PIANO_PARTIALS = [1, 0.42, 0.26, 0.15, 0.08, 0.045];
+const PIANO_INHARMONICITY = 0.0004;
+// Element → brightness of the hammer and filter
+const PIANO_BRIGHTNESS = { fire: 1.25, air: 1.1, earth: 0.85, water: 0.75 };
+let hammerNoise = null;
+
+function getHammerNoise() {
+  if (!hammerNoise) {
+    const len = Math.floor(audioCtx.sampleRate * 0.03);
+    hammerNoise = audioCtx.createBuffer(1, len, audioCtx.sampleRate);
+    const d = hammerNoise.getChannelData(0);
+    for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / len);
+  }
+  return hammerNoise;
+}
+
+/**
+ * One piano note.
+ * @returns {{ noteGain: GainNode, stop: (t:number) => void, source: AudioScheduledSourceNode }}
+ */
+function playPiano(freq, element, velocity, duration, when, pan = 0) {
+  const vel = Math.min(1, Math.max(0.1, velocity));
+  const bright = PIANO_BRIGHTNESS[element] || 1;
+  // Low notes sustain longer, high notes die quickly — like a real piano
+  const tau = Math.min(1.5, Math.max(0.3, 0.2 + 120 / freq));
+  const end = when + duration;
+
+  const noteGain = audioCtx.createGain();
+  const peak = vel * 0.55;
+  noteGain.gain.setValueAtTime(0, when);
+  noteGain.gain.linearRampToValueAtTime(peak, when + 0.005);
+  noteGain.gain.setTargetAtTime(peak * 0.45, when + 0.005, 0.09);   // fast initial drop
+  noteGain.gain.setTargetAtTime(0, when + 0.25, tau);               // long tail
+  noteGain.gain.setTargetAtTime(0, end - 0.2, 0.05);                // click-free cut
+
+  const tone = audioCtx.createBiquadFilter();
+  tone.type = 'lowpass';
+  tone.Q.value = 0.4;
+  tone.frequency.setValueAtTime(Math.min(12000, freq * 7 * bright * (0.6 + vel)), when);
+  tone.frequency.setTargetAtTime(Math.min(8000, freq * 2.5 * bright), when + 0.02, 0.5);
+  tone.connect(noteGain);
+  if (pan && audioCtx.createStereoPanner) {
+    // Side by side: e.g. one person left, the other right
+    const panner = audioCtx.createStereoPanner();
+    panner.pan.value = pan;
+    noteGain.connect(panner);
+    panner.connect(masterGain);
+  } else {
+    noteGain.connect(masterGain);
+  }
+
+  const oscs = [];
+  const addOsc = (f, amp, decay) => {
+    const osc = audioCtx.createOscillator();
+    osc.frequency.value = f;
+    const g = audioCtx.createGain();
+    g.gain.setValueAtTime(amp, when);
+    if (decay) g.gain.setTargetAtTime(0, when + 0.01, decay);
+    osc.connect(g);
+    g.connect(tone);
+    osc.start(when);
+    osc.stop(end);
+    oscs.push(osc);
+  };
+
+  // Fundamental as two strings ±1 cent apart
+  addOsc(freq * Math.pow(2, -1 / 1200), 0.5, 0);
+  addOsc(freq * Math.pow(2, 1 / 1200), 0.5, 0);
+  // Upper partials, stretched and decaying faster the higher they go
+  for (let n = 2; n <= PIANO_PARTIALS.length; n++) {
+    const f = freq * n * Math.sqrt(1 + PIANO_INHARMONICITY * n * n);
+    if (f > 16000) break;
+    addOsc(f, PIANO_PARTIALS[n - 1] * (0.5 + vel * 0.7), tau * 1.4 / n);
+  }
+
+  // Hammer: a 30 ms bandpassed noise tick
+  const hammer = audioCtx.createBufferSource();
+  hammer.buffer = getHammerNoise();
+  const hammerTone = audioCtx.createBiquadFilter();
+  hammerTone.type = 'bandpass';
+  hammerTone.frequency.value = Math.min(5000, 1800 * bright + freq);
+  const hammerGain = audioCtx.createGain();
+  hammerGain.gain.value = vel * 0.06 * bright;
+  hammer.connect(hammerTone);
+  hammerTone.connect(hammerGain);
+  hammerGain.connect(noteGain);
+  hammer.start(when);
+  oscs.push(hammer);
+
+  return {
+    noteGain,
+    source: oscs[0],
+    stop: t => oscs.forEach(o => { try { o.stop(t); } catch { /* already stopped */ } }),
+  };
+}
+
+/**
+ * Play a chord (or a sequence) on the piano voice, e.g. the natal chart chord
+ * from chord.js. Plays regardless of lyre mode — it's an explicit tap, not
+ * ambient plucking. Must be called from a user gesture so iOS unlocks audio.
+ * @param {{freq:number, velocity:number, delay:number, duration:number, pan?:number, element?:string}[]} notes
+ * @param {string} element - fire|water|earth|air → piano brightness (a note's own `element` wins)
+ * @returns {number} seconds until the last note finishes
+ */
+export function strum(notes, element = 'air') {
+  beginPlayback();
+  const start = audioCtx.currentTime + STRUM_LEAD;
+  let end = 0;
+  for (const n of notes) {
+    playNoteAt(n.freq, n.element || element, n.velocity, n.duration, start + n.delay, n.pan || 0);
+    end = Math.max(end, n.delay + n.duration);
+  }
+  endPlayback(end + 0.5);
+  return end;
+}
+
+/**
+ * Open a playback session: create/unlock audio and keep the iOS playback
+ * route open until endPlayback(). Call from a user gesture.
+ */
+export function beginPlayback() {
+  ensureContext();
+  unlockAudio();
+  clearTimeout(strumReleaseTimer);
+}
+
+/** Let the iOS playback route close `afterSeconds` from now, unless lyre mode needs it. */
+export function endPlayback(afterSeconds = 0) {
+  clearTimeout(strumReleaseTimer);
+  strumReleaseTimer = setTimeout(() => {
+    if (!enabled && silentAudio) silentAudio.pause();
+  }, afterSeconds * 1000);
+}
+
+/** The audio clock, for schedulers that queue notes ahead of time. */
+export function audioNow() {
+  ensureContext();
+  return audioCtx.currentTime;
+}
+
+/** Schedule one piano note at an exact audio-clock time; stopStrum() can cancel it. */
+export function playNoteAt(freq, element, velocity, duration, when, pan = 0) {
+  const voice = playPiano(freq, element, velocity, duration, when, pan);
+  strumVoices.add(voice);
+  voice.source.addEventListener('ended', () => strumVoices.delete(voice));
 }
 
 /**
@@ -226,32 +394,73 @@ export function gong(element = 'air', velocity = 0.4) {
   }
 }
 
+/**
+ * Half a second of real silence (8 kHz, 8-bit mono) as a data: URI.
+ * The old hard-coded WAV had a zero-length data chunk; looping it made the
+ * <audio> element restart continuously and pinned a CPU core (~85%), even
+ * after pause().
+ */
+function silentWavDataUri() {
+  const samples = 4000;
+  const bytes = new Uint8Array(44 + samples);
+  const view = new DataView(bytes.buffer);
+  const ascii = (offset, text) => [...text].forEach((c, i) => { bytes[offset + i] = c.charCodeAt(0); });
+  ascii(0, 'RIFF');
+  view.setUint32(4, 36 + samples, true);
+  ascii(8, 'WAVE');
+  ascii(12, 'fmt ');
+  view.setUint32(16, 16, true);     // fmt chunk size
+  view.setUint16(20, 1, true);      // PCM
+  view.setUint16(22, 1, true);      // mono
+  view.setUint32(24, 8000, true);   // sample rate
+  view.setUint32(28, 8000, true);   // byte rate
+  view.setUint16(32, 1, true);      // block align
+  view.setUint16(34, 8, true);      // bits per sample
+  ascii(36, 'data');
+  view.setUint32(40, samples, true);
+  bytes.fill(128, 44);              // 8-bit PCM silence is the midpoint
+  return `data:audio/wav;base64,${btoa(String.fromCharCode(...bytes))}`;
+}
+
+function unlockAudio() {
+  // iOS requires resume() + a silent buffer play during a user gesture
+  // to fully unlock audio output. pluck() fires from rAF which can't unlock.
+  audioCtx.resume().then(() => {
+    // Play a silent buffer to force iOS to open the audio route
+    const silent = audioCtx.createBuffer(1, 1, audioCtx.sampleRate);
+    const src = audioCtx.createBufferSource();
+    src.buffer = silent;
+    src.connect(audioCtx.destination);
+    src.start();
+  });
+  // Force iOS "playback" audio session so audio ignores the mute switch.
+  // Web Audio alone uses "ambient" category (respects mute switch).
+  // Playing through an <audio> element switches to "playback" category.
+  if (!silentAudio) {
+    silentAudio = new Audio(silentWavDataUri());
+    silentAudio.loop = true;
+    silentAudio.volume = 0;
+  }
+  silentAudio.play().catch(() => {});
+}
+
+/** Quickly fade out every string still ringing (or waiting to ring) from strum(). */
+export function stopStrum() {
+  if (!audioCtx) return;
+  const now = audioCtx.currentTime;
+  for (const { noteGain, stop } of strumVoices) {
+    noteGain.gain.cancelScheduledValues(now);
+    noteGain.gain.setTargetAtTime(0, now, 0.03);
+    stop(now + 0.2);
+  }
+  strumVoices.clear();
+}
+
 export function setHarpEnabled(on) {
   enabled = on;
   if (on) {
     ensureContext();
-    // iOS requires resume() + a silent buffer play during a user gesture
-    // to fully unlock audio output. pluck() fires from rAF which can't unlock.
-    audioCtx.resume().then(() => {
-      // Play a silent buffer to force iOS to open the audio route
-      const silent = audioCtx.createBuffer(1, 1, audioCtx.sampleRate);
-      const src = audioCtx.createBufferSource();
-      src.buffer = silent;
-      src.connect(audioCtx.destination);
-      src.start();
-    });
-    // Force iOS "playback" audio session so audio ignores the mute switch.
-    // Web Audio alone uses "ambient" category (respects mute switch).
-    // Playing through an <audio> element switches to "playback" category.
-    if (!silentAudio) {
-      // Tiny silent WAV: 44-byte header + 1 sample of silence, looped
-      silentAudio = new Audio(
-        'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YQAAAAA='
-      );
-      silentAudio.loop = true;
-      silentAudio.volume = 0;
-    }
-    silentAudio.play().catch(() => {});
+    unlockAudio();
   } else if (silentAudio) {
     silentAudio.pause();
   }

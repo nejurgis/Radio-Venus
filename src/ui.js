@@ -14,6 +14,7 @@ const ui = {
   overlay: null,
   revealSign: null,
   revealDetail: null,
+  chartChord: null,
   genreGrid: null,
   radioSign: null,
   radioGenre: null,
@@ -52,6 +53,7 @@ export function initScreens() {
   ui.overlay = document.getElementById('loading-overlay');
   ui.revealSign = document.getElementById('reveal-sign');
   ui.revealDetail = document.getElementById('reveal-detail');
+  ui.chartChord = document.getElementById('chart-chord');
   ui.genreGrid = document.getElementById('genre-grid');
   ui.radioSign = document.getElementById('radio-sign');
   ui.radioGenre = document.getElementById('radio-genre');
@@ -131,6 +133,34 @@ export function renderReveal(venus) {
     ui.revealDetail.textContent = venus.element;
     ui.revealDetail.style.color = `var(--${venus.element})`;
   }
+}
+
+export function renderChartChord(chord, element, isoDate) {
+  if (!ui.chartChord) return;
+  ui.chartChord.querySelector('#chart-chord-link').href = `/astrochord/?date=${isoDate}`;
+  const nameEl = ui.chartChord.querySelector('#chart-chord-name');
+  // Chord names may only wrap before "(" or after a comma, so ♭13 never splits
+  nameEl.textContent = '';
+  chord.name.split(/(?=\()|(?<=,)/).forEach((part, i) => {
+    if (i) nameEl.appendChild(document.createElement('wbr'));
+    nameEl.appendChild(document.createTextNode(part));
+  });
+  nameEl.style.color = `var(--${element})`;
+
+  const notesEl = ui.chartChord.querySelector('#chart-chord-notes');
+  notesEl.innerHTML = '';
+  notesEl.classList.remove('is-visible');
+  const addPlanet = (p, cls) => {
+    const span = document.createElement('span');
+    span.className = cls;
+    span.title = `${p.name} in ${p.sign} → ${p.note}`;
+    span.textContent = `${p.glyph}${p.note}`;
+    notesEl.appendChild(span);
+  };
+  chord.planets.forEach(p => addPlanet(p, 'chart-chord-planet'));
+  chord.outer.forEach(p => addPlanet(p, 'chart-chord-planet is-outer'));
+
+  ui.chartChord.hidden = false;
 }
 
 export function renderGenreGrid(categories, subgenreMap, subgenreCounts, onGenreSelect, onSubgenreSelect) {
