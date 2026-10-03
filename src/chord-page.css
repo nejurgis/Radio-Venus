@@ -845,6 +845,113 @@ body.arp-on .cp-wheel .cp-planet.is-muted { opacity: 0.2; }
   text-align: center;
 }
 
+/* ── First-visit explainer (mirrors the Venus explainer on the main app) ── */
+
+.cp-explainer {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 16px;
+  background: rgba(10, 10, 12, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s ease;
+}
+.cp-explainer[hidden] { display: none; }
+.cp-explainer.is-visible { opacity: 1; pointer-events: auto; }
+
+.cp-explainer-card {
+  max-width: 360px;
+  width: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  background: rgba(16, 16, 20, 0.85);
+  border-radius: 2.4rem;
+  padding: 2rem 1.8rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transform: translateY(10px);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cp-explainer.is-visible .cp-explainer-card { transform: translateY(0); }
+
+.cp-explainer-body {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--text);
+}
+.cp-explainer-lead { text-align: center; font-size: 0.9rem; color: var(--text-bright); }
+#cp-explainer-chord { font-weight: 600; color: var(--venus-el); overflow-wrap: break-word; }
+
+.cp-explainer-icon {
+  display: block;
+  position: relative;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+  background: radial-gradient(circle at 50% 42%, #141b2e 0%, #0a0e18 75%);
+}
+.cp-explainer-icon img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 108%;
+  height: 108%;
+  transform: translate(-50%, -50%);
+  display: block;
+}
+.cp-explainer-icon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.65) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-20deg);
+  animation: cp-lunarlog-shimmer 5.5s ease-in-out infinite;
+}
+@keyframes cp-lunarlog-shimmer {
+  0%   { left: -150%; }
+  40%  { left: 150%; }
+  100% { left: 150%; }
+}
+
+.cp-explainer-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--text-bright);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(200, 200, 208, 0.35);
+  cursor: pointer;
+  transition: text-decoration-color 0.2s;
+}
+.cp-explainer-link:hover { text-decoration-color: rgba(200, 200, 208, 0.8); }
+
+.cp-explainer-actions {
+  margin-top: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+.cp-explainer-actions .cp-btn-primary { text-decoration: none; text-align: center; }
+.cp-explainer-secondary { font-size: 0.8rem; opacity: 0.75; }
+
 @media (prefers-reduced-motion: reduce) {
+  .cp-explainer-icon::after { animation: none; }
   .cp-halo, .cp-planet { transition: none; }
 }

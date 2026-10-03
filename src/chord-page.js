@@ -12,7 +12,7 @@ import { calculateChartChord, ascendantLongitude, FAR_PLANETS, SIGNS, TUNINGS, s
 import { ZONE_COORDS } from './zone-coords.js';
 import { strum, stopStrum, STRUM_LEAD, beginPlayback, endPlayback, audioNow, playNoteAt } from './harp.js';
 import { makeBirthDate } from './venus.js';
-import { trackChordPage } from './analytics.js';
+import { trackChordPage, trackOutboundClick } from './analytics.js';
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
 
@@ -1286,6 +1286,47 @@ el.playYou.addEventListener('click', () => playSolo('you'));
 el.playThem.addEventListener('click', () => playSolo('them'));
 el.playChord.addEventListener('click', playChord);
 
+// ── First-visit explainer (+ LunarLog), like the Venus explainer on the main app ──
+
+const EXPLAINER_KEY = 'rv_seen_astrochord_explainer';
+
+function maybeShowExplainer() {
+  try {
+    if (localStorage.getItem(EXPLAINER_KEY)) return;
+  } catch {
+    return;   // storage blocked: don't show it on every visit
+  }
+  const overlay = document.getElementById('cp-explainer');
+  document.getElementById('cp-explainer-when').textContent = shown?.isToday
+    ? 'Right now, the sky plays'
+    : 'When you were born, the sky played';
+  setChordText(document.getElementById('cp-explainer-chord'), chart.name);
+
+  const onKey = e => { if (e.key === 'Escape') dismiss('escape'); };
+  function dismiss(action) {
+    overlay.classList.remove('is-visible');
+    try { localStorage.setItem(EXPLAINER_KEY, '1'); } catch { /* fine */ }
+    document.removeEventListener('keydown', onKey);
+    overlay.addEventListener('transitionend', () => { overlay.hidden = true; }, { once: true });
+    trackChordPage(`explainer_${action}`, chart.name);
+  }
+
+  overlay.hidden = false;
+  overlay.offsetHeight;   // force reflow so the fade-in transition runs
+  overlay.classList.add('is-visible');
+  document.getElementById('cp-explainer-lunarlog').focus({ preventScroll: true });
+
+  document.getElementById('cp-explainer-close').onclick = () => dismiss('close');
+  overlay.onclick = e => { if (e.target === overlay) dismiss('backdrop'); };
+  document.addEventListener('keydown', onKey);
+  for (const [id, action] of [['cp-explainer-lunarlog', 'lunarlog'], ['cp-explainer-icon', 'lunarlog_icon'], ['cp-explainer-inline', 'lunarlog_inline']]) {
+    document.getElementById(id).onclick = () => {
+      trackOutboundClick('lunarlog');
+      dismiss(action);
+    };
+  }
+}
+
 drawWheel();
 const query = new URLSearchParams(location.search);
 fillTimeZones();
@@ -1306,3 +1347,4 @@ setTuning(effectiveTuning());
 const fromUrl = query.get('date');
 if (parseISODate(fromUrl)) show(fromUrl, false);
 else show(todayISO(), true);
+setTimeout(maybeShowExplainer, 900);
