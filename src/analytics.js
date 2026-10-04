@@ -178,13 +178,6 @@ export function trackExplainerAction(action, sign) {
   });
 }
 
-export function trackChartChord(chord, sign) {
-  send('chart_chord_play', {
-    event_category: 'engagement',
-    chord,
-    sign,
-  });
-}
 
 export function trackChordPage(action, chord) {
   // action: 'walk' (planet by planet), 'chord' (strum), 'planet' (single planet tapped)
