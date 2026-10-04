@@ -391,6 +391,22 @@ function describe(p) {
   return `${p.glyph} ${p.name} · ${Math.floor(p.degree)}° ${p.sign.toLowerCase()} → ${p.note} ${formatCents(p.cents)}`;
 }
 
+/** A link inside a Moon hint: switches exact time on and puts the cursor in that person's time field. */
+function timeLink(text, timeEl) {
+  const link = document.createElement('button');
+  link.type = 'button';
+  link.className = 'cp-hint-link';
+  link.textContent = text;
+  link.addEventListener('click', e => {
+    e.stopPropagation();   // the row itself plays the planet
+    if (!exactTime) setExactTime(true);
+    timeEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    timeEl.focus({ preventScroll: true });
+  });
+  link.addEventListener('keydown', e => e.stopPropagation());
+  return link;
+}
+
 function renderList() {
   el.list.replaceChildren();
   const addRow = p => {
@@ -412,7 +428,8 @@ function renderList() {
     if (p.key === 'moon' && moonUncertain(p, el.time)) {
       const hint = document.createElement('span');
       hint.className = 'cp-row-hint';
-      hint.textContent = `near the ${p.degree < 15 ? 'start' : 'end'} of ${p.sign.toLowerCase()} — turn on exact time, it may be in the ${p.degree < 15 ? 'previous' : 'next'} sign`;
+      hint.append(`near the ${p.degree < 15 ? 'start' : 'end'} of ${p.sign.toLowerCase()}, so your Moon may be in the ${p.degree < 15 ? 'previous' : 'next'} sign — `,
+        timeLink('add your birth time', el.time));
       li.appendChild(hint);
     }
     const m = pairActive() ? theirsFor(p) : null;
@@ -420,8 +437,10 @@ function renderList() {
       m.rowEl = li;
       const them = document.createElement('span');
       them.className = 'cp-row-them';
-      const unsure = m.pairOf === 'moon' && moonUncertain(m, el.pairTime) ? ' · sign uncertain without their time' : '';
-      them.textContent = `them · ${Math.floor(m.degree)}° ${m.sign.toLowerCase()} → ${m.note} ${formatCents(m.cents)} · ${describeInterval(intervalUp(p, m)).name}${unsure}`;
+      them.textContent = `them · ${Math.floor(m.degree)}° ${m.sign.toLowerCase()} → ${m.note} ${formatCents(m.cents)} · ${describeInterval(intervalUp(p, m)).name}`;
+      if (m.pairOf === 'moon' && moonUncertain(m, el.pairTime)) {
+        them.append(` · their Moon may be in the ${m.degree < 15 ? 'previous' : 'next'} sign — `, timeLink('add their birth time', el.pairTime));
+      }
       li.appendChild(them);
     }
     if (p !== chart.ascendant) {
@@ -501,33 +520,84 @@ function pairReading(key) {
 }
 
 /**
- * Oscilloscope-style Lissajous figure of an interval: x follows the root, y the
- * upper note. Simple ratios close into clean loops; microtonal ones weave dense
- * nets. Drawn once as a static path — no animation.
+ * Oscilloscope-style Lissajous figures of the pair intervals: x follows the
+ * root, y the upper note. Like a real scope trace, the phase between the two
+ * notes keeps sliding, so the figure turns and breathes: simple ratios roll
+ * as clean loops, microtonal ones weave and drift.
+ *
+ * Cheap by design: small canvases, one shared requestAnimationFrame loop, and
+ * only figures that are on screen are drawn (IntersectionObserver). Off screen,
+ * in single mode or in a background tab the loop stops. No canvas blur/shadow —
+ * the glow is a wide faint stroke under a thin bright one.
  */
-function lissajousPath(semitones) {
-  const ratio = Math.pow(2, semitones / 12);
-  const steps = 900;
-  const span = 10 * 2 * Math.PI;   // ten cycles of the root
-  let d = '';
-  for (let i = 0; i <= steps; i++) {
-    const t = (i / steps) * span;
-    const x = Math.sin(t + Math.PI / 2);
-    const y = Math.sin(ratio * t);
-    d += `${i ? 'L' : 'M'}${x.toFixed(3)} ${y.toFixed(3)}`;
+const LISS_POINTS = 320;
+const LISS_CYCLES = 6;          // cycles of the root drawn per frame
+const LISS_PHASE_SPEED = 0.9;   // radians per second the upper note slides against the root
+const LISS_FRAME_MS = 33;       // ~30 fps is plenty for a scope trace
+const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+const lissVisible = new Set();
+let lissFrame = 0;
+let lissLastPaint = 0;
+
+const lissObserver = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
+  for (const e of entries) {
+    if (e.isIntersecting) lissVisible.add(e.target);
+    else lissVisible.delete(e.target);
   }
-  return d;
+  if (lissVisible.size && !lissFrame && !reducedMotion) lissFrame = requestAnimationFrame(lissLoop);
+}) : null;
+
+function paintLissajous(canvas, phase) {
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const size = canvas.clientWidth || 70;
+  if (canvas.width !== Math.round(size * dpr)) {
+    canvas.width = canvas.height = Math.round(size * dpr);
+  }
+  const ctx = canvas.getContext('2d');
+  const r = (canvas.width / 2) * 0.86;
+  const c = canvas.width / 2;
+  const ratio = canvas.lissRatio;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.beginPath();
+  for (let i = 0; i <= LISS_POINTS; i++) {
+    const t = (i / LISS_POINTS) * LISS_CYCLES * 2 * Math.PI;
+    const x = c + r * Math.sin(t + Math.PI / 2);
+    const y = c - r * Math.sin(ratio * t + phase);
+    if (i) ctx.lineTo(x, y); else ctx.moveTo(x, y);
+  }
+  ctx.strokeStyle = canvas.lissColor;
+  ctx.lineJoin = 'round';
+  ctx.globalAlpha = 0.18;          // soft glow
+  ctx.lineWidth = 3.5 * dpr;
+  ctx.stroke();
+  ctx.globalAlpha = 0.9;           // the trace
+  ctx.lineWidth = 0.9 * dpr;
+  ctx.stroke();
+  ctx.globalAlpha = 1;
+}
+
+function lissLoop(now) {
+  if (now - lissLastPaint >= LISS_FRAME_MS) {
+    lissLastPaint = now;
+    const phase = (now / 1000) * LISS_PHASE_SPEED;
+    for (const canvas of lissVisible) paintLissajous(canvas, phase);
+  }
+  lissFrame = lissVisible.size ? requestAnimationFrame(lissLoop) : 0;
 }
 
 function drawLissajous(roleEl, semitones, label) {
-  let figure = roleEl.querySelector('.cp-liss');
-  if (!figure) {
-    figure = svg('svg', { class: 'cp-liss', viewBox: '-1.15 -1.15 2.3 2.3', role: 'img' });
-    svg('path', {}, figure);
-    roleEl.appendChild(figure);
+  let canvas = roleEl.querySelector('canvas.cp-liss');
+  if (!canvas) {
+    canvas = document.createElement('canvas');
+    canvas.className = 'cp-liss';
+    canvas.setAttribute('role', 'img');
+    roleEl.appendChild(canvas);
+    lissObserver?.observe(canvas);
   }
-  figure.setAttribute('aria-label', `Lissajous figure of a ${label}`);
-  figure.querySelector('path').setAttribute('d', lissajousPath(semitones));
+  canvas.setAttribute('aria-label', `Lissajous figure of a ${label}`);
+  canvas.lissRatio = Math.pow(2, semitones / 12);
+  canvas.lissColor = getComputedStyle(canvas).color;
+  paintLissajous(canvas, 0);   // first frame now (and the only one with reduced motion)
 }
 
 // Which tuning a reading uses changes it: the two orders disagree on semi-sextiles and quincunxes
@@ -979,7 +1049,21 @@ function lightPair(items, caption) {
   el.now.textContent = caption;
 }
 
+/**
+ * While the arpeggiator runs, tapping a planet (row or wheel) switches it in or
+ * out of the pattern, like its circle — it never stops the music. The
+ * Ascendant is the root pedal, not a step, so tapping it does nothing then.
+ */
+function arpTap(p) {
+  const key = p.pairOf || p.key;
+  if (key !== 'asc') setArpIncluded(key, arpExcluded.has(key));
+}
+
 function playPartnerNote(m) {
+  if (arp) {
+    arpTap(m);
+    return;
+  }
   perform(planetNotes(m, 0), [{ at: 0, run: () => lightPair([m], describe(m)) }]);
 }
 
@@ -1015,6 +1099,10 @@ function playPair() {
 }
 
 function playOne(p) {
+  if (arp) {
+    arpTap(p);
+    return;
+  }
   const m = pairActive() ? theirsFor(p) : null;
   if (m) {
     perform([...planetNotes(p, 0), ...planetNotes(m, PAIR_OFFSET)], [{ at: 0, run: () => lightPair([p, m], pairCaption(p, m)) }]);
@@ -1177,7 +1265,7 @@ function setMode(next) {
   el.modeButtons.forEach(b => b.setAttribute('aria-checked', String(b.dataset.mode === mode)));
   el.themField.hidden = mode !== 'pair';
   el.dateLabel.textContent = mode === 'pair' ? 'you' : 'born';
-  el.title.textContent = mode === 'pair' ? 'your charts, side by side' : 'your chart, as a chord';
+  el.title.textContent = mode === 'pair' ? 'harmony of two charts' : 'your chart, as a chord';
   document.body.dataset.mode = mode;
 }
 
@@ -1314,7 +1402,7 @@ function maybeShowExplainer() {
   overlay.hidden = false;
   overlay.offsetHeight;   // force reflow so the fade-in transition runs
   overlay.classList.add('is-visible');
-  document.getElementById('cp-explainer-lunarlog').focus({ preventScroll: true });
+  overlay.querySelector('.cp-explainer-card').focus({ preventScroll: true });   // keyboard-ready, no ring on a button
 
   document.getElementById('cp-explainer-close').onclick = () => dismiss('close');
   overlay.onclick = e => { if (e.target === overlay) dismiss('backdrop'); };

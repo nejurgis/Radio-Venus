@@ -655,6 +655,17 @@ body.arp-on .cp-wheel .cp-planet.is-muted { opacity: 0.2; }
   color: var(--air);
 }
 
+.cp-hint-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
 .cp-row-them {
   grid-area: them;
   margin-top: 0.2rem;
@@ -778,13 +789,7 @@ body.arp-on .cp-wheel .cp-planet.is-muted { opacity: 0.2; }
   height: 70px;
   overflow: visible;
 }
-.cp-liss path {
-  fill: none;
-  stroke: var(--venus-el);
-  stroke-width: 0.012;
-  stroke-opacity: 0.85;
-  stroke-linejoin: round;
-}
+.cp-liss { color: var(--venus-el); }   /* the canvas reads its trace colour from here */
 
 .cp-pair-role-label {
   font-size: 0.62rem;
@@ -881,6 +886,7 @@ body.arp-on .cp-wheel .cp-planet.is-muted { opacity: 0.2; }
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .cp-explainer.is-visible .cp-explainer-card { transform: translateY(0); }
+.cp-explainer-card:focus { outline: none; }
 
 .cp-explainer-body {
   margin: 0;
