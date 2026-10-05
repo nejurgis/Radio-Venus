@@ -3,6 +3,7 @@ import { toSlug } from './slug.js';
 import { GENRE_CATEGORIES, SUBGENRES } from './genres.js';
 import { loadDatabase, getDatabase, match, matchFavorites, matchMoon, matchSun, getSubgenreCounts } from './matcher.js';
 import { getFavorites, toggleFavorite, isFavorite } from './favorites.js';
+import { CURATED_PLAYLISTS, getCuratedPlaylist, curatedTracks } from './playlists.js';
 import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, setMoonPosition, setSunPosition, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, enableDragRotate, resetDrift, onNebulaHover, onNebulaClick, onRotation, onNeedleCross, onSignCross, onMoonHover, onSunHover } from './viz.js';
 import { pluck, gong, pokeAudio } from './harp.js';
 import { loadYouTubeAPI, initPlayer, loadVideo, cueVideo, togglePlay, isPlaying, getDuration, getCurrentTime, seekTo, getVideoTitle, isMuted, unMute } from './player.js';
@@ -428,16 +429,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     updateArtistIndexPlaying(currentPlayingTrack?.name);
   }
 
-  // ── Handle #valentine link ──
-  if (window.location.hash === '#valentine' && dbResult.status === 'fulfilled') {
+  // ── Handle a curated playlist link (#valentine, #venus-retrograde-1, …) ──
+  const linkedPlaylist = getCuratedPlaylist(window.location.hash.slice(1));
+  if (linkedPlaylist && dbResult.status === 'fulfilled') {
     history.replaceState({ screen: 'portal' }, '', window.location.pathname);
-    const sign = 'aries';
+    const sign = linkedPlaylist.sign;
     const el = ZODIAC_ELEMENTS[sign] || 'air';
-    const genreCat = GENRE_CATEGORIES.find(g => g.id === 'valentine');
-    const candidateTracks = match(sign, 'valentine', el, { userLongitude: 0 });
-    if (genreCat && candidateTracks.length > 0) {
+    const candidateTracks = curatedTracks(linkedPlaylist.id);
+    if (candidateTracks.length > 0) {
       setElementTheme(el);
-      renderRadioHeader(sign, genreCat.label);
+      renderRadioHeader(sign, linkedPlaylist.label);
       showScreen('radio');
       showNebula(true);
 
@@ -453,8 +454,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       history.pushState({ screen: 'radio' }, '');
 
       tracks = candidateTracks;
-      playingGenreId = 'valentine';
-      activeGenreLabel = genreCat.label;
+      playingGenreId = linkedPlaylist.id;
+      activeGenreLabel = linkedPlaylist.label;
+      activeShareFn = sharePlaylist;
       currentTrackIndex = 0;
       failedIds.clear();
       trackVideoIndex.clear();
@@ -465,7 +467,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       ensurePlayerReady().then(() => cueVideo(tracks[0].youtubeVideoId));
       updatePlayButton(false);
 
-      const signIndex = ZODIAC_SIGNS.indexOf('Aries');
+      const signIndex = ZODIAC_SIGNS.indexOf(sign);
       if (signIndex >= 0) zoomToSign(signIndex, { duration: 2500 });
       updateNowPlayingButton(false);
     }
@@ -859,7 +861,7 @@ let cachedShuffledGenres = null;
 function rebuildGenreGrid() {
   const genreLabel = id => {
     if (id === 'favorites') return 'Favorites';
-    return GENRE_CATEGORIES.find(c => c.id === id)?.label || id;
+    return getCuratedPlaylist(id)?.label || GENRE_CATEGORIES.find(c => c.id === id)?.label || id;
   };
 
   if (!cachedShuffledGenres) {
@@ -875,13 +877,14 @@ function rebuildGenreGrid() {
       [others[i], others[j]] = [others[j], others[i]];
     }
 
-    // 4. Construct list: Special genres first, then the rest
-    cachedShuffledGenres = [...pinned, ...others];
+    // 4. Construct list: curated playlists, then the special genres, then the rest
+    const curated = CURATED_PLAYLISTS.filter(p => !p.hidden).map(p => ({ id: p.id, label: p.label }));
+    cachedShuffledGenres = [...curated, ...pinned, ...others];
   }
 
   const shuffledGenres = [...cachedShuffledGenres];
   
-  // 5. Add Favorites at the very top (so it's Favorites -> Valentine -> Rest)
+  // 5. Add Favorites at the very top (so it's Favorites -> curated playlists -> Rest)
   if (getFavorites().length > 0) {
     shuffledGenres.unshift({ id: 'favorites', label: 'Favorites' });
   }
@@ -904,14 +907,16 @@ function startRadio(genreId, genreLabel, subgenreId = null, targetArtistName = n
   trackGenreSelect(genreId, subgenreId);
 
   // 1. DEFINE SHARE PERMISSION
-  // This enables the button for Moon, Valentine, and Favorites
-  const playlistShareFn = (genreId === 'valentine' || genreId === 'favorites' || genreId === 'moon' || genreId === 'sun')
+  // This enables the button for Moon, Sun, Favorites and the curated playlists
+  const curated = getCuratedPlaylist(genreId);
+  const playlistShareFn = (curated || genreId === 'favorites' || genreId === 'moon' || genreId === 'sun')
     ? sharePlaylist
     : undefined;
 
   const playlistDescription =
     genreId === 'moon' ? 'The immediate emotional weather. This playlist tracks the Moon\'s rapid movement, capturing the fleeting, intuitive mood of the next 48 hours.' :
     genreId === 'sun'  ? 'A living playlist that expresses the current astrological season, evolving in real-time with the transit of the Sun.' :
+    curated ? curated.description ?? null :
     null;
 
   // 2. SETUP CONTEXT
@@ -952,6 +957,16 @@ function startRadio(genreId, genreLabel, subgenreId = null, targetArtistName = n
 
   if (genreId === 'favorites') {
     candidateTracks = matchFavorites(getFavorites(), effectiveLong);
+  }
+  else if (curated) {
+    // ── CURATED: the curator's order, no astrology ──
+    renderRadioHeader(curated.sign, curated.label);
+    setElementTheme(ZODIAC_ELEMENTS[curated.sign] || 'air');
+    const nebulaCont = document.getElementById('nebula-container');
+    if (nebulaCont) nebulaCont.classList.add('is-dimmed', 'is-deep-dimmed', 'is-zoomed');
+    dimNebula(true);
+    specialZoomSignIndex = ZODIAC_SIGNS.indexOf(curated.sign);
+    candidateTracks = curatedTracks(curated.id);
   }
   else if (genreId === 'moon') {
     // ── MOON LOGIC ──
@@ -1160,9 +1175,10 @@ function playTrack(index) {
 
   stopProgressLoop();
   resetProgress();
-  // Pick a random video ID from all available (main + backups) for variety
+  // Pick a random video ID from all available (main + backups) for variety;
+  // a curated track's backups are fallbacks only, so it always starts on the chosen video
   const allIds = getVideoIds(track).filter(Boolean);
-  const startIdx = allIds.length > 1 ? Math.floor(Math.random() * allIds.length) : 0;
+  const startIdx = allIds.length > 1 && !track.playlist ? Math.floor(Math.random() * allIds.length) : 0;
   trackVideoIndex.set(currentTrackIndex, startIdx);
 
   ensurePlayerReady().then(() => {
@@ -1440,7 +1456,7 @@ async function copyAndToast(url, toast) {
 }
 
 function getPlaylistShareFn() {
-  return (playingGenreId === 'valentine' || playingGenreId === 'favorites' || playingGenreId === 'moon' || playingGenreId === 'sun') ? sharePlaylist : undefined;
+  return (getCuratedPlaylist(playingGenreId) || playingGenreId === 'favorites' || playingGenreId === 'moon' || playingGenreId === 'sun') ? sharePlaylist : undefined;
 }
 
 
@@ -1449,10 +1465,18 @@ async function shareCurrentTrack() {
   const track = tracks[currentTrackIndex];
   if (!track) return;
 
+  // A curated song has no artist page: share its playlist instead
+  if (track.playlist) {
+    const base = window.location.origin + window.location.pathname;
+    trackShare(playingGenreId || '', 'track_link');
+    await copyAndToast(`${base}?utm_source=share&utm_medium=clipboard&utm_campaign=${track.playlist}#${track.playlist}`, 'Playlist link copied');
+    return;
+  }
+
   const time = Math.floor(getCurrentTime());
   const slug = toSlug(track.name) || track.youtubeVideoId;
   // Use the active genre for context-specific OG tags; fall back to artist's first genre
-  const specialGenres = new Set(['valentine', 'favorites', 'moon', 'sun']);
+  const specialGenres = new Set(['favorites', 'moon', 'sun']);
   const gid = (!specialGenres.has(playingGenreId) && playingGenreId)
     ? playingGenreId
     : (track.genres?.[0] ?? '');
@@ -1462,20 +1486,18 @@ async function shareCurrentTrack() {
   await copyAndToast(shareUrl, 'Current track link copied');
 }
 
-// Playlist share button — shares the whole valentine or favorites playlist
+// Playlist share button — shares the whole curated, favorites, Moon or Sun playlist
 async function sharePlaylist() {
   const genreId = playingGenreId || '';
   const base = window.location.origin + window.location.pathname;
 
   let shareUrl, toast;
   
-  if (genreId === 'valentine') {
-    shareUrl = `${base}?utm_source=share&utm_medium=clipboard&utm_campaign=valentine#valentine`;
-    toast = 'Valentine link copied';
-    
-    // New detailed tracker
-    trackPlaylistShare('valentine', tracks.length);
-    
+  if (getCuratedPlaylist(genreId)) {
+    shareUrl = `${base}?utm_source=share&utm_medium=clipboard&utm_campaign=${genreId}#${genreId}`;
+    toast = `${getCuratedPlaylist(genreId).label} link copied`;
+    trackPlaylistShare(genreId, tracks.length);
+
   } else if (genreId === 'favorites') {
     const names = tracks.map(t => t.name).join(',');
     shareUrl = `${base}?utm_source=share&utm_medium=clipboard&utm_campaign=favorites#favorites=${encodeURIComponent(names)}`;

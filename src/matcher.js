@@ -1,3 +1,5 @@
+import { findCuratedTracks } from './playlists.js';
+
 let db = [];
 
 const SIGNS = [
@@ -154,15 +156,6 @@ export function getSubgenreCounts(genre) {
 
 export function match(venusSign, genre, element, { subgenre = null, userLongitude = null } = {}) {
   
-  // 1. SPECIAL CASE: VALENTINE (Strict Sequence)
-  // If the genre is 'valentine', ignore astrology and sort by the specific sequence index.
-  if (genre === 'valentine') {
-    return db.filter(m => m.genres.includes('valentine'))
-             .sort((a, b) => (a.sequenceIndex ?? 999) - (b.sequenceIndex ?? 999));
-  }
-
-  // ── STANDARD LOGIC (The rest of your code) ──
-
   // Filter by genre, optionally narrow by subgenre
   let pool;
   if (subgenre) {
@@ -197,7 +190,8 @@ export function match(venusSign, genre, element, { subgenre = null, userLongitud
 
 export function matchFavorites(names, userLongitude) {
   const pool = db.filter(m => names.includes(m.name));
-  return sortBySimilarity(pool, userLongitude);
+  // Songs favorited from a curated playlist have no Venus to sort by; they follow the artists
+  return [...sortBySimilarity(pool, userLongitude), ...findCuratedTracks(names)];
 }
 
 export function matchMoon(moonLongitude, limit = 10) {

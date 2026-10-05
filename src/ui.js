@@ -1,4 +1,5 @@
 import { trackScreenView } from "./analytics";
+import { getCuratedPlaylist } from "./playlists.js";
 
 // ─── CACHED ELEMENTS (The Speed Boost) ──────────────────────────────────────
 let trackSelectCallback = null; // delegated click handler for track list
@@ -210,15 +211,21 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
   trackSelectCallback = onSelect;
   ui.trackList.innerHTML = '';
 
-  // 1. Playlist header with share button (valentine + favorites only)
-  const isValentine = onSharePlaylist && tracks.length > 0 && tracks.every(t => t.genres && t.genres.includes('valentine'));
-  const isFavorites = onSharePlaylist && !isValentine && !description;
+  // 1. Playlist header with share button (curated, favorites, Moon and Sun)
+  // A curated playlist is the whole playlist in any order (shuffled too); a few of its
+  // songs among the favorites stay favorites. Its credit and description come from the
+  // playlist itself, so re-renders that pass no description keep them.
+  const first = getCuratedPlaylist(tracks[0]?.playlist);
+  const curated = onSharePlaylist && first && tracks.length === first.tracks.length
+    && tracks.every(t => t.playlist === first.id) ? first : null;
+  if (curated && !description) description = curated.description ?? null;
+  const isFavorites = onSharePlaylist && !curated && !description;
   if (onSharePlaylist) {
     const header = document.createElement('div');
     header.className = 'playlist-curator-credit';
-    const curatorHtml = isValentine
+    const curatorHtml = curated
       ? `<span class="curator-label">Curated by</span>
-         <span class="curator-name"><a href="https://docs.google.com/document/d/1We4r9SyEyWY0rM8Njdcw7gkAy8e4lpBFb7aFTA7xtWY/edit?usp=sharing" target="_blank" rel="noopener">최진영</a></span>`
+         <span class="curator-name">${curated.curatorUrl ? `<a href="${curated.curatorUrl}" target="_blank" rel="noopener">${curated.curator}</a>` : curated.curator}</span>`
       : isFavorites
       ? `<span class="curator-label">Your favorited <span class="star-toggle active" style="width:10px;height:10px;margin:0 2px;vertical-align:middle"></span> tracks</span>`
       : '';

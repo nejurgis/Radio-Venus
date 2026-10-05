@@ -303,13 +303,22 @@ Of the ~60 subgenres defined, **28 have 7+ artists** and are clickable in the UI
 
 The remaining ~30 subgenres have 1-6 artists each and appear as dimmed (non-clickable) chips. Raw tags from MusicBrainz, Last.fm, and Wikidata are normalized via `GENRE_MAP` (~160 entries) in `src/genres.js` — the single source of truth imported by both build scripts and the browser client.
 
-## Valentine's playlist
+## Curated playlists
 
-Visiting `radio-venus.club/#valentine` activates a hand-curated playlist of 16 tracks, bypassing astrology entirely. Artists tagged with `genres: ["valentine"]` in `musicians.json` are sorted by `sequenceIndex` (0-based) regardless of the user's Venus sign:
+Hand-made playlists live in `src/playlists.js` (`CURATED_PLAYLISTS`), outside the astrology and outside `musicians.json`: each has an id, a label, a curator credit (name + link), an optional description, a sign (the header and the nebula zoom) and its tracks in order (`name` shown as "Artist — Song", a YouTube video ID, optional backups of the same recording). Each one:
 
-> Iko Chérie → Nathanial Young → Ouri → Angel Olsen → Sonic Youth → Cassandra Jenkins → Sam Gendel → A. G. Cook → James K → Four Tet → Yves Tumor → Peter Kardas → Kelly Moran → The Memphis Mustangs → Semi Trucks → Vegyn
+- shows as a chip at the top of the genre grid, after Favorites (unless `hidden`)
+- plays in the curator's order, with "Curated by" and the description above the list
+- shares as `radio-venus.club/#<id>`; sharing a single song shares its playlist (curated songs have no artist page)
 
-Some of these artists also exist as separate entries in other genre pools (e.g. Four Tet in `techno/idm`, Vegyn in `idm/ambient/triphop`) — the valentine-tagged entries are distinct records with specific YouTube video IDs chosen for the playlist mood. Sorting uses `?? 999` (not `|| 999`) so index 0 sorts correctly.
+| Playlist | Link | Curator | Shown |
+|----------|------|---------|-------|
+| Venus Retrograde 1/2 (20 tracks) | `#venus-retrograde-1` | 최진영 | yes |
+| Valentine's day special (15 tracks) | `#valentine` | 최진영 | hidden (seasonal) |
+
+To add one: append an entry to `CURATED_PLAYLISTS` (and, if you like, a chip style keyed by `.genre-btn[data-genre="<id>"]` in `style.css`). Check videos can be embedded with `curl -s -o /dev/null -w "%{http_code}" "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=<id>&format=json"` (200 = OK, 401 = embedding disabled).
+
+The Valentine playlist was first stored as valentine-tagged artists in `musicians.json` (sorted by `sequenceIndex`); the roster's genre-cleanup scripts wiped those tags in March 2026, which is why playlists now have their own file. It was restored from git history with its videos' song titles; Four Tet's video had been taken down, so it has 15 of its 16 tracks.
 
 ## Database stats & discovery workflow
 
