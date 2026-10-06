@@ -1489,7 +1489,9 @@ async function shareCurrentTrack() {
   const gid = (!specialGenres.has(playingGenreId) && playingGenreId)
     ? playingGenreId
     : (track.genres?.[0] ?? '');
-  const shareUrl = `${window.location.origin}/artist/${slug}${gid ? `/${gid}` : ''}?t=${time}`;
+  // Trailing slash: the pages live at /artist/<slug>/<gid>/ and the bare form 301s,
+  // which Search Console counts against every shared link as "Page with redirect"
+  const shareUrl = `${window.location.origin}/artist/${slug}/${gid ? `${gid}/` : ''}?t=${time}`;
 
   trackShare(playingGenreId || '', 'track_link');
   await copyAndToast(shareUrl, 'Current track link copied');
