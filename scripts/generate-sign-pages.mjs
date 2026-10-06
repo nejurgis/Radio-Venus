@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { artistSlugs } from './lib/artist-slugs.mjs';
 
 const SIGNS = ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo',
                'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'];
@@ -68,6 +69,7 @@ const SIGN_ASTRO = {
 
 const db = JSON.parse(fs.readFileSync('./public/data/musicians.json', 'utf8'))
   .filter(a => a.name !== '@' && a.venus?.sign);
+const { byName: artistSlug } = artistSlugs(db);   // /artist/<slug>/, as generate-artist-pages names them
 
 // Extract sign descriptions from source index.html
 const sourceHtml = fs.readFileSync('./index.html', 'utf8');
@@ -263,6 +265,7 @@ function head(title, metaDesc, canonical, schema) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${title}</title>
   <meta name="description" content="${metaDesc}">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="canonical" href="${canonical}" />
   <meta property="og:title" content="${title}">
   <meta property="og:description" content="${metaDesc}">
@@ -281,12 +284,9 @@ function artistList(artists, sign) {
     const deg = Math.round(a.venus.degree || 0);
     const genres = (a.genres || []).join(', ');
     let nameEl;
-    if (a.youtubeVideoId && a.genres?.[0]) {
-      const gid = a.genres[0];
-      const genreLabel = encodeURIComponent(GENRE_LABELS[gid] || gid);
-      const artistEnc = encodeURIComponent(a.name);
-      const href = `/?vid=${a.youtubeVideoId}&artist=${artistEnc}&gid=${gid}&t=0&sign=${sign.toLowerCase()}&genre=${genreLabel}`;
-      nameEl = `<a class="artist-name" href="${href}">${a.name}</a>`;
+    if (artistSlug.has(a.name)) {
+      // The artist's own page (placement, song, neighbours; it has the play button)
+      nameEl = `<a class="artist-name" href="/artist/${artistSlug.get(a.name)}/">${a.name}</a>`;
     } else {
       nameEl = `<span class="artist-name">${a.name}</span>`;
     }
