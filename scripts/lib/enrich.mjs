@@ -283,7 +283,8 @@ async function getMusicBrainzBirthDate(name) {
     dateStr = normalizeDate(dateStr);
     const year = parseInt(dateStr);
     if (year < 1600 || year > new Date().getFullYear()) return null;
-    return { date: dateStr, mbid: match.id };
+    // A month or year without a day is filled in above: say so
+    return { date: dateStr, mbid: match.id, ...(b.length < 10 ? { approximate: true } : {}) };
   } catch { return null; }
 }
 
@@ -338,7 +339,8 @@ async function getBirthDateOnce(name, releaseDate) {
     const normalized = releaseDate.length === 4
       ? `${releaseDate}-06-15`
       : releaseDate.slice(0, 10);
-    return { date: normalized, mbid: null, isReleaseDate: true };
+    // Some release's date standing in for a birth date — never exact
+    return { date: normalized, mbid: null, isReleaseDate: true, approximate: true };
   }
   return null;
 }

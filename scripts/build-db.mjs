@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import https from 'node:https';
 import { categorizeGenres, categorizeSubgenres } from '../src/genres.js';
+import { dateReliability } from './lib/date-reliability.mjs';
 
 const require = createRequire(import.meta.url);
 const Astronomy = require('astronomy-engine');
@@ -69,20 +70,6 @@ function calculateVenus(dateStr) {
     element: ELEMENTS[sign],
     ...(yearOnly || jan1 ? { dateApprox: true } : {}),
   };
-}
-
-// ── Date reliability ────────────────────────────────────────────────────────
-// 'exact'       — a real, specific date: a birthday, or a group's debut release.
-// 'approximate' — a placeholder (year only, or the Jan 1 / Jun 15 stand-ins that
-//                 lookups write for year-only dates) or a stand-in release date.
-// A seed entry's own `dateReliability` wins (use it to mark a real-looking date
-// that is only a stand-in, or to vouch for a date that ends on Jan 1/Jun 15).
-// The site can be told to show exact dates only: EXACT_DATES_ONLY in src/matcher.js.
-function dateReliability(entry) {
-  if (entry.dateReliability === 'exact' || entry.dateReliability === 'approximate') return entry.dateReliability;
-  const [, m, d] = (entry.birthDate ?? '').split('-').map(Number);
-  if (!m || !d || (m === 1 && d === 1) || (m === 6 && d === 15)) return 'approximate';
-  return 'exact';
 }
 
 // Genre categorization imported from src/genres.js (single source of truth)

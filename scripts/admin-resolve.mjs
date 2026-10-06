@@ -26,6 +26,7 @@ import {
   getLastfmTags, getLastfmSimilar, cosineFindTrack, cosineSimilarTracks,
   findYouTubeId, postJSON,
 } from './lib/enrich.mjs';
+import { dateReliability } from './lib/date-reliability.mjs';
 import { readFileSync } from 'node:fs';
 
 loadEnv();
@@ -92,6 +93,7 @@ async function enrichCandidate(seedNames, source, cand) {
     name: cand.name,
     birthDate: birth.date,
     dateType: birth.isReleaseDate ? 'release' : 'birth',
+    dateReliability: birth.approximate ? 'approximate' : dateReliability({ birthDate: birth.date }),
     mbid: birth.mbid ?? null,
     venus: calculateVenus(birth.date),
     genres, subgenres,
@@ -147,6 +149,7 @@ async function main() {
     name: resolved.artistName,
     birthDate: birth.date,
     dateType: birth.isReleaseDate ? 'release' : 'birth',
+    dateReliability: birth.approximate ? 'approximate' : dateReliability({ birthDate: birth.date }),
     mbid: birth.mbid ?? null,
     venus: calculateVenus(birth.date),
     genres, subgenres,

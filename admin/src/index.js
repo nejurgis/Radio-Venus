@@ -459,7 +459,7 @@ function renderMainCard(artist) {
       \${thumbHTML(artist)}
       <div class="info">
         <div class="name">\${artist.name} \${disabled ? '<span class="already">already in library</span>' : ''}</div>
-        <div class="meta">\${artist.birthDate} · Venus in \${artist.venus}\${artist.handpickedTrack ? ' · "' + artist.handpickedTrack + '"' : ''}\${listenLinkHTML(artist)}</div>
+        <div class="meta">\${artist.dateReliability === 'approximate' ? '≈ ' : ''}\${artist.birthDate} · Venus in \${artist.venus}\${artist.handpickedTrack ? ' · "' + artist.handpickedTrack + '"' : ''}\${listenLinkHTML(artist)}</div>
         <div class="tags">\${tagsHTML(artist.genres)}</div>
       </div>
     </div>\`;
@@ -474,7 +474,7 @@ function renderGrid(gridEl, countEl, checkClass, list) {
       \${thumbHTML(a)}
       <div class="info">
         <div class="name">\${a.name}</div>
-        <div class="meta">\${a.birthDate} · Venus in \${a.venus} · match \${(a.match * 100).toFixed(0)}%\${a.matchedTrack ? ' · via "' + a.matchedTrack + '"' : ''}\${listenLinkHTML(a)}</div>
+        <div class="meta">\${a.dateReliability === 'approximate' ? '≈ ' : ''}\${a.birthDate} · Venus in \${a.venus} · match \${(a.match * 100).toFixed(0)}%\${a.matchedTrack ? ' · via "' + a.matchedTrack + '"' : ''}\${listenLinkHTML(a)}</div>
         <div class="tags">\${tagsHTML(a.genres)}</div>
       </div>
     </div>\`).join('');
