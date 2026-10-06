@@ -36,6 +36,7 @@ function toSeedEntry(e) {
     name: e.name,
     birthDate: e.birthDate,
     ...(e.dateType === 'release' ? { dateType: 'release' } : {}),
+    ...(e.dateReliability ? { dateReliability: e.dateReliability } : {}),
     ...(e.mbid ? { mbid: e.mbid } : {}),
     genres: e.genres ?? [],
     subgenres: e.subgenres ?? [],

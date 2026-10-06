@@ -320,6 +320,12 @@ To add one: append an entry to `CURATED_PLAYLISTS` (and, if you like, a chip sty
 
 The Valentine playlist was first stored as valentine-tagged artists in `musicians.json` (sorted by `sequenceIndex`); the roster's genre-cleanup scripts wiped those tags in March 2026, which is why playlists now have their own file. It was restored from git history with its videos' song titles; Four Tet's video had been taken down, so it has 15 of its 16 tracks.
 
+## Date reliability
+
+Every artist in `musicians.json` carries `dateReliability`: `"exact"` (a real birthday, or a group's debut release) or `"approximate"` (year only, the Jan 1 / Jun 15 placeholders lookups write for year-only dates, or a stand-in such as a recent release date). `build-db.mjs` derives it from the seed's `birthDate`; a seed entry's own `dateReliability` overrides that. As of October 2026: 865 exact, 367 approximate.
+
+To show only artists whose Venus is known exactly, set `EXACT_DATES_ONLY = true` in `src/matcher.js`.
+
 ## Database stats & discovery workflow
 
 The database has two layers: `public/data/musicians.json` (browser + git) and `scripts/musicians.db` (SQLite, gitignored). The SQLite layer enables zero-token ad-hoc queries via the `sqlite3` CLI without parsing the full JSON.

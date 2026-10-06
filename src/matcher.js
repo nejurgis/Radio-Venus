@@ -21,10 +21,15 @@ const SAME_ELEMENT = {
   water: ['Cancer', 'Scorpio', 'Pisces'],
 };
 
+// Show only artists whose date (and so Venus) is known exactly — see
+// dateReliability in scripts/build-db.mjs. Off for now: ~3 in 10 dates are approximate.
+const EXACT_DATES_ONLY = false;
+
 export async function loadDatabase() {
   const base = import.meta.env?.BASE_URL || '/public/';
   const res = await fetch(`${base}data/musicians.json`);
   db = await res.json();
+  if (EXACT_DATES_ONLY) db = db.filter(m => m.dateReliability === 'exact');
   return db;
 }
 
