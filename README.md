@@ -307,14 +307,14 @@ The remaining ~30 subgenres have 1-6 artists each and appear as dimmed (non-clic
 
 Hand-made playlists live in `src/playlists.js` (`CURATED_PLAYLISTS`), outside the astrology and outside `musicians.json`: each has an id, a label, a curator credit (name + link), an optional description, a sign (the header and the nebula zoom) and its tracks in order (`name` shown as "Artist — Song", a YouTube video ID, optional backups of the same recording). Each one:
 
-- shows as a chip at the top of the genre grid, after Favorites (unless `hidden`)
+- shows as a chip at the top of the genre grid, after Favorites; a playlist with a `season` (month/day range, the visitor's local date) has no chip and no working link outside it
 - plays in the curator's order, with "Curated by" and the description above the list
 - shares as `radio-venus.club/#<id>`; sharing a single song shares its playlist (curated songs have no artist page)
 
 | Playlist | Link | Curator | Shown |
 |----------|------|---------|-------|
 | Venus Retrograde 1/2 (20 tracks) | `#venus-retrograde-1` | 최진영 | yes |
-| Valentine's day special (15 tracks) | `#valentine` | 최진영 | hidden (seasonal) |
+| Valentine's day special (15 tracks) | `#valentine` | 최진영 | Valentine's week only (Feb 7–14) |
 
 To add one: append an entry to `CURATED_PLAYLISTS` (and, if you like, a chip style keyed by `.genre-btn[data-genre="<id>"]` in `style.css`). Check videos can be embedded with `curl -s -o /dev/null -w "%{http_code}" "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=<id>&format=json"` (200 = OK, 401 = embedding disabled).
 

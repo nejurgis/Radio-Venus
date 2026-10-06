@@ -3,7 +3,7 @@ import { toSlug } from './slug.js';
 import { GENRE_CATEGORIES, SUBGENRES } from './genres.js';
 import { loadDatabase, getDatabase, match, matchFavorites, matchMoon, matchSun, getSubgenreCounts } from './matcher.js';
 import { getFavorites, toggleFavorite, isFavorite } from './favorites.js';
-import { CURATED_PLAYLISTS, getCuratedPlaylist, curatedTracks } from './playlists.js';
+import { CURATED_PLAYLISTS, getCuratedPlaylist, curatedTracks, isInSeason } from './playlists.js';
 import { initNebula, renderNebula, setUserVenus, setPreviewVenus, clearPreviewVenus, setMoonPosition, setSunPosition, zoomToSign, zoomOut, showNebula, dimNebula, deepDimNebula, setZoomDrift, enableDragRotate, resetDrift, onNebulaHover, onNebulaClick, onRotation, onNeedleCross, onSignCross, onMoonHover, onSunHover } from './viz.js';
 import { pluck, gong, pokeAudio } from './harp.js';
 import { loadYouTubeAPI, initPlayer, loadVideo, cueVideo, togglePlay, isPlaying, getDuration, getCurrentTime, seekTo, getVideoTitle, isMuted, unMute } from './player.js';
@@ -431,7 +431,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // ── Handle a curated playlist link (#valentine, #venus-retrograde-1, …) ──
   const linkedPlaylist = getCuratedPlaylist(window.location.hash.slice(1));
-  if (linkedPlaylist && dbResult.status === 'fulfilled') {
+  if (linkedPlaylist && isInSeason(linkedPlaylist) && dbResult.status === 'fulfilled') {
     history.replaceState({ screen: 'portal' }, '', window.location.pathname);
     const sign = linkedPlaylist.sign;
     const el = ZODIAC_ELEMENTS[sign] || 'air';
@@ -878,7 +878,7 @@ function rebuildGenreGrid() {
     }
 
     // 4. Construct list: curated playlists, then the special genres, then the rest
-    const curated = CURATED_PLAYLISTS.filter(p => !p.hidden).map(p => ({ id: p.id, label: p.label }));
+    const curated = CURATED_PLAYLISTS.filter(p => isInSeason(p)).map(p => ({ id: p.id, label: p.label }));
     cachedShuffledGenres = [...curated, ...pinned, ...others];
   }
 

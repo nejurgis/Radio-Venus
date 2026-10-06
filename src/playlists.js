@@ -1,7 +1,8 @@
 // ── Curated playlists ───────────────────────────────────────────────────────
 // Hand-made playlists in a fixed order, outside the astrology. Each shows as a
-// chip in the genre grid (unless `hidden`, for seasonal ones still reachable by
-// their link), credits its curator and shares as radio-venus.club/#<id>.
+// chip in the genre grid, credits its curator and shares as radio-venus.club/#<id>.
+// A playlist with a `season` ({ from: [month, day], to: [month, day] }, inclusive,
+// the visitor's local date) exists only then: no chip and no link the rest of the year.
 //
 // Kept out of musicians.json on purpose: the roster's build and genre-cleanup
 // scripts rewrite that file, and the first Valentine playlist (stored there as
@@ -43,13 +44,13 @@ export const CURATED_PLAYLISTS = [
     ],
   },
   {
-    // Seasonal: hidden from the grid, still playable from radio-venus.club/#valentine
+    // Valentine's week only
     id: 'valentine',
     label: "Valentine's day special",
     curator: '최진영',
     curatorUrl: 'https://docs.google.com/document/d/1We4r9SyEyWY0rM8Njdcw7gkAy8e4lpBFb7aFTA7xtWY/edit?usp=sharing',
     sign: 'Aries',
-    hidden: true,
+    season: { from: [2, 7], to: [2, 14] },
     tracks: [
       { name: 'Iko Chérie — Luciférine', youtubeVideoId: '7jOkiDyxShI' },
       { name: 'Nathanial Young — I think about it every day', youtubeVideoId: 'igZrrKLe81I' },
@@ -73,6 +74,14 @@ export const CURATED_PLAYLISTS = [
 
 export function getCuratedPlaylist(id) {
   return CURATED_PLAYLISTS.find(p => p.id === id) || null;
+}
+
+/** Whether a playlist is on today: always, or only inside its season. */
+export function isInSeason(p, now = new Date()) {
+  if (!p.season) return true;
+  const day = (now.getMonth() + 1) * 100 + now.getDate();
+  const [fromMonth, fromDay] = p.season.from, [toMonth, toDay] = p.season.to;
+  return day >= fromMonth * 100 + fromDay && day <= toMonth * 100 + toDay;
 }
 
 /** A playlist's tracks for the player, in the curator's order, each tagged with the playlist id. */
