@@ -313,8 +313,8 @@ Hand-made playlists live in `src/playlists.js` (`CURATED_PLAYLISTS`), outside th
 
 | Playlist | Link | Curator | Shown |
 |----------|------|---------|-------|
-| Venus Retrograde 1/2 (20 tracks) | `#venus-retrograde-1` | 최진영 | yes |
-| Valentine's day special (15 tracks) | `#valentine` | 최진영 | Valentine's week only (Feb 7–14) |
+| Venus Retrograde 1/2 (20 tracks) | `#venus-retrograde-1` | Jinyoung Choi | yes |
+| Valentine's day special (15 tracks) | `#valentine` | Jinyoung Choi | Valentine's week only (Feb 7–14) |
 
 To add one: append an entry to `CURATED_PLAYLISTS` (and, if you like, a chip style keyed by `.genre-btn[data-genre="<id>"]` in `style.css`). Check videos can be embedded with `curl -s -o /dev/null -w "%{http_code}" "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=<id>&format=json"` (200 = OK, 401 = embedding disabled).
 

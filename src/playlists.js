@@ -16,7 +16,7 @@ export const CURATED_PLAYLISTS = [
   {
     id: 'venus-retrograde-1',
     label: 'Venus Retrograde 1/2',
-    curator: '최진영',
+    curator: 'Jinyoung Choi',
     curatorUrl: 'https://open.spotify.com/playlist/0wZJeaHWteex9KB0eD8PXO',
     description: 'As Venus is plunging backwards through Scorpio, Jinyoung created a playlist to capture her descent into the underground.',
     sign: 'Scorpio',
@@ -28,7 +28,7 @@ export const CURATED_PLAYLISTS = [
       { name: 'Europa & R.I.C. — Roses', youtubeVideoId: 'jtkQmTgSkqg' },
       { name: 'Burial — Rodent', youtubeVideoId: 'E2TGmIQ0fHM', backupVideoIds: ['wqBiYJIlyzo'] },
       { name: 'wing! — Pack It In', youtubeVideoId: 'Nwv8bRpLxbc', backupVideoIds: ['mzJrHkALMEg'] },
-      { name: 'Boom Bip & Doseone — Mannequin Hand Trapdoor I Reminder', youtubeVideoId: 'kdqvD__Bvtw' },
+      { name: 'Yawning Portal — Cut To The Feeling', youtubeVideoId: 'NINjd9zthIY' },
       { name: 'underscores — Bozo bozo bozo', youtubeVideoId: 'EhcIpIEKPFw' },
       { name: 'the sound chalk makes — Electronic Eyes (HORNET Re:mix)', youtubeVideoId: 'M3pK4GM53V4' },
       { name: 'nahdoitagain — MORE BASS', youtubeVideoId: '_4otmpzU0OE', backupVideoIds: ['AwPLso7ZG5M'] },
@@ -47,7 +47,7 @@ export const CURATED_PLAYLISTS = [
     // Valentine's week only
     id: 'valentine',
     label: "Valentine's day special",
-    curator: '최진영',
+    curator: 'Jinyoung Choi',
     curatorUrl: 'https://docs.google.com/document/d/1We4r9SyEyWY0rM8Njdcw7gkAy8e4lpBFb7aFTA7xtWY/edit?usp=sharing',
     sign: 'Aries',
     season: { from: [2, 7], to: [2, 14] },
