@@ -2651,11 +2651,21 @@ button.is-pressed svg,
 .playlist-description {
   font-family: var(--font-mono);
   font-size: 0.6rem; /* same as the "Curated by" label */
-  line-height: 1.6;
+  line-height: 1.5;
   letter-spacing: -0.04em;
   color: rgba(255, 255, 255, 0.28);
   text-align: center;
   max-width: 80ch;
+}
+
+@media (min-width: 768px) {
+  .playlist-description {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+  .playlist-curator-credit .btn-share-mini {
+    font-size: 1rem;
+  }
 }
 
 /* ── Artist Index (About screen) ───────────────────────────────────────────── */
