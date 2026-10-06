@@ -17,7 +17,7 @@ export const CURATED_PLAYLISTS = [
     id: 'venus-retrograde-1',
     label: 'Venus Retrograde 1/2',
     curator: 'Jinyoung Choi',
-    curatorUrl: 'https://open.spotify.com/playlist/0wZJeaHWteex9KB0eD8PXO',
+    curatorUrl: 'https://www.instagram.com/fluidatopos/',
     description: 'As Venus is plunging backwards through Scorpio, Jinyoung created a playlist to capture her descent into the underground.',
     sign: 'Scorpio',
     tracks: [
