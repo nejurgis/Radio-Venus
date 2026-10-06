@@ -2639,7 +2639,7 @@ button.is-pressed svg,
 .playlist-curator-credit a {
   color: inherit;
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-underline-offset: 1px;
   text-decoration-thickness: 1px;
   cursor: pointer;
 }
