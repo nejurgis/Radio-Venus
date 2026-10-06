@@ -32864,5 +32864,433 @@
     ],
     "youtubeVideoId": "jVevdGeZrQQ",
     "backupVideoIds": []
+  },
+  {
+    "name": "Public Image Ltd.",
+    "birthDate": "1978-10-13",
+    "dateType": "release",
+    "genres": [
+      "altrock",
+      "darkwave"
+    ],
+    "subgenres": [
+      "post-punk"
+    ],
+    "enTags": [
+      "post-punk",
+      "new wave",
+      "experimental",
+      "punk",
+      "alternative",
+      "british",
+      "Experimental Rock",
+      "80s",
+      "loves",
+      "rock"
+    ],
+    "youtubeVideoId": "CrXzBljVaPc",
+    "backupVideoIds": [],
+    "spotifyId": "70MMkLXtue3Edj3RJhJkYp",
+    "handpicked": true,
+    "handpickedTrack": "The Order Of Death"
+  },
+  {
+    "name": "Buttechno",
+    "birthDate": "2026-08-07",
+    "dateType": "release",
+    "genres": [
+      "techno",
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "dub-techno",
+      "experimental"
+    ],
+    "enTags": [
+      "dub techno",
+      "experimental",
+      "ambient"
+    ],
+    "youtubeVideoId": "FSllY4WYvhM",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "spirit dub"
+  },
+  {
+    "name": "Cyst",
+    "birthDate": "2026-09-04",
+    "dateType": "release",
+    "mbid": "6641fdf2-f051-4a39-a68c-742d044b981e",
+    "genres": [
+      "hiphop",
+      "idm",
+      "electronica"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "enTags": [
+      "experimental hip hop"
+    ],
+    "youtubeVideoId": "nyh67_mL53A",
+    "backupVideoIds": [],
+    "spotifyId": "6rykAKGU8NhN8Sbpe2MZkT",
+    "handpicked": true,
+    "handpickedTrack": "Rabbit"
+  },
+  {
+    "name": "Europa",
+    "birthDate": "2026-04-10",
+    "dateType": "release",
+    "mbid": "97a98a17-def4-4dfc-be01-c9dd67588fc3",
+    "genres": [
+      "electronica",
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "youtubeVideoId": "jtkQmTgSkqg",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Roses"
+  },
+  {
+    "name": "wing!",
+    "birthDate": "2025-09-10",
+    "dateType": "release",
+    "mbid": "109394b5-5a82-4cff-aec5-2015e06d3e16",
+    "genres": [
+      "hiphop",
+      "ambient",
+      "electronica"
+    ],
+    "subgenres": [
+      "lo-fi"
+    ],
+    "enTags": [
+      "ambient hip hop"
+    ],
+    "youtubeVideoId": "Nwv8bRpLxbc",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "Pack It In"
+  },
+  {
+    "name": "underscores",
+    "birthDate": "2000-04-21",
+    "mbid": "ab1a3f85-e0ea-470a-af5c-175447ae774c",
+    "genres": [
+      "idm",
+      "indiepop",
+      "electronica"
+    ],
+    "subgenres": [
+      "experimental",
+      "indie-pop",
+      "indietronica",
+      "glitch-pop"
+    ],
+    "enTags": [
+      "hyperpop",
+      "indie pop",
+      "electronic",
+      "indietronica",
+      "indie rock",
+      "electropop",
+      "United States",
+      "glitch pop",
+      "future bass",
+      "indie"
+    ],
+    "youtubeVideoId": "EhcIpIEKPFw",
+    "backupVideoIds": [],
+    "spotifyId": "7HfUJxeVTgrvhk0eWHFzV7",
+    "handpicked": true,
+    "handpickedTrack": "Bozo bozo bozo"
+  },
+  {
+    "name": "the sound chalk makes",
+    "birthDate": "2026-06-19",
+    "dateType": "release",
+    "mbid": "c999f4ef-8733-46f8-ae3a-d5628c260ea8",
+    "genres": [
+      "idm",
+      "electronica"
+    ],
+    "subgenres": [
+      "experimental",
+      "indietronica"
+    ],
+    "enTags": [
+      "hyperpop",
+      "electronic"
+    ],
+    "youtubeVideoId": "M3pK4GM53V4",
+    "backupVideoIds": [],
+    "spotifyId": "4uiFRdH1ESOicHwBuTbsY5",
+    "handpicked": true,
+    "handpickedTrack": "Electronic Eyes (HORNET Re:mix)"
+  },
+  {
+    "name": "nahdoitagain",
+    "birthDate": "2025-02-22",
+    "dateType": "release",
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "experimental"
+    ],
+    "enTags": [
+      "experimental ambient"
+    ],
+    "youtubeVideoId": "_4otmpzU0OE",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "MORE BASS"
+  },
+  {
+    "name": "Roza Terenzi",
+    "birthDate": "2022-01-19",
+    "dateType": "release",
+    "mbid": "286224e3-e632-4e79-8328-02f8a8c95d51",
+    "genres": [
+      "techno",
+      "electronica"
+    ],
+    "subgenres": [
+      "techno",
+      "house",
+      "experimental",
+      "indietronica",
+      "ambient",
+      "downtempo",
+      "electro",
+      "trance"
+    ],
+    "enTags": [
+      "techno",
+      "House",
+      "australia",
+      "outsider house",
+      "experimental",
+      "electronic",
+      "ambient",
+      "downtempo",
+      "electro",
+      "trance"
+    ],
+    "youtubeVideoId": "rFKdII8aljA",
+    "backupVideoIds": [],
+    "spotifyId": "403OOa2mD7jcUgpC8F7Qgs",
+    "handpicked": true,
+    "handpickedTrack": "Bedtime Ritual"
+  },
+  {
+    "name": "Roberto Musci",
+    "birthDate": "1956-03-27",
+    "mbid": "de618039-2f6d-40cc-a110-8ab029933e83",
+    "genres": [
+      "ambient",
+      "folk",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "experimental",
+      "dark-folk"
+    ],
+    "enTags": [
+      "tribal ambient",
+      "ethno ambient",
+      "ambient",
+      "italian",
+      "ethnomusicology",
+      "ethnomusicologist",
+      "tribal",
+      "electroacoustic",
+      "ethno",
+      "avant-folk"
+    ],
+    "youtubeVideoId": "YQar3crAnqg",
+    "backupVideoIds": [],
+    "spotifyId": "1HSz5qiRNcs8eJ0Sp2LOxw",
+    "handpicked": true,
+    "handpickedTrack": "Ghost Train"
+  },
+  {
+    "name": "Dregs",
+    "birthDate": "2023-10-04",
+    "dateType": "release",
+    "mbid": "2bdd763b-04b9-4acb-adbc-4f0ada202f68",
+    "genres": [
+      "triphop",
+      "ambient"
+    ],
+    "subgenres": [
+      "trip-hop",
+      "downtempo"
+    ],
+    "enTags": [
+      "trip hop"
+    ],
+    "youtubeVideoId": "LO8kGPqon4Q",
+    "backupVideoIds": [],
+    "spotifyId": "1tvJOETs3wnYRQlu2lDg2g",
+    "handpicked": true,
+    "handpickedTrack": "Guilt Garden"
+  },
+  {
+    "name": "Coppice Halifax",
+    "birthDate": "2011-08-12",
+    "dateType": "release",
+    "mbid": "00112ef2-bcb7-4bf4-9980-f8c81a8a8991",
+    "genres": [
+      "ambient",
+      "idm",
+      "techno",
+      "triphop",
+      "electronica"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm",
+      "dub-techno",
+      "downtempo",
+      "drone",
+      "techno",
+      "indietronica",
+      "minimal"
+    ],
+    "enTags": [
+      "ambient",
+      "idm",
+      "dub techno",
+      "downtempo",
+      "drone",
+      "techno",
+      "electronic",
+      "minimal techno",
+      "Ambient Techno",
+      "american"
+    ],
+    "youtubeVideoId": "1unSySD277Q",
+    "backupVideoIds": [],
+    "spotifyId": "3NyqK8vRUHCq7kKB7Fd0xA",
+    "handpicked": true,
+    "handpickedTrack": "Miniature Island Fantasy"
+  },
+  {
+    "name": "Telefon Tel Aviv",
+    "birthDate": "1999-06-15",
+    "mbid": "453f1594-112e-4d3c-921a-8d14e9c97b2e",
+    "genres": [
+      "idm",
+      "electronica",
+      "ambient",
+      "triphop"
+    ],
+    "subgenres": [
+      "idm",
+      "indietronica",
+      "ambient",
+      "chillout",
+      "downtempo",
+      "experimental",
+      "glitch",
+      "trip-hop"
+    ],
+    "enTags": [
+      "idm",
+      "electronic",
+      "ambient",
+      "chillout",
+      "electronica",
+      "downtempo",
+      "experimental",
+      "glitch",
+      "trip-hop",
+      "american"
+    ],
+    "youtubeVideoId": "Mv_Pe3BeFEY",
+    "backupVideoIds": [],
+    "spotifyId": "53N4oJpWtmnB0KGLLserGC",
+    "handpicked": true,
+    "handpickedTrack": "Ttv"
+  },
+  {
+    "name": "Now Always Fades",
+    "birthDate": "2026-04-17",
+    "dateType": "release",
+    "mbid": "1e2491fa-1639-4bdd-95db-a18470d43587",
+    "genres": [
+      "triphop",
+      "electronica"
+    ],
+    "subgenres": [
+      "chillout",
+      "trip-hop",
+      "downtempo",
+      "indietronica",
+      "art-pop"
+    ],
+    "enTags": [
+      "chillout",
+      "trip-hop",
+      "downtempo",
+      "electronic",
+      "australian",
+      "trip hop",
+      "acoustic",
+      "australia",
+      "dream pop"
+    ],
+    "youtubeVideoId": "D5zlsYhdsLw",
+    "backupVideoIds": [],
+    "spotifyId": "7bdXd6MqOWlETFIx0hpPgy",
+    "handpicked": true,
+    "handpickedTrack": "Faceless Angel"
+  },
+  {
+    "name": "Iglooghost",
+    "birthDate": "1996-06-13",
+    "mbid": "e42e0cb0-2722-4807-9102-889a2d4adcc3",
+    "genres": [
+      "electronica",
+      "idm",
+      "dnb",
+      "hiphop",
+      "triphop"
+    ],
+    "subgenres": [
+      "glitch-pop",
+      "indietronica",
+      "glitch",
+      "experimental",
+      "experimental-hiphop",
+      "breakbeat",
+      "idm"
+    ],
+    "enTags": [
+      "wonky",
+      "electronic",
+      "uk bass",
+      "glitch hop",
+      "Deconstructed Club",
+      "experimental",
+      "experimental hip hop",
+      "drill and bass",
+      "british",
+      "idm"
+    ],
+    "youtubeVideoId": "nyh67_mL53A",
+    "backupVideoIds": [],
+    "spotifyId": "7LCDnUQYE07fnKbo46SVLB",
+    "handpicked": true,
+    "handpickedTrack": "Rabbit"
   }
 ]

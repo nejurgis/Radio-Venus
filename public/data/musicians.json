@@ -3744,6 +3744,27 @@
     ]
   },
   {
+    "name": "Buttechno",
+    "venus": {
+      "sign": "Libra",
+      "degree": 0.7,
+      "decan": 1,
+      "element": "air"
+    },
+    "genres": [
+      "techno",
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "dub-techno",
+      "experimental",
+      "ambient"
+    ],
+    "youtubeVideoId": "FSllY4WYvhM",
+    "backupVideoIds": []
+  },
+  {
     "name": "Cabaret Voltaire",
     "venus": {
       "sign": "Libra",
@@ -5580,6 +5601,34 @@
     "backupVideoIds": []
   },
   {
+    "name": "Coppice Halifax",
+    "venus": {
+      "sign": "Leo",
+      "degree": 18.3,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient",
+      "idm",
+      "techno",
+      "triphop",
+      "electronica"
+    ],
+    "subgenres": [
+      "ambient",
+      "idm",
+      "dub-techno",
+      "downtempo",
+      "drone",
+      "techno",
+      "indietronica",
+      "minimal"
+    ],
+    "youtubeVideoId": "1unSySD277Q",
+    "backupVideoIds": []
+  },
+  {
     "name": "Corbin",
     "venus": {
       "sign": "Aquarius",
@@ -5782,6 +5831,27 @@
       "ambient"
     ],
     "youtubeVideoId": "GLZFd2WX4nY",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Cyst",
+    "venus": {
+      "sign": "Libra",
+      "degree": 25.9,
+      "decan": 3,
+      "element": "air"
+    },
+    "genres": [
+      "hiphop",
+      "idm",
+      "electronica",
+      "triphop"
+    ],
+    "subgenres": [
+      "experimental",
+      "experimental-hiphop"
+    ],
+    "youtubeVideoId": "nyh67_mL53A",
     "backupVideoIds": []
   },
   {
@@ -7281,6 +7351,25 @@
     "backupVideoIds": []
   },
   {
+    "name": "Dregs",
+    "venus": {
+      "sign": "Leo",
+      "degree": 26.3,
+      "decan": 3,
+      "element": "fire"
+    },
+    "genres": [
+      "triphop",
+      "ambient"
+    ],
+    "subgenres": [
+      "trip-hop",
+      "downtempo"
+    ],
+    "youtubeVideoId": "LO8kGPqon4Q",
+    "backupVideoIds": []
+  },
+  {
     "name": "Drew McDowall",
     "venus": {
       "sign": "Pisces",
@@ -8447,6 +8536,24 @@
       "V1ESDN1w4HE",
       "v1Vv0rt9d6o"
     ]
+  },
+  {
+    "name": "Europa",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 13.3,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "electronica",
+      "idm"
+    ],
+    "subgenres": [
+      "experimental"
+    ],
+    "youtubeVideoId": "jtkQmTgSkqg",
+    "backupVideoIds": []
   },
   {
     "name": "Everest Magma",
@@ -11231,6 +11338,33 @@
       "folk-rock"
     ],
     "youtubeVideoId": "9joKjItYwac",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Iglooghost",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 18.3,
+      "decan": 2,
+      "element": "air"
+    },
+    "genres": [
+      "electronica",
+      "idm",
+      "dnb",
+      "hiphop",
+      "triphop"
+    ],
+    "subgenres": [
+      "glitch-pop",
+      "indietronica",
+      "glitch",
+      "experimental",
+      "experimental-hiphop",
+      "breakbeat",
+      "idm"
+    ],
+    "youtubeVideoId": "nyh67_mL53A",
     "backupVideoIds": []
   },
   {
@@ -17804,6 +17938,25 @@
     "backupVideoIds": []
   },
   {
+    "name": "nahdoitagain",
+    "venus": {
+      "sign": "Aries",
+      "degree": 9.7,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "ambient",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "experimental"
+    ],
+    "youtubeVideoId": "_4otmpzU0OE",
+    "backupVideoIds": []
+  },
+  {
     "name": "Nala Sinephro",
     "venus": {
       "sign": "Libra",
@@ -18304,6 +18457,30 @@
       "ambient-folk"
     ],
     "youtubeVideoId": "83-JtdGJiqg",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Now Always Fades",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 21.9,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "triphop",
+      "electronica",
+      "indiepop",
+      "artpop"
+    ],
+    "subgenres": [
+      "chillout",
+      "trip-hop",
+      "downtempo",
+      "indietronica",
+      "art-pop"
+    ],
+    "youtubeVideoId": "D5zlsYhdsLw",
     "backupVideoIds": []
   },
   {
@@ -20072,6 +20249,27 @@
     "backupVideoIds": []
   },
   {
+    "name": "Public Image Ltd.",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 22.4,
+      "decan": 3,
+      "element": "water"
+    },
+    "genres": [
+      "altrock",
+      "darkwave",
+      "idm"
+    ],
+    "subgenres": [
+      "post-punk",
+      "new-wave",
+      "experimental"
+    ],
+    "youtubeVideoId": "CrXzBljVaPc",
+    "backupVideoIds": []
+  },
+  {
     "name": "Public Memory",
     "venus": {
       "sign": "Taurus",
@@ -20956,6 +21154,28 @@
     "backupVideoIds": []
   },
   {
+    "name": "Roberto Musci",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 21.8,
+      "decan": 3,
+      "element": "earth"
+    },
+    "genres": [
+      "ambient",
+      "folk",
+      "idm",
+      "darkwave"
+    ],
+    "subgenres": [
+      "ambient",
+      "experimental",
+      "dark-folk"
+    ],
+    "youtubeVideoId": "YQar3crAnqg",
+    "backupVideoIds": []
+  },
+  {
     "name": "Robin Guthrie",
     "venus": {
       "sign": "Capricorn",
@@ -21253,6 +21473,34 @@
       "rnb"
     ],
     "youtubeVideoId": "3-TsnIjVU8o",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Roza Terenzi",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 13.1,
+      "decan": 2,
+      "element": "earth"
+    },
+    "genres": [
+      "techno",
+      "electronica",
+      "idm",
+      "ambient",
+      "triphop"
+    ],
+    "subgenres": [
+      "techno",
+      "house",
+      "experimental",
+      "indietronica",
+      "ambient",
+      "downtempo",
+      "electro",
+      "trance"
+    ],
+    "youtubeVideoId": "rFKdII8aljA",
     "backupVideoIds": []
   },
   {
@@ -24210,6 +24458,33 @@
     "backupVideoIds": []
   },
   {
+    "name": "Telefon Tel Aviv",
+    "venus": {
+      "sign": "Leo",
+      "degree": 9.3,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "idm",
+      "electronica",
+      "ambient",
+      "triphop"
+    ],
+    "subgenres": [
+      "idm",
+      "indietronica",
+      "ambient",
+      "chillout",
+      "downtempo",
+      "experimental",
+      "glitch",
+      "trip-hop"
+    ],
+    "youtubeVideoId": "Mv_Pe3BeFEY",
+    "backupVideoIds": []
+  },
+  {
     "name": "Television Personalities",
     "venus": {
       "sign": "Cancer",
@@ -25009,6 +25284,25 @@
       "ambient"
     ],
     "youtubeVideoId": "utEpovRESfs",
+    "backupVideoIds": []
+  },
+  {
+    "name": "the sound chalk makes",
+    "venus": {
+      "sign": "Leo",
+      "degree": 7,
+      "decan": 1,
+      "element": "fire"
+    },
+    "genres": [
+      "idm",
+      "electronica"
+    ],
+    "subgenres": [
+      "experimental",
+      "indietronica"
+    ],
+    "youtubeVideoId": "M3pK4GM53V4",
     "backupVideoIds": []
   },
   {
@@ -26374,6 +26668,28 @@
     ]
   },
   {
+    "name": "underscores",
+    "venus": {
+      "sign": "Aries",
+      "degree": 18.2,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "idm",
+      "indiepop",
+      "electronica"
+    ],
+    "subgenres": [
+      "experimental",
+      "indie-pop",
+      "indietronica",
+      "glitch-pop"
+    ],
+    "youtubeVideoId": "EhcIpIEKPFw",
+    "backupVideoIds": []
+  },
+  {
     "name": "Underworld",
     "venus": {
       "sign": "Capricorn",
@@ -27162,6 +27478,27 @@
       "cosmic-jazz"
     ],
     "youtubeVideoId": "f2f-eua-7jo",
+    "backupVideoIds": []
+  },
+  {
+    "name": "wing!",
+    "venus": {
+      "sign": "Leo",
+      "degree": 19,
+      "decan": 2,
+      "element": "fire"
+    },
+    "genres": [
+      "hiphop",
+      "ambient",
+      "electronica"
+    ],
+    "subgenres": [
+      "lo-fi",
+      "ambient",
+      "hip-hop"
+    ],
+    "youtubeVideoId": "Nwv8bRpLxbc",
     "backupVideoIds": []
   },
   {
