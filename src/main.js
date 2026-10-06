@@ -228,6 +228,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     updateNowPlayingButton(true, isPaused);
     history.pushState({ screen: 'genre' }, '');
   });
+  // Curated playlists in season, under "Choose a genre"
+  const curatedButtons = document.getElementById('curated-playlist-buttons');
+  for (const p of CURATED_PLAYLISTS.filter(p => isInSeason(p))) {
+    const btn = document.createElement('button');
+    btn.className = 'btn-primary btn-curated-playlist';
+    btn.textContent = p.label;
+    btn.addEventListener('click', () => startRadio(p.id, p.label));
+    curatedButtons.appendChild(btn);
+  }
   document.getElementById('btn-back-reveal').addEventListener('click', () => history.back());
   document.getElementById('your-venus').addEventListener('click', () => {
     if (!venus) return;

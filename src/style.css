@@ -264,6 +264,27 @@ html, body {
   align-items: center;
 }
 
+/* Curated playlists (Venus Retrograde…) sit under "Choose a genre"; the Moon and
+   Sun buttons, shown on hover, appear below them */
+.curated-playlist-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.curated-playlist-buttons:empty { display: none; }
+
+.btn-curated-playlist {
+  /* the heart itself comes from the Valentine chip rules */
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  padding: 0.8rem 2.5rem;
+  white-space: nowrap;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
 .btn-moon-playlist,
 .btn-sun-playlist {
   position: absolute;
@@ -842,10 +863,11 @@ p a:hover {
   transition: background 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Valentine heart — also worn by Venus Retrograde */
+/* Valentine heart — also worn by Venus Retrograde and the curated buttons under "Choose a genre" */
 /* 1. The Container (The Void) */
 .genre-btn[data-genre="valentine"],
-.genre-btn[data-genre="venus-retrograde-1"] {
+.genre-btn[data-genre="venus-retrograde-1"],
+.btn-curated-playlist {
   /* Clear default button styles so we can build the shape manually */
   background: transparent !important;
   border: none;
@@ -867,8 +889,10 @@ p a:hover {
 /* 2. The Lobes (The Colliding Fields) */
 .genre-btn[data-genre="valentine"]::before,
 .genre-btn[data-genre="venus-retrograde-1"]::before,
+.btn-curated-playlist::before,
 .genre-btn[data-genre="valentine"]::after,
-.genre-btn[data-genre="venus-retrograde-1"]::after {
+.genre-btn[data-genre="venus-retrograde-1"]::after,
+.btn-curated-playlist::after {
   content: "";
   position: absolute;
   top: 0;
@@ -898,7 +922,8 @@ p a:hover {
 
 /* 3. The Left Lobe (Tilted Left) */
 .genre-btn[data-genre="valentine"]::before,
-.genre-btn[data-genre="venus-retrograde-1"]::before {
+.genre-btn[data-genre="venus-retrograde-1"]::before,
+.btn-curated-playlist::before {
   left: 0;
   /* Rotate top-left away, anchor bottom-right */
   transform-origin: bottom right; 
@@ -907,7 +932,8 @@ p a:hover {
 
 /* 4. The Right Lobe (Tilted Right) */
 .genre-btn[data-genre="valentine"]::after,
-.genre-btn[data-genre="venus-retrograde-1"]::after {
+.genre-btn[data-genre="venus-retrograde-1"]::after,
+.btn-curated-playlist::after {
   right: 0;
   /* Rotate top-right away, anchor bottom-left */
   transform-origin: bottom left; 
@@ -916,14 +942,16 @@ p a:hover {
 
 /* 5. Interaction Physics */
 .genre-btn[data-genre="valentine"]:hover::before,
-.genre-btn[data-genre="venus-retrograde-1"]:hover::before {
+.genre-btn[data-genre="venus-retrograde-1"]:hover::before,
+.btn-curated-playlist:hover::before {
   transform: rotate(-15deg) translateX(2px) scale(1.05);
   background: linear-gradient(160deg, #ff3366, #990022);
   box-shadow: 0 0 25px rgba(255, 0, 60, 0.6);
 }
 
 .genre-btn[data-genre="valentine"]:hover::after,
-.genre-btn[data-genre="venus-retrograde-1"]:hover::after {
+.genre-btn[data-genre="venus-retrograde-1"]:hover::after,
+.btn-curated-playlist:hover::after {
   transform: rotate(15deg) translateX(-2px) scale(1.05);
   background: linear-gradient(160deg, #ff3366, #990022);
   box-shadow: 0 0 25px rgba(255, 0, 60, 0.6);
