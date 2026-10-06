@@ -52,7 +52,9 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-KSY81MM0E6');
+    // page_location captured now: the app later rewrites the URL (replaceState strips
+    // #playlist links and ?utm_ tags) before gtag.js loads and reads it
+    gtag('config', 'G-KSY81MM0E6', { page_location: location.href });
     window.addEventListener('load', function() {
       var s = document.createElement('script');
       s.async = true;
