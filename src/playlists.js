@@ -16,7 +16,7 @@ export const CURATED_PLAYLISTS = [
   {
     id: 'venus-retrograde-1',
     label: 'Venus Retrograde 1/2',
-    curator: 'Jinyoung Choi',
+    curator: 'jinyoung choi',
     curatorUrl: 'https://www.instagram.com/fluidatopos/',
     description: 'As Venus is plunging backwards through Scorpio, Jinyoung created a playlist to capture her descent into the underground.',
     sign: 'Scorpio',
@@ -47,7 +47,7 @@ export const CURATED_PLAYLISTS = [
     // Valentine's week only
     id: 'valentine',
     label: "Valentine's day special",
-    curator: 'Jinyoung Choi',
+    curator: 'jinyoung choi',
     curatorUrl: 'https://docs.google.com/document/d/1We4r9SyEyWY0rM8Njdcw7gkAy8e4lpBFb7aFTA7xtWY/edit?usp=sharing',
     sign: 'Aries',
     season: { from: [2, 7], to: [2, 14] },
