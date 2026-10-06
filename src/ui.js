@@ -347,7 +347,7 @@ export function renderTrackList(tracks, currentIndex, onSelect, failedIds = new 
     // Scroll active item into view if it just landed in the DOM (initial render only — not during forced batch load)
     if (!_tlForceLoading && currentIndex >= start && currentIndex < end) {
       const active = ui.trackList.querySelector('.track-item.active');
-      if (active) active.scrollIntoView({ behavior: 'instant', block: 'start' });
+      if (active) revealTrack(active);
     }
   };
 
@@ -401,8 +401,15 @@ export function setActiveTrack(index, scroll = false) {
   _tlForceLoading = false;
   if (next) {
     next.classList.add('active');
-    if (scroll) next.scrollIntoView({ behavior: 'instant', block: 'start' });
+    if (scroll) revealTrack(next);
   }
+}
+
+/** Scroll a track to the top of the list, below the sticky playlist header if there is one. */
+function revealTrack(el) {
+  const header = ui.trackList.querySelector('.playlist-curator-credit');
+  el.style.scrollMarginTop = header ? `${header.offsetHeight + 6}px` : '';   // 6px = the header's margin-bottom
+  el.scrollIntoView({ behavior: 'instant', block: 'start' });
 }
 
 export function markTrackFailed(index) {
