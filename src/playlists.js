@@ -18,7 +18,7 @@ export const CURATED_PLAYLISTS = [
     label: 'Venus Retrograde 1/2',
     curator: 'jinyoung choi',
     curatorUrl: 'https://www.instagram.com/fluidatopos/',
-    description: 'As Venus is plunging backwards through Scorpio, Jinyoung created a playlist to capture her descent into the underground.',
+    description: 'as Venus is plunging backwards through Scorpio, this playlist accompanies her descent into the underground ✶⋆.˚',
     sign: 'Scorpio',
     tracks: [
       { name: 'Public Image Ltd. — The Order Of Death', youtubeVideoId: 'CrXzBljVaPc', backupVideoIds: ['Eith7hTCOek'] },

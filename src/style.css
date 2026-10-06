@@ -2650,7 +2650,7 @@ button.is-pressed svg,
 
 .playlist-description {
   font-family: var(--font-mono);
-  font-size: 0.5rem;
+  font-size: 0.6rem; /* same as the "Curated by" label */
   line-height: 1.6;
   letter-spacing: -0.04em;
   color: rgba(255, 255, 255, 0.28);
