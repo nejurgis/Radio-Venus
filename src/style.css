@@ -333,6 +333,22 @@ html, body {
   display: none;
 }
 
+/* Phones: the ring fills the width and the chip would sit on its lower edge,
+   so place it just below the ring (radius = 44% of the shorter screen side,
+   see viz.js), but never over the newsletter field at the bottom. */
+@media (max-width: 600px) {
+  /* [data-genre] so it outranks .genre-btn[data-genre="moon"] { position: relative } */
+  .genre-btn.portal-moon-chip[data-genre="moon"] {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: min(
+      calc(50dvh + min(100vw, 100dvh) * 0.44 + 4px),
+      calc(100dvh - 160px)
+    );
+  }
+}
+
 .btn-moon-playlist, .btn-sun-playlist {
   font-size: 0.65rem;
   letter-spacing: 1px;
