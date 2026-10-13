@@ -21,9 +21,23 @@ function sleep(ms) {
   return new Promise(r => setTimeout(r, ms));
 }
 
+// Lowercase letters and digits only, accents stripped, for loose name matching.
+const norm = s => (s || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]/g, '');
+
+// Only accept videos whose title or channel names the artist. Without this the
+// old "<artist> <genre> full track" query returned whatever ranked for the
+// genre word — for "idm" that was Internet Download Manager crack videos,
+// plus unrelated mixes, film soundtracks and tutorials (cleaned up 2026-10-13).
+function isByArtist(video, artist) {
+  const name = norm(artist.replace(/^the\s+/i, ''));
+  return name.length > 0 && (norm(video.title).includes(name) || norm(video.author?.name).includes(name));
+}
+
 async function findBackups(artist, primaryId, genre) {
+  // No genre word in the query: genre ids like "idm" or "artpop" match
+  // unrelated videos. `genre` is kept in the signature for callers.
   const queries = [
-    `${artist} ${genre} full track`,
+    `${artist} full track`,
     `${artist} topic`,
     `${artist} live`,
   ];
@@ -39,6 +53,7 @@ async function findBackups(artist, primaryId, genre) {
         if (seen.has(video.videoId)) continue;
         // 1min to 1hour — skip very short clips and multi-hour compilations
         if (video.seconds < 60 || video.seconds > 3600) continue;
+        if (!isByArtist(video, artist)) continue;
         seen.add(video.videoId);
         found.push(video.videoId);
         if (found.length >= BACKUP_COUNT) break;
