@@ -340,8 +340,11 @@ html, body {
   /* [data-genre] so it outranks .genre-btn[data-genre="moon"] { position: relative } */
   .genre-btn.portal-moon-chip[data-genre="moon"] {
     position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
+    /* Centred with margins, not translateX: the global .is-pressed tap effect
+       overrides transform (!important) and would shove the chip right. */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     top: min(
       calc(50dvh + min(100vw, 100dvh) * 0.44 + 4px),
       calc(100dvh - 160px)
