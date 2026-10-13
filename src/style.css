@@ -501,6 +501,16 @@ body:has(#screen-radio.active) .newsletter-footer {
   text-align: center;
 }
 
+.about-cta {
+  text-align: center;
+  margin-top: 1.75rem;
+}
+
+.about-cta .btn-primary {
+  display: inline-block;
+  text-decoration: none;
+}
+
 .about-footnote {
   font-size: 0.8rem;
   opacity: 0.5;
