@@ -23,8 +23,23 @@ import {
   trackSongStart, trackSongComplete, trackSongSkip, trackSongError,
   trackShare, trackGenreSelect, trackFavorite, trackHarpToggle, trackPlaylistShare, trackShuffle,
   trackChartCalculated, trackNewsletterSubscribe, trackScreenView, trackOutboundClick,
-  trackExplainerAction,
+  trackExplainerAction, trackExperiment, trackPortalShortcut,
 } from './analytics.js';
+
+// Sticky 50/50 group for the start-screen moon chip test. Visitors whose browser
+// blocks storage stay in "control" so they never see a chip that flickers.
+function getPortalMoonVariant() {
+  try {
+    let v = localStorage.getItem('rv_test_portal_moon');
+    if (v !== 'chip' && v !== 'control') {
+      v = Math.random() < 0.5 ? 'chip' : 'control';
+      localStorage.setItem('rv_test_portal_moon', v);
+    }
+    return v;
+  } catch {
+    return 'control';
+  }
+}
 
 // ── State ───────────────────────────────────────────────────────────────────
 
@@ -387,6 +402,23 @@ document.addEventListener('DOMContentLoaded', async () => {
   const moonNow = calculateMoon();
   setMoonPosition(moonNow.longitude, moonNow.phaseAngle);
   setSunPosition(moonNow.sunLongitude);
+
+  // A/B test (from 2026-10-13): half of visitors get a "today's moon" chip under
+  // Enter, a way in without a birthday. Only visitors who land on the start screen
+  // (no share link or playlist hash) are counted.
+  const portalMoonVariant = getPortalMoonVariant();
+  const landedOnPortal = !_isShareLink && !location.hash;
+  const portalMoonChip = document.getElementById('btn-portal-moon');
+  if (landedOnPortal) trackExperiment('portal_moon_test', portalMoonVariant);
+  if (portalMoonVariant === 'chip') {
+    portalMoonChip.innerHTML = `&#9790; play today's moon in ${moonNow.sign.toLowerCase()}`;
+    portalMoonChip.hidden = false;
+    portalMoonChip.addEventListener('click', async () => {
+      trackPortalShortcut('moon');
+      if (!getDatabase().length) await loadDatabase();
+      startRadio('moon', "Today's Moon");
+    });
+  }
   onNebulaHover(info => highlightGenres(info ? info.genres : null));
   onMoonHover(active => {
     document.getElementById('btn-moon-playlist').classList.toggle('visible', active);

@@ -323,6 +323,31 @@ html, body {
   white-space: nowrap;
 }
 
+/* A/B test (from 2026-10-13): "today's moon" chip under Enter, no birthday needed */
+.portal-moon-chip {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  white-space: nowrap;
+  padding: 0.3rem 0.7rem;
+  color: var(--text-dim);
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.portal-moon-chip:hover {
+  color: var(--text-bright);
+  border-color: var(--text-dim);
+}
+
+.portal-moon-chip[hidden] {
+  display: none;
+}
+
 .btn-moon-playlist, .btn-sun-playlist {
   font-size: 0.65rem;
   letter-spacing: 1px;

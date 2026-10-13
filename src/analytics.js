@@ -154,6 +154,18 @@ export function trackNewsletterSubscribe() {
   });
 }
 
+// A/B tests: tag the visitor with a user property and log one exposure per
+// start-screen view, so groups can be compared in GA.
+export function trackExperiment(name, variant) {
+  if (typeof gtag !== 'function') return;
+  gtag('set', 'user_properties', { [name]: variant });
+  gtag('event', 'experiment_exposure', { experiment: name, variant });
+}
+
+export function trackPortalShortcut(playlist) {
+  if (typeof gtag === 'function') gtag('event', 'portal_shortcut', { playlist });
+}
+
 export function trackOutboundClick(destination) {
   send('outbound_click', {
     event_category: 'outbound',
