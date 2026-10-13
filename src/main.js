@@ -962,7 +962,7 @@ function startRadio(genreId, genreLabel, subgenreId = null, targetArtistName = n
     : undefined;
 
   const playlistDescription =
-    genreId === 'moon' ? 'The immediate emotional weather. This playlist tracks the Moon\'s rapid movement, capturing the fleeting, intuitive mood of the next 48 hours.' :
+    genreId === 'moon' ? 'The Moon travels through a new sign every two and a half days. This playlist gathers the musicians whose Venus — the planet of taste and beauty — sits closest to where the Moon is right now. It\'s a great way to discover new music based on the mood of the day.' :
     genreId === 'sun'  ? 'A living playlist that expresses the current astrological season, evolving in real-time with the transit of the Sun.' :
     curated ? curated.description ?? null :
     null;
