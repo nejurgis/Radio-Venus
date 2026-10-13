@@ -6,11 +6,10 @@ build of `26c468f`). Commits `d9f17b0`, `88bbb12`, `26c468f`.
 **Check back 2026-11-13** (one month). Read the results as described below and
 decide: keep the chip for everyone, remove it, or run another month.
 
-> **Push `master` before anything else lands on it.** On 2026-10-13 these commits
-> (and `ef082f3`, `da22ebb`, `07b067e`) were only local. `deploy.yml` rebuilds the
-> site from `origin/master` on every push — including pushes made by the
-> admin add-artist workflow — so a push without them would silently remove the
-> chip mid-test.
+`deploy.yml` rebuilds the site from `origin/master` on every push (including
+the admin add-artist workflow's), so anything deployed by hand with `gh-pages`
+must also be on `master`, or the next push silently undoes it. All of
+2026-10-13's commits were pushed the same day.
 
 ## Why
 
@@ -98,7 +97,33 @@ and its CSS.
   astrology reading" button to `cal.com/astrologyoffice/natal-consultation`
   (`da22ebb`, wording `07b067e`). Before: 119 of 1,797 visitors ever opened
   About.
-- **Search Console validations (all three "failed"):** www/http variants and
-  no-slash URLs each 301 once to the right page — expected, nothing to fix.
-  Sign×genre and artist pages are "Crawled – currently not indexed": a
-  content-quality call by Google, not a bug.
+- **Moon playlist description** rewritten (`fb705a4`): "The Moon travels
+  through a new sign every two and a half days. This playlist gathers the
+  musicians whose Venus — the planet of taste and beauty — sits closest to
+  where the Moon is right now. It's a great way to discover new music based on
+  the mood of the day."
+
+## SEO (`c192cf2`)
+
+Search Console validations started 6–7 Oct all "failed":
+
+- www/http variants and no-slash URLs (`/sign/pisces`,
+  `/artist/christopher-owens`) each 301 once to the right page. Expected;
+  they will always show as redirects. Don't validate those rows again.
+- Sign×genre and artist pages: "Crawled – currently not indexed". Two
+  genres of one sign share ~72% of their words (the sign's paragraph + an
+  artist list); an artist page has only 1–2 unique sentences.
+
+Changes:
+- The 177 sign×genre pages get `noindex, follow` and left the sitemap
+  (1,422 → 1,245 URLs). Still there for visitors and internal links.
+- Removed the homepage's visually hidden, crawler-only copies of the About
+  text (`portal-about`) and the 12 sign paragraphs (`venus-index`): hidden
+  text is a spam signal. The page generators took the sign paragraphs from
+  that block; they now read `scripts/lib/venus-sign-descriptions.mjs` (same
+  text — sign, artist and About pages built byte-identical).
+
+Next: make the most-searched artist pages genuinely unique (people search
+"yves tumor birth chart", "weyes blood birth chart" …): a short line on how
+their Venus shows in their music + birth date, ~50 artists first. Re-check
+Search Console on 2026-11-03 (and 11-13 with the moon test).
