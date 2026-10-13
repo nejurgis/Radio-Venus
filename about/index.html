@@ -52,6 +52,15 @@
   }
   .about-footnote { font-size: .8rem; opacity: .5; font-style: italic; margin-top: .75rem; }
   .about-star { text-align: center; margin: 2.5rem 0 .5rem; }
+  .about-cta { text-align: center; margin-top: 1.75rem; }
+  .about-cta .btn-primary {
+    display: inline-block; padding: .75rem 2.5rem; border-radius: 2rem;
+    font-family: 'IBM Plex Mono', monospace; font-size: .85rem; letter-spacing: .12em;
+    text-transform: lowercase; color: #e0e0e0; background: rgba(10,12,20,.32);
+    box-shadow: inset -1px -1px 1px 1px rgb(255 255 255 / 19%),
+                inset 0 -2px 0 0 rgba(255,255,255,.1), 6px 6px 6px rgba(0,0,0,.4);
+  }
+  .about-cta .btn-primary:hover { color: #fff; background: rgba(10,12,20,.32); }
   .star-toggle { position: relative; display: inline-block; width: 16px; height: 16px; margin: 4px; }
   .star-toggle::before, .star-toggle::after {
     content: ""; position: absolute; top: 50%; left: 50%;
@@ -156,8 +165,17 @@
 
     <h2 class="about-heading">further inquieries</h2>
 
-    <p>If you'd like to know more, suggest music, or just drop a letter, then email me at <a href="mailto:j.lietunovas@gmail.com">j.lietunovas@gmail.com</a>.<br><br>
-    To dive deeper into your own astrology, I offer full astrology readings at <a href="https://astrologyoffice.com/" target="_blank" rel="noopener">astrologyoffice.com</a></p>
+    <p>If you'd like to know more, suggest music, or just drop a letter, then email me at <a href="mailto:j.lietunovas@gmail.com">j.lietunovas@gmail.com</a>.</p>
+
+    <div class="about-star"><span class="star-toggle active"></span></div>
+
+    <h2 class="about-heading">astrology readings</h2>
+
+    <p>Radio Venus listens to a single planet. A full reading looks at your whole chart — every planet, the houses, and the timing shaping your life right now. I offer readings in the Hellenistic tradition, in person in Vilnius or online. More about them at <a href="https://astrologyoffice.com/" target="_blank" rel="noopener">astrologyoffice.com</a>.</p>
+
+    <div class="about-cta">
+      <a class="btn-primary" href="https://cal.com/astrologyoffice/natal-consultation" target="_blank" rel="noopener">book an astrology reading</a>
+    </div>
 
     <div class="about-star"><span class="star-toggle active"></span></div>
 
