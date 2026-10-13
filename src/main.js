@@ -261,8 +261,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
   document.getElementById('btn-back-about').addEventListener('click', () => history.back());
   document.addEventListener('click', e => {
-    const link = e.target.closest('a[href*="jurgis.info/astrology"]');
-    if (link) trackOutboundClick('jurgis.info/astrology');
+    const link = e.target.closest('a[href*="astrologyoffice.com"]');
+    if (link) trackOutboundClick('astrologyoffice.com');
   });
   document.addEventListener('click', e => {
     const link = e.target.closest('a[href*="apps.apple.com"]');

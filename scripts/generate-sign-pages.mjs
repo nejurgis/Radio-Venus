@@ -710,7 +710,7 @@ const ABOUT_CSS = `
     <h2 class="about-heading">further inquieries</h2>
 
     <p>If you'd like to know more, suggest music, or just drop a letter, then email me at <a href="mailto:j.lietunovas@gmail.com">j.lietunovas@gmail.com</a>.<br><br>
-    To dive deeper into your own astrology, I offer full astrology readings at <a href="https://jurgis.info/astrology" target="_blank" rel="noopener">jurgis.info/astrology</a></p>
+    To dive deeper into your own astrology, I offer full astrology readings at <a href="https://astrologyoffice.com/" target="_blank" rel="noopener">astrologyoffice.com</a></p>
 
     <div class="about-star"><span class="star-toggle active"></span></div>
 
