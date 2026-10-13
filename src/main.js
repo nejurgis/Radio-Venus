@@ -418,7 +418,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const portalMoonChip = document.getElementById('btn-portal-moon');
   if (landedOnPortal && portalMoonPreview == null) trackExperiment('portal_moon_test', portalMoonVariant);
   if (portalMoonVariant === 'chip') {
-    portalMoonChip.innerHTML = `&#9790; play today's moon in ${moonNow.sign.toLowerCase()}`;
+    portalMoonChip.title = `Moon in ${moonNow.sign} today. No birthday needed.`;
     portalMoonChip.hidden = false;
     portalMoonChip.addEventListener('click', async () => {
       trackPortalShortcut('moon');
