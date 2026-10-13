@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { artistSlugs, hasArtistPage } from './lib/artist-slugs.mjs';
+import { VENUS_SIGN_DESCRIPTIONS } from './lib/venus-sign-descriptions.mjs';
 
 const GENRE_LABELS = {
   idm: 'IDM', ambient: 'Ambient', artpop: 'Art Pop', techno: 'Techno',
@@ -93,13 +94,8 @@ const GLYPHS = {
 const MIN_SIGN_GENRE = 5;   // a /sign/<sign>/<genre>/ page exists from this many artists (generate-sign-pages)
 const DECANS = ['first', 'second', 'third'];
 
-// Sign descriptions, from the homepage's Venus guide (same source as the sign pages)
-const sourceHtml = fs.readFileSync('./index.html', 'utf8');
-const signDesc = {};
-for (const sign of SIGNS) {
-  const m = sourceHtml.match(new RegExp(`id="venus-${sign.toLowerCase()}"[\\s\\S]*?<p>([\\s\\S]*?)<\\/p>`));
-  signDesc[sign] = m ? m[1].replace(/\s+/g, ' ').trim() : '';
-}
+// Sign descriptions (same source as the sign pages)
+const signDesc = VENUS_SIGN_DESCRIPTIONS;
 
 // The song each artist plays (seed's handpicked track, when there is one)
 const seed = JSON.parse(fs.readFileSync('./scripts/seed-musicians.json', 'utf8'));

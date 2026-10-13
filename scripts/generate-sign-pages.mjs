@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { artistSlugs } from './lib/artist-slugs.mjs';
+import { VENUS_SIGN_DESCRIPTIONS } from './lib/venus-sign-descriptions.mjs';
 
 const SIGNS = ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo',
                'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'];
@@ -71,13 +72,7 @@ const db = JSON.parse(fs.readFileSync('./public/data/musicians.json', 'utf8'))
   .filter(a => a.name !== '@' && a.venus?.sign);
 const { byName: artistSlug } = artistSlugs(db);   // /artist/<slug>/, as generate-artist-pages names them
 
-// Extract sign descriptions from source index.html
-const sourceHtml = fs.readFileSync('./index.html', 'utf8');
-const descriptions = {};
-for (const sign of SIGNS) {
-  const m = sourceHtml.match(new RegExp(`id="venus-${sign.toLowerCase()}"[\\s\\S]*?<p>([\\s\\S]*?)<\\/p>`));
-  descriptions[sign] = m ? m[1].replace(/\s+/g, ' ').trim() : '';
-}
+const descriptions = VENUS_SIGN_DESCRIPTIONS;
 
 // Build genre×sign index
 const bySignGenre = {};
@@ -259,11 +254,12 @@ const CSS = `
   }
 `;
 
-function head(title, metaDesc, canonical, schema) {
+function head(title, metaDesc, canonical, schema, robots = '') {
   return `<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>${title}</title>
+  <title>${title}</title>${robots ? `
+  <meta name="robots" content="${robots}">` : ''}
   <meta name="description" content="${metaDesc}">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="canonical" href="${canonical}" />
@@ -471,7 +467,7 @@ for (const sign of SIGNS) {
 
     const html = `<!DOCTYPE html>
 <html lang="en">
-${head(title, metaDesc, url, faqSchema)}
+${head(title, metaDesc, url, faqSchema, 'noindex, follow')}
 <body>
   <header><a href="/" class="home-link">← radio venus</a></header>
   <main>
@@ -498,7 +494,8 @@ ${artistList(artists, sign)}
 </html>`;
 
     fs.writeFileSync(`${dir}/index.html`, html);
-    sitemapUrls.push({ url, priority: '0.6', changefreq: 'monthly' });
+    // Not in the sitemap: these pages repeat their sign page's text (Search
+    // Console: "Crawled - currently not indexed", 2026-10), so they're noindex.
     genrePageCount++;
   }
 }
