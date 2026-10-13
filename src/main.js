@@ -28,8 +28,15 @@ import {
 
 // Sticky 50/50 group for the start-screen moon chip test. Visitors whose browser
 // blocks storage stay in "control" so they never see a chip that flickers.
+// Preview either version with ?moonchip=1 (chip) or ?moonchip=0 (control); the
+// choice sticks for that browser.
+const portalMoonPreview = new URLSearchParams(location.search).get('moonchip');
+
 function getPortalMoonVariant() {
   try {
+    if (portalMoonPreview === '1' || portalMoonPreview === '0') {
+      localStorage.setItem('rv_test_portal_moon', portalMoonPreview === '1' ? 'chip' : 'control');
+    }
     let v = localStorage.getItem('rv_test_portal_moon');
     if (v !== 'chip' && v !== 'control') {
       v = Math.random() < 0.5 ? 'chip' : 'control';
@@ -409,7 +416,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const portalMoonVariant = getPortalMoonVariant();
   const landedOnPortal = !_isShareLink && !location.hash;
   const portalMoonChip = document.getElementById('btn-portal-moon');
-  if (landedOnPortal) trackExperiment('portal_moon_test', portalMoonVariant);
+  if (landedOnPortal && portalMoonPreview == null) trackExperiment('portal_moon_test', portalMoonVariant);
   if (portalMoonVariant === 'chip') {
     portalMoonChip.innerHTML = `&#9790; play today's moon in ${moonNow.sign.toLowerCase()}`;
     portalMoonChip.hidden = false;
