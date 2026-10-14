@@ -8821,6 +8821,26 @@
     "backupVideoIds": []
   },
   {
+    "name": "Erwin Schulhoff",
+    "venus": {
+      "sign": "Taurus",
+      "degree": 5.7,
+      "decan": 1,
+      "element": "earth"
+    },
+    "dateReliability": "exact",
+    "genres": [
+      "classical",
+      "intercelestial"
+    ],
+    "subgenres": [
+      "opera",
+      "classical"
+    ],
+    "youtubeVideoId": "WFP5nguGTAI",
+    "backupVideoIds": []
+  },
+  {
     "name": "Esben and the Witch",
     "venus": {
       "sign": "Cancer",
