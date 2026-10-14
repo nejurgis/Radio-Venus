@@ -33462,5 +33462,65 @@
     ],
     "youtubeVideoId": "hvDFF4Gh_Po",
     "backupVideoIds": []
+  },
+  {
+    "name": "Guests)",
+    "birthDate": "1996-06-15",
+    "dateReliability": "approximate",
+    "mbid": "67256d02-9c0a-4b2e-9628-8aab3660d6a4",
+    "genres": [],
+    "subgenres": [],
+    "youtubeVideoId": "OAp4x-JVIKY",
+    "backupVideoIds": [],
+    "handpicked": true,
+    "handpickedTrack": "The Word Eclipse"
+  },
+  {
+    "name": "Matana Roberts",
+    "birthDate": "1978-06-15",
+    "dateReliability": "approximate",
+    "genres": [
+      "jazz",
+      "artpop",
+      "idm",
+      "intercelestial"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz",
+      "avant-garde-pop",
+      "experimental"
+    ],
+    "enTags": [
+      "jazz",
+      "free jazz",
+      "Avant-Garde Jazz",
+      "Avant-Garde",
+      "saxophone",
+      "experimental",
+      "spoken word",
+      "free improvisation",
+      "spiritual jazz",
+      "american"
+    ],
+    "youtubeVideoId": "a7czg88SABY",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Judi Silvano",
+    "birthDate": "1951-01-01",
+    "dateReliability": "approximate",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz"
+    ],
+    "enTags": [
+      "female vocalists",
+      "jazz"
+    ],
+    "youtubeVideoId": "qSEDkuPFBPM",
+    "backupVideoIds": []
   }
 ]
