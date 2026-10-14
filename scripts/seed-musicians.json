@@ -33299,5 +33299,168 @@
     "spotifyId": "7LCDnUQYE07fnKbo46SVLB",
     "handpicked": true,
     "handpickedTrack": "Rabbit"
+  },
+  {
+    "name": "Robert Rich",
+    "birthDate": "1963-08-23",
+    "dateReliability": "exact",
+    "genres": [
+      "ambient",
+      "idm",
+      "electronica"
+    ],
+    "subgenres": [
+      "ambient",
+      "dark-ambient",
+      "experimental",
+      "indietronica",
+      "drone",
+      "new-age"
+    ],
+    "enTags": [
+      "ambient",
+      "dark ambient",
+      "experimental",
+      "atmospheric",
+      "electronic",
+      "drone",
+      "deep ambient",
+      "tribal ambient",
+      "american",
+      "new age"
+    ],
+    "youtubeVideoId": "LgVLsbj7quw",
+    "backupVideoIds": [],
+    "spotifyId": "3ux92I3CgfnhgLyYNsXIwZ",
+    "handpicked": true,
+    "handpickedTrack": "Geometry of the Skies"
+  },
+  {
+    "name": "Max Corbacho",
+    "birthDate": "1948-07-21",
+    "dateReliability": "exact",
+    "mbid": "dbf8e699-5940-42c4-9aed-fa444e01c754",
+    "genres": [
+      "ambient"
+    ],
+    "subgenres": [
+      "ambient",
+      "space-ambient",
+      "new-age",
+      "drone",
+      "dark-ambient"
+    ],
+    "enTags": [
+      "ambient",
+      "Space Ambient",
+      "space music",
+      "atmospheric",
+      "atmospheric ambient",
+      "new age",
+      "drone",
+      "dark ambient",
+      "deep ambient",
+      "spanish"
+    ],
+    "youtubeVideoId": "6SgBkcD9Nos",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Thom Brennan",
+    "birthDate": "1957-05-31",
+    "dateReliability": "exact",
+    "genres": [
+      "ambient",
+      "electronica"
+    ],
+    "subgenres": [
+      "ambient",
+      "space-ambient",
+      "indietronica",
+      "dark-ambient",
+      "new-age"
+    ],
+    "enTags": [
+      "ambient",
+      "Space Ambient",
+      "space music",
+      "electronic",
+      "dark ambient",
+      "deepspaceone",
+      "new age",
+      "soundscape",
+      "deep ambient",
+      "relaxing"
+    ],
+    "youtubeVideoId": "Z7uBEpelThs",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Rudy Adrian",
+    "birthDate": "1978-05-07",
+    "dateReliability": "exact",
+    "mbid": "69bb7a74-99ee-4da0-bc3d-84586676e4ea",
+    "genres": [
+      "ambient",
+      "electronica",
+      "triphop"
+    ],
+    "subgenres": [
+      "ambient",
+      "new-age",
+      "indietronica",
+      "berlin-school",
+      "space-ambient",
+      "chillout"
+    ],
+    "enTags": [
+      "ambient",
+      "Space Ambient",
+      "new age",
+      "electronic",
+      "Sleeping",
+      "minimal",
+      "New Zealand",
+      "berlin school",
+      "space music",
+      "chillout"
+    ],
+    "youtubeVideoId": "JjXTndCmahM",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Eberhard Schoener And The Secret Society",
+    "birthDate": "1938-05-13",
+    "dateReliability": "exact",
+    "mbid": "1824aad6-916e-422b-8907-3e20fd371acd",
+    "genres": [
+      "electronica",
+      "ambient",
+      "folk",
+      "idm",
+      "classical"
+    ],
+    "subgenres": [
+      "indietronica",
+      "ambient",
+      "folk-rock",
+      "experimental",
+      "classical",
+      "modern-classical"
+    ],
+    "enTags": [
+      "electronic",
+      "psychedelic",
+      "ambient",
+      "folk",
+      "world",
+      "german",
+      "experimental",
+      "conductor",
+      "Classical",
+      "modern classical"
+    ],
+    "youtubeVideoId": "hvDFF4Gh_Po",
+    "backupVideoIds": []
   }
 ]
