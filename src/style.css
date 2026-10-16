@@ -333,10 +333,31 @@ html, body {
   display: none;
 }
 
-/* Phones: the ring fills the width and the chip would sit on its lower edge,
-   so place it just below the ring (radius = 44% of the shorter screen side,
-   see viz.js), but never over the newsletter field at the bottom. */
+/* Phones: the ring fills the width, so lift it (and the title/date block inside
+   it) and stack the moon chip, newsletter and imprint in one column below.
+   Ring radius = 44% of the shorter screen side (see viz.js). The lift is undone
+   as soon as the Enter zoom starts (.is-fading) or another screen shows. */
 @media (max-width: 600px) {
+  :root {
+    --portal-lift: max(0px, min(
+      50dvh - min(100vw, 100dvh) * 0.44 - 1.5rem,
+      5.5rem
+    ));
+  }
+
+  .nebula-container {
+    transition: opacity 0.6s ease, transform 0.8s ease;
+  }
+
+  body:has(#screen-portal.active:not(.is-fading)) .nebula-container {
+    transform: translateY(calc(-1 * var(--portal-lift)));
+  }
+
+  /* top, not transform: a transform here would capture the fixed chip below */
+  #screen-portal .screen-inner {
+    top: calc(-1 * var(--portal-lift));
+  }
+
   /* [data-genre] so it outranks .genre-btn[data-genre="moon"] { position: relative } */
   .genre-btn.portal-moon-chip[data-genre="moon"] {
     position: fixed;
@@ -345,10 +366,7 @@ html, body {
     left: 0;
     right: 0;
     margin: 0 auto;
-    top: min(
-      calc(50dvh + min(100vw, 100dvh) * 0.44 + 4px),
-      calc(100dvh - 160px)
-    );
+    bottom: calc(6.25rem + env(safe-area-inset-bottom));
   }
 }
 
@@ -370,6 +388,45 @@ html, body {
   right: 1.5rem;
   z-index: 10;
   transition: color 0.3s, box-shadow 0.3s;
+}
+
+/* Label-style credit, opposite the info button */
+.imprint {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 10;
+  font-family: var(--font-mono);
+  font-size: var(--fs-caption);
+  line-height: 37px; /* centred on the info button (.btn-control height) */
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+  opacity: 0.5;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.imprint:hover {
+  opacity: 1;
+}
+
+/* Phones: bottom of the centred column (moon chip, newsletter, imprint) */
+@media (max-width: 600px) {
+  .imprint {
+    left: 0;
+    right: 0;
+    text-align: center;
+    line-height: 1.5rem;
+    bottom: calc(0.5rem + env(safe-area-inset-bottom));
+  }
+}
+
+/* Between phone and desktop widths the centred newsletter form would hit it */
+@media (min-width: 601px) and (max-width: 700px) {
+  .imprint {
+    bottom: auto;
+    top: calc(1rem + env(safe-area-inset-top));
+  }
 }
 
 .btn-info:hover {
@@ -458,6 +515,13 @@ body:has(#screen-radio.active) .newsletter-footer {
   color: var(--text-dim);
   opacity: 0.5;
   margin-bottom: 0.2rem;
+}
+
+/* Phones: room for the imprint underneath (see the portal column above) */
+@media (max-width: 600px) {
+  .newsletter-footer {
+    padding-bottom: calc(2.5rem + env(safe-area-inset-bottom));
+  }
 }
 
 .newsletter-footer .newsletter-form {
@@ -1790,8 +1854,9 @@ p a:hover {
   inset: 0;
   z-index: 60;
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* the card's margin: auto centres it; taller than the screen, it scrolls from the top */
   justify-content: center;
+  overflow-y: auto;
   padding: 2rem;
   background: rgba(10, 10, 12, 0.65);
   backdrop-filter: blur(6px);
@@ -1807,11 +1872,12 @@ p a:hover {
 }
 
 .venus-explainer-card {
-  max-width: 360px;
+  max-width: 400px;
   width: 100%;
-  background: rgba(16, 16, 20, 0.07);
+  margin: auto;
+  background: rgba(16, 16, 20, 0.5);
   border: none;
-  border-radius: 5.1rem;
+  border-radius: 2rem;
   padding: 2rem 2rem 1.6rem;
   display: flex;
   flex-direction: column;
@@ -1830,7 +1896,7 @@ p a:hover {
 .explainer-body {
   font-family: var(--font-sans);
   font-size: 0.95rem;
-  line-height: 1.65;
+  line-height: 1.35;
   color: var(--text);
 }
 
@@ -1909,7 +1975,7 @@ p a:hover {
   margin-top: 0.4rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch; /* both buttons the same width */
   gap: 0.75rem;
 }
 

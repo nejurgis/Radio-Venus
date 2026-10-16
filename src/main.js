@@ -844,8 +844,14 @@ function openAstrochord() {
   window.open(`/astrochord/${birthISO ? `?date=${birthISO}` : ''}`, '_blank', 'noopener');
 }
 
+// The explainer comes back after this many days. rv_seen_explainer holds the
+// time it was last dismissed; the old value '1' (before 2026-10-16) counts as
+// long ago, so earlier visitors see the new text once.
+const EXPLAINER_REPEAT_DAYS = 30;
+
 function showVenusExplainer(venus) {
-  if (localStorage.getItem('rv_seen_explainer')) return;
+  const seenAt = Number(localStorage.getItem('rv_seen_explainer'));
+  if (seenAt > 1 && Date.now() - seenAt < EXPLAINER_REPEAT_DAYS * 86_400_000) return;
   const overlay = document.getElementById('venus-explainer');
   if (!overlay) return;
 
@@ -857,7 +863,7 @@ function showVenusExplainer(venus) {
 
   function dismiss() {
     overlay.classList.remove('is-visible');
-    localStorage.setItem('rv_seen_explainer', '1');
+    localStorage.setItem('rv_seen_explainer', String(Date.now()));
     overlay.addEventListener('transitionend', () => { overlay.hidden = true; }, { once: true });
   }
 
@@ -883,6 +889,11 @@ function showVenusExplainer(venus) {
   };
   overlay.querySelector('.explainer-body a[href*="apps.apple.com"]').onclick = () => {
     trackExplainerAction('lunarlog_inline_link', venus.sign);
+  };
+  const astrochordLink = document.getElementById('explainer-astrochord');
+  astrochordLink.href = `/astrochord/${birthISO ? `?date=${birthISO}` : ''}`;
+  astrochordLink.onclick = () => {
+    trackExplainerAction('astrochord_link', venus.sign);
   };
 }
 
