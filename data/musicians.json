@@ -8058,6 +8058,33 @@
     "backupVideoIds": []
   },
   {
+    "name": "Eberhard Schoener And The Secret Society",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 16.5,
+      "decan": 2,
+      "element": "air"
+    },
+    "dateReliability": "exact",
+    "genres": [
+      "electronica",
+      "ambient",
+      "folk",
+      "idm",
+      "classical"
+    ],
+    "subgenres": [
+      "indietronica",
+      "ambient",
+      "folk-rock",
+      "experimental",
+      "classical",
+      "modern-classical"
+    ],
+    "youtubeVideoId": "hvDFF4Gh_Po",
+    "backupVideoIds": []
+  },
+  {
     "name": "Echospace",
     "venus": {
       "sign": "Gemini",
@@ -8791,26 +8818,6 @@
       "idm"
     ],
     "youtubeVideoId": "YJi5SMPiKqc",
-    "backupVideoIds": []
-  },
-  {
-    "name": "Erwin Schulhoff",
-    "venus": {
-      "sign": "Taurus",
-      "degree": 5.7,
-      "decan": 1,
-      "element": "earth"
-    },
-    "dateReliability": "exact",
-    "genres": [
-      "classical",
-      "intercelestial"
-    ],
-    "subgenres": [
-      "opera",
-      "classical"
-    ],
-    "youtubeVideoId": "WFP5nguGTAI",
     "backupVideoIds": []
   },
   {
@@ -10700,6 +10707,22 @@
       "techno"
     ],
     "youtubeVideoId": "MSHR1Y3sELs",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Guests)",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 17.1,
+      "decan": 2,
+      "element": "air"
+    },
+    "dateReliability": "approximate",
+    "genres": [
+      "intercelestial"
+    ],
+    "subgenres": [],
+    "youtubeVideoId": "OAp4x-JVIKY",
     "backupVideoIds": []
   },
   {
@@ -13452,6 +13475,25 @@
     "backupVideoIds": [
       "Xk5_g6ddCMk"
     ]
+  },
+  {
+    "name": "Judi Silvano",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 22,
+      "decan": 3,
+      "element": "earth",
+      "dateApprox": true
+    },
+    "dateReliability": "approximate",
+    "genres": [
+      "jazz"
+    ],
+    "subgenres": [
+      "spiritual-jazz"
+    ],
+    "youtubeVideoId": "qSEDkuPFBPM",
+    "backupVideoIds": []
   },
   {
     "name": "Julee Cruise",
@@ -16922,6 +16964,30 @@
     ]
   },
   {
+    "name": "Matana Roberts",
+    "venus": {
+      "sign": "Cancer",
+      "degree": 29.1,
+      "decan": 3,
+      "element": "water"
+    },
+    "dateReliability": "approximate",
+    "genres": [
+      "jazz",
+      "artpop",
+      "idm",
+      "intercelestial"
+    ],
+    "subgenres": [
+      "spiritual-jazz",
+      "free-jazz",
+      "avant-garde-pop",
+      "experimental"
+    ],
+    "youtubeVideoId": "a7czg88SABY",
+    "backupVideoIds": []
+  },
+  {
     "name": "Matchess",
     "venus": {
       "sign": "Cancer",
@@ -16968,6 +17034,28 @@
       "classical"
     ],
     "youtubeVideoId": "cmNEvSFWftc",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Max Corbacho",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 25.2,
+      "decan": 3,
+      "element": "air"
+    },
+    "dateReliability": "exact",
+    "genres": [
+      "ambient"
+    ],
+    "subgenres": [
+      "ambient",
+      "space-ambient",
+      "new-age",
+      "drone",
+      "dark-ambient"
+    ],
+    "youtubeVideoId": "6SgBkcD9Nos",
     "backupVideoIds": []
   },
   {
@@ -21989,6 +22077,31 @@
     "backupVideoIds": []
   },
   {
+    "name": "Robert Rich",
+    "venus": {
+      "sign": "Leo",
+      "degree": 27.8,
+      "decan": 3,
+      "element": "fire"
+    },
+    "dateReliability": "exact",
+    "genres": [
+      "ambient",
+      "idm",
+      "electronica"
+    ],
+    "subgenres": [
+      "ambient",
+      "dark-ambient",
+      "experimental",
+      "indietronica",
+      "drone",
+      "new-age"
+    ],
+    "youtubeVideoId": "LgVLsbj7quw",
+    "backupVideoIds": []
+  },
+  {
     "name": "Robert Schumann",
     "venus": {
       "sign": "Cancer",
@@ -22368,6 +22481,31 @@
       "trance"
     ],
     "youtubeVideoId": "rFKdII8aljA",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Rudy Adrian",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 12.4,
+      "decan": 2,
+      "element": "air"
+    },
+    "dateReliability": "exact",
+    "genres": [
+      "ambient",
+      "electronica",
+      "triphop"
+    ],
+    "subgenres": [
+      "ambient",
+      "new-age",
+      "indietronica",
+      "berlin-school",
+      "space-ambient",
+      "chillout"
+    ],
+    "youtubeVideoId": "JjXTndCmahM",
     "backupVideoIds": []
   },
   {
@@ -26746,6 +26884,29 @@
       "ambient"
     ],
     "youtubeVideoId": "jBkpgN-01l0",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Thom Brennan",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 22.2,
+      "decan": 3,
+      "element": "air"
+    },
+    "dateReliability": "exact",
+    "genres": [
+      "ambient",
+      "electronica"
+    ],
+    "subgenres": [
+      "ambient",
+      "space-ambient",
+      "indietronica",
+      "dark-ambient",
+      "new-age"
+    ],
+    "youtubeVideoId": "Z7uBEpelThs",
     "backupVideoIds": []
   },
   {
