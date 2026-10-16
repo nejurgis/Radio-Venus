@@ -32,6 +32,7 @@ on:
 
 permissions:
   contents: write
+  actions: write   # to dispatch deploy.yml after a commit
 
 jobs:
   lookup:
@@ -83,6 +84,8 @@ jobs:
 
       - name: Commit + push
         id: commit
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -94,6 +97,8 @@ jobs:
             git commit -m "feat: add artist via admin tool [bot]"
             git push
             echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+            # A push by this workflow's token doesn't start deploy.yml; a dispatch does
+            gh workflow run deploy.yml --ref master
           fi
 
       - name: Report result

@@ -26,6 +26,7 @@ on:
 
 permissions:
   contents: write
+  actions: write   # to dispatch deploy.yml after a commit
 
 jobs:
   # ── Pre-process: cross-check seed, optionally pick N random new artists ───────
@@ -187,10 +188,16 @@ jobs:
         run: node scripts/build-db.mjs
 
       - name: Commit seed + musicians.json
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           touch scripts/addition-log.jsonl
           git add scripts/seed-musicians.json public/data/musicians.json scripts/addition-log.jsonl
-          git diff --cached --quiet || git commit -m "feat: import playlist artists [bot] (${{ inputs.csv_path }})"
-          git push
+          if ! git diff --cached --quiet; then
+            git commit -m "feat: import playlist artists [bot] (${{ inputs.csv_path }})"
+            git push
+            # A push by this workflow's token doesn't start deploy.yml; a dispatch does
+            gh workflow run deploy.yml --ref master
+          fi

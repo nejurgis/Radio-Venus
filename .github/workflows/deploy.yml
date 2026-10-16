@@ -3,9 +3,17 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ master ]  # Trigger whenever you push to master
+  # Pushes made by workflows (admin add-artist, playlist import) don't trigger
+  # `push` runs, so those workflows dispatch this one after they push.
+  workflow_dispatch:
 
 permissions:
   contents: write
+
+# One deploy at a time; a newer one waits instead of racing on gh-pages.
+concurrency:
+  group: deploy-pages
+  cancel-in-progress: false
 
 jobs:
   build-and-deploy:
