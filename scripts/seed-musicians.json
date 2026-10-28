@@ -33522,5 +33522,100 @@
     ],
     "youtubeVideoId": "qSEDkuPFBPM",
     "backupVideoIds": []
+  },
+  {
+    "name": "Nemesis",
+    "birthDate": "1987-06-15",
+    "dateReliability": "approximate",
+    "mbid": "4a68d1bf-576f-4adc-b22f-f044a0315888",
+    "genres": [
+      "metal",
+      "ambient",
+      "electronica"
+    ],
+    "subgenres": [
+      "doom-metal",
+      "ambient",
+      "thrash",
+      "heavy-metal",
+      "indietronica",
+      "death-metal"
+    ],
+    "enTags": [
+      "doom metal",
+      "ambient",
+      "thrash metal",
+      "RAC",
+      "heavy metal",
+      "Traditional Doom Metal",
+      "electronic",
+      "Melodic Death Metal",
+      "Swedish Doom Metal",
+      "metal"
+    ],
+    "youtubeVideoId": "kxIxiqRFpt8",
+    "backupVideoIds": [],
+    "spotifyId": "0FhfezGfDiRAGxIXz4qeKl",
+    "handpicked": true,
+    "handpickedTrack": "Glacialis"
+  },
+  {
+    "name": "Cosmic Hoffmann",
+    "birthDate": "1951-01-01",
+    "dateReliability": "approximate",
+    "genres": [
+      "ambient",
+      "electronica",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "indietronica",
+      "experimental"
+    ],
+    "enTags": [
+      "ambient",
+      "Space Ambient",
+      "psychedelic",
+      "electronic",
+      "german",
+      "space",
+      "experimental",
+      "Psychedelic Rock",
+      "space rock",
+      "instrumental"
+    ],
+    "youtubeVideoId": "33gqbg949hE",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Jonn Serrie",
+    "birthDate": "1968-10-04",
+    "dateReliability": "exact",
+    "mbid": "13c69e09-38e4-49b3-a8fa-21a76133b2a7",
+    "genres": [
+      "ambient",
+      "electronica"
+    ],
+    "subgenres": [
+      "ambient",
+      "new-age",
+      "space-ambient",
+      "indietronica"
+    ],
+    "enTags": [
+      "ambient",
+      "Space Ambient",
+      "new age",
+      "space music",
+      "ethereal",
+      "space",
+      "electronic",
+      "atmospheric",
+      "relaxing",
+      "american"
+    ],
+    "youtubeVideoId": "RckxXhZ6COQ",
+    "backupVideoIds": []
   }
 ]

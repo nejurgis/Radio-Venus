@@ -5869,6 +5869,29 @@
     "backupVideoIds": []
   },
   {
+    "name": "Cosmic Hoffmann",
+    "venus": {
+      "sign": "Capricorn",
+      "degree": 22,
+      "decan": 3,
+      "element": "earth",
+      "dateApprox": true
+    },
+    "dateReliability": "approximate",
+    "genres": [
+      "ambient",
+      "electronica",
+      "idm"
+    ],
+    "subgenres": [
+      "ambient",
+      "indietronica",
+      "experimental"
+    ],
+    "youtubeVideoId": "33gqbg949hE",
+    "backupVideoIds": []
+  },
+  {
     "name": "Courtesy",
     "venus": {
       "sign": "Pisces",
@@ -13295,6 +13318,28 @@
     ]
   },
   {
+    "name": "Jonn Serrie",
+    "venus": {
+      "sign": "Scorpio",
+      "degree": 9.6,
+      "decan": 1,
+      "element": "water"
+    },
+    "dateReliability": "exact",
+    "genres": [
+      "ambient",
+      "electronica"
+    ],
+    "subgenres": [
+      "ambient",
+      "new-age",
+      "space-ambient",
+      "indietronica"
+    ],
+    "youtubeVideoId": "RckxXhZ6COQ",
+    "backupVideoIds": []
+  },
+  {
     "name": "Jonnine",
     "venus": {
       "sign": "Leo",
@@ -18921,6 +18966,31 @@
       "experimental-hiphop"
     ],
     "youtubeVideoId": "YNqLcSpT7As",
+    "backupVideoIds": []
+  },
+  {
+    "name": "Nemesis",
+    "venus": {
+      "sign": "Gemini",
+      "degree": 5.2,
+      "decan": 1,
+      "element": "air"
+    },
+    "dateReliability": "approximate",
+    "genres": [
+      "metal",
+      "ambient",
+      "electronica"
+    ],
+    "subgenres": [
+      "doom-metal",
+      "ambient",
+      "thrash",
+      "heavy-metal",
+      "indietronica",
+      "death-metal"
+    ],
+    "youtubeVideoId": "kxIxiqRFpt8",
     "backupVideoIds": []
   },
   {
