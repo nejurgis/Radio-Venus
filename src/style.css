@@ -977,6 +977,7 @@ p a:hover {
 /* 1. The Container (The Void) */
 .genre-btn[data-genre="valentine"],
 .genre-btn[data-genre="venus-retrograde-1"],
+.genre-btn[data-genre="venus-retrograde-2"],
 .btn-curated-playlist {
   /* Clear default button styles so we can build the shape manually */
   background: transparent !important;
@@ -999,9 +1000,11 @@ p a:hover {
 /* 2. The Lobes (The Colliding Fields) */
 .genre-btn[data-genre="valentine"]::before,
 .genre-btn[data-genre="venus-retrograde-1"]::before,
+.genre-btn[data-genre="venus-retrograde-2"]::before,
 .btn-curated-playlist::before,
 .genre-btn[data-genre="valentine"]::after,
 .genre-btn[data-genre="venus-retrograde-1"]::after,
+.genre-btn[data-genre="venus-retrograde-2"]::after,
 .btn-curated-playlist::after {
   content: "";
   position: absolute;
@@ -1033,6 +1036,7 @@ p a:hover {
 /* 3. The Left Lobe (Tilted Left) */
 .genre-btn[data-genre="valentine"]::before,
 .genre-btn[data-genre="venus-retrograde-1"]::before,
+.genre-btn[data-genre="venus-retrograde-2"]::before,
 .btn-curated-playlist::before {
   left: 0;
   /* Rotate top-left away, anchor bottom-right */
@@ -1043,6 +1047,7 @@ p a:hover {
 /* 4. The Right Lobe (Tilted Right) */
 .genre-btn[data-genre="valentine"]::after,
 .genre-btn[data-genre="venus-retrograde-1"]::after,
+.genre-btn[data-genre="venus-retrograde-2"]::after,
 .btn-curated-playlist::after {
   right: 0;
   /* Rotate top-right away, anchor bottom-left */
@@ -1053,6 +1058,7 @@ p a:hover {
 /* 5. Interaction Physics */
 .genre-btn[data-genre="valentine"]:hover::before,
 .genre-btn[data-genre="venus-retrograde-1"]:hover::before,
+.genre-btn[data-genre="venus-retrograde-2"]:hover::before,
 .btn-curated-playlist:hover::before {
   transform: rotate(-15deg) translateX(2px) scale(1.05);
   background: linear-gradient(160deg, #ff3366, #990022);
@@ -1061,6 +1067,7 @@ p a:hover {
 
 .genre-btn[data-genre="valentine"]:hover::after,
 .genre-btn[data-genre="venus-retrograde-1"]:hover::after,
+.genre-btn[data-genre="venus-retrograde-2"]:hover::after,
 .btn-curated-playlist:hover::after {
   transform: rotate(15deg) translateX(-2px) scale(1.05);
   background: linear-gradient(160deg, #ff3366, #990022);
