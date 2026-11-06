@@ -890,9 +890,9 @@ function showVenusExplainer(venus) {
   overlay.querySelector('.explainer-body a[href*="apps.apple.com"]').onclick = () => {
     trackExplainerAction('lunarlog_inline_link', venus.sign);
   };
-  const astrochordLink = document.getElementById('explainer-astrochord');
-  astrochordLink.href = `/astrochord/${birthISO ? `?date=${birthISO}` : ''}`;
-  astrochordLink.onclick = () => {
+  const astrochordLink = document.getElementById('explainer-astrochord');   // no longer in the card (2026-11-06)
+  if (astrochordLink) astrochordLink.href = `/astrochord/${birthISO ? `?date=${birthISO}` : ''}`;
+  if (astrochordLink) astrochordLink.onclick = () => {
     trackExplainerAction('astrochord_link', venus.sign);
   };
 }

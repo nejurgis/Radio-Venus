@@ -283,13 +283,19 @@ html, body {
 .curated-playlist-buttons:empty { display: none; }
 
 .btn-curated-playlist {
-  /* the heart itself comes from the Valentine chip rules */
-  font-size: 0.65rem;
-  letter-spacing: 1px;
-  padding: 0.8rem 2.5rem;
+  /* the heart itself comes from the Valentine chip rules; size and type match the
+     playlist chips on the genre page (.genre-btn), so both read as the same chip */
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  padding: 1.5rem 2rem;
   white-space: nowrap;
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
+  /* the genre chips' soft fade, so the heart melts into a glow instead of sitting solid */
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, rgba(0, 0, 0, 0.6) 60%, transparent 90%);
+  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, rgba(0, 0, 0, 0.9) 41%, transparent 63.5%);
+  font-weight: bold;
+  letter-spacing: -0.03em;
 }
 
 .btn-moon-playlist,
@@ -1864,6 +1870,9 @@ p a:hover {
   align-items: flex-start; /* the card's margin: auto centres it; taller than the screen, it scrolls from the top */
   justify-content: center;
   overflow-y: auto;
+  overscroll-behavior: contain;      /* scroll the card, not the page behind it */
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;               /* the nebula's drag handlers must not swallow the swipe */
   padding: 2rem;
   background: rgba(10, 10, 12, 0.65);
   backdrop-filter: blur(6px);
@@ -1876,6 +1885,13 @@ p a:hover {
 .venus-explainer.is-visible {
   opacity: 1;
   pointer-events: auto;
+}
+
+.explainer-footnote {
+  margin: 0.4rem 0 0;
+  text-align: center;
+  font-size: 0.75rem;
+  opacity: 0.7;
 }
 
 .venus-explainer-card {
